@@ -8,14 +8,8 @@ use App\Views\Todos;
 class TodoController {
 
    public function index() {
-//       echo "
-//        <form method='post' action='/todos'>
-//            <button>Salva</button>
-//        </form>
-//       ";
        $todosView = new Todos();
-       $param = "Basta dormire";
-       return $todosView->render($param);
+       return $todosView->render(["First", "Second"]);
    }
 
    public function store() {
