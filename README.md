@@ -1,5 +1,1 @@
-# Instructions
-```
-composer install
-php -S localhost:8080
-```
+[TasteIt](https://taste-it-univaq.herokuapp.com/)
