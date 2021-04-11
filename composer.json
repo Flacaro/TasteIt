@@ -1,0 +1,17 @@
+{
+    "name": "flavi/taste-it",
+    "authors": [
+        {
+            "name": "Flacaro",
+            "email": "flavianacaroselli@gmail.com"
+        }
+    ],
+    "require": {
+        "pecee/simple-router": "4.3.2.1"
+    },
+    "autoload" : {
+        "psr-4": {
+            "App\\" : "src/"
+        }
+    }
+}
