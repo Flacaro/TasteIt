@@ -1,1 +1,4 @@
-# TasteIt
+# Instructions
+```
+composer install
+```
