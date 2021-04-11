@@ -7,9 +7,10 @@ namespace App\Views;
 class Todos
 {
 
-    public function render($params = null) {
-        return "
-            <h1>$params</h1>
-            ";
+    public function render($params = ["Ciao", "Fla"]) {
+        $params = ["Ciao", "Fla"];
+        foreach($params as $param) {
+            echo "<p>$param</p>";
+        }
     }
 }
