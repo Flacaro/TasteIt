@@ -7,7 +7,8 @@
         }
     ],
     "require": {
-        "pecee/simple-router": "4.3.2.1"
+        "pecee/simple-router": "4.3.2.1",
+        "smarty/smarty": "~3.1"
     },
     "autoload" : {
         "psr-4": {

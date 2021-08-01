@@ -9,7 +9,9 @@ class TodoController {
 
    public function index() {
        $todosView = new Todos();
-       return $todosView->render(["First", "Second"]);
+       $smarty = $GLOBALS['smarty'];
+       $smarty->assign('name', 'Flavy');
+       return $smarty->display('src/templates/product.tpl');
    }
 
    public function store() {
