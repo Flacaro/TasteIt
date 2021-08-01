@@ -8,8 +8,8 @@ use Pecee\SimpleRouter\SimpleRouter;
 $smarty = new Smarty();
 
 
-$smarty->setTemplateDir('/src/templates/');
-$smarty->setCompileDir('/src/Views/');
+$smarty->setTemplateDir('src/templates/');
+$smarty->setCompileDir('src/Views/');
 $GLOBALS['smarty'] = $smarty;
 
 
