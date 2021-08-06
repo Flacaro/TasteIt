@@ -4,9 +4,11 @@ use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
 
-SimpleRouter::redirect("/", "/todos");
+SimpleRouter::redirect("/", "/products");
 
-SimpleRouter::get("/todos", [TodoController::class, "index"]);
+SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
+SimpleRouter::get("/products/create", [ProductController::class, "create"]);
+//SimpleRouter::get("/users"), [UserController::class, "index"])->name('users');
 
 
 

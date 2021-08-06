@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <p> Hello {$name} </p>
+<ul>
+    {foreach $products as $product}
+
+        <li>
+            <span>
+                {$product->getId()}
+            </span>
+            {$product->getName()}
+        </li>
+
+    {/foreach}
+</ul>
 </body>
 </html>
