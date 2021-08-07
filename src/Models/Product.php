@@ -28,7 +28,7 @@ class Product {
     {
         return $this->id;
     }
-
+//penso vada eliminato
     public function setId($id): void
     {
         $this->id = $id;
