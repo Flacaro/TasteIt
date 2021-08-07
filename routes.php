@@ -8,7 +8,7 @@ SimpleRouter::redirect("/", "/products");
 
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
-//SimpleRouter::get("/users"), [UserController::class, "index"])->name('users');
+SimpleRouter::get("/users", [UserController::class, "index"])->name('users');
 
 
 

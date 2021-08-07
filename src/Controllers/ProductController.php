@@ -22,7 +22,7 @@ class ProductController {
        $fproducts = new FProducts();
        $product = new Product();
        $product->setId(NULL);
-       $product->setName('Vino');
+       $product->setName('Pesce');
        $product->setDescription('Buono');
        $product->setPrice(20);
        $fproducts->create($product);
