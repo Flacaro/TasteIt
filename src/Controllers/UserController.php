@@ -29,7 +29,6 @@ class UserController {
     public function update($id) {
         $FUser = new FUser();
         $user = new User();
-        $id = $_POST['id'];
         $password = $_POST['password'];
         $user->setPassword($password);
         $FUser->update($id,$user);

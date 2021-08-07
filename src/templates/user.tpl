@@ -9,8 +9,7 @@
 </head>
 <body>
 <ul>
-    <h1> {$yourName}</h1>
-    {foreach $products as $product}
+    {foreach $users as $user}
 
         <li>
         <form action="/users/{$user->getId()}" method="GET">

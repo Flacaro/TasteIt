@@ -40,7 +40,6 @@ class ProductController {
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
-
         $FProducts->update($id, $product);
        //$product = new Product();
        //$product->setName("Coca cola");

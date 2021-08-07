@@ -12,9 +12,7 @@ class User
     public $email;
     public $password;
 
-    public function __construct($name)
-    {
-        $this->name = $name;
+    public function __construct() {
     }
 
     public function getName()
