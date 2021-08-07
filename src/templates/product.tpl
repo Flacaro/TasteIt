@@ -8,13 +8,19 @@
 </head>
 <body>
 <ul>
+    <h1> {$yourName}</h1>
     {foreach $products as $product}
 
         <li>
+            <form action="/products/{$product->getId()}" method="GET">
+                <button type="submit">X</button>
+            </form>
             <span>
                 {$product->getId()}
             </span>
             {$product->getName()}
+            {$product->getDescription()}
+            {$product->getPrice()}
         </li>
 
     {/foreach}
