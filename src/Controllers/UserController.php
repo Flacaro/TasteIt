@@ -16,7 +16,7 @@ class UserController {
         return $smarty->display('src/templates/user.tpl');
     }
     public function create() {
-        $fusers = new FUsers();
+        $fusers = new FUser();
         $user = new User();
         $user->setId(NULL);
         $user->setName('Bob');
