@@ -3,7 +3,7 @@
 namespace App\Foundation;
 
 
-class FShoppingCart extends Foundation {
+class FCart extends Foundation {
 
     function __construct()
     {
