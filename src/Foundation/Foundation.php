@@ -9,7 +9,7 @@ use App\Models\Product;
 use PDO;
 
 abstract class Foundation {
-    private $dbh;
+    private $connection;
     private $user = 'root';
     private $pass = 'password';
     private $table;
@@ -17,14 +17,14 @@ abstract class Foundation {
     private $modelNamespace = 'App\Models\\';
 
     public function __construct($table, $model) {
-        $this->dbh = new PDO('mysql:host=localhost;dbname=esempio', $this->user, $this->pass);
+        $this->connection = new PDO('mysql:host=localhost;dbname=esempio', $this->user, $this->pass);
         $this->table = $table;
         $this->model = $this->modelNamespace . $model;
     }
 
     function getAll() {
         $query = 'select * from ' . $this->table;
-        $stmt = $this->dbh->prepare($query);
+        $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->model);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -33,7 +33,7 @@ abstract class Foundation {
     function getById($id) {
         // select * from tableName where id = 112312;
         $query = "select * from " . $this->table . ' where id = ' . $id;
-        $stmt = $this->dbh->prepare($query);
+        $stmt = $this->connection->prepare($query);
 
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->model);
         $stmt->execute();
@@ -60,7 +60,7 @@ abstract class Foundation {
 
         $query = $query . $columnNames . ') values (:'  . $stmtParams . ');';
 
-        $stmt = $this->dbh->prepare($query);
+        $stmt = $this->connection->prepare($query);
 
         foreach($object as $key => $val) {
             $stmt->bindValue(':' . $key, $val);
@@ -83,7 +83,7 @@ abstract class Foundation {
 
         $query = $query . join(', ', $columnsAndValues) . ' where id = ' . $id;
 
-        $stmt = $this->dbh->prepare($query);
+        $stmt = $this->connection->prepare($query);
 
         foreach($object as $key => $val) {
             $stmt->bindValue(':' . $key, $val);
@@ -96,7 +96,7 @@ abstract class Foundation {
     function delete($id) {
 //        delete from tablename where id = 1
         $query = 'delete from ' . $this->table . ' where id = ' . $id;
-        $stmt = $this->dbh->prepare($query);
+        $stmt = $this->connection->prepare($query);
         $stmt->execute();
     }
 
