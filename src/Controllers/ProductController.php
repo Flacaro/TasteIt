@@ -3,15 +3,15 @@
 namespace App\Controllers;
 
 
-use App\Foundation\FProducts;
+use App\Foundation\FProduct;
 use App\Models\Product;
 use Pecee\SimpleRouter\SimpleRouter;
 
 class ProductController {
 
    public function index() {
-        $FProducts = new FProducts();
-       $products = $FProducts->getAll();
+        $FProduct = new FProduct();
+       $products = $FProduct->getAll();
        $smarty = $GLOBALS['smarty'];
        $smarty->assign('products', $products);
        $smarty->assign('yourName', 'Bob');
@@ -20,18 +20,18 @@ class ProductController {
    }
 
    public function create() {
-        $FProducts = new FProducts();
+        $FProduct = new FProduct();
        $product = new Product();
        $product->setId(NULL);
        $product->setName('Pesce');
        $product->setDescription('Buono');
        $product->setPrice(20.5);
-       $FProducts->create($product);
+       $FProduct->create($product);
        //response()->redirect('/products');
    }
 
    public function update($id) {
-        $FProducts = new FProducts();
+        $FProduct = new FProduct();
         //superglobal, come parametro ci va passato il nome dell'input a cui fare riferimento
         $name = $_POST['name'];
         $description = $_POST['description'];
@@ -40,7 +40,7 @@ class ProductController {
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
-        $FProducts->update($id, $product);
+        $FProduct->update($id, $product);
        //$product = new Product();
        //$product->setName("Coca cola");
        //$product->setDescription("Buonissimo");
@@ -49,8 +49,8 @@ class ProductController {
    }
 
    public function edit($id) {
-        $FProducts = new FProducts();
-        $product = $FProducts->getById($id);
+        $FProduct = new FProduct();
+        $product = $FProduct->getById($id);
         $smarty = $GLOBALS['smarty'];
         $smarty->assign('id', $id);
         $smarty->assign('name', $product->getName());
@@ -61,7 +61,7 @@ class ProductController {
 
 
    public function destroy($id) {
-       $FProducts = new FProducts();
-       $FProducts->delete($id);
+       $FProduct = new FProduct();
+       $FProduct->delete($id);
    }
 }

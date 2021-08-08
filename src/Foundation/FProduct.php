@@ -4,7 +4,7 @@
 namespace App\Foundation;
 
 
-class FProducts extends Foundation {
+class FProduct extends Foundation {
 
     function __construct()
     {
