@@ -41,4 +41,13 @@ class UserController {
         $smarty->assign('password', $user->getPassword());
         return $smarty->display('src/templates/user-update.tpl');
     }
+     public function selectCart(){
+
+     }
+    public function ordersRequest(){
+
+    }
+    public function insertData($address,$method,$cardNumber,$expDate,$holder,$cvv){
+
+    }
 }
