@@ -17,7 +17,6 @@ SimpleRouter::get("/users/create", [UserController::class, "create"]);
 SimpleRouter::get("/users/{id}/edit", [UserController::class, "edit"]);
 SimpleRouter::post("/users/{id}", [UserController::class, "update"]);
 
-
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 
     if($exception instanceof NotFoundHttpException && $exception->getCode() === 404) {
