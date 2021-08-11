@@ -41,13 +41,38 @@ class UserController {
         $smarty->assign('password', $user->getPassword());
         return $smarty->display('src/templates/user-update.tpl');
     }
-     public function selectCart(){
+
+    public function getCart($cartId){
 
      }
-    public function ordersRequest(){
+    public function insertPersonalData($address,$method,$cardNumber,$expDate,$holder,$cvv){
 
     }
-    public function insertData($address,$method,$cardNumber,$expDate,$holder,$cvv){
+    public function selectCategory($categoryId) {
+    }
+    public function addToCart($cartId, $productId, $quantity) {
 
     }
+    public function deleteFromCart($cartId, $productId) {
+
+    }
+    public function addToFavourites($favouritesId, $productId) {
+
+    }
+    public function makeOrder($orderId) {
+
+    }
+    public function payWithCard(){
+
+    }
+    public function payWithCash(){
+
+    }
+    public function getAllReviews($productId){
+
+    }
+    public function writeReview($productId){
+
+    }
+
 }

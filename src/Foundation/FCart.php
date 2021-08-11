@@ -9,4 +9,5 @@ class FCart extends Foundation {
     {
         parent::__construct('shoppingcart', 'ShoppingCart');
     }
+
 }

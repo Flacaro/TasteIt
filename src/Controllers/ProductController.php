@@ -64,4 +64,14 @@ class ProductController {
        $FProduct = new FProduct();
        $FProduct->delete($id);
    }
+
+   public function visualizeProductDetails($productId) {
+
+   }
+   public function visualizeProducts($category) {
+
+   }
+   public function getProductImage($productId) {
+
+   }
 }

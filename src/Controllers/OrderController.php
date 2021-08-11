@@ -1,20 +1,16 @@
 <?php
 
 namespace App\Controllers;
-use App\Foundation\FUser;
-use App\Models\User;
-use Pecee\SimpleRouter\SimpleRouter;
 
-class OrderController{
-    public function checkout(){
+class OrderController {
+
+    public function visualizeOrderDetails($orderId) {
 
     }
-    //richiamare addcoupon
-    public function paywithCard(){
+    public function orderAgain($orderId) {
 
     }
-    public function paywithCash(){
+    public function calculateTime(){
 
     }
-    //richiama acceptorder
 }
