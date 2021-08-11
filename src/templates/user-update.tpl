@@ -9,10 +9,13 @@
 </head>
 <body>
     <form action="/users/{$id}" method="POST">
+
+        <input type="text" value="{$name}" name="name">
+        <input type="text" value="{$surname}" name="surname">
+        <input type="text" value="{$email}" name="email">
         <input type="text" value="{$password}" name="password">
-        <button type="submit">
-            Aggiorna
-        </button>
+        <input type="text" value="{$address}" name="address">
+        <button type="submit">Aggiorna </button>
 
     </form>
 </body>

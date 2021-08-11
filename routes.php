@@ -1,5 +1,7 @@
 <?php
 
+use App\Controllers\ProductController;
+use App\Controllers\UserController;
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;

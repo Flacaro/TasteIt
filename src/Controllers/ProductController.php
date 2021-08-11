@@ -20,12 +20,12 @@ class ProductController {
    }
 
    public function create() {
-        $FProduct = new FProduct();
+       $FProduct = new FProduct();
        $product = new Product();
        $product->setId(NULL);
-       $product->setName('Pesce');
+       $product->setName('Vino');
        $product->setDescription('Buono');
-       $product->setPrice(20.5);
+       $product->setPrice(20);
        $FProduct->create($product);
        //response()->redirect('/products');
    }

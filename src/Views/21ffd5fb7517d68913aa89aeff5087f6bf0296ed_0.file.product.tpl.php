@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-05 22:50:32
+/* Smarty version 3.1.39, created on 2021-08-11 22:15:05
   from 'C:\xampp\htdocs\TasteIt\src\templates\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610c4f18e05431_93556226',
+  'unifunc' => 'content_61142fc91a91e0_67918214',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '21ffd5fb7517d68913aa89aeff5087f6bf0296ed' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product.tpl',
-      1 => 1628196631,
+      1 => 1628712898,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_610c4f18e05431_93556226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61142fc91a91e0_67918214 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +31,7 @@ function content_610c4f18e05431_93556226 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
 <ul>
+
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;
@@ -39,11 +40,19 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
 
         <li>
+            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+" method="GET">
+                <button type="submit">X</button>
+            </form>
             <span>
                 <?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 
             </span>
             <?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
+
+            <?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
+
+            <?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
 
         </li>
 
@@ -52,5 +61,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </ul>
 </body>
-</html><?php }
+</html>
+
+<?php }
 }

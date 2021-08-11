@@ -12,6 +12,7 @@ class User
     public $email;
     public $password;
     public $address;
+    public $cartId;
 
     public function __construct() {
     }
@@ -76,6 +77,17 @@ class User
     {
         $this->address = $address;
     }
+
+    public function getCartId()
+    {
+        return $this->cartId;
+    }
+
+    public function setCartId($cartId): void
+    {
+        $this->cartId = $cartId;
+    }
+
 
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-07 15:11:45
+/* Smarty version 3.1.39, created on 2021-08-11 22:40:56
   from 'C:\xampp\htdocs\TasteIt\src\templates\user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610e8691464590_53785282',
+  'unifunc' => 'content_611435d86695d6_18360684',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff56b5e961235e9279d75e92912908d3cebc04c2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\user.tpl',
-      1 => 1628341904,
+      1 => 1628714454,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_610e8691464590_53785282 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611435d86695d6_18360684 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -53,10 +53,18 @@ $_smarty_tpl->tpl_vars['user']->do_else = false;
 
             <?php echo $_smarty_tpl->tpl_vars['user']->value->getEmail();?>
 
+            <?php echo $_smarty_tpl->tpl_vars['user']->value->getPassword();?>
+
+            <?php echo $_smarty_tpl->tpl_vars['user']->value->getAddress();?>
+
+            <?php echo $_smarty_tpl->tpl_vars['user']->value->getCartId();?>
+
         </li>
     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+
 </ul>
 </body>
 </html><?php }

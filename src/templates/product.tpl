@@ -8,7 +8,7 @@
 </head>
 <body>
 <ul>
-    <h1> {$yourName}</h1>
+
     {foreach $products as $product}
 
         <li>

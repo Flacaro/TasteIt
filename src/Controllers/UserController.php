@@ -25,18 +25,28 @@ class UserController {
         $fusers = new FUser();
         $user = new User();
         $user->setId(NULL);
-        $user->setName('Bob');
-        $user->setSurname('Bobby');
-        $user->setEmail("ciccio@gmail.com");
+        $user->setName('Luca');
+        $user->setSurname('Roz');
+        $user->setEmail("luca@gmail.com");
         $user->setPassword('ciao');
+        $user->setAddress('via bologna');
+        $user->setCartId(1);
         $fusers->create($user);
     }
 
     public function update($id) {
         $FUser = new FUser();
         $user = new User();
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
+        $address = $_POST['address'];
+        $user->setName($name);
+        $user->setSurname($surname);
+        $user->setEmail($email);
         $user->setPassword($password);
+        $user->setAddress($address);
         $FUser->update($id,$user);
     }
     public function edit($id) {
@@ -44,7 +54,11 @@ class UserController {
         $user = $FUsers->getById($id);
         $smarty = $GLOBALS['smarty'];
         $smarty->assign('id', $id);
+        $smarty->assign('name', $user->getName());
+        $smarty->assign('surname', $user->getSurname());
+        $smarty->assign('email', $user->getEmail());
         $smarty->assign('password', $user->getPassword());
+        $smarty->assign('address', $user->getAddress());
         return $smarty->display('src/templates/user-update.tpl');
     }
 

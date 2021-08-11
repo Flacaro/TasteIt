@@ -12,7 +12,7 @@
     <form action="/products/{$id}" method="POST">
 
         <input type="text" value="{$name}" name="name">
-        <input type=""text" value="{$description}" name="description">
+        <input type="text" value="{$description}" name="description">
         <input type="text" value="{$price}" name="price">
         <button type="submit">Aggiorna</button>
     </form>
