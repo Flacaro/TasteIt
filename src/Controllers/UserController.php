@@ -2,7 +2,13 @@
 
 
 namespace App\Controllers;
+use App\Foundation\FCart;
+use App\Foundation\FCategory;
+use App\Foundation\FProduct;
 use App\Foundation\FUser;
+use App\Models\Cart;
+use App\Models\Payment;
+use App\Models\Product;
 use App\Models\User;
 use Pecee\SimpleRouter\SimpleRouter;
 
@@ -42,19 +48,35 @@ class UserController {
         return $smarty->display('src/templates/user-update.tpl');
     }
 
-    public function getCart($cartId){
+    public function getCartId($cartId){
+        $FCart = new FCart();
+        return $FCart->getById($cartId);
 
      }
-    public function insertPersonalData($address,$method,$cardNumber,$expDate,$holder,$cvv){
 
+    public function insertPersonalData($method,$cardNumber,$expDate,$holder,$cvv){
     }
+
     public function selectCategory($categoryId) {
-    }
-    public function addToCart($cartId, $productId, $quantity) {
+        $FCategory = new FCategory();
+        return $FCategory->getById($categoryId);
 
     }
+
+    //da vedere
+    public function addToCart($cartId, $productId) {
+        $FCart = new FCart();
+        $FProduct = new FProduct();
+        $cart = new Cart();
+        $cart = $FCart->getById($cartId);
+
+        $FProduct->create($cart);
+    }
+
     public function deleteFromCart($cartId, $productId) {
-
+        $FProduct = new FProduct();
+        $FProduct->getById($cartId);
+        $FProduct->delete($productId);
     }
     public function addToFavourites($favouritesId, $productId) {
 

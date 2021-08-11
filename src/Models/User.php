@@ -11,6 +11,7 @@ class User
     public $surname;
     public $email;
     public $password;
+    public $address;
 
     public function __construct() {
     }
@@ -64,6 +65,16 @@ class User
     public function setPassword($password): void
     {
         $this->password = $password;
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress($address): void
+    {
+        $this->address = $address;
     }
 
 

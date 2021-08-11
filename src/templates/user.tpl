@@ -22,6 +22,8 @@
             {$user->getEmail()}
         </li>
     {/foreach}
+
+
 </ul>
 </body>
 </html>

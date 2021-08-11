@@ -10,7 +10,5 @@ class OrderController {
     public function orderAgain($orderId) {
 
     }
-    public function calculateTime(){
 
-    }
 }
