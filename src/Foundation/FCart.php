@@ -7,7 +7,7 @@ class FCart extends Foundation {
 
     function __construct()
     {
-        parent::__construct('shoppingcart', 'ShoppingCart');
+        parent::__construct('cart', 'Cart');
     }
 
 }
