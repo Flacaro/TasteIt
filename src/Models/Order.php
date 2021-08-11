@@ -10,6 +10,9 @@ class Order{
     public $coupon;
     public $user;
 
+    public function __construct() {
+    }
+
     public function getId()
     {
         return $this->id;

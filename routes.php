@@ -18,6 +18,9 @@ SimpleRouter::get("/products/{id}", [ProductController::class, "destroy"]);
 SimpleRouter::get("/users/create", [UserController::class, "create"]);
 SimpleRouter::get("/users/{id}/edit", [UserController::class, "edit"]);
 SimpleRouter::post("/users/{id}", [UserController::class, "update"]);
+SimpleRouter::get("/orders", [OrderController::class, "visualizeOrders"])->name('orders');
+SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
+
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

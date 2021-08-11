@@ -10,7 +10,7 @@ use Pecee\SimpleRouter\SimpleRouter;
 class ProductController {
 
    public function index() {
-        $FProduct = new FProduct();
+       $FProduct = new FProduct();
        $products = $FProduct->getAll();
        $smarty = $GLOBALS['smarty'];
        $smarty->assign('products', $products);
