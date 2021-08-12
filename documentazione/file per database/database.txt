@@ -2,6 +2,10 @@ create table carts(
 cartId bigint primary key auto_increment not null
 )
 
+create table favourites(
+favId bigint primary key auto_increment not null
+)
+
 create table users(
 id bigint primary key auto_increment not null,
 name varchar(10) not null,
@@ -51,9 +55,6 @@ alter table orders add foreign key(userId) references users(id)
 alter table orders add foreign key(paymentId) references payments(paymentId)
 alter table orders add foreign key(restaurantName) references restaurant(restaurantName)
 
-create table favourites(
-favId bigint primary key auto_increment not null
-)
 
 create table categories(
 categoryId bigint primary key auto_increment not null,
