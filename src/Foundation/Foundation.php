@@ -17,7 +17,7 @@ abstract class Foundation {
     private $modelNamespace = 'App\Models\\';
 
     public function __construct($table, $model) {
-        $this->connection = new PDO('mysql:host=localhost;dbname=esempio', $this->user, $this->pass);
+        $this->connection = new PDO('mysql:host=localhost;dbname=tasteIt', $this->user, $this->pass);
         $this->table = $table;
         $this->model = $this->modelNamespace . $model;
     }

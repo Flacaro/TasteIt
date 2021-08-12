@@ -10,6 +10,7 @@ class FCategory extends Foundation {
         parent::__construct('category', 'Category');
     }
 
+
    function getCategoryByIdWithProducts($categoryId) {
        // select * from tableName where id = 112312;
        $query = "select * from " . $this->table . ' where id = ' . $categoryId;

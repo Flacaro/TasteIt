@@ -8,10 +8,12 @@ name varchar(10) not null,
 surname varchar(10) not null,
 email varchar(20) not null,
 password varchar(10) not null,
-cartId bigint not null
+cartId bigint not null,
+favId bigint default null
 )
 
 alter table users add foreign key(cartId) references carts(cartId)
+alter table users add foreign key(favId) references favourites(favId)
 
 create table shippingAddresses(
 addressId bigint primary key auto_increment not null,
@@ -54,8 +56,11 @@ favId bigint primary key auto_increment not null
 )
 
 create table categories(
-categoryId bigint primary key auto_increment not null
+categoryId bigint primary key auto_increment not null,
+restaurantName varchar(7) NOT NULL
 )
+   
+alter table categories add foreign key(restaurantName) references restaurant(restaurantName)  
 
 create table products(
 productId bigint primary key auto_increment not null,
@@ -90,3 +95,19 @@ restaurantName varchar(7) not null
 
 alter table coupons add foreign key(userId) references users(id)
 alter table coupons add foreign key(restaurantName) references restaurant(restaurantName)
+
+create table product-cart(
+productId bigint default null,
+cartId bigint default null
+)
+
+alter table product-cart add foreign key(productId) references products(productId)
+alter table product-cart add foreign key(cartId) references carts(cartId)
+
+create table order-product(
+orderId bigint default null,
+productId bigint default null
+)
+
+alter table order-product add foreign key(orderId) references orders(orderId)
+alter table order-product add foreign key(productId) references products(productId)

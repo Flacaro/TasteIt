@@ -21,7 +21,6 @@
             {$user->getSurname()}
             {$user->getEmail()}
             {$user->getPassword()}
-            {$user->getAddress()}
             {$user->getCartId()}
         </li>
     {/foreach}

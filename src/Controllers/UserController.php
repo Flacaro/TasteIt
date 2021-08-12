@@ -24,13 +24,12 @@ class UserController {
     public function create() {
         $fusers = new FUser();
         $user = new User();
-        $user->setId(NULL);
+        $user->setId(0);
         $user->setName('Sab');
         $user->setSurname('Ca');
         $user->setEmail("sab@gmail.com");
         $user->setPassword('ciao');
-        $user->setAddress('via bologna');
-        $user->setCartId(3);
+        $user->setCartId(2);
         $fusers->create($user);
     }
 
@@ -71,14 +70,6 @@ class UserController {
         return $smarty->display('src/templates/cart.tpl');
      }
 
-
-
-   /* function getCategoryProducts($categoryId) {
-        ....
-        $category = $FCategory->getCategoryById($categoryId);
-        $smarty->assign("products", $category->products);
-        ...
-    }*/
 
     public function addToCart($cartId, $productId) {
         $FCart = new FCart();
