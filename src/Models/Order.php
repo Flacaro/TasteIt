@@ -18,6 +18,11 @@ class Order{
         return $this->id;
     }
 
+    public function setId($id)
+    {
+        $this->id=$id;
+    }
+
     public function getCreationDate()
     {
         return $this->creationDate;
