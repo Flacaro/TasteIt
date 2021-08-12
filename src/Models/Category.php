@@ -6,11 +6,19 @@ class Category{
     public $categoryName;
     //è composizione, va rivisto
     public $categoryProducts = [];
-    //serve anche restaurant?
 
-    public function getId(){
+    public function getCategoryId()
+    {
         return $this->categoryId;
     }
+
+    public function setCategoryId($categoryId): void
+    {
+        $this->categoryId = $categoryId;
+    }
+    //serve anche restaurant?
+
+
 
     public function getCategoryName(){
         return $this->categoryName;
