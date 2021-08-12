@@ -25,12 +25,12 @@ class UserController {
         $fusers = new FUser();
         $user = new User();
         $user->setId(NULL);
-        $user->setName('Luca');
-        $user->setSurname('Roz');
-        $user->setEmail("luca@gmail.com");
+        $user->setName('Sab');
+        $user->setSurname('Ca');
+        $user->setEmail("sab@gmail.com");
         $user->setPassword('ciao');
         $user->setAddress('via bologna');
-        $user->setCartId(1);
+        $user->setCartId(3);
         $fusers->create($user);
     }
 
@@ -62,22 +62,24 @@ class UserController {
         return $smarty->display('src/templates/user-update.tpl');
     }
 
-    public function getCartId($cartId){
-        $FCart = new FCart();
-        return $FCart->getById($cartId);
-
+    public function getCartId($id){
+        $FUsers = new FUser();
+        $user = $FUsers->getById($id);
+        $smarty = $GLOBALS['smarty'];
+        $smarty->assign('id', $id);
+        $smarty->assign('cartId', $user->getCartId());
+        return $smarty->display('src/templates/cart.tpl');
      }
 
-    public function insertPersonalData($method,$cardNumber,$expDate,$holder,$cvv){
-    }
 
-    public function selectCategory($categoryId) {
-        $FCategory = new FCategory();
-        return $FCategory->getById($categoryId);
 
-    }
+   /* function getCategoryProducts($categoryId) {
+        ....
+        $category = $FCategory->getCategoryById($categoryId);
+        $smarty->assign("products", $category->products);
+        ...
+    }*/
 
-    //da vedere
     public function addToCart($cartId, $productId) {
         $FCart = new FCart();
         $FProduct = new FProduct();
@@ -109,6 +111,8 @@ class UserController {
     }
     public function writeReview($productId){
 
+    }
+    public function insertPersonalData($method,$cardNumber,$expDate,$holder,$cvv){
     }
 
 }

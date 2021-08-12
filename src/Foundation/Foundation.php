@@ -9,11 +9,11 @@ use App\Models\Product;
 use PDO;
 
 abstract class Foundation {
-    private $connection;
+    protected $connection;
     private $user = 'root';
     private $pass = 'password';
-    private $table;
-    private $model;
+    protected $table;
+    protected $model;
     private $modelNamespace = 'App\Models\\';
 
     public function __construct($table, $model) {

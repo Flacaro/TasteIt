@@ -5,7 +5,7 @@ class Category{
     private $categoryId;
     public $categoryName;
     //è composizione, va rivisto
-    public $categoryProducts=array();
+    public $categoryProducts = [];
     //serve anche restaurant?
 
     public function getId(){

@@ -10,5 +10,4 @@ class FProduct extends Foundation {
     {
         parent::__construct('products', 'Product');
     }
-
 }

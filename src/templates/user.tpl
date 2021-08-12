@@ -26,7 +26,6 @@
         </li>
     {/foreach}
 
-
 </ul>
 </body>
 </html>
