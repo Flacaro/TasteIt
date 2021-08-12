@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-07 15:14:40
+/* Smarty version 3.1.39, created on 2021-08-11 21:34:00
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610e8740d6e5a7_43641196',
+  'unifunc' => 'content_611426280888e2_88684980',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '03119ef6a6fd3ca58b2af29221079e8fac24ecf7' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\user.tpl',
-      1 => 1628342064,
+      1 => 1628708966,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_610e8740d6e5a7_43641196 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611426280888e2_88684980 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -57,6 +57,8 @@ $_smarty_tpl->tpl_vars['user']->do_else = false;
     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+
 </ul>
 </body>
 </html><?php }

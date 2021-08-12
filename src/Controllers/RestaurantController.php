@@ -6,9 +6,20 @@ class RestaurantController {
 
     public function acceptOrder() {
 
-    }
-    public function addOrder($orderId, $orders){
 
+    }
+
+    public function addOrder($total, $arrivalTime, $payment, $couponid, $userid){
+        $FOrder = new FOrder();
+        $order = new Order();
+        $order->setId(NULL);
+        $order->setCreationDate(date("h:i:sa"));
+        $order->setTotal($total);
+        $order->setArrivalTime($arrivalTime);
+        $order->setPayment($payment);
+        $order->setCoupon($couponid);
+        $order->setUser($userid);
+        $FOrder->create($order);
     }
     public function addCategory($categoryId, $categories) {
 
