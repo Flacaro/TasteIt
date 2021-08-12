@@ -18,6 +18,8 @@ SimpleRouter::get("/products/{id}", [ProductController::class, "destroy"]);
 SimpleRouter::get("/users/create", [UserController::class, "create"]);
 SimpleRouter::get("/users/{id}/edit", [UserController::class, "edit"]);
 SimpleRouter::post("/users/{id}", [UserController::class, "update"]);
+SimpleRouter::get("/users/{id}/cart", [UserController::class, "getCartId"]);
+SimpleRouter::get("/categories/{categoryId}/products", [UserController::class, "getCategoryProducts"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 
