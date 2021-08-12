@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="/orders/{$id}" method="GET">
+<form action="/orders/add" method="GET">
 
     <input type="number" value="{$total}" name="total">
     <input type="time" value="{$arrivalTime}" name="arrivalTime">

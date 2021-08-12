@@ -6,7 +6,7 @@ class ShippingAddress{
     public $city;
     public $cap;
     public $street;
-    public $streetNumber;
+    public $homeNumber;
     public $user;
 
 
@@ -38,13 +38,13 @@ class ShippingAddress{
         $this->street=$street;
     }
 
-    public function getStreetNumber()
+    public function getHomeNumber()
     {
-        return $this->streetNumber;
+        return $this->homeNumber;
     }
 
-    public function setStreetNumber($streetNumber){
-        $this->streetNumber=$streetNumber;
+    public function setHomeNumber($streetNumber){
+        $this->homeNumber=$streetNumber;
     }
 
     public function getUser()

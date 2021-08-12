@@ -28,6 +28,9 @@ class UserController {
         $user->setName('Sab');
         $user->setSurname('Ca');
         $user->setEmail("sab@gmail.com");
+        $user->setName('Giulia');
+        $user->setSurname('Boh');
+        $user->setEmail("giulia@gmail.com");
         $user->setPassword('ciao');
         $user->setAddress('via bologna');
         $user->setCartId(3);

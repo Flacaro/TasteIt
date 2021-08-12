@@ -7,7 +7,7 @@ namespace App\Models;
 class Review {
  private $id;
  public $stars;
- public $review;
+ public $comment;
 
     public function getId()
     {
@@ -29,14 +29,14 @@ class Review {
         $this->stars = $stars;
     }
 
-    public function getReview()
+    public function getComment()
     {
-        return $this->review;
+        return $this->comment;
     }
 
-    public function setReview($review): void
+    public function setComment($review): void
     {
-        $this->review = $review;
+        $this->comment = $review;
     }
 
 
