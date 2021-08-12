@@ -98,18 +98,18 @@ restaurantName varchar(7) not null
 alter table coupons add foreign key(userId) references users(id)
 alter table coupons add foreign key(restaurantName) references restaurant(restaurantName)
 
-create table product-cart(
+create table product_cart(
 productId bigint default null,
 cartId bigint default null
 )
 
-alter table product-cart add foreign key(productId) references products(productId)
-alter table product-cart add foreign key(cartId) references carts(cartId)
+alter table product_cart add foreign key(productId) references products(productId)
+alter table product_cart add foreign key(cartId) references carts(cartId)
 
-create table order-product(
+create table order_product(
 orderId bigint default null,
 productId bigint default null
 )
 
-alter table order-product add foreign key(orderId) references orders(orderId)
-alter table order-product add foreign key(productId) references products(productId)
+alter table order_product add foreign key(orderId) references orders(orderId)
+alter table order_product add foreign key(productId) references products(productId)

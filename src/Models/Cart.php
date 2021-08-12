@@ -4,22 +4,11 @@ namespace App\Models;
 
 class Cart {
     private $cartId;
-    public $user;
-    public $products = array();
+    public $products = [];
 
     public function getId()
     {
         return $this->cartId;
-    }
-
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    public function setUser($customer)
-    {
-        $this->user = $customer;
     }
 
     public function getProducts()
