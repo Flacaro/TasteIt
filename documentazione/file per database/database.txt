@@ -19,7 +19,7 @@ cap int not null,
 city varchar(10) not null,
 street varchar(20) not null,
 homeNumber int not null,
-userId bigint not null,
+userId bigint not null
 )
 
 alter table shippingAddresses add foreign key(userId) references users(id)
@@ -42,7 +42,7 @@ total float not null,
 arrivalTime datetime not null,
 userId bigint not null,
 paymentId bigint not null,
-restaurantName varchar(7) not null,
+restaurantName varchar(7) not null
 )
 
 alter table orders add foreign key(userId) references users(id)
@@ -67,7 +67,7 @@ favId bigint default null
 )
 
 alter table products add foreign key(favId) references favourites(favId)
-alter table products add foreign key(categoryId) references category(categoryId)
+alter table products add foreign key(categoryId) references categories(categoryId)
 
 
 create table reviews(
