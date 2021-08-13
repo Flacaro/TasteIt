@@ -112,7 +112,10 @@ PRIMARY KEY  (productId,cartId)
 
 create table orders_products(
 orderId bigint default null,
-productId bigint primary key not null
+productId bigint primary key not null,
+name varchar(20) not null,
+description varchar(100) default null,
+price float not null
 )
 
 create table products_favourites(
