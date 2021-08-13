@@ -10,6 +10,18 @@ class Order{
     public $couponId;
     public $user;
     public $restaurantId;
+    public $state;
+    public $products=array();
+
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    public function setState($state): void
+    {
+        $this->state = $state;
+    }
 
     public function __construct() {
     }
