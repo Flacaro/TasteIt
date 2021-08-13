@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-12 16:39:13
+/* Smarty version 3.1.39, created on 2021-08-13 16:52:44
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611532919a3c82_72205265',
+  'unifunc' => 'content_6116873cf3e168_69737300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1947df8942ae2d38154d296ae439855ed57de65b' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product.tpl',
-      1 => 1628719385,
+      1 => 1628866363,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611532919a3c82_72205265 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6116873cf3e168_69737300 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,13 +31,13 @@ function content_611532919a3c82_72205265 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
 <ul>
-
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
+        <?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 
         <li>
             <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>

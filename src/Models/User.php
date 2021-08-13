@@ -11,8 +11,8 @@ class User
     public $surname;
     public $email;
     public $password;
-    public $address;
     public $cartId;
+    public $favId;
 
     public function __construct() {
     }
@@ -68,14 +68,10 @@ class User
         $this->password = $password;
     }
 
-    public function getAddress()
-    {
-        return $this->address;
-    }
 
-    public function setAddress($address): void
+    public function setCartId($cartId): void
     {
-        $this->address = $address;
+        $this->cartId = $cartId;
     }
 
     public function getCartId()
@@ -83,9 +79,14 @@ class User
         return $this->cartId;
     }
 
-    public function setCartId($cartId): void
+    public function getFavId()
     {
-        $this->cartId = $cartId;
+        return $this->favId;
+    }
+
+    public function setFavId($favId): void
+    {
+        $this->favId = $favId;
     }
 
 

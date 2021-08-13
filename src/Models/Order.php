@@ -2,25 +2,26 @@
 namespace App\Models;
 
 class Order{
-    private $id;
+    private $orderId;
     public $creationDate;
     public $total;
     public $arrivalTime;
-    public $payment;
-    public $coupon;
+    public $paymentId;
+    public $couponId;
     public $user;
+    public $restaurantId;
 
     public function __construct() {
     }
 
-    public function getId()
+    public function getOrderId()
     {
-        return $this->id;
+        return $this->orderId;
     }
 
-    public function setId($id)
+    public function setOrderId($orderId)
     {
-        $this->id=$id;
+        $this->orderId=$orderId;
     }
 
     public function getCreationDate()
@@ -50,22 +51,22 @@ class Order{
         $this->arrivalTime=$time;
     }
 
-    public function getPayment()
+    public function getPaymentId()
     {
-        return $this->payment;
+        return $this->paymentId;
     }
 
-    public function setPayment($transaction){
-        $this->payment=$transaction;
+    public function setPaymentId($transaction){
+        $this->paymentId=$transaction;
     }
 
-    public function getCoupon()
+    public function getCouponId()
     {
-        return $this->coupon;
+        return $this->couponId;
     }
 
-    public function setCoupon($coupon){
-        $this->coupon=$coupon;
+    public function setCouponId($couponId){
+        $this->couponId=$couponId;
     }
 
     public function getUser()
@@ -76,4 +77,15 @@ class Order{
     public function setUser($customer){
         $this->user=$customer;
     }
+
+    public function getRestaurantId()
+    {
+        return $this->restaurantId;
+    }
+
+    public function setRestaurantId($restaurantId): void
+    {
+        $this->restaurantId = $restaurantId;
+    }
+
 }

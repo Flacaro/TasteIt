@@ -8,9 +8,7 @@
 </head>
 <body>
 <ul>
-
     {foreach $products as $product}
-
         <li>
             <form action="/products/{$product->getId()}" method="GET">
                 <button type="submit">X</button>

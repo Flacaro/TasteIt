@@ -54,6 +54,7 @@ orderId bigint primary key auto_increment not null,
 creationDate datetime not null,
 total float not null,
 arrivalTime datetime not null,
+couponId bigint DEFAULT NULL,
 userId bigint not null,
 paymentId bigint not null,
 restaurantId int not null
@@ -62,6 +63,7 @@ restaurantId int not null
 alter table orders add foreign key(userId) references users(id)
 alter table orders add foreign key(paymentId) references paymentMethods(paymentId)
 alter table orders add foreign key(restaurantId) references restaurant(restaurantId)
+alter table orders add foreign key(couponId) references coupons(couponId)
 
 
 create table categories(
@@ -104,30 +106,24 @@ alter table coupons add foreign key(restaurantId) references restaurant(restaura
 
 create table product_cart(
 productId bigint default null,
-cartId bigint default null
+cartId bigint default null,
+PRIMARY KEY  (productId,cartId)
 )
-
-alter table product_cart add foreign key(productId) references products(productId)
-alter table product_cart add foreign key(cartId) references carts(cartId)
 
 create table order_product(
 orderId bigint default null,
-productId bigint default null
+productId bigint default null,
+PRIMARY KEY  (productId,orderId)
 )
-
-alter table order_product add foreign key(orderId) references orders(orderId)
-alter table order_product add foreign key(productId) references products(productId)
 
 create table products_favourites(
 favId bigint default null,
-productId bigint default null
+productId bigint default null,
+PRIMARY KEY  (productId,favId)
 )
-alter table products_favourites add foreign key(favId) references favourites(favId)
-alter table products_favourites add foreign key(productId) references products(productId)
 
 create table users_coupons(
 userId bigint default null,
-couponId bigint default null
+couponId bigint default null,
+PRIMARY KEY  (userId,couponId)
 )
-alter table users_coupons add foreign key(userId) references users(id)
-alter table users_coupons add foreign key(couponId) references coupons(couponId)

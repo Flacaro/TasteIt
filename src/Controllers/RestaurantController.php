@@ -18,12 +18,12 @@ class RestaurantController {
     public function addOrder(){
         $FOrder = new FOrder();
         $order = new Order();
-        $order->setId(NULL);
+        $order->setOrderId(NULL);
         $order->setCreationDate(date('Y-m-d'));
         $order->setTotal(110.5);
         $order->setArrivalTime(time());
-        $order->setPayment(1);
-        $order->setCoupon(1);
+        $order->setPaymentId(1);
+        $order->setCouponId(1);
         $order->setUser(1);
         $FOrder->create($order);
     }

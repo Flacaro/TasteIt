@@ -3,9 +3,10 @@ namespace App\Models;
 
 class Restaurant{
     public $restaurantName;
+    private $restaurantId;
     public $address;
-    public $coupon;
-    public $category;
+    public $email;
+    public $password;
 
 
     public function getRestaurantName()
@@ -29,29 +30,36 @@ class Restaurant{
         $this->address = $address;
     }
 
-    public function getCoupon()
+    public function getPassword()
     {
-        return $this->coupon;
-    }
-
-    public function setCoupon($coupon): void
-    {
-        $this->coupon = $coupon;
-    }
-
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    public function setCategory($category): void
-    {
-        $this->category = $category;
+        return $this->password;
     }
 
 
+    public function setPassword($password): void
+    {
+        $this->password = $password;
+    }
 
+    public function getRestaurantId()
+    {
+        return $this->restaurantId;
+    }
 
+    public function setRestaurantId($restaurantId): void
+    {
+        $this->restaurantId = $restaurantId;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
 
 
 

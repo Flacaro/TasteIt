@@ -7,7 +7,7 @@ use App\Foundation\FCategory;
 use App\Foundation\FProduct;
 use App\Foundation\FUser;
 use App\Models\Cart;
-use App\Models\Payment;
+use App\Models\PaymentMethod;
 use App\Models\Product;
 use App\Models\User;
 use Pecee\SimpleRouter\SimpleRouter;

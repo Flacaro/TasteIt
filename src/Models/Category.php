@@ -4,6 +4,7 @@ namespace App\Models;
 class Category{
     private $categoryId;
     public $categoryName;
+    public $restaurantId;
     //è composizione, va rivisto
     public $categoryProducts = [];
 
@@ -16,8 +17,6 @@ class Category{
     {
         $this->categoryId = $categoryId;
     }
-    //serve anche restaurant?
-
 
 
     public function getCategoryName(){
@@ -35,4 +34,15 @@ class Category{
     public function setCategoryProducts($products=array()){
         $this->categoryProducts=$products;
     }
+
+    public function getRestaurantId()
+    {
+        return $this->restaurantId;
+    }
+
+    public function setRestaurantId($restaurantId): void
+    {
+        $this->restaurantId = $restaurantId;
+    }
+
 }

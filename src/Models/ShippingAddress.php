@@ -3,11 +3,12 @@ namespace App\Models;
 
 class ShippingAddress{
 
+    public $addressId;
     public $city;
     public $cap;
     public $street;
     public $homeNumber;
-    public $user;
+    public $userId;
 
 
 
@@ -47,12 +48,23 @@ class ShippingAddress{
         $this->homeNumber=$streetNumber;
     }
 
-    public function getUser()
+    public function getUserId()
     {
-        return $this->user;
+        return $this->userId;
     }
 
-    public function setUser($customer){
-        $this->user=$customer;
+    public function setUserId($customer){
+        $this->userId=$customer;
     }
+
+    public function getAddressId()
+    {
+        return $this->addressId;
+    }
+
+    public function setAddressId($addressId): void
+    {
+        $this->addressId = $addressId;
+    }
+
 }
