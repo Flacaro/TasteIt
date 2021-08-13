@@ -19,7 +19,6 @@ class ProductController {
     
    }
 
-
    public function create() {
        $FProduct = new FProduct();
        $product = new Product();
