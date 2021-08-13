@@ -58,7 +58,8 @@ alter table orders add foreign key(restaurantName) references restaurant(restaur
 
 create table categories(
 categoryId bigint primary key auto_increment not null,
-restaurantName varchar(7) NOT NULL
+restaurantName varchar(7) NOT NULL,
+categoryName varchar(20) NOT NULL
 )
    
 alter table categories add foreign key(restaurantName) references restaurant(restaurantName)  
