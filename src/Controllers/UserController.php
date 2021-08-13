@@ -24,15 +24,13 @@ class UserController {
     public function create() {
         $fusers = new FUser();
         $user = new User();
-        $user->setId(0);
-        $user->setName('Sab');
-        $user->setSurname('Ca');
-        $user->setEmail("sab@gmail.com");
-        $user->setName('Giulia');
-        $user->setSurname('Boh');
-        $user->setEmail("giulia@gmail.com");
+        $user->setId(NULL);
+        $user->setName('Mario');
+        $user->setSurname('Rossi');
+        $user->setEmail("mario@gmail.com");
         $user->setPassword('ciao');
-        $user->setCartId(2);
+        $cart= new Cart();
+        $user->setCartId($cart->getCartId());
         $fusers->create($user);
     }
 

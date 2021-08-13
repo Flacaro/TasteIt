@@ -10,11 +10,11 @@
 <ul>
     {foreach $products as $product}
         <li>
-            <form action="/products/{$product->getId()}" method="GET">
+            <form action="/products/{$product->getProductId()}" method="GET">
                 <button type="submit">X</button>
             </form>
             <span>
-                {$product->getId()}
+                {$product->getProductId()}
             </span>
             {$product->getName()}
             {$product->getDescription()}
