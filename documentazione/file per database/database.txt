@@ -113,8 +113,15 @@ PRIMARY KEY  (productId,cartId)
 
 create table orders_products(
 orderId bigint default null,
+<<<<<<< HEAD
 quantity int default null,
 productId bigint primary key not null
+=======
+productId bigint primary key not null,
+name varchar(20) not null,
+description varchar(100) default null,
+price float not null
+>>>>>>> 7f0267ac9e148bc588702b2e96146cde2376a359
 )
 
 create table products_favourites(
