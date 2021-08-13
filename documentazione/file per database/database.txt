@@ -104,16 +104,15 @@ restaurantId int not null
 
 alter table coupons add foreign key(restaurantId) references restaurant(restaurantId)
 
-create table product_cart(
+create table products_carts(
 productId bigint default null,
 cartId bigint default null,
 PRIMARY KEY  (productId,cartId)
 )
 
-create table order_product(
+create table orders_products(
 orderId bigint default null,
-productId bigint default null,
-PRIMARY KEY  (productId,orderId)
+productId bigint primary key not null
 )
 
 create table products_favourites(
