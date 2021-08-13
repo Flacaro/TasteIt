@@ -57,7 +57,8 @@ arrivalTime datetime not null,
 couponId bigint DEFAULT NULL,
 userId bigint not null,
 paymentId bigint not null,
-restaurantId int not null
+restaurantId int not null,
+state int not null
 )
 
 alter table orders add foreign key(userId) references users(id)
@@ -112,6 +113,7 @@ PRIMARY KEY  (productId,cartId)
 
 create table orders_products(
 orderId bigint default null,
+quantity int default null,
 productId bigint primary key not null
 )
 
