@@ -17,20 +17,26 @@ class UserController {
     public function index() {
         $fusers = new FUser();
         $users = $fusers->getAll();
-        $smarty = $GLOBALS['smarty'];
-        $smarty->assign('users', $users);
-        return $smarty->display('src/templates/user.tpl');
+        return view('user', [
+            'users' => $users
+        ]);
     }
     public function create() {
         $fusers = new FUser();
+        $fcart = new FCart();
+
         $user = new User();
         $user->setId(NULL);
         $user->setName('Mario');
         $user->setSurname('Rossi');
         $user->setEmail("mario@gmail.com");
         $user->setPassword('ciao');
-        $cart= new Cart();
-        $user->setCartId($cart->getCartId());
+
+        $cart = new Cart();
+        $cart->setCartId(NULL);
+        $cartId = $fcart->create($cart);
+
+        $user->setCartId($cartId);
         $fusers->create($user);
     }
 
@@ -46,30 +52,37 @@ class UserController {
         $user->setSurname($surname);
         $user->setEmail($email);
         $user->setPassword($password);
-        $user->setAddress($address);
         $FUser->update($id,$user);
     }
     public function edit($id) {
         $FUsers = new FUser();
         $user = $FUsers->getById($id);
-        $smarty = $GLOBALS['smarty'];
-        $smarty->assign('id', $id);
-        $smarty->assign('name', $user->getName());
-        $smarty->assign('surname', $user->getSurname());
-        $smarty->assign('email', $user->getEmail());
-        $smarty->assign('password', $user->getPassword());
-        $smarty->assign('address', $user->getAddress());
-        return $smarty->display('src/templates/user-update.tpl');
+//        $smarty = $GLOBALS['smarty'];
+//        $smarty->assign('id', $id);
+//        $smarty->assign('name', $user->getName());
+//        $smarty->assign('surname', $user->getSurname());
+//        $smarty->assign('email', $user->getEmail());
+//        $smarty->assign('password', $user->getPassword());
+//        $smarty->assign('address', $user->getAddress());
+//        return $smarty->display('src/templates/user-update.tpl');
+
+        return view('user-update', [
+            'id' => $id,
+            'name' => $user->getName(),
+            'surname' => $user->getSurname(),
+            'email' => $user->getEmail(),
+            'password' => $user->getPassword()
+        ]);
     }
 
-    public function getCartId($id){
+  /*  public function getCartId($id){
         $FUsers = new FUser();
         $user = $FUsers->getById($id);
         $smarty = $GLOBALS['smarty'];
         $smarty->assign('id', $id);
         $smarty->assign('cartId', $user->getCartId());
         return $smarty->display('src/templates/cart.tpl');
-     }
+     }*/
 
 
     public function addToCart($cartId, $productId) {

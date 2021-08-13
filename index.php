@@ -2,14 +2,12 @@
 
 require_once "vendor/autoload.php";
 require_once "routes.php";
+require_once "View.php";
 
 use Pecee\SimpleRouter\SimpleRouter;
 
-$smarty = new Smarty();
+$smarty = new View();
 
-
-$smarty->setTemplateDir('src/templates/');
-$smarty->setCompileDir('src/Views/');
 $GLOBALS['smarty'] = $smarty;
 
 

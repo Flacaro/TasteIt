@@ -18,6 +18,7 @@ class FCart extends Foundation {
         $query = $query.') values ();';
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
+        return $this->connection->lastInsertId();
+        //$stmt->debugDumpParams();
     }
 }
