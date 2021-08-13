@@ -4,14 +4,19 @@ namespace App\Models;
 
 class Cart {
     private $cartId;
-    public $products = [];
+    //public $products = [];
 
-    public function getId()
+    public function getCartId()
     {
         return $this->cartId;
     }
 
-    public function getProducts()
+    public function setCartId($cartId)
+    {
+        $this->$cartId = $cartId;
+    }
+
+   /* public function getProducts()
     {
         return $this->products;
     }
@@ -19,19 +24,8 @@ class Cart {
     public function setProducts($productsArray=array())
     {
         $this->products = $productsArray;
-    }
+    }*/
 
-
-    public function getCartId()
-    {
-        return $this->cartId;
-    }
-
-
-    public function setCartId($cartId): void
-    {
-        $this->cartId = $cartId;
-    }
 
 
 }

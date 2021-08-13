@@ -4,23 +4,23 @@
 namespace App\Models;
 
 
-class Payment {
- private $id;
+class PaymentMethod {
+ private $paymentId;
  public $method;
  public $cardNumber;
  public $expirationDate;
- public $holder;
+ public $cardHolder;
  public $cvv;
 
 
-    public function getId()
+    public function getPaymentId()
     {
-        return $this->id;
+        return $this->paymentId;
     }
 
-    public function setId($id): void
+    public function setPaymentId($paymentId): void
     {
-        $this->id = $id;
+        $this->paymentId = $paymentId;
     }
 
     public function getMethod()
@@ -58,15 +58,15 @@ class Payment {
     }
 
 
-    public function getHolder()
+    public function getCardHolder()
     {
-        return $this->holder;
+        return $this->cardHolder;
     }
 
 
-    public function setHolder($holder): void
+    public function setCardHolder($cardHolder): void
     {
-        $this->holder = $holder;
+        $this->cardHolder = $cardHolder;
     }
 
 

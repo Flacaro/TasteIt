@@ -7,6 +7,7 @@ namespace App\Models;
 class Coupon {
     private $id;
     public $priceCut;
+    public $restaurantId;
 
     public function getId()
     {
@@ -26,6 +27,16 @@ class Coupon {
     public function setPriceCut($priceCut): void
     {
         $this->priceCut = $priceCut;
+    }
+
+    public function getRestaurantId()
+    {
+        return $this->restaurantId;
+    }
+
+    public function setRestaurantId($restaurantId): void
+    {
+        $this->restaurantId = $restaurantId;
     }
 
 

@@ -22,10 +22,11 @@ class ProductController {
    public function create() {
        $FProduct = new FProduct();
        $product = new Product();
-       $product->setId(NULL);
+       $product->setProductId(NULL);
        $product->setName('Vino');
        $product->setDescription('Buono');
        $product->setPrice(20);
+       $product->setCategoryId(2);
        $FProduct->create($product);
        //response()->redirect('/products');
    }

@@ -5,18 +5,20 @@ namespace App\Models;
 
 
 class Review {
- private $id;
+ private $reviewId;
  public $stars;
  public $comment;
+ public $userId;
+ public $productId;
 
-    public function getId()
+    public function getReviewId()
     {
-        return $this->id;
+        return $this->reviewId;
     }
 
-    public function setId($id): void
+    public function setReviewId($reviewId): void
     {
-        $this->id = $id;
+        $this->reviewId = $reviewId;
     }
 
     public function getStars()
@@ -37,6 +39,26 @@ class Review {
     public function setComment($review): void
     {
         $this->comment = $review;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserId($userId): void
+    {
+        $this->userId = $userId;
+    }
+
+    public function getProductId()
+    {
+        return $this->productId;
+    }
+
+    public function setProductId($productId): void
+    {
+        $this->productId = $productId;
     }
 
 

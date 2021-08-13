@@ -6,10 +6,11 @@ namespace App\Models;
 
 class Product {
 
-    private $id;
+    private $productId;
     public $name;
     public $description;
     public $price;
+    public $categoryId;
 
     public function __construct() {
     }
@@ -24,14 +25,14 @@ class Product {
         $this->name = $name;
     }
 
-    public function getId()
+    public function getProductId()
     {
-        return $this->id;
+        return $this->productId;
     }
 //penso vada eliminato
-    public function setId($id): void
+    public function setProductId($productId): void
     {
-        $this->id = $id;
+        $this->productId = $productId;
     }
 
     public function getDescription()
@@ -53,6 +54,16 @@ class Product {
     public function setPrice($price): void
     {
         $this->price = $price;
+    }
+
+    public function getCategoryId()
+    {
+        return $this->categoryId;
+    }
+
+    public function setCategoryId($categoryId): void
+    {
+        $this->categoryId = $categoryId;
     }
 
 

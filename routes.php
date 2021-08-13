@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\CartController;
 use App\Controllers\OrderController;
 use App\Controllers\ProductController;
 use App\Controllers\RestaurantController;
@@ -24,6 +25,7 @@ SimpleRouter::get("/users/{id}/cart", [UserController::class, "getCartId"]);
 SimpleRouter::get("/categories/{categoryId}/products", [UserController::class, "getCategoryProducts"]);
 SimpleRouter::get("/orders", [OrderController::class, "visualizeOrders"])->name('orders');
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
+SimpleRouter::get("/cart/create", [CartController::class, "create"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 
