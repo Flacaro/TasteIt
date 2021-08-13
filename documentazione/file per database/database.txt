@@ -31,7 +31,7 @@ userId bigint not null
 alter table shippingAddresses add foreign key(userId) references users(id)
 
 create table restaurant(
-restaurantId bigint primary key auto_increment not null,
+restaurantId int primary key auto_increment not null,
 restaurantName varchar(7) not null,
 email varchar(40) not null,
 password varchar(20) not null,
@@ -60,7 +60,7 @@ restaurantId int not null
 )
 
 alter table orders add foreign key(userId) references users(id)
-alter table orders add foreign key(paymentId) references payments(paymentId)
+alter table orders add foreign key(paymentId) references paymentMethods(paymentId)
 alter table orders add foreign key(restaurantId) references restaurant(restaurantId)
 
 
@@ -77,7 +77,7 @@ productId bigint primary key auto_increment not null,
 name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
-categoryId bigint not null,
+categoryId bigint not null
 )
 
 alter table products add foreign key(categoryId) references categories(categoryId)
@@ -119,15 +119,15 @@ alter table order_product add foreign key(orderId) references orders(orderId)
 alter table order_product add foreign key(productId) references products(productId)
 
 create table products_favourites(
-favId bigint default null
+favId bigint default null,
 productId bigint default null
 )
-alter table order_product add foreign key(favId) references favpurites(favId)
-alter table order_product add foreign key(productId) references products(productId)
+alter table products_favourites add foreign key(favId) references favourites(favId)
+alter table products_favourites add foreign key(productId) references products(productId)
 
-create table users_coupon(
-userId bigint default null
+create table users_coupons(
+userId bigint default null,
 couponId bigint default null
 )
-alter table order_product add foreign key(userId) references users(userId)
-alter table order_product add foreign key(couponId) references coupons(couponId)
+alter table users_coupons add foreign key(userId) references users(id)
+alter table users_coupons add foreign key(couponId) references coupons(couponId)
