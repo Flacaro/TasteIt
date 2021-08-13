@@ -67,7 +67,7 @@ abstract class Foundation {
         }
 
         $stmt->execute();
-        //$stmt->debugDumpParams();
+        $stmt->debugDumpParams();
 
     }
 
