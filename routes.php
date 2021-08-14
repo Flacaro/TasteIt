@@ -26,6 +26,8 @@ SimpleRouter::get("/categories/{categoryId}/products", [UserController::class, "
 SimpleRouter::get("/orders", [OrderController::class, "visualizeOrders"])->name('orders');
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
 SimpleRouter::get("/cart/create", [CartController::class, "create"]);
+SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
+SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

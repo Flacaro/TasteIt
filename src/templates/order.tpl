@@ -13,10 +13,10 @@
     {foreach $orders as $order}
 
         <li>
-            <form action="/orders/{$order->getId()}" method="GET">
+            <form action="/orders/{$order->getOrderId()}" method="GET">
             </form>
             <span>
-            {$order->getId()}
+            {$order->getOrderId()}
         </span>
             {$order->getCreationDate()}
             {$order->getTotal()}

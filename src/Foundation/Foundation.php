@@ -40,7 +40,7 @@ abstract class Foundation {
         return $stmt->fetch();
     }
 
-    function create($object): string {
+    function create($object){
         $objectKeys = [];
 
         $query = 'insert into ' . $this->table . '(';
@@ -61,14 +61,13 @@ abstract class Foundation {
         $query = $query . $columnNames . ') values (:'  . $stmtParams . ');';
 
         $stmt = $this->connection->prepare($query);
-
         foreach($object as $key => $val) {
             $stmt->bindValue(':' . $key, $val);
         }
 
         $stmt->execute();
-        return $this->connection->lastInsertId();
-//        $stmt->debugDumpParams();
+        //return $this->connection->lastInsertId();
+        $stmt->debugDumpParams();
     }
 
 

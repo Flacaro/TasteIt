@@ -52,12 +52,18 @@ class ProductController {
    public function edit($id) {
         $FProduct = new FProduct();
         $product = $FProduct->getById($id);
-        $smarty = $GLOBALS['smarty'];
-        $smarty->assign('id', $id);
-        $smarty->assign('name', $product->getName());
-        $smarty->assign('description', $product->getDescription());
-        $smarty->assign('price', $product->getPrice());
-        return $smarty->display('src/templates/product-update.tpl');
+        //$smarty = $GLOBALS['smarty'];
+        //$smarty->assign('id', $id);
+        //$smarty->assign('name', $product->getName());
+        //$smarty->assign('description', $product->getDescription());
+       // $smarty->assign('price', $product->getPrice());
+       // return $smarty->display('src/templates/product-update.tpl');
+       return view('product-update', [
+           'id' => $id,
+           'name' => $product->getName(),
+           'description' => $product->getDescription(),
+           'price' => $product->getPrice()
+       ]);
    }
 
 
