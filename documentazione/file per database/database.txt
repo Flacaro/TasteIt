@@ -1,10 +1,53 @@
 create table carts(
 cartId bigint primary key auto_increment not null
-)
+);
 
 create table favourites(
 favId bigint primary key auto_increment not null
-)
+);
+
+create table orderStates(
+id bigint primary key auto_increment,
+state varchar(30) default 'Accepted'
+);
+
+
+create table paymentMethods(
+paymentId bigint primary key auto_increment not null,
+method varchar(30) not null
+);
+
+create table restaurant(
+restaurantId int primary key auto_increment not null,
+restaurantName varchar(7) not null,
+email varchar(40) not null,
+password varchar(20) not null,
+address varchar(20) not null
+);
+
+create table categories(
+categoryId bigint primary key auto_increment not null,
+restaurantId int NOT NULL,
+categoryName varchar(30) NOT NULL,
+foreign key(restaurantId) references restaurant(restaurantId)
+);
+
+create table products(
+productId bigint primary key auto_increment not null,
+name varchar(20) not null,
+description varchar(100) default null,
+price float not null,
+categoryId bigint not null,
+foreign key(categoryId) references categories(categoryId)
+);
+
+
+create table coupons(
+couponId bigint primary key auto_increment not null,
+priceCut int not null,
+restaurantId int not null,
+foreign key(restaurantId) references restaurant(restaurantId)
+);
 
 create table users(
 id bigint primary key auto_increment not null,
@@ -13,11 +56,20 @@ surname varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
 cartId bigint not null,
-favId bigint default null
-)
+favId bigint default null,
+FOREIGN KEY (favId) references favourites(favId),
+FOREIGN KEY (cartId) references carts(cartId)
+);
 
-alter table users add foreign key(cartId) references carts(cartId)
-alter table users add foreign key(favId) references favourites(favId)
+create table reviews(
+reviewId bigint primary key auto_increment not null,
+stars int default null,
+comment varchar(100) default null,
+userId bigint not null,
+productId bigint not null,
+foreign key(userId) references users(id),
+foreign key(productId) references products(productId)
+);
 
 create table shippingAddresses(
 addressId bigint primary key auto_increment not null,
@@ -25,109 +77,72 @@ cap int not null,
 city varchar(20) not null,
 street varchar(20) not null,
 homeNumber int not null,
-userId bigint not null
-)
-
-alter table shippingAddresses add foreign key(userId) references users(id)
-
-create table restaurant(
-restaurantId int primary key auto_increment not null,
-restaurantName varchar(7) not null,
-email varchar(40) not null,
-password varchar(20) not null,
-address varchar(20) not null
-)
-
-create table paymentMethods(
-paymentId bigint primary key auto_increment not null,
 userId bigint not null,
-method boolean not null,
-cardNumber int DEFAULT NULL,
-expirationDate DateTime DEFAULT NULL,
-cvv int DEFAULT NULL,
-cardHolder varchar(40) DEFAULT NULL
-)
-alter table paymentMethods add foreign key(userId) references users(id)
+FOREIGN KEY (userId) references users(id)
+);
+
+create table users_paymentMethods(
+id bigint primary key auto_increment,
+userId bigint not null,
+paymentId bigint not null,
+cardNumber int,
+expirationDate DateTime,
+cvv int not null,
+cardHolder varchar(40),
+foreign key(userId) references users(id),
+foreign key(paymentId) references paymentMethods(paymentId)
+);
 
 create table orders(
-orderId bigint primary key auto_increment not null,
+orderId bigint primary key auto_increment,
 creationDate datetime not null,
 total float not null,
 arrivalTime datetime not null,
-couponId bigint DEFAULT NULL,
-userId bigint not null,
-paymentId bigint not null,
-restaurantId int not null,
-state int not null
-)
+couponId bigint,
+userId bigint,
+paymentId bigint,
+restaurantId int,
+stateId bigint,
+foreign key(userId) references users(id),
+foreign key(paymentId) references paymentMethods(paymentId),
+foreign key(restaurantId) references restaurant(restaurantId),
+foreign key(couponId) references coupons(couponId),
+foreign key(stateId) references orderStates(id)
+);
 
-alter table orders add foreign key(userId) references users(id)
-alter table orders add foreign key(paymentId) references paymentMethods(paymentId)
-alter table orders add foreign key(restaurantId) references restaurant(restaurantId)
-alter table orders add foreign key(couponId) references coupons(couponId)
 
+create table products_carts(
+id bigint auto_increment primary key,
+productId bigint default null,
+cartId bigint default null,
+quantity int default 0,
+foreign key(productId) references products(productId),
+foreign key(cartId) references carts(cartId)
+);
 
-create table categories(
-categoryId bigint primary key auto_increment not null,
-restaurantId int NOT NULL,
-categoryName varchar(20) NOT NULL
-)
-   
-alter table categories add foreign key(restaurantId) references restaurant(restaurantId)  
-
-create table products(
-productId bigint primary key auto_increment not null,
+create table orders_products(
+id bigint primary key auto_increment,
+orderId bigint,
+quantity int default 1,
 name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
-categoryId bigint not null
-)
-
-alter table products add foreign key(categoryId) references categories(categoryId)
-
-
-create table reviews(
-reviewId bigint primary key auto_increment not null,
-stars int default null,
-comment varchar(100) default null,
-userId bigint not null,
-productId bigint not null
-)
-
-alter table reviews add foreign key(userId) references users(id)
-alter table reviews add foreign key(productId) references products(productId)
-
-create table coupons(
-couponId bigint primary key auto_increment not null,
-priceCut int not null,
-restaurantId int not null
-)
-
-alter table coupons add foreign key(restaurantId) references restaurant(restaurantId)
-
-create table products_carts(
-productId bigint default null,
-cartId bigint default null,
-PRIMARY KEY  (productId,cartId)
-)
-
-create table orders_products(
-orderId bigint default null,
-quantity int default null,
-productId bigint primary key not null,
-name varchar(20) not null,
-description varchar(100) default null,
-price float not null
-)
+foreign key(orderId) references orders(orderId)
+);
 
 create table products_favourites(
-favId bigint default null,
-productId bigint default null,
-PRIMARY KEY  (productId,favId)
-)
+id bigint primary key auto_increment,
+favId bigint,
+productId bigint,
+foreign key(favId) references favourites(favId),
+foreign key(productId) references products(productId)
+);
 
 create table users_coupons(
-userId bigint default null,
-couponId bigint default null,
-PRIMARY KEY  (userId,couponId)
-)
+id bigint primary key auto_increment,
+userId bigint,
+couponId bigint,
+quantity int default 1,
+foreign key(userId) references users(id),
+foreign key(couponId) references coupons(couponId)
+);
