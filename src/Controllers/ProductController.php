@@ -3,7 +3,9 @@
 namespace App\Controllers;
 
 
+use App\Foundation\FCategory;
 use App\Foundation\FProduct;
+use App\Models\Category;
 use App\Models\Product;
 use Pecee\SimpleRouter\SimpleRouter;
 
@@ -12,22 +14,29 @@ class ProductController {
    public function index() {
        $FProduct = new FProduct();
        $products = $FProduct->getAll();
-       $smarty = $GLOBALS['smarty'];
-       $smarty->assign('products', $products);
-       $smarty->assign('yourName', 'Bob');
-       return $smarty->display('src/templates/product.tpl');
+
+       return view('product', [
+           'products' => $products,
+       ]);
     
    }
 
    public function create() {
        $FProduct = new FProduct();
+       $FCategory = new FCategory();
+
+       $category = new Category();
+       $category->setCategoryName("Primi");
+       $category->setRestaurantId(1);
+
+       $categoryId = $FCategory->create($category);
+
        $product = new Product();
-       $product->setProductId(NULL);
        $product->setName('Vino');
        $product->setDescription('Buono');
-       $product->setPrice(20);
-       $product->setCategoryId(2);
-       $FProduct->create($product);
+       $product->setPrice(15);
+       $product->setCategoryId($categoryId);
+       $productId = $FProduct->create($product);
        //response()->redirect('/products');
    }
 
@@ -37,21 +46,20 @@ class ProductController {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
+        $categoryId = $_POST['categoryId'];
         $product = new Product();
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
+        $product->setCategoryId($categoryId);
         $FProduct->update($id, $product);
-       //$product = new Product();
-       //$product->setName("Coca cola");
-       //$product->setDescription("Buonissimo");
-       //$product->setPrice(10);
-       //$FProducts->update($id, $product);
    }
 
    public function edit($id) {
         $FProduct = new FProduct();
         $product = $FProduct->getById($id);
+//        $product = $FProduct->getAll();
+
         //$smarty = $GLOBALS['smarty'];
         //$smarty->assign('id', $id);
         //$smarty->assign('name', $product->getName());
@@ -59,10 +67,11 @@ class ProductController {
        // $smarty->assign('price', $product->getPrice());
        // return $smarty->display('src/templates/product-update.tpl');
        return view('product-update', [
-           'id' => $id,
+           'id' => $product->getId(),
            'name' => $product->getName(),
            'description' => $product->getDescription(),
-           'price' => $product->getPrice()
+           'price' => $product->getPrice(),
+           'categoryId' => $product->getCategoryId()
        ]);
    }
 

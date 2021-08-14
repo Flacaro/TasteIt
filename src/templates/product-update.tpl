@@ -8,12 +8,14 @@
     <title>Document</title>
 </head>
 <body>
+<h1>ID: {$id}</h1>
     {* Action rappresenta l'url alla quale viene fatta la richiesta quando si chiama un metodo   *}
     <form action="/products/{$id}" method="POST">
 
         <input type="text" value="{$name}" name="name">
         <input type="text" value="{$description}" name="description">
         <input type="text" value="{$price}" name="price">
+        <input type="text" value="{$categoryId}" name="categoryId" hidden>
         <button type="submit">Aggiorna</button>
     </form>
 </body>

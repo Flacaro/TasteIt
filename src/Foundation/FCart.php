@@ -13,7 +13,8 @@ class FCart extends Foundation {
     function getCartId($cartId, $userId) {
         //query che va a prendere i prodotti di quell'utente nel suo  carrello
     }
-    function create($object) {
+
+        function create($object): string {
         $query = 'insert into ' . $this->table . '(';
         $query = $query.') values ();';
         $stmt = $this->connection->prepare($query);

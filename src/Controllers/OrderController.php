@@ -14,7 +14,6 @@ class OrderController {
         $orders = $FOrder->getAll();
         $smarty = $GLOBALS['smarty'];
         $smarty->assign('orders', $orders);
-        $smarty->assign('yourName', 'Bob');
         return $smarty->display('src/templates/order.tpl');
     }
     public function visualizeOrderDetails($orderId) {

@@ -5,22 +5,18 @@ namespace App\Models;
 
 
 class PaymentMethod {
- private $paymentId;
+ private $id;
  public $method;
- public $cardNumber;
- public $expirationDate;
- public $cardHolder;
- public $cvv;
 
 
-    public function getPaymentId()
+    public function getId()
     {
-        return $this->paymentId;
+        return $this->id;
     }
 
-    public function setPaymentId($paymentId): void
+    public function setId($id): void
     {
-        $this->paymentId = $paymentId;
+        $this->id = $id;
     }
 
     public function getMethod()
@@ -31,54 +27,6 @@ class PaymentMethod {
     public function setMethod($method): void
     {
         $this->method = $method;
-    }
-
-
-    public function getCardNumber()
-    {
-        return $this->cardNumber;
-    }
-
-
-    public function setCardNumber($cardNumber): void
-    {
-        $this->cardNumber = $cardNumber;
-    }
-
-
-    public function getExpirationDate()
-    {
-        return $this->expirationDate;
-    }
-
-
-    public function setExpirationDate($expirationDate): void
-    {
-        $this->expirationDate = $expirationDate;
-    }
-
-
-    public function getCardHolder()
-    {
-        return $this->cardHolder;
-    }
-
-
-    public function setCardHolder($cardHolder): void
-    {
-        $this->cardHolder = $cardHolder;
-    }
-
-
-    public function getCvv()
-    {
-        return $this->cvv;
-    }
-
-
-    public function setCvv($cvv): void
-    {
-        $this->cvv = $cvv;
     }
 
 

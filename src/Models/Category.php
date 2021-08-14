@@ -2,20 +2,21 @@
 namespace App\Models;
 
 class Category{
-    private $categoryId;
+    private $id;
     public $categoryName;
     public $restaurantId;
     //è composizione, va rivisto
-    public $categoryProducts = [];
+    private $categoryProducts = [];
 
-    public function getCategoryId()
+    public function getId()
     {
-        return $this->categoryId;
+
+        return $this->id;
     }
 
-    public function setCategoryId($categoryId): void
+    public function setId($categoryId): void
     {
-        $this->categoryId = $categoryId;
+        $this->id = $categoryId;
     }
 
 

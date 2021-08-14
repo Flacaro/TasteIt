@@ -2,22 +2,22 @@
 namespace App\Models;
 
 class Restaurant{
-    public $restaurantName;
-    private $restaurantId;
+    public $name;
+    private $id;
     public $address;
     public $email;
     public $password;
 
 
-    public function getRestaurantName()
+    public function getName()
     {
-        return $this->restaurantName;
+        return $this->name;
     }
 
 
-    public function setRestaurantName($restaurantName): void
+    public function setName($name): void
     {
-        $this->restaurantName = $restaurantName;
+        $this->name = $name;
     }
 
     public function getAddress()
@@ -41,14 +41,14 @@ class Restaurant{
         $this->password = $password;
     }
 
-    public function getRestaurantId()
+    public function getId()
     {
-        return $this->restaurantId;
+        return $this->id;
     }
 
-    public function setRestaurantId($restaurantId): void
+    public function setId($id): void
     {
-        $this->restaurantId = $restaurantId;
+        $this->id = $id;
     }
 
     public function getEmail()

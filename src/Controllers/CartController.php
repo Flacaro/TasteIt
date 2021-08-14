@@ -8,7 +8,7 @@ use PDO;
 
 class CartController {
 
- public function getProductsOfCart($cartId,$productId) {
+ public function getProductsOfCart($id,$productId) {
 
  }
 
@@ -16,7 +16,7 @@ class CartController {
  {
      $fcarts = new FCart();
      $cart = new Cart();
-     $cart->setCartId(NULL);
+     $cart->setId(NULL);
      $fcarts->create($cart);
 
 

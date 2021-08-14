@@ -1,9 +1,9 @@
 create table carts(
-cartId bigint primary key auto_increment not null
+id bigint primary key auto_increment
 );
 
 create table favourites(
-favId bigint primary key auto_increment not null
+id bigint primary key auto_increment
 );
 
 create table orderStates(
@@ -13,40 +13,40 @@ state varchar(30) default 'Accepted'
 
 
 create table paymentMethods(
-paymentId bigint primary key auto_increment not null,
+id bigint primary key auto_increment,
 method varchar(30) not null
 );
 
 create table restaurant(
-restaurantId int primary key auto_increment not null,
-restaurantName varchar(20) not null,
+id int primary key auto_increment,
+name varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
 address varchar(20) not null
 );
 
 create table categories(
-categoryId bigint primary key auto_increment not null,
-restaurantId int NOT NULL,
+id bigint primary key auto_increment,
+id int NOT NULL,
 categoryName varchar(30) NOT NULL,
-foreign key(restaurantId) references restaurant(restaurantId)
+foreign key(id) references restaurant(id)
 );
 
 create table products(
-productId bigint primary key auto_increment not null,
+id bigint primary key auto_increment not null,
 name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
 categoryId bigint not null,
-foreign key(categoryId) references categories(categoryId)
+foreign key(categoryId) references categories(id)
 );
 
 
 create table coupons(
-couponId bigint primary key auto_increment not null,
+id bigint primary key auto_increment,
 priceCut int not null,
-restaurantId int not null,
-foreign key(restaurantId) references restaurant(restaurantId)
+id int not null,
+foreign key(id) references restaurant(id)
 );
 
 create table users(
@@ -55,24 +55,24 @@ name varchar(20) not null,
 surname varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
-cartId bigint not null,
-favId bigint default null,
-FOREIGN KEY (favId) references favourites(favId),
-FOREIGN KEY (cartId) references carts(cartId)
+id bigint not null,
+id bigint default null,
+FOREIGN KEY (id) references favourites(id),
+FOREIGN KEY (id) references carts(id)
 );
 
 create table reviews(
-reviewId bigint primary key auto_increment not null,
+id bigint primary key auto_increment,
 stars int default null,
 comment varchar(100) default null,
 userId bigint not null,
 productId bigint not null,
 foreign key(userId) references users(id),
-foreign key(productId) references products(productId)
+foreign key(productId) references products(id)
 );
 
 create table shippingAddresses(
-addressId bigint primary key auto_increment not null,
+id bigint primary key auto_increment,
 cap int not null,
 city varchar(20) not null,
 street varchar(20) not null,
@@ -84,58 +84,58 @@ FOREIGN KEY (userId) references users(id)
 create table users_paymentMethods(
 id bigint primary key auto_increment,
 userId bigint not null,
-paymentId bigint not null,
+id bigint not null,
 cardNumber int,
 expirationDate DateTime,
 cvv int not null,
 cardHolder varchar(40),
 foreign key(userId) references users(id),
-foreign key(paymentId) references paymentMethods(paymentId)
+foreign key(id) references paymentMethods(id)
 );
 
 create table orders(
-orderId bigint primary key auto_increment,
+id bigint primary key auto_increment,
 creationDate datetime not null,
 total float not null,
 arrivalTime datetime not null,
 couponId bigint,
 userId bigint,
-paymentId bigint,
-restaurantId int,
+id bigint,
+id int,
 stateId bigint,
 foreign key(userId) references users(id),
-foreign key(paymentId) references paymentMethods(paymentId),
-foreign key(restaurantId) references restaurant(restaurantId),
-foreign key(couponId) references coupons(couponId),
+foreign key(id) references paymentMethods(id),
+foreign key(id) references restaurant(id),
+foreign key(couponId) references coupons(id),
 foreign key(stateId) references orderStates(id)
 );
 
 
 create table products_carts(
 id bigint auto_increment primary key,
-productId bigint default null,
-cartId bigint default null,
+productId bigint,
+id bigint default null,
 quantity int default 0,
-foreign key(productId) references products(productId),
-foreign key(cartId) references carts(cartId)
+foreign key(productId) references products(id),
+foreign key(id) references carts(id)
 );
 
 create table orders_products(
 id bigint primary key auto_increment,
-orderId bigint,
+id bigint,
 quantity int default 1,
 name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
-foreign key(orderId) references orders(orderId)
+foreign key(id) references orders(id)
 );
 
 create table products_favourites(
 id bigint primary key auto_increment,
-favId bigint,
+id bigint,
 productId bigint,
-foreign key(favId) references favourites(favId),
-foreign key(productId) references products(productId)
+foreign key(id) references favourites(id),
+foreign key(productId) references products(id)
 );
 
 create table users_coupons(
@@ -144,7 +144,7 @@ userId bigint,
 couponId bigint,
 quantity int default 1,
 foreign key(userId) references users(id),
-foreign key(couponId) references coupons(couponId)
+foreign key(couponId) references coupons(id)
 );
 
 insert into restaurant values(NULL, "Taste IT", "tasteit@gmail.com", "secret", "Via Roma, 12");

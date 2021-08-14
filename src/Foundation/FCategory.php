@@ -7,7 +7,7 @@ class FCategory extends Foundation {
 
     function __construct()
     {
-        parent::__construct('category', 'Category');
+        parent::__construct('categories', 'Category');
     }
 
 

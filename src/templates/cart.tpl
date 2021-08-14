@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    {$cartId}
+    {$id}
 </body>
 </html>

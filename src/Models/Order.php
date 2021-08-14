@@ -2,7 +2,7 @@
 namespace App\Models;
 
 class Order{
-    private $orderId;
+    private $id;
     public $creationDate;
     public $total;
     public $arrivalTime;
@@ -26,14 +26,14 @@ class Order{
     public function __construct() {
     }
 
-    public function getOrderId()
+    public function getId()
     {
-        return $this->orderId;
+        return $this->id;
     }
 
-    public function setOrderId($orderId)
+    public function setId($id)
     {
-        $this->orderId=$orderId;
+        $this->id=$id;
     }
 
     public function getCreationDate()

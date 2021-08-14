@@ -14,6 +14,7 @@
         <input type="text" value="{$surname}" name="surname">
         <input type="text" value="{$email}" name="email">
         <input type="text" value="{$password}" name="password">
+        <input type="text" value="{$cartId}" name="cartId" hidden>
         <button type="submit">Aggiorna </button>
 
     </form>

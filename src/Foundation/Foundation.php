@@ -32,15 +32,17 @@ abstract class Foundation {
 
     function getById($id) {
         // select * from tableName where id = 112312;
-        $query = "select * from " . $this->table . ' where id = ' . $id;
+        $query = "select * from " . $this->table . ' where ' . $this->table . '.id = ' . $id;
         $stmt = $this->connection->prepare($query);
+//        $stmt->bindValue(":id", $id);
 
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->model);
         $stmt->execute();
+//        $stmt->debugDumpParams();
         return $stmt->fetch();
     }
 
-    function create($object){
+    function create($object): string{
         $objectKeys = [];
 
         $query = 'insert into ' . $this->table . '(';
@@ -66,8 +68,8 @@ abstract class Foundation {
         }
 
         $stmt->execute();
-        //return $this->connection->lastInsertId();
-        $stmt->debugDumpParams();
+//        $stmt->debugDumpParams();
+        return $this->connection->lastInsertId();
     }
 
 
@@ -88,7 +90,7 @@ abstract class Foundation {
             $stmt->bindValue(':' . $key, $val);
         }
         $stmt->execute();
-//        $stmt->debugDumpParams();
+        $stmt->debugDumpParams();
 
     }
 

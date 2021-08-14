@@ -37,18 +37,18 @@ class RestaurantController {
             'id' => $id,
             'creationDate' =>$order->getCreationDate(),
             'total'=> $order->getTotal(),
-            'paymentId' => $order->getPaymentId(),
+            'id' => $order->getPaymentId(),
             'arrivalTime' => $order->getArrivalTime(),
             'couponId' => $order->getCouponId(),
             'userId' => $order->getUserId(),
-            'restaurantId' => $order->getRestaurantId(),
+            'id' => $order->getRestaurantId(),
         ]);
     }
 
     public function addOrder(){
         $FOrder = new FOrder();
         $order = new Order();
-        $order->setOrderId(NULL);
+        $order->setId(NULL);
         $order->setCreationDate(date('Y-m-d'));
         $order->setTotal(110.5);
         $order->setArrivalTime(time());

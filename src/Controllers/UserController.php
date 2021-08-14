@@ -27,13 +27,13 @@ class UserController {
 
         $user = new User();
         $user->setId(NULL);
-        $user->setName('Mario');
-        $user->setSurname('Rossi');
-        $user->setEmail("mario@gmail.com");
-        $user->setPassword('ciao');
+        $user->setName('Sandro');
+        $user->setSurname('Bianchi');
+        $user->setEmail("sa@gmail.com");
+        $user->setPassword('buffo');
 
         $cart = new Cart();
-        $cart->setCartId(NULL);
+        $cart->setId(NULL);
         $cartId = $fcart->create($cart);
 
         $user->setCartId($cartId);
@@ -47,11 +47,12 @@ class UserController {
         $surname = $_POST['surname'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $address = $_POST['address'];
+        $cartId = $_POST['cartId'];
         $user->setName($name);
         $user->setSurname($surname);
         $user->setEmail($email);
         $user->setPassword($password);
+        $user->setCartId($cartId);
         $FUser->update($id,$user);
     }
     public function edit($id) {
@@ -71,16 +72,17 @@ class UserController {
             'name' => $user->getName(),
             'surname' => $user->getSurname(),
             'email' => $user->getEmail(),
-            'password' => $user->getPassword()
+            'password' => $user->getPassword(),
+            'cartId' => $user->getCartId()
         ]);
     }
 
-  /*  public function getCartId($id){
+  /*  public function getId($id){
         $FUsers = new FUser();
         $user = $FUsers->getById($id);
         $smarty = $GLOBALS['smarty'];
         $smarty->assign('id', $id);
-        $smarty->assign('cartId', $user->getCartId());
+        $smarty->assign('id', $user->getId());
         return $smarty->display('src/templates/cart.tpl');
      }*/
 

@@ -5,20 +5,20 @@ namespace App\Models;
 
 
 class Review {
- private $reviewId;
+ private $id;
  public $stars;
  public $comment;
  public $userId;
  public $productId;
 
-    public function getReviewId()
+    public function getId()
     {
-        return $this->reviewId;
+        return $this->id;
     }
 
-    public function setReviewId($reviewId): void
+    public function setId($id): void
     {
-        $this->reviewId = $reviewId;
+        $this->id = $id;
     }
 
     public function getStars()

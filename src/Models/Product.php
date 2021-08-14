@@ -6,7 +6,7 @@ namespace App\Models;
 
 class Product {
 
-    private $productId;
+    private $id;
     public $name;
     public $description;
     public $price;
@@ -25,14 +25,14 @@ class Product {
         $this->name = $name;
     }
 
-    public function getProductId()
+    public function getId()
     {
-        return $this->productId;
+        return $this->id;
     }
 //penso vada eliminato
-    public function setProductId($productId): void
+    public function setId($id): void
     {
-        $this->productId = $productId;
+        $this->id = $id;
     }
 
     public function getDescription()

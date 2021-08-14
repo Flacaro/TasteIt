@@ -3,7 +3,7 @@
 namespace App\Models;
 
 class Favourites{
-    private $favId;
+    private $id;
     private $products = array();
 
     public function getListid()
@@ -16,7 +16,7 @@ class Favourites{
         return $this->products;
     }
 
-    public function setProducts($productsarray=array())
+    public function setProducts($productsarray= [])
     {
         $this->products = $productsarray;
     }

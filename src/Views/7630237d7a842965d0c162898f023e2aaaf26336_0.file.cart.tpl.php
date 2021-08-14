@@ -31,7 +31,7 @@ function content_61150e47b2d7a9_99288940 (Smarty_Internal_Template $_smarty_tpl)
     <title>Document</title>
 </head>
 <body>
-    <?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+    <?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 
 </body>
 </html><?php }
