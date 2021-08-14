@@ -19,7 +19,7 @@ method varchar(30) not null
 
 create table restaurant(
 restaurantId int primary key auto_increment not null,
-restaurantName varchar(7) not null,
+restaurantName varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
 address varchar(20) not null
@@ -146,3 +146,5 @@ quantity int default 1,
 foreign key(userId) references users(id),
 foreign key(couponId) references coupons(couponId)
 );
+
+insert into restaurant values(NULL, "Taste IT", "tasteit@gmail.com", "secret", "Via Roma, 12");
