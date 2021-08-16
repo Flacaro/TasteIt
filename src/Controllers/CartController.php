@@ -19,6 +19,5 @@ class CartController {
      $cart->setId(NULL);
      $fcarts->create($cart);
 
-
  }
 }

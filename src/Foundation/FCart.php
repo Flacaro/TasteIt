@@ -3,6 +3,8 @@
 namespace App\Foundation;
 
 
+use PDO;
+
 class FCart extends Foundation {
 
     function __construct()
@@ -24,8 +26,11 @@ class FCart extends Foundation {
     }
 
     function getProductsOfCart($id) {
-    //si va aprendere i prodotti dalla tabella carts_products
+    //si va a prendere i prodotti dalla tabella carts_products
         //SELECT * FROM products_carts AS prodotti WHERE prodotti.productsId in (SELECT ProductId FROM Products_carts WHERE cartId=$id)
-        $query= 'select * from products_carts' . 
+        $query= 'select * from products where id in (SELECT productId FROM `products_carts` WHERE cartId'.$id.')';
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "Product");
+        return $stmt->execute();
     }
 }
