@@ -32,5 +32,6 @@ class FCart extends Foundation {
         $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "Product");
         return $stmt->execute();
+
     }
 }
