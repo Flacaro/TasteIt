@@ -30,7 +30,7 @@ create table categories(
 id bigint primary key auto_increment,
 restaurantId int NOT NULL,
 categoryName varchar(30) NOT NULL,
-foreign key(Restaurantid) references restaurant(id)
+foreign key(restaurantId) references restaurant(id)
 );
 
 create table products(
@@ -46,8 +46,8 @@ foreign key(categoryId) references categories(id)
 create table coupons(
 id bigint primary key auto_increment,
 priceCut int not null,
-id int not null,
-foreign key(id) references restaurant(id)
+restaurantId int not null,
+foreign key(restaurantId) references restaurant(id)
 );
 
 create table users(
@@ -56,10 +56,10 @@ name varchar(20) not null,
 surname varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
-id bigint not null,
-id bigint default null,
-FOREIGN KEY (id) references favourites(id),
-FOREIGN KEY (id) references carts(id)
+favId bigint not null,
+cartId bigint default null,
+FOREIGN KEY (favId) references favourites(id),
+FOREIGN KEY (id) references carts(cartId)
 );
 
 create table reviews(
@@ -85,13 +85,13 @@ FOREIGN KEY (userId) references users(id)
 create table users_paymentMethods(
 id bigint primary key auto_increment,
 userId bigint not null,
-id bigint not null,
+paymentId bigint not null,
 cardNumber int,
 expirationDate DateTime,
 cvv int not null,
 cardHolder varchar(40),
 foreign key(userId) references users(id),
-foreign key(id) references paymentMethods(id)
+foreign key(paymentId) references paymentMethods(id)
 );
 
 create table orders(
@@ -101,12 +101,12 @@ total float not null,
 arrivalTime datetime not null,
 couponId bigint,
 userId bigint,
-id bigint,
-id int,
+paymentId bigint,
+restaurantId int,
 stateId bigint,
 foreign key(userId) references users(id),
-foreign key(id) references paymentMethods(id),
-foreign key(id) references restaurant(id),
+foreign key(paymentId) references paymentMethods(id),
+foreign key(restaurantId) references restaurant(id),
 foreign key(couponId) references coupons(id),
 foreign key(stateId) references orderStates(id)
 );
@@ -115,27 +115,27 @@ foreign key(stateId) references orderStates(id)
 create table products_carts(
 id bigint auto_increment primary key,
 productId bigint,
-id bigint default null,
+cartId bigint default null,
 quantity int default 0,
 foreign key(productId) references products(id),
-foreign key(id) references carts(id)
+foreign key(cartId) references carts(id)
 );
 
 create table orders_products(
 id bigint primary key auto_increment,
-id bigint,
+orderId bigint,
 quantity int default 1,
 name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
-foreign key(id) references orders(id)
+foreign key(orderId) references orders(id)
 );
 
 create table products_favourites(
 id bigint primary key auto_increment,
-id bigint,
+favId bigint,
 productId bigint,
-foreign key(id) references favourites(id),
+foreign key(favId) references favourites(id),
 foreign key(productId) references products(id)
 );
 
