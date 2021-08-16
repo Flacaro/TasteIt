@@ -24,7 +24,5 @@ class FCart extends Foundation {
     }
 
     function getProductsOfCart($id) {
-        $query=' SELECT * FROM products_carts '.$this->table.'(';
-    //si va aprendere i prodotti dalla tabella carts_pr t WHERE Part = ?oducts
     }
 }
