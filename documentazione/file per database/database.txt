@@ -22,7 +22,8 @@ id int primary key auto_increment,
 name varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
-address varchar(20) not null
+address varchar(20) not null,
+phone int not null
 );
 
 create table categories(
@@ -147,4 +148,4 @@ foreign key(userId) references users(id),
 foreign key(couponId) references coupons(id)
 );
 
-insert into restaurant values(NULL, "Taste IT", "tasteit@gmail.com", "secret", "Via Roma, 12");
+insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12");

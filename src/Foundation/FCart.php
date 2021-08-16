@@ -22,4 +22,8 @@ class FCart extends Foundation {
         return $this->connection->lastInsertId();
         //$stmt->debugDumpParams();
     }
+
+    function getProductsOfCart($id) {
+    //si va aprendere i prodotti dalla tabella carts_products
+    }
 }
