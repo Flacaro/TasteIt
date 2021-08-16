@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-14 15:58:54
+/* Smarty version 3.1.39, created on 2021-08-16 16:25:49
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6117cc1e977934_43842446',
+  'unifunc' => 'content_611a756dc7db96_49804615',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '28907c13c6d4b41ce7308cf808b47ebdf8932295' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order.tpl',
-      1 => 1628949523,
+      1 => 1629123948,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6117cc1e977934_43842446 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611a756dc7db96_49804615 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +32,6 @@ function content_6117cc1e977934_43842446 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
 <ul>
-    <h1> <?php echo $_smarty_tpl->tpl_vars['yourName']->value;?>
-</h1>
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['orders']->value, 'order');
 $_smarty_tpl->tpl_vars['order']->do_else = true;
@@ -42,11 +40,11 @@ $_smarty_tpl->tpl_vars['order']->do_else = false;
 ?>
 
         <li>
-            <form action="/orders/<?php echo $_smarty_tpl->tpl_vars['order']->value->getOrderId();?>
+            <form action="/orders/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 " method="GET">
             </form>
             <span>
-            <?php echo $_smarty_tpl->tpl_vars['order']->value->getOrderId();?>
+            <?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 
         </span>
             <?php echo $_smarty_tpl->tpl_vars['order']->value->getCreationDate();?>

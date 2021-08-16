@@ -149,3 +149,6 @@ foreign key(couponId) references coupons(id)
 );
 
 insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12");
+
+
+ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
