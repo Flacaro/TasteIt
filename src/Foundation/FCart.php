@@ -25,5 +25,7 @@ class FCart extends Foundation {
 
     function getProductsOfCart($id) {
     //si va aprendere i prodotti dalla tabella carts_products
+        //SELECT * FROM products_carts AS prodotti WHERE prodotti.productsId in (SELECT ProductId FROM Products_carts WHERE cartId=$id)
+        $query= 'select * from products_carts' . 
     }
 }

@@ -8,7 +8,7 @@ id bigint primary key auto_increment
 
 create table orderStates(
 id bigint primary key auto_increment,
-state varchar(30) default 'Accepted'
+state varchar(30) default 'Pending'
 );
 
 
@@ -28,9 +28,9 @@ phone int not null
 
 create table categories(
 id bigint primary key auto_increment,
-id int NOT NULL,
+restaurantId int NOT NULL,
 categoryName varchar(30) NOT NULL,
-foreign key(id) references restaurant(id)
+foreign key(Restaurantid) references restaurant(id)
 );
 
 create table products(
