@@ -23,7 +23,7 @@ name varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
 address varchar(20) not null,
-phone int not null
+phone varchar(11) not null
 );
 
 create table categories(
@@ -59,7 +59,7 @@ password varchar(20) not null,
 favId bigint not null,
 cartId bigint default null,
 FOREIGN KEY (favId) references favourites(id),
-FOREIGN KEY (id) references carts(cartId)
+FOREIGN KEY (cartId) references carts(id)
 );
 
 create table reviews(
@@ -148,7 +148,7 @@ foreign key(userId) references users(id),
 foreign key(couponId) references coupons(id)
 );
 
-insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12");
+insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12", 1234567890);
 
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
