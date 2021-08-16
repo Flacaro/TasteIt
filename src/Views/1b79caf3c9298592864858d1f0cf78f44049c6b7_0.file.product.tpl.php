@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-14 15:39:00
+/* Smarty version 3.1.39, created on 2021-08-16 15:46:26
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6117c77465d803_04257559',
+  'unifunc' => 'content_611a6c32cff068_36197976',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1b79caf3c9298592864858d1f0cf78f44049c6b7' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product.tpl',
-      1 => 1628866870,
+      1 => 1629119791,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6117c77465d803_04257559 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611a6c32cff068_36197976 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,14 +38,13 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
         <li>
-            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getProductId();?>
+            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 " method="GET">
                 <button type="submit">X</button>
             </form>
-            <span>
-                <?php echo $_smarty_tpl->tpl_vars['product']->value->getProductId();?>
 
-            </span>
+            <?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+
             <?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
 
             <?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>

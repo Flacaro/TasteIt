@@ -1,4 +1,4 @@
-<?php
+<?php header('Content-type: text/html; charset=UTF-8');
 
 require_once "vendor/autoload.php";
 require_once "routes.php";
