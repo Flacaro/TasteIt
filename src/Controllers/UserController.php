@@ -23,7 +23,7 @@ class UserController {
     }
     public function create() {
         $fusers = new FUser();
-        $fcart = new FCart();
+        $FCart = new FCart();
 
         $user = new User();
         $user->setId(NULL);
@@ -34,7 +34,7 @@ class UserController {
 
         $cart = new Cart();
         $cart->setId(NULL);
-        $cartId = $fcart->create($cart);
+        $cartId = $FCart->create($cart);
 
         $user->setCartId($cartId);
         $fusers->create($user);
