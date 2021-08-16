@@ -74,6 +74,11 @@ class ProductController {
            'categoryId' => $product->getCategoryId()
        ]);
    }
+   public function visualizzaHome(){
+       return view('base', [
+
+       ]);
+   }
 
 
    public function destroy($id) {

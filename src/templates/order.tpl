@@ -9,7 +9,6 @@
 </head>
 <body>
 <ul>
-    <h1> {$yourName}</h1>
     {foreach $orders as $order}
 
         <li>

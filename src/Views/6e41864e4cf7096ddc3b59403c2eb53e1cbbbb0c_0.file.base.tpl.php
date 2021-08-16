@@ -1,4 +1,27 @@
-<!doctype html>
+<?php
+/* Smarty version 3.1.39, created on 2021-08-16 15:53:13
+  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_611a6dc9aaf426_03224189',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6e41864e4cf7096ddc3b59403c2eb53e1cbbbb0c' => 
+    array (
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base.tpl',
+      1 => 1629121992,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_611a6dc9aaf426_03224189 (Smarty_Internal_Template $_smarty_tpl) {
+?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,6 +108,9 @@
     </div>
 </nav>
 
+<div class="dropdown-menu" aria-labelledby="dropdown04">
+    <h2>Ciao</h2>
+</div>
 
 <footer class="ftco-footer">
     <div class="container">
@@ -130,19 +156,48 @@
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="js/google-map.js"></script>
-<script src="js/main.js"></script>
+<?php echo '<script'; ?>
+ src="js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/jquery-migrate-3.0.1.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/popper.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/jquery.easing.1.3.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/jquery.waypoints.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/jquery.stellar.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/owl.carousel.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/jquery.magnific-popup.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/jquery.animateNumber.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/scrollax.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/google-map.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="js/main.js"><?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}
