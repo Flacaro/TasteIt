@@ -8,6 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    {$id}
+{foreach $products as $product}
+
+    <li>
+        {$product->getName()}
+    </li>
+{/foreach}
 </body>
 </html>

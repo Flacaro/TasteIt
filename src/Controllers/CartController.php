@@ -15,12 +15,11 @@ class CartController {
      $FCart = new FCart();
      $cart = new Cart();
      //$cart dovrà andare a chiamare la funzione dentro $FCart
-
-
-     //manca una query
-
-
-
+     $products=$FCart->getProductsOfCart($id);
+    return view ("cart", [
+         //nome che useremo nel template
+         "products"=>$products
+     ]);
  }
 
  public function create()
