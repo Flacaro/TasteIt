@@ -1,6 +1,8 @@
 <?php
 
 use App\Controllers\CartController;
+use App\Controllers\FavouritesController;
+use App\Controllers\HomePageController;
 use App\Controllers\OrderController;
 use App\Controllers\ProductController;
 use App\Controllers\RestaurantController;
@@ -9,8 +11,9 @@ use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
 
-SimpleRouter::redirect("/", "/products");
+SimpleRouter::redirect("/", "/home");
 
+SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"]);
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/users", [UserController::class, "index"])->name('users');

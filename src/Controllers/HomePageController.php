@@ -8,4 +8,8 @@ class HomePageController
  public function homeData($categories, $bestSellers){
 
  }
+ public function visualizeHome(){
+     return view('home', [
+     ]);
+ }
 }
