@@ -14,7 +14,7 @@ class ProductController {
    public function index() {
        $FProduct = new FProduct();
        $products = $FProduct->getAll();
-       return view('product', [
+       return view('product/product', [
            'products' => $products,
        ]);
     
@@ -65,7 +65,7 @@ class ProductController {
         //$smarty->assign('description', $product->getDescription());
        // $smarty->assign('price', $product->getPrice());
        // return $smarty->display('src/templates/product-update.tpl');
-       return view('product-update', [
+       return view('product/product-update', [
            'id' => $product->getId(),
            'name' => $product->getName(),
            'description' => $product->getDescription(),
@@ -74,7 +74,7 @@ class ProductController {
        ]);
    }
    public function visualizzaHome(){
-       return view('products', [
+       return view('product/products', [
 
        ]);
    }

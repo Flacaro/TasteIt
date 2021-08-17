@@ -1,8 +1,8 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Home{/block}
 {block name=body}
-    {*immagine da cambiare*}
-    <div class="hero-wrap" style="background-image: url('../../src/templates/images/bg_5.jpg.jpg');" data-stellar-background-ratio="0.5">
+    {*l'immagine ho messo la prima che ho trovato, poi la cambiamo*}
+    <div class="hero-wrap" style="background-image: url('../../src/templates/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">

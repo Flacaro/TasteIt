@@ -1,4 +1,4 @@
-{extends file='src/templates/base.tpl'}
+{extends file='src/templates/base/base.tpl'}
 {block name=title}Prodotto{/block}
 {block name=body}
 
