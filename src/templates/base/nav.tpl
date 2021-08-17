@@ -26,7 +26,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(images/prod-1.jpg);"></div>
+                    <div class="img" style="background-image: url(../../../assets/images/prod-1.jpg);"></div>
                     <div class="text pl-3">
                         <h4>Bacardi 151</h4>
                         <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
