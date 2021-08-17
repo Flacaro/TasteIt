@@ -33,7 +33,7 @@ class RestaurantController {
         $FOrder = new FOrder();
         $order = $FOrder->getById($id);
         $smarty = $GLOBALS['smarty'];
-        return view('order-accept', [
+        return view('order-accept.tpl', [
             'id' => $id,
             'creationDate' =>$order->getCreationDate(),
             'total'=> $order->getTotal(),
