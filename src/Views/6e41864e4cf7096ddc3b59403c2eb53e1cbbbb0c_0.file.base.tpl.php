@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-16 15:53:13
+/* Smarty version 3.1.39, created on 2021-08-16 17:46:05
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611a6dc9aaf426_03224189',
+  'unifunc' => 'content_611a883d2b2369_51199905',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6e41864e4cf7096ddc3b59403c2eb53e1cbbbb0c' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base.tpl',
-      1 => 1629121992,
+      1 => 1629122018,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611a6dc9aaf426_03224189 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611a883d2b2369_51199905 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -108,9 +108,6 @@ function content_611a6dc9aaf426_03224189 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 </nav>
 
-<div class="dropdown-menu" aria-labelledby="dropdown04">
-    <h2>Ciao</h2>
-</div>
 
 <footer class="ftco-footer">
     <div class="container">

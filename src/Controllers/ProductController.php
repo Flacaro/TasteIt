@@ -14,7 +14,6 @@ class ProductController {
    public function index() {
        $FProduct = new FProduct();
        $products = $FProduct->getAll();
-
        return view('product', [
            'products' => $products,
        ]);
