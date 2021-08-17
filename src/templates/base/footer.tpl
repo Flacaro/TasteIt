@@ -4,7 +4,9 @@
             <div class="col-sm-12 col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2 logo"><a href="#">Taste<span>It</span></a></h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <p>Orari di consegna:</p>
+                    <p>Dalle 18:20 alle 22:00</p>
+                    <p>• DOMENICA CHIUSO •</p>
                 </div>
             </div>
             <div class="col-sm-12 col-md">

@@ -67,7 +67,8 @@
                         <h2 class="mb-4">Prova la cucina del ristorante giapponese più vecchio de L'Aquila</h2>
 
                         <p>descrizione placeholder</p>
-                        <p>secondo paragrafo blah blah</p>
+                        <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
+                        non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
                         <!-- questo nel dubbio ce lo lascio ma non so se lo vogliamo lascia-->
                         <p class="year">
                             <strong class="number" data-number="23">0</strong>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-17 15:35:30
+/* Smarty version 3.1.39, created on 2021-08-17 20:45:02
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611bbb22a3b307_64718375',
+  'unifunc' => 'content_611c03ae77f824_82211836',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6738d912b6d19a1462b485aa303d6d1114d83839' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\footer.tpl',
-      1 => 1629206949,
+      1 => 1629225893,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611bbb22a3b307_64718375 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611c03ae77f824_82211836 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="ftco-footer">
     <div class="container">
         <div class="row mb-5">
             <div class="col-sm-12 col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2 logo"><a href="#">Taste<span>It</span></a></h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <p>Orari di consegna:</p>
+                    <p>Dalle 18:20 alle 22:00</p>
+                    <p>• DOMENICA CHIUSO •</p>
                 </div>
             </div>
             <div class="col-sm-12 col-md">
