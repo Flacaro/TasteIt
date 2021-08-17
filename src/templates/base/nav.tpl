@@ -22,7 +22,7 @@
             <!-- menu dropdown del carrello -->
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
+                <div class="d-flex justify-content-center align-items-center"><small>NUM PRODOTTI</small></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item d-flex align-items-start" href="#">
@@ -46,7 +46,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../home.tpl" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
