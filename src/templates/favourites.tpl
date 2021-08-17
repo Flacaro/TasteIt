@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-{foreach $products as $product}
+{foreach $favourites as $favourite}
 
     <li>
-        {$product->getName()}
+        {$favourite->getName()}
     </li>
 {/foreach}
 </body>

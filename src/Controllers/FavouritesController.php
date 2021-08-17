@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 
+use App\Foundation\FFavourites;
+
 class FavouritesController {
 
     public function getListOfFavourites($id) {
@@ -18,7 +20,6 @@ class FavouritesController {
     public function edit($id) {
         $FFavourites = new FFavourites();
         $favourites = $FFavourites->getById($id);
-        $smarty = $GLOBALS['smarty'];
         return view('order-accept', [
             'id' => $id,
             'products' =>$favourites->getProductId(),
