@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\CartController;
+use App\Controllers\FavouritesController;
 use App\Controllers\OrderController;
 use App\Controllers\ProductController;
 use App\Controllers\RestaurantController;
