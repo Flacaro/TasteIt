@@ -2,15 +2,15 @@
 
 namespace App\Controllers;
 
-use App\Foundation\FCart;
-use App\Foundation\FProduct;
 
 class FavouritesController {
 
     public function getListOfFavourites($id) {
         $FFavourites= new FFavourites();
-        $favourites = new favourites();
-        $FProduct = new FProduct();
+        $favourites=$FFavourites->getListOfFavourites($id);
+        return view ("favourites", [
+            "favourites"=>$favourites
+        ]);
 
 
 

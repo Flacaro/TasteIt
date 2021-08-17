@@ -30,6 +30,7 @@ SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"])
 SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/base", [ProductController::class, "visualizzaHome"]);
 SimpleRouter::get("/cart/{id}",[CartController::class, "getProductsOfCart"]);
+SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 
