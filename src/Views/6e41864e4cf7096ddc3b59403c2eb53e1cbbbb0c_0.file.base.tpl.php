@@ -1,29 +1,38 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-16 17:46:05
+/* Smarty version 3.1.39, created on 2021-08-17 11:31:43
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611a883d2b2369_51199905',
+  'unifunc' => 'content_611b81ff99d007_42772934',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6e41864e4cf7096ddc3b59403c2eb53e1cbbbb0c' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base.tpl',
-      1 => 1629122018,
+      1 => 1629192702,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:src/templates/nav.tpl' => 1,
+    'file:src/templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_611a883d2b2369_51199905 (Smarty_Internal_Template $_smarty_tpl) {
-?><!doctype html>
+function content_611b81ff99d007_42772934 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
+<!doctype html>
 <html lang="en">
 <head>
+    <title><?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1831759595611b81ff998284_02951267', 'title');
+?>
+</title>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -36,116 +45,27 @@ function content_611a883d2b2369_51199905 (Smarty_Internal_Template $_smarty_tpl)
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="src/templates/scss/animate.css">
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="src/templates/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="src/templates/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="src/templates/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="src/templates/css/flaticon.css">
+    <link rel="stylesheet" href="src/templates/css/style.css">
 </head>
 <body>
-<div class="wrap">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 d-flex align-items-center">
-                <p class="mb-0 phone pl-md-2">
-                    <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a>
-                    <a href="#"><span class="fa fa-paper-plane mr-1"></span> tasteit@gmail.com</a>
-                </p>
-            </div>
-            <div class="col-md-6 d-flex justify-content-md-end">
-                <div class="reg">
-                    <p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Taste<span>It</span></a>
-        <div class="order-lg-last btn-group">
-            <!-- menu dropdown del carrello -->
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(images/prod-1.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Bacardi 151</h4>
-                        <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
-                    </div>
-                </div>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-                    View All
-                    <span class="ion-ios-arrow-round-forward"></span>
-                </a>
-            </div>
-        </div>
-        <!-- fine menu dropdown del carrello -->
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
+<?php $_smarty_tpl->_subTemplateRender('file:src/templates/nav.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="product.html">Products</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1221890366611b81ff99c4b8_92686809', 'body');
+?>
 
 
-<footer class="ftco-footer">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-sm-12 col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2 logo"><a href="#">Taste<span>It</span></a></h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md">
-            </div>
-            <div class="col-sm-12 col-md">
-                <div class="ftco-footer-widget mb-4 ml-md-4">
-                    <h2 class="ftco-heading-2">Information</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Contact Us</h2>
-                    <div class="block-23 mb-3">
-                        <ul>
-                            <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<?php $_smarty_tpl->_subTemplateRender('file:src/templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
 
@@ -154,47 +74,75 @@ function content_611a883d2b2369_51199905 (Smarty_Internal_Template $_smarty_tpl)
 
 
 <?php echo '<script'; ?>
- src="js/jquery.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/jquery.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/jquery-migrate-3.0.1.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/jquery-migrate-3.0.1.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/popper.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/popper.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/jquery.easing.1.3.js"><?php echo '</script'; ?>
+ src="src/templates/js/jquery.easing.1.3.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/jquery.waypoints.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/jquery.waypoints.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/jquery.stellar.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/jquery.stellar.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/owl.carousel.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/owl.carousel.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/jquery.magnific-popup.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/jquery.magnific-popup.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/jquery.animateNumber.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/jquery.animateNumber.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/scrollax.min.js"><?php echo '</script'; ?>
+ src="src/templates/js/scrollax.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/google-map.js"><?php echo '</script'; ?>
+ src="src/templates/js/google-map.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="js/main.js"><?php echo '</script'; ?>
+ src="src/templates/js/main.js"><?php echo '</script'; ?>
 >
 </body>
 </html><?php }
+/* {block 'title'} */
+class Block_1831759595611b81ff998284_02951267 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'title' => 
+  array (
+    0 => 'Block_1831759595611b81ff998284_02951267',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+aaaaaa<?php
+}
+}
+/* {/block 'title'} */
+/* {block 'body'} */
+class Block_1221890366611b81ff99c4b8_92686809 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'body' => 
+  array (
+    0 => 'Block_1221890366611b81ff99c4b8_92686809',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'body'} */
 }
