@@ -1,3 +1,29 @@
+<?php
+/* Smarty version 3.1.39, created on 2021-08-17 19:48:37
+  from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_611bf675cde8e4_20547035',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
+      1 => 1629221828,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_611bf675cde8e4_20547035 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
 <div class="wrap">
     <div class="container">
         <div class="row">
@@ -51,11 +77,28 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="category.tpl"> {block name=categories}{/block} </a>
+                        <a class="dropdown-item" href="category.tpl"> <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_606646150611bf675cddf64_57740521', 'categories');
+?>
+ </a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
-</nav>
+</nav><?php }
+/* {block 'categories'} */
+class Block_606646150611bf675cddf64_57740521 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'categories' => 
+  array (
+    0 => 'Block_606646150611bf675cddf64_57740521',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'categories'} */
+}

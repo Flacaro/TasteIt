@@ -74,8 +74,10 @@ class ProductController {
        ]);
    }
    public function visualizzaHome(){
+       $FProduct = new FProduct();
+       $products = $FProduct->getAll();
        return view('product/products', [
-
+            'products' => $products
        ]);
    }
 

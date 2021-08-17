@@ -16,7 +16,7 @@ class FCart extends Foundation {
         //query che va a prendere i prodotti di quell'utente nel suo  carrello
     }
 
-        function create($object): string {
+    function create($object): string {
         $query = 'insert into ' . $this->table . '(';
         $query = $query.') values ();';
         $stmt = $this->connection->prepare($query);
