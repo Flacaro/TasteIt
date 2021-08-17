@@ -25,11 +25,11 @@
 </head>
 <body>
 
-{include file='src/templates/assets/nav.tpl'}
+{include file='src/templates/base/nav.tpl'}
 
 {block name=body}{/block}
 
-{include file='src/templates/assets/footer.tpl'}
+{include file='src/templates/base/footer.tpl'}
 
 
 

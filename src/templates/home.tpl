@@ -1,4 +1,4 @@
-{extends file='src/templates/base.tpl'}
+{extends file='src/templates/base/base.tpl'}
 {block name=title}Home{/block}
 {block name=body}
     {*immagine da cambiare*}
