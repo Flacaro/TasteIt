@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-17 16:08:06
+/* Smarty version 3.1.39, created on 2021-08-17 18:45:28
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611bc2c6858ea4_70307501',
+  'unifunc' => 'content_611be7a8041265_52602171',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1629209286,
+      1 => 1629218726,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611bc2c6858ea4_70307501 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611be7a8041265_52602171 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -45,7 +45,7 @@ function content_611bc2c6858ea4_70307501 (Smarty_Internal_Template $_smarty_tpl)
             <!-- menu dropdown del carrello -->
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
+                <div class="d-flex justify-content-center align-items-center"><small>NUM PRODOTTI</small></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item d-flex align-items-start" href="#">
@@ -69,7 +69,7 @@ function content_611bc2c6858ea4_70307501 (Smarty_Internal_Template $_smarty_tpl)
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../home.tpl" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
