@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{extends file='src/templates/base.tpl'}
+{block name=title}Prodotti{/block}
+{block name=body}
 <ul>
     {foreach $products as $product}
         <li>
@@ -22,7 +16,6 @@
 
     {/foreach}
 </ul>
-</body>
-</html>
+{/block}
 
 {* qua si vedranno le review? *}

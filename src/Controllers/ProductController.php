@@ -74,7 +74,7 @@ class ProductController {
        ]);
    }
    public function visualizzaHome(){
-       return view('base', [
+       return view('products', [
 
        ]);
    }
