@@ -105,6 +105,7 @@
                 </div>
             </div>
             <div class="row">
+                {foreach $bestrateds as $bestrated}
                 <div class="col-md-3 d-flex">
                     <div class="product">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../../src/assets/images/prod-1.jpg);">
@@ -119,11 +120,12 @@
                         <div class="text text-center">
                             <span class="sale">Sale</span>
                             <span class="category">categoria placeholder</span>
-                            <h2>Nome piatto</h2>
+                            <h2>{$bestrated->getProductName()}</h2>
                             <p class="mb-0"><span class="price price-sale">$prezzo completo</span> <span class="price">$prezzo in sconto</span></p>
                         </div>
                     </div>
                 </div>
+                {/foreach}
             </div>
         </div>
     </section>

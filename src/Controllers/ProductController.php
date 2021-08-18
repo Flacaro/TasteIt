@@ -96,4 +96,13 @@ class ProductController {
    public function getProductImage($productId) {
 
    }
+   public function getAverageRating($productId){
+       $FProduct = new FProduct();
+       $ratings=$FProduct->getRatings($productId);
+       $average=0;
+       foreach ($ratings as $stars) {
+           $average = $average + $stars->getStars;
+       }
+       return $average/count($ratings);
+   }
 }

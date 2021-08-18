@@ -14,13 +14,24 @@ class HomePageController
  public function visualizeHome(){
      $FCategory = new FCategory();
      $FProduct = new FProduct();
+     $PController = new ProductController();
      $categories = $FCategory->getAll();
      $bestsellers = $FProduct->getBestSellers();
      //foreach
      //$image= $FCategory->getImageFromId($category->getImageId());
+     //ottomila chiamate al db che schifo aiuto
+     $products = $FProduct->getAll();
+     $bestRated=array();
+     foreach($products as $product){
+         $rating=$PController->getAverageRating($product->getId());
+         if ($rating>4){
+             array_push($bestRated, $product);
+         }
+     }
      return view('home', [
          'categories'=> $categories,
-         'bestsellers'=> $bestsellers
+         'bestsellers'=> $bestsellers,
+         'bestrateds'=> $bestRated
      ]);
  }
 }

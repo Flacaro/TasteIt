@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 19:17:27
+/* Smarty version 3.1.39, created on 2021-08-18 20:05:08
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d40a7c90797_68616479',
+  'unifunc' => 'content_611d4bd47b6e43_22758890',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1629307046,
+      1 => 1629309907,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611d40a7c90797_68616479 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611d4bd47b6e43_22758890 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_292701386611d40a7c872a8_28279061', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_999535943611d4bd47ae208_98118052', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_975980225611d40a7c87d06_83760237', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1095007853611d4bd47aeb21_94645001', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_292701386611d40a7c872a8_28279061 extends Smarty_Internal_Block
+class Block_999535943611d4bd47ae208_98118052 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_292701386611d40a7c872a8_28279061',
+    0 => 'Block_999535943611d4bd47ae208_98118052',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_975980225611d40a7c87d06_83760237 extends Smarty_Internal_Block
+class Block_1095007853611d4bd47aeb21_94645001 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_975980225611d40a7c87d06_83760237',
+    0 => 'Block_1095007853611d4bd47aeb21_94645001',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -171,6 +171,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
             <div class="row">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestrateds']->value, 'bestrated');
+$_smarty_tpl->tpl_vars['bestrated']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestrated']->value) {
+$_smarty_tpl->tpl_vars['bestrated']->do_else = false;
+?>
                 <div class="col-md-3 d-flex">
                     <div class="product">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../../src/assets/images/prod-1.jpg);">
@@ -185,11 +191,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="text text-center">
                             <span class="sale">Sale</span>
                             <span class="category">categoria placeholder</span>
-                            <h2>Nome piatto</h2>
+                            <h2><?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getProductName();?>
+</h2>
                             <p class="mb-0"><span class="price price-sale">$prezzo completo</span> <span class="price">$prezzo in sconto</span></p>
                         </div>
                     </div>
                 </div>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
     </section>
