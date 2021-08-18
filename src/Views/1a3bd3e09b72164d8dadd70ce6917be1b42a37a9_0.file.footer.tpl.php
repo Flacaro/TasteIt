@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-17 18:45:28
+/* Smarty version 3.1.39, created on 2021-08-17 22:12:54
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611be7a884a126_61617230',
+  'unifunc' => 'content_611c18462cf186_61322877',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1a3bd3e09b72164d8dadd70ce6917be1b42a37a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\footer.tpl',
-      1 => 1629194156,
+      1 => 1629231075,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611be7a884a126_61617230 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611c18462cf186_61322877 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="ftco-footer">
     <div class="container">
         <div class="row mb-5">
             <div class="col-sm-12 col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2 logo"><a href="#">Taste<span>It</span></a></h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <p>Orari di consegna:</p>
+                    <p>Dalle 18:20 alle 22:00</p>
+                    <p>• DOMENICA CHIUSO •</p>
                 </div>
             </div>
             <div class="col-sm-12 col-md">
