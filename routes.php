@@ -39,6 +39,7 @@ SimpleRouter::get("/base", [ProductController::class, "visualizzaHome"]);
 SimpleRouter::get("/base/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/cart/{id}",[CartController::class, "getProductsOfCart"]);
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
+SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {

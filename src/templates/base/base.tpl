@@ -28,6 +28,7 @@
 {include file='src/templates/base/nav.tpl'}
 
 {block name=products}{/block}
+{block name=body}{/block}
 
 {include file='src/templates/base/footer.tpl'}
 

@@ -79,6 +79,9 @@ class RestaurantController {
     public function getAdminPanel(){
 
     }
-
+    public function visualizeContactPage(){
+        return view('contact-us', [
+        ]);
+    }
 
 }
