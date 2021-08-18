@@ -46,7 +46,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="../home.tpl" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
@@ -54,7 +54,7 @@
                         <a class="dropdown-item" href="category.tpl"> {block name=categories}{/block} </a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>

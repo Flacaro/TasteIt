@@ -83,12 +83,14 @@
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-md-4 ">
-                    <div class="sort w-100 text-center">
-                        <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
-                        <h3>Nigiri</h3>
+                {foreach $categories as $category}
+                    <div class="col-lg-2 col-md-4 ">
+                        <div class="sort w-100 text-center">
+                            <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
+                            <h3>{$category->getCategoryName()}</h3>
+                        </div>
                     </div>
-                </div>
+                {/foreach}
             </div>
         </div>
     </section>
@@ -97,8 +99,8 @@
         <div class="container">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-7 heading-section text-center">
-                    <span class="subheading">Scopri le</span>
-                    <h2>Nostre offerte</h2>
+                    <span class="subheading">Scopri i Nostri</span>
+                    <h2>Piatti Migliori</h2>
                 </div>
             </div>
             <div class="row">

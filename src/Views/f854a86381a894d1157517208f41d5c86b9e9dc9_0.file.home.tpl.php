@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 15:14:51
+/* Smarty version 3.1.39, created on 2021-08-18 17:19:15
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d07cbd11ce2_90385473',
+  'unifunc' => 'content_611d24f35be9b1_25932925',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1629292490,
+      1 => 1629299952,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611d07cbd11ce2_90385473 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611d24f35be9b1_25932925 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1659328264611d07cbd10af9_25994087', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1227540079611d24f35b60a3_54824788', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2097922737611d07cbd11434_60891670', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_971785563611d24f35b6f36_81392013', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1659328264611d07cbd10af9_25994087 extends Smarty_Internal_Block
+class Block_1227540079611d24f35b60a3_54824788 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1659328264611d07cbd10af9_25994087',
+    0 => 'Block_1227540079611d24f35b60a3_54824788',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_2097922737611d07cbd11434_60891670 extends Smarty_Internal_Block
+class Block_971785563611d24f35b6f36_81392013 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_2097922737611d07cbd11434_60891670',
+    0 => 'Block_971785563611d24f35b6f36_81392013',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -141,12 +141,22 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-md-4 ">
-                    <div class="sort w-100 text-center">
-                        <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
-                        <h3>Nigiri</h3>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
+$_smarty_tpl->tpl_vars['category']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
+$_smarty_tpl->tpl_vars['category']->do_else = false;
+?>
+                    <div class="col-lg-2 col-md-4 ">
+                        <div class="sort w-100 text-center">
+                            <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
+                            <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
+</h3>
+                        </div>
                     </div>
-                </div>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
     </section>
@@ -155,8 +165,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="container">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-7 heading-section text-center">
-                    <span class="subheading">Scopri le</span>
-                    <h2>Nostre offerte</h2>
+                    <span class="subheading">Scopri i Nostri</span>
+                    <h2>Piatti Migliori</h2>
                 </div>
             </div>
             <div class="row">
