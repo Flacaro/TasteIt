@@ -6,12 +6,12 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
-                {*<div class="col-md-8 ftco-animate d-flex align-items-end"> sto div qua rompe tutto*}
+                <div class="col-md-8 ftco-animated d-flex align-items-end"> sto div qua rompe tutto
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
                         <p><a href="src/templates/product/product.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
                      </div>
-            {*</div>*}
+                </div>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
             <div class="row no-gutters">
                 <div class="col-md-4 d-flex">
                     <!-- c'era ftco-animate ma rompe tutto, le animazioni le dobbiamo riguarda per forza-->
-                    <div class="intro d-lg-flex w-100">
+                    <div class="intro d-lg-flex w-100 ftco-animated">
                         <div class="icon">
                             <span class="flaticon-support"></span>
                         </div>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 d-flex">
-                    <div class="intro color-2 d-lg-flex w-100">
+                    <div class="intro color-2 d-lg-flex w-100 ftco-animated">
                         <div class="icon">
                             <span class="flaticon-free-delivery"></span>
                         </div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 d-flex">
-                    <div class="intro color-1 d-lg-flex w-100">
+                    <div class="intro color-1 d-lg-flex w-100 ftco-animated">
                         <div class="icon">
                             <span class="flaticon-visibility"></span>
                         </div>
