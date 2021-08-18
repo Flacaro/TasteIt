@@ -17,6 +17,7 @@ class HomePageController
      $PController = new ProductController();
      $categories = $FCategory->getAll();
      $bestsellers = $FProduct->getBestSellers();
+     $bestreviews = $FProduct->getBestReviews();
      //foreach
      //$image= $FCategory->getImageFromId($category->getImageId());
      //è orribile lo so non mi crocifiggete
@@ -33,7 +34,8 @@ class HomePageController
      return view('home', [
          'categories'=> $categories,
          'bestsellers'=> $bestsellers,
-         'bestrateds'=> $bestRated
+         'bestrateds'=> $bestRated,
+         'bestreviews'=> $bestreviews
      ]);
  }
 }

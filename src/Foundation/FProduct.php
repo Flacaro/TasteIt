@@ -37,4 +37,12 @@ class FProduct extends Foundation {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    function getBestReviews(){
+        //select * from reviews where productId=$productId;
+        $query="SELECT * FROM reviews ORDER BY stars DESC LIMIT 6;";
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Review");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
