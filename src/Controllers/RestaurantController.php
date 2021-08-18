@@ -32,7 +32,6 @@ class RestaurantController {
     public function edit($id) {
         $FOrder = new FOrder();
         $order = $FOrder->getById($id);
-        $smarty = $GLOBALS['smarty'];
         return view('order-accept.tpl', [
             'id' => $id,
             'creationDate' =>$order->getCreationDate(),
@@ -67,9 +66,6 @@ class RestaurantController {
     public function addProduct($name, $description, $price, $category) {
 
     }
-    public function makeOffer($product, $start, $end, $discountPrice) {
-
-    }
     public function createCoupon($discount, $start, $end, $users) {
 
     }
@@ -80,7 +76,10 @@ class RestaurantController {
 
     }
     public function visualizeContactPage(){
+        $FRestaurant = new FRestaurant();
+        $restaurant=$FRestaurant->getById(1);
         return view('contact-us', [
+            'restaurant'=> $restaurant
         ]);
     }
 
