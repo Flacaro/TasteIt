@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 17:19:15
+/* Smarty version 3.1.39, created on 2021-08-18 19:17:27
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d24f35be9b1_25932925',
+  'unifunc' => 'content_611d40a7c90797_68616479',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1629299952,
+      1 => 1629307046,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611d24f35be9b1_25932925 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611d40a7c90797_68616479 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1227540079611d24f35b60a3_54824788', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_292701386611d40a7c872a8_28279061', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_971785563611d24f35b6f36_81392013', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_975980225611d40a7c87d06_83760237', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1227540079611d24f35b60a3_54824788 extends Smarty_Internal_Block
+class Block_292701386611d40a7c872a8_28279061 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1227540079611d24f35b60a3_54824788',
+    0 => 'Block_292701386611d40a7c872a8_28279061',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_971785563611d24f35b6f36_81392013 extends Smarty_Internal_Block
+class Block_975980225611d40a7c87d06_83760237 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_971785563611d24f35b6f36_81392013',
+    0 => 'Block_975980225611d40a7c87d06_83760237',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -149,6 +149,7 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
                     <div class="col-lg-2 col-md-4 ">
                         <div class="sort w-100 text-center">
+                            <!--prendi come path il path dell'immagine che ha come id imageId di category-->
                             <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
                             <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
 </h3>
@@ -295,19 +296,30 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
             <div class="row d-flex">
-                <div class="col-lg-6 d-flex align-items-stretch">
-                    <div class="blog-entry d-flex">
-                        <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
-                        </a>
-                        <div class="text p-4 bg-light">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestsellers']->value, 'bestseller');
+$_smarty_tpl->tpl_vars['bestseller']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestseller']->value) {
+$_smarty_tpl->tpl_vars['bestseller']->do_else = false;
+?>
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="blog-entry d-flex">
+                            <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
+                            </a>
+                            <div class="text p-4 bg-light">
 
-                            <h3 class="heading mb-3"><a href="#">Sashimi Misto</a></h3>
-                            <p>descrizione placeholder.</p>
-                            <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
+                                <h3 class="heading mb-3"><a href="#"><?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getName();?>
+</a></h3>
+                                <p><?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getDescription();?>
+</p>
+                                <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
     </section>

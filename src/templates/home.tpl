@@ -86,6 +86,7 @@
                 {foreach $categories as $category}
                     <div class="col-lg-2 col-md-4 ">
                         <div class="sort w-100 text-center">
+                            <!--prendi come path il path dell'immagine che ha come id imageId di category-->
                             <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
@@ -229,19 +230,21 @@
                 </div>
             </div>
             <div class="row d-flex">
-                <div class="col-lg-6 d-flex align-items-stretch">
-                    <div class="blog-entry d-flex">
-                        <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
-                        </a>
-                        <div class="text p-4 bg-light">
+                {foreach $bestsellers as $bestseller}
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="blog-entry d-flex">
+                            <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
+                            </a>
+                            <div class="text p-4 bg-light">
 
-                            <h3 class="heading mb-3"><a href="#">Sashimi Misto</a></h3>
-                            <p>descrizione placeholder.</p>
-                            <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
+                                <h3 class="heading mb-3"><a href="#">{$bestseller->getName()}</a></h3>
+                                <p>{$bestseller->getDescription()}</p>
+                                <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                {/foreach}
             </div>
         </div>
     </section>

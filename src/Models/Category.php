@@ -5,6 +5,7 @@ class Category{
     private $id;
     public $categoryName;
     public $restaurantId;
+    public $imageId;
     //è composizione, va rivisto
     private $categoryProducts = [];
 
@@ -12,6 +13,16 @@ class Category{
     {
 
         return $this->id;
+    }
+
+    public function getImageId()
+    {
+        return $this->imageId;
+    }
+
+    public function setImageId($imageId): void
+    {
+        $this->imageId = $imageId;
     }
 
     public function setId($categoryId): void
