@@ -119,9 +119,9 @@
                         </div>
                         <div class="text text-center">
                             <span class="sale">Sale</span>
-                            <span class="category">categoria placeholder</span>
-                            <h2>{$bestrated->getProductName()}</h2>
-                            <p class="mb-0"><span class="price price-sale">$prezzo completo</span> <span class="price">$prezzo in sconto</span></p>
+                            <span class="category">{$bestrated->getName()}</span>
+                            <h2>{$bestrated->getName()}</h2>
+                            <p class="mb-0"> <span class="price">${$bestrated->getPrice()}</span></p>
                         </div>
                     </div>
                 </div>

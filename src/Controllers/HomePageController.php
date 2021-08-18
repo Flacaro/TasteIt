@@ -19,15 +19,17 @@ class HomePageController
      $bestsellers = $FProduct->getBestSellers();
      //foreach
      //$image= $FCategory->getImageFromId($category->getImageId());
-     //ottomila chiamate al db che schifo aiuto
+     //è orribile lo so non mi crocifiggete
      $products = $FProduct->getAll();
-     $bestRated=array();
+     $ratings=array();
      foreach($products as $product){
          $rating=$PController->getAverageRating($product->getId());
          if ($rating>4){
-             array_push($bestRated, $product);
+             $ratings[$rating] = $product;
          }
      }
+     $bestRated=array_values($ratings);
+
      return view('home', [
          'categories'=> $categories,
          'bestsellers'=> $bestsellers,
