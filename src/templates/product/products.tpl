@@ -1,7 +1,8 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Prodotti{/block}
+{block name=categories}{/block}
 {block name=products}
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://via.placeholder.com/150');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://wallpapersdsc.net/wp-content/uploads/2016/09/Chinese-Seafood-full-HD.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -41,15 +42,8 @@
                                 </div>
                             </div>
                             <div class="text text-center">
-                                {*  Bisogna controllare se il prodotto ha lo sconto != null    *}
-                                {if false}
-                                    <span class="sale"></span>
-                                {/if}
                                 <h2> {$product->getName()}</h2>
                                 <p class="mb-0">
-                                    {if false}
-                                        <span class="price price-sale"></span>
-                                    {/if}
                                     <span class="price">${$product->getPrice()}</span>
                                 </p>
                             </div>
@@ -64,4 +58,6 @@
 
 
 {/block}
+
+
 

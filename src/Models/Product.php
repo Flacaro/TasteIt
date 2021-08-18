@@ -11,6 +11,7 @@ class Product {
     public $description;
     public $price;
     public $categoryId;
+    public $quantity;
 
     public function __construct() {
     }
@@ -64,6 +65,16 @@ class Product {
     public function setCategoryId($categoryId): void
     {
         $this->categoryId = $categoryId;
+    }
+
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
     }
 
 

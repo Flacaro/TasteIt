@@ -1,4 +1,4 @@
-{extends file='src/templates/base/base.tpl'}
+{extends file='src/templates/base/nav.tpl'}
 {block name=categories}
 <ul>
     {foreach $categories as $category}
