@@ -83,12 +83,15 @@
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-md-4 ">
-                    <div class="sort w-100 text-center">
-                        <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
-                        <h3>Nigiri</h3>
+                {foreach $categories as $category}
+                    <div class="col-lg-2 col-md-4 ">
+                        <div class="sort w-100 text-center">
+                            <!--prendi come path il path dell'immagine che ha come id imageId di category-->
+                            <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
+                            <h3>{$category->getCategoryName()}</h3>
+                        </div>
                     </div>
-                </div>
+                {/foreach}
             </div>
         </div>
     </section>
@@ -97,11 +100,12 @@
         <div class="container">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-7 heading-section text-center">
-                    <span class="subheading">Scopri le</span>
-                    <h2>Nostre offerte</h2>
+                    <span class="subheading">Scopri i Nostri</span>
+                    <h2>Piatti Migliori</h2>
                 </div>
             </div>
             <div class="row">
+                {foreach $bestrateds as $bestrated}
                 <div class="col-md-3 d-flex">
                     <div class="product">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../../src/assets/images/prod-1.jpg);">
@@ -115,12 +119,13 @@
                         </div>
                         <div class="text text-center">
                             <span class="sale">Sale</span>
-                            <span class="category">categoria placeholder</span>
-                            <h2>Nome piatto</h2>
-                            <p class="mb-0"><span class="price price-sale">$prezzo completo</span> <span class="price">$prezzo in sconto</span></p>
+                            <span class="category">{$bestrated->getName()}</span>
+                            <h2>{$bestrated->getName()}</h2>
+                            <p class="mb-0"> <span class="price">${$bestrated->getPrice()}</span></p>
                         </div>
                     </div>
                 </div>
+                {/foreach}
             </div>
         </div>
     </section>
@@ -137,11 +142,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
+                        {foreach $bestreviews as $bestreview}
                         <div class="item">
                             <div class="testimony-wrap py-4">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                                 <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    <p class="mb-4">{$bestreview->getComment()}</p>
                                     <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
                                         <div class="pl-3">
@@ -152,66 +158,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_2.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_3.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_2.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {/foreach}
                     </div>
                 </div>
             </div>
@@ -227,19 +174,21 @@
                 </div>
             </div>
             <div class="row d-flex">
-                <div class="col-lg-6 d-flex align-items-stretch">
-                    <div class="blog-entry d-flex">
-                        <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
-                        </a>
-                        <div class="text p-4 bg-light">
+                {foreach $bestsellers as $bestseller}
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                        <div class="blog-entry d-flex">
+                            <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
+                            </a>
+                            <div class="text p-4 bg-light">
 
-                            <h3 class="heading mb-3"><a href="#">Sashimi Misto</a></h3>
-                            <p>descrizione placeholder.</p>
-                            <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
+                                <h3 class="heading mb-3"><a href="#">{$bestseller->getName()}</a></h3>
+                                <p>{$bestseller->getDescription()}</p>
+                                <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                {/foreach}
             </div>
         </div>
     </section>

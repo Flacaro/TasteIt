@@ -12,8 +12,19 @@ class Product {
     public $price;
     public $categoryId;
     public $quantity;
+    public $imageId;
 
     public function __construct() {
+    }
+
+    public function getImageId()
+    {
+        return $this->imageId;
+    }
+
+    public function setImageId($imageId): void
+    {
+        $this->imageId = $imageId;
     }
 
     public function getName()
