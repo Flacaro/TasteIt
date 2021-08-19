@@ -1,5 +1,6 @@
 <?php
 
+use App\Foundation\FCategory;
 
 // https://www.smarty.net/docs/en/installing.smarty.extended.tpl
 class View extends Smarty {
@@ -11,6 +12,9 @@ class View extends Smarty {
         $this->setCompileDir('src/Views/');
         $this->setConfigDir('src/smarty_configs/');
         $this->setCacheDir('src/smarty_cache/');
+
+        $FCategories = new FCategory();
+        $this->assign('categories', $FCategories->getAll());
     }
 
 }

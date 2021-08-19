@@ -16,7 +16,6 @@ SimpleRouter::redirect("/", "/home");
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"]);
 
-SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("productsingle", [ProductController::class, "visualizzasingolo"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
 

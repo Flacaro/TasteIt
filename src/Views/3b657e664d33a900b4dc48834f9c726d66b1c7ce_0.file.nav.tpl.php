@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 23:18:14
+/* Smarty version 3.1.39, created on 2021-08-19 17:44:14
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d7916bce9f4_06175862',
+  'unifunc' => 'content_611e7c4e7b0888_16336128',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1629321205,
+      1 => 1629387851,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611d7916bce9f4_06175862 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_loadInheritance();
-$_smarty_tpl->inheritance->init($_smarty_tpl, false);
-?>
-<div class="wrap">
+function content_611e7c4e7b0888_16336128 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="wrap">
     <div class="container">
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
@@ -77,10 +74,18 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="category.tpl"> <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39729954611d7916bcc6b6_58813890', 'categories');
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
+$_smarty_tpl->tpl_vars['category']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
+$_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
+                            <a class="dropdown-item" href="/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/products"> <?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
  </a>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </li>
                 <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
@@ -88,17 +93,4 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39729954611d7916bc
         </div>
     </div>
 </nav><?php }
-/* {block 'categories'} */
-class Block_39729954611d7916bcc6b6_58813890 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'categories' => 
-  array (
-    0 => 'Block_39729954611d7916bcc6b6_58813890',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block 'categories'} */
 }
