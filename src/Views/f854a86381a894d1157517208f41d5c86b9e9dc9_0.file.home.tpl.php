@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 21:55:09
+/* Smarty version 3.1.39, created on 2021-08-19 12:35:43
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d659d8fab95_29740835',
+  'unifunc' => 'content_611e33ff3e1218_44888487',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1629316508,
+      1 => 1629369340,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611d659d8fab95_29740835 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611e33ff3e1218_44888487 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_213308906611d659d8eb794_22231172', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_198205059611e33ff3d5029_69513125', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1348855195611d659d8ec833_99828509', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1463788544611e33ff3d5a50_57486023', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_213308906611d659d8eb794_22231172 extends Smarty_Internal_Block
+class Block_198205059611e33ff3d5029_69513125 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_213308906611d659d8eb794_22231172',
+    0 => 'Block_198205059611e33ff3d5029_69513125',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1348855195611d659d8ec833_99828509 extends Smarty_Internal_Block
+class Block_1463788544611e33ff3d5a50_57486023 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1348855195611d659d8ec833_99828509',
+    0 => 'Block_1463788544611e33ff3d5a50_57486023',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,7 +64,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-8 ftco-animated d-flex align-items-end"> sto div qua rompe tutto
+                <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
                         <p><a href="src/templates/product/product.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
@@ -77,7 +77,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-4 d-flex">
-                    <!-- c'era ftco-animate ma rompe tutto, le animazioni le dobbiamo riguarda per forza-->
                     <div class="intro d-lg-flex w-100 ftco-animated">
                         <div class="icon">
                             <span class="flaticon-support"></span>
@@ -148,9 +147,12 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->valu
 $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
                     <div class="col-lg-2 col-md-4 ">
-                        <div class="sort w-100 text-center">
+                        <div class="sort w-100 text-center ftco-animated">
                             <!--prendi come path il path dell'immagine che ha come id imageId di category-->
-                            <div class="img" style="background-image: url(../../src/assets/images/kind-1.jpg);"></div>
+                            <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['category']->value->getImage()->getImagePath();?>
+);"></div>
+                            <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getImage()->getImagePath();?>
+</h3>
                             <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
 </h3>
                         </div>
@@ -165,7 +167,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center pb-5">
-                <div class="col-md-7 heading-section text-center">
+                <div class="col-md-7 heading-section text-center ftco-animated">
                     <span class="subheading">Scopri i Nostri</span>
                     <h2>Piatti Migliori</h2>
                 </div>
@@ -178,7 +180,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestrated']->val
 $_smarty_tpl->tpl_vars['bestrated']->do_else = false;
 ?>
                 <div class="col-md-3 d-flex">
-                    <div class="product">
+                    <div class="product ftco-animated">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../../src/assets/images/prod-1.jpg);">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
@@ -190,7 +192,7 @@ $_smarty_tpl->tpl_vars['bestrated']->do_else = false;
                         </div>
                         <div class="text text-center">
                             <span class="sale">Sale</span>
-                            <span class="category"><?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getName();?>
+                            <span class="category"><?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getCategory()->getCategoryName();?>
 </span>
                             <h2><?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getName();?>
 </h2>
@@ -210,12 +212,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center mb-5">
-                <div class="col-md-7 text-center heading-section heading-section-white">
+                <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
                     <span class="subheading">placeholder</span>
                     <h2 class="mb-3">Cosa Dicono di Noi</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row ftco-animated">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
                         <?php
@@ -252,7 +254,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-5">
-                <div class="col-md-7 heading-section text-center">
+                <div class="col-md-7 heading-section text-center ftco-animated">
                     <span class="subheading">i nostri</span>
                     <h2>Best Seller del Mese</h2>
                 </div>
@@ -264,7 +266,7 @@ $_smarty_tpl->tpl_vars['bestseller']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestseller']->value) {
 $_smarty_tpl->tpl_vars['bestseller']->do_else = false;
 ?>
-                    <div class="col-lg-6 d-flex align-items-stretch">
+                    <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
                             <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
                             </a>

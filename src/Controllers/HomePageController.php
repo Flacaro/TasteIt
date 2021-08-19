@@ -18,18 +18,16 @@ class HomePageController
      $categories = $FCategory->getAll();
      $bestsellers = $FProduct->getBestSellers();
      $bestreviews = $FProduct->getBestReviews();
-     //foreach
-     //$image= $FCategory->getImageFromId($category->getImageId());
-     //è orribile lo so non mi crocifiggete
+     //è orribile lo so non mi crocifiggete (devo fare in modo che prende solo i 4 con il rating più alto ma all'array associativo
+     // non piacciono gli oggetti come chiavi e dovrei fa mille chiamate a db che no thx)
      $products = $FProduct->getAll();
-     $ratings=array();
+     $bestRated=array();
      foreach($products as $product){
          $rating=$PController->getAverageRating($product->getId());
          if ($rating>4){
-             $ratings[$rating] = $product;
+             array_push($bestRated, $product);
          }
      }
-     $bestRated=array_values($ratings);
 
      return view('home', [
          'categories'=> $categories,

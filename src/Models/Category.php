@@ -1,6 +1,10 @@
 <?php
 namespace App\Models;
 
+use App\Controllers\categoryController;
+use App\Foundation\FCategory;
+use App\Foundation\FImage;
+
 class Category{
     private $id;
     public $categoryName;
@@ -55,6 +59,11 @@ class Category{
     public function setRestaurantId($restaurantId): void
     {
         $this->restaurantId = $restaurantId;
+    }
+
+    public function getImage(){
+        $FImage= new FImage();
+        return $FImage->getbyId($this->getImageId());
     }
 
 }

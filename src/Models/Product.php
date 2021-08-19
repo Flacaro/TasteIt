@@ -4,6 +4,8 @@
 namespace App\Models;
 
 
+use App\Foundation\FCategory;
+
 class Product {
 
     private $id;
@@ -77,7 +79,13 @@ class Product {
         $this->categoryId = $categoryId;
     }
 
+    public function getCategory(){
+        $FCategory= new FCategory;
+        return $FCategory->getbyId($this->getCategoryId());
+    }
+    public function getImage(){
 
+    }
 
 
 }

@@ -25,11 +25,7 @@ class categoryController
     }
     function getCategoryImage($categoryId){
         $FCategory = new FCategory();
-        $category= $FCategory->getById($categoryId);
-        $imagePath = $FCategory->getImageFromId($category->getImageId());
-        return view('category/category', [
-            'images' => $imagePath
-        ]);
+        $category = $FCategory->getById($categoryId);
 
     }
 }
