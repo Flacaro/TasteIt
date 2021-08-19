@@ -9,7 +9,7 @@
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="src/templates/product/product.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+                        <p><a href="/src/templates/product/all_products.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
                      </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                     <div class="col-lg-2 col-md-4 ">
                         <div class="sort w-100 text-center ftco-animated">
                             <!--prendi come path il path dell'immagine che ha come id imageId di category-->
-                            <div class="img" style="background-image: url({$category->getImage()->getImagePath()});"></div>
+                            <div class="img" style="background-image: url({$category->getImagePath()});"></div>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
                     </div>

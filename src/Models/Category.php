@@ -9,10 +9,9 @@ class Category{
     private $id;
     public $categoryName;
     public $restaurantId;
-    public $imageId;
     //è composizione, va rivisto
     private $categoryProducts = [];
-    //public $imagepath;
+    public $imagePath;
 
     public function getId()
     {
@@ -20,15 +19,16 @@ class Category{
         return $this->id;
     }
 
-    public function getImageId()
+    public function getImagePath()
     {
-        return $this->imageId;
+        return $this->imagePath;
     }
 
-    public function setImageId($imageId): void
+    public function setImagePath($imagePath): void
     {
-        $this->imageId = $imageId;
+        $this->imagePath = $imagePath;
     }
+
 
     public function setId($categoryId): void
     {
@@ -60,11 +60,6 @@ class Category{
     public function setRestaurantId($restaurantId): void
     {
         $this->restaurantId = $restaurantId;
-    }
-
-    public function getImage(){
-        $FImage= new FImage();
-        return $FImage->getbyId($this->getImageId());
     }
 
 }

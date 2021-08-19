@@ -18,11 +18,11 @@ class HomePageController
      $categories = $FCategory->getAll();
      $bestsellers = $FProduct->getBestSellers();
      $bestreviews = $FProduct->getBestReviews();
-     $var=[
-         "pizza"=>[
+     //$var=[
+         //"pizza"=>[
 
-         ]
-     ];
+        // ]
+     //];
      //è orribile lo so non mi crocifiggete (devo fare in modo che prende solo i 4 con il rating più alto ma all'array associativo
      // non piacciono gli oggetti come chiavi e dovrei fa mille chiamate a db che no thx)
      $products = $FProduct->getAll();
@@ -41,13 +41,10 @@ class HomePageController
          'bestreviews'=> $bestreviews
      ]);
  }
-<<<<<<< HEAD
     public function About(){
         return view('aboutUs', [
 
         ]);
     }
 }
-=======
-}
->>>>>>> 8354e198789bfae134450d04d77a32037b327e0b
+
