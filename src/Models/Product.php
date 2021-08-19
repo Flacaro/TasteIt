@@ -4,6 +4,8 @@
 namespace App\Models;
 
 
+use App\Foundation\FCategory;
+
 class Product {
 
     private $id;
@@ -11,8 +13,20 @@ class Product {
     public $description;
     public $price;
     public $categoryId;
+    public $quantity;
+    public $imageId;
 
     public function __construct() {
+    }
+
+    public function getImageId()
+    {
+        return $this->imageId;
+    }
+
+    public function setImageId($imageId): void
+    {
+        $this->imageId = $imageId;
     }
 
     public function getName()
@@ -66,7 +80,19 @@ class Product {
         $this->categoryId = $categoryId;
     }
 
+    public function getCategory(){
+        $FCategory= new FCategory;
+        return $FCategory->getbyId($this->getCategoryId());
+    }
 
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
 
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
+    }
 
 }

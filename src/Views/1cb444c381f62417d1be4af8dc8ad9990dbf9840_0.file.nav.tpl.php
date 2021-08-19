@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-17 18:45:28
+/* Smarty version 3.1.39, created on 2021-08-18 17:25:17
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611be7a8041265_52602171',
+  'unifunc' => 'content_611d265dd00dd5_01943781',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1629218726,
+      1 => 1629300299,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611be7a8041265_52602171 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class="wrap">
+function content_611d265dd00dd5_01943781 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
+<div class="wrap">
     <div class="container">
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
@@ -45,7 +48,7 @@ function content_611be7a8041265_52602171 (Smarty_Internal_Template $_smarty_tpl)
             <!-- menu dropdown del carrello -->
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>NUM PRODOTTI</small></div>
+                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item d-flex align-items-start" href="#">
@@ -69,17 +72,33 @@ function content_611be7a8041265_52602171 (Smarty_Internal_Template $_smarty_tpl)
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="../home.tpl" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="product.html">Products</a>
+                        <a class="dropdown-item" href="category.tpl"> <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1076163115611d265dcff838_76083889', 'categories');
+?>
+ </a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav><?php }
+/* {block 'categories'} */
+class Block_1076163115611d265dcff838_76083889 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'categories' => 
+  array (
+    0 => 'Block_1076163115611d265dcff838_76083889',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'categories'} */
 }

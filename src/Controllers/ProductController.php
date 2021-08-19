@@ -14,7 +14,7 @@ class ProductController {
    public function index() {
        $FProduct = new FProduct();
        $products = $FProduct->getAll();
-       return view('product/product', [
+       return view('product/all_products', [
            'products' => $products,
        ]);
     
@@ -57,14 +57,6 @@ class ProductController {
    public function edit($id) {
         $FProduct = new FProduct();
         $product = $FProduct->getById($id);
-//        $product = $FProduct->getAll();
-
-        //$smarty = $GLOBALS['smarty'];
-        //$smarty->assign('id', $id);
-        //$smarty->assign('name', $product->getName());
-        //$smarty->assign('description', $product->getDescription());
-       // $smarty->assign('price', $product->getPrice());
-       // return $smarty->display('src/templates/product-update.tpl');
        return view('product/product-update', [
            'id' => $product->getId(),
            'name' => $product->getName(),
@@ -74,8 +66,10 @@ class ProductController {
        ]);
    }
    public function visualizzaHome(){
+       $FProduct = new FProduct();
+       $products = $FProduct->getAll();
        return view('product/products', [
-
+            'products' => $products
        ]);
    }
     public function visualizzasingolo(){
@@ -92,13 +86,17 @@ class ProductController {
        $FProduct->delete($id);
    }
 
-   public function visualizeProductDetails($productId) {
 
-   }
-   public function visualizeProducts($category) {
+   public function getAverageRating($productId){
+       $FProduct = new FProduct();
+       $ratings=$FProduct->getRatings($productId);
+       $average=0;
+       if (count($ratings)!=0){
+       foreach ($ratings as $stars) {
+           $average = $average + $stars->getStars();
+       }
 
-   }
-   public function getProductImage($productId) {
-
+       return $average/count($ratings);}
+       else return 0;
    }
 }

@@ -1,3 +1,29 @@
+<?php
+/* Smarty version 3.1.39, created on 2021-08-18 23:18:14
+  from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_611d7916bce9f4_06175862',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
+      1 => 1629321205,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_611d7916bce9f4_06175862 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
 <div class="wrap">
     <div class="container">
         <div class="row">
@@ -51,11 +77,28 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="category.tpl"> {block name=categories}{/block} </a>
+                        <a class="dropdown-item" href="category.tpl"> <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39729954611d7916bcc6b6_58813890', 'categories');
+?>
+ </a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
-</nav>
+</nav><?php }
+/* {block 'categories'} */
+class Block_39729954611d7916bcc6b6_58813890 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'categories' => 
+  array (
+    0 => 'Block_39729954611d7916bcc6b6_58813890',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'categories'} */
+}

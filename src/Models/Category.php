@@ -1,10 +1,15 @@
 <?php
 namespace App\Models;
 
+use App\Controllers\categoryController;
+use App\Foundation\FCategory;
+use App\Foundation\FImage;
+
 class Category{
     private $id;
     public $categoryName;
     public $restaurantId;
+    public $imageId;
     //è composizione, va rivisto
     private $categoryProducts = [];
 
@@ -12,6 +17,16 @@ class Category{
     {
 
         return $this->id;
+    }
+
+    public function getImageId()
+    {
+        return $this->imageId;
+    }
+
+    public function setImageId($imageId): void
+    {
+        $this->imageId = $imageId;
     }
 
     public function setId($categoryId): void
@@ -44,6 +59,11 @@ class Category{
     public function setRestaurantId($restaurantId): void
     {
         $this->restaurantId = $restaurantId;
+    }
+
+    public function getImage(){
+        $FImage= new FImage();
+        return $FImage->getbyId($this->getImageId());
     }
 
 }

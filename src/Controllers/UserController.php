@@ -17,7 +17,7 @@ class UserController {
     public function index() {
         $fusers = new FUser();
         $users = $fusers->getAll();
-        return view('user', [
+        return view('user/user', [
             'users' => $users
         ]);
     }
@@ -77,14 +77,14 @@ class UserController {
         ]);
     }
 
-  /*  public function getId($id){
+        public function getId($id){
         $FUsers = new FUser();
         $user = $FUsers->getById($id);
         $smarty = $GLOBALS['smarty'];
         $smarty->assign('id', $id);
         $smarty->assign('id', $user->getId());
         return $smarty->display('src/templates/cart.tpl');
-     }*/
+     }
 
 
     public function addToCart($cartId, $productId) {

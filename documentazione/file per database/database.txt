@@ -26,11 +26,18 @@ address varchar(20) not null,
 phone varchar(11) not null
 );
 
+create table images(
+id bigint primary key auto_increment,
+image blob NOT NULL
+);
+
 create table categories(
 id bigint primary key auto_increment,
 restaurantId int NOT NULL,
 categoryName varchar(30) NOT NULL,
-foreign key(restaurantId) references restaurant(id)
+imageId bigint NOT NULL,
+foreign key(restaurantId) references restaurant(id),
+foreign key (imageId) references images(id)
 );
 
 create table products(
@@ -39,7 +46,10 @@ name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
 categoryId bigint not null,
-foreign key(categoryId) references categories(id)
+imageId bigint NOT NULL,
+timesOrdered bigint DEFAULT 0,
+foreign key(categoryId) references categories(id),
+foreign key (imageId) references images(id)
 );
 
 
@@ -149,6 +159,7 @@ foreign key(couponId) references coupons(id)
 );
 
 insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12", 1234567890);
+INSERT INTO `carts`() VALUES ()
 
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;

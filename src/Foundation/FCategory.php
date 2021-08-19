@@ -3,6 +3,8 @@
 namespace App\Foundation;
 
 
+use PDO;
+
 class FCategory extends Foundation {
 
     function __construct()
@@ -11,13 +13,6 @@ class FCategory extends Foundation {
     }
 
 
-   function getCategoryByIdWithProducts($categoryId) {
-       // select * from tableName where id = 112312;
-       $query = "select * from " . $this->table . ' where id = ' . $categoryId;
-       $stmt = $this->connection->prepare($query);
+//l'id è quello dell'immagine
 
-       $stmt->setFetchMode(PDO::FETCH_CLASS, $this->model);
-       $stmt->execute();
-       return $stmt->fetch();
-   }
 }

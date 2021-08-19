@@ -7,11 +7,22 @@ class Restaurant{
     public $address;
     public $email;
     public $password;
+    public $phone;
 
 
     public function getName()
     {
         return $this->name;
+    }
+
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    public function setPhone($phone): void
+    {
+        $this->phone = $phone;
     }
 
 

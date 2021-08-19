@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Foundation\FCategory;
+use App\Foundation\FProduct;
+
 class HomePageController
 {
     //servirà a caricare tutti i dati nella home: categorie, best sellers ecc
@@ -9,12 +12,37 @@ class HomePageController
 
  }
  public function visualizeHome(){
+     $FCategory = new FCategory();
+     $FProduct = new FProduct();
+     $PController = new ProductController();
+     $categories = $FCategory->getAll();
+     $bestsellers = $FProduct->getBestSellers();
+     $bestreviews = $FProduct->getBestReviews();
+     //è orribile lo so non mi crocifiggete (devo fare in modo che prende solo i 4 con il rating più alto ma all'array associativo
+     // non piacciono gli oggetti come chiavi e dovrei fa mille chiamate a db che no thx)
+     $products = $FProduct->getAll();
+     $bestRated=array();
+     foreach($products as $product){
+         $rating=$PController->getAverageRating($product->getId());
+         if ($rating>4){
+             array_push($bestRated, $product);
+         }
+     }
+
      return view('home', [
+         'categories'=> $categories,
+         'bestsellers'=> $bestsellers,
+         'bestrateds'=> $bestRated,
+         'bestreviews'=> $bestreviews
      ]);
  }
+<<<<<<< HEAD
     public function About(){
         return view('aboutUs', [
 
         ]);
     }
 }
+=======
+}
+>>>>>>> 8354e198789bfae134450d04d77a32037b327e0b
