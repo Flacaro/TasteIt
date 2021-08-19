@@ -67,9 +67,12 @@ class ProductController {
    }
    public function visualizzaHome(){
        $FProduct = new FProduct();
+       $FCategory = new FCategory();
        $products = $FProduct->getAll();
+       $categories = $FCategory->getAll();
        return view('product/products', [
-            'products' => $products
+            'products' => $products,
+            'categories' => $categories
        ]);
    }
     public function visualizzasingolo(){

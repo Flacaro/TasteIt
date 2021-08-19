@@ -51,7 +51,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="category.tpl"> {block name=categories}{/block} </a>
+                        {foreach $categories as $category}
+                        <a class="dropdown-item" href="category.tpl"> {$category->getCategoryName()} </a>
+                        {/foreach}
                     </div>
                 </li>
                 <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>

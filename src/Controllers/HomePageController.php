@@ -12,10 +12,8 @@ class HomePageController
 
  }
  public function visualizeHome(){
-     $FCategory = new FCategory();
      $FProduct = new FProduct();
      $PController = new ProductController();
-     $categories = $FCategory->getAll();
      $bestsellers = $FProduct->getBestSellers();
      $bestreviews = $FProduct->getBestReviews();
      //$var=[
@@ -35,7 +33,6 @@ class HomePageController
      }
 
      return view('home', [
-         'categories'=> $categories,
          'bestsellers'=> $bestsellers,
          'bestrateds'=> $bestRated,
          'bestreviews'=> $bestreviews
