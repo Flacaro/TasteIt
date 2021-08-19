@@ -12,4 +12,9 @@ class HomePageController
      return view('home', [
      ]);
  }
+    public function About(){
+        return view('aboutUs', [
+
+        ]);
+    }
 }

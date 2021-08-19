@@ -15,6 +15,9 @@ SimpleRouter::redirect("/", "/home");
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"]);
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
+SimpleRouter::get("productsingle", [ProductController::class, "visualizzasingolo"]);
+SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
+
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/users", [UserController::class, "index"])->name('users');
 //Il primo router serve per visualizzare il form, il secondo per andare a prendere i dati dal db per fare l'update

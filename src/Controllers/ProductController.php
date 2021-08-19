@@ -78,6 +78,13 @@ class ProductController {
 
        ]);
    }
+    public function visualizzasingolo(){
+        return view('product/productsingle', [
+
+        ]);
+    }
+
+
 
 
    public function destroy($id) {
