@@ -101,6 +101,7 @@ class UserController {
         $FProduct->getById($cartId);
         $FProduct->delete($productId);
     }
+
     public function addToFavourites($favouritesId, $productId) {
 
     }

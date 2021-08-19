@@ -41,4 +41,13 @@ class HomePageController
          'bestreviews'=> $bestreviews
      ]);
  }
+<<<<<<< HEAD
+    public function About(){
+        return view('aboutUs', [
+
+        ]);
+    }
 }
+=======
+}
+>>>>>>> 8354e198789bfae134450d04d77a32037b327e0b

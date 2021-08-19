@@ -72,6 +72,13 @@ class ProductController {
             'products' => $products
        ]);
    }
+    public function visualizzasingolo(){
+        return view('product/productsingle', [
+
+        ]);
+    }
+
+
 
 
    public function destroy($id) {
