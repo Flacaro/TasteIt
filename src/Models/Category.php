@@ -12,6 +12,7 @@ class Category{
     public $imageId;
     //è composizione, va rivisto
     private $categoryProducts = [];
+    //public $imagepath;
 
     public function getId()
     {

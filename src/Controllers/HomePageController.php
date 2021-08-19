@@ -18,6 +18,11 @@ class HomePageController
      $categories = $FCategory->getAll();
      $bestsellers = $FProduct->getBestSellers();
      $bestreviews = $FProduct->getBestReviews();
+     $var=[
+         "pizza"=>[
+
+         ]
+     ];
      //è orribile lo so non mi crocifiggete (devo fare in modo che prende solo i 4 con il rating più alto ma all'array associativo
      // non piacciono gli oggetti come chiavi e dovrei fa mille chiamate a db che no thx)
      $products = $FProduct->getAll();

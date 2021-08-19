@@ -87,7 +87,6 @@
                         <div class="sort w-100 text-center ftco-animated">
                             <!--prendi come path il path dell'immagine che ha come id imageId di category-->
                             <div class="img" style="background-image: url({$category->getImage()->getImagePath()});"></div>
-                            <h3>{$category->getImage()->getImagePath()}</h3>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
                     </div>
@@ -108,7 +107,7 @@
                 {foreach $bestrateds as $bestrated}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(../../src/assets/images/prod-1.jpg);">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url('/src/assets/images/prod-1.jpg');">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>

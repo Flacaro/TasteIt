@@ -15,6 +15,7 @@ class Product {
     public $categoryId;
     public $quantity;
     public $imageId;
+    public $timesOrdered;
 
     public function __construct() {
     }
@@ -27,6 +28,16 @@ class Product {
     public function setImageId($imageId): void
     {
         $this->imageId = $imageId;
+    }
+
+    public function getTimesOrdered()
+    {
+        return $this->timesOrdered;
+    }
+
+    public function setTimesOrdered($timesOrdered): void
+    {
+        $this->timesOrdered = $timesOrdered;
     }
 
     public function getName()
