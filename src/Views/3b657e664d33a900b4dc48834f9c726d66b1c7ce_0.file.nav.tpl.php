@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-17 22:12:54
+/* Smarty version 3.1.39, created on 2021-08-18 23:18:14
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611c184628a077_19478313',
+  'unifunc' => 'content_611d7916bce9f4_06175862',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1629231075,
+      1 => 1629321205,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611c184628a077_19478313 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611d7916bce9f4_06175862 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -48,7 +48,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             <!-- menu dropdown del carrello -->
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>NUM PRODOTTI</small></div>
+                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-item d-flex align-items-start" href="#">
@@ -72,29 +72,29 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="../home.tpl" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a class="dropdown-item" href="category.tpl"> <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_761978649611c18462899c4_27301966', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39729954611d7916bcc6b6_58813890', 'categories');
 ?>
  </a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav><?php }
 /* {block 'categories'} */
-class Block_761978649611c18462899c4_27301966 extends Smarty_Internal_Block
+class Block_39729954611d7916bcc6b6_58813890 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_761978649611c18462899c4_27301966',
+    0 => 'Block_39729954611d7916bcc6b6_58813890',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

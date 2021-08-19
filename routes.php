@@ -33,14 +33,13 @@ SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/orders", [OrderController::class, "visualizeOrders"]);
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
 SimpleRouter::get("/cart/create", [CartController::class, "create"]);
+SimpleRouter::get("/cart/{id}/products", [CartController::class, "getProductsOfCart"]);
 SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
 SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/base", [ProductController::class, "visualizzaHome"]);
 SimpleRouter::get("/base/categories", [CategoryController::class, "index"]);
-SimpleRouter::get("/cart/{id}",[CartController::class, "getProductsOfCart"]);
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
-
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

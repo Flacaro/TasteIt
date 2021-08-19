@@ -13,6 +13,7 @@ class Product {
     public $description;
     public $price;
     public $categoryId;
+    public $quantity;
     public $imageId;
 
     public function __construct() {
@@ -83,9 +84,15 @@ class Product {
         $FCategory= new FCategory;
         return $FCategory->getbyId($this->getCategoryId());
     }
-    public function getImage(){
 
+    public function getQuantity()
+    {
+        return $this->quantity;
     }
 
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
+    }
 
 }
