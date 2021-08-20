@@ -48,7 +48,7 @@
                             </label>
                         </td>
                         <td>
-                            <div class="img" style="background-image: url('https://via.placeholder.com/150');"></div>
+                            <div class="img" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');"></div>
                         </td>
                         <td>
                             <div class="email">
@@ -58,19 +58,45 @@
                         </td>
                         <td>{$product->getPrice()}</td>
                         <td class="quantity">
-                            <div class="input-group">
-                                {*andrebbero dentro un form con una action la route che mi va a fare l'update dei prodotti del carrello
-                                compresa la quantità*}
-                                <button class="quantity form-control">-</button>
-                                <p>{$product->getQuantity()}</p>
-                                <button class="quantity form-control">+</button>
+                            <div class="input-group" style="width: 9em">
+                                <form action="/carts/{$cartId}/products/{$product->getId()}/update" method="POST" style="float: left">
+                                    <div class="button minus">
+
+                                        <input hidden type="text" value="PUT" name="_method">
+                                        <input hidden type="text" value="minus" name="option">
+
+                                        <button class="btn btn-primary btn-number" type="submit"> - </button>
+                                    </div>
+                                </form>
+
+                                <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product->getQuantity()}" style="width: 2em">
+
+                                <form action="/carts/{$cartId}/products/{$product->getId()}/update" method="POST" style="float: right">
+                                    <div class="button plus">
+
+                                        <input hidden type="text" value="PUT" name="_method">
+                                        <input hidden type="text" value="plus" name="option">
+
+                                        <button class="btn btn-primary btn-number" type="submit"> + </button>
+                                    </div>
+                                </form>
+
                             </div>
                         </td>
-                          <td>total</td>
+                          <td>{math equation="{$product->getPrice()} * {$product->getQuantity()}"}</td>
                         <td>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            {*<button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </button>
+                            </button>*}
+                            <form action="/carts/{$cartId}/products/{$product->getId()}/delete" method="POST">
+                                <div class="button delete">
+
+                                    <input hidden type="text" value="DELETE" name="_method">
+                                    <input hidden type="text" value="delete" name="option">
+
+                                    <button class="btn btn-primary btn-number" type="submit"> X </button>
+                                </div>
+                            </form>
                         </td>
                     </tr>
                     {/foreach}
@@ -87,21 +113,24 @@
                 <div class="cart-total mb-3">
                     <h3>Cart Totals</h3>
                     <p class="d-flex">
-                        <span>Subtotal</span>
-                        <span>$20.60</span>
+                        <span>
+                            Total
+                        </span>
+                        <span>  {foreach $products as $product}
+                                {math equation="{$product->getPrice()} * {$product->getQuantity()}"}
+                            {/foreach}</span>
                     </p>
                     <p class="d-flex">
                         <span>Delivery</span>
                         <span>$0.00</span>
                     </p>
-                    <p class="d-flex">
-                        <span>Coupon</span>
-                        <span>3%</span>
-                    </p>
-                    <hr>
                     <p class="d-flex total-price">
                         <span>Total</span>
-                        <span>$17.60</span>
+                        <span>
+                            $ {foreach $products as $product}
+                                {math equation="{$product->getPrice()} * {$product->getQuantity()}"}
+                            {/foreach}
+                        </span>
                     </p>
                 </div>
                 <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>

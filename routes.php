@@ -28,6 +28,7 @@ SimpleRouter::get("/users", [UserController::class, "index"]);
 SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
 SimpleRouter::post("/products/{id}", [ProductController::class, "update"]);
 SimpleRouter::get("/products/{id}", [ProductController::class, "destroy"]);
+SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
 SimpleRouter::get("/users/create", [UserController::class, "create"]);
 SimpleRouter::get("/users/{id}/edit", [UserController::class, "edit"]);
 SimpleRouter::post("/users/{id}", [UserController::class, "update"]);
@@ -36,13 +37,15 @@ SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::clas
 SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/orders", [OrderController::class, "visualizeOrders"]);
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
-SimpleRouter::get("/cart/create", [CartController::class, "create"]);
-SimpleRouter::get("/cart/{id}/products", [CartController::class, "getProductsOfCart"]);
+SimpleRouter::get("/carts/create", [CartController::class, "create"]);
+SimpleRouter::get("/carts/{id}/products", [CartController::class, "getProductsOfCart"]);
 SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
 SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/base/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
+SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
+
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

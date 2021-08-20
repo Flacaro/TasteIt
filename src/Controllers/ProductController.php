@@ -25,15 +25,15 @@ class ProductController {
        $FCategory = new FCategory();
 
        $category = new Category();
-       $category->setCategoryName("Primi");
+       $category->setCategoryName("Pizza");
        $category->setRestaurantId(1);
 
        $categoryId = $FCategory->create($category);
 
        $product = new Product();
-       $product->setName('Vino');
-       $product->setDescription('Buono');
-       $product->setPrice(15);
+       $product->setName('Capricciosa');
+       $product->setDescription('Succosa');
+       $product->setPrice(8);
        $product->setCategoryId($categoryId);
        $productId = $FProduct->create($product);
        //response()->redirect('/products');

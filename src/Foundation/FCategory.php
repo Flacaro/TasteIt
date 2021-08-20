@@ -12,7 +12,4 @@ class FCategory extends Foundation {
         parent::__construct('categories', 'Category');
     }
 
-
-//l'id è quello dell'immagine
-
 }
