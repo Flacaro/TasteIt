@@ -7,7 +7,6 @@ use App\Foundation\FCategory;
 use App\Foundation\FProduct;
 use App\Models\Category;
 use App\Models\Product;
-use Pecee\SimpleRouter\SimpleRouter;
 
 class ProductController {
 
@@ -16,6 +15,7 @@ class ProductController {
        $products = $FProduct->getAll();
        return view('product/all_products', [
            'products' => $products,
+           'cartId' => 1 // dovresti prendere il cartId dell'utente loggato
        ]);
     
    }
@@ -81,7 +81,12 @@ class ProductController {
         ]);
     }
 
-
+    public function addToCart($cartId, $productId) {
+        $FProduct = new FProduct();
+        $FProduct->addToCart($cartId, $productId);
+        redirect(url('products'));
+//        print_r(Pecee\SimpleRouter::url('addToCart', ['cartId' => 1, 'productId' => 1]));
+    }
 
 
    public function destroy($id) {

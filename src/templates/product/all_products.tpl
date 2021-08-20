@@ -34,8 +34,8 @@
                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');">
                         <div class="desc">
                             <p class="meta-prod d-flex">
-                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
+                                <a href="/carts/{$cartId}/products/{$product->getId()}/addToCart" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
+                                <a href="/products/{$product->getId()}/addToFavourites/{$favId}" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
                                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
                             </p>
                         </div>

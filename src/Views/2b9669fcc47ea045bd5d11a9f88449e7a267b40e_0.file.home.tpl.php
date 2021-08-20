@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-19 17:06:06
+/* Smarty version 3.1.39, created on 2021-08-20 21:14:25
   from 'C:\xampp\htdocs\TasteIt\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611e735ed2a358_63555881',
+  'unifunc' => 'content_611fff11161b77_63852205',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b9669fcc47ea045bd5d11a9f88449e7a267b40e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\home.tpl',
-      1 => 1629383115,
+      1 => 1629478011,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611e735ed2a358_63555881 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611fff11161b77_63852205 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1027842529611e735ed03441_93340023', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_137027186611fff11152430_49869674', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_991124912611e735ed045b2_46182706', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_236312444611fff11152e68_97331965', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1027842529611e735ed03441_93340023 extends Smarty_Internal_Block
+class Block_137027186611fff11152430_49869674 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1027842529611e735ed03441_93340023',
+    0 => 'Block_137027186611fff11152430_49869674',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_991124912611e735ed045b2_46182706 extends Smarty_Internal_Block
+class Block_236312444611fff11152e68_97331965 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_991124912611e735ed045b2_46182706',
+    0 => 'Block_236312444611fff11152e68_97331965',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,7 +67,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="/src/templates/product/all_products.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+                        <p><a href="/products" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
                      </div>
                 </div>
             </div>
@@ -146,14 +146,16 @@ $_smarty_tpl->tpl_vars['category']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
-                    <div class="col-lg-2 col-md-4 ">
+                    <div class="col-lg-2 col-md-4">
+                        <a href="/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/products">
                         <div class="sort w-100 text-center ftco-animated">
-                            <!--prendi come path il path dell'immagine che ha come id imageId di category-->
                             <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['category']->value->getImagePath();?>
-);"></div>
+);" ></div>
                             <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
 </h3>
                         </div>
+                        </a>
                     </div>
                 <?php
 }
@@ -179,12 +181,13 @@ $_smarty_tpl->tpl_vars['bestrated']->do_else = false;
 ?>
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url('/src/assets/images/prod-1.jpg');">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getImagePath();?>
+);">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                    <a href="/" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
                                 </p>
                             </div>
                         </div>
@@ -231,10 +234,13 @@ $_smarty_tpl->tpl_vars['bestreview']->do_else = false;
                                     <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getComment();?>
 </p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
+                                        <div class="user-img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getImagePath();?>
+)"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
+                                            <p class="name"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getName();?>
+</p>
+                                            <span class="position"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getCategory()->getCategoryName();?>
+</span>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +272,8 @@ $_smarty_tpl->tpl_vars['bestseller']->do_else = false;
 ?>
                     <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
+                            <a href="blog-single.html" class="block-20 img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getImagePath();?>
+);">
                             </a>
                             <div class="text p-4 bg-light">
 
@@ -274,6 +281,8 @@ $_smarty_tpl->tpl_vars['bestseller']->do_else = false;
 </a></h3>
                                 <p><?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getDescription();?>
 </p>
+                                <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getPrice();?>
+</span></p>
                                 <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
                             </div>

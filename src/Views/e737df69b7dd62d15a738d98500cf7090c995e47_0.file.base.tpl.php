@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 21:15:38
+/* Smarty version 3.1.39, created on 2021-08-20 22:11:00
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\base.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d5c5a47af15_77450916',
+  'unifunc' => 'content_61200c549b5d30_40802498',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e737df69b7dd62d15a738d98500cf7090c995e47' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\base.tpl',
-      1 => 1629314133,
+      1 => 1629490256,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:src/templates/base/footer.tpl' => 1,
   ),
 ),false)) {
-function content_611d5c5a47af15_77450916 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61200c549b5d30_40802498 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -30,7 +30,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2112929543611d5c5a476061_43654909', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204391958261200c54954a75_36878885', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -41,7 +41,6 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2112929543611d5c5a
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -60,19 +59,19 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2112929543611d5c5a
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_896148506611d5c5a479010_91500729', 'products');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_55506604661200c549b3109_03796354', 'products');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_505144896611d5c5a479733_61563394', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175997914161200c549b3b98_95353089', 'body');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_217992595611d5c5a479da8_12972805', 'allProducts');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_64129902261200c549b4465_85899554', 'allProducts');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1195399248611d5c5a47a3f4_35606991', 'productsOfCart');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_24431068961200c549b4cf5_84954045', 'productsOfCart');
 ?>
 
 
@@ -117,23 +116,17 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1195399248611d5c5a
  src="/src/assets/js/scrollax.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- src="/src/assets/js/google-map.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 >
 </body>
 </html><?php }
 /* {block 'title'} */
-class Block_2112929543611d5c5a476061_43654909 extends Smarty_Internal_Block
+class Block_204391958261200c54954a75_36878885 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_2112929543611d5c5a476061_43654909',
+    0 => 'Block_204391958261200c54954a75_36878885',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -143,12 +136,12 @@ aaaaaa<?php
 }
 /* {/block 'title'} */
 /* {block 'products'} */
-class Block_896148506611d5c5a479010_91500729 extends Smarty_Internal_Block
+class Block_55506604661200c549b3109_03796354 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'products' => 
   array (
-    0 => 'Block_896148506611d5c5a479010_91500729',
+    0 => 'Block_55506604661200c549b3109_03796354',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -156,12 +149,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'products'} */
 /* {block 'body'} */
-class Block_505144896611d5c5a479733_61563394 extends Smarty_Internal_Block
+class Block_175997914161200c549b3b98_95353089 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_505144896611d5c5a479733_61563394',
+    0 => 'Block_175997914161200c549b3b98_95353089',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -169,12 +162,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'body'} */
 /* {block 'allProducts'} */
-class Block_217992595611d5c5a479da8_12972805 extends Smarty_Internal_Block
+class Block_64129902261200c549b4465_85899554 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'allProducts' => 
   array (
-    0 => 'Block_217992595611d5c5a479da8_12972805',
+    0 => 'Block_64129902261200c549b4465_85899554',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -182,12 +175,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'allProducts'} */
 /* {block 'productsOfCart'} */
-class Block_1195399248611d5c5a47a3f4_35606991 extends Smarty_Internal_Block
+class Block_24431068961200c549b4cf5_84954045 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'productsOfCart' => 
   array (
-    0 => 'Block_1195399248611d5c5a47a3f4_35606991',
+    0 => 'Block_24431068961200c549b4cf5_84954045',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

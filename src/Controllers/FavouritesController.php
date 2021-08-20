@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use App\Foundation\FFavourites;
+use App\Foundation\FProduct;
 
 class FavouritesController {
 
@@ -15,7 +16,6 @@ class FavouritesController {
         ]);
 
 
-
     }
     public function edit($id) {
         $FFavourites = new FFavourites();
@@ -24,6 +24,17 @@ class FavouritesController {
             'id' => $id,
             'products' =>$favourites->getProductId(),
 
+        ]);
+    }
+
+    public function addToFavourites($favId, $productId) {
+        $FProduct = new FProduct();
+        $productId = $FProduct->getById($productId);
+        $product = $FProduct->addToFavourites($favId, $productId);
+        return view('product/all_products', [
+            'cartId' => $favId,
+            'productId' => $productId,
+            'product' => $product
         ]);
     }
 }

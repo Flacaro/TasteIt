@@ -65,7 +65,13 @@
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="minus" name="option">
 
-                                        <button class="btn btn-primary btn-number" type="submit"> - </button>
+                                        <button class="btn btn-primary btn-number" type="submit"
+                                                {if $product->getQuantity() == 1}
+                                                    disabled
+                                                {/if}
+                                        >
+                                            -
+                                        </button>
                                     </div>
                                 </form>
 
@@ -106,7 +112,6 @@
                 </table>
             </div>
         </div>
-
         <!--quadrato in fondo per il checkout -->
         <div class="row justify-content-end">
             <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
@@ -116,9 +121,12 @@
                         <span>
                             Total
                         </span>
-                        <span>  {foreach $products as $product}
-                                {math equation="{$product->getPrice()} * {$product->getQuantity()}"}
-                            {/foreach}</span>
+                        <span>
+                             {foreach $products as $product}
+                                 {assign var="partialTotal" value=$partialTotal+$product->getPrice()*$product->getQuantity()}
+                             {/foreach}
+                            $ {$partialTotal}
+                        </span>
                     </p>
                     <p class="d-flex">
                         <span>Delivery</span>
@@ -127,9 +135,10 @@
                     <p class="d-flex total-price">
                         <span>Total</span>
                         <span>
-                            $ {foreach $products as $product}
-                                {math equation="{$product->getPrice()} * {$product->getQuantity()}"}
+                            {foreach $products as $product}
+                                {assign var="total" value=$total+$product->getPrice()*$product->getQuantity()}
                             {/foreach}
+                            $ {$total}
                         </span>
                     </p>
                 </div>

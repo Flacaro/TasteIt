@@ -18,7 +18,7 @@ SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"]);
 //qua ci va {id} sennò non sa a che prodotto mandarti
 SimpleRouter::get("/productsingle", [ProductController::class, "visualizzasingolo"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
-SimpleRouter::get("/products", [ProductController::class, "index"]);
+SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/users", [UserController::class, "index"]);
 //Il primo router serve per visualizzare il form, il secondo per andare a prendere i dati dal db per fare l'update
@@ -42,6 +42,8 @@ SimpleRouter::get("/base/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
+SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[ProductController::class, "addToCart"])->name('addToCart');
+SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
