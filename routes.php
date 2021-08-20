@@ -15,13 +15,10 @@ use Pecee\SimpleRouter\SimpleRouter;
 SimpleRouter::redirect("/", "/home");
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"]);
-
-SimpleRouter::get("productsingle", [ProductController::class, "visualizzasingolo"]);
+//qua ci va {id} sennò non sa a che prodotto mandarti
+SimpleRouter::get("/productsingle", [ProductController::class, "visualizzasingolo"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
-
-
 SimpleRouter::get("/products", [ProductController::class, "index"]);
-
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/users", [UserController::class, "index"]);
 //Il primo router serve per visualizzare il form, il secondo per andare a prendere i dati dal db per fare l'update

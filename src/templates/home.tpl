@@ -9,7 +9,7 @@
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="/src/templates/product/all_products.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+                        <p><a href="/products" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
                      </div>
                 </div>
             </div>
@@ -83,12 +83,14 @@
         <div class="container">
             <div class="row">
                 {foreach $categories as $category}
-                    <div class="col-lg-2 col-md-4 ">
+                <a href="/categories/{$category->getId()}/products">
+                    <div class="col-lg-2 col-md-4">
                         <div class="sort w-100 text-center ftco-animated">
-                            <div class="img" style="background-image: url({$category->getImagePath()});"></div>
+                            <div class="img" style="background-image: url({$category->getImagePath()});" ></div>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
                     </div>
+                </a>
                 {/foreach}
             </div>
         </div>
@@ -111,7 +113,7 @@
                                 <p class="meta-prod d-flex">
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                    <a href="/" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
                                 </p>
                             </div>
                         </div>
@@ -181,6 +183,7 @@
 
                                 <h3 class="heading mb-3"><a href="#">{$bestseller->getName()}</a></h3>
                                 <p>{$bestseller->getDescription()}</p>
+                                <p class="mb-0"> <span class="price">${$bestseller->getPrice()}</span></p>
                                 <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
                             </div>
