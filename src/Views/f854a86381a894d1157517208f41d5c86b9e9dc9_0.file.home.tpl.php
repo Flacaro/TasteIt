@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-19 16:25:39
+/* Smarty version 3.1.39, created on 2021-08-20 18:31:26
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611e69e33ea0b3_47823821',
+  'unifunc' => 'content_611fd8de56ef34_35337886',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1629383138,
+      1 => 1629477085,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611e69e33ea0b3_47823821 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611fd8de56ef34_35337886 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_234283393611e69e33dee10_48698618', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1448747957611fd8de55f3e9_59658576', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1208192454611e69e33df798_27672615', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_288230532611fd8de55fe15_58779489', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_234283393611e69e33dee10_48698618 extends Smarty_Internal_Block
+class Block_1448747957611fd8de55f3e9_59658576 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_234283393611e69e33dee10_48698618',
+    0 => 'Block_1448747957611fd8de55f3e9_59658576',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1208192454611e69e33df798_27672615 extends Smarty_Internal_Block
+class Block_288230532611fd8de55fe15_58779489 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1208192454611e69e33df798_27672615',
+    0 => 'Block_288230532611fd8de55fe15_58779489',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,7 +67,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="/src/templates/product/all_products.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+                        <p><a href="/products" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
                      </div>
                 </div>
             </div>
@@ -146,15 +146,19 @@ $_smarty_tpl->tpl_vars['category']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
-                    <div class="col-lg-2 col-md-4 ">
+
+                    <div class="col-lg-2 col-md-4">
+                        <a href="/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/products">
                         <div class="sort w-100 text-center ftco-animated">
-                            <!--prendi come path il path dell'immagine che ha come id imageId di category-->
                             <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['category']->value->getImagePath();?>
-);"></div>
+);" ></div>
                             <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
 </h3>
                         </div>
+                        </a>
                     </div>
+
                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
@@ -179,12 +183,13 @@ $_smarty_tpl->tpl_vars['bestrated']->do_else = false;
 ?>
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url('/src/assets/images/prod-1.jpg');">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getImagePath();?>
+);">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                    <a href="/" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
                                 </p>
                             </div>
                         </div>
@@ -231,10 +236,13 @@ $_smarty_tpl->tpl_vars['bestreview']->do_else = false;
                                     <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getComment();?>
 </p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
+                                        <div class="user-img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getImagePath();?>
+)"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
+                                            <p class="name"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getName();?>
+</p>
+                                            <span class="position"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getCategory()->getCategoryName();?>
+</span>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +274,8 @@ $_smarty_tpl->tpl_vars['bestseller']->do_else = false;
 ?>
                     <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
+                            <a href="blog-single.html" class="block-20 img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getImagePath();?>
+);">
                             </a>
                             <div class="text p-4 bg-light">
 
@@ -274,6 +283,8 @@ $_smarty_tpl->tpl_vars['bestseller']->do_else = false;
 </a></h3>
                                 <p><?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getDescription();?>
 </p>
+                                <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getPrice();?>
+</span></p>
                                 <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
                             </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-19 17:23:15
+/* Smarty version 3.1.39, created on 2021-08-20 17:16:40
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611e77637edd79_96501882',
+  'unifunc' => 'content_611fc758bead32_44741556',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1629386561,
+      1 => 1629472599,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611e77637edd79_96501882 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611fc758bead32_44741556 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -40,7 +40,7 @@ function content_611e77637edd79_96501882 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Taste<span>It</span></a>
+        <a class="navbar-brand" href="/home">Taste<span>It</span></a>
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,7 +69,7 @@ function content_611e77637edd79_96501882 (Smarty_Internal_Template $_smarty_tpl)
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
@@ -80,14 +80,15 @@ $_smarty_tpl->tpl_vars['category']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
-                        <a class="dropdown-item" href="category.tpl"> <?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
+                            <a class="dropdown-item" href="/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/products"> <?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
  </a>
                         <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </li>
-                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>

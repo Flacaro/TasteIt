@@ -14,20 +14,20 @@ class Product {
     public $price;
     public $categoryId;
     public $quantity;
-    public $imageId;
+    public $imagePath;
     public $timesOrdered;
 
     public function __construct() {
     }
 
-    public function getImageId()
+    public function getImagePath()
     {
-        return $this->imageId;
+        return $this->imagePath;
     }
 
-    public function setImageId($imageId): void
+    public function setImagePath($imagePath): void
     {
-        $this->imageId = $imageId;
+        $this->imagePath = $imagePath;
     }
 
     public function getTimesOrdered()

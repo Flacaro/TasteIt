@@ -9,7 +9,7 @@
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="/src/templates/product/all_products.tpl" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+                        <p><a href="/products" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
                      </div>
                 </div>
             </div>
@@ -83,12 +83,13 @@
         <div class="container">
             <div class="row">
                 {foreach $categories as $category}
-                    <div class="col-lg-2 col-md-4 ">
+                    <div class="col-lg-2 col-md-4">
+                        <a href="/categories/{$category->getId()}/products">
                         <div class="sort w-100 text-center ftco-animated">
-                            <!--prendi come path il path dell'immagine che ha come id imageId di category-->
-                            <div class="img" style="background-image: url({$category->getImagePath()});"></div>
+                            <div class="img" style="background-image: url({$category->getImagePath()});" ></div>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
+                        </a>
                     </div>
                 {/foreach}
             </div>
@@ -107,12 +108,12 @@
                 {foreach $bestrateds as $bestrated}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url('/src/assets/images/prod-1.jpg');">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestrated->getImagePath()});">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                    <a href="/" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
                                 </p>
                             </div>
                         </div>
@@ -148,10 +149,10 @@
                                 <div class="text">
                                     <p class="mb-4">{$bestreview->getComment()}</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
+                                        <div class="user-img" style="background-image: url({$bestreview->getProduct()->getImagePath()})"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
+                                            <p class="name">{$bestreview->getProduct()->getName()}</p>
+                                            <span class="position">{$bestreview->getProduct()->getCategory()->getCategoryName()}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -176,12 +177,13 @@
                 {foreach $bestsellers as $bestseller}
                     <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
+                            <a href="blog-single.html" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
                             </a>
                             <div class="text p-4 bg-light">
 
                                 <h3 class="heading mb-3"><a href="#">{$bestseller->getName()}</a></h3>
                                 <p>{$bestseller->getDescription()}</p>
+                                <p class="mb-0"> <span class="price">${$bestseller->getPrice()}</span></p>
                                 <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
                             </div>
