@@ -35,8 +35,8 @@ class ProductController {
        $product->setDescription('Succosa');
        $product->setPrice(8);
        $product->setCategoryId($categoryId);
-       $productId = $FProduct->create($product);
-       //response()->redirect('/products');
+       $FProduct->create($product);
+       header("Location: /products");
    }
 
    public function update($id) {

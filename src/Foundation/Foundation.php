@@ -42,6 +42,7 @@ abstract class Foundation {
         return $stmt->fetch();
     }
 
+
     function create($object): string{
         $objectKeys = [];
 
@@ -51,7 +52,6 @@ abstract class Foundation {
         foreach($object as $key => $val) {
             array_push($objectKeys, $key);
         }
-
         // Concatena gli elementi di un array con una stringa (separatore)
         // $arr = ['kiwi', 'pane', 'latte']
         // join(', ', $arr) ==> "kiwi, pane, latte"
@@ -59,14 +59,11 @@ abstract class Foundation {
         $stmtParams = join(", :", $objectKeys);
         // insert into table(name, price, ....) ...
         $columnNames = join(', ', $objectKeys);
-
         $query = $query . $columnNames . ') values (:'  . $stmtParams . ');';
-
         $stmt = $this->connection->prepare($query);
         foreach($object as $key => $val) {
             $stmt->bindValue(':' . $key, $val);
         }
-
         $stmt->execute();
 //        $stmt->debugDumpParams();
         return $this->connection->lastInsertId();
