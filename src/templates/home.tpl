@@ -83,14 +83,14 @@
         <div class="container">
             <div class="row">
                 {foreach $categories as $category}
-                <a href="/categories/{$category->getId()}/products">
                     <div class="col-lg-2 col-md-4">
+                        <a href="/categories/{$category->getId()}/products">
                         <div class="sort w-100 text-center ftco-animated">
                             <div class="img" style="background-image: url({$category->getImagePath()});" ></div>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
+                        </a>
                     </div>
-                </a>
                 {/foreach}
             </div>
         </div>
