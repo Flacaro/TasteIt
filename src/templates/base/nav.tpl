@@ -17,7 +17,7 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Taste<span>It</span></a>
+        <a class="navbar-brand" href="/home">Taste<span>It</span></a>
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +46,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
@@ -56,7 +56,7 @@
                         {/foreach}
                     </div>
                 </li>
-                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>

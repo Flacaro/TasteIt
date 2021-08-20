@@ -4,6 +4,8 @@
 namespace App\Models;
 
 
+use App\Foundation\FProduct;
+
 class Review {
  private $id;
  public $stars;
@@ -61,5 +63,9 @@ class Review {
         $this->productId = $productId;
     }
 
+    public function getProduct(){
+        $FProduct= new FProduct;
+        return $FProduct->getbyId($this->getProductId());
+    }
 
 }

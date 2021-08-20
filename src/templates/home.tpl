@@ -85,7 +85,6 @@
                 {foreach $categories as $category}
                     <div class="col-lg-2 col-md-4 ">
                         <div class="sort w-100 text-center ftco-animated">
-                            <!--prendi come path il path dell'immagine che ha come id imageId di category-->
                             <div class="img" style="background-image: url({$category->getImagePath()});"></div>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
@@ -107,7 +106,7 @@
                 {foreach $bestrateds as $bestrated}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url('/src/assets/images/prod-1.jpg');">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestrated->getImagePath()});">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -148,10 +147,10 @@
                                 <div class="text">
                                     <p class="mb-4">{$bestreview->getComment()}</p>
                                     <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
+                                        <div class="user-img" style="background-image: url({$bestreview->getProduct()->getImagePath()})"></div>
                                         <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
+                                            <p class="name">{$bestreview->getProduct()->getName()}</p>
+                                            <span class="position">{$bestreview->getProduct()->getCategory()->getCategoryName()}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +175,7 @@
                 {foreach $bestsellers as $bestseller}
                     <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url('../../src/assets/images/image_1.jpg');">
+                            <a href="blog-single.html" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
                             </a>
                             <div class="text p-4 bg-light">
 
