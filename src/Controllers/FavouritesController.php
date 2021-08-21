@@ -11,10 +11,9 @@ class FavouritesController {
     public function getListOfFavourites($id) {
         $FFavourites= new FFavourites();
         $favourites=$FFavourites->getListOfFavourites($id);
-        return view ("favourites", [
+        return view ("favourite/favourites", [
             "favourites"=>$favourites
         ]);
-
 
     }
     public function edit($id) {

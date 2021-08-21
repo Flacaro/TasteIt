@@ -58,15 +58,6 @@ class UserController {
     public function edit($id) {
         $FUsers = new FUser();
         $user = $FUsers->getById($id);
-//        $smarty = $GLOBALS['smarty'];
-//        $smarty->assign('id', $id);
-//        $smarty->assign('name', $user->getName());
-//        $smarty->assign('surname', $user->getSurname());
-//        $smarty->assign('email', $user->getEmail());
-//        $smarty->assign('password', $user->getPassword());
-//        $smarty->assign('address', $user->getAddress());
-//        return $smarty->display('src/templates/user-update.tpl');
-
         return view('user-update', [
             'id' => $id,
             'name' => $user->getName(),

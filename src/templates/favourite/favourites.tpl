@@ -11,7 +11,7 @@
 {foreach $favourites as $favourite}
 
     <li>
-        {$favourite->getName()}
+        {$favourite->getId()}
     </li>
 {/foreach}
 </body>
