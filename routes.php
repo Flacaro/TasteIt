@@ -14,7 +14,7 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 SimpleRouter::redirect("/", "/home");
 
-SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"]);
+SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 //qua ci va {id} sennò non sa a che prodotto mandarti
 SimpleRouter::get("/productsingle", [ProductController::class, "visualizzasingolo"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
@@ -35,7 +35,7 @@ SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/orders", [OrderController::class, "visualizeOrders"]);
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
 SimpleRouter::get("/carts/create", [CartController::class, "create"]);
-SimpleRouter::get("/carts/{id}/products", [CartController::class, "getProductsOfCart"]);
+SimpleRouter::get("/carts/{id}/products", [CartController::class, "getProductsOfCart"])->name('productsOfCarts');
 SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
 SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/base/categories", [CategoryController::class, "index"]);

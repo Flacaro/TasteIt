@@ -38,17 +38,12 @@ class CartController {
     $quantity = $Fcart->getQuantityOfProduct($cartId, $productId);
     if( $_POST['option'] == 'plus') {
         $Fcart->incrementQuantity($productId, $quantity);
-        header("Location: /carts/{$cartId}/products");
+        redirect(url('productsOfCarts', ['id' => $cartId]));
     }
-    elseif ($_POST['option'] == 'minus') {
+    else {
         $Fcart->decrementQuantity($productId, $quantity);
-        header("Location: /carts/{$cartId}/products");
+        redirect(url('productsOfCarts', ['id' => $cartId]));
     }
-    return view('cart/cart', [
-        "productId" => $productId,
-        "cartId" => $cartId,
-        "quantity" => $quantity
-    ]);
  }
 
     public function destroy($cartId, $productId)
@@ -56,12 +51,8 @@ class CartController {
         $FCart = new FCart();
         if ($_POST['option'] == 'delete') {
             $FCart->deleteFromCart($cartId, $productId);
-            header("Location: /carts/{$cartId}/products");
+            redirect(url('productsOfCarts', ['id' => $cartId]));
         }
-        return view('cart/cart', [
-            "cartId" => $cartId,
-            "productId" => $productId
-        ]);
     }
 
     public function getCoupon($couponId) {

@@ -85,7 +85,6 @@ class ProductController {
         $FProduct = new FProduct();
         $FProduct->addToCart($cartId, $productId);
         redirect(url('products'));
-//        print_r(Pecee\SimpleRouter::url('addToCart', ['cartId' => 1, 'productId' => 1]));
     }
 
 
