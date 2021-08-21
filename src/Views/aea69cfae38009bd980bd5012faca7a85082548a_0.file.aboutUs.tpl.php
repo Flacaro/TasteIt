@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 16:23:41
+/* Smarty version 3.1.39, created on 2021-08-21 11:04:28
   from 'C:\Users\mohamed\Documents\GitHub\TasteIt\src\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d17edc4f6b9_19314467',
+  'unifunc' => 'content_6120c19c77c843_20094099',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aea69cfae38009bd980bd5012faca7a85082548a' => 
     array (
       0 => 'C:\\Users\\mohamed\\Documents\\GitHub\\TasteIt\\src\\templates\\aboutUs.tpl',
-      1 => 1629296618,
+      1 => 1629536652,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611d17edc4f6b9_19314467 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6120c19c77c843_20094099 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_989475235611d17edc466e9_73857538', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1916750976120c19c779b42_07752265', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1648348039611d17edc4d915_87966990', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2025494946120c19c77b379_91500126', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_989475235611d17edc466e9_73857538 extends Smarty_Internal_Block
+class Block_1916750976120c19c779b42_07752265 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_989475235611d17edc466e9_73857538',
+    0 => 'Block_1916750976120c19c779b42_07752265',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,80 +49,18 @@ aboutUs<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1648348039611d17edc4d915_87966990 extends Smarty_Internal_Block
+class Block_2025494946120c19c77b379_91500126 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1648348039611d17edc4d915_87966990',
+    0 => 'Block_2025494946120c19c77b379_91500126',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-
-            <div class="order-lg-last btn-group">
-                <!-- menu dropdown del carrello -->
-
-                <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="flaticon-shopping-bag"></span>
-                    <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-item d-flex align-items-start" href="#">
-                        <div class="img" style="background-image: url(../../src/assets/images/prod-1.jpg);"></div>
-                        <div class="text pl-3">
-                            <h4>Bacardi 151</h4>
-                            <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
-                        </div>
-                    </div>
-                    <div class="dropdown-item d-flex align-items-start" href="#">
-                        <div class="img" style="background-image: url(../../src/assets/images/prod-2.jpg);"></div>
-                        <div class="text pl-3">
-                            <h4>Jim Beam Kentucky Straight</h4>
-                            <p class="mb-0"><a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity: 02</span></p>
-                        </div>
-                    </div>
-                    <div class="dropdown-item d-flex align-items-start" href="#">
-                        <div class="img" style="background-image: url(../../src/assets/images/prod-3.jpg);"></div>
-                        <div class="text pl-3">
-                            <h4>Citadelle</h4>
-                            <p class="mb-0"><a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity: 01</span></p>
-                        </div>
-                    </div>
-                    <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-                        View All
-                        <span class="ion-ios-arrow-round-forward"></span>
-                    </a>
-                </div>
-            </div>
-            <!-- fine menu dropdown del carrello -->
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="product.html">Products</a>
-                            <a class="dropdown-item" href="product-single.html">Single Product</a>
-                            <a class="dropdown-item" href="cart.html">Cart</a>
-                            <a class="dropdown-item" href="checkout.html">Checkout</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        
     <!-- fine barra con home, about... -->
 
     <!-- immagine con about us -->
