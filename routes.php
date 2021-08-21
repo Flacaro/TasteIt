@@ -42,6 +42,7 @@ SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/base/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
+SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('favourites');
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
 SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[ProductController::class, "addToCart"])->name('addToCart');

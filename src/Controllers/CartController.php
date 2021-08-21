@@ -24,13 +24,11 @@ class CartController {
      ]);
  }
 
- public function create()
- {
+ public function create() {
      $FCart = new FCart();
      $cart = new Cart();
      $cart->setId(NULL);
      $FCart->create($cart);
-
  }
 
  public function updateQuantity($cartId, $productId){

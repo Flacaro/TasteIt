@@ -12,8 +12,17 @@ class FavouritesController {
     public function create(){
         $FFavourites = new FFavourites();
         $fav = new Favourites();
-        $fav->setId(NULL);
+        $fav->setId(null);
         $FFavourites->create($fav);
+        redirect(url('favourites'));
+    }
+
+    public function index() {
+        $FFavourites = new FFavourites();
+        $favourites = $FFavourites->getAll();
+        return view('favourite/favourites', [
+            'favourites' => $favourites
+        ]);
     }
 
     public function getListOfFavourites($id) {

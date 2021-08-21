@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-21 12:06:06
+/* Smarty version 3.1.39, created on 2021-08-21 12:17:03
   from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6120d00e2b2022_43217791',
+  'unifunc' => 'content_6120d29fb55541_71133784',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '233083e50427e48b9a936dafa3b020788793ce6e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\favourites.tpl',
-      1 => 1629540334,
+      1 => 1629540835,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6120d00e2b2022_43217791 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6120d29fb55541_71133784 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -42,6 +42,7 @@ $_smarty_tpl->tpl_vars['favourite']->do_else = false;
         <?php echo $_smarty_tpl->tpl_vars['favourite']->value->getId();?>
 
     </li>
+
 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
