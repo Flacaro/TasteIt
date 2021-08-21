@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-20 17:16:40
+/* Smarty version 3.1.39, created on 2021-08-21 10:35:31
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611fc758bead32_44741556',
+  'unifunc' => 'content_6120bad361f400_09300323',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1629472599,
+      1 => 1629534930,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611fc758bead32_44741556 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6120bad361f400_09300323 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -70,7 +70,7 @@ function content_611fc758bead32_44741556 (Smarty_Internal_Template $_smarty_tpl)
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
