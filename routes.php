@@ -47,8 +47,8 @@ SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage
 SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
 SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[ProductController::class, "addToCart"])->name('addToCart');
 SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
-SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"]);
-SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
+SimpleRouter::post("/login", [AuthController::class, "visualizeLogin"]);
+SimpleRouter::post("/signup", [AuthController::class, "visualizeSignUp"]);
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {

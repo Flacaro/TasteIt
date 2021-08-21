@@ -32,30 +32,31 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="name">Nome</label>
-                        <input type="text" class="form-control" style="text-align: center" name="name" id="name" placeholder="Nome">
+                        <input type="text" class="form-control" style="text-align: center" value="{$name}"  id="name" name="name" placeholder="Nome">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="email">Cognome</label>
-                        <input type="email" class="form-control" style="text-align: center" name="email" id="email" placeholder="Cognome">
+                        <input type="email" class="form-control" style="text-align: center" value="{$surname}" id="email" name="surname" placeholder="Cognome">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label class="label" for="subject">Email</label>
-                        <input type="text" class="form-control" style="text-align: center" name="subject" id="subject" placeholder="Email">
+                        <input type="text" class="form-control" style="text-align: center" value="{$email}" id="subject" name="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label class="label" for="#">Password</label>
-                        <input type="text" class="form-control" style="text-align: center" name="subject" id="subject" placeholder="Password">
+                        <input type="text" class="form-control" style="text-align: center" value="{$password}" id="subject" name="password" placeholder="Password">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="submit" value="Registrati" class="btn btn-primary">
+                        <input hidden type="text" value="signup" name="option">
+                        <a class="btn btn-primary btn-number" type="submit" href="/users/create"> Registrati </a>
                         <div class="submitting"></div>
                     </div>
                 </div>

@@ -28,12 +28,17 @@ class UserController {
         $FCart = new FCart();
         $FFavourites= new FFavourites();
 
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
         $user = new User();
         $user->setId(NULL);
-        $user->setName('Sandro');
-        $user->setSurname('Bianchi');
-        $user->setEmail("sa@gmail.com");
-        $user->setPassword('buffo');
+        $user->setName($name);
+        $user->setSurname($surname);
+        $user->setEmail($email);
+        $user->setPassword($password);
 
         $cart = new Cart();
         $cart->setId(NULL);
@@ -46,6 +51,9 @@ class UserController {
         $user->setCartId($cartId);
         $user->setFavId($favId);
         $fusers->create($user);
+        return view("home",[
+
+        ]);
     }
 
     public function update($id) {
