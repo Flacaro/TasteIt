@@ -45,4 +45,10 @@ class FProduct extends Foundation {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    function addToCart($cartId, $productId) {
+        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values (' . $productId . ', ' . $cartId . ', ' . '  1);';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+    }
 }

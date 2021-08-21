@@ -18,6 +18,14 @@ class FFavourites extends Foundation {
         $stmt->execute();
         return $stmt->fetchAll();
 
-
     }
+
+    function addToFavourites($favId, $productId) {
+        $query = 'insert into products_favourites (`favId`, `productId`) values (' . $favId . ', ' . $productId . ');';
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }

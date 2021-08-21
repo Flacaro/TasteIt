@@ -12,9 +12,6 @@ class FCart extends Foundation {
         parent::__construct('carts', 'Cart');
     }
 
-    function getCartId($cartId, $userId) {
-        //query che va a prendere i prodotti di quell'utente nel suo  carrello
-    }
 
     function create($object): string {
         $query = 'insert into ' . $this->table . '(';
@@ -38,7 +35,44 @@ class FCart extends Foundation {
 
     }
 
+    function getQuantityOfProduct($cartId,$productId) {
+        $query = 'select quantity from products_carts where productId = ' . $productId . ' and ' . ' cartId = '. $cartId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    function incrementQuantity($productId, $quantity) {
+        $quantityPlus = $quantity['quantity'] + 1;
+        $query = 'UPDATE products_carts SET quantity = '. $quantityPlus . ' WHERE productId = ' . $productId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 
 
+    function decrementQuantity($productId, $quantity) {
+        $quantityMinus = $quantity['quantity'] - 1;
+        $query = "update products_carts set quantity = " . $quantityMinus . ' where productId = ' . $productId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    function deleteFromCart($cartId, $productId) {
+        $query = 'delete from products_carts where productId = ' . $productId . ' and cartId = ' . $cartId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+    }
+
+    function getCoupon($couponId) {
+        $query = 'select coupons.priceCut from coupons where id = ' . $couponId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 }
+
 
