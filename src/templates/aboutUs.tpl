@@ -2,7 +2,7 @@
 {block name=title}aboutUs{/block}
 {block name=body}
     {*l'immagine ho messo la prima che ho trovato, poi la cambiamo*}
-    
+
     <!-- fine barra con home, about... -->
 
     <!-- immagine con about us -->

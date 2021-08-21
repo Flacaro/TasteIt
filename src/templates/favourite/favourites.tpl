@@ -9,10 +9,7 @@
 </head>
 <body>
 {foreach $favourites as $favourite}
-
-    <li>
-        {$favourite->getName()}
-    </li>
+{$favourite->getId()}
 {/foreach}
 </body>
 </html>

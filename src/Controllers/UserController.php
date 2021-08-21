@@ -4,9 +4,11 @@
 namespace App\Controllers;
 use App\Foundation\FCart;
 use App\Foundation\FCategory;
+use App\Foundation\FFavourites;
 use App\Foundation\FProduct;
 use App\Foundation\FUser;
 use App\Models\Cart;
+use App\Models\Favourites;
 use App\Models\PaymentMethod;
 use App\Models\Product;
 use App\Models\User;
@@ -24,6 +26,7 @@ class UserController {
     public function create() {
         $fusers = new FUser();
         $FCart = new FCart();
+        $FFavourites= new FFavourites();
 
         $user = new User();
         $user->setId(NULL);
@@ -36,7 +39,12 @@ class UserController {
         $cart->setId(NULL);
         $cartId = $FCart->create($cart);
 
+        $fav = new Favourites();
+        $fav->setId(NULL);
+        $favId = $FFavourites->create($fav);
+
         $user->setCartId($cartId);
+        $user->setFavId($favId);
         $fusers->create($user);
     }
 

@@ -5,13 +5,21 @@ namespace App\Controllers;
 
 use App\Foundation\FFavourites;
 use App\Foundation\FProduct;
+use App\Models\Favourites;
 
 class FavouritesController {
+
+    public function create(){
+        $FFavourites = new FFavourites();
+        $fav = new Favourites();
+        $fav->setId(NULL);
+        $FFavourites->create($fav);
+    }
 
     public function getListOfFavourites($id) {
         $FFavourites= new FFavourites();
         $favourites=$FFavourites->getListOfFavourites($id);
-        return view ("favourites", [
+        return view ("favourite/favourites", [
             "favourites"=>$favourites
         ]);
 
