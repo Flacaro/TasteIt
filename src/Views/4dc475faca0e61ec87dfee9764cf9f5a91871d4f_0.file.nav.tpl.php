@@ -1,18 +1,30 @@
 <?php
+<<<<<<< Updated upstream
 /* Smarty version 3.1.39, created on 2021-08-21 11:04:22
+=======
+/* Smarty version 3.1.39, created on 2021-08-21 09:42:39
+>>>>>>> Stashed changes
   from 'C:\Users\mohamed\Documents\GitHub\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
+<<<<<<< Updated upstream
   'unifunc' => 'content_6120c19669e326_79441313',
+=======
+  'unifunc' => 'content_6120ae6f5aed82_95712465',
+>>>>>>> Stashed changes
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4dc475faca0e61ec87dfee9764cf9f5a91871d4f' => 
     array (
       0 => 'C:\\Users\\mohamed\\Documents\\GitHub\\TasteIt\\src\\templates\\base\\nav.tpl',
+<<<<<<< Updated upstream
       1 => 1629536652,
+=======
+      1 => 1629531717,
+>>>>>>> Stashed changes
       2 => 'file',
     ),
   ),
@@ -20,7 +32,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
+<<<<<<< Updated upstream
 function content_6120c19669e326_79441313 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_6120ae6f5aed82_95712465 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> Stashed changes
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -70,7 +86,11 @@ function content_6120c19669e326_79441313 (Smarty_Internal_Template $_smarty_tpl)
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
+<<<<<<< Updated upstream
                 <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
+=======
+                <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
+>>>>>>> Stashed changes
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">

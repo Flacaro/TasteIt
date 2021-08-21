@@ -5,72 +5,7 @@
 
 <!-- fine barra rossa -->
 <!-- inizio l'interfaccia nera dove ce Liquor Store  -->
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
 
-        <div class="order-lg-last btn-group">
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
-            </a>
-            <!-- inizio parte del carrello , quando clicchi e appare il menu a tendina con i prodotti  -->
-
-            <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(../../src/assets/images/prod-1.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Bacardi 151</h4>
-                        <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
-                    </div>
-                </div>
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(../../src/assets/images/prod-2.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Jim Beam Kentucky Straight</h4>
-                        <p class="mb-0"><a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity: 02</span></p>
-                    </div>
-                </div>
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(../../src/assets/images/prod-3.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Citadelle</h4>
-                        <p class="mb-0"><a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity: 01</span></p>
-                    </div>
-                </div>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-                    View All
-                    <span class="ion-ios-arrow-round-forward"></span>
-                </a>
-            </div>
-        </div>
-        <!-- fine parte del carrello con i prodotti  -->
-        <!-- inizio la parte del menu a tendina della categoria Product -->
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="product.html">Products</a>
-                        <a class="dropdown-item" href="product-single.html">Single Product</a>
-
-                        <a class="dropdown-item" href="checkout.html">Checkout</a>
-                    </div>
-                    <!-- fine del menu a tendina di product  -->
-                </li>
-                <!-- il resto della barra di navigazione  -->
-
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
 <!-- fine della barra di navigazione con le categorie  -->
 <!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
 
@@ -103,12 +38,7 @@
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
                     </p>
-                    <p class="text-left mr-4">
-                        <a href="#" class="mr-2" style="color: #000;">100 <span style="color: #000000;">Rating</span></a>
-                    </p>
-                    <p class="text-left">
-                        <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #000000;">Sold</span></a>
-                    </p>
+
                 </div>
                 <p class="price"><span>$120.00</span></p>
                 <p>Questo è il miglior vino che assaggerai nella tua vita perchè è fatto in abruzzo .</p>
@@ -130,7 +60,7 @@
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-12">
-                        <p style="color: #000;">80 piece available</p>
+                        <p style="color: #000;">80 pezzi disponibili</p>
                     </div>
                 </div>
                 <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
@@ -161,7 +91,7 @@
                     <div class="tab-pane fade show active"  id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                         <div class="p-4">
                             <h3 class="mb-4">Vino Abruzzese grado 12 %</h3>
-                            <p>l'ho lasciato cosi perchè non so che scrivere sinceramente On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                            <p>Colore dorato ambrato. Aromi di nocciola di cremoso burro di arachidi, lanugine di marshmallow e scia si mescolano con un corpo medio molto dolce e un wafer al burro di arachidi liscio, interessante, medio-lungo, torta al caramello al burro di arachidi salato, cioccolato al latte e finale di gelato al burro di arachidi. Qualcosa del genere non dovrebbe essere così buono, ma lo è; bevi questo e poi bevi ancora..</p>
                         </div>
                     </div>
 
@@ -169,7 +99,7 @@
                     <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
                         <div class="p-4">
                             <h3 class="mb-4">Product By TasteIT Resturant</h3>
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                            <p>Skrewball è stato creato da un team di marito e moglie Americani . Ha creato un cocktail di whisky al burro di arachidi. L'ha trasformato in un marchio, Skrewball.</p>
                         </div>
                     </div>
                     <!-- inizio della Reviews -->
@@ -182,7 +112,7 @@
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">Flaviana Caroselli </span>
-                                            <span class="text-right">25 April 2020</span>
+                                            <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>
@@ -194,7 +124,17 @@
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                        <div >
+                                            {foreach $singleReviews as $singleReview}
+                                                <div class="item">
+                                                    <div >
+                                                        <div class="text">
+                                                            <p class="mb-4">{$singleReview->getComment()}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {/foreach}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="review">
@@ -202,7 +142,7 @@
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">Selene Verna </span>
-                                            <span class="text-right">25 April 2020</span>
+                                            <span class="text-right">25 Maggio 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>
@@ -214,7 +154,17 @@
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                        <div >
+                                            {foreach $singleReviews as $singleReview}
+                                                <div class="item">
+                                                    <div >
+                                                        <div class="text">
+                                                            <p class="mb-4">{$singleReview->getComment()}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {/foreach}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="review">
@@ -222,7 +172,7 @@
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">Mohamed Ossama</span>
-                                            <span class="text-right">25 April 2020</span>
+                                            <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>
@@ -234,7 +184,17 @@
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                        <div >
+                                            {foreach $singleReviews as $singleReview}
+                                                <div class="item">
+                                                    <div >
+                                                        <div class="text">
+                                                            <p class="mb-4">{$singleReview->getComment()}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {/foreach}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
