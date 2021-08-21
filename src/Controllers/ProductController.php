@@ -75,8 +75,16 @@ class ProductController {
             'categories' => $categories
        ]);
    }
+
     public function visualizzasingolo(){
+
+        $FProduct = new FProduct();
+        $singleReviews=$FProduct->getSingleReviews();
+
         return view('product/productsingle', [
+
+            'singleReviews' => $singleReviews
+
 
         ]);
     }

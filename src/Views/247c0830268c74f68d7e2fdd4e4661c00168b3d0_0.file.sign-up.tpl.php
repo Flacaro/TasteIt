@@ -1,28 +1,26 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-21 09:42:39
-  from 'C:\Users\mohamed\Documents\GitHub\TasteIt\src\templates\base\base.tpl' */
+/* Smarty version 3.1.39, created on 2021-08-21 11:42:45
+  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\auth\sign-up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6120ae6f4c5765_85345017',
+  'unifunc' => 'content_6120ca951c7812_97213080',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '65adf3328fe90601c297b43e38fee257e30293aa' => 
+    '247c0830268c74f68d7e2fdd4e4661c00168b3d0' => 
     array (
-      0 => 'C:\\Users\\mohamed\\Documents\\GitHub\\TasteIt\\src\\templates\\base\\base.tpl',
-      1 => 1629531717,
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\auth\\sign-up.tpl',
+      1 => 1629538964,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:src/templates/base/nav.tpl' => 1,
-    'file:src/templates/base/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6120ae6f4c5765_85345017 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6120ca951c7812_97213080 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -30,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4029821316120ae6f4227e9_12736664', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2774840186120ca951c5e87_35445765', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -41,7 +39,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4029821316120ae6f4
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/src/assets/css/animate.css">
@@ -53,33 +51,47 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4029821316120ae6f4
     <link rel="stylesheet" href="/src/assets/css/flaticon.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
 </head>
-<body>
+<body class="row justify-content-center pb-5">
+<div class="col-md-7" style="text-align: center" >
+    <div class="contact-wrap w-100 p-md-5 p-4">
+        <h3 class="mb-4">Registrati</h3>
+        <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label" for="name">Nome</label>
+                        <input type="text" class="form-control" style="text-align: center" name="name" id="name" placeholder="Nome">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="label" for="email">Cognome</label>
+                        <input type="email" class="form-control" style="text-align: center" name="email" id="email" placeholder="Cognome">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="label" for="subject">Email</label>
+                        <input type="text" class="form-control" style="text-align: center" name="subject" id="subject" placeholder="Email">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="label" for="#">Password</label>
+                        <input type="text" class="form-control" style="text-align: center" name="subject" id="subject" placeholder="Password">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="submit" value="Registrati" class="btn btn-primary">
+                        <div class="submitting"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
-<?php $_smarty_tpl->_subTemplateRender('file:src/templates/base/nav.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18918981736120ae6f4c0491_92484715', 'products');
-?>
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11060645786120ae6f4c1ad8_57973305', 'body');
-?>
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6288496006120ae6f4c2b74_87023424', 'allProducts');
-?>
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13188511686120ae6f4c3bb5_98201361', 'productsOfCart');
-?>
-
-
-<?php $_smarty_tpl->_subTemplateRender('file:src/templates/base/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
-
-<!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 <?php echo '<script'; ?>
@@ -117,16 +129,14 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13188511686120ae6f
 >
 <?php echo '<script'; ?>
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
->
-</body>
-</html><?php }
+><?php }
 /* {block 'title'} */
-class Block_4029821316120ae6f4227e9_12736664 extends Smarty_Internal_Block
+class Block_2774840186120ca951c5e87_35445765 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_4029821316120ae6f4227e9_12736664',
+    0 => 'Block_2774840186120ca951c5e87_35445765',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -135,56 +145,4 @@ aaaaaa<?php
 }
 }
 /* {/block 'title'} */
-/* {block 'products'} */
-class Block_18918981736120ae6f4c0491_92484715 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'products' => 
-  array (
-    0 => 'Block_18918981736120ae6f4c0491_92484715',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block 'products'} */
-/* {block 'body'} */
-class Block_11060645786120ae6f4c1ad8_57973305 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'body' => 
-  array (
-    0 => 'Block_11060645786120ae6f4c1ad8_57973305',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block 'body'} */
-/* {block 'allProducts'} */
-class Block_6288496006120ae6f4c2b74_87023424 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'allProducts' => 
-  array (
-    0 => 'Block_6288496006120ae6f4c2b74_87023424',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block 'allProducts'} */
-/* {block 'productsOfCart'} */
-class Block_13188511686120ae6f4c3bb5_98201361 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'productsOfCart' => 
-  array (
-    0 => 'Block_13188511686120ae6f4c3bb5_98201361',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block 'productsOfCart'} */
 }

@@ -13,6 +13,7 @@
     <li>
         {$favourite->getId()}
     </li>
+
 {/foreach}
 </body>
 </html>

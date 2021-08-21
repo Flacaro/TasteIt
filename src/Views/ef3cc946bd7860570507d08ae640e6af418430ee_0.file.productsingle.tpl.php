@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-18 17:42:47
+/* Smarty version 3.1.39, created on 2021-08-21 10:09:33
   from 'C:\Users\mohamed\Documents\GitHub\TasteIt\src\templates\product\productsingle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611d2a77eea371_65069183',
+  'unifunc' => 'content_6120b4bdad2c21_93337663',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef3cc946bd7860570507d08ae640e6af418430ee' => 
     array (
       0 => 'C:\\Users\\mohamed\\Documents\\GitHub\\TasteIt\\src\\templates\\product\\productsingle.tpl',
-      1 => 1629301265,
+      1 => 1629533372,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611d2a77eea371_65069183 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6120b4bdad2c21_93337663 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1031058074611d2a77ee72f7_48478795', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_256174006120b4bdaa1588_39013574', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_600953381611d2a77ee8b78_29672949', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9721370566120b4bdaa4182_19789231', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1031058074611d2a77ee72f7_48478795 extends Smarty_Internal_Block
+class Block_256174006120b4bdaa1588_39013574 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1031058074611d2a77ee72f7_48478795',
+    0 => 'Block_256174006120b4bdaa1588_39013574',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ productsingle<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_600953381611d2a77ee8b78_29672949 extends Smarty_Internal_Block
+class Block_9721370566120b4bdaa4182_19789231 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_600953381611d2a77ee8b78_29672949',
+    0 => 'Block_9721370566120b4bdaa4182_19789231',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -66,72 +66,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 <!-- fine barra rossa -->
 <!-- inizio l'interfaccia nera dove ce Liquor Store  -->
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
 
-        <div class="order-lg-last btn-group">
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
-            </a>
-            <!-- inizio parte del carrello , quando clicchi e appare il menu a tendina con i prodotti  -->
-
-            <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(../../src/assets/images/prod-1.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Bacardi 151</h4>
-                        <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
-                    </div>
-                </div>
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(../../src/assets/images/prod-2.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Jim Beam Kentucky Straight</h4>
-                        <p class="mb-0"><a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity: 02</span></p>
-                    </div>
-                </div>
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(../../src/assets/images/prod-3.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Citadelle</h4>
-                        <p class="mb-0"><a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity: 01</span></p>
-                    </div>
-                </div>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-                    View All
-                    <span class="ion-ios-arrow-round-forward"></span>
-                </a>
-            </div>
-        </div>
-        <!-- fine parte del carrello con i prodotti  -->
-        <!-- inizio la parte del menu a tendina della categoria Product -->
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="product.html">Products</a>
-                        <a class="dropdown-item" href="product-single.html">Single Product</a>
-
-                        <a class="dropdown-item" href="checkout.html">Checkout</a>
-                    </div>
-                    <!-- fine del menu a tendina di product  -->
-                </li>
-                <!-- il resto della barra di navigazione  -->
-
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
 <!-- fine della barra di navigazione con le categorie  -->
 <!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
 
@@ -164,12 +99,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
                     </p>
-                    <p class="text-left mr-4">
-                        <a href="#" class="mr-2" style="color: #000;">100 <span style="color: #000000;">Rating</span></a>
-                    </p>
-                    <p class="text-left">
-                        <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #000000;">Sold</span></a>
-                    </p>
+
                 </div>
                 <p class="price"><span>$120.00</span></p>
                 <p>Questo è il miglior vino che assaggerai nella tua vita perchè è fatto in abruzzo .</p>
@@ -191,7 +121,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-12">
-                        <p style="color: #000;">80 piece available</p>
+                        <p style="color: #000;">80 pezzi disponibili</p>
                     </div>
                 </div>
                 <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
@@ -222,7 +152,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="tab-pane fade show active"  id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                         <div class="p-4">
                             <h3 class="mb-4">Vino Abruzzese grado 12 %</h3>
-                            <p>l'ho lasciato cosi perchè non so che scrivere sinceramente On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                            <p>Colore dorato ambrato. Aromi di nocciola di cremoso burro di arachidi, lanugine di marshmallow e scia si mescolano con un corpo medio molto dolce e un wafer al burro di arachidi liscio, interessante, medio-lungo, torta al caramello al burro di arachidi salato, cioccolato al latte e finale di gelato al burro di arachidi. Qualcosa del genere non dovrebbe essere così buono, ma lo è; bevi questo e poi bevi ancora..</p>
                         </div>
                     </div>
 
@@ -230,7 +160,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
                         <div class="p-4">
                             <h3 class="mb-4">Product By TasteIT Resturant</h3>
-                            <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                            <p>Skrewball è stato creato da un team di marito e moglie Americani . Ha creato un cocktail di whisky al burro di arachidi. L'ha trasformato in un marchio, Skrewball.</p>
                         </div>
                     </div>
                     <!-- inizio della Reviews -->
@@ -243,7 +173,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">Flaviana Caroselli </span>
-                                            <span class="text-right">25 April 2020</span>
+                                            <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>
@@ -255,7 +185,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                        <div >
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['singleReviews']->value, 'singleReview');
+$_smarty_tpl->tpl_vars['singleReview']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['singleReview']->value) {
+$_smarty_tpl->tpl_vars['singleReview']->do_else = false;
+?>
+                                                <div class="item">
+                                                    <div >
+                                                        <div class="text">
+                                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['singleReview']->value->getComment();?>
+</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="review">
@@ -263,7 +211,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">Selene Verna </span>
-                                            <span class="text-right">25 April 2020</span>
+                                            <span class="text-right">25 Maggio 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>
@@ -275,7 +223,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                        <div >
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['singleReviews']->value, 'singleReview');
+$_smarty_tpl->tpl_vars['singleReview']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['singleReview']->value) {
+$_smarty_tpl->tpl_vars['singleReview']->do_else = false;
+?>
+                                                <div class="item">
+                                                    <div >
+                                                        <div class="text">
+                                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['singleReview']->value->getComment();?>
+</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="review">
@@ -283,7 +249,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">Mohamed Ossama</span>
-                                            <span class="text-right">25 April 2020</span>
+                                            <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>
@@ -295,7 +261,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                        <div >
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['singleReviews']->value, 'singleReview');
+$_smarty_tpl->tpl_vars['singleReview']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['singleReview']->value) {
+$_smarty_tpl->tpl_vars['singleReview']->do_else = false;
+?>
+                                                <div class="item">
+                                                    <div >
+                                                        <div class="text">
+                                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['singleReview']->value->getComment();?>
+</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

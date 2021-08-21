@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AuthController;
 use App\Controllers\CartController;
 use App\Controllers\categoryController;
 use App\Controllers\FavouritesController;
@@ -40,10 +41,13 @@ SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"])
 SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/base/categories", [CategoryController::class, "index"]);
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
+SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
 SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[ProductController::class, "addToCart"])->name('addToCart');
 SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
+SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"]);
+SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
