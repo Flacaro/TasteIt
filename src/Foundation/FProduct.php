@@ -59,5 +59,12 @@ class FProduct extends Foundation {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    function getProductsIds($cartId, $productId){
+        //select * from reviews where productId=$productId;
+        $query="SELECT productId FROM products_carts where cartId = " . $cartId . ' and productId = ' . $productId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 
 }

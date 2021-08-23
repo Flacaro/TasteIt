@@ -35,11 +35,11 @@ class CartController {
     $Fcart = new Fcart();
     $quantity = $Fcart->getQuantityOfProduct($cartId, $productId);
     if( $_POST['option'] == 'plus') {
-        $Fcart->incrementQuantity($productId, $quantity);
+        $Fcart->incrementQuantity($cartId, $productId, $quantity);
         redirect(url('productsOfCarts', ['id' => $cartId]));
     }
     else {
-        $Fcart->decrementQuantity($productId, $quantity);
+        $Fcart->decrementQuantity($cartId, $productId, $quantity);
         redirect(url('productsOfCarts', ['id' => $cartId]));
     }
  }

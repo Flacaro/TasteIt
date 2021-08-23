@@ -42,9 +42,9 @@ class FCart extends Foundation {
         return $stmt->fetch();
     }
 
-    function incrementQuantity($productId, $quantity) {
+    function incrementQuantity($cartId, $productId, $quantity) {
         $quantityPlus = $quantity['quantity'] + 1;
-        $query = 'UPDATE products_carts SET quantity = '. $quantityPlus . ' WHERE productId = ' . $productId . ';';
+        $query = 'UPDATE products_carts SET quantity = '. $quantityPlus . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
@@ -52,9 +52,9 @@ class FCart extends Foundation {
     }
 
 
-    function decrementQuantity($productId, $quantity) {
+    function decrementQuantity($cartId, $productId, $quantity) {
         $quantityMinus = $quantity['quantity'] - 1;
-        $query = "update products_carts set quantity = " . $quantityMinus . ' where productId = ' . $productId . ';';
+        $query = "update products_carts set quantity = " . $quantityMinus . ' where productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
