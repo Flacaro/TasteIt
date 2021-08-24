@@ -92,21 +92,21 @@ class ProductController {
 
     public function addToCart($cartId, $productId) {
         $FProduct = new FProduct();
-        //$FCart = new FCart();
-        $FProduct->addToCart($cartId, $productId);
-        redirect(url('products'));
-       /* $productsIds = $FProduct->getProductsIds($cartId, $productId);
-        $quantity = $FCart->getQuantityOfProduct($cartId, $productId);*/
-        /*foreach ($productsIds as $productsId) {
-            if($productsId == $productId[0]) {
+        $FCart = new FCart();
+        $i = 0;
+        $products = $FCart->getProductsOfCart($cartId);
+        $quantity = $FCart->getQuantityOfProduct($cartId, $productId);
+        foreach ($products as $product) {
+            if($productId == $product->getId()) {
                 $FCart->incrementQuantity($cartId,$productId,$quantity);
-                redirect(url('products'));
+                $i = 1;
+               redirect(url('products'));
             }
-            else {
-                $FProduct->addToCart($cartId, $productId);
-                redirect(url('products'));
-            }
-        }*/
+        }
+        if($i == 0) {
+            $FProduct->addToCart($cartId, $productId);
+            redirect(url('products'));
+        }
     }
 
 
