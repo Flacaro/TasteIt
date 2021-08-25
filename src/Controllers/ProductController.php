@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 
+use App\Foundation\FCart;
 use App\Foundation\FCategory;
 use App\Foundation\FProduct;
 use App\Models\Category;
@@ -91,8 +92,21 @@ class ProductController {
 
     public function addToCart($cartId, $productId) {
         $FProduct = new FProduct();
-        $FProduct->addToCart($cartId, $productId);
-        redirect(url('products'));
+        $FCart = new FCart();
+        $i = 0;
+        $products = $FCart->getProductsOfCart($cartId);
+        $quantity = $FCart->getQuantityOfProduct($cartId, $productId);
+        foreach ($products as $product) {
+            if($productId == $product->getId()) {
+                $FCart->incrementQuantity($cartId,$productId,$quantity);
+                $i = 1;
+               redirect(url('products'));
+            }
+        }
+        if($i == 0) {
+            $FProduct->addToCart($cartId, $productId);
+            redirect(url('products'));
+        }
     }
 
 
