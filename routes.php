@@ -17,14 +17,14 @@ SimpleRouter::redirect("/", "/home");
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 //qua ci va {id} sennò non sa a che prodotto mandarti
-SimpleRouter::get("/productsingle", [ProductController::class, "visualizzasingolo"]);
+SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/users", [UserController::class, "index"]);
 //Il primo router serve per visualizzare il form, il secondo per andare a prendere i dati dal db per fare l'update
 SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
-SimpleRouter::post("/products/{id}", [ProductController::class, "update"]);
+SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
 SimpleRouter::get("/products/{id}", [ProductController::class, "destroy"]);
 SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
 SimpleRouter::get("/users/create", [UserController::class, "create"]);
@@ -45,6 +45,9 @@ SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('favourites');
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
+SimpleRouter::put("/products/{productId}/update",[ProductController::class, "updateQuantityOfProduct"]);
+SimpleRouter::get("/products/{productId}",[ProductController::class, "getById"])->name('getById');
+SimpleRouter::get("/products/{productId}/addProductToCart",[ProductController::class, "addProductToCart"]);
 SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[ProductController::class, "addToCart"])->name('addToCart');
 SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
 SimpleRouter::post("/login", [AuthController::class, "visualizeLogin"]);
