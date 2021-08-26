@@ -117,12 +117,14 @@
                                 </p>
                             </div>
                         </div>
+                        <a href="/products/{$bestrated->getId()}">
                         <div class="text text-center">
                             <span class="sale">Sale</span>
                             <span class="category">{$bestrated->getCategory()->getCategoryName()}</span>
                             <h2>{$bestrated->getName()}</h2>
                             <p class="mb-0"> <span class="price">${$bestrated->getPrice()}</span></p>
                         </div>
+                        </a>
                     </div>
                 </div>
                 {/foreach}
@@ -177,14 +179,13 @@
                 {foreach $bestsellers as $bestseller}
                     <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="blog-single.html" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
+                            <a href="/products/{$bestseller->getId()}" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
                             </a>
                             <div class="text p-4 bg-light">
 
                                 <h3 class="heading mb-3"><a href="#">{$bestseller->getName()}</a></h3>
                                 <p>{$bestseller->getDescription()}</p>
                                 <p class="mb-0"> <span class="price">${$bestseller->getPrice()}</span></p>
-                                <a href="#" class="btn-custom">Acquista <span class="fa fa-long-arrow-right"></span></a>
 
                             </div>
                         </div>

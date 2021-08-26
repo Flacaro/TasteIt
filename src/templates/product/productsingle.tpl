@@ -106,7 +106,8 @@
                     <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                         <div class="row p-4">
                             <div class="col-md-7">
-                                <h3 class="mb-4">23 Recensioni </h3>
+                                <h3 class="mb-4">{count($reviews)} Recensione/i</h3>
+                                {foreach $reviews as $review}
                                 <div class="review">
                                     <div class="user-img" style="background-image: url(../../src/assets/images/Fla.jpg)"></div>
                                     <div class="desc">
@@ -125,78 +126,17 @@
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
                                         <div >
-                                            {foreach $singleReviews as $singleReview}
                                                 <div class="item">
                                                     <div >
                                                         <div class="text">
-                                                            <p class="mb-4">{$singleReview->getComment()}</p>
+                                                            <p class="mb-4">{$review->getComment()}</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            {/foreach}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="review">
-                                    <div class="user-img" style="background-image: url(../../src/assets/images/Selen.jpg)"></div>
-                                    <div class="desc">
-                                        <h4>
-                                            <span class="text-left">Selene Verna </span>
-                                            <span class="text-right">25 Maggio 2020</span>
-                                        </h4>
-                                        <p class="star">
-								   				<span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-							   					</span>
-                                            <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                        </p>
-                                        <div >
-                                            {foreach $singleReviews as $singleReview}
-                                                <div class="item">
-                                                    <div >
-                                                        <div class="text">
-                                                            <p class="mb-4">{$singleReview->getComment()}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {/foreach}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review">
-                                    <div class="user-img" style="background-image: url(../../src/assets/images/Mohamed.jpg)"></div>
-                                    <div class="desc">
-                                        <h4>
-                                            <span class="text-left">Mohamed Ossama</span>
-                                            <span class="text-right">25 Aprile 2020</span>
-                                        </h4>
-                                        <p class="star">
-								   				<span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-							   					</span>
-                                            <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                        </p>
-                                        <div >
-                                            {foreach $singleReviews as $singleReview}
-                                                <div class="item">
-                                                    <div >
-                                                        <div class="text">
-                                                            <p class="mb-4">{$singleReview->getComment()}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            {/foreach}
-                                        </div>
-                                    </div>
-                                </div>
+                                {/foreach}
                             </div>
                             <div class="col-md-4">
                                 <div class="rating-wrap">

@@ -10,4 +10,8 @@ class FUser extends Foundation {
         parent::__construct('users', 'User');
     }
 
+    public function getUserFromReview($reviewId){
+        //select 
+    }
+
 }

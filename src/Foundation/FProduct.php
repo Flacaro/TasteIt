@@ -55,14 +55,6 @@ class FProduct extends Foundation {
         $stmt->execute();
     }
 
-    function getSingleReviews(){
-        //select * from reviews where productId=$productId;
-        $query="SELECT * FROM reviews ";
-        $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Review");
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
 
     function getProductsIds($cartId, $productId){
         //select * from reviews where productId=$productId;

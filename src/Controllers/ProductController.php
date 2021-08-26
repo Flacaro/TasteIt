@@ -66,7 +66,7 @@ class ProductController {
            'categoryId' => $product->getCategoryId()
        ]);
    }
-   public function visualizzaHome(){
+   /*public function visualizzaHome(){
        $FProduct = new FProduct();
        $FCategory = new FCategory();
        $products = $FProduct->getAll();
@@ -75,18 +75,16 @@ class ProductController {
             'products' => $products,
             'categories' => $categories
        ]);
-   }
+   }*/
 
-    public function visualizzasingolo(){
-
+    public function visualizeSingleProduct($productId){
+//passare un array di utenti e poi fare la ricerca di quello giusto tramite id?
         $FProduct = new FProduct();
-        $singleReviews=$FProduct->getSingleReviews();
+        $ratings=$FProduct->getRatings($productId);
 
         return view('product/productsingle', [
-
-            'singleReviews' => $singleReviews
-
-
+            'id' => $productId,
+            'reviews' => $ratings
         ]);
     }
 

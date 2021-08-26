@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-25 11:11:51
+/* Smarty version 3.1.39, created on 2021-08-26 21:56:48
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\productsingle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_612609578279e8_33311418',
+  'unifunc' => 'content_6127f200cc9295_45773948',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6dd6cfd3e18b359033da34f7811cf6c6c8b40068' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\productsingle.tpl',
-      1 => 1629540761,
+      1 => 1630007807,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_612609578279e8_33311418 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6127f200cc9295_45773948 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6668635226126095781a807_49960118', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3241588386127f200cbe387_24942092', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5014040166126095781b800_22899963', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11554166646127f200cbf967_62357448', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_6668635226126095781a807_49960118 extends Smarty_Internal_Block
+class Block_3241588386127f200cbe387_24942092 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_6668635226126095781a807_49960118',
+    0 => 'Block_3241588386127f200cbe387_24942092',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ productsingle<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_5014040166126095781b800_22899963 extends Smarty_Internal_Block
+class Block_11554166646127f200cbf967_62357448 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_5014040166126095781b800_22899963',
+    0 => 'Block_11554166646127f200cbf967_62357448',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -167,7 +167,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                         <div class="row p-4">
                             <div class="col-md-7">
-                                <h3 class="mb-4">23 Recensioni </h3>
+                                <h3 class="mb-4"><?php echo count($_smarty_tpl->tpl_vars['reviews']->value);?>
+ Recensioni</h3>
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['reviews']->value, 'review');
+$_smarty_tpl->tpl_vars['review']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['review']->value) {
+$_smarty_tpl->tpl_vars['review']->do_else = false;
+?>
                                 <div class="review">
                                     <div class="user-img" style="background-image: url(../../src/assets/images/Fla.jpg)"></div>
                                     <div class="desc">
@@ -186,102 +193,20 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
                                         <div >
-                                            <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['singleReviews']->value, 'singleReview');
-$_smarty_tpl->tpl_vars['singleReview']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['singleReview']->value) {
-$_smarty_tpl->tpl_vars['singleReview']->do_else = false;
-?>
                                                 <div class="item">
                                                     <div >
                                                         <div class="text">
-                                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['singleReview']->value->getComment();?>
+                                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['review']->value->getComment();?>
 </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="review">
-                                    <div class="user-img" style="background-image: url(../../src/assets/images/Selen.jpg)"></div>
-                                    <div class="desc">
-                                        <h4>
-                                            <span class="text-left">Selene Verna </span>
-                                            <span class="text-right">25 Maggio 2020</span>
-                                        </h4>
-                                        <p class="star">
-								   				<span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-							   					</span>
-                                            <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                        </p>
-                                        <div >
-                                            <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['singleReviews']->value, 'singleReview');
-$_smarty_tpl->tpl_vars['singleReview']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['singleReview']->value) {
-$_smarty_tpl->tpl_vars['singleReview']->do_else = false;
-?>
-                                                <div class="item">
-                                                    <div >
-                                                        <div class="text">
-                                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['singleReview']->value->getComment();?>
-</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <?php
+                                <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review">
-                                    <div class="user-img" style="background-image: url(../../src/assets/images/Mohamed.jpg)"></div>
-                                    <div class="desc">
-                                        <h4>
-                                            <span class="text-left">Mohamed Ossama</span>
-                                            <span class="text-right">25 Aprile 2020</span>
-                                        </h4>
-                                        <p class="star">
-								   				<span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-							   					</span>
-                                            <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                        </p>
-                                        <div >
-                                            <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['singleReviews']->value, 'singleReview');
-$_smarty_tpl->tpl_vars['singleReview']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['singleReview']->value) {
-$_smarty_tpl->tpl_vars['singleReview']->do_else = false;
-?>
-                                                <div class="item">
-                                                    <div >
-                                                        <div class="text">
-                                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['singleReview']->value->getComment();?>
-</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="rating-wrap">
