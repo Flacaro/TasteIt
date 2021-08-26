@@ -38,7 +38,7 @@ abstract class Foundation {
 
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->model);
         $stmt->execute();
-        $stmt->debugDumpParams();
+        //$stmt->debugDumpParams();
         return $stmt->fetch();
     }
 
