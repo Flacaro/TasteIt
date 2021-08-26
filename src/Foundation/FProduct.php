@@ -55,11 +55,40 @@ class FProduct extends Foundation {
         $stmt->execute();
     }
 
+    function addProductToCart($cartId, $productId, $quantity) {
+        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values (' . $productId . ', ' . $cartId . ', ' . $quantity . ');';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+    }
 
     function getProductsIds($cartId, $productId){
         //select * from reviews where productId=$productId;
         $query="SELECT productId FROM products_carts where cartId = " . $cartId . ' and productId = ' . $productId . ';';
         $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    function getQuantity($productId) {
+        $query = 'select quantity from products_carts where productId = ' . $productId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    function incrementQuantityOfProduct($productId, $quantity) {
+        $quantityPlus = $quantity['quantity'] + 1;
+        $query = 'UPDATE products SET quantity = '. $quantityPlus . ' WHERE productId = ' . $productId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+
+    function decrementQuantityOfProduct($productId, $quantity) {
+        $quantityMinus = $quantity['quantity'] - 1;
+        $query = "update products set quantity = " . $quantityMinus . ' where productId = ' . $productId . ';';
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
         return $stmt->fetchAll();
     }

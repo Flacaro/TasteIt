@@ -11,8 +11,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '6dd6cfd3e18b359033da34f7811cf6c6c8b40068' => 
     array (
-      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\productsingle.tpl',
-      1 => 1630007807,
+
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
+      1 => 1629540761,
+
       2 => 'file',
     ),
   ),

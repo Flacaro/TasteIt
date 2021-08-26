@@ -11,7 +11,7 @@
                             <a href="index.html">Home <i class="fa fa-chevron-right"></i></a>
                         </span> <span>Prodotti <i class="fa fa-chevron-right"></i></span>
                     </p>
-                    <h2 class="mb-0 bread">All Products</h2>
+                    <h2 class="mb-0 bread">Tutti i prodotti</h2>
                 </div>
             </div>
         </div>

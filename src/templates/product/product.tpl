@@ -1,34 +1,29 @@
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 {extends file='src/templates/base/base.tpl'}
-{block name=title}productsingle{/block}
+{block name=title}product{/block}
 {block name=body}
 
-<!-- fine barra rossa -->
-<!-- inizio l'interfaccia nera dove ce Liquor Store  -->
-
-<!-- fine della barra di navigazione con le categorie  -->
 <!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
-
 <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div >
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span><a href="product.html">Products <i class="fa fa-chevron-right"></i></a></span> <span> Single Product <i class="fa fa-chevron-right"></i></span></p>
-                <h2 class="mb-0 bread">Single Product </h2>
+                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span><a href="product.html">Produtti <i class="fa fa-chevron-right"></i></a></span> <span> Prodotto <i class="fa fa-chevron-right"></i></span></p>
+                <h2 class="mb-0 bread">Prodotto </h2>
             </div>
         </div>
     </div>
     <!-- fine  schermata del Home e del product con la foto del liquore e delle rose -->
 </section>
-<!-- inizio della schermata con tutti il tipo  del  liquore , prezzo e la sua descrizione -->
+<!-- inizio della schermata del  liquore , prezzo e la sua descrizione -->
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(../../src/assets/images/prod-9.jpg);">
+            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(/src/assets/images/prod-9.jpg);">
             </div>
             <div class="col-lg-6 product-details pl-md-5 ">
-                <h3>Vino Abruzzese</h3>
+                <h3>{$product->getName()}</h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
                         <a href="#" class="mr-2">5.0</a>
@@ -40,12 +35,10 @@
                     </p>
 
                 </div>
-                <p class="price"><span>$120.00</span></p>
-                <p>Questo è il miglior vino che assaggerai nella tua vita perchè è fatto in abruzzo .</p>
-                <p>vino fatto con passione del mare abruzzese , montagne abruzzese e le pecore.
-                </p>
+                <p class="price"><span>{$product->getPrice()}</span></p>
+                <p>{$product->getDescription()}</p>
                 <div class="row mt-4">
-                    <div class="input-group col-md-6 d-flex mb-3">
+                    {*<div class="input-group col-md-6 d-flex mb-3">
 	             	<span class="input-group-btn mr-2">
 	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
 	                   <i class="fa fa-minus"></i>
@@ -58,13 +51,42 @@
 	                 </button>
 	             	</span>
                     </div>
-                    <div class="w-100"></div>
-                    <div class="col-md-12">
-                        <p style="color: #000;">80 pezzi disponibili</p>
-                    </div>
+                    <div class="w-100"></div>*}
+                    <td class="quantity">
+                        <div class="input-group" style="width: 9em">
+                            <form action="/carts/{$cartId}/products/{$product->getId()}/update" method="POST" style="float: left">
+                                <div class="button minus">
+
+                                    <input hidden type="text" value="PUT" name="_method">
+                                    <input hidden type="text" value="minus" name="option">
+
+                                    <button class="btn btn-primary btn-number" type="submit"
+                                            {if $product->getQuantity() == 1}
+                                                disabled
+                                            {/if}
+                                    >
+                                        -
+                                    </button>
+                                </div>
+                            </form>
+
+                            <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product->getQuantity()}" style="width: 2em">
+
+                            <form action="/products/{$product->getId()}/update" method="POST" style="float: right">
+                                <div class="button plus">
+
+                                    <input hidden type="text" value="PUT" name="_method">
+                                    <input hidden type="text" value="plus" name="option">
+
+                                    <button class="btn btn-primary btn-number" type="submit"> + </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </td>
                 </div>
                 <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
-                <p><a href="cart.html" class="btn btn-primary py-3 px-5 mr-2">Aggiungi al Carrello </a><a href="cart.html" class="btn btn-primary py-3 px-5">Compra Subito</a></p>
+                <p><a href="/products/{$product->getId()}/addProductToCart" class="btn btn-primary py-3 px-5 mr-2">Aggiungi al Carrello </a><a href="cart.html" class="btn btn-primary py-3 px-5">Compra Subito</a></p>
             </div>
         </div>
 
@@ -90,8 +112,7 @@
 
                     <div class="tab-pane fade show active"  id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                         <div class="p-4">
-                            <h3 class="mb-4">Vino Abruzzese grado 12 %</h3>
-                            <p>Colore dorato ambrato. Aromi di nocciola di cremoso burro di arachidi, lanugine di marshmallow e scia si mescolano con un corpo medio molto dolce e un wafer al burro di arachidi liscio, interessante, medio-lungo, torta al caramello al burro di arachidi salato, cioccolato al latte e finale di gelato al burro di arachidi. Qualcosa del genere non dovrebbe essere così buono, ma lo è; bevi questo e poi bevi ancora..</p>
+                            <p class="mb-4">}{$product->getDescription()}</p>
                         </div>
                     </div>
 

@@ -77,16 +77,20 @@ class ProductController {
        ]);
    }*/
 
-    public function visualizeSingleProduct($productId){
+    public function getProduct($productId){
 //passare un array di utenti e poi fare la ricerca di quello giusto tramite id?
         $FProduct = new FProduct();
         $ratings=$FProduct->getRatings($productId);
+        $product = $FProduct->getById($productId);
 
-        return view('product/productsingle', [
+        return view('product/product', [
             'id' => $productId,
-            'reviews' => $ratings
+            'reviews' => $ratings,
+            'product' => $product,
+            'cartId' => 1
         ]);
     }
+
 
     public function addToCart($cartId, $productId) {
         $FProduct = new FProduct();
@@ -105,6 +109,12 @@ class ProductController {
             $FProduct->addToCart($cartId, $productId);
             redirect(url('products'));
         }
+    }
+    public function addProductToCart($cartId, $productId) {
+        $FProduct = new FProduct();
+        $quantity = $FProduct->getQuantity($productId);
+        $FProduct->addProductToCart($cartId, $productId, $quantity);
+        redirect(url('products/{productId}', ['cartId' => $cartId, 'productId' => $productId]));
     }
 
 
@@ -126,4 +136,16 @@ class ProductController {
        return $average/count($ratings);}
        else return 0;
    }
+    public function updateQuantityOfProduct($productId){
+        $FProduct = new FProduct();
+        $quantity = $FProduct->getQuantity($productId);
+        if( $_POST['option'] == 'plus') {
+            $FProduct->incrementQuantityOfProduct($productId, $quantity);
+            redirect(url('getById', ['id' => $productId]));
+        }
+        else {
+            $FProduct->decrementQuantityOfProduct($productId, $quantity);
+            redirect(url('getById', ['id' => $productId]));
+        }
+    }
 }
