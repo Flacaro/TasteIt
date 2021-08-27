@@ -26,7 +26,7 @@
                 <h3>{$product->getName()}</h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
-                        <a href="#" class="mr-2">5.0</a>
+                        <a href="#" class="mr-2">{$avg}</a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>

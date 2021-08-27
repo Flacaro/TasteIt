@@ -89,8 +89,13 @@ class ProductController
         $FProduct = new FProduct();
         $ratings = $FProduct->getRatings($id);
         $product = $FProduct->getById($id);
+        $stars = $FProduct->getAvgRating($id);
+        //????
+        $stars=$stars[0][0];
+        print_r($stars);
         return view('product/product', [
             'productId' => $id,
+            'avg'=>$stars,
             'reviews' => $ratings,
             'product' => $product,
             'cartId' => 1,
@@ -115,19 +120,6 @@ class ProductController
     }
 
 
-    public function getAverageRating($productId)
-    {
-        $FProduct = new FProduct();
-        $ratings = $FProduct->getRatings($productId);
-        $average = 0;
-        if (count($ratings) != 0) {
-            foreach ($ratings as $stars) {
-                $average = $average + $stars->getStars();
-            }
-
-            return $average / count($ratings);
-        } else return 0;
-    }
 
     public function updateQuantityOfProduct($productId, $quantity) {
          $product = new Product();

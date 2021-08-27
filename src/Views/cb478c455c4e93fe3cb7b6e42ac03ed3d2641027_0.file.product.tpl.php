@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-27 20:07:21
+/* Smarty version 3.1.39, created on 2021-08-27 21:42:57
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_612929d914cbc3_25893275',
+  'unifunc' => 'content_61294041666b04_13745244',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb478c455c4e93fe3cb7b6e42ac03ed3d2641027' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
-      1 => 1630087638,
+      1 => 1630093370,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_612929d914cbc3_25893275 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61294041666b04_13745244 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1672599525612929d913f173_14290301', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_77798550161294041658833_62766513', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_45787037612929d913fd00_66607026', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192321638361294041659201_42269050', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1672599525612929d913f173_14290301 extends Smarty_Internal_Block
+class Block_77798550161294041658833_62766513 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1672599525612929d913f173_14290301',
+    0 => 'Block_77798550161294041658833_62766513',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_45787037612929d913fd00_66607026 extends Smarty_Internal_Block
+class Block_192321638361294041659201_42269050 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_45787037612929d913fd00_66607026',
+    0 => 'Block_192321638361294041659201_42269050',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -88,7 +88,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
-                        <a href="#" class="mr-2">5.0</a>
+                        <a href="#" class="mr-2"><?php echo $_smarty_tpl->tpl_vars['avg']->value;?>
+</a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
