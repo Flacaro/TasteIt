@@ -36,7 +36,7 @@
                             <p class="meta-prod d-flex">
                                 <a href="/carts/{$cartId}/products/{$product->getId()}/addToCart" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
                                 <a href="/products/{$product->getId()}/addToFavourites/{$favId}" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                <a href="/products/{$product->getId()}" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
                             </p>
                         </div>
                     </div>

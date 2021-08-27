@@ -49,17 +49,6 @@ class FProduct extends Foundation {
         return $stmt->fetchAll();
     }
 
-    function addToCart($cartId, $productId) {
-        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values (' . $productId . ', ' . $cartId . ', ' . '  1);';
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute();
-    }
-
-    function addProductToCart($cartId, $productId, $quantity) {
-        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values (' . $productId . ', ' . $cartId . ', ' . $quantity . ');';
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute();
-    }
 
     function getProductsIds($cartId, $productId){
         //select * from reviews where productId=$productId;
@@ -68,27 +57,20 @@ class FProduct extends Foundation {
         $stmt->execute();
         return $stmt->fetchAll();
     }
-    function getQuantity($productId) {
-        $query = 'select quantity from products_carts where productId = ' . $productId . ';';
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute();
-        return $stmt->fetch();
-    }
-    function incrementQuantityOfProduct($productId, $quantity) {
-        $quantityPlus = $quantity['quantity'] + 1;
-        $query = 'UPDATE products SET quantity = '. $quantityPlus . ' WHERE productId = ' . $productId . ';';
+
+    function updateQuantityOfProduct($productId, $cartId, $quantity) {
+        $newQuantity = $quantity['quantity'];
+        $query = 'UPDATE products_carts SET quantity = '. $newQuantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->debugDumpParams();
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
-
-    function decrementQuantityOfProduct($productId, $quantity) {
-        $quantityMinus = $quantity['quantity'] - 1;
-        $query = "update products set quantity = " . $quantityMinus . ' where productId = ' . $productId . ';';
+    function getStars($productId) {
+        $query = 'select stars from reviews where productId = ' . $productId . ';';
         $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
         return $stmt->fetchAll();
     }

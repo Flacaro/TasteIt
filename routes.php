@@ -17,7 +17,7 @@ SimpleRouter::redirect("/", "/home");
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 //qua ci va {id} sennò non sa a che prodotto mandarti
-SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"]);
+SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
@@ -46,9 +46,9 @@ SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('f
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
 SimpleRouter::put("/products/{productId}/update",[ProductController::class, "updateQuantityOfProduct"]);
-SimpleRouter::get("/products/{productId}",[ProductController::class, "getById"])->name('getById');
-SimpleRouter::get("/products/{productId}/addProductToCart",[ProductController::class, "addProductToCart"]);
-SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[ProductController::class, "addToCart"])->name('addToCart');
+SimpleRouter::get("/products/{productId}/newQuantity", [ProductController::class, "getNewQuantityOfProduct"])->name('newQuantity');
+SimpleRouter::get("/products/{productId}/stars", [ProductController::class, "getStars"]);
+SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[CartController::class, "addToCart"])->name('addToCart');
 SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
 SimpleRouter::post("/login", [AuthController::class, "visualizeLogin"]);
 SimpleRouter::post("/signup", [AuthController::class, "visualizeSignUp"]);

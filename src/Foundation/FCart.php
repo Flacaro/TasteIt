@@ -61,6 +61,12 @@ class FCart extends Foundation {
         return $stmt->fetchAll();
     }
 
+    function addToCart($cartId, $productId) {
+        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values (' . $productId . ', ' . $cartId . ', ' . '  1);';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+    }
+
     function deleteFromCart($cartId, $productId) {
         $query = 'delete from products_carts where productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $this->connection->prepare($query);
