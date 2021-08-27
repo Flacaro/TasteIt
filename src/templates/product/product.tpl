@@ -138,11 +138,13 @@
                                         </h4>
                                         <p class="star">
 								   				<span>
+                                                    {for $var=1 to $review->getStar()}
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
+                                                    {/for}
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-26 22:44:29
+/* Smarty version 3.1.39, created on 2021-08-27 17:02:25
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6127fd2d7bd262_28062802',
+  'unifunc' => 'content_6128fe81b70e10_18635375',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb478c455c4e93fe3cb7b6e42ac03ed3d2641027' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
-      1 => 1630010668,
+      1 => 1630076543,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6127fd2d7bd262_28062802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6128fe81b70e10_18635375 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18480886146127fd2d7ad9a9_16608436', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16125204336128fe81b62026_71272528', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10700604956127fd2d7ae475_07581125', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8056689566128fe81b62964_20144639', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_18480886146127fd2d7ad9a9_16608436 extends Smarty_Internal_Block
+class Block_16125204336128fe81b62026_71272528 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_18480886146127fd2d7ad9a9_16608436',
+    0 => 'Block_16125204336128fe81b62026_71272528',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_10700604956127fd2d7ae475_07581125 extends Smarty_Internal_Block
+class Block_8056689566128fe81b62964_20144639 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_10700604956127fd2d7ae475_07581125',
+    0 => 'Block_8056689566128fe81b62964_20144639',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -202,11 +202,19 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
                                         </h4>
                                         <p class="star">
 								   				<span>
+                                                    <?php
+$_smarty_tpl->tpl_vars['var'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? $_smarty_tpl->tpl_vars['review']->value->getStar()+1 - (1) : 1-($_smarty_tpl->tpl_vars['review']->value->getStar())+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+if ($_smarty_tpl->tpl_vars['var']->total > 0) {
+for ($_smarty_tpl->tpl_vars['var']->value = 1, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
+$_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration === 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration === $_smarty_tpl->tpl_vars['var']->total;?>
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
 								   					<i class="fa fa-star"></i>
+                                                    <?php }
+}
+?>
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
