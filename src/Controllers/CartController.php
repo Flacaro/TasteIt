@@ -44,6 +44,24 @@ class CartController {
     }
  }
 
+    public function addToCart($cartId, $productId) {
+        $FCart = new FCart();
+        $i = 0;
+        $products = $FCart->getProductsOfCart($cartId);
+        $quantity = $FCart->getQuantityOfProduct($cartId, $productId);
+        foreach ($products as $product) {
+            if($productId == $product->getId()) {
+                $FCart->incrementQuantity($cartId,$productId,$quantity);
+                $i = 1;
+                redirect(url('products'));
+            }
+        }
+            if($i == 0) {
+                $FCart->addToCart($cartId, $productId);
+                redirect(url('products'));
+        }
+    }
+
     public function destroy($cartId, $productId)
     {
         $FCart = new FCart();

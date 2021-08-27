@@ -8,39 +8,44 @@ use App\Foundation\FCategory;
 use App\Foundation\FProduct;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
 
-class ProductController {
+class ProductController
+{
 
-   public function index() {
-       $FProduct = new FProduct();
-       $products = $FProduct->getAll();
-       return view('product/all_products', [
-           'products' => $products,
-           'cartId' => 1 // dovresti prendere il cartId dell'utente loggato
-       ]);
-    
-   }
+    public function index()
+    {
+        $FProduct = new FProduct();
+        $products = $FProduct->getAll();
+        return view('product/all_products', [
+            'products' => $products,
+            'cartId' => 1 // dovresti prendere il cartId dell'utente loggato
+        ]);
 
-   public function create() {
-       $FProduct = new FProduct();
-       $FCategory = new FCategory();
+    }
 
-       $category = new Category();
-       $category->setCategoryName("Pizza");
-       $category->setRestaurantId(1);
+    public function create()
+    {
+        $FProduct = new FProduct();
+        $FCategory = new FCategory();
 
-       $categoryId = $FCategory->create($category);
+        $category = new Category();
+        $category->setCategoryName("Pizza");
+        $category->setRestaurantId(1);
 
-       $product = new Product();
-       $product->setName('Capricciosa');
-       $product->setDescription('Succosa');
-       $product->setPrice(8);
-       $product->setCategoryId($categoryId);
-       $FProduct->create($product);
-       header("Location: /products");
-   }
+        $categoryId = $FCategory->create($category);
 
-   public function update($id) {
+        $product = new Product();
+        $product->setName('Capricciosa');
+        $product->setDescription('Succosa');
+        $product->setPrice(8);
+        $product->setCategoryId($categoryId);
+        $FProduct->create($product);
+        header("Location: /products");
+    }
+
+    public function update($id)
+    {
         $FProduct = new FProduct();
         //superglobal, come parametro ci va passato il nome dell'input a cui fare riferimento
         $name = $_POST['name'];
@@ -53,99 +58,93 @@ class ProductController {
         $product->setDescription($description);
         $product->setCategoryId($categoryId);
         $FProduct->update($id, $product);
-   }
+    }
 
-   public function edit($id) {
+    public function edit($id)
+    {
         $FProduct = new FProduct();
         $product = $FProduct->getById($id);
-       return view('product/product-update', [
-           'id' => $product->getId(),
-           'name' => $product->getName(),
-           'description' => $product->getDescription(),
-           'price' => $product->getPrice(),
-           'categoryId' => $product->getCategoryId()
-       ]);
-   }
-   /*public function visualizzaHome(){
-       $FProduct = new FProduct();
-       $FCategory = new FCategory();
-       $products = $FProduct->getAll();
-       $categories = $FCategory->getAll();
-       return view('product/products', [
-            'products' => $products,
-            'categories' => $categories
-       ]);
-   }*/
+        return view('product/product-update', [
+            'id' => $product->getId(),
+            'name' => $product->getName(),
+            'description' => $product->getDescription(),
+            'price' => $product->getPrice(),
+            'categoryId' => $product->getCategoryId()
+        ]);
+    }
 
-    public function getProduct($productId){
+    /*public function visualizzaHome(){
+        $FProduct = new FProduct();
+        $FCategory = new FCategory();
+        $products = $FProduct->getAll();
+        $categories = $FCategory->getAll();
+        return view('product/products', [
+             'products' => $products,
+             'categories' => $categories
+        ]);
+    }*/
+
+    public function getProduct($productId) {
 //passare un array di utenti e poi fare la ricerca di quello giusto tramite id?
         $FProduct = new FProduct();
-        $ratings=$FProduct->getRatings($productId);
+        $ratings = $FProduct->getRatings($productId);
         $product = $FProduct->getById($productId);
-
         return view('product/product', [
-            'id' => $productId,
+            'productId' => $productId,
             'reviews' => $ratings,
             'product' => $product,
-            'cartId' => 1
+            'cartId' => 1,
+            'quantity' => 1
+        ]);
+    }
+
+    public function getNewQuantityOfProduct($productId) {
+        $product = new Product();
+        $quantity = $product->getQuantity();
+        return view('product/product', [
+            'quantity' => $quantity,
+            'productId' => $productId
         ]);
     }
 
 
-    public function addToCart($cartId, $productId) {
+    public function destroy($id)
+    {
         $FProduct = new FProduct();
-        $FCart = new FCart();
-        $i = 0;
-        $products = $FCart->getProductsOfCart($cartId);
-        $quantity = $FCart->getQuantityOfProduct($cartId, $productId);
-        foreach ($products as $product) {
-            if($productId == $product->getId()) {
-                $FCart->incrementQuantity($cartId,$productId,$quantity);
-                $i = 1;
-               redirect(url('products'));
+        $FProduct->delete($id);
+    }
+
+
+    public function getAverageRating($productId)
+    {
+        $FProduct = new FProduct();
+        $ratings = $FProduct->getRatings($productId);
+        $average = 0;
+        if (count($ratings) != 0) {
+            foreach ($ratings as $stars) {
+                $average = $average + $stars->getStars();
             }
-        }
-        if($i == 0) {
-            $FProduct->addToCart($cartId, $productId);
-            redirect(url('products'));
-        }
+
+            return $average / count($ratings);
+        } else return 0;
     }
-    public function addProductToCart($cartId, $productId) {
+
+    public function updateQuantityOfProduct($productId, $quantity) {
+         $product = new Product();
+         if($_POST['option'] == 'plus') {
+             $newQuantity = $quantity + 1;
+         }
+         else {
+             $newQuantity = $quantity - 1;
+         }
+         $product->setQuantity($newQuantity);
+         redirect(url('newQuantity', ['productId' => $productId, 'quantity'=> $newQuantity]));
+    }
+
+    public function getStars($productId) {
         $FProduct = new FProduct();
-        $quantity = $FProduct->getQuantity($productId);
-        $FProduct->addProductToCart($cartId, $productId, $quantity);
-        redirect(url('products/{productId}', ['cartId' => $cartId, 'productId' => $productId]));
+        $review = $FProduct->getStars($productId);
+        redirect('getProduct', ['productId' => $productId, 'review' => $review]);
     }
 
-
-   public function destroy($id) {
-       $FProduct = new FProduct();
-       $FProduct->delete($id);
-   }
-
-
-   public function getAverageRating($productId){
-       $FProduct = new FProduct();
-       $ratings=$FProduct->getRatings($productId);
-       $average=0;
-       if (count($ratings)!=0){
-       foreach ($ratings as $stars) {
-           $average = $average + $stars->getStars();
-       }
-
-       return $average/count($ratings);}
-       else return 0;
-   }
-    public function updateQuantityOfProduct($productId){
-        $FProduct = new FProduct();
-        $quantity = $FProduct->getQuantity($productId);
-        if( $_POST['option'] == 'plus') {
-            $FProduct->incrementQuantityOfProduct($productId, $quantity);
-            redirect(url('getById', ['id' => $productId]));
-        }
-        else {
-            $FProduct->decrementQuantityOfProduct($productId, $quantity);
-            redirect(url('getById', ['id' => $productId]));
-        }
-    }
 }

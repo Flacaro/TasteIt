@@ -35,76 +35,55 @@
                     </p>
 
                 </div>
-                <p class="price"><span>{$product->getPrice()}</span></p>
+                <p class="price"><span> £ {$product->getPrice()}</span></p>
                 <p>{$product->getDescription()}</p>
                 <div class="row mt-4">
-                    {*<div class="input-group col-md-6 d-flex mb-3">
+                    <div class="input-group col-md-6 d-flex mb-3">
 	             	<span class="input-group-btn mr-2">
-	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+                         <form action="/products/{$productId}/update" method="POST" style="float: right">
+                                <input hidden type="text" value="PUT" name="_method">
+                                <input hidden type="text" value="minus" name="option">
+	                	<button type="submit" class="quantity-left-minus btn"  data-type="minus" data-field="" value="minus">
 	                   <i class="fa fa-minus"></i>
 	                	</button>
+                         </form>
 	            		</span>
-                        <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                        <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="{$quantity}" min="1" max="100">
                         <span class="input-group-btn ml-2">
-	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-	                     <i class="fa fa-plus"></i>
-	                 </button>
+                           <form action="/products/{$productId}/update" method="POST" style="float: right">
+                                <input hidden type="text" value="PUT" name="_method">
+                                <input hidden type="text" value="plus" name="option">
+
+                                 <button type="submit" class="quantity-right-plus btn" data-type="plus" data-field="" value="plus">
+
+	                                <i class="fa fa-plus"></i>
+	                            </button>
+                            </form>
 	             	</span>
                     </div>
-                    <div class="w-100"></div>*}
-                    <td class="quantity">
-                        <div class="input-group" style="width: 9em">
-                            <form action="/carts/{$cartId}/products/{$product->getId()}/update" method="POST" style="float: left">
-                                <div class="button minus">
-
-                                    <input hidden type="text" value="PUT" name="_method">
-                                    <input hidden type="text" value="minus" name="option">
-
-                                    <button class="btn btn-primary btn-number" type="submit"
-                                            {if $product->getQuantity() == 1}
-                                                disabled
-                                            {/if}
-                                    >
-                                        -
-                                    </button>
-                                </div>
-                            </form>
-
-                            <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product->getQuantity()}" style="width: 2em">
-
-                            <form action="/products/{$product->getId()}/update" method="POST" style="float: right">
-                                <div class="button plus">
-
-                                    <input hidden type="text" value="PUT" name="_method">
-                                    <input hidden type="text" value="plus" name="option">
-
-                                    <button class="btn btn-primary btn-number" type="submit"> + </button>
-                                </div>
-                            </form>
-
-                        </div>
-                    </td>
+                    <div class="w-100"></div>
+                    <div class="col-md-12">
+                    </div>
                 </div>
+
                 <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
-                <p><a href="/products/{$product->getId()}/addProductToCart" class="btn btn-primary py-3 px-5 mr-2">Aggiungi al Carrello </a><a href="cart.html" class="btn btn-primary py-3 px-5">Compra Subito</a></p>
+                <p><a href="/products/{$product->getId()}/addToCart" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
             </div>
         </div>
 
-        <!-- class="row mt-5" -->
-
         <!-- Inizio la barra  del Description , Manifacture , Reviews sotto la foto del liquore  -->
-        <div class=" row primary py-3 px-5 mr-2">
-            <div class="col-md-12 nav-link-wrap">
-                <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link ftco-mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Descrizione</a>
+            <div class="row mt-5">
+                <div class="col-md-12 nav-link-wrap">
+                    <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Description</a>
 
-                    <a class="nav-link ftco-mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Produttore</a>
+                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Manufacturer</a>
 
-                    <a class="nav-link ftco-mr-lg-1" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Recensioni </a>
+                        <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Reviews</a>
+
+                    </div>
 
                 </div>
-
-            </div>
             <!-- fine della barra  -->
             <div class="col-md-12 ">
                 <!-- inizio della descrizione  -->
@@ -112,14 +91,14 @@
 
                     <div class="tab-pane fade show active"  id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                         <div class="p-4">
-                            <p class="mb-4">}{$product->getDescription()}</p>
+                            <p class="mb-4">{$product->getDescription()}</p>
                         </div>
                     </div>
 
                     <!-- inizio della Manifacture   -->
                     <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
                         <div class="p-4">
-                            <h3 class="mb-4">Product By TasteIT Resturant</h3>
+                            <h3 class="mb-4">Prodotto da TasteIt</h3>
                             <p>Skrewball è stato creato da un team di marito e moglie Americani . Ha creato un cocktail di whisky al burro di arachidi. L'ha trasformato in un marchio, Skrewball.</p>
                         </div>
                     </div>
