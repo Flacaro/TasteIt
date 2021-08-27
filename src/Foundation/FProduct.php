@@ -74,5 +74,12 @@ class FProduct extends Foundation {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    function createReview($review){
+        //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
+        $query = 'insert into reviews (stars, comment, userId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getUserId(). ','. $review->getproductId().')';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        //$stmt->debugDumpParams();
+    }
 
 }

@@ -183,7 +183,7 @@
                             </a>
                             <div class="text p-4 bg-light">
 
-                                <h3 class="heading mb-3"><a href="#">{$bestseller->getName()}</a></h3>
+                                <h3 class="heading mb-3"><a href="/products/{$bestseller->getId()}">{$bestseller->getName()}</a></h3>
                                 <p>{$bestseller->getDescription()}</p>
                                 <p class="mb-0"> <span class="price">${$bestseller->getPrice()}</span></p>
 

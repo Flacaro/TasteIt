@@ -17,14 +17,15 @@ SimpleRouter::redirect("/", "/home");
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 //qua ci va {id} sennò non sa a che prodotto mandarti
-SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
+SimpleRouter::get("/products/{id}", [ProductController::class, "getProduct"])->name('getProduct');
+SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/users", [UserController::class, "index"]);
 //Il primo router serve per visualizzare il form, il secondo per andare a prendere i dati dal db per fare l'update
 SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
-//SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
+//SimpleRouter::post("/products/{id}", [ProductController::class, "update"]);
 //SimpleRouter::get("/products/{id}", [ProductController::class, "destroy"]);
 SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
 SimpleRouter::get("/users/create", [UserController::class, "create"]);
@@ -50,8 +51,9 @@ SimpleRouter::get("/products/{productId}/newQuantity", [ProductController::class
 SimpleRouter::get("/products/{productId}/stars", [ProductController::class, "getStars"]);
 SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[CartController::class, "addToCart"])->name('addToCart');
 SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
-SimpleRouter::post("/login", [AuthController::class, "visualizeLogin"]);
-SimpleRouter::post("/signup", [AuthController::class, "visualizeSignUp"]);
+//con post non funzionano???
+SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"]);
+SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
