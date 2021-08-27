@@ -11,7 +11,7 @@ class FUser extends Foundation {
     }
 
     public function getUserFromReview($reviewId){
-        //select 
+        //select
     }
 
 }

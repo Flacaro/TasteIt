@@ -5,6 +5,7 @@ namespace App\Models;
 
 
 use App\Foundation\FProduct;
+use App\Foundation\FUser;
 
 class Review {
  private $id;
@@ -67,5 +68,8 @@ class Review {
         $FProduct= new FProduct;
         return $FProduct->getbyId($this->getProductId());
     }
-
+    public function getUser(){
+        $FUser= new FUser;
+        return $FUser->getbyId($this->getUserId());
+    }
 }
