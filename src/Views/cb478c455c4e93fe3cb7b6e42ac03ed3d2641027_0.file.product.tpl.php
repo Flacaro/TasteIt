@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-26 22:44:29
+/* Smarty version 3.1.39, created on 2021-08-27 21:42:57
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6127fd2d7bd262_28062802',
+  'unifunc' => 'content_61294041666b04_13745244',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb478c455c4e93fe3cb7b6e42ac03ed3d2641027' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
-      1 => 1630010668,
+      1 => 1630093370,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6127fd2d7bd262_28062802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61294041666b04_13745244 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18480886146127fd2d7ad9a9_16608436', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_77798550161294041658833_62766513', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10700604956127fd2d7ae475_07581125', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192321638361294041659201_42269050', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_18480886146127fd2d7ad9a9_16608436 extends Smarty_Internal_Block
+class Block_77798550161294041658833_62766513 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_18480886146127fd2d7ad9a9_16608436',
+    0 => 'Block_77798550161294041658833_62766513',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_10700604956127fd2d7ae475_07581125 extends Smarty_Internal_Block
+class Block_192321638361294041659201_42269050 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_10700604956127fd2d7ae475_07581125',
+    0 => 'Block_192321638361294041659201_42269050',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -88,7 +88,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
-                        <a href="#" class="mr-2">5.0</a>
+                        <a href="#" class="mr-2"><?php echo $_smarty_tpl->tpl_vars['avg']->value;?>
+</a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
@@ -97,69 +98,61 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </p>
 
                 </div>
-                <p class="price"><span><?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
+                <p class="price"><span> £ <?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
 </span></p>
                 <p><?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
 </p>
                 <div class="row mt-4">
-                                        <td class="quantity">
-                        <div class="input-group" style="width: 9em">
-                            <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
-/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/update" method="POST" style="float: left">
-                                <div class="button minus">
-
-                                    <input hidden type="text" value="PUT" name="_method">
-                                    <input hidden type="text" value="minus" name="option">
-
-                                    <button class="btn btn-primary btn-number" type="submit"
-                                            <?php if ($_smarty_tpl->tpl_vars['product']->value->getQuantity() == 1) {?>
-                                                disabled
-                                            <?php }?>
-                                    >
-                                        -
-                                    </button>
-                                </div>
-                            </form>
-
-                            <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="<?php echo $_smarty_tpl->tpl_vars['product']->value->getQuantity();?>
-" style="width: 2em">
-
-                            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+                    <div class="input-group col-md-6 d-flex mb-3">
+	             	<span class="input-group-btn mr-2">
+                         <form action="/products/<?php echo $_smarty_tpl->tpl_vars['productId']->value;?>
 /update" method="POST" style="float: right">
-                                <div class="button plus">
+                                <input hidden type="text" value="PUT" name="_method">
+                                <input hidden type="text" value="minus" name="option">
+	                	<button type="submit" class="quantity-left-minus btn"  data-type="minus" data-field="" value="minus">
+	                   <i class="fa fa-minus"></i>
+	                	</button>
+                         </form>
+	            		</span>
+                        <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['quantity']->value;?>
+" min="1" max="100">
+                        <span class="input-group-btn ml-2">
+                           <form action="/products/<?php echo $_smarty_tpl->tpl_vars['productId']->value;?>
+/update" method="POST" style="float: right">
+                                <input hidden type="text" value="PUT" name="_method">
+                                <input hidden type="text" value="plus" name="option">
 
-                                    <input hidden type="text" value="PUT" name="_method">
-                                    <input hidden type="text" value="plus" name="option">
+                                 <button type="submit" class="quantity-right-plus btn" data-type="plus" data-field="" value="plus">
 
-                                    <button class="btn btn-primary btn-number" type="submit"> + </button>
-                                </div>
+	                                <i class="fa fa-plus"></i>
+	                            </button>
                             </form>
-
-                        </div>
-                    </td>
+	             	</span>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-12">
+                    </div>
                 </div>
+
                 <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
                 <p><a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addProductToCart" class="btn btn-primary py-3 px-5 mr-2">Aggiungi al Carrello </a><a href="cart.html" class="btn btn-primary py-3 px-5">Compra Subito</a></p>
+/addToCart" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
             </div>
         </div>
 
-        <!-- class="row mt-5" -->
-
         <!-- Inizio la barra  del Description , Manifacture , Reviews sotto la foto del liquore  -->
-        <div class=" row primary py-3 px-5 mr-2">
-            <div class="col-md-12 nav-link-wrap">
-                <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link ftco-mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Descrizione</a>
+            <div class="row mt-5">
+                <div class="col-md-12 nav-link-wrap">
+                    <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Description</a>
 
-                    <a class="nav-link ftco-mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Produttore</a>
+                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Manufacturer</a>
 
-                    <a class="nav-link ftco-mr-lg-1" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Recensioni </a>
+                        <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Reviews</a>
+
+                    </div>
 
                 </div>
-
-            </div>
             <!-- fine della barra  -->
             <div class="col-md-12 ">
                 <!-- inizio della descrizione  -->
@@ -167,7 +160,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                     <div class="tab-pane fade show active"  id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
                         <div class="p-4">
-                            <p class="mb-4">}<?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
+                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
 </p>
                         </div>
                     </div>
@@ -175,7 +168,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <!-- inizio della Manifacture   -->
                     <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
                         <div class="p-4">
-                            <h3 class="mb-4">Product By TasteIT Resturant</h3>
+                            <h3 class="mb-4">Prodotto da TasteIt</h3>
                             <p>Skrewball è stato creato da un team di marito e moglie Americani . Ha creato un cocktail di whisky al burro di arachidi. L'ha trasformato in un marchio, Skrewball.</p>
                         </div>
                     </div>
@@ -202,11 +195,15 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
                                         </h4>
                                         <p class="star">
 								   				<span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
+                                                    <?php
+$_smarty_tpl->tpl_vars['var'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? $_smarty_tpl->tpl_vars['review']->value->getStars()+1 - (1) : 1-($_smarty_tpl->tpl_vars['review']->value->getStars())+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+if ($_smarty_tpl->tpl_vars['var']->total > 0) {
+for ($_smarty_tpl->tpl_vars['var']->value = 1, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
+$_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration === 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration === $_smarty_tpl->tpl_vars['var']->total;?>
+								   					    <i class="fa fa-star"></i>
+                                                    <?php }
+}
+?>
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
@@ -226,64 +223,31 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </div>
-                            <div class="col-md-4">
-                                <div class="rating-wrap">
-                                    <h3 class="mb-4">Lascia una recensione</h3>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>20 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(85%)
-						   					</span>
-                                        <span>10 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>5 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>0 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>0 Reviews</span>
-                                    </p>
+                            <div>
+                                <div class="contact-wrap w-100 p-md-5">
+                                    <h3 class="mb-5">Lascia una recensione</h3>
+                                    <form  method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="subject">Stelle</label>
+                                                    <input type="text" class="form-control" name="stars" id="subject" placeholder="Subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="#">Commento</label>
+                                                    <textarea name="comment" class="form-control" id="message" cols="100" rows="2" placeholder="Descrivi il prodotto"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Invia" class="btn btn-primary">
+                                                    <div class="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

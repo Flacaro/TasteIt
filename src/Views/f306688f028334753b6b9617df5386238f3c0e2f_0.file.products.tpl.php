@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-19 15:22:30
+/* Smarty version 3.1.39, created on 2021-08-27 18:46:36
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611e5b160cf598_27124084',
+  'unifunc' => 'content_612916ec36cc66_09647539',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f306688f028334753b6b9617df5386238f3c0e2f' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\products.tpl',
-      1 => 1629369479,
+      1 => 1630009008,
       2 => 'file',
     ),
   ),
@@ -20,35 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611e5b160cf598_27124084 (Smarty_Internal_Template $_smarty_tpl) {
+function content_612916ec36cc66_09647539 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1044488998611e5b160ba751_49659708', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_145468634612916ec35fdb8_83237797', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_587027012611e5b160bb573_11288165', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2015337920612916ec3610b4_78874654', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_267297110611e5b160bbbf2_31984068', 'products');
-?>
-
-
-
-
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1632772399612916ec361765_39907208', 'products');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1044488998611e5b160ba751_49659708 extends Smarty_Internal_Block
+class Block_145468634612916ec35fdb8_83237797 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1044488998611e5b160ba751_49659708',
+    0 => 'Block_145468634612916ec35fdb8_83237797',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -58,12 +53,12 @@ Prodotti<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_587027012611e5b160bb573_11288165 extends Smarty_Internal_Block
+class Block_2015337920612916ec3610b4_78874654 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_587027012611e5b160bb573_11288165',
+    0 => 'Block_2015337920612916ec3610b4_78874654',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -71,12 +66,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'products'} */
-class Block_267297110611e5b160bbbf2_31984068 extends Smarty_Internal_Block
+class Block_1632772399612916ec361765_39907208 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'products' => 
   array (
-    0 => 'Block_267297110611e5b160bbbf2_31984068',
+    0 => 'Block_1632772399612916ec361765_39907208',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -97,53 +92,53 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         </div>
     </section>
 
-<section class="ftco-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row mb-4">
-                    <div class="col-md-12 d-flex justify-content-between align-items-center">
-                        <h4 class="product-select">Select Types of Products</h4>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row mb-4">
+                        <div class="col-md-12 d-flex justify-content-between align-items-center">
+                            <h4 class="product-select">Select Types of Products</h4>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="row">
-                    <?php
+                    <div class="row">
+                        <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
-                    <div class="col-md-3 d-flex">
-                        <div class="product ftco-animated">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://via.placeholder.com/150');">
-                                <div class="desc">
-                                    <p class="meta-prod d-flex">
-                                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
-                                    </p>
+                            <div class="col-md-3 d-flex">
+                                <div class="product ftco-animated">
+                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://via.placeholder.com/150');">
+                                        <div class="desc">
+                                            <p class="meta-prod d-flex">
+                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
+                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
+                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text text-center">
+                                        <h2> <?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
+</h2>
+                                        <p class="mb-0">
+                                            <span class="price">$<?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
+</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="text text-center">
-                                <h2> <?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
-</h2>
-                                <p class="mb-0">
-                                    <span class="price">$<?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
-</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                <?php
+                        <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 <?php

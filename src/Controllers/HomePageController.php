@@ -14,7 +14,6 @@ class HomePageController
  public function visualizeHome(){
      $FCategory = new FCategory();
      $FProduct = new FProduct();
-     $PController = new ProductController();
      $categories = $FCategory->getAll();
      $bestsellers = $FProduct->getBestSellers();
      $bestreviews = $FProduct->getBestReviews();
@@ -23,15 +22,11 @@ class HomePageController
 
         // ]
      //];
-     //è orribile lo so non mi crocifiggete (devo fare in modo che prende solo i 4 con il rating più alto ma all'array associativo
-     // non piacciono gli oggetti come chiavi e dovrei fa mille chiamate a db che no thx)
      $products = $FProduct->getAll();
+     $var=$FProduct->getBestRated();
      $bestRated=array();
-     foreach($products as $product){
-         $rating=$PController->getAverageRating($product->getId());
-         if ($rating>4){
-             array_push($bestRated, $product);
-         }
+     foreach($var as $best){
+         array_push($bestRated, $FProduct->getById($best[1]));
      }
 
      return view('home', [

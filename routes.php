@@ -29,10 +29,8 @@ SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduc
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
+SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"]);
 SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
-SimpleRouter::put("/products/{productId}/update",[ProductController::class, "updateQuantityOfProduct"]);
-SimpleRouter::get("/products/{productId}/newQuantity", [ProductController::class, "getNewQuantityOfProduct"])->name('newQuantity');
-SimpleRouter::get("/products/{productId}/stars", [ProductController::class, "getStars"]);
 SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
 SimpleRouter::post('/products/{productId}/', [ProductController::class, 'addProductToCart']);
 
@@ -64,7 +62,6 @@ SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('favourites');
-
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {

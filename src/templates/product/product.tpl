@@ -26,7 +26,7 @@
                 <h3>{$product->getName()}</h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
-                        <a href="#" class="mr-2">5.0</a>
+                        <a href="#" class="mr-2">{$avg}</a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
                         <a href="#"><span class="fa fa-star"></span></a>
@@ -129,11 +129,9 @@
                                         </h4>
                                         <p class="star">
 								   				<span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
+                                                    {for $var=1 to $review->getStars()}
+								   					    <i class="fa fa-star"></i>
+                                                    {/for}
 							   					</span>
                                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                                         </p>
@@ -150,64 +148,32 @@
                                 </div>
                                 {/foreach}
                             </div>
-                            <div class="col-md-4">
-                                <div class="rating-wrap">
-                                    <h3 class="mb-4">Lascia una recensione</h3>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>20 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(85%)
-						   					</span>
-                                        <span>10 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>5 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>0 Reviews</span>
-                                    </p>
-                                    <p class="star">
-							   				<span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                        <span>0 Reviews</span>
-                                    </p>
+                            <div>
+                                <div class="contact-wrap w-100 p-md-5">
+                                    <h3 class="mb-5">Lascia una recensione</h3>
+{*                                    tutto questo non ha un minimo di senso*}
+                                    <form  method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="subject">Stelle</label>
+                                                    <input type="text" class="form-control" name="stars" id="subject" placeholder="Subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="#">Commento</label>
+                                                    <textarea name="comment" class="form-control" id="message" cols="100" rows="2" placeholder="Descrivi il prodotto"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Invia" class="btn btn-primary">
+                                                    <div class="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

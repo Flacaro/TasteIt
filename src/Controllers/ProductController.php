@@ -44,7 +44,7 @@ class ProductController
 
     public function update($id) {
         $FProduct = new FProduct();
-        //superglobal, come parametro ci va passato il nome dell'input a cui fare riferimento
+        //superglobal, come parametro ci va passato il NOME dell'input a cui fare riferimento
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
@@ -69,13 +69,19 @@ class ProductController
         ]);
     }
 
-    public function getProduct($productId) {
+    public function getProduct($id) {
+
 //passare un array di utenti e poi fare la ricerca di quello giusto tramite id?
         $FProduct = new FProduct();
-        $ratings = $FProduct->getRatings($productId);
-        $product = $FProduct->getById($productId);
+        $ratings = $FProduct->getRatings($id);
+        $product = $FProduct->getById($id);
+        $stars = $FProduct->getAvgRating($id);
+        //????
+        $stars=$stars[0][0];
+        print_r($stars);
         return view('product/product', [
-            'productId' => $productId,
+            'productId' => $id,
+            'avg'=>$stars,
             'reviews' => $ratings,
             'product' => $product,
             'cartId' => 1,
@@ -90,24 +96,25 @@ class ProductController
     }
 
 
-    public function getAverageRating($productId)
-    {
-        $FProduct = new FProduct();
-        $ratings = $FProduct->getRatings($productId);
-        $average = 0;
-        if (count($ratings) != 0) {
-            foreach ($ratings as $stars) {
-                $average = $average + $stars->getStars();
-            }
-
-            return $average / count($ratings);
-        } else return 0;
-    }
-
     public function addProductToCart($productId) {
         // il carrello si prende dalla sessione dall'utente loggato
 //        print_r('productId: ' . $productId . ' quantity: ' . $_POST['quantity']);
         redirect(url('/products', ['productId' => $productId]));
+    }
+
+
+    public function createReview($productId){
+        //redirect("home");
+        $FProduct= new FProduct;
+        $stars = $_POST['stars'];
+        $comment = $_POST['comment'];
+        $review= new Review;
+        $review->setStars($stars);
+        $review->setComment($comment);
+        $review->setProductId($productId);
+        $review->setUserId(1); //id dell'utente loggato ma con calma
+        $FProduct->createReview($review);
+        redirect("getProduct", ['productId' => $productId]);
     }
 
 }

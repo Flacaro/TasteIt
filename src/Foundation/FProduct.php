@@ -24,9 +24,22 @@ class FProduct extends Foundation {
 
     function getBestSellers(){
         //SELECT * FROM products ORDER BY timesOrdered LIMIT 10;
-        $query="SELECT * FROM products ORDER BY timesOrdered DESC LIMIT 10;";
+        $query="SELECT * FROM products ORDER BY timesOrdered DESC LIMIT 8;";
         $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    function getAvgRating($productId){
+        $query="SELECT avg(stars) as avgstars FROM reviews where ProductId=". $productId .";";
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    function getBestRated(){
+        $query="select avg(stars) as average, productId from reviews group by productId order by average desc limit 8";
+        $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -73,6 +86,13 @@ class FProduct extends Foundation {
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+    function createReview($review){
+        //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
+        $query = 'insert into reviews (stars, comment, userId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getUserId(). ','. $review->getproductId().')';
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        //$stmt->debugDumpParams();
     }
 
 }
