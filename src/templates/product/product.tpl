@@ -4,7 +4,7 @@
 {block name=body}
 
 <!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
-<section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -39,35 +39,47 @@
                 <p>{$product->getDescription()}</p>
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-                         <form action="/products/{$productId}/update" method="POST" style="float: right">
-                                <input hidden type="text" value="PUT" name="_method">
-                                <input hidden type="text" value="minus" name="option">
-	                	<button type="submit" class="quantity-left-minus btn"  data-type="minus" data-field="" value="minus">
-	                   <i class="fa fa-minus"></i>
-	                	</button>
-                         </form>
-	            		</span>
-                        <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="{$quantity}" min="1" max="100">
-                        <span class="input-group-btn ml-2">
-                           <form action="/products/{$productId}/update" method="POST" style="float: right">
-                                <input hidden type="text" value="PUT" name="_method">
-                                <input hidden type="text" value="plus" name="option">
 
-                                 <button type="submit" class="quantity-right-plus btn" data-type="plus" data-field="" value="plus">
+                        <form id="addProductToCardForm" action="/products/{$product->getId()}" method="POST">
+                            <div class="d-flex mb-4">
+                                <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
+                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
+                                <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
+                            </div>
 
-	                                <i class="fa fa-plus"></i>
-	                            </button>
-                            </form>
-	             	</span>
+                            {*<p><a href="#" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a>*}
+                            <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Add to cart</button>
+                        </form>
+
+                        <script>
+                            const input = document.querySelector('#productQuantity');
+                            input.value = 1;
+
+                            const minusBtn = document.querySelector('#minus');
+                            const plusBtn = document.querySelector('#plus');
+
+                            const form = document.querySelector('#addProductToCardForm');
+
+
+                            if(minusBtn && plusBtn) {
+                                minusBtn.addEventListener('click', () => {
+                                    if (input.value > 1) {
+                                        input.value = parseInt(input.value, 10) - 1;
+                                    }
+                                });
+
+                                plusBtn.addEventListener('click', () => {
+                                    input.value = parseInt(input.value, 10) + 1;
+                                });
+                            }
+                        </script>
+
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-12">
                     </div>
                 </div>
 
-                <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
-                <p><a href="/products/{$product->getId()}/addToCart" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
             </div>
         </div>
 

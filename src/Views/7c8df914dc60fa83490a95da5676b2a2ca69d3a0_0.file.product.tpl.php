@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-27 14:56:25
+/* Smarty version 3.1.39, created on 2021-08-28 10:23:16
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6128e0f9ad6434_73076632',
+  'unifunc' => 'content_6129f27440ede1_64850576',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1630068984,
+      1 => 1630138995,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6128e0f9ad6434_73076632 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6129f27440ede1_64850576 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7589644416128e0f9acb5e6_80559570', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8543619186129f274403bf1_15488618', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10984246316128e0f9acc282_57501855', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10981198976129f274404658_50726091', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_7589644416128e0f9acb5e6_80559570 extends Smarty_Internal_Block
+class Block_8543619186129f274403bf1_15488618 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_7589644416128e0f9acb5e6_80559570',
+    0 => 'Block_8543619186129f274403bf1_15488618',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_10984246316128e0f9acc282_57501855 extends Smarty_Internal_Block
+class Block_10981198976129f274404658_50726091 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_10984246316128e0f9acc282_57501855',
+    0 => 'Block_10981198976129f274404658_50726091',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -65,7 +65,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 <!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
-<section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -103,39 +103,49 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </p>
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-                         <form action="/products/<?php echo $_smarty_tpl->tpl_vars['productId']->value;?>
-/update" method="POST" style="float: right">
-                                <input hidden type="text" value="PUT" name="_method">
-                                <input hidden type="text" value="minus" name="option">
-	                	<button type="submit" class="quantity-left-minus btn"  data-type="minus" data-field="" value="minus">
-	                   <i class="fa fa-minus"></i>
-	                	</button>
-                         </form>
-	            		</span>
-                        <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['quantity']->value;?>
-" min="1" max="100">
-                        <span class="input-group-btn ml-2">
-                           <form action="/products/<?php echo $_smarty_tpl->tpl_vars['productId']->value;?>
-/update" method="POST" style="float: right">
-                                <input hidden type="text" value="PUT" name="_method">
-                                <input hidden type="text" value="plus" name="option">
 
-                                 <button type="submit" class="quantity-right-plus btn" data-type="plus" data-field="" value="plus">
+                        <form id="addProductToCardForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+" method="POST">
+                            <div class="d-flex mb-4">
+                                <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
+                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
+                                <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
+                            </div>
 
-	                                <i class="fa fa-plus"></i>
-	                            </button>
-                            </form>
-	             	</span>
+                                                        <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Add to cart</button>
+                        </form>
+
+                        <?php echo '<script'; ?>
+>
+                            const input = document.querySelector('#productQuantity');
+                            input.value = 1;
+
+                            const minusBtn = document.querySelector('#minus');
+                            const plusBtn = document.querySelector('#plus');
+
+                            const form = document.querySelector('#addProductToCardForm');
+
+
+                            if(minusBtn && plusBtn) {
+                                minusBtn.addEventListener('click', () => {
+                                    if (input.value > 1) {
+                                        input.value = parseInt(input.value, 10) - 1;
+                                    }
+                                });
+
+                                plusBtn.addEventListener('click', () => {
+                                    input.value = parseInt(input.value, 10) + 1;
+                                });
+                            }
+                        <?php echo '</script'; ?>
+>
+
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-12">
                     </div>
                 </div>
 
-                <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
-                <p><a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addToCart" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
             </div>
         </div>
 
@@ -187,7 +197,9 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
                                     <div class="user-img" style="background-image: url(../../src/assets/images/Fla.jpg)"></div>
                                     <div class="desc">
                                         <h4>
-                                            <span class="text-left">Flaviana Caroselli </span>
+                                            <span class="text-left"><?php echo $_smarty_tpl->tpl_vars['review']->value->getUser()->getName();?>
+ <?php echo $_smarty_tpl->tpl_vars['review']->value->getUser()->getSurname();?>
+</span>
                                             <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">

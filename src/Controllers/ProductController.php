@@ -13,19 +13,17 @@ use App\Models\Review;
 class ProductController
 {
 
-    public function index()
-    {
+    public function index() {
         $FProduct = new FProduct();
         $products = $FProduct->getAll();
         return view('product/all_products', [
             'products' => $products,
-            'cartId' => 1 // dovresti prendere il cartId dell'utente loggato
+            'cartId' => 1 // prendere il cartId dell'utente loggato
         ]);
 
     }
 
-    public function create()
-    {
+    public function create() {
         $FProduct = new FProduct();
         $FCategory = new FCategory();
 
@@ -44,8 +42,7 @@ class ProductController
         header("Location: /products");
     }
 
-    public function update($id)
-    {
+    public function update($id) {
         $FProduct = new FProduct();
         //superglobal, come parametro ci va passato il nome dell'input a cui fare riferimento
         $name = $_POST['name'];
@@ -60,8 +57,7 @@ class ProductController
         $FProduct->update($id, $product);
     }
 
-    public function edit($id)
-    {
+    public function edit($id) {
         $FProduct = new FProduct();
         $product = $FProduct->getById($id);
         return view('product/product-update', [
@@ -72,17 +68,6 @@ class ProductController
             'categoryId' => $product->getCategoryId()
         ]);
     }
-
-    /*public function visualizzaHome(){
-        $FProduct = new FProduct();
-        $FCategory = new FCategory();
-        $products = $FProduct->getAll();
-        $categories = $FCategory->getAll();
-        return view('product/products', [
-             'products' => $products,
-             'categories' => $categories
-        ]);
-    }*/
 
     public function getProduct($productId) {
 //passare un array di utenti e poi fare la ricerca di quello giusto tramite id?
@@ -98,18 +83,8 @@ class ProductController
         ]);
     }
 
-    public function getNewQuantityOfProduct($productId) {
-        $product = new Product();
-        $quantity = $product->getQuantity();
-        return view('product/product', [
-            'quantity' => $quantity,
-            'productId' => $productId
-        ]);
-    }
 
-
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $FProduct = new FProduct();
         $FProduct->delete($id);
     }
@@ -129,22 +104,10 @@ class ProductController
         } else return 0;
     }
 
-    public function updateQuantityOfProduct($productId, $quantity) {
-         $product = new Product();
-         if($_POST['option'] == 'plus') {
-             $newQuantity = $quantity + 1;
-         }
-         else {
-             $newQuantity = $quantity - 1;
-         }
-         $product->setQuantity($newQuantity);
-         redirect(url('newQuantity', ['productId' => $productId, 'quantity'=> $newQuantity]));
-    }
-
-    public function getStars($productId) {
-        $FProduct = new FProduct();
-        $review = $FProduct->getStars($productId);
-        redirect('getProduct', ['productId' => $productId, 'review' => $review]);
+    public function addProductToCart($productId) {
+        // il carrello si prende dalla sessione dall'utente loggato
+//        print_r('productId: ' . $productId . ' quantity: ' . $_POST['quantity']);
+        redirect(url('/products', ['productId' => $productId]));
     }
 
 }
