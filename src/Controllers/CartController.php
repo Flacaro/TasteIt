@@ -72,10 +72,8 @@ class CartController {
     public function getCoupon($couponId) {
      $coupon = new FCart();
      $priceCut = $coupon->getCoupon($couponId);
-     return view('cart/cart', [
-         "priceCut" => $priceCut,
-         "couponId" => $couponId
-     ]);
+     $vcart = new VCart();
+     $vcart->viewCoupon($priceCut, $couponId);
     }
 
 
