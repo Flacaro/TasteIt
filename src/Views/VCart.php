@@ -11,4 +11,11 @@ class VCart
             "cartId" => $cartId
         ]);
     }
+
+    public function viewCoupon($priceCut, $couponId){
+        return view('cart/cart', [
+            "priceCut" => $priceCut,
+            "couponId" => $couponId
+        ]);
+    }
 }

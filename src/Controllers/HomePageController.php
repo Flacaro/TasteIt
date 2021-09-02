@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Foundation\FCategory;
 use App\Foundation\FProduct;
+use App\Views\VHomePage;
 
 class HomePageController
 {
@@ -28,13 +29,8 @@ class HomePageController
      foreach($var as $best){
          array_push($bestRated, $FProduct->getById($best[1]));
      }
-
-     return view('home', [
-         'categories'=> $categories,
-         'bestsellers'=> $bestsellers,
-         'bestrateds'=> $bestRated,
-         'bestreviews'=> $bestreviews
-     ]);
+     $vhome= new VHomePage();
+     $vhome->viewHomePage($categories, $bestsellers, $bestRated, $bestreviews);
  }
     public function About(){
         return view('aboutUs', [

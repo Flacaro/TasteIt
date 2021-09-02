@@ -2,16 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Views\VAuth;
+
 class AuthController
 {
 public function visualizeLogin(){
-    return view ("auth/login", [
-
-    ]);
+    $vauth= new VAuth();
+    $vauth->visualizeLogin();
 }
     public function visualizeSignUp(){
-        return view ("auth/sign-up", [
-
-        ]);
+        $vauth= new VAuth();
+        $vauth->visualizeSignUp();
     }
 }
