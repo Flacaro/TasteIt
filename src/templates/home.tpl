@@ -1,7 +1,6 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Home{/block}
 {block name=body}
-    {*l'immagine ho messo la prima che ho trovato, poi la cambiamo*}
     <div class="hero-wrap" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -68,7 +67,6 @@
                         <p>descrizione placeholder</p>
                         <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
                         non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
-                        <!-- questo nel dubbio ce lo lascio ma non so se lo vogliamo lascia-->
                         <p class="year">
                             <strong class="number" data-number="23">0</strong>
                             <span>Years of Experience In Business</span>

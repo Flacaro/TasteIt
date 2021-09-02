@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-27 21:42:57
+/* Smarty version 3.1.39, created on 2021-08-28 16:00:18
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61294041666b04_13745244',
+  'unifunc' => 'content_612a41727ffd39_84183485',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb478c455c4e93fe3cb7b6e42ac03ed3d2641027' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
-      1 => 1630093370,
+      1 => 1630159147,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61294041666b04_13745244 (Smarty_Internal_Template $_smarty_tpl) {
+function content_612a41727ffd39_84183485 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_77798550161294041658833_62766513', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1465677805612a41726d4032_56676296', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192321638361294041659201_42269050', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1506038284612a41726d4dd4_02191509', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_77798550161294041658833_62766513 extends Smarty_Internal_Block
+class Block_1465677805612a41726d4032_56676296 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_77798550161294041658833_62766513',
+    0 => 'Block_1465677805612a41726d4032_56676296',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_192321638361294041659201_42269050 extends Smarty_Internal_Block
+class Block_1506038284612a41726d4dd4_02191509 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_192321638361294041659201_42269050',
+    0 => 'Block_1506038284612a41726d4dd4_02191509',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -65,7 +65,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 <!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
-<section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -104,39 +104,49 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </p>
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-                         <form action="/products/<?php echo $_smarty_tpl->tpl_vars['productId']->value;?>
-/update" method="POST" style="float: right">
-                                <input hidden type="text" value="PUT" name="_method">
-                                <input hidden type="text" value="minus" name="option">
-	                	<button type="submit" class="quantity-left-minus btn"  data-type="minus" data-field="" value="minus">
-	                   <i class="fa fa-minus"></i>
-	                	</button>
-                         </form>
-	            		</span>
-                        <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['quantity']->value;?>
-" min="1" max="100">
-                        <span class="input-group-btn ml-2">
-                           <form action="/products/<?php echo $_smarty_tpl->tpl_vars['productId']->value;?>
-/update" method="POST" style="float: right">
-                                <input hidden type="text" value="PUT" name="_method">
-                                <input hidden type="text" value="plus" name="option">
 
-                                 <button type="submit" class="quantity-right-plus btn" data-type="plus" data-field="" value="plus">
+                        <form id="addProductToCardForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+" method="POST">
+                            <div class="d-flex mb-4">
+                                <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
+                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
+                                <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
+                            </div>
 
-	                                <i class="fa fa-plus"></i>
-	                            </button>
-                            </form>
-	             	</span>
+                                                        <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Add to cart</button>
+                        </form>
+
+                        <?php echo '<script'; ?>
+>
+                            const input = document.querySelector('#productQuantity');
+                            input.value = 1;
+
+                            const minusBtn = document.querySelector('#minus');
+                            const plusBtn = document.querySelector('#plus');
+
+                            const form = document.querySelector('#addProductToCardForm');
+
+
+                            if(minusBtn && plusBtn) {
+                                minusBtn.addEventListener('click', () => {
+                                    if (input.value > 1) {
+                                        input.value = parseInt(input.value, 10) - 1;
+                                    }
+                                });
+
+                                plusBtn.addEventListener('click', () => {
+                                    input.value = parseInt(input.value, 10) + 1;
+                                });
+                            }
+                        <?php echo '</script'; ?>
+>
+
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-12">
                     </div>
                 </div>
 
-                <!-- i due buttoni  rossi per aggiungere al carrello o comprare subito   -->
-                <p><a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addToCart" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
             </div>
         </div>
 

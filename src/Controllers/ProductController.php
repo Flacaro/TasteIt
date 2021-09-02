@@ -71,14 +71,13 @@ class ProductController
 
     public function getProduct($id) {
 
-//passare un array di utenti e poi fare la ricerca di quello giusto tramite id?
         $FProduct = new FProduct();
         $ratings = $FProduct->getRatings($id);
         $product = $FProduct->getById($id);
         $stars = $FProduct->getAvgRating($id);
         //????
         $stars=$stars[0][0];
-        print_r($stars);
+        //print_r($stars);
         return view('product/product', [
             'productId' => $id,
             'avg'=>$stars,
@@ -114,7 +113,7 @@ class ProductController
         $review->setProductId($productId);
         $review->setUserId(1); //id dell'utente loggato ma con calma
         $FProduct->createReview($review);
-        redirect("getProduct", ['productId' => $productId]);
+        redirect(url("getProduct", ['productId' => $productId]));
     }
 
 }

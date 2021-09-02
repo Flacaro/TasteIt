@@ -151,7 +151,7 @@
                             <div>
                                 <div class="contact-wrap w-100 p-md-5">
                                     <h3 class="mb-5">Lascia una recensione</h3>
-{*                                    tutto questo non ha un minimo di senso*}
+
                                     <form  method="POST" id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
                                             <div class="col-md-12">
