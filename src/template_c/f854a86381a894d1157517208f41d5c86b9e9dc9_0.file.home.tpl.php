@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-27 17:09:43
+/* Smarty version 3.1.39, created on 2021-09-02 08:56:25
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61290037826996_48538737',
+  'unifunc' => 'content_61307599bb3b13_74464293',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1630076982,
+      1 => 1630565079,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61290037826996_48538737 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61307599bb3b13_74464293 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_52952909261290037817f37_85234063', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_64768494961307599ad3700_69868691', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_211069246761290037818871_59938202', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_186317152861307599ad7bc6_81113871', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_52952909261290037817f37_85234063 extends Smarty_Internal_Block
+class Block_64768494961307599ad3700_69868691 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_52952909261290037817f37_85234063',
+    0 => 'Block_64768494961307599ad3700_69868691',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,18 +49,18 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_211069246761290037818871_59938202 extends Smarty_Internal_Block
+class Block_186317152861307599ad7bc6_81113871 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_211069246761290037818871_59938202',
+    0 => 'Block_186317152861307599ad7bc6_81113871',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-        <div class="hero-wrap" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -126,7 +126,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         <p>descrizione placeholder</p>
                         <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
                         non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
-                        <!-- questo nel dubbio ce lo lascio ma non so se lo vogliamo lascia-->
                         <p class="year">
                             <strong class="number" data-number="23">0</strong>
                             <span>Years of Experience In Business</span>

@@ -9,6 +9,7 @@ use App\Models\Cart;
 use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Product;
+use App\Views\VCart;
 use PDO;
 
 class CartController {
@@ -16,12 +17,9 @@ class CartController {
  public function getProductsOfCart($id) {
      $FCart = new FCart();
      //$cart dovrà andare a chiamare la funzione dentro $FCart
-     $products=$FCart->getProductsOfCart($id);
-    return view ("cart/cart", [
-         //nome che useremo nel template
-         "products" => $products,
-         "cartId" => $id
-     ]);
+     $products = $FCart->getProductsOfCart($id);
+     $vcart = new VCart();
+     $vcart->getProducts($products, $id);
  }
 
  public function create() {

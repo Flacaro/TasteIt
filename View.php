@@ -9,7 +9,7 @@ class View extends Smarty {
         parent::__construct();
 
         $this->setTemplateDir('/src/templates/');
-        $this->setCompileDir('src/Views/');
+        $this->setCompileDir('src/template_c/');
         $this->setConfigDir('src/smarty_configs/');
         $this->setCacheDir('src/smarty_cache/');
 
