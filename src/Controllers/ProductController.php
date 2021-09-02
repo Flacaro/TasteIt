@@ -9,6 +9,7 @@ use App\Foundation\FProduct;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Review;
+use App\Views\VProduct;
 
 class ProductController
 {
@@ -16,10 +17,8 @@ class ProductController
     public function index() {
         $FProduct = new FProduct();
         $products = $FProduct->getAll();
-        return view('product/all_products', [
-            'products' => $products,
-            'cartId' => 1 // prendere il cartId dell'utente loggato
-        ]);
+        $vproduct = new VProduct();
+        $vproduct->getProducts($products);
 
     }
 
@@ -39,7 +38,7 @@ class ProductController
         $product->setPrice(8);
         $product->setCategoryId($categoryId);
         $FProduct->create($product);
-        header("Location: /products");
+        redirect(url('/products'));
     }
 
     public function update($id) {
@@ -60,13 +59,8 @@ class ProductController
     public function edit($id) {
         $FProduct = new FProduct();
         $product = $FProduct->getById($id);
-        return view('product/product-update', [
-            'id' => $product->getId(),
-            'name' => $product->getName(),
-            'description' => $product->getDescription(),
-            'price' => $product->getPrice(),
-            'categoryId' => $product->getCategoryId()
-        ]);
+       $vproduct = new VProduct();
+       $vproduct->editProduct($product);
     }
 
     public function getProduct($id) {
@@ -76,16 +70,10 @@ class ProductController
         $product = $FProduct->getById($id);
         $stars = $FProduct->getAvgRating($id);
         //????
-        $stars=$stars[0][0];
+        $star =$stars[0][0];
         //print_r($stars);
-        return view('product/product', [
-            'productId' => $id,
-            'avg'=>$stars,
-            'reviews' => $ratings,
-            'product' => $product,
-            'cartId' => 1,
-            'quantity' => 1
-        ]);
+        $vproduct = new VProduct();
+        $vproduct->getDetailsOfProduct($product, $star, $ratings);
     }
 
 

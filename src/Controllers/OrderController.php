@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Foundation\FOrder;
 use App\Models\Order;
+use App\Views\VOrder;
 use Pecee\SimpleRouter\SimpleRouter;
 
 class OrderController {
@@ -12,11 +13,8 @@ class OrderController {
     public function visualizeOrders() {
         $FOrder = new FOrder();
         $orders = $FOrder->getAll();
-        $smarty = $GLOBALS['smarty'];
-        $smarty->assign('orders', $orders);
-        return view('order', [
-            'orders' => $orders
-        ]);
+        $vorder = new VOrder();
+        $vorder->getOrders($orders);
     }
     public function visualizeOrderDetails($orderId) {
 

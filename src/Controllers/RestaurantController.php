@@ -6,6 +6,8 @@ use App\Foundation\FOrder;
 use App\Models\Order;
 use App\Foundation\FRestaurant;
 use App\Models\Restaurant;
+use App\Views\VOrder;
+use App\Views\VRestaurant;
 use Pecee\SimpleRouter\SimpleRouter;
 
 class RestaurantController {
@@ -32,16 +34,8 @@ class RestaurantController {
     public function edit($id) {
         $FOrder = new FOrder();
         $order = $FOrder->getById($id);
-        return view('order-accept.tpl', [
-            'id' => $id,
-            'creationDate' =>$order->getCreationDate(),
-            'total'=> $order->getTotal(),
-            'id' => $order->getPaymentId(),
-            'arrivalTime' => $order->getArrivalTime(),
-            'couponId' => $order->getCouponId(),
-            'userId' => $order->getUserId(),
-            'id' => $order->getRestaurantId(),
-        ]);
+        $vorder = new VOrder();
+        $vorder->getOrders($order);
     }
 
     public function addOrder(){
@@ -57,6 +51,14 @@ class RestaurantController {
         $order->setUserId(3);
         $FOrder->create($order);
     }
+
+    public function visualizeContactPage(){
+        $FRestaurant = new FRestaurant();
+        $restaurant = $FRestaurant->getById(1);
+        $vrestaurant = new VRestaurant();
+        $vrestaurant->getContactPage($restaurant);
+    }
+
     public function addCategory($categoryId, $categories) {
 
     }
@@ -74,13 +76,6 @@ class RestaurantController {
     }
     public function getAdminPanel(){
 
-    }
-    public function visualizeContactPage(){
-        $FRestaurant = new FRestaurant();
-        $restaurant=$FRestaurant->getById(1);
-        return view('contact-us', [
-            'restaurant'=> $restaurant
-        ]);
     }
 
 }

@@ -12,6 +12,7 @@ use App\Models\Favourites;
 use App\Models\PaymentMethod;
 use App\Models\Product;
 use App\Models\User;
+use App\Views\VUser;
 use Pecee\SimpleRouter\SimpleRouter;
 
 class UserController {
@@ -19,10 +20,10 @@ class UserController {
     public function index() {
         $fusers = new FUser();
         $users = $fusers->getAll();
-        return view('user/user', [
-            'users' => $users
-        ]);
+        $vusers = new VUser();
+        $vusers->getUsers($users);
     }
+
     public function create() {
         $fusers = new FUser();
         $FCart = new FCart();
@@ -51,9 +52,8 @@ class UserController {
         $user->setCartId($cartId);
         $user->setFavId($favId);
         $fusers->create($user);
-        return view("home",[
-
-        ]);
+        $vuser = new VUser();
+        $vuser->createUser();
     }
 
     public function update($id) {
@@ -71,26 +71,19 @@ class UserController {
         $user->setCartId($cartId);
         $FUser->update($id,$user);
     }
+
     public function edit($id) {
         $FUsers = new FUser();
         $user = $FUsers->getById($id);
-        return view('user-update', [
-            'id' => $id,
-            'name' => $user->getName(),
-            'surname' => $user->getSurname(),
-            'email' => $user->getEmail(),
-            'password' => $user->getPassword(),
-            'cartId' => $user->getCartId()
-        ]);
+        $vuser = new VUser();
+        $vuser->editUser($user);
     }
 
         public function getId($id){
         $FUsers = new FUser();
         $user = $FUsers->getById($id);
-        $smarty = $GLOBALS['smarty'];
-        $smarty->assign('id', $id);
-        $smarty->assign('id', $user->getId());
-        return $smarty->display('src/templates/cart.tpl');
+        $vuser = new VUser();
+        $vuser->getCartId($user);
      }
 
 

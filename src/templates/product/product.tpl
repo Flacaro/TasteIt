@@ -26,14 +26,18 @@
                 <h3>{$product->getName()}</h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
+                        {if $avg != 0}
                         <a href="#" class="mr-2">{$avg}</a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                    </p>
 
+                        <a href="#">
+                            <span>
+                                                    {for $var=1 to round($avg)}
+                                                    <i class="fa fa-star"></i>
+                                                   {/for}
+							   					</span>
+                            <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+                        </a>
+                        {/if}
                 </div>
                 <p class="price"><span> £ {$product->getPrice()}</span></p>
                 <p>{$product->getDescription()}</p>

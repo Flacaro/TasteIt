@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-28 11:00:20
+/* Smarty version 3.1.39, created on 2021-09-02 11:46:22
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6129fb24e52b09_15690525',
+  'unifunc' => 'content_61309d6e576985_68259568',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1630140385,
+      1 => 1630575980,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6129fb24e52b09_15690525 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61309d6e576985_68259568 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10055917036129fb24e0d0b1_62824477', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_78088879961309d6e561402_45481815', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15113385946129fb24e0d9e1_65270006', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_117067338861309d6e561d41_38170940', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_10055917036129fb24e0d0b1_62824477 extends Smarty_Internal_Block
+class Block_78088879961309d6e561402_45481815 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_10055917036129fb24e0d0b1_62824477',
+    0 => 'Block_78088879961309d6e561402_45481815',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_15113385946129fb24e0d9e1_65270006 extends Smarty_Internal_Block
+class Block_117067338861309d6e561d41_38170940 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_15113385946129fb24e0d9e1_65270006',
+    0 => 'Block_117067338861309d6e561d41_38170940',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -88,15 +88,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </h3>
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
+                        <?php if ($_smarty_tpl->tpl_vars['avg']->value != 0) {?>
                         <a href="#" class="mr-2"><?php echo $_smarty_tpl->tpl_vars['avg']->value;?>
 </a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star"></span></a>
-                    </p>
 
+                        <a href="#">
+                            <span>
+                                                    <?php
+$_smarty_tpl->tpl_vars['var'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? round($_smarty_tpl->tpl_vars['avg']->value)+1 - (1) : 1-(round($_smarty_tpl->tpl_vars['avg']->value))+1)/abs($_smarty_tpl->tpl_vars['var']->step));
+if ($_smarty_tpl->tpl_vars['var']->total > 0) {
+for ($_smarty_tpl->tpl_vars['var']->value = 1, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
+$_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration === 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration === $_smarty_tpl->tpl_vars['var']->total;?>
+                                                    <i class="fa fa-star"></i>
+                                                   <?php }
+}
+?>
+							   					</span>
+                            <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
+                        </a>
+                        <?php }?>
                 </div>
                 <p class="price"><span> £ <?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
 </span></p>
@@ -236,6 +246,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div>
                                 <div class="contact-wrap w-100 p-md-5">
                                     <h3 class="mb-5">Lascia una recensione</h3>
+
                                     <form  method="POST" id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
                                             <div class="col-md-12">
