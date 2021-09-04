@@ -15,9 +15,9 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 SimpleRouter::redirect("/", "/home");
 
-
-SimpleRouter::post("/login", [AuthController::class, "visualizeLogin"]);
-SimpleRouter::post("/signup", [AuthController::class, "visualizeSignUp"]);
+SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"]);
+SimpleRouter::post("/login", [AuthController::class, "login"]);
+SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
 
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');

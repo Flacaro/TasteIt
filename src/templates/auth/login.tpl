@@ -32,7 +32,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label class="label" for="subject">Email</label>
-                        <input type="text" class="form-control" style="text-align:center" name="subject" id="subject" placeholder="Email">
+                        <input type="text" class="form-control" style="text-align:center" name="email" id="subject" placeholder="Email">
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -41,6 +41,9 @@
                         <input type="text" class="form-control" style="text-align:center" name="password" id="subject" placeholder="Password">
                     </div>
                 </div>
+            {if $message!=""}
+                <p>{$message}</p>
+            {/if}
                 <div class="col-md-12">
                     <div class="form-group">
                         <input type="submit" value="Accedi" class="btn btn-primary">

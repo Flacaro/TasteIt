@@ -1,0 +1,85 @@
+<?php
+
+namespace App\Controllers;
+
+class Session
+{
+    private static $instance;
+
+    private function __construct() {}
+
+    public static function getInstance(): Session{
+        if (self::$instance == null) {
+            self::$instance = new Session();
+        }
+        return self::$instance;
+    }
+
+    private function newSession(){
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
+
+    public function logout(): bool {
+        if (isset($_COOKIE["PHPSESSID"])) {
+            $this->newSession();
+            session_unset();
+            session_destroy();
+            setcookie("PHPSESSID", "", time() - 3600, "/");
+            $bool = true;
+        }
+        return $bool;
+    }
+
+    public function isUserLogged(): bool {
+        $this->newSession();
+        return (isset($_COOKIE["PHPSESSID"]) && (isset($_SESSION["user"])));
+    }
+
+    public function isRestaurantLogged(): bool {
+        $this->newSession();
+        return (isset($_COOKIE["PHPSESSID"]) && isset($_SESSION["restaurant"]));
+    }
+
+    public function loadUser() {
+
+        $this->newSession();
+
+        if(isset($_SESSION["user"])){
+            $user =  $_SESSION["user"];
+            return unserialize($user);
+
+        } else if (isset($_SESSION["restaurant"])) {
+            $restaurant =  $_SESSION["restaurant"];
+            return unserialize($restaurant);
+        }
+    }
+
+    public function saveUserInSession($user) {
+    $this->newSession();
+    //per rigenerare il cookie con un id nuovo e stessi dati
+    session_regenerate_id(true);
+
+    $userSer = serialize($user);
+
+    if ( get_class($user) == 'App\Models\User' ) {
+        $_SESSION['user'] = $userSer;
+
+    } else if ( get_class($user) == 'App\Models\Restaurant' ) {
+        $_SESSION['restaurant'] = $userSer;
+
+    }
+    }
+    public function saveCart($cart) {
+        $this->newSession();
+        $_SESSION["cart"] = serialize($cart);
+    }
+
+    public function loadCart() {
+        $this->newSession();
+        $cart = unserialize($_SESSION["cart"]);
+        //unset($_SESSION["cart"]);
+        return $cart;
+    }
+}

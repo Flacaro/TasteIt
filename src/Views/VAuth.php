@@ -4,9 +4,9 @@ namespace App\Views;
 
 class VAuth
 {
-    public function visualizeLogin(){
+    public function visualizeLogin($message){
         return view ("auth/login", [
-
+            "message"=>$message
         ]);
     }
 

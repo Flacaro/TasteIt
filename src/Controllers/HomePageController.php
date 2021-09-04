@@ -13,6 +13,8 @@ class HomePageController
 
  }
  public function visualizeHome(){
+     session_start();
+     print_r(unserialize($_SESSION["user"]));
      $FCategory = new FCategory();
      $FProduct = new FProduct();
      $categories = $FCategory->getAll();
