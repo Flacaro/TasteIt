@@ -6,40 +6,33 @@ use App\Foundation\FCart;
 use App\Foundation\FCategory;
 use App\Foundation\FFavourites;
 use App\Foundation\FProduct;
-use App\Foundation\FUser;
+use App\Foundation\FCustomer;
 use App\Models\Cart;
 use App\Models\Favourites;
 use App\Models\PaymentMethod;
 use App\Models\Product;
-use App\Models\User;
+use App\Models\Customer;
 use App\Views\VUser;
 use Pecee\SimpleRouter\SimpleRouter;
 
-class UserController {
+class CustomerController {
 
     public function index() {
-        $fusers = new FUser();
+        $fusers = new FCustomer();
         $users = $fusers->getAll();
         $vusers = new VUser();
         $vusers->getUsers($users);
     }
 
-    public function create() {
-        $fusers = new FUser();
+    public function create($customer) {
+        $fusers = new FCustomer();
         $FCart = new FCart();
         $FFavourites= new FFavourites();
 
-        $name = $_POST['name'];
+        /*$name = $_POST['name'];
         $surname = $_POST['surname'];
         $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $user = new User();
-        $user->setId(NULL);
-        $user->setName($name);
-        $user->setSurname($surname);
-        $user->setEmail($email);
-        $user->setPassword($password);
+        $password = $_POST['password'];*/
 
         $cart = new Cart();
         $cart->setId(NULL);
@@ -49,16 +42,16 @@ class UserController {
         $fav->setId(NULL);
         $favId = $FFavourites->create($fav);
 
-        $user->setCartId($cartId);
-        $user->setFavId($favId);
-        $fusers->create($user);
-        $vuser = new VUser();
-        $vuser->createUser();
+        $customer->setCartId($cartId);
+        $customer->setFavId($favId);
+        $fusers->create($customer);
+        //$vuser = new VUser();
+        //$vuser->createUser();
     }
 
     public function update($id) {
-        $FUser = new FUser();
-        $user = new User();
+        $FUser = new FCustomer();
+        $user = new Customer();
         $name = $_POST['name'];
         $surname = $_POST['surname'];
         $email = $_POST['email'];
@@ -73,14 +66,14 @@ class UserController {
     }
 
     public function edit($id) {
-        $FUsers = new FUser();
+        $FUsers = new FCustomer();
         $user = $FUsers->getById($id);
         $vuser = new VUser();
         $vuser->editUser($user);
     }
 
         public function getId($id){
-        $FUsers = new FUser();
+        $FUsers = new FCustomer();
         $user = $FUsers->getById($id);
         $vuser = new VUser();
         $vuser->getCartId($user);
@@ -122,5 +115,7 @@ class UserController {
     }
     public function insertPersonalData($method,$cardNumber,$expDate,$holder,$cvv){
     }
+
+
 
 }

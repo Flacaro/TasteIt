@@ -8,7 +8,7 @@ use App\Controllers\HomePageController;
 use App\Controllers\OrderController;
 use App\Controllers\ProductController;
 use App\Controllers\RestaurantController;
-use App\Controllers\UserController;
+use App\Controllers\CustomerController;
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
@@ -18,6 +18,7 @@ SimpleRouter::redirect("/", "/home");
 SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"]);
 SimpleRouter::post("/login", [AuthController::class, "login"]);
 SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
+SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
 
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
@@ -35,11 +36,11 @@ SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductContro
 SimpleRouter::post('/products/{productId}/', [ProductController::class, 'addProductToCart']);
 
 
-SimpleRouter::get("/users", [UserController::class, "index"]);
-SimpleRouter::get("/users/create", [UserController::class, "create"]);
-SimpleRouter::get("/users/{id}/edit", [UserController::class, "edit"]);
-SimpleRouter::post("/users/{id}", [UserController::class, "update"]);
-SimpleRouter::get("/users/{id}/cart", [UserController::class, "getId"]);
+SimpleRouter::get("/users", [CustomerController::class, "index"]);
+SimpleRouter::get("/users/create", [CustomerController::class, "create"]);
+SimpleRouter::get("/users/{id}/edit", [CustomerController::class, "edit"]);
+SimpleRouter::post("/users/{id}", [CustomerController::class, "update"]);
+SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
 
 
 SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);

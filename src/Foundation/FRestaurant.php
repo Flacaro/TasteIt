@@ -12,7 +12,7 @@ class FRestaurant extends Foundation {
         parent::__construct('restaurant', 'Restaurant');
     }
 
-    public function exists($email, $password){
+    public function authentication($email, $password){
         $query = "SELECT * FROM restaurant WHERE email='".$email."' AND password='".$password."'";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();

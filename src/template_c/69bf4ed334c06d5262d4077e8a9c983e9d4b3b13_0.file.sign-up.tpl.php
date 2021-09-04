@@ -1,7 +1,36 @@
+<?php
+/* Smarty version 3.1.39, created on 2021-09-04 17:02:56
+  from 'C:\xampp\htdocs\TasteIt\src\templates\auth\sign-up.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_61338aa0e66d14_21531366',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '69bf4ed334c06d5262d4077e8a9c983e9d4b3b13' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\auth\\sign-up.tpl',
+      1 => 1630767773,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_61338aa0e66d14_21531366 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>{block name=title}aaaaaa{/block}</title>
+    <title><?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175315414061338aa0e60523_12114465', 'title');
+?>
+</title>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -10,8 +39,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {*    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">*}
-
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/src/assets/css/animate.css">
@@ -53,9 +81,10 @@
                         <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="10" maxlength="40">
                     </div>
                 </div>
-                    {if $message!=""}
-                        <p>{$message}</p>
-                    {/if}
+                    <?php if ($_smarty_tpl->tpl_vars['message']->value != '') {?>
+                        <p><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+</p>
+                    <?php }?>
                 <div class="col-md-12">
                     <div class="form-group">
                         <input hidden type="text" value="signup" name="option">
@@ -70,17 +99,55 @@
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-<script src="/src/assets/js/jquery.min.js"></script>
-<script src="/src/assets/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="/src/assets/js/popper.min.js"></script>
-<script src="/src/assets/js/bootstrap.min.js"></script>
-<script src="/src/assets/js/jquery.easing.1.3.js"></script>
-<script src="/src/assets/js/jquery.waypoints.min.js"></script>
-<script src="/src/assets/js/jquery.stellar.min.js"></script>
-<script src="/src/assets/js/owl.carousel.min.js"></script>
-<script src="/src/assets/js/jquery.magnific-popup.min.js"></script>
-<script src="/src/assets/js/jquery.animateNumber.min.js"></script>
-<script src="/src/assets/js/scrollax.min.js"></script>
-{*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>*}
-{*<script src="/src/assets/js/google-map.js"></script>*}
-<script src="/src/assets/js/main.js"></script>
+<?php echo '<script'; ?>
+ src="/src/assets/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/jquery-migrate-3.0.1.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/popper.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/jquery.easing.1.3.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/jquery.waypoints.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/jquery.stellar.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/owl.carousel.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/jquery.magnific-popup.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/jquery.animateNumber.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/scrollax.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/assets/js/main.js"><?php echo '</script'; ?>
+><?php }
+/* {block 'title'} */
+class Block_175315414061338aa0e60523_12114465 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'title' => 
+  array (
+    0 => 'Block_175315414061338aa0e60523_12114465',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+aaaaaa<?php
+}
+}
+/* {/block 'title'} */
+}

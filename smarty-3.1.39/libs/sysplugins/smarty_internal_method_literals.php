@@ -91,7 +91,7 @@ class Smarty_Internal_Method_Literals
         $error = isset($literals[ $smarty->right_delimiter ]) ? $error[] = $smarty->right_delimiter : $error;
         if (!empty($error)) {
             throw new SmartyException(
-                'User defined literal(s) "' . $error .
+                'Customer defined literal(s) "' . $error .
                 '" may not be identical with left or right delimiter'
             );
         }

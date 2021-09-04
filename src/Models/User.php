@@ -1,20 +1,23 @@
 <?php
 
-
 namespace App\Models;
 
+class User {
 
-class User
-{
     private $id;
     public $name;
-    public $surname;
     public $email;
     public $password;
-    public $cartId;
-    public $favId;
 
-    public function __construct() {
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
     public function getName()
@@ -25,27 +28,6 @@ class User
     public function setName($name): void
     {
         $this->name = $name;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    public function setSurname($surname): void
-    {
-        $this->surname = $surname;
     }
 
     public function getEmail()
@@ -69,27 +51,4 @@ class User
     }
 
 
-    public function setCartId($cartId): void
-    {
-        $this->cartId = $cartId;
-    }
-
-    public function getCartId()
-    {
-        return $this->cartId;
-    }
-
-    public function getFavId()
-    {
-        return $this->favId;
-    }
-
-    public function setFavId($favId): void
-    {
-        $this->favId = $favId;
-    }
-
-
-
 }
-

@@ -162,7 +162,7 @@ function smarty_function_fetch($params, $template)
                     fputs($fp, "Accept: $accept\r\n");
                 }
                 if (!empty($agent)) {
-                    fputs($fp, "User-Agent: $agent\r\n");
+                    fputs($fp, "Customer-Agent: $agent\r\n");
                 }
                 if (!empty($referer)) {
                     fputs($fp, "Referer: $referer\r\n");

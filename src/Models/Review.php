@@ -5,13 +5,13 @@ namespace App\Models;
 
 
 use App\Foundation\FProduct;
-use App\Foundation\FUser;
+use App\Foundation\FCustomer;
 
 class Review {
  private $id;
  public $stars;
  public $comment;
- public $userId;
+ public $customerId;
  public $productId;
 
     public function getId()
@@ -44,14 +44,14 @@ class Review {
         $this->comment = $review;
     }
 
-    public function getUserId()
+    public function getCustomerId()
     {
-        return $this->userId;
+        return $this->customerId;
     }
 
-    public function setUserId($userId): void
+    public function setCustomerId($customerId): void
     {
-        $this->userId = $userId;
+        $this->customerId = $customerId;
     }
 
     public function getProductId()
@@ -69,7 +69,7 @@ class Review {
         return $FProduct->getbyId($this->getProductId());
     }
     public function getUser(){
-        $FUser= new FUser;
-        return $FUser->getbyId($this->getUserId());
+        $FUser = new FCustomer;
+        return $FUser->getbyId($this->getCustomerId());
     }
 }

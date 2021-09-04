@@ -10,9 +10,9 @@ class VAuth
         ]);
     }
 
-    public function visualizeSignUp(){
+    public function visualizeSignUp($message){
         return view ("auth/sign-up", [
-
+            "message" => $message
         ]);
     }
 

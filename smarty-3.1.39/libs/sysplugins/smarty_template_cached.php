@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Uwe Tews
+ * Customer: Uwe Tews
  * Date: 04.12.2014
  * Time: 06:08
  */

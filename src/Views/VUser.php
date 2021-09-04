@@ -10,11 +10,11 @@ class VUser {
         ]);
     }
 
-    public function createUser() {
+    /*public function createUser() {
         return view("home",[
 
         ]);
-    }
+    }*/
 
     public function editUser($user) {
         return view('user/user-update', [

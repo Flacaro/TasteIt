@@ -53,25 +53,26 @@ restaurantId int not null,
 foreign key(restaurantId) references restaurant(id)
 );
 
-create table users(
+create table customers(
 id bigint primary key auto_increment not null,
 name varchar(20) not null,
 surname varchar(20) not null,
-email varchar(40) not null,
+email varchar(40) not null unique,
 password varchar(20) not null,
 favId bigint not null,
 cartId bigint default null,
 FOREIGN KEY (favId) references favourites(id),
-FOREIGN KEY (cartId) references carts(id)
+FOREIGN KEY (cartId) references carts(id),
+
 );
 
 create table reviews(
 id bigint primary key auto_increment,
 stars int default null,
 comment varchar(100) default null,
-userId bigint not null,
+customerId bigint not null,
 productId bigint not null,
-foreign key(userId) references users(id),
+foreign key(customerId) references customers(id),
 foreign key(productId) references products(id)
 );
 
@@ -81,19 +82,19 @@ cap int not null,
 city varchar(20) not null,
 street varchar(20) not null,
 homeNumber int not null,
-userId bigint not null,
-FOREIGN KEY (userId) references users(id)
+customerId bigint not null,
+FOREIGN KEY (customerId) references customers(id)
 );
 
-create table users_paymentMethods(
+create table customers_paymentMethods(
 id bigint primary key auto_increment,
-userId bigint not null,
+customerId bigint not null,
 paymentId bigint not null,
 cardNumber int,
 expirationDate DateTime,
 cvv int not null,
 cardHolder varchar(40),
-foreign key(userId) references users(id),
+foreign key(customerId) references customers(id),
 foreign key(paymentId) references paymentMethods(id)
 );
 
@@ -103,11 +104,11 @@ creationDate datetime not null,
 total float not null,
 arrivalTime datetime not null,
 couponId bigint,
-userId bigint,
+customerId bigint,
 paymentId bigint,
 restaurantId int,
 stateId bigint,
-foreign key(userId) references users(id),
+foreign key(customerId) references customers(id),
 foreign key(paymentId) references paymentMethods(id),
 foreign key(restaurantId) references restaurant(id),
 foreign key(couponId) references coupons(id),
@@ -142,22 +143,22 @@ foreign key(favId) references favourites(id),
 foreign key(productId) references products(id)
 );
 
-create table users_coupons(
+create table customers_coupons(
 id bigint primary key auto_increment,
-userId bigint,
+customerId bigint,
 couponId bigint,
 quantity int default 1,
-foreign key(userId) references users(id),
+foreign key(customerId) references customers(id),
 foreign key(couponId) references coupons(id)
 );
 
 insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12", 1234567890);
 INSERT INTO `carts`() VALUES ()
 INSERT INTO `favourites`() VALUES ()
-INSERT INTO `users`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Mario','Rossi','mrossi@gmail.com','secret',1,1)
+INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Mario','Rossi','mrossi@gmail.com','secret',1,1)
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/kind-1.jpg')
 INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Sashimi','buono',8,1,'/src/assets/images/image_1.jpg', 20);
-INSERT INTO `reviews`(`stars`, `comment`, `userId`, `productId`) VALUES ('5','molto saporito',1,1)
+INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','molto saporito',1,1)
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2)
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Carne','/src/assets/images/image_5.jpg')
 

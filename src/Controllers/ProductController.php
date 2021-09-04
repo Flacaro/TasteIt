@@ -99,7 +99,7 @@ class ProductController
         $review->setStars($stars);
         $review->setComment($comment);
         $review->setProductId($productId);
-        $review->setUserId(1); //id dell'utente loggato ma con calma
+        $review->setCustomerId(1); //id dell'utente loggato ma con calma
         $FProduct->createReview($review);
         redirect(url("getProduct", ['productId' => $productId]));
     }

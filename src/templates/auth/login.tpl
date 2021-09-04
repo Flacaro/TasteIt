@@ -27,7 +27,7 @@
 <div class="col-md-7" style="text-align: center">
     <div class="contact-wrap w-100 p-md-5 p-4">
         <h3 class="mb-4">Login</h3>
-        <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+        <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/login">
 
                 <div class="col-md-12">
                     <div class="form-group">
@@ -38,7 +38,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label class="label" for="#">Password</label>
-                        <input type="text" class="form-control" style="text-align:center" name="password" id="subject" placeholder="Password">
+                        <input type="password" class="form-control" style="text-align:center" name="password" id="subject" placeholder="Password">
                     </div>
                 </div>
             {if $message!=""}

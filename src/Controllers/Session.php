@@ -34,7 +34,7 @@ class Session
 
     public function isUserLogged(): bool {
         $this->newSession();
-        return (isset($_COOKIE["PHPSESSID"]) && (isset($_SESSION["user"])));
+        return (isset($_COOKIE["PHPSESSID"]) && (isset($_SESSION["customer"])));
     }
 
     public function isRestaurantLogged(): bool {
@@ -46,8 +46,8 @@ class Session
 
         $this->newSession();
 
-        if(isset($_SESSION["user"])){
-            $user =  $_SESSION["user"];
+        if(isset($_SESSION["customer"])){
+            $user =  $_SESSION["customer"];
             return unserialize($user);
 
         } else if (isset($_SESSION["restaurant"])) {
@@ -63,8 +63,8 @@ class Session
 
     $userSer = serialize($user);
 
-    if ( get_class($user) == 'App\Models\User' ) {
-        $_SESSION['user'] = $userSer;
+    if ( get_class($user) == 'App\Models\Customer') {
+        $_SESSION['customer'] = $userSer;
 
     } else if ( get_class($user) == 'App\Models\Restaurant' ) {
         $_SESSION['restaurant'] = $userSer;
