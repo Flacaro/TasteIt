@@ -62,8 +62,7 @@ password varchar(20) not null,
 favId bigint not null,
 cartId bigint default null,
 FOREIGN KEY (favId) references favourites(id),
-FOREIGN KEY (cartId) references carts(id),
-
+FOREIGN KEY (cartId) references carts(id)
 );
 
 create table reviews(
@@ -153,13 +152,13 @@ foreign key(couponId) references coupons(id)
 );
 
 insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12", 1234567890);
-INSERT INTO `carts`() VALUES ()
-INSERT INTO `favourites`() VALUES ()
-INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Mario','Rossi','mrossi@gmail.com','secret',1,1)
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/kind-1.jpg')
+INSERT INTO `carts`() VALUES ();
+INSERT INTO `favourites`() VALUES ();
+INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Mario','Rossi','mrossi@gmail.com','secret',1,1);
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/kind-1.jpg');
 INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Sashimi','buono',8,1,'/src/assets/images/image_1.jpg', 20);
-INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','molto saporito',1,1)
-INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2)
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Carne','/src/assets/images/image_5.jpg')
+INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','molto saporito',1,1);
+INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2);
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Carne','/src/assets/images/image_5.jpg');
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
