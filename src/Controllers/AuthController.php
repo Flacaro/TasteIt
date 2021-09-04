@@ -2,54 +2,70 @@
 
 namespace App\Controllers;
 
+use App\Foundation\FCart;
+use App\Foundation\FFavourites;
 use App\Foundation\FRestaurant;
 use App\Foundation\FCustomer;
+use App\Models\Cart;
 use App\Models\Customer;
+use App\Models\Favourites;
 use App\Views\VAuth;
+use Validator;
 
 class AuthController
 {
-    public function visualizeLogin(){
-        $vauth= new VAuth();
+    public function visualizeLogin()
+    {
+        $vauth = new VAuth();
         $vauth->visualizeLogin("");
     }
-    public function visualizeSignUp(){
-        $vauth= new VAuth();
+
+    public function visualizeSignUp()
+    {
+        $vauth = new VAuth();
         $vauth->visualizeSignUp("");
     }
 
-    public function login(){
+    public function login()
+    {
         //print_r("ciao");
-        $session=Session::getInstance();
+        $session = Session::getInstance();
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $fuser=new FCustomer();
-        $frest=new FRestaurant();
-        $message="";
-        if ($fuser->authentication($email, $password)){
-            $user=$fuser->getByEmail($email);
+        $fuser = new FCustomer();
+        $frest = new FRestaurant();
+        $message = "";
+        if ($fuser->authentication($email, $password)) {
+            $user = $fuser->getByEmail($email);
             $session->saveUserInSession($user);
             redirect(url("home"));
-        }
-        else if($frest->authentication($email, $password)){
-            $restaurant=$frest->getByEmail($email);
+        } else if ($frest->authentication($email, $password)) {
+            $restaurant = $frest->getByEmail($email);
             $session->saveUserInSession($restaurant);
             redirect(url("home"));
+        } else {
+            $message = "il login non è andato a buon fine";
         }
-        else{
-            $message="il login non è andato a buon fine";
-        }
-        $vauth= new VAuth();
+        $vauth = new VAuth();
         $vauth->visualizeLogin($message);
     }
 
-    public function signUp() {
+    public function signUp()
+    {
+        $vauth= new VAuth();
+        $isValid = validate($_POST, ["name", "surname", "email", "password"]);
+        if (!$isValid){
+            $message ="Il form non è valido";
+            return $vauth->visualizeSignUp($message);
+        }
+        //print_r(Validator::minlength(5, "ciao"));
         $name = $_POST["name"];
         $surname = $_POST["surname"];
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $user =new CustomerController();
         $fuser = new FCustomer();
+        $FCart = new FCart();
+        $FFavourites= new FFavourites();
         //print_r($fuser->exists($email));
         $message = "";
         if (!$fuser->exists($email)) {
@@ -59,17 +75,27 @@ class AuthController
             $customer->setSurname($surname);
             $customer->setEmail($email);
             $customer->setPassword($password);
-            $user->create($customer);
+            $cart = new Cart();
+            $cart->setId(NULL);
+            $cartId = $FCart->create($cart);
+
+            $fav = new Favourites();
+            $fav->setId(NULL);
+            $favId = $FFavourites->create($fav);
+
+            $customer->setCartId($cartId);
+            $customer->setFavId($favId);
+            $fuser->create($customer);
             redirect(url('/login'));
         }
         else {
-            $message ="I dati non sono corretti";
+            $message ="Esiste già un utente con questa e-mail";
         }
-        $vauth= new VAuth();
         $vauth->visualizeSignUp($message);
-}
+    }
 
-    public function logout(){
+    public function logout()
+    {
 
     }
 }

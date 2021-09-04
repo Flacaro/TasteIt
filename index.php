@@ -4,6 +4,7 @@ require_once "vendor/autoload.php";
 require_once "routes.php";
 require_once "View.php";
 require_once "vendor/pecee/simple-router/helpers.php";
+require_once "Utility.php";
 
 use Pecee\SimpleRouter\SimpleRouter;
 

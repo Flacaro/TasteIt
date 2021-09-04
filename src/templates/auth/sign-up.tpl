@@ -26,37 +26,46 @@
 <body class="row justify-content-center pb-5">
 <div class="col-md-7" style="text-align: center" >
     <div class="contact-wrap w-100 p-md-5 p-4">
-        <h3 class="mb-4">Registrati</h3>
+        <h3 style="padding-bottom: 1rem">Registrati</h3>
         <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/signup">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="name">Nome</label>
                         <input required type="text" class="form-control" style="text-align: center"  id="name" name="name" placeholder="Nome" minlength="2" maxlength="40">
                     </div>
                 </div>
-                <div class="col-md-12">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="email">Cognome</label>
                         <input required type="text" class="form-control" style="text-align: center" id="surname" name="surname" placeholder="Surname" minlength="2" maxlength="40">
                     </div>
                 </div>
-                <div class="col-md-12">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="surname">Email</label>
                         <input required type="email" class="form-control" style="text-align: center"  id="email" name="email" placeholder="Email" minlength="2" maxlength="40">
                     </div>
                 </div>
-                <div class="col-md-12">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="#">Password</label>
                         <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="10" maxlength="40">
                     </div>
                 </div>
-                    {if $message!=""}
-                        <p>{$message}</p>
-                    {/if}
-                <div class="col-md-12">
+            </div>
+            <div class="row justify-content-center">
+                {if $message!=""}
+                    <p>{$message}</p>
+                {/if}
+            </div>
+                <div class="col-md-12 mt-4">
                     <div class="form-group">
                         <input hidden type="text" value="signup" name="option">
                         <input type="submit" value="Registrati" class="btn btn-primary">
