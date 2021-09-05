@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AdminController;
 use App\Controllers\AuthController;
 use App\Controllers\CartController;
 use App\Controllers\categoryController;
@@ -64,9 +65,9 @@ SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFav
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('favourites');
 
-SimpleRouter::get("/admin", [\App\Views\VAuth::class, "visualizeAdminPanel"]);
-SimpleRouter::get("/admin/categories", [\App\Views\VAuth::class, "categoriesAdmin"]);
-SimpleRouter::get("/admin/products", [\App\Views\VAuth::class, "productsBestSellers"]);
+SimpleRouter::get("/admin", [AdminController::class, "visualizeAdminPanel"]);
+SimpleRouter::get("/admin/categories", [AdminController::class, "categoriesAdmin"]);
+SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

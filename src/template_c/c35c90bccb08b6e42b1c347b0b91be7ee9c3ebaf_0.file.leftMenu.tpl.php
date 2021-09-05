@@ -1,3 +1,29 @@
+<?php
+/* Smarty version 3.1.39, created on 2021-09-05 16:29:00
+  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\leftMenu.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_6134d42c2aa743_66281034',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c35c90bccb08b6e42b1c347b0b91be7ee9c3ebaf' => 
+    array (
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\leftMenu.tpl',
+      1 => 1630852133,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6134d42c2aa743_66281034 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,28 +176,66 @@
             </div>
         </nav>
 
-    {block name=admin}{/block}
+    <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16055961786134d42c2a90e9_58250092', 'admin');
+?>
+
 
 <!--   Core JS Files   -->
-<script src="/src/templates/admin/assets/js/core/jquery.min.js"></script>
-<script src="/src/templates/admin/assets/js/core/popper.min.js"></script>
-<script src="/src/templates/admin/assets/js/core/bootstrap.min.js"></script>
-<script src="/src/templates/admin/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/core/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/core/popper.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/core/bootstrap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/plugins/perfect-scrollbar.jquery.min.js"><?php echo '</script'; ?>
+>
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<?php echo '<script'; ?>
+ src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"><?php echo '</script'; ?>
+>
 <!-- Chart JS -->
-<script src="/src/templates/admin/assets/js/plugins/chartjs.min.js"></script>
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/plugins/chartjs.min.js"><?php echo '</script'; ?>
+>
 <!--  Notifications Plugin    -->
-<script src="/src/templates/admin/assets/js/plugins/bootstrap-notify.js"></script>
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/plugins/bootstrap-notify.js"><?php echo '</script'; ?>
+>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="/src/templates/admin/assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="/src/templates/admin/assets/demo/demo.js"></script>
-<script>
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"><?php echo '</script'; ?>
+><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+<?php echo '<script'; ?>
+ src="/src/templates/admin/assets/demo/demo.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
     $(document).ready(function() {
         // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
         demo.initChartsPages();
     });
-</script>
+<?php echo '</script'; ?>
+>
 </body>
 </html>
 
+<?php }
+/* {block 'admin'} */
+class Block_16055961786134d42c2a90e9_58250092 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'admin' => 
+  array (
+    0 => 'Block_16055961786134d42c2a90e9_58250092',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'admin'} */
+}
