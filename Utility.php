@@ -1,44 +1,33 @@
 <?php
 
-function validate($fields): bool {
+function minLength($args): bool
+{
+    return strlen($args[0]) >= $args[1];
+}
 
-    $isValid = false;
+function maxLength($args): bool
+{
+    return strlen($args[0]) <= $args[1];
+}
 
-    foreach ($fields as $field) {
-       $validators = $fields[$field];
+function validate($target, $fields): bool {
+    $isValid = true;
+    foreach ($fields as $field=>$validators) {
        foreach ($validators as $validator) {
            $splitted = explode(":", $validator);
            //la prima parola splittata
            $functionToCall = $splitted[0];
            //argomenti da passare alla funzione
-           $args = [$field, $splitted[1]];
-           if(call_user_func($functionToCall. $args) == true) {
-               $isValid = true;
+           $args = [$target[$field], $splitted[1]];
+           if(call_user_func(strval($functionToCall), $args) == false) {
+               $isValid = false;
            }
+
        }
     }
     return $isValid;
 }
 
-//funzione che prende in ingresso gli argomenti splittati e restituisce
-//true se è vero che hanno lunghezza minima
-function minLength($args) {
-    return strlen($args[0]) > $args[1];
-}
-
-function maxLength($args) {
-    return strlen($args[0]) < $args[1];
-}
-
-//funzione che mi vede se gli argomenti dei campi non sono nulli
-function required($args) {
-    //isset controlla se un campo ha un valore assegnato
-    return isset($args[0]);
-}
 
 
-class Validator{
-    public static function minLength($min, $field){
-        return strlen($field)>$min;
-    }
-}
+

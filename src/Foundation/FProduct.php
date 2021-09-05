@@ -89,7 +89,7 @@ class FProduct extends Foundation {
     }
     function createReview($review){
         //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
-        $query = 'insert into reviews (stars, comment, userId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getUserId(). ','. $review->getproductId().')';
+        $query = 'insert into reviews (stars, comment, userId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getCustomerId(). ','. $review->getproductId().')';
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         //$stmt->debugDumpParams();

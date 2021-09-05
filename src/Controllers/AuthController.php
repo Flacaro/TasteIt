@@ -52,20 +52,27 @@ class AuthController
 
     public function signUp()
     {
-        $vauth= new VAuth();
-        $isValid = validate($_POST, ["name", "surname", "email", "password"]);
-        if (!$isValid){
-            $message ="Il form non è valido";
+        //print_r($_POST);
+        $vauth = new VAuth();
+        $isValid = validate($_POST, [
+            "name" => ["maxLength:3", "minLength:3"], "surname" => ["minLength:2"], "email" => ["minLength:1"], "password" => ["minLength:10"]
+        ]);
+        if (!$isValid) {
+            $message = "Il form non è valido";
+            return $vauth->visualizeSignUp($message);
+        }
+        else {
+            $message = "Il form è valido";
             return $vauth->visualizeSignUp($message);
         }
         //print_r(Validator::minlength(5, "ciao"));
-        $name = $_POST["name"];
+        /*$name = $_POST["name"];
         $surname = $_POST["surname"];
         $email = $_POST["email"];
         $password = $_POST["password"];
         $fuser = new FCustomer();
         $FCart = new FCart();
-        $FFavourites= new FFavourites();
+        $FFavourites = new FFavourites();
         //print_r($fuser->exists($email));
         $message = "";
         if (!$fuser->exists($email)) {
@@ -87,11 +94,10 @@ class AuthController
             $customer->setFavId($favId);
             $fuser->create($customer);
             redirect(url('/login'));
+        } else {
+            $message = "Esiste già un utente con questa e-mail";
         }
-        else {
-            $message ="Esiste già un utente con questa e-mail";
-        }
-        $vauth->visualizeSignUp($message);
+        $vauth->visualizeSignUp($message);*/
     }
 
     public function logout()
