@@ -81,10 +81,14 @@ class AdminController{
         $vadmin->sendCoupon();
     }
 
-    public function showEditProduct($productId) {
+    public function showEditProduct($cid,$pid) {
         $vadmin= new VAdmin();
         $fproduct=new Fproduct();
-        $product=$fproduct->getById($productId);
-        $vadmin->showEditProduct($productId,$product);
+        $product=$fproduct->getById($pid);
+        $vadmin->showEditProduct($cid,$pid,$product);
+    }
+    public function showCreateProduct($categoryId) {
+        $vadmin= new VAdmin();
+        $vadmin->showCreateProduct($categoryId);
     }
 }

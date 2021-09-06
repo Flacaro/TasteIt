@@ -47,10 +47,17 @@ class VAdmin{
         ]);
     }
 
-    public function showEditProduct($productId,$product){
+    public function showEditProduct($categoryId,$productId,$product){
         return view("admin/product-edit", [
+            "categoryId"=>$categoryId,
             "productId"=>$productId,
             "product"=>$product
     ]);
+    }
+
+    public function showCreateProduct($categoryId){
+        return view("admin/product-add", [
+            "categoryId"=>$categoryId
+        ]);
     }
 }

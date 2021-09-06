@@ -7,18 +7,18 @@
                 <h5 class="card-title">Modifica Prodotto</h5>
             </div>
             <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="/admin/categories/{$categoryId}/product/{$productId}">
                     <div class="row">
                         <div class="col-md-7 pr-1">
                             <div class="form-group">
                                 <label>Nome</label>
-                                <input type="text" class="form-control" name="name" value="{$product->getName()}">
+                                <input type="text" class="form-control" minlength="2" maxlength="20" name="name" value="{$product->getName()}">
                             </div>
                         </div>
                         <div class="col-md-3 px-1">
                             <div class="form-group">
                                 <label>Prezzo$</label>
-                                <input type="text" class="form-control" name="price" value={$product->getPrice()}>
+                                <input type="text" class="form-control" minlength="1" name="price" value={$product->getPrice()}>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descrizione</label>
-                                <textarea class="form-control textarea" name="description">{$product->getDescription()}</textarea>
+                                <textarea class="form-control textarea" minlength="1" maxlength="100" name="description">{$product->getDescription()}</textarea>
                             </div>
                         </div>
                     </div>

@@ -22,23 +22,19 @@ class ProductController
 
     }
 
-    public function create() {
+    public function create($categoryId) {
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $price = $_POST['price'];
+
         $FProduct = new FProduct();
-        $FCategory = new FCategory();
-
-        $category = new Category();
-        $category->setCategoryName("Pizza");
-        $category->setRestaurantId(1);
-
-        $categoryId = $FCategory->create($category);
-
         $product = new Product();
-        $product->setName('Capricciosa');
-        $product->setDescription('Succosa');
-        $product->setPrice(8);
+        $product->setName($name);
+        $product->setDescription($description);
+        $product->setPrice($price);
         $product->setCategoryId($categoryId);
         $FProduct->create($product);
-        redirect(url('/products'));
+        redirect(url('/admin/categories/'.$categoryId));
     }
 
     public function update($id) {
