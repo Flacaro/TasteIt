@@ -16,7 +16,7 @@ demo = {
   initDocChart: function() {
     chartColor = "#FFFFFF";
 
-    ctx = document.getElementById('chartHours').getContext("2d");
+    /*ctx = document.getElementById('chartHours').getContext("2d");
 
     myChart = new Chart(ctx, {
       type: 'line',
@@ -90,16 +90,16 @@ demo = {
           }]
         },
       }
-    });
+    });*/
 
   },
 
   initChartsPages: function() {
     chartColor = "#FFFFFF";
 
-    ctx = document.getElementById('chartHours').getContext("2d");
+    //ctx = document.getElementById('chartHours').getContext("2d");
 
-    myChart = new Chart(ctx, {
+    /*myChart = new Chart(ctx, {
       type: 'line',
 
       data: {
@@ -171,12 +171,12 @@ demo = {
           }]
         },
       }
-    });
+    });*/
 
 
-    ctx = document.getElementById('chartEmail').getContext("2d");
+    //ctx = document.getElementById('chartEmail').getContext("2d");
 
-    myChart = new Chart(ctx, {
+    /*myChart = new Chart(ctx, {
       type: 'pie',
       data: {
         labels: [1, 2, 3],
@@ -238,12 +238,12 @@ demo = {
           }]
         },
       }
-    });
+    });*/
 
-    var speedCanvas = document.getElementById("speedChart");
+    /*var speedCanvas = document.getElementById("speedChart");
 
     var dataFirst = {
-      data: [20, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],
+      data: [70, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],
       fill: false,
       borderColor: '#fbc658',
       backgroundColor: 'transparent',
@@ -264,7 +264,7 @@ demo = {
         display: false,
         position: 'top'
       }
-    };
+    };*/
 
     var lineChart = new Chart(speedCanvas, {
       type: 'line',

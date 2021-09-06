@@ -32,7 +32,7 @@
                 <!-- <p>CT</p> -->
             </a>
             <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
+                TasteIt
                 <!-- <div class="logo-image-big">
                   <img src="../assets/img/logo-big.png">
                 </div> -->
@@ -42,7 +42,7 @@
             <ul class="nav">
                 <li class="active ">
                     <a href="/admin">
-                        <i class="nc-icon nc-bank"></i>
+                        <i class="nc-icon nc-chart-bar-32"></i>
                         <p>Statistiche</p>
                     </a>
                 </li>
@@ -90,7 +90,7 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+                    <a class="navbar-brand" href="javascript:;">Area Riservata</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>

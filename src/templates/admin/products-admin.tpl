@@ -3,47 +3,63 @@
     <div class="content">
     <div class="row">
         <div class="col-md-12">
-            <div class="card demo-icons">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">{$category->getCategoryName()}</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead class=" text-primary">
-                                    <th>
-                                        Nome
-                                    </th>
-                                    <th>
-                                        Descrizione
-                                    </th>
-                                    <th>
-                                        Prezzo
-                                    </th>
-                                    </thead>
-                                    <tbody>
-                                    {foreach $products as $product}
-                                    <tr>
-                                        <td>
-                                            {$product->getName()}
-                                        </td>
-                                        <td>
-                                            {$product->getDescription()}
-                                        </td>
-                                        <td>
-                                            {$product->getPrice()}
-                                        </td>
-                                    </tr>
-                                    {/foreach}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">{$category->getCategoryName()}</h4>
+                    <a href="" class="btn btn-round btn-primary">Aggiungi Prodotto</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                Descrizione
+                            </th>
+                            <th>
+                                Prezzo
+                            </th>
+                            <th>
+                                Volte Ordinato
+                            </th>
+                            <th>
+                                Azioni
+                            </th>
+                            </thead>
+                            <tbody>
+                            {foreach $products as $product}
+                                <tr>
+                                    <td>
+                                        {$product->getName()}
+                                    </td>
+                                    <td>
+                                        {$product->getDescription()}
+                                    </td>
+                                    <td>
+                                        {$product->getPrice()}
+                                    </td>
+                                    <td>
+                                        {$product->getTimesOrdered()}
+                                    </td>
+                                    <td>
+                                        <a href="/admin/categories/{$category->getId()}/product/{$product->getId()}">
+                                            edit
+                                            </a>
+                                                |
+                                                <a href="/admin/categories/{$category->getId()}/product/{$product->getId()}/delete">
+                                                    delete
+                                                    </a>
+                                    </td>
+                                </tr>
+                            {/foreach}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <script>
@@ -63,7 +79,8 @@
                 selection.addRange(range);
             }
         }
-        window.onload = function() {
+
+        window.onload = function () {
             var iconsWrapper = document.getElementById('icons-wrapper'),
                 listItems = iconsWrapper.getElementsByTagName('li');
             for (var i = 0; i < listItems.length; i++) {

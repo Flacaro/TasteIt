@@ -30,10 +30,10 @@ class FOrder extends Foundation {
 //per fare il grafico degli ordini
     public function getOrdersPerMonth(){
         //select count(*), extract(Month from creationDate)  from orders group by extract(Month from creationDate) order by extract(Month from creationDate)
-        $query="select count(*), extract(Month from creationDate)  from orders group by extract(Month from creationDate) order by extract(Month from creationDate)";
+        $query="select count(*) as numorders, extract(Month from creationDate) from orders where extract(Year from creationDate)=20".date("y") ." group by extract(Month from creationDate) order by extract(Month from creationDate)";
         $stmt = $this->connection->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetchAll();
     }
 }

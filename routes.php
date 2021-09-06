@@ -30,7 +30,7 @@ SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage
 SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
 SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
 SimpleRouter::get("/products/create", [ProductController::class, "create"]);
-SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
+//SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
 SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"]);
 SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
 SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
@@ -68,6 +68,9 @@ SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('f
 SimpleRouter::get("/admin", [AdminController::class, "visualizeStatistics"]);
 SimpleRouter::get("/admin/categories", [AdminController::class, "categoriesAdmin"]);
 SimpleRouter::get("/admin/categories/{id}", [AdminController::class, "productsInCategory"]);
+SimpleRouter::get("/admin/categories/{id}/product/{productId}", [AdminController::class, "showEditProduct"]);
+SimpleRouter::post("/admin/categories/{id}/product/{productId}", [ProductController::class, "update"]);
+SimpleRouter::post("/admin/categories/{id}/product/{productId}/delete", [ProductController::class, "destroy"]);
 SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
 SimpleRouter::get("/admin/customers", [AdminController::class, "getCustomersWhoSpentMore"]);
 SimpleRouter::get("/admin/orders", [AdminController::class, "acceptOrders"]);

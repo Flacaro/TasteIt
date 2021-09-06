@@ -13,7 +13,9 @@ class Product {
     public $description;
     public $price;
     public $categoryId;
-    public $quantity;
+    //??
+    //public $quantity;
+    //
     public $imagePath;
     public $timesOrdered;
 

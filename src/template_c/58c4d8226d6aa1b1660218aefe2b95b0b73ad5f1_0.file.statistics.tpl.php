@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-05 19:39:22
+/* Smarty version 3.1.39, created on 2021-09-06 15:29:16
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\statistics.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_613500cacebc17_35116644',
+  'unifunc' => 'content_613617ac6e82b0_88308569',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58c4d8226d6aa1b1660218aefe2b95b0b73ad5f1' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\statistics.tpl',
-      1 => 1630863400,
+      1 => 1630934954,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_613500cacebc17_35116644 (Smarty_Internal_Template $_smarty_tpl) {
+function content_613617ac6e82b0_88308569 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_639184538613500cace6033_16347344', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_911512735613617ac6ded17_71247092', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_639184538613500cace6033_16347344 extends Smarty_Internal_Block
+class Block_911512735613617ac6ded17_71247092 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_639184538613500cace6033_16347344',
+    0 => 'Block_911512735613617ac6ded17_71247092',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -152,68 +152,48 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card ">
-                    <div class="card-header ">
-                        <h5 class="card-title">Users Behavior</h5>
-                        <p class="card-category">24 Hours performance</p>
-                    </div>
-                    <div class="card-body ">
-                        <canvas id=chartHours width="400" height="100"></canvas>
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-history"></i> Updated 3 minutes ago
-                        </div>
-                    </div>
-                </div>
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-title">Ordini Annuali</h5>
+                <p class="card-category">Numero ordini ricevuti nell'anno attuale</p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card ">
-                    <div class="card-header ">
-                        <h5 class="card-title">Email Statistics</h5>
-                        <p class="card-category">Last Campaign Performance</p>
-                    </div>
-                    <div class="card-body ">
-                        <canvas id="chartEmail"></canvas>
-                    </div>
-                    <div class="card-footer ">
-                        <div class="legend">
-                            <i class="fa fa-circle text-primary"></i> Opened
-                            <i class="fa fa-circle text-warning"></i> Read
-                            <i class="fa fa-circle text-danger"></i> Deleted
-                            <i class="fa fa-circle text-gray"></i> Unopened
-                        </div>
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-calendar"></i> Number of emails sent
-                        </div>
-                    </div>
-                </div>
+            <div class="card-body">
+                <canvas id="speedChart" width="400" height="100"></canvas>
+                <?php echo '<script'; ?>
+>
+                    var speedCanvas = document.getElementById("speedChart");
+
+                    var dataFirst = {
+                        data: <?php echo $_smarty_tpl->tpl_vars['data']->value;?>
+,
+                        fill: false,
+                        borderColor: '#fbc658',
+                        backgroundColor: 'transparent',
+                        pointBorderColor: '#fbc658',
+                        pointRadius: 4,
+                        pointHoverRadius: 4,
+                        pointBorderWidth: 8,
+                    };
+
+
+                    var speedData = {
+                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        datasets: [dataFirst]
+                    };
+
+                    var chartOptions = {
+                        legend: {
+                            display: false,
+                            position: 'top'
+                        }
+                    };
+                <?php echo '</script'; ?>
+>
             </div>
-            <div class="col-md-8">
-                <div class="card card-chart">
-                    <div class="card-header">
-                        <h5 class="card-title">NASDAQ: AAPL</h5>
-                        <p class="card-category">Line Chart with Points</p>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="speedChart" width="400" height="100"></canvas>
-                    </div>
-                    <div class="card-footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Tesla Model S
-                            <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                        </div>
-                        <hr />
-                        <div class="card-stats">
-                            <i class="fa fa-check"></i> Data information certified
-                        </div>
-                    </div>
+            <div class="card-footer">
+                <div class="chart-legend">
+                    <i class="fa fa-circle text-warning"></i> 20<?php echo date("y");?>
+
                 </div>
             </div>
         </div>

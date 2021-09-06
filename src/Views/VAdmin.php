@@ -3,11 +3,12 @@
 namespace App\Views;
 
 class VAdmin{
-    public function visualizeStatistics($revenues, $numorders)
+    public function visualizeStatistics($revenues, $numorders, $data)
     {
         return view("admin/statistics", [
             "revenues"=>$revenues,
-            "numorders"=>$numorders
+            "numorders"=>$numorders,
+            "data"=>$data
         ]);
     }
 
@@ -43,5 +44,12 @@ class VAdmin{
     {
         return view("admin/coupon", [
         ]);
+    }
+
+    public function showEditProduct($productId,$product){
+        return view("admin/product-edit", [
+            "productId"=>$productId,
+            "product"=>$product
+    ]);
     }
 }

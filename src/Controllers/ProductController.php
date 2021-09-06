@@ -43,17 +43,23 @@ class ProductController
 
     public function update($id) {
         $FProduct = new FProduct();
+        $oldproduct=$FProduct->getById($id);
         //superglobal, come parametro ci va passato il NOME dell'input a cui fare riferimento
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        $categoryId = $_POST['categoryId'];
+        $categoryId=$oldproduct->getCategoryId();
+        $timesOrdered=$oldproduct->getTimesOrdered();
+        $imagePath=$oldproduct->getImagePath();
         $product = new Product();
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
         $product->setCategoryId($categoryId);
+        $product->setTimesOrdered($timesOrdered);
+        $product->setImagePath($imagePath);
         $FProduct->update($id, $product);
+        redirect(url("/admin/categories/".$categoryId));
     }
 
     public function edit($id) {
