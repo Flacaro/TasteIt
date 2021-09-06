@@ -26,7 +26,7 @@ class VAdmin{
     public function productsInCategory($products, $category){
         return view("admin/products-admin", [
             "products"=>$products,
-            "category"=>$category
+            "category"=>$category]);
 }
     public function customers()
     {
