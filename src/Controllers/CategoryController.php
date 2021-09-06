@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Foundation\FCategory;
 use App\Foundation\FProduct;
+use App\Models\Category;
 use App\Views\VCategory;
 
 class CategoryController
@@ -27,4 +28,12 @@ class CategoryController
         $category = $FCategory->getById($categoryId);
 
     }
+    function create(){
+        $name = $_POST["name"];
+        $fcategory = new FCategory();
+        $category=new Category();
+        $category->setCategoryName($name);
+        $fcategory->create($category);
+        redirect(url('/admin/categories'));
+}
 }

@@ -30,7 +30,7 @@ create table categories(
 id bigint primary key auto_increment,
 restaurantId int NOT NULL,
 categoryName varchar(30) NOT NULL,
-imagePath varchar(1024) NOT NULL,
+imagePath varchar(1024) DEFAULT NULL,
 foreign key(restaurantId) references restaurant(id)
 );
 
