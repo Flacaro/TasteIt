@@ -19,4 +19,21 @@ class VAdmin{
         return view("admin/productsBestSellers", [
         ]);
     }
+
+    public function customers()
+    {
+        return view("admin/customers", [
+        ]);
+    }
+
+    public function acceptOrders()
+    {
+        return view("admin/orders", [
+        ]);
+    }
+    public function sendCoupon()
+    {
+        return view("admin/coupon", [
+        ]);
+    }
 }

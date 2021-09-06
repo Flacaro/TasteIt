@@ -103,7 +103,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                     </a>
                 </li>
                 <li class="active-pro">
-                    <a href="../../src/templates/admin/upgrade.html">
+                    <a href="../templates/admin/coupon.tpl">
                         <i class="nc-icon nc-spaceship"></i>
                         <p>Upgrade to PRO</p>
                     </a>

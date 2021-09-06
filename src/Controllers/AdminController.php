@@ -18,4 +18,17 @@ class AdminController{
         $vadmin= new VAdmin();
         $vadmin->productsBestSellers();
     }
+
+    public function getCustomersWhoSpentMore() {
+        $vadmin= new VAdmin();
+        $vadmin->customers();
+    }
+    public function acceptOrders() {
+        $vadmin= new VAdmin();
+        $vadmin->acceptOrders();
+    }
+    public function sendCoupon() {
+        $vadmin= new VAdmin();
+        $vadmin->sendCoupon();
+    }
 }

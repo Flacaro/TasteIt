@@ -59,29 +59,22 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/admin/customers">
                         <i class="nc-icon nc-single-02"></i>
                         <p>Clienti</p>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/admin/coupon">
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Coupon</p>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/admin/orders">
                         <i class="nc-icon nc-caps-small"></i>
                         <p>Ordini</p>
                     </a>
-                </li>
-                <li class="active-pro">
-                    <a href="../../src/templates/admin/upgrade.html">
-                        <i class="nc-icon nc-spaceship"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
