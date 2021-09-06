@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-05 16:15:48
+/* Smarty version 3.1.39, created on 2021-09-06 10:34:01
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6134d11420d2d1_62926856',
+  'unifunc' => 'content_6135d27982ebb3_74871300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca67fd711e070b25d703e32efc8fbac889ad9416' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1630851347,
+      1 => 1630917240,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6134d11420d2d1_62926856 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6135d27982ebb3_74871300 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -67,53 +67,40 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="active ">
-                    <a href="./dashboard.html">
+                    <a href="/admin">
                         <i class="nc-icon nc-bank"></i>
-                        <p>Dashboard</p>
+                        <p>Ricavi Mensili</p>
                     </a>
                 </li>
                 <li>
-                    <a href="../../src/templates/admin/categories.tpl">
+                    <a href="/admin/categories">
                         <i class="nc-icon nc-diamond"></i>
-                        <p>Icons</p>
+                        <p>Categorie</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./map.html">
-                        <i class="nc-icon nc-pin-3"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="../../src/templates/admin/productsBestSellers.tpl">
+                    <a href="/admin/products">
                         <i class="nc-icon nc-bell-55"></i>
-                        <p>Notifications</p>
+                        <p>Prodotti più venduti</p>
                     </a>
                 </li>
                 <li>
-                    <a href="../../src/templates/admin/user.html">
+                    <a href="/admin/customers">
                         <i class="nc-icon nc-single-02"></i>
-                        <p>User Profile</p>
+                        <p>Clienti</p>
                     </a>
                 </li>
                 <li>
-                    <a href="../../src/templates/admin/tables.html">
+                    <a href="/admin/coupon">
                         <i class="nc-icon nc-tile-56"></i>
-                        <p>Table List</p>
+                        <p>Coupon</p>
                     </a>
                 </li>
                 <li>
-                    <a href="../../src/templates/admin/typography.html">
+                    <a href="/admin/orders">
                         <i class="nc-icon nc-caps-small"></i>
-                        <p>Typography</p>
+                        <p>Ordini</p>
                     </a>
-                </li>
-                <li class="active-pro">
-                    <a href="../../src/templates/admin/upgrade.html">
-                        <i class="nc-icon nc-spaceship"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
@@ -181,8 +168,9 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 </div>
             </div>
         </nav>
+
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5989037896134d11420b686_25468842', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19834773246135d27982d864_97304290', 'admin');
 ?>
 
 
@@ -231,12 +219,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5989037896134d1142
 
 <?php }
 /* {block 'admin'} */
-class Block_5989037896134d11420b686_25468842 extends Smarty_Internal_Block
+class Block_19834773246135d27982d864_97304290 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_5989037896134d11420b686_25468842',
+    0 => 'Block_19834773246135d27982d864_97304290',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

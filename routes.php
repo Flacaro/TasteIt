@@ -69,6 +69,9 @@ SimpleRouter::get("/admin", [AdminController::class, "visualizeStatistics"]);
 SimpleRouter::get("/admin/categories", [AdminController::class, "categoriesAdmin"]);
 SimpleRouter::get("/admin/categories/{id}", [AdminController::class, "productsInCategory"]);
 SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
+SimpleRouter::get("/admin/customers", [AdminController::class, "getCustomersWhoSpentMore"]);
+SimpleRouter::get("/admin/orders", [AdminController::class, "acceptOrders"]);
+SimpleRouter::get("/admin/coupon", [AdminController::class, "sendCoupon"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

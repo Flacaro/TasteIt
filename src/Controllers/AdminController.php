@@ -28,12 +28,27 @@ class AdminController{
         $vadmin->productsBestSellers();
     }
 
-    public function productsInCategory($id){
-        $fproduct=new FProduct();
-        $fcategory=new FCategory();
-        $category=$fcategory->getById($id);
-        $products= $fproduct->getProductsByCategoryId($id);
-        $vadmin= new VAdmin();
+
+    public function productsInCategory($id)
+    {
+        $fproduct = new FProduct();
+        $fcategory = new FCategory();
+        $category = $fcategory->getById($id);
+        $products = $fproduct->getProductsByCategoryId($id);
+        $vadmin = new VAdmin();
         $vadmin->productsInCategory($products, $category);
+    }
+
+    public function getCustomersWhoSpentMore() {
+        $vadmin= new VAdmin();
+        $vadmin->customers();
+    }
+    public function acceptOrders() {
+        $vadmin= new VAdmin();
+        $vadmin->acceptOrders();
+    }
+    public function sendCoupon() {
+        $vadmin= new VAdmin();
+        $vadmin->sendCoupon();
     }
 }

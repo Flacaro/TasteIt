@@ -27,6 +27,21 @@ class VAdmin{
         return view("admin/products-admin", [
             "products"=>$products,
             "category"=>$category
+}
+    public function customers()
+    {
+        return view("admin/customers", [
+        ]);
+    }
+
+    public function acceptOrders()
+    {
+        return view("admin/orders", [
+        ]);
+    }
+    public function sendCoupon()
+    {
+        return view("admin/coupon", [
         ]);
     }
 }
