@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Foundation\FRestaurant;
 use App\Views\VAdmin;
 
 class AdminController{
@@ -20,9 +21,12 @@ class AdminController{
     }
 
     public function getCustomersWhoSpentMore() {
-        $vadmin= new VAdmin();
-        $vadmin->customers();
+        $fRestaurant= new FRestaurant();
+        $customers = $fRestaurant->getFirstTenCustomerWhoSpentMore();
+            $vadmin= new VAdmin();
+            $vadmin->customers($customers);
     }
+
     public function acceptOrders() {
         $vadmin= new VAdmin();
         $vadmin->acceptOrders();

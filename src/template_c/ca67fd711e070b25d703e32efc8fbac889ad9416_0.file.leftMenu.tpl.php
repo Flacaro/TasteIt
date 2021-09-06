@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 10:34:01
+/* Smarty version 3.1.39, created on 2021-09-06 13:15:16
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6135d27982ebb3_74871300',
+  'unifunc' => 'content_6135f84496f519_05278475',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca67fd711e070b25d703e32efc8fbac889ad9416' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1630917240,
+      1 => 1630926915,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6135d27982ebb3_74871300 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6135f84496f519_05278475 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <link rel="icon" type="image/png" href="/src/templates/admin/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Paper Dashboard 2 by Creative Tim
+        Pannello Admin
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -116,7 +116,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+                    <a class="navbar-brand" href="javascript:;">Pannello Admin</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -170,7 +170,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         </nav>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19834773246135d27982d864_97304290', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19212901976135f84496dcf1_36044166', 'admin');
 ?>
 
 
@@ -219,12 +219,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19834773246135d279
 
 <?php }
 /* {block 'admin'} */
-class Block_19834773246135d27982d864_97304290 extends Smarty_Internal_Block
+class Block_19212901976135f84496dcf1_36044166 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_19834773246135d27982d864_97304290',
+    0 => 'Block_19212901976135f84496dcf1_36044166',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

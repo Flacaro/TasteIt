@@ -11,10 +11,10 @@
           <div class="card-body">
             <div class="table-responsive table-upgrade">
               <table class="table">
+                <th class="text-center">Nome</th>
                 <thead>
                 <th></th>
-                <th class="text-center">Free</th>
-                <th class="text-center">PRO</th>
+                <th class="text-center">totale</th>
                 </thead>
                 <tbody>
                 <tr>

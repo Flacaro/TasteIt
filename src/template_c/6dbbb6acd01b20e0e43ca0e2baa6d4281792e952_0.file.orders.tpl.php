@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 10:37:37
+/* Smarty version 3.1.39, created on 2021-09-06 13:54:44
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\orders.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6135d351caec42_10369095',
+  'unifunc' => 'content_61360184ec2677_41029112',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6dbbb6acd01b20e0e43ca0e2baa6d4281792e952' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\orders.tpl',
-      1 => 1630917456,
+      1 => 1630929283,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6135d351caec42_10369095 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61360184ec2677_41029112 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20969002916135d351cae452_50686597', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10208462561360184ec1e14_90548645', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_20969002916135d351cae452_50686597 extends Smarty_Internal_Block
+class Block_10208462561360184ec1e14_90548645 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_20969002916135d351cae452_50686597',
+    0 => 'Block_10208462561360184ec1e14_90548645',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,10 +52,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
           <div class="card-body">
             <div class="table-responsive table-upgrade">
               <table class="table">
+                <th class="text-center">Nome</th>
                 <thead>
                 <th></th>
-                <th class="text-center">Free</th>
-                <th class="text-center">PRO</th>
+                <th class="text-center">totale</th>
                 </thead>
                 <tbody>
                 <tr>

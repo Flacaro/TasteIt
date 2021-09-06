@@ -34,10 +34,5 @@ class Coupon {
         return $this->restaurantId;
     }
 
-    public function setRestaurantId($restaurantId): void
-    {
-        $this->restaurantId = $restaurantId;
-    }
-
 
 }

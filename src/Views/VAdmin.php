@@ -20,9 +20,9 @@ class VAdmin{
         ]);
     }
 
-    public function customers()
-    {
+    public function customers($customers) {
         return view("admin/customers", [
+           "customers" => $customers
         ]);
     }
 
