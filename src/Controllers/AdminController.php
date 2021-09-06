@@ -36,8 +36,25 @@ class AdminController{
     }
 
     public function productsBestSellers(){
+        $fcategory=new FCategory();
+        $fproduct= new FProduct();
+        $categories= $fcategory->getAll();
+        $data=[];
+        foreach ($categories as $category){
+            $id=$category->getId();
+            $best=$fproduct->getBestSellerOfCategory($id);
+            $worst=$fproduct->getWorstSellerOfCategory($id);
+            //print_r($best);
+            if($best==false){
+                $worst=$best="non ci sono prodotti in questa categoria";}
+            else{
+                $best=$best->getName();
+                $worst=$worst->getName();}
+            $data[$category->getCategoryName()]=[$best,$worst];
+        }
+        //print_r($data);
         $vadmin= new VAdmin();
-        $vadmin->productsBestSellers();
+        $vadmin->productsBestSellers($data);
     }
 
 

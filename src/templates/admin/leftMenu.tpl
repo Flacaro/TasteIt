@@ -48,13 +48,13 @@
                 </li>
                 <li>
                     <a href="/admin/categories">
-                        <i class="nc-icon nc-diamond"></i>
+                        <i class="nc-icon nc-tag-content"></i>
                         <p>Categorie</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/products">
-                        <i class="nc-icon nc-bell-55"></i>
+                        <i class="nc-icon nc-favourite-28"></i>
                         <p>Prodotti più venduti</p>
                     </a>
                 </li>

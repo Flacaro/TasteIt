@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 12:11:59
+/* Smarty version 3.1.39, created on 2021-09-06 18:05:34
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6135e96f4e9e21_10732679',
+  'unifunc' => 'content_61363c4e081ab0_85719435',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9d7a54409b6889d91dd047e351f6a2e9bcdae0d9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories.tpl',
-      1 => 1630923118,
+      1 => 1630944333,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6135e96f4e9e21_10732679 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61363c4e081ab0_85719435 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14417364986135e96f4e2434_27206834', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12456942661363c4e079cc0_09572535', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_14417364986135e96f4e2434_27206834 extends Smarty_Internal_Block
+class Block_12456942661363c4e079cc0_09572535 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_14417364986135e96f4e2434_27206834',
+    0 => 'Block_12456942661363c4e079cc0_09572535',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -44,11 +44,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <div class="card demo-icons">
-              <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
                     <h4 class="card-title"> Categorie di prodotti</h4>
+                    <a href="" class="btn btn-round btn-primary">Aggiungi Categoria</a>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -82,8 +81,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
         </div>
       </div>
   <?php echo '<script'; ?>

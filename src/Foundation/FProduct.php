@@ -95,4 +95,20 @@ class FProduct extends Foundation {
         $stmt->debugDumpParams();
     }
 
+    function getBestSellerOfCategory($id){
+        //SELECT name FROM products WHERE categoryId={$id} ORDER BY timesOrdered LIMIT 1;
+        $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered DESC LIMIT 1;";
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    function getWorstSellerOfCategory($id){
+        //SELECT name FROM products WHERE categoryId={$id} ORDER BY timesOrdered LIMIT 1;
+        $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered LIMIT 1;";
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 }

@@ -18,9 +18,10 @@ class VAdmin{
             "categories"=>$categories
         ]);
     }
-    public function productsBestSellers()
+    public function productsBestSellers($data)
     {
         return view("admin/productsBestSellers", [
+            "data"=>$data
         ]);
     }
 
