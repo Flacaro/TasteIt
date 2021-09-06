@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-05 15:40:51
+/* Smarty version 3.1.39, created on 2021-09-06 20:04:15
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\productsBestSellers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6134c8e3c19b99_37446500',
+  'unifunc' => 'content_6136581fea3103_77587193',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1af90ed7bad35559b07b9f5ac97068be32429a24' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\productsBestSellers.tpl',
-      1 => 1630849174,
+      1 => 1630951044,
       2 => 'file',
     ),
   ),
@@ -20,162 +20,80 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6134c8e3c19b99_37446500 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6136581fea3103_77587193 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_533130506134c8e3c192d4_30099353', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13522175726136581fe9c0b0_97074506', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_533130506134c8e3c192d4_30099353 extends Smarty_Internal_Block
+class Block_13522175726136581fe9c0b0_97074506 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_533130506134c8e3c192d4_30099353',
+    0 => 'Block_13522175726136581fe9c0b0_97074506',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-      <div class="content">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title">Notifications</h5>
-                <p class="card-category">Handcrafted by our friend <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a></p>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card card-plain">
-                      <div class="card-header">
-                        <h5 class="card-title">Notifications Style</h5>
-                      </div>
-                      <div class="card-body">
-                        <div class="alert alert-info">
-                          <span>This is a plain notification</span>
-                        </div>
-                        <div class="alert alert-info alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span>This is a notification with close button.</span>
-                        </div>
-                        <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span data-notify="icon" class="nc-icon nc-bell-55"></span>
-                          <span data-notify="message">This is a notification with close button and icon.</span>
-                        </div>
-                        <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span data-notify="icon" class="nc-icon nc-chart-pie-36"></span>
-                          <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card card-plain">
-                      <div class="card-header">
-                        <h5 class="card-title">Notification states</h5>
-                      </div>
-                      <div class="card-body">
-                        <div class="alert alert-primary alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
-                        </div>
-                        <div class="alert alert-info alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Info - </b> This is a regular notification made with ".alert-info"</span>
-                        </div>
-                        <div class="alert alert-success alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                        </div>
-                        <div class="alert alert-warning alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                        </div>
-                        <div class="alert alert-danger alert-dismissible fade show">
-                          <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="nc-icon nc-simple-remove"></i>
-                          </button>
-                          <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<div class="content">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"> Statistiche prodotti</h4>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-body">
-                <div class="places-buttons">
-                  <div class="row">
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                      <h4 class="card-title">
-                        Notifications Places
-                        <p class="category">Click to view notifications</p>
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-8 ml-auto mr-auto">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Top Left</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','center')">Top Center</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-8 ml-auto mr-auto">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','center')">Bottom Center</button>
-                        </div>
-                        <div class="col-md-4">
-                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','right')">Bottom Right</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            Nome Categoria
+                        </th>
+                        <th>
+                            Prodotto più venduto
+                        </th>
+                        <th>
+                            Prodotto meno venduto
+                        </th>
+                        </thead>
+                        <tbody>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data']->value, 'value', false, 'key');
+$_smarty_tpl->tpl_vars['value']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['value']->value) {
+$_smarty_tpl->tpl_vars['value']->do_else = false;
+?>
+                            <tr>
+                                <td>
+                                    <?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+
+                                </td>
+                                <td>
+                                    <?php echo $_smarty_tpl->tpl_vars['value']->value[0];?>
+
+                                </td>
+                                <td>
+                                    <?php echo $_smarty_tpl->tpl_vars['value']->value[1];?>
+
+                                </td>
+                            </tr>
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
+</div>
 <?php
 }
 }

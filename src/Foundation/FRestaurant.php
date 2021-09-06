@@ -49,7 +49,7 @@ class FRestaurant extends Foundation {
     public function getFirstTenCustomerWhoSpentMore() {
         $query = "SELECT customers.name, customers.surname, customers.email, orders.total from orders join users on customers.id = orders.customerId ORDER BY orders.total DESC limit 10;";
         $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Customer");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Total");
         $stmt->execute();
         return $stmt->fetchAll();
     }

@@ -31,7 +31,6 @@ class VAdmin{
             "category"=>$category]);
 }
     public function customers($customers) {
-
         return view("admin/customers", [
            "customers" => $customers
         ]);

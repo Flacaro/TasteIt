@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 13:15:16
+/* Smarty version 3.1.39, created on 2021-09-06 20:18:03
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6135f84496f519_05278475',
+  'unifunc' => 'content_61365b5bdf83e6_12675570',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca67fd711e070b25d703e32efc8fbac889ad9416' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1630926915,
+      1 => 1630952282,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6135f84496f519_05278475 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61365b5bdf83e6_12675570 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,9 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <link rel="icon" type="image/png" href="/src/templates/admin/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Pannello Admin
+
+        Admin Panel
+
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -53,12 +55,12 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <div class="logo">
             <a href="https://www.creative-tim.com" class="simple-text logo-mini">
                 <div class="logo-image-small">
-                    <img src="../../src/templates/admin/assets/img/logo-small.png">
+                    <img src="/src/templates/admin/assets/img/logo-small.png">
                 </div>
                 <!-- <p>CT</p> -->
             </a>
             <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
+                TasteIt
                 <!-- <div class="logo-image-big">
                   <img src="../assets/img/logo-big.png">
                 </div> -->
@@ -68,19 +70,19 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             <ul class="nav">
                 <li class="active ">
                     <a href="/admin">
-                        <i class="nc-icon nc-bank"></i>
-                        <p>Ricavi Mensili</p>
+                        <i class="nc-icon nc-chart-bar-32"></i>
+                        <p>Statistiche</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/categories">
-                        <i class="nc-icon nc-diamond"></i>
+                        <i class="nc-icon nc-tag-content"></i>
                         <p>Categorie</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/products">
-                        <i class="nc-icon nc-bell-55"></i>
+                        <i class="nc-icon nc-favourite-28"></i>
                         <p>Prodotti più venduti</p>
                     </a>
                 </li>
@@ -116,7 +118,9 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="javascript:;">Pannello Admin</a>
+
+                    <a class="navbar-brand" href="javascript:;">Area Riservata</a>
+
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -124,25 +128,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                     <span class="navbar-toggler-bar navbar-kebab"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <form>
-                        <div class="input-group no-border">
-                            <input type="text" value="" class="form-control" placeholder="Search...">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <i class="nc-icon nc-zoom-split"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link btn-magnify" href="javascript:;">
-                                <i class="nc-icon nc-layout-11"></i>
-                                <p>
-                                    <span class="d-lg-none d-md-block">Stats</span>
-                                </p>
-                            </a>
-                        </li>
+                     
                         <li class="nav-item btn-rotate dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="nc-icon nc-bell-55"></i>
@@ -170,7 +157,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         </nav>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19212901976135f84496dcf1_36044166', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_186154380361365b5bdf6bb0_82158049', 'admin');
 ?>
 
 
@@ -219,12 +206,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19212901976135f844
 
 <?php }
 /* {block 'admin'} */
-class Block_19212901976135f84496dcf1_36044166 extends Smarty_Internal_Block
+class Block_186154380361365b5bdf6bb0_82158049 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_19212901976135f84496dcf1_36044166',
+    0 => 'Block_186154380361365b5bdf6bb0_82158049',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
