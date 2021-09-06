@@ -80,7 +80,9 @@ SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete",
 SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
 SimpleRouter::get("/admin/customers", [AdminController::class, "getCustomersWhoSpentMore"]);
 SimpleRouter::get("/admin/orders", [AdminController::class, "acceptOrders"]);
-SimpleRouter::get("/admin/coupon", [AdminController::class, "sendCoupon"]);
+SimpleRouter::get("/admin/sendCoupon", [AdminController::class, "sendCoupon"]);
+SimpleRouter::get("/admin/coupons/create", [AdminController::class, "createCoupon"]);
+
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 20:18:03
+/* Smarty version 3.1.39, created on 2021-09-06 21:14:10
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61365b5bdf83e6_12675570',
+  'unifunc' => 'content_61366882bcd211_81642682',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca67fd711e070b25d703e32efc8fbac889ad9416' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1630952282,
+      1 => 1630955607,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61365b5bdf83e6_12675570 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61366882bcd211_81642682 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -93,7 +93,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/coupon">
+                    <a href="/admin/coupons/create">
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Coupon</p>
                     </a>
@@ -129,7 +129,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
                     <ul class="navbar-nav">
-                     
+
                         <li class="nav-item btn-rotate dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="nc-icon nc-bell-55"></i>
@@ -157,7 +157,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         </nav>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_186154380361365b5bdf6bb0_82158049', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_194390215361366882bcb992_99993556', 'admin');
 ?>
 
 
@@ -206,12 +206,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_186154380361365b5b
 
 <?php }
 /* {block 'admin'} */
-class Block_186154380361365b5bdf6bb0_82158049 extends Smarty_Internal_Block
+class Block_194390215361366882bcb992_99993556 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_186154380361365b5bdf6bb0_82158049',
+    0 => 'Block_194390215361366882bcb992_99993556',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

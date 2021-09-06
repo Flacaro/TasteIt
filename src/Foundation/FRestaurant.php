@@ -37,6 +37,7 @@ class FRestaurant extends Foundation {
         $query = "INSERT INTO coupons (priceCut, restaurantId) VALUES (" . $priceCut . ", " . "1);";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
+
     }
 
     public function getOrdersStates() {
@@ -47,7 +48,7 @@ class FRestaurant extends Foundation {
     }
 
     public function getFirstTenCustomerWhoSpentMore() {
-        $query = "SELECT customers.name, customers.surname, customers.email, orders.total from orders join users on customers.id = orders.customerId ORDER BY orders.total DESC limit 10;";
+        $query = "SELECT customers.name, customers.surname, customers.email, orders.total from orders join customers on customers.id = orders.customerId ORDER BY orders.total DESC limit 10;";
         $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Total");
         $stmt->execute();
@@ -61,8 +62,21 @@ class FRestaurant extends Foundation {
         $stmt->execute();
     }
 
+    public function createCoupon($priceCut) {
+        $query = "INSERT INTO coupons (priceCut, restaurantId) VALUES = (" . $priceCut . ", 1);";
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+    }
+
     public function getTotal($customerId) {
         $query = "select total from orders join customers on customers.id = orders.customerId where customers.id = " . $customerId . ";";
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public function getAllPriceCut() {
+        $query = "SELECT priceCut FROM coupons";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt->fetch();

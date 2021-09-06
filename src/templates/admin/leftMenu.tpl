@@ -67,7 +67,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/coupon">
+                    <a href="/admin/coupons/create">
                         <i class="nc-icon nc-tile-56"></i>
                         <p>Coupon</p>
                     </a>

@@ -32,7 +32,7 @@ class VAdmin{
 }
     public function customers($customers) {
         return view("admin/customers", [
-           "customers" => $customers
+            "customers"=>$customers
         ]);
     }
 
@@ -41,11 +41,21 @@ class VAdmin{
         return view("admin/orders", [
         ]);
     }
-    public function sendCoupon()
+    public function sendCoupon($customerId)
     {
-        return view("admin/coupon", [
+        return view("admin/coupons", [
+            "customerId" =>$customerId
         ]);
     }
+
+    public function createCoupon($customers, $pricesCut)
+    {
+        return view("admin/couponCreate", [
+            "customers"=>$customers,
+            "pricesCut"=>$pricesCut
+        ]);
+    }
+
 
     public function showEditProduct($categoryId,$productId,$product){
         return view("admin/product-edit", [

@@ -7,6 +7,7 @@ use App\Foundation\FRestaurant;
 use App\Foundation\FCategory;
 use App\Foundation\FOrder;
 use App\Foundation\FProduct;
+use App\Models\Coupon;
 use App\Views\VAdmin;
 
 class AdminController{
@@ -73,17 +74,28 @@ class AdminController{
     public function getCustomersWhoSpentMore() {
         $fRestaurant= new FRestaurant();
         $customers = $fRestaurant->getFirstTenCustomerWhoSpentMore();
-            $vadmin= new VAdmin();
-            $vadmin->customers($customers);
+        //print_r($customers);
+        $vadmin= new VAdmin();
+        $vadmin->customers($customers);
     }
 
     public function acceptOrders() {
         $vadmin= new VAdmin();
         $vadmin->acceptOrders();
     }
-    public function sendCoupon() {
+
+    public function sendCoupon($customerId) {
         $vadmin= new VAdmin();
-        $vadmin->sendCoupon();
+        $vadmin->sendCoupon($customerId);
+    }
+
+    public function createCoupon() {
+        $fRestaurant= new FRestaurant();
+        $customers = $fRestaurant->getFirstTenCustomerWhoSpentMore();
+        $pricesCut = $fRestaurant->getAllPriceCut();
+        $fRestaurant->createCoupon($pricesCut);
+        $vadmin = new VAdmin();
+        $vadmin->createCoupon($customers,$pricesCut);
     }
 
     public function showEditProduct($cid,$pid) {
