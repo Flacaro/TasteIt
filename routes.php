@@ -67,13 +67,15 @@ SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('f
 
 SimpleRouter::get("/admin", [AdminController::class, "visualizeStatistics"]);
 SimpleRouter::get("/admin/categories", [AdminController::class, "categoriesAdmin"]);
-SimpleRouter::get("/admin/categories/{id}", [AdminController::class, "productsInCategory"]);
+///admin/categories/add rimanda ai prodotti nella categoria?!
+SimpleRouter::get("/admin/categories/add", [AdminController::class, "showAddCategory"]);
+SimpleRouter::get("/admin/categories/{id}/product", [AdminController::class, "productsInCategory"]);
 //per qualche motivo /admin/categories/{id}/product/create rimanda alla pagina per modificare il prodotto
-SimpleRouter::get("/admin/categories/{categoryId}/product/create/asd", [AdminController::class, "showCreateProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/product/create/asd", [ProductController::class, "create"]);
-SimpleRouter::get("/admin/categories/{categoryId}/product/{productId}", [AdminController::class, "showEditProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/product/{productId}", [ProductController::class, "update"]);
-SimpleRouter::post("/admin/categories/{categoryId}/product/{productId}/delete", [ProductController::class, "destroy"]);
+SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminController::class, "showCreateProduct"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/create", [ProductController::class, "create"]);
+SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminController::class, "showEditProduct"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [ProductController::class, "update"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [ProductController::class, "destroy"]);
 SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
 SimpleRouter::get("/admin/customers", [AdminController::class, "getCustomersWhoSpentMore"]);
 SimpleRouter::get("/admin/orders", [AdminController::class, "acceptOrders"]);

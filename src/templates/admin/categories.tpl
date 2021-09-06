@@ -6,7 +6,7 @@
                 <div class="card">
                   <div class="card-header">
                     <h4 class="card-title"> Categorie di prodotti</h4>
-                    <a href="" class="btn btn-round btn-primary">Aggiungi Categoria</a>
+                    <a href="/admin/categories/add" class="btn btn-round btn-primary">Aggiungi Categoria</a>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -20,7 +20,7 @@
                         {foreach $categories as $category}
                         <tr>
                           <td>
-                            <a href="/admin/categories/{$category->getId()}">
+                            <a href="/admin/categories/{$category->getId()}/product">
                               {$category->getCategoryName()}
                             <a>
                           </a>

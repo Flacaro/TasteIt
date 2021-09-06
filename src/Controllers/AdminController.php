@@ -91,4 +91,9 @@ class AdminController{
         $vadmin= new VAdmin();
         $vadmin->showCreateProduct($categoryId);
     }
+
+    public function showAddCategory(){
+        $vadmin= new VAdmin();
+        $vadmin->showAddCategory();
+    }
 }

@@ -60,4 +60,9 @@ class VAdmin{
             "categoryId"=>$categoryId
         ]);
     }
+
+    public function showAddCategory(){
+        return view("admin/categories-add", [
+    ]);
+    }
 }

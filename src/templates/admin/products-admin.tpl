@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">{$category->getCategoryName()}</h4>
-                    <a href="/admin/categories/{$category->getId()}/product/create/asd" class="btn btn-round btn-primary">Aggiungi Prodotto</a>
+                    <a href="/admin/categories/{$category->getId()}/products/create" class="btn btn-round btn-primary">Aggiungi Prodotto</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -44,11 +44,11 @@
                                         {$product->getTimesOrdered()}
                                     </td>
                                     <td>
-                                        <a href="/admin/categories/{$category->getId()}/product/{$product->getId()}">
+                                        <a href="/admin/categories/{$category->getId()}/products/{$product->getId()}/edit">
                                             edit
                                             </a>
                                                 |
-                                                <a href="/admin/categories/{$category->getId()}/product/{$product->getId()}/delete">
+                                                <a href="/admin/categories/{$category->getId()}/products/{$product->getId()}/delete">
                                                     delete
                                                     </a>
                                     </td>

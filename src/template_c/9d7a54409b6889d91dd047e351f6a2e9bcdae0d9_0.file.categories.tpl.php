@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 18:05:34
+/* Smarty version 3.1.39, created on 2021-09-06 19:37:21
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61363c4e081ab0_85719435',
+  'unifunc' => 'content_613651d1bdbf87_72242925',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9d7a54409b6889d91dd047e351f6a2e9bcdae0d9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories.tpl',
-      1 => 1630944333,
+      1 => 1630949836,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61363c4e081ab0_85719435 (Smarty_Internal_Template $_smarty_tpl) {
+function content_613651d1bdbf87_72242925 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12456942661363c4e079cc0_09572535', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_644300565613651d1bd44e0_95379682', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_12456942661363c4e079cc0_09572535 extends Smarty_Internal_Block
+class Block_644300565613651d1bd44e0_95379682 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_12456942661363c4e079cc0_09572535',
+    0 => 'Block_644300565613651d1bd44e0_95379682',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -47,7 +47,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="card">
                   <div class="card-header">
                     <h4 class="card-title"> Categorie di prodotti</h4>
-                    <a href="" class="btn btn-round btn-primary">Aggiungi Categoria</a>
+                    <a href="/admin/categories/add" class="btn btn-round btn-primary">Aggiungi Categoria</a>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -67,7 +67,7 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
                         <tr>
                           <td>
                             <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
-">
+/product">
                               <?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
 
                             <a>
