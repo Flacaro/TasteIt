@@ -91,7 +91,6 @@ class ProductController
 
 
     public function createReview($productId){
-        //redirect("home");
         $FProduct= new FProduct;
         $stars = $_POST['stars'];
         $comment = $_POST['comment'];
@@ -101,7 +100,7 @@ class ProductController
         $review->setProductId($productId);
         $review->setCustomerId(1); //id dell'utente loggato ma con calma
         $FProduct->createReview($review);
-        redirect(url("getProduct", ['productId' => $productId]));
+        //redirect(url("getProduct", ['productId' => $productId]));
     }
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-05 16:29:00
+/* Smarty version 3.1.39, created on 2021-09-05 17:18:47
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6134d42c2aa743_66281034',
+  'unifunc' => 'content_6134dfd73d9081_43710096',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c35c90bccb08b6e42b1c347b0b91be7ee9c3ebaf' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1630852133,
+      1 => 1630854972,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6134d42c2aa743_66281034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6134dfd73d9081_43710096 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -33,7 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <link rel="icon" type="image/png" href="/src/templates/admin/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Paper Dashboard 2 by Creative Tim
+        Admin Panel
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -53,7 +53,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <div class="logo">
             <a href="https://www.creative-tim.com" class="simple-text logo-mini">
                 <div class="logo-image-small">
-                    <img src="../../src/templates/admin/assets/img/logo-small.png">
+                    <img src="/src/templates/admin/assets/img/logo-small.png">
                 </div>
                 <!-- <p>CT</p> -->
             </a>
@@ -69,7 +69,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 <li class="active ">
                     <a href="/admin">
                         <i class="nc-icon nc-bank"></i>
-                        <p>Ricavi Mensili</p>
+                        <p>Statistiche</p>
                     </a>
                 </li>
                 <li>
@@ -177,7 +177,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         </nav>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16055961786134d42c2a90e9_58250092', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7890052896134dfd73d7a37_86326303', 'admin');
 ?>
 
 
@@ -226,12 +226,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16055961786134d42c
 
 <?php }
 /* {block 'admin'} */
-class Block_16055961786134d42c2a90e9_58250092 extends Smarty_Internal_Block
+class Block_7890052896134dfd73d7a37_86326303 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_16055961786134d42c2a90e9_58250092',
+    0 => 'Block_7890052896134dfd73d7a37_86326303',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

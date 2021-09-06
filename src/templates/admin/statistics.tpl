@@ -8,13 +8,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-globe text-warning"></i>
+                                    <i class="nc-icon nc-delivery-fast text-warning"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Capacity</p>
-                                    <p class="card-title">150GB<p>
+                                    <p class="card-category">Ordini del mese</p>
+                                    <p class="card-title">{$numorders}<p>
                                 </div>
                             </div>
                         </div>
@@ -22,8 +22,8 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i>
-                            Update Now
+                            <i class="fa fa-calendar-o"></i>
+                            {date("F")}
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Revenue</p>
-                                    <p class="card-title">$ 1,345<p>
+                                    <p class="card-category">Ricavi del mese</p>
+                                    <p class="card-title">$ {$revenues}<p>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                         <hr>
                         <div class="stats">
                             <i class="fa fa-calendar-o"></i>
-                            Last day
+                            {date("F")}
                         </div>
                     </div>
                 </div>

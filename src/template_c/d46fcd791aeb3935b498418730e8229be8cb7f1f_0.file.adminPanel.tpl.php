@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.39, created on 2021-09-05 16:19:46
-  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\adminPanel.tpl' */
+  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\statistics.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'd46fcd791aeb3935b498418730e8229be8cb7f1f' => 
     array (
-      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\adminPanel.tpl',
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\statistics.tpl',
       1 => 1630851513,
       2 => 'file',
     ),

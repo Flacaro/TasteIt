@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/src/templates/admin/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Paper Dashboard 2 by Creative Tim
+        Admin Panel
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -27,7 +27,7 @@
         <div class="logo">
             <a href="https://www.creative-tim.com" class="simple-text logo-mini">
                 <div class="logo-image-small">
-                    <img src="../../src/templates/admin/assets/img/logo-small.png">
+                    <img src="/src/templates/admin/assets/img/logo-small.png">
                 </div>
                 <!-- <p>CT</p> -->
             </a>
@@ -43,7 +43,7 @@
                 <li class="active ">
                     <a href="/admin">
                         <i class="nc-icon nc-bank"></i>
-                        <p>Ricavi Mensili</p>
+                        <p>Statistiche</p>
                     </a>
                 </li>
                 <li>

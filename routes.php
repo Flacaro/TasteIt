@@ -65,8 +65,9 @@ SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFav
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('favourites');
 
-SimpleRouter::get("/admin", [AdminController::class, "visualizeAdminPanel"]);
+SimpleRouter::get("/admin", [AdminController::class, "visualizeStatistics"]);
 SimpleRouter::get("/admin/categories", [AdminController::class, "categoriesAdmin"]);
+SimpleRouter::get("/admin/categories/{id}", [AdminController::class, "productsInCategory"]);
 SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {

@@ -99,9 +99,9 @@ foreign key(paymentId) references paymentMethods(id)
 
 create table orders(
 id bigint primary key auto_increment,
-creationDate datetime not null,
+creationDate date not null,
 total float not null,
-arrivalTime datetime not null,
+arrivalTime time default null,
 couponId bigint,
 customerId bigint,
 paymentId bigint,
