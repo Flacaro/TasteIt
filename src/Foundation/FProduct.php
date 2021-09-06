@@ -89,10 +89,26 @@ class FProduct extends Foundation {
     }
     function createReview($review){
         //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
-        $query = 'insert into reviews (stars, comment, userId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getCustomerId(). ','. $review->getproductId().')';
+        $query = 'insert into reviews (stars, comment, customerId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getCustomerId(). ','. $review->getproductId().')';
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
-        //$stmt->debugDumpParams();
+        $stmt->debugDumpParams();
     }
 
+    function getBestSellerOfCategory($id){
+        //SELECT name FROM products WHERE categoryId={$id} ORDER BY timesOrdered LIMIT 1;
+        $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered DESC LIMIT 1;";
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    function getWorstSellerOfCategory($id){
+        //SELECT name FROM products WHERE categoryId={$id} ORDER BY timesOrdered LIMIT 1;
+        $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered LIMIT 1;";
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 }

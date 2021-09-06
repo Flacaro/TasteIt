@@ -3,24 +3,35 @@
 namespace App\Views;
 
 class VAdmin{
-    public function visualizeAdminPanel()
+    public function visualizeStatistics($revenues, $numorders, $data)
     {
-        return view("admin/adminPanel", [
+        return view("admin/statistics", [
+            "revenues"=>$revenues,
+            "numorders"=>$numorders,
+            "data"=>$data
         ]);
     }
 
-    public function categoriesAdmin()
+    public function categoriesAdmin($categories)
     {
         return view("admin/categories", [
+            "categories"=>$categories
         ]);
     }
-    public function productsBestSellers()
+    public function productsBestSellers($data)
     {
         return view("admin/productsBestSellers", [
+            "data"=>$data
         ]);
     }
 
+    public function productsInCategory($products, $category){
+        return view("admin/products-admin", [
+            "products"=>$products,
+            "category"=>$category]);
+}
     public function customers($customers) {
+
         return view("admin/customers", [
            "customers" => $customers
         ]);
@@ -35,5 +46,24 @@ class VAdmin{
     {
         return view("admin/coupon", [
         ]);
+    }
+
+    public function showEditProduct($categoryId,$productId,$product){
+        return view("admin/product-edit", [
+            "categoryId"=>$categoryId,
+            "productId"=>$productId,
+            "product"=>$product
+    ]);
+    }
+
+    public function showCreateProduct($categoryId){
+        return view("admin/product-add", [
+            "categoryId"=>$categoryId
+        ]);
+    }
+
+    public function showAddCategory(){
+        return view("admin/categories-add", [
+    ]);
     }
 }

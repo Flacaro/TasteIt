@@ -30,7 +30,7 @@ create table categories(
 id bigint primary key auto_increment,
 restaurantId int NOT NULL,
 categoryName varchar(30) NOT NULL,
-imagePath varchar(1024) NOT NULL,
+imagePath varchar(1024) DEFAULT NULL,
 foreign key(restaurantId) references restaurant(id)
 );
 
@@ -101,7 +101,11 @@ create table orders(
 id bigint primary key auto_increment,
 creationDate date not null,
 total float not null,
+<<<<<<< HEAD
 arrivalTime time not null,
+=======
+arrivalTime time default null,
+>>>>>>> 47445f6a54186cc4e1a108d940baad145945efdd
 couponId bigint,
 customerId bigint,
 paymentId bigint,

@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.39, created on 2021-09-05 16:01:03
-  from 'C:\xampp\htdocs\TasteIt\src\templates\admin\adminPanel.tpl' */
+  from 'C:\xampp\htdocs\TasteIt\src\templates\admin\statistics.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '447bd84df31847839472e474fb9381f4e31ee953' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\adminPanel.tpl',
+      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\statistics.tpl',
       1 => 1630850462,
       2 => 'file',
     ),

@@ -8,7 +8,7 @@ use App\Foundation\FImage;
 class Category{
     private $id;
     public $categoryName;
-    public $restaurantId;
+    public $restaurantId=1;
     //è composizione, va rivisto
     private $categoryProducts = [];
     public $imagePath;

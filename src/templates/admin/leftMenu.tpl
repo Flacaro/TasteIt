@@ -7,7 +7,9 @@
     <link rel="icon" type="image/png" href="/src/templates/admin/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Pannello Admin
+
+        Admin Panel
+
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -27,12 +29,12 @@
         <div class="logo">
             <a href="https://www.creative-tim.com" class="simple-text logo-mini">
                 <div class="logo-image-small">
-                    <img src="../../src/templates/admin/assets/img/logo-small.png">
+                    <img src="/src/templates/admin/assets/img/logo-small.png">
                 </div>
                 <!-- <p>CT</p> -->
             </a>
             <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
+                TasteIt
                 <!-- <div class="logo-image-big">
                   <img src="../assets/img/logo-big.png">
                 </div> -->
@@ -42,19 +44,19 @@
             <ul class="nav">
                 <li class="active ">
                     <a href="/admin">
-                        <i class="nc-icon nc-bank"></i>
-                        <p>Ricavi Mensili</p>
+                        <i class="nc-icon nc-chart-bar-32"></i>
+                        <p>Statistiche</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/categories">
-                        <i class="nc-icon nc-diamond"></i>
+                        <i class="nc-icon nc-tag-content"></i>
                         <p>Categorie</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/products">
-                        <i class="nc-icon nc-bell-55"></i>
+                        <i class="nc-icon nc-favourite-28"></i>
                         <p>Prodotti più venduti</p>
                     </a>
                 </li>
@@ -90,7 +92,9 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="javascript:;">Pannello Admin</a>
+
+                    <a class="navbar-brand" href="javascript:;">Area Riservata</a>
+
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar navbar-kebab"></span>
