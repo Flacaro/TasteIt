@@ -20,7 +20,7 @@
                         {foreach $categories as $category}
                         <tr>
                           <td>
-                            <a href="/admin/categories/{$category->getId()}/product">
+                            <a href="/admin/categories/{$category->getId()}/products">
                               {$category->getCategoryName()}
                             <a>
                           </a>

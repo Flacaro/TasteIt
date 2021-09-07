@@ -10,6 +10,7 @@ function maxLength($args): bool
     return strlen($args[0]) <= $args[1];
 }
 
+
 function validate($target, $fields): bool {
     $isValid = true;
     foreach ($fields as $field=>$validators) {

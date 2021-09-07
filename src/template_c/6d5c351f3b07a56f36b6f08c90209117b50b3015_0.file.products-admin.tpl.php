@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 19:39:13
+/* Smarty version 3.1.39, created on 2021-09-07 11:07:13
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\products-admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61365241af4695_29301397',
+  'unifunc' => 'content_61372bc1ad7577_01749652',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d5c351f3b07a56f36b6f08c90209117b50b3015' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\products-admin.tpl',
-      1 => 1630949946,
+      1 => 1631005632,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61365241af4695_29301397 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61372bc1ad7577_01749652 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_54872953061365241ae9775_48584668', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39619583461372bc1aca583_63397629', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_54872953061365241ae9775_48584668 extends Smarty_Internal_Block
+class Block_39619583461372bc1aca583_63397629 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_54872953061365241ae9775_48584668',
+    0 => 'Block_39619583461372bc1aca583_63397629',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -94,6 +94,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                     <td>
                                         <?php echo $_smarty_tpl->tpl_vars['product']->value->getTimesOrdered();?>
 
+                                        <?php if ($_smarty_tpl->tpl_vars['product']->value->getTimesOrdered() == NULL) {?>0<?php }?>
                                     </td>
                                     <td>
                                         <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
@@ -102,11 +103,11 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                             edit
                                             </a>
                                                 |
-                                                <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+                                        <form method="post" action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /delete">
-                                                    delete
-                                                    </a>
+                                                <input type="submit" value="delete">
+                                        </form>
                                     </td>
                                 </tr>
                             <?php

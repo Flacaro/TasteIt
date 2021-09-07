@@ -7,7 +7,7 @@
                     <h5 class="card-title">Aggiungi Prodotto</h5>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="/admin/categories/{$categoryId}/product/create">
+                    <form method="POST" action="/admin/categories/{$categoryId}/products/create">
                         <div class="row">
                             <div class="col-md-7 pr-1">
                                 <div class="form-group">
@@ -18,7 +18,7 @@
                             <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label>Prezzo$</label>
-                                    <input type="text" class="form-control" name="price" placeholder="prezzo del prodotto">
+                                    <input type="number" step="0.01" class="form-control" name="price" placeholder="prezzo del prodotto">
                                 </div>
                             </div>
                         </div>

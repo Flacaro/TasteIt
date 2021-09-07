@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 16:39:46
+/* Smarty version 3.1.39, created on 2021-09-06 20:30:16
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\orders.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6136283267a2e0_10271903',
+  'unifunc' => 'content_61365e38537b03_66667165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7e117c8a92908147aabcd9897dfac342ba97905e' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\orders.tpl',
-      1 => 1630924204,
+      1 => 1630952925,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6136283267a2e0_10271903 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61365e38537b03_66667165 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_120693547461362832679986_06361177', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_61647624561365e385371a3_32102291', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_120693547461362832679986_06361177 extends Smarty_Internal_Block
+class Block_61647624561365e385371a3_32102291 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_120693547461362832679986_06361177',
+    0 => 'Block_61647624561365e385371a3_32102291',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,10 +52,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
           <div class="card-body">
             <div class="table-responsive table-upgrade">
               <table class="table">
+                <th class="text-center">Nome</th>
                 <thead>
                 <th></th>
-                <th class="text-center">Free</th>
-                <th class="text-center">PRO</th>
+                <th class="text-center">totale</th>
                 </thead>
                 <tbody>
                 <tr>

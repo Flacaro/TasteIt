@@ -42,15 +42,16 @@
                                     </td>
                                     <td>
                                         {$product->getTimesOrdered()}
+                                        {if $product->getTimesOrdered()==NULL}0{/if}
                                     </td>
                                     <td>
                                         <a href="/admin/categories/{$category->getId()}/products/{$product->getId()}/edit">
                                             edit
                                             </a>
                                                 |
-                                                <a href="/admin/categories/{$category->getId()}/products/{$product->getId()}/delete">
-                                                    delete
-                                                    </a>
+                                        <form method="post" action="/admin/categories/{$category->getId()}/products/{$product->getId()}/delete">
+                                                <input type="submit" value="delete">
+                                        </form>
                                     </td>
                                 </tr>
                             {/foreach}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 15:29:16
+/* Smarty version 3.1.39, created on 2021-09-07 11:08:53
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\statistics.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_613617ac6e82b0_88308569',
+  'unifunc' => 'content_61372c25d94fa0_54880146',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58c4d8226d6aa1b1660218aefe2b95b0b73ad5f1' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\statistics.tpl',
-      1 => 1630934954,
+      1 => 1631005732,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_613617ac6e82b0_88308569 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61372c25d94fa0_54880146 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_911512735613617ac6ded17_71247092', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_112603916761372c25d8e2f8_79497882', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_911512735613617ac6ded17_71247092 extends Smarty_Internal_Block
+class Block_112603916761372c25d8e2f8_79497882 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_911512735613617ac6ded17_71247092',
+    0 => 'Block_112603916761372c25d8e2f8_79497882',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -95,58 +95,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             <i class="fa fa-calendar-o"></i>
                             <?php echo date("F");?>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5 col-md-4">
-                                <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-vector text-danger"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-8">
-                                <div class="numbers">
-                                    <p class="card-category">Errors</p>
-                                    <p class="card-title">23<p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-clock-o"></i>
-                            In the last hour
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5 col-md-4">
-                                <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-favourite-28 text-primary"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-8">
-                                <div class="numbers">
-                                    <p class="card-category">Followers</p>
-                                    <p class="card-title">+45K<p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-refresh"></i>
-                            Update now
                         </div>
                     </div>
                 </div>

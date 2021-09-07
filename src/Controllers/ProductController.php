@@ -34,28 +34,27 @@ class ProductController
         $product->setPrice($price);
         $product->setCategoryId($categoryId);
         $FProduct->create($product);
-        redirect(url('/admin/categories/'.$categoryId));
+        redirect(url('/admin/categories/'.$categoryId.'/products'));
     }
 
-    public function update($id) {
+    public function update($catId, $id) {
         $FProduct = new FProduct();
         $oldproduct=$FProduct->getById($id);
         //superglobal, come parametro ci va passato il NOME dell'input a cui fare riferimento
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        $categoryId=$oldproduct->getCategoryId();
         $timesOrdered=$oldproduct->getTimesOrdered();
         $imagePath=$oldproduct->getImagePath();
         $product = new Product();
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
-        $product->setCategoryId($categoryId);
+        $product->setCategoryId($catId);
         $product->setTimesOrdered($timesOrdered);
         $product->setImagePath($imagePath);
         $FProduct->update($id, $product);
-        redirect(url("/admin/categories/".$categoryId));
+        redirect(url("/admin/categories/".$catId.'/products'));
     }
 
     public function edit($id) {
@@ -79,9 +78,10 @@ class ProductController
     }
 
 
-    public function destroy($id) {
+    public function destroy($catId,$id) {
         $FProduct = new FProduct();
         $FProduct->delete($id);
+        redirect(url("/admin/categories/".$catId.'/products'));
     }
 
 

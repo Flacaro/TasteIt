@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 19:02:12
+/* Smarty version 3.1.39, created on 2021-09-07 11:07:26
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\product-add.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6136499449f601_56631082',
+  'unifunc' => 'content_61372bce5b9ff9_80950562',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7f747c6faf0530b3771c12f4eb74c40413598a63' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\product-add.tpl',
-      1 => 1630947504,
+      1 => 1631005568,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6136499449f601_56631082 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61372bce5b9ff9_80950562 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14638668746136499449c904_54445734', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_136793567461372bce5b73f5_26568239', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_14638668746136499449c904_54445734 extends Smarty_Internal_Block
+class Block_136793567461372bce5b73f5_26568239 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_14638668746136499449c904_54445734',
+    0 => 'Block_136793567461372bce5b73f5_26568239',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </div>
                 <div class="card-body">
                     <form method="POST" action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['categoryId']->value;?>
-/product/create/asd">
+/products/create">
                         <div class="row">
                             <div class="col-md-7 pr-1">
                                 <div class="form-group">
@@ -60,7 +60,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label>Prezzo$</label>
-                                    <input type="text" class="form-control" name="price" placeholder="prezzo del prodotto">
+                                    <input type="number" step="0.01" class="form-control" name="price" placeholder="prezzo del prodotto">
                                 </div>
                             </div>
                         </div>

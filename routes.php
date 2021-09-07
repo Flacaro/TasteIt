@@ -67,11 +67,9 @@ SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('f
 
 SimpleRouter::get("/admin", [AdminController::class, "visualizeStatistics"]);
 SimpleRouter::get("/admin/categories", [AdminController::class, "categoriesAdmin"]);
-///admin/categories/add rimanda ai prodotti nella categoria?!
 SimpleRouter::get("/admin/categories/add", [AdminController::class, "showAddCategory"]);
 SimpleRouter::post("/admin/categories/add", [CategoryController::class, "create"]);
-SimpleRouter::get("/admin/categories/{id}/product", [AdminController::class, "productsInCategory"]);
-//per qualche motivo /admin/categories/{id}/product/create rimanda alla pagina per modificare il prodotto
+SimpleRouter::get("/admin/categories/{id}/products", [AdminController::class, "productsInCategory"]);
 SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminController::class, "showCreateProduct"]);
 SimpleRouter::post("/admin/categories/{categoryId}/products/create", [ProductController::class, "create"]);
 SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminController::class, "showEditProduct"]);
