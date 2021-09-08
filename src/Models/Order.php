@@ -39,7 +39,6 @@ class Order{
     {
         return $this->stateId;
     }
-
     public function setStateId($stateId): void
     {
         $this->stateId = $stateId;
@@ -121,5 +120,7 @@ class Order{
     {
         $this->restaurantId = $restaurantId;
     }
+
+
 
 }

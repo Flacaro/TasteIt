@@ -63,9 +63,11 @@
                             </tbody>
                         </table>
                     </div>
+                    <form method="POST" action="">
                         <div class="update ml-auto mr-auto">
                             <button type="submit" class="btn btn-primary">Accetta Ordine</button>
                         </div>
+                    </form>
                         <div class="update ml-auto mr-auto">
                             <button type="submit" class="btn btn-primary">Rifiuta Ordine</button>
                         </div>

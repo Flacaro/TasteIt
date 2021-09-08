@@ -6,6 +6,7 @@ use App\Foundation\FCustomer;
 use App\Foundation\FOrder;
 use App\Foundation\FProduct;
 use App\Foundation\FShippingAddress;
+use App\Models\Order;
 use App\Views\admin\VOrder;
 
 
@@ -35,6 +36,11 @@ class OrderController {
     }
 
     public function acceptOrder($id){
-        redirect(url("/admin/orders"));
+        $forder=new FOrder();
+        $oldorder=$forder->getById($id);
+        $order= new Order;
+        $order->setStateId(2);
+        $forder->update($id, $order);
+        //redirect(url("/admin/orders"));
     }
 }
