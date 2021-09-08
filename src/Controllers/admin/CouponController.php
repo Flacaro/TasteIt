@@ -6,7 +6,7 @@ use App\Foundation\admin\FCoupon;
 use App\Foundation\FRestaurant;
 use App\Models\Coupon;
 use App\Views\admin\VCoupon;
-use App\Views\VAdmin;
+use App\Views\VStatistic;
 
 class CouponController
 {

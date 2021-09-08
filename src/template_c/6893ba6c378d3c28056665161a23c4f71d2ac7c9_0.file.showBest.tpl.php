@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-07 23:05:03
+/* Smarty version 3.1.39, created on 2021-09-08 12:06:08
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\customers\showBest.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6137d3ffd1d8f4_99968590',
+  'unifunc' => 'content_61388b1002fe45_92958486',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6893ba6c378d3c28056665161a23c4f71d2ac7c9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\customers\\showBest.tpl',
-      1 => 1631048683,
+      1 => 1631095566,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6137d3ffd1d8f4_99968590 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61388b1002fe45_92958486 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3698337176137d3ffd13fe3_60874079', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_151355850361388b100254d4_39297321', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_3698337176137d3ffd13fe3_60874079 extends Smarty_Internal_Block
+class Block_151355850361388b100254d4_39297321 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_3698337176137d3ffd13fe3_60874079',
+    0 => 'Block_151355850361388b100254d4_39297321',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,7 +67,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                     <br/>
 
-                    <button class="btn btn-primary" type="submit">Taac</button>
+                    <button class="btn btn-primary" type="submit">Invia</button>
 
                     <table class="table">
                         <thead class=" text-primary">

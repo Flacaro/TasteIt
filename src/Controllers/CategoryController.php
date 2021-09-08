@@ -28,12 +28,4 @@ class CategoryController
         $category = $FCategory->getById($categoryId);
 
     }
-    function create(){
-        $name = $_POST["name"];
-        $fcategory = new FCategory();
-        $category=new Category();
-        $category->setCategoryName($name);
-        $fcategory->create($category);
-        redirect(url('/admin/categories'));
-}
 }

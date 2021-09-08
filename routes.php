@@ -1,6 +1,6 @@
 <?php
 
-use App\Controllers\AdminController;
+use App\Controllers\StatisticController;
 use App\Controllers\AuthController;
 use App\Controllers\CartController;
 use App\Controllers\categoryController;
@@ -15,6 +15,9 @@ use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
 use App\Controllers\admin\CouponController;
 use App\Controllers\admin\CustomerController as AdminCustomerController;
+use App\Controllers\admin\CategoryController as AdminCategoryController;
+use App\Controllers\admin\ProductController as AdminProductController;
+use App\Controllers\admin\OrderController as AdminOrderController;
 
 SimpleRouter::redirect("/", "/home");
 
@@ -67,20 +70,19 @@ SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFav
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('favourites');
 
-SimpleRouter::get("/admin", [AdminController::class, "visualizeStatistics"]);
-SimpleRouter::get("/admin/categories", [AdminController::class, "categoriesAdmin"]);
-SimpleRouter::get("/admin/categories/add", [AdminController::class, "showAddCategory"]);
-SimpleRouter::post("/admin/categories/add", [CategoryController::class, "create"]);
-SimpleRouter::get("/admin/categories/{id}/products", [AdminController::class, "productsInCategory"]);
-SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminController::class, "showCreateProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/create", [ProductController::class, "create"]);
-SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminController::class, "showEditProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [ProductController::class, "update"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [ProductController::class, "destroy"]);
-SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
+SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
+SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
+SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
+SimpleRouter::post("/admin/categories/add", [AdminCategoryController::class, "create"]);
+SimpleRouter::get("/admin/categories/{id}/products", [AdminCategoryController::class, "productsInCategory"]);
+SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminCategoryController::class, "showCreateProduct"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/create", [AdminCategoryController::class, "create"]);
+SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminCategoryController::class, "showEditProduct"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminCategoryController::class, "update"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [AdminCategoryController::class, "destroy"]);
+SimpleRouter::get("/admin/products", [AdminProductController::class, "productsBestSellers"]);
 
-SimpleRouter::get("/admin/orders", [AdminController::class, "acceptOrders"]);
-SimpleRouter::get("/admin/sendCoupon", [AdminController::class, "sendCoupon"]);
+SimpleRouter::get("/admin/orders", [AdminOrderController::class, "acceptOrders"]);
 
 SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
 SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');
@@ -89,7 +91,7 @@ SimpleRouter::post("/admin/coupons", [CouponController::class, "store"])->name('
 
 SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])->name('showAllCustomers');
 SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, "showBest"]);
-SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "test"]);
+SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {

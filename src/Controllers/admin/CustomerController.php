@@ -16,7 +16,7 @@ class CustomerController
         return $vcustomer->showAll($fcustomer->getAll());
     }
 
-    public function test() {
+    public function sendCoupon() {
         $fcustomer = new FCustomer();
 
         $customersId = $_POST['customers'];
