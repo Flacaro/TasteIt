@@ -19,6 +19,7 @@ class FOrder extends Foundation {
         $stmt = $this->connection->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
+
         return $stmt->fetch();
     }
     public function getMonthlyOrdersQuantity(){

@@ -97,6 +97,7 @@ SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, 
 SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 
 
+
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 
     if($exception instanceof NotFoundHttpException && $exception->getCode() === 404) {

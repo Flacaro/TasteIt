@@ -71,22 +71,13 @@ class FProduct extends Foundation {
         return $stmt->fetchAll();
     }
 
-    function updateQuantityOfProduct($productId, $cartId, $quantity) {
-        $newQuantity = $quantity['quantity'];
-        $query = 'UPDATE products_carts SET quantity = '. $newQuantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
-        $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
-        $stmt->debugDumpParams();
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
     function getStars($productId) {
         $query = 'select stars from reviews where productId = ' . $productId . ';';
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
     function createReview($review){
         //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
         $query = 'insert into reviews (stars, comment, customerId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getCustomerId(). ','. $review->getproductId().')';
