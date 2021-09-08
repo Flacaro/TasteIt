@@ -26,7 +26,7 @@ class RestaurantController {
         $order->setCouponId($oldOrder->getCouponId());
         $order->setPaymentId($oldOrder->getPaymentId());
         $order->setTotal($oldOrder->getTotal());
-        $order->setUserId($oldOrder->getUserId());
+        $order->setCustomerId($oldOrder->getUserId());
         $FOrder->update($orderId, $order);
 
     }
@@ -48,7 +48,7 @@ class RestaurantController {
         $order->setPaymentId(1);
         $order->setCouponId(1);
         $order->setRestaurantId(1);
-        $order->setUserId(3);
+        $order->setCustomerId(3);
         $FOrder->create($order);
     }
 

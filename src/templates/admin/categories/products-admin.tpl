@@ -5,8 +5,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">{$category->getCategoryName()}</h4>
-                    <a href="/admin/categories/{$category->getId()}/products/create" class="btn btn-round btn-primary">Aggiungi Prodotto</a>
+                    <div class="row">
+                        <h4 class="card-title" style="margin-left:20px">{$category->getCategoryName()}</h4>
+                        <div style="margin-left:1250px">
+                            <a href="/admin/categories/{$category->getId()}/products/create" class="btn btn-round btn-primary">Aggiungi Prodotto</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -45,13 +49,14 @@
                                         {if $product->getTimesOrdered()==NULL}0{/if}
                                     </td>
                                     <td>
+                                    <div class="row">
                                         <a href="/admin/categories/{$category->getId()}/products/{$product->getId()}/edit">
-                                            edit
+                                            <input class="btn btn-primary" style="margin-right:5px" type="submit" value="edit">
                                             </a>
-                                                |
                                         <form method="post" action="/admin/categories/{$category->getId()}/products/{$product->getId()}/delete">
-                                                <input type="submit" value="delete">
+                                            <input class="btn btn-primary" style="margin-right:5px" type="submit" value="delete">
                                         </form>
+                                    </div>
                                     </td>
                                 </tr>
                             {/foreach}
