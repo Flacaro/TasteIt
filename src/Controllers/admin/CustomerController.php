@@ -18,7 +18,7 @@ class CustomerController
 
     public function sendCoupon() {
         $fcustomer = new FCustomer();
-
+        //aggiornare la quantità nella tabella customers_coupons
         $customersId = $_POST['customers'];
         $couponId = $_POST['couponId'];
 
@@ -32,8 +32,8 @@ class CustomerController
         $vcustomer = new VCustomer();
         $fcoupon = new FCoupon();
         $fcustomers = new FCustomer();
-
-        return $vcustomer->showBest($fcoupon->getAll(), $fcustomers->topTenCustomersByTotal());
+        $previousMonth = date('m') - 1;
+        return $vcustomer->showBest($fcoupon->getAll(), $fcustomers->topTenCustomersByTotal($previousMonth));
     }
 
 }
