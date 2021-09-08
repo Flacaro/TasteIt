@@ -3,7 +3,7 @@
 namespace App\Models;
 
 class Total {
-
+    private $id;
     public $name;
     public $surname;
     public $email;
@@ -58,6 +58,24 @@ class Total {
     {
         $this->total = $total;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
 
 
 }

@@ -41,19 +41,15 @@ class VAdmin{
         return view("admin/orders", [
         ]);
     }
-    public function sendCoupon($customerId)
+    public function sendCoupon()
     {
-        return view("admin/coupons", [
-            "customerId" =>$customerId
+        return view("admin/couponSend", [
         ]);
     }
 
-    public function createCoupon($customers, $pricesCut)
+    public function showCouponPage()
     {
-        return view("admin/couponCreate", [
-            "customers"=>$customers,
-            "pricesCut"=>$pricesCut
-        ]);
+        return view("admin/showCouponPage", []);
     }
 
 

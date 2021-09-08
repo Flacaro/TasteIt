@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.39, created on 2021-09-06 10:38:46
-  from 'C:\xampp\htdocs\TasteIt\src\templates\admin\couponCreate.tpl' */
+  from 'C:\xampp\htdocs\TasteIt\src\templates\admin\showCouponPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '76ced736072cd64a3cc68b853c0a3deb3c2362a8' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\couponCreate.tpl',
+      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\showCouponPage.tpl',
       1 => 1630917522,
       2 => 'file',
     ),

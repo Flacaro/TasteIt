@@ -33,13 +33,6 @@ class FRestaurant extends Foundation {
         return $stmt->fetch();
     }
 
-    public function addCoupon($priceCut) {
-        $query = "INSERT INTO coupons (priceCut, restaurantId) VALUES (" . $priceCut . ", " . "1);";
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute();
-
-    }
-
     public function getOrdersStates() {
         $query = "select state from orderstates  join orders ON orderstates.id = orders.stateId;";
         $stmt = $this->connection->prepare($query);
@@ -66,6 +59,7 @@ class FRestaurant extends Foundation {
         $query = "INSERT INTO coupons (priceCut, restaurantId) VALUES = (" . $priceCut . ", 1);";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
+        return $this->connection->lastInsertId();
     }
 
     public function getTotal($customerId) {
@@ -75,11 +69,13 @@ class FRestaurant extends Foundation {
         return $stmt->fetch();
     }
 
-    public function getAllPriceCut() {
-        $query = "SELECT priceCut FROM coupons";
+    public function getPriceCut($couponId) {
+        $query = "SELECT priceCut FROM coupons where id = " . $couponId . ";";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
         return $stmt->fetch();
     }
+
+
 
 }

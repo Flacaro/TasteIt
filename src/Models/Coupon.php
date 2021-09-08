@@ -7,7 +7,7 @@ namespace App\Models;
 class Coupon {
     private $id;
     public $priceCut;
-    public $restaurantId;
+    public $restaurantId = 1;
 
     public function getId()
     {

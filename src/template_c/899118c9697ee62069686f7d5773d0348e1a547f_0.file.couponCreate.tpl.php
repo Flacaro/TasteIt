@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.39, created on 2021-09-07 10:20:31
-  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\couponCreate.tpl' */
+  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\showCouponPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '899118c9697ee62069686f7d5773d0348e1a547f' => 
     array (
-      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\couponCreate.tpl',
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\showCouponPage.tpl',
       1 => 1631002504,
       2 => 'file',
     ),

@@ -84,19 +84,21 @@ class AdminController{
         $vadmin->acceptOrders();
     }
 
-    public function sendCoupon($customerId) {
+    public function sendCoupon() {
+        $customerIds = [];
+        //usato last insert id in createCoupon, come prederlo?
+        $fRestaurant= new FRestaurant();
+        $priceCut = $fRestaurant->getPriceCut($lastInsertId);
+        $lastInsertId = $fRestaurant->createCoupon($priceCut);
+        $customers = $fRestaurant->getFirstTenCustomerWhoSpentMore();
+        foreach ($customers as $customer) {
+            $customerId = $customer[0];
+            array_push($customerIds, $customerId);
+        }
         $vadmin= new VAdmin();
-        $vadmin->sendCoupon($customerId);
+        $vadmin->sendCoupon();
     }
 
-    public function createCoupon() {
-        $fRestaurant= new FRestaurant();
-        $customers = $fRestaurant->getFirstTenCustomerWhoSpentMore();
-        $pricesCut = $fRestaurant->getAllPriceCut();
-        $fRestaurant->createCoupon($pricesCut);
-        $vadmin = new VAdmin();
-        $vadmin->createCoupon($customers,$pricesCut);
-    }
 
     public function showEditProduct($cid,$pid) {
         $vadmin= new VAdmin();

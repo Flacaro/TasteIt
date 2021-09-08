@@ -13,6 +13,8 @@ use App\Controllers\CustomerController;
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
+use App\Controllers\admin\CouponController;
+use App\Controllers\admin\CustomerController as AdminCustomerController;
 
 SimpleRouter::redirect("/", "/home");
 
@@ -76,10 +78,18 @@ SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [A
 SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [ProductController::class, "update"]);
 SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [ProductController::class, "destroy"]);
 SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
-SimpleRouter::get("/admin/customers", [AdminController::class, "getCustomersWhoSpentMore"]);
+
 SimpleRouter::get("/admin/orders", [AdminController::class, "acceptOrders"]);
 SimpleRouter::get("/admin/sendCoupon", [AdminController::class, "sendCoupon"]);
-SimpleRouter::get("/admin/coupons/create", [AdminController::class, "createCoupon"]);
+
+SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
+SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');
+SimpleRouter::post("/admin/coupons", [CouponController::class, "store"])->name('storeCoupon');
+
+
+SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])->name('showAllCustomers');
+SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, "showBest"]);
+SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "test"]);
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
