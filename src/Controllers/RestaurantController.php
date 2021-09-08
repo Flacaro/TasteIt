@@ -19,7 +19,7 @@ class RestaurantController {
         $state = $_POST['state'];
         $arrivalTime = $_POST['arrivalTime'];
         $order = new Order();
-        $order->setState($state);
+        $order->setStateId($state);
         $order->setArrivalTime($arrivalTime);
         $order->setCreationDate($oldOrder->getCreationDate());
         $order->setRestaurantId($oldOrder->getRestaurantId());

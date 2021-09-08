@@ -1,63 +1,61 @@
 {extends file='src/templates/admin/leftMenu.tpl'}
 {block name=admin}
-  <div class="content">
-    {foreach $orders as $order}
+    <div class="content">
     <div class="row">
-      <div class="col-md-8">
-        <div class="card card-user">
+      <div class="col-md-12">
+        <div class="card">
           <div class="card-header">
-            <h5 class="card-title" style="font-weight: bold">Info dell'ordine</h5>
-            <div class="button-container">
-              <div class="row">
-                <div class="col-lg-3 col-md-6 col-6 ml-auto">
-                  <h5><small>Indirizzo</small><br>placeholder</h5>
-                </div>
-                <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                  <h5><small>Nome del Cliente</small><br>{$order[1]->getName()}</h5>
-                </div>
-                <div class="col-lg-3 mr-auto">
-                  <h5><small>Pagato con</small><br>placeholder</h5>
-                </div>
-              </div>
+            <div class="row">
+              <h4 class="card-title" style="margin-left:20px"></h4>
             </div>
           </div>
-
           <div class="card-body">
-            <div class="table-responsive">
+            <div class="table-responsive" style="overflow:hidden">
               <table class="table">
+
                 <thead class=" text-primary">
                 <th>
-                  Nome
+                  Id
                 </th>
                 <th>
-                  Quantità
+                  Data
                 </th>
                 <th>
-                  Prezzo
+                  Totale
+                </th>
+                <th>
+                  Stato
+                </th>
+                <th>
+                  Action
                 </th>
                 </thead>
                 <tbody>
+                {foreach $orders as $order}
+
                   <tr>
                     <td>
-
+                      {$order->getId()}
                     </td>
                     <td>
-
+                      {$order->getCreationDate()}
                     </td>
                     <td>
-
+                      ${$order->getTotal()}
+                    </td>
+                    <td>
+                      {$order->getState()}
+                    </td>
+                    <td>
+                      <a href="/admin/orders/{$order->getId()}" class="btn btn-round btn-primary">Dettagli Ordine</a>
                     </td>
                   </tr>
+                {/foreach}
                 </tbody>
               </table>
-            </div>
-            <div style="margin-left:1000px">
-              <a class="btn btn-round btn-primary">Accetta ordine</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    {/foreach}
-  </div>
 {/block}

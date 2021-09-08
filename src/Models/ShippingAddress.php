@@ -8,11 +8,19 @@ class ShippingAddress{
     public $cap;
     public $street;
     public $homeNumber;
-    public $userId;
+    public $customerId;
 
+    public function getCustomerId()
+    {
+        return $this->customerId;
+    }
 
+    public function setCustomerId($customerId): void
+    {
+        $this->customerId = $customerId;
+    }
 
-    public function getcity()
+    public function getCity()
     {
         return $this->city;
     }
@@ -48,14 +56,7 @@ class ShippingAddress{
         $this->homeNumber=$streetNumber;
     }
 
-    public function getUserId()
-    {
-        return $this->userId;
-    }
 
-    public function setUserId($customer){
-        $this->userId=$customer;
-    }
 
     public function getId()
     {
