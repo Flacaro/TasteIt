@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-07 10:51:18
+/* Smarty version 3.1.39, created on 2021-09-07 12:24:30
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61372806e67631_34375927',
+  'unifunc' => 'content_61373dde1fc7e2_34356964',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9d7a54409b6889d91dd047e351f6a2e9bcdae0d9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories.tpl',
-      1 => 1631004670,
+      1 => 1631010268,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61372806e67631_34375927 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61373dde1fc7e2_34356964 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_108718618561372806e5f5d9_53527159', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_41826899361373dde1f31b8_03593320', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_108718618561372806e5f5d9_53527159 extends Smarty_Internal_Block
+class Block_41826899361373dde1f31b8_03593320 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_108718618561372806e5f5d9_53527159',
+    0 => 'Block_41826899361373dde1f31b8_03593320',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -46,8 +46,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
           <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title"> Categorie di prodotti</h4>
-                    <a href="/admin/categories/add" class="btn btn-round btn-primary">Aggiungi Categoria</a>
+                    <div class="row" style="margin-left:15px">
+                      <h4 class="card-title"> Categorie di prodotti</h4>
+                      <div style="margin-left:1200px">
+                        <a href="/admin/categories/add" class="btn btn-round btn-primary">Aggiungi Categoria</a>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">

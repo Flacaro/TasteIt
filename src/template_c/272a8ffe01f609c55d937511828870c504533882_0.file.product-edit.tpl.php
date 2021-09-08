@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-07 11:05:21
+/* Smarty version 3.1.39, created on 2021-09-07 12:18:32
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\product-edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61372b5126e391_78677997',
+  'unifunc' => 'content_61373c780ee424_81852016',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '272a8ffe01f609c55d937511828870c504533882' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\product-edit.tpl',
-      1 => 1631005507,
+      1 => 1631007843,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61372b5126e391_78677997 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61373c780ee424_81852016 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_148322233861372b51269ee4_22256696', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100207623061373c780ea462_62756745', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_148322233861372b51269ee4_22256696 extends Smarty_Internal_Block
+class Block_100207623061373c780ea462_62756745 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_148322233861372b51269ee4_22256696',
+    0 => 'Block_100207623061373c780ea462_62756745',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -62,7 +62,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         <div class="col-md-3 px-1">
                             <div class="form-group">
                                 <label>Prezzo$</label>
-                                <input type="number" step="0.01" class="form-control" required name="price" value=<?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
+                                    <input type="number" step="0.01" class="form-control" required name="price" value=<?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
 >
                             </div>
                         </div>

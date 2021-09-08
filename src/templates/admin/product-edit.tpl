@@ -18,7 +18,7 @@
                         <div class="col-md-3 px-1">
                             <div class="form-group">
                                 <label>Prezzo$</label>
-                                <input type="number" step="0.01" class="form-control" required name="price" value={$product->getPrice()}>
+                                    <input type="number" step="0.01" class="form-control" required name="price" value={$product->getPrice()}>
                             </div>
                         </div>
                     </div>

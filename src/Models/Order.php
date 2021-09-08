@@ -8,7 +8,7 @@ class Order{
     public $arrivalTime;
     public $paymentId;
     public $couponId;
-    public $userId;
+    public $customerId;
     public $restaurantId;
     public $state;
     //public $products=array();
@@ -81,13 +81,13 @@ class Order{
         $this->couponId=$couponId;
     }
 
-    public function getUserId()
+    public function getCustomerId()
     {
-        return $this->userId;
+        return $this->customerId;
     }
 
-    public function setUserId($customer){
-        $this->userId=$customer;
+    public function setCustomerId($customerId){
+        $this->customerId=$customerId;
     }
 
     public function getRestaurantId()

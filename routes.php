@@ -55,7 +55,7 @@ SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::clas
 SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 
 
-SimpleRouter::get("/orders", [OrderController::class, "visualizeOrders"]);
+SimpleRouter::get("/orders", [OrderController::class, "visualizeOrdersPending"]);
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
 SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
 SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
@@ -77,7 +77,7 @@ SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [
 SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [ProductController::class, "destroy"]);
 SimpleRouter::get("/admin/products", [AdminController::class, "productsBestSellers"]);
 SimpleRouter::get("/admin/customers", [AdminController::class, "getCustomersWhoSpentMore"]);
-SimpleRouter::get("/admin/orders", [AdminController::class, "acceptOrders"]);
+SimpleRouter::get("/admin/orders", [OrderController::class, "visualizeOrdersPending"]);
 SimpleRouter::get("/admin/sendCoupon", [AdminController::class, "sendCoupon"]);
 SimpleRouter::get("/admin/coupons/create", [AdminController::class, "createCoupon"]);
 
