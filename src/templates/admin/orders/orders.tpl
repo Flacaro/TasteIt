@@ -13,7 +13,7 @@
                   <h5><small>Indirizzo</small><br>placeholder</h5>
                 </div>
                 <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
-                  <h5><small>Nome del Cliente</small><br>{$orders[0][1]->getName()}</h5>
+                  <h5><small>Nome del Cliente</small><br>{$order[1]->getName()}</h5>
                 </div>
                 <div class="col-lg-3 mr-auto">
                   <h5><small>Pagato con</small><br>placeholder</h5>

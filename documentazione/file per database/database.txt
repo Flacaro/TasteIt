@@ -101,21 +101,19 @@ create table orders(
 id bigint primary key auto_increment,
 creationDate date not null,
 total float not null,
-<<<<<<< HEAD
-arrivalTime time not null,
-=======
 arrivalTime time default null,
->>>>>>> 47445f6a54186cc4e1a108d940baad145945efdd
 couponId bigint,
 customerId bigint,
 paymentId bigint,
 restaurantId int,
 stateId bigint,
+addressId bigint not null
 foreign key(customerId) references customers(id),
 foreign key(paymentId) references paymentMethods(id),
 foreign key(restaurantId) references restaurant(id),
 foreign key(couponId) references coupons(id),
 foreign key(stateId) references orderStates(id)
+foreign key(addressId) references shippingaddresses(id)
 );
 
 

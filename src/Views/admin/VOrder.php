@@ -9,4 +9,9 @@ class VOrder {
         return view("admin/orders/orders", [
         ]);
     }
+    public function getOrders($orders) {
+        return view('admin/orders/orders', [
+            'orders' => $orders
+        ]);
+    }
 }

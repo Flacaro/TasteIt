@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-07 10:20:15
+/* Smarty version 3.1.39, created on 2021-09-08 12:13:31
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_613720bfb909d4_28170763',
+  'unifunc' => 'content_61388ccb6974c7_57487234',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c35c90bccb08b6e42b1c347b0b91be7ee9c3ebaf' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1631002504,
+      1 => 1631096003,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_613720bfb909d4_28170763 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61388ccb6974c7_57487234 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -93,9 +93,9 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/coupons/create">
+                    <a href="/admin/coupons">
                         <i class="nc-icon nc-tile-56"></i>
-                        <p>Coupon</p>
+                        <p>Coupons</p>
                     </a>
                 </li>
                 <li>
@@ -157,7 +157,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         </nav>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1093989634613720bfb8e7a1_16402944', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5800356561388ccb695cd2_92636823', 'admin');
 ?>
 
 
@@ -206,12 +206,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1093989634613720bf
 
 <?php }
 /* {block 'admin'} */
-class Block_1093989634613720bfb8e7a1_16402944 extends Smarty_Internal_Block
+class Block_5800356561388ccb695cd2_92636823 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_1093989634613720bfb8e7a1_16402944',
+    0 => 'Block_5800356561388ccb695cd2_92636823',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
