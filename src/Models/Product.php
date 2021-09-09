@@ -9,15 +9,12 @@ use App\Foundation\FCategory;
 class Product {
 
     private $id;
-    public $name;
-    public $description;
-    public $price;
-    public $categoryId;
-    //??
-    //public $quantity;
-    //
-    public $imagePath;
-    public $timesOrdered;
+    private $name;
+    private $description;
+    private $price;
+    private $category;
+    private $imagePath;
+    private $timesOrdered;
 
     public function __construct() {
     }
@@ -83,19 +80,14 @@ class Product {
         $this->price = $price;
     }
 
-    public function getCategoryId()
+    public function getCategory()
     {
-        return $this->categoryId;
+        return $this->category;
     }
 
-    public function setCategoryId($categoryId): void
+    public function setCategory($category): void
     {
-        $this->categoryId = $categoryId;
-    }
-
-    public function getCategory(){
-        $FCategory= new FCategory;
-        return $FCategory->getbyId($this->getCategoryId());
+        $this->category = $category;
     }
 
     public function getQuantity()

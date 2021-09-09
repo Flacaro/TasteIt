@@ -47,6 +47,7 @@ SimpleRouter::get("/users/create", [CustomerController::class, "create"]);
 SimpleRouter::get("/users/{id}/edit", [CustomerController::class, "edit"]);
 SimpleRouter::post("/users/{id}", [CustomerController::class, "update"]);
 SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
+SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"]);
 
 
 SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
@@ -60,10 +61,10 @@ SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::clas
 SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 
 
-SimpleRouter::get("/orders", [OrderController::class, "visualizeOrdersPending"]);
+/*SimpleRouter::get("/orders", [OrderController::class, "visualizeOrdersPending"]);
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
 SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
-SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
+SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);*/
 
 
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);

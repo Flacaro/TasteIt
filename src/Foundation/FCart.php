@@ -79,6 +79,14 @@ class FCart extends Foundation {
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    function getCustomerCart($cartId){
+        $query="select products.id, name, description, price, quantity from products join products_carts as pc on products.id=pc.productId where pc.cartId=".$cartId;
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\ProductWithQuantity");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
 
 

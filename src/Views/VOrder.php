@@ -9,4 +9,10 @@ class VOrder {
             'orders' => $orders
         ]);
     }
+    public function checkout($id, $cart) {
+        return view('orders/order', [
+            'id' => $id,
+            'cart'=>$cart
+        ]);
+    }
 }

@@ -12,13 +12,9 @@ use App\Views\admin\VOrder;
 
 class OrderController {
 
-    public function acceptOrders() {
-        $vadmin= new VOrder();
-        $vadmin->acceptOrders();
-    }
     public function visualizeOrdersPending() {
         $FOrder = new FOrder();
-        $orders=$FOrder->getOrdersWithState();
+        $orders=$FOrder->getOrders();
         $vorder = new VOrder();
         $vorder->getOrders($orders);
     }
@@ -29,8 +25,8 @@ class OrderController {
         $faddress=new FShippingAddress();
         $order=$forder->getById($id);
         $products=$forder->getOrderProducts($id);
-        $customer=$fcustomer->getById($order->getCustomerId());
-        $address=$faddress->getById($order->getAddressId());
+        $customer=$fcustomer->getById($order->getCustomer()->getId());
+        $address=$faddress->getById($order->getAddress()->getId());
         $vorder = new VOrder();
         $vorder->getOrderDetails($order, $customer, $products, $address);
     }
@@ -39,8 +35,8 @@ class OrderController {
         $forder=new FOrder();
         $oldorder=$forder->getById($id);
         $order= new Order;
-        $order->setStateId(2);
-        $forder->update($id, $order);
+        $order->setState("Accepted");
+        $forder->updateState($id, $order);
         //redirect(url("/admin/orders"));
     }
 }

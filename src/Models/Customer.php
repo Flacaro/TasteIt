@@ -6,8 +6,8 @@ namespace App\Models;
 
 class Customer extends User {
     public $surname;
-    public $cartId;
-    public $favId;
+    public $cart=[];
+    public $fav=[];
 
     public function __construct() {
     }
@@ -23,26 +23,25 @@ class Customer extends User {
         $this->surname = $surname;
     }
 
-    public function setCartId($cartId): void
+    public function getCart(): array
     {
-        $this->cartId = $cartId;
+        return $this->cart;
     }
 
-    public function getCartId()
+    public function setCart(array $cart): void
     {
-        return $this->cartId;
+        $this->cart = $cart;
     }
 
-    public function getFavId()
+    public function getFav(): array
     {
-        return $this->favId;
+        return $this->fav;
     }
 
-    public function setFavId($favId): void
+    public function setFav(array $fav): void
     {
-        $this->favId = $favId;
+        $this->fav = $fav;
     }
-
 
 
 }

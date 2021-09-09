@@ -1,27 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<ul>
-    {foreach $orders as $order}
+{extends file='src/templates/base/base.tpl'}
+{block name=title}Carrello{/block}
+{block name=categories}{/block}
+{block name=productsOfCart}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Ordine <i class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">Ordine</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--fine blocco prima immagine -->
 
-        <li>
-            <form action="/orders/{$order->getId()}" method="GET">
-            </form>
-            <span>
-            {$order->getId()}
-        </span>
-            {$order->getCreationDate()}
-            {$order->getTotal()}
-            {$order->getArrivalTime()}
-        </li>
-    {/foreach}
-</ul>
-</body>
-</html>
+    <!--Sezione carrello dove sono i prodotti -->
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="table-wrap">
+                    <table class="table">
+
+                        <!--zona rossa dove stanno product, price... -->
+                        <thead class="thead-primary">
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>total</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <!--fine zona rossa -->
+
+                        <!--parte bianca dove sono le immagini dei prodotti -->
+                        <tbody>
+                        {foreach $products as $product}
+                            <!--primo prodotto-->
+                            <tr class="alert" role="alert">
+                                <td>
+                                    <label class="checkbox-wrap checkbox-primary">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="img" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');"></div>
+                                </td>
+                                <td>
+                                    <div class="email">
+                                        <span>{$product->getName()}</span>
+                                        <span>{$product->getDescription()}</span>
+                                    </div>
+                                </td>
+                                <td>{$product->getPrice()}</td>
+                                <td class="quantity">
+                                    {$product->getQuantity()}
+                                </td>
+                                <td>{math equation="{$product->getPrice()} * {$product->getQuantity()}"}</td>
+                                <td>
+                                    {*<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                                    </button>*}
+
+                                </td>
+                            </tr>
+                        {/foreach}
+                        <!-- fine prodotto 1-->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--quadrato in fondo per il checkout -->
+            <div class="row justify-content-end">
+                <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+                    <div class="cart-total mb-3">
+                        <h3>Cart Totals</h3>
+                        <p class="d-flex">
+                        <span>
+                            Total
+                        </span>
+                            <span>
+                             {foreach $products as $product}
+                                 {assign var="partialTotal" value=$partialTotal+$product->getPrice()*$product->getQuantity()}
+                             {/foreach}
+                            $ {$partialTotal}
+                        </span>
+                        </p>
+                        <p class="d-flex">
+                            <span>Delivery</span>
+                            <span>$0.00</span>
+                        </p>
+                        <p class="d-flex total-price">
+                            <span>Total</span>
+                            <span>
+                            {foreach $products as $product}
+                                {assign var="total" value=$total+$product->getPrice()*$product->getQuantity()}
+                            {/foreach}
+                            $ {$total}
+                        </span>
+                        </p>
+                    </div>
+                    <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+                </div>
+            </div>
+            <!--fine checkout -->
+        </div>
+    </section>
+{/block}
