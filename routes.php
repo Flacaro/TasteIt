@@ -84,6 +84,8 @@ SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete",
 SimpleRouter::get("/admin/products", [AdminProductController::class, "productsBestSellers"]);
 
 SimpleRouter::get("/admin/orders", [AdminOrderController::class, "visualizeOrdersPending"]);
+SimpleRouter::get("/admin/orders/{id}", [AdminOrderController::class, "visualizeOrderDetails"]);
+SimpleRouter::post("/admin/orders/{id}", [AdminOrderController::class, "acceptOrder"]);
 
 SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
 SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');

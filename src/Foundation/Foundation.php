@@ -87,7 +87,7 @@ abstract class Foundation {
             $stmt->bindValue(':' . $key, $val);
         }
         $stmt->execute();
-        //$stmt->debugDumpParams();
+        $stmt->debugDumpParams();
 
     }
 

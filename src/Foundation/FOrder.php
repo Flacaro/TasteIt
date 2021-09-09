@@ -4,6 +4,8 @@
 namespace App\Foundation;
 
 
+use PDO;
+
 class FOrder extends Foundation {
 
     function __construct()
@@ -37,4 +39,32 @@ class FOrder extends Foundation {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    //prendere prodotti, quantità e prezzi di prodotti nell'ordine di id=$id
+    public function getOrderProducts($id){
+        $query = "select name, quantity, price from orders_products where orderId=".$id;
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        //$stmt->debugDumpParams();
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function calculateOrderTotal($orderId){
+        $query= "select sum(price*quantity) as total from orders_products where orderId=".$orderId;
+        $stmt = $this->connection->prepare($query);
+        //$stmt->debugDumpParams();
+        $stmt->execute();
+        return $stmt->fetch()["total"];
+    }
+
+    public function getOrdersWithState(){
+        $query= "SELECT orders.id, orders.creationDate, orders.total, orderstates.state  FROM `orders` join orderstates on stateId=orderstates.id order by stateId, creationDate DESC";
+        $stmt = $this->connection->prepare($query);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Order");
+        //$stmt->debugDumpParams();
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }

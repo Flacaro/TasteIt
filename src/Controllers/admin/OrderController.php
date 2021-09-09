@@ -4,7 +4,11 @@ namespace App\Controllers\admin;
 
 use App\Foundation\FCustomer;
 use App\Foundation\FOrder;
+use App\Foundation\FProduct;
+use App\Foundation\FShippingAddress;
+use App\Models\Order;
 use App\Views\admin\VOrder;
+
 
 class OrderController {
 
@@ -14,15 +18,29 @@ class OrderController {
     }
     public function visualizeOrdersPending() {
         $FOrder = new FOrder();
-        $FCustomer = new FCustomer();
-        $orders = $FOrder->getAll();
-        $orderDetails=[];
-        foreach ($orders as $order){
-            $customer=$FCustomer->getById($order->getCustomerId());
-            array_push($orderDetails, array($order, $customer));
-        }
-        print_r($orderDetails);
+        $orders=$FOrder->getOrdersWithState();
         $vorder = new VOrder();
-        $vorder->getOrders($orderDetails);
+        $vorder->getOrders($orders);
+    }
+
+    public function visualizeOrderDetails($id){
+        $forder=new FOrder();
+        $fcustomer=new FCustomer();
+        $faddress=new FShippingAddress();
+        $order=$forder->getById($id);
+        $products=$forder->getOrderProducts($id);
+        $customer=$fcustomer->getById($order->getCustomerId());
+        $address=$faddress->getById($order->getAddressId());
+        $vorder = new VOrder();
+        $vorder->getOrderDetails($order, $customer, $products, $address);
+    }
+
+    public function acceptOrder($id){
+        $forder=new FOrder();
+        $oldorder=$forder->getById($id);
+        $order= new Order;
+        $order->setStateId(2);
+        $forder->update($id, $order);
+        //redirect(url("/admin/orders"));
     }
 }

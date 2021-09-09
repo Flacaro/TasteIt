@@ -10,8 +10,9 @@ class Order{
     public $couponId;
     public $customerId;
     public $restaurantId;
+    public $stateId;
+    public $addressId;
     public $state;
-    //public $products=array();
 
     public function getState()
     {
@@ -21,6 +22,26 @@ class Order{
     public function setState($state): void
     {
         $this->state = $state;
+    }
+
+    public function getAddressId()
+    {
+        return $this->addressId;
+    }
+
+    public function setAddressId($addressId): void
+    {
+        $this->addressId = $addressId;
+    }
+    //public $products=array();
+
+    public function getStateId()
+    {
+        return $this->stateId;
+    }
+    public function setStateId($stateId): void
+    {
+        $this->stateId = $stateId;
     }
 
     public function __construct() {
@@ -99,5 +120,7 @@ class Order{
     {
         $this->restaurantId = $restaurantId;
     }
+
+
 
 }
