@@ -3,16 +3,106 @@ namespace App\Models;
 
 class Order{
     private $id;
-    public $creationDate;
-    public $total;
-    public $arrivalTime;
-    public $paymentId;
-    public $couponId;
-    public $customerId;
-    public $restaurantId;
-    public $stateId;
-    public $addressId;
-    public $state;
+    private $creationDate;
+    private $total;
+    private $arrivalTime;
+    private $paymentMethod;
+    private $coupon;
+    private $customer;
+    private $restaurant;
+    private $state;
+    private $address;
+    private $products=[];
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getProducts(): array
+    {
+        return $this->products;
+    }
+
+    public function setProducts(array $products): void
+    {
+        $this->products = $products;
+    }
+
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    public function setCreationDate($creationDate): void
+    {
+        $this->creationDate = $creationDate;
+    }
+
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    public function setTotal($total): void
+    {
+        $this->total = $total;
+    }
+
+    public function getArrivalTime()
+    {
+        return $this->arrivalTime;
+    }
+
+    public function setArrivalTime($arrivalTime): void
+    {
+        $this->arrivalTime = $arrivalTime;
+    }
+
+    public function getPaymentMethod()
+    {
+        return $this->paymentMethod;
+    }
+
+    public function setPaymentMethod($paymentMethod): void
+    {
+        $this->paymentMethod = $paymentMethod;
+    }
+
+    public function getCoupon()
+    {
+        return $this->coupon;
+    }
+
+    public function setCoupon($coupon): void
+    {
+        $this->coupon = $coupon;
+    }
+
+    public function getCustomer()
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer($customer): void
+    {
+        $this->customer = $customer;
+    }
+
+    public function getRestaurant()
+    {
+        return $this->restaurant;
+    }
+
+    public function setRestaurant($restaurant): void
+    {
+        $this->restaurant = $restaurant;
+    }
 
     public function getState()
     {
@@ -24,102 +114,18 @@ class Order{
         $this->state = $state;
     }
 
-    public function getAddressId()
+    public function getAddress()
     {
-        return $this->addressId;
+        return $this->address;
     }
 
-    public function setAddressId($addressId): void
+    public function setAddress($address): void
     {
-        $this->addressId = $addressId;
+        $this->address = $address;
     }
-    //public $products=array();
+   // public $state;
 
-    public function getStateId()
-    {
-        return $this->stateId;
-    }
-    public function setStateId($stateId): void
-    {
-        $this->stateId = $stateId;
-    }
 
-    public function __construct() {
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id=$id;
-    }
-
-    public function getCreationDate()
-    {
-        return $this->creationDate;
-    }
-
-    public function setCreationDate($date){
-        $this->creationDate=$date;
-    }
-
-    public function getTotal()
-    {
-        return $this->total;
-    }
-
-    public function setTotal($total){
-        $this->total=$total;
-    }
-
-    public function getArrivalTime()
-    {
-        return $this->arrivalTime;
-    }
-
-    public function setArrivalTime($time){
-        $this->arrivalTime=$time;
-    }
-
-    public function getPaymentId()
-    {
-        return $this->paymentId;
-    }
-
-    public function setPaymentId($transaction){
-        $this->paymentId=$transaction;
-    }
-
-    public function getCouponId()
-    {
-        return $this->couponId;
-    }
-
-    public function setCouponId($couponId){
-        $this->couponId=$couponId;
-    }
-
-    public function getCustomerId()
-    {
-        return $this->customerId;
-    }
-
-    public function setCustomerId($customerId){
-        $this->customerId=$customerId;
-    }
-
-    public function getRestaurantId()
-    {
-        return $this->restaurantId;
-    }
-
-    public function setRestaurantId($restaurantId): void
-    {
-        $this->restaurantId = $restaurantId;
-    }
 
 
 

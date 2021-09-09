@@ -44,7 +44,7 @@ class FOrder extends Foundation {
     public function getOrderProducts($id){
         $query = "select name, quantity, price from orders_products where orderId=".$id;
         $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\ProductWithQuantity");
         //$stmt->debugDumpParams();
         $stmt->execute();
         return $stmt->fetchAll();
@@ -58,13 +58,19 @@ class FOrder extends Foundation {
         return $stmt->fetch()["total"];
     }
 
-    public function getOrdersWithState(){
-        $query= "SELECT orders.id, orders.creationDate, orders.total, orderstates.state  FROM `orders` join orderstates on stateId=orderstates.id order by stateId, creationDate DESC";
+    public function getOrders(){
+        $query= "SELECT id, creationDate, total, orderState  FROM `orders`  order by stateId, creationDate DESC";
         $stmt = $this->connection->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Order");
         //$stmt->debugDumpParams();
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function updateState($id, $order){
+        $query= "update orders set orderState=".$order->getState()." where id=".$id;
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
     }
 
 }
