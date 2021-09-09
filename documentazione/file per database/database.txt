@@ -16,12 +16,35 @@ id bigint primary key auto_increment,
 method varchar(30) not null
 );
 
+create table customers(
+id bigint primary key auto_increment not null,
+name varchar(20) not null,
+surname varchar(20) not null,
+email varchar(40) not null unique,
+password varchar(20) not null,
+favId bigint not null,
+cartId bigint default null,
+FOREIGN KEY (favId) references favourites(id),
+FOREIGN KEY (cartId) references carts(id)
+);
+
+create table shippingAddresses(
+id bigint primary key auto_increment,
+cap int not null,
+city varchar(20) not null,
+street varchar(20) not null,
+homeNumber int not null,
+customerId bigint not null,
+FOREIGN KEY (customerId) references customers(id)
+);
+
+
 create table restaurant(
 id int primary key auto_increment,
 name varchar(20) not null,
 email varchar(40) not null,
 password varchar(20) not null,
-addressId varchar(20) not null,
+addressId bigint not null,
 phone varchar(11) not null,
 foreign key(addressId) references shippingAddresses(id)
 );
@@ -53,17 +76,6 @@ restaurantId int not null,
 foreign key(restaurantId) references restaurant(id)
 );
 
-create table customers(
-id bigint primary key auto_increment not null,
-name varchar(20) not null,
-surname varchar(20) not null,
-email varchar(40) not null unique,
-password varchar(20) not null,
-favId bigint not null,
-cartId bigint default null,
-FOREIGN KEY (favId) references favourites(id),
-FOREIGN KEY (cartId) references carts(id)
-);
 
 create table reviews(
 id bigint primary key auto_increment,
@@ -73,16 +85,6 @@ customerId bigint not null,
 productId bigint not null,
 foreign key(customerId) references customers(id),
 foreign key(productId) references products(id)
-);
-
-create table shippingAddresses(
-id bigint primary key auto_increment,
-cap int not null,
-city varchar(20) not null,
-street varchar(20) not null,
-homeNumber int not null,
-customerId bigint not null,
-FOREIGN KEY (customerId) references customers(id)
 );
 
 create table customers_paymentMethods(
@@ -107,12 +109,12 @@ customerId bigint,
 paymentId bigint,
 restaurantId int,
 orderState varchar(30),
-addressId bigint not null
+addressId bigint,
 foreign key(customerId) references customers(id),
 foreign key(paymentId) references paymentMethods(id),
 foreign key(restaurantId) references restaurant(id),
 foreign key(couponId) references coupons(id),
-foreign key(orderState) references orderStates(state)
+foreign key(orderState) references orderStates(state),
 foreign key(addressId) references shippingAddresses(id)
 );
 
@@ -153,13 +155,13 @@ foreign key(customerId) references customers(id),
 foreign key(couponId) references coupons(id)
 );
 
-insert into restaurant values(NULL, "TasteIt", "tasteit@gmail.com", "secret", "Via Roma, 12", 1234567890);
+
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();
-INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (10,1);
-INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (20,1);
-INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (15,1);
+INSERT INTO `favourites`() VALUES ();
+INSERT INTO `favourites`() VALUES ();
+INSERT INTO `favourites`() VALUES ();
 INSERT INTO `paymentMethods`(`method`) VALUES ('cart');
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Mario','Rossi','mrossi@gmail.com','secret',1,1);
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Sandro','Rosa','sandro@gmail.com','secret',2,2);
@@ -167,15 +169,16 @@ INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1234,'Roma','Santa Barbara',2,1);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1768,'Milano','Santa Maria',7,2);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (8796,'Mantova','Santa Cecilia',10,3);
+INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
+INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (10,1);
+INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (20,1);
+INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (15,1);
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `restaurantId`,`orderState`,'addressId') VALUES ('2021-07-21',100,'14:00:00',1,1,1,1,'Pending',1);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `restaurantId`, `orderState`,'addressId') VALUES ('2021-07-21',100,'15:20:00',2,2,1,1,'Denied',2);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `restaurantId`, `orderState`,'addressId') VALUES ('2021-07-21',100,'20:00:00',3,3,1,1,'Accepted',3);
-INSERT INTO `favourites`() VALUES ();
-INSERT INTO `favourites`() VALUES ();
-INSERT INTO `favourites`() VALUES ();
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `restaurantId`,`orderState`, `addressId`) VALUES ('2021-07-21',100,'14:00:00',1,1,1,1,'Pending',1);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `restaurantId`, `orderState`, `addressId`) VALUES ('2021-07-21',100,'15:20:00',2,2,1,1,'Denied',2);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `restaurantId`, `orderState`, `addressId`) VALUES ('2021-07-21',100,'20:00:00',3,3,1,1,'Accepted',3);
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/kind-1.jpg');
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pizza','/src/assets/images/kind-1.jpg');
 INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Sashimi','buono',8,1,'/src/assets/images/image_1.jpg', 20);
