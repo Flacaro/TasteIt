@@ -36,7 +36,7 @@ class CustomerController {
 
         $cart = new Cart();
         $cart->setId(NULL);
-        $cartId = $FCart->create($cart);
+        $cartId = $FCart->store($cart);
 
         $fav = new Favourites();
         $fav->setId(NULL);

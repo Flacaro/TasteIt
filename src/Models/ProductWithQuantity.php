@@ -16,4 +16,5 @@ class ProductWithQuantity extends Product{
         $this->quantity = $quantity;
     }
 
+
 }

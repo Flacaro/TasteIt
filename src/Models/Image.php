@@ -4,8 +4,8 @@ namespace App\Models;
 
 class Image
 {
-    public $id;
-    public $image;
+    private $id;
+    private $imagePath;
 
     public function getId()
     {
@@ -19,12 +19,12 @@ class Image
 
     public function getImagePath()
     {
-        return $this->image;
+        return $this->imagePath;
     }
 
     public function setImagePath($image): void
     {
-        $this->image = $image;
+        $this->imagePath = $image;
     }
 
 }

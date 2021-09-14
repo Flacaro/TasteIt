@@ -7,11 +7,9 @@ use App\Foundation\FImage;
 
 class Category{
     private $id;
-    public $categoryName;
-    public $restaurantId=1;
-    //è composizione, va rivisto
+    private $categoryName;
     private $categoryProducts = [];
-    public $imagePath;
+    private $image;
 
     public function getId()
     {
@@ -19,14 +17,14 @@ class Category{
         return $this->id;
     }
 
-    public function getImagePath()
+    public function getImage()
     {
-        return $this->imagePath;
+        return $this->image;
     }
 
-    public function setImagePath($imagePath): void
+    public function setImage($image): void
     {
-        $this->imagePath = $imagePath;
+        $this->image = $image;
     }
 
 

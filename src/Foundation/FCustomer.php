@@ -6,7 +6,7 @@ namespace App\Foundation;
 
 use PDO;
 
-class FCustomer extends Foundation {
+class FCustomer extends FConnection {
     function __construct()
     {
         parent::__construct('customers', 'Customer');

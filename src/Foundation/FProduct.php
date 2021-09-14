@@ -6,11 +6,20 @@ namespace App\Foundation;
 
 use PDO;
 
-class FProduct extends Foundation {
+class FProduct extends FConnection {
 
     function __construct()
     {
         parent::__construct('products', 'Product');
+    }
+
+    function load($id){
+        $pdo = FConnection::connect();
+        $query = 'select * from products where id='.$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+
+        //$stmt->debugDumpParams();
     }
 
     function getProductsByCategoryId($categoryId) {

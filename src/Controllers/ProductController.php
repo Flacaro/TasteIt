@@ -52,7 +52,7 @@ class ProductController
         $product->setDescription($description);
         $product->setCategoryId($catId);
         $product->setTimesOrdered($timesOrdered);
-        $product->setImagePath($imagePath);
+        $product->setImage($imagePath);
         $FProduct->update($id, $product);
         redirect(url("/admin/categories/".$catId.'/products'));
     }
@@ -100,7 +100,7 @@ class ProductController
         $review->setStars($stars);
         $review->setComment($comment);
         $review->setProductId($productId);
-        $review->setCustomerId(1); //id dell'utente loggato ma con calma
+        $review->setCustomer(1); //id dell'utente loggato ma con calma
         $FProduct->createReview($review);
         //redirect(url("getProduct", ['productId' => $productId]));
     }

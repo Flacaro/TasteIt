@@ -26,7 +26,7 @@ class CartController {
      $FCart = new FCart();
      $cart = new Cart();
      $cart->setId(NULL);
-     $FCart->create($cart);
+     $FCart->store($cart);
  }
 
  public function updateQuantity($cartId, $productId){

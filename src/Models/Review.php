@@ -9,10 +9,10 @@ use App\Foundation\FCustomer;
 
 class Review {
  private $id;
- public $stars;
- public $comment;
- public $customerId;
- public $productId;
+ private $stars;
+ private $comment;
+ private $customer;
+ //private $productId;
 
     public function getId()
     {
@@ -44,17 +44,17 @@ class Review {
         $this->comment = $review;
     }
 
-    public function getCustomerId()
+    public function getCustomer()
     {
-        return $this->customerId;
+        return $this->customer;
     }
 
-    public function setCustomerId($customerId): void
+    public function setCustomer($customer): void
     {
-        $this->customerId = $customerId;
+        $this->customer = $customer;
     }
 
-    public function getProductId()
+    /*public function getProductId()
     {
         return $this->productId;
     }
@@ -62,7 +62,7 @@ class Review {
     public function setProductId($productId): void
     {
         $this->productId = $productId;
-    }
+    }*/
 
     public function getProduct(){
         $FProduct= new FProduct;
@@ -70,6 +70,6 @@ class Review {
     }
     public function getUser(){
         $FUser = new FCustomer;
-        return $FUser->getbyId($this->getCustomerId());
+        return $FUser->getbyId($this->getCustomer());
     }
 }

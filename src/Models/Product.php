@@ -12,21 +12,31 @@ class Product {
     private $name;
     private $description;
     private $price;
-    private $category;
-    private $imagePath;
+    private $image;
     private $timesOrdered;
+    private $reviews=[];
+
+    public function getReviews(): array
+    {
+        return $this->reviews;
+    }
+
+    public function setReviews(array $reviews): void
+    {
+        $this->reviews = $reviews;
+    }
 
     public function __construct() {
     }
 
-    public function getImagePath()
+    public function getImage()
     {
-        return $this->imagePath;
+        return $this->image;
     }
 
-    public function setImagePath($imagePath): void
+    public function setImage($image): void
     {
-        $this->imagePath = $imagePath;
+        $this->image = $image;
     }
 
     public function getTimesOrdered()
@@ -78,16 +88,6 @@ class Product {
     public function setPrice($price): void
     {
         $this->price = $price;
-    }
-
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    public function setCategory($category): void
-    {
-        $this->category = $category;
     }
 
     public function getQuantity()

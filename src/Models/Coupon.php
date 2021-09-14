@@ -6,12 +6,22 @@ namespace App\Models;
 
 class Coupon {
     private $id;
-    public $priceCut;
-    public $restaurantId = 1;
+    private $priceCut;
+    private $expirationDate;
 
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getExpirationDate()
+    {
+        return $this->expirationDate;
+    }
+
+    public function setExpirationDate($expirationDate): void
+    {
+        $this->expirationDate = $expirationDate;
     }
 
     public function setId($id): void

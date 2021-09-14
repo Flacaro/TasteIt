@@ -2,7 +2,7 @@
 
 namespace App\Foundation;
 
-class FShippingAddress extends Foundation{
+class FAddress extends FConnection{
 
     function __construct()
     {
