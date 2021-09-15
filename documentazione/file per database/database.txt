@@ -159,7 +159,7 @@ INSERT INTO `favourites`() VALUES ();
 INSERT INTO `favourites`() VALUES ();
 INSERT INTO `favourites`() VALUES ();
 INSERT INTO `paymentMethods`(`method`) VALUES ('cash');
-INSERT INTO `paymentMethods`(`method`) VALUES ('carta di credito');
+INSERT INTO `paymentMethods`(`method`) VALUES ('credit card');
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Mario','Rossi','mrossi@gmail.com','secret',1,1);
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Sandro','Rosa','sandro@gmail.com','secret',2,2);
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('Michela','Bianchi','mic@gmail.com','secret',3,3);
