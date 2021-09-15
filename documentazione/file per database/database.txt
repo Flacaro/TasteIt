@@ -68,12 +68,10 @@ timesOrdered bigint DEFAULT 0,
 foreign key(categoryId) references categories(id)
 );
 
-
 create table coupons(
 id bigint primary key auto_increment,
 priceCut int not null,
-restaurantId int not null,
-foreign key(restaurantId) references restaurant(id)
+expirationDate Date not null
 );
 
 
@@ -172,9 +170,9 @@ INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customer
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1768,'Milano','Santa Maria',7,2);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (8796,'Mantova','Santa Cecilia',10,3);
 INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
-INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (10,1);
-INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (20,1);
-INSERT INTO `coupons`(`priceCut`, `restaurantId`) VALUES (15,1);
+INSERT INTO `coupons`(`priceCut`, `exirationDate`) VALUES (10,'2021-08-10');
+INSERT INTO `coupons`(`priceCut`, `expirationDate`) VALUES (20,'2021-09-13');
+INSERT INTO `coupons`(`priceCut`, `expirationDate`) VALUES (15,'2021-11-05');
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
