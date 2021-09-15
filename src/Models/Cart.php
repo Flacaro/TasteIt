@@ -4,6 +4,7 @@ namespace App\Models;
 
 class Cart {
     private $id;
+    //prodotti con quantità
     private $products = [];
 
     public function getId()

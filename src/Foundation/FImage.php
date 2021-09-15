@@ -2,7 +2,7 @@
 
 namespace App\Foundation;
 
-class FImage extends Foundation{
+class FImage extends FConnection{
 
     function __construct()
     {

@@ -1,24 +1,14 @@
 <?php
 namespace App\Models;
 
-class ShippingAddress{
+class Address{
 
-    public $id;
-    public $city;
-    public $cap;
-    public $street;
-    public $homeNumber;
-    public $customerId;
+    private $id;
+    private $city;
+    private $cap;
+    private $street;
+    private $homeNumber;
 
-    public function getCustomerId()
-    {
-        return $this->customerId;
-    }
-
-    public function setCustomerId($customerId): void
-    {
-        $this->customerId = $customerId;
-    }
 
     public function getCity()
     {

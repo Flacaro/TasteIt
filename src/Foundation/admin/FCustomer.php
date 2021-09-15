@@ -2,10 +2,10 @@
 
 namespace App\Foundation\admin;
 
-use App\Foundation\Foundation;
+use App\Foundation\FConnection;
 use PDO;
 
-class FCustomer extends Foundation {
+class FCustomer extends FConnection {
 
     public function __construct()
     {

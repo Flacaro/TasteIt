@@ -2,9 +2,9 @@
 
 namespace App\Foundation\admin;
 
-use App\Foundation\Foundation;
+use App\Foundation\FConnection;
 
-class FCoupon extends Foundation {
+class FCoupon extends FConnection {
 
     public function __construct() {
         parent::__construct('coupons', 'Coupon');

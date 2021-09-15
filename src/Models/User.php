@@ -5,14 +5,25 @@ namespace App\Models;
 class User {
 
     private $id;
-    public $name;
-    public $email;
-    public $password;
+    private $name;
+    private $email;
+    private $password;
+    private $addresses=[];
 
 
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getAddresses(): array
+    {
+        return $this->addresses;
+    }
+
+    public function setAddresses(array $addresses): void
+    {
+        $this->addresses = $addresses;
     }
 
     public function setId($id): void

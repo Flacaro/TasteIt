@@ -6,7 +6,7 @@ namespace App\Foundation;
 
 use PDO;
 
-class FOrder extends Foundation {
+class FOrder extends FConnection {
 
     function __construct()
     {

@@ -5,11 +5,33 @@ namespace App\Models;
 
 
 class Customer extends User {
-    public $surname;
-    public $cart=[];
-    public $fav=[];
+    private $surname;
+    private $cart;
+    private $fav;
+    private $creditCards=[];
+    private $orders=[];
 
     public function __construct() {
+    }
+
+    public function getCreditCards(): array
+    {
+        return $this->creditCards;
+    }
+
+    public function setCreditCards(array $creditCards): void
+    {
+        $this->creditCards = $creditCards;
+    }
+
+    public function getOrders(): array
+    {
+        return $this->orders;
+    }
+
+    public function setOrders(array $orders): void
+    {
+        $this->orders = $orders;
     }
 
 

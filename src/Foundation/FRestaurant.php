@@ -5,7 +5,7 @@ namespace App\Foundation;
 
 use PDO;
 
-class FRestaurant extends Foundation {
+class FRestaurant extends FConnection {
 
     function __construct()
     {

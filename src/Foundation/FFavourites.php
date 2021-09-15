@@ -4,7 +4,7 @@ namespace App\Foundation;
 use PDO;
 
 
-class FFavourites extends Foundation {
+class FFavourites extends FConnection {
     function __construct()
     {
         parent::__construct('favourites', 'Favourites');

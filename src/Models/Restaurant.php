@@ -4,9 +4,31 @@ namespace App\Models;
 
 class Restaurant extends User {
 
-    public $phone;
+    private $phone;
+    private $categories=[];
+    private $coupons=[];
 
     public function __construct() {
+    }
+
+    public function getCategories(): array
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(array $categories): void
+    {
+        $this->categories = $categories;
+    }
+
+    public function getCoupons(): array
+    {
+        return $this->coupons;
+    }
+
+    public function setCoupons(array $coupons): void
+    {
+        $this->coupons = $coupons;
     }
 
 
