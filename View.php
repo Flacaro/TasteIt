@@ -13,8 +13,8 @@ class View extends Smarty {
         $this->setConfigDir('src/smarty_configs/');
         $this->setCacheDir('src/smarty_cache/');
 
-        $FCategories = new FCategory();
-        $this->assign('categories', $FCategories->getAll());
+        /*$FCategories = new FCategory();
+        $this->assign('categories', $FCategories->getAll());*/
     }
 
 }

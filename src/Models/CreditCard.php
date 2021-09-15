@@ -4,10 +4,10 @@ namespace App\Models;
 
 class CreditCard implements PaymentMethod
 {
+    private $id;
     private $number;
     private $cvv;
-    private $name;
-    private $surname;
+    private $cardHolder;
     private $expirationDate;
 
     public function pay(){
@@ -15,6 +15,11 @@ class CreditCard implements PaymentMethod
     }
     public function getId(){
 
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
     public function getNumber()
@@ -37,24 +42,14 @@ class CreditCard implements PaymentMethod
         $this->cvv = $cvv;
     }
 
-    public function getName()
+    public function getCardHolder()
     {
-        return $this->name;
+        return $this->cardHolder;
     }
 
-    public function setName($name): void
+    public function setCardHolder($cardHolder): void
     {
-        $this->name = $name;
-    }
-
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    public function setSurname($surname): void
-    {
-        $this->surname = $surname;
+        $this->cardHolder = $cardHolder;
     }
 
     public function getExpirationDate()
@@ -66,6 +61,7 @@ class CreditCard implements PaymentMethod
     {
         $this->expirationDate = $expirationDate;
     }
+
 
 
 }

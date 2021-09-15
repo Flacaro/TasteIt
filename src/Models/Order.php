@@ -6,10 +6,9 @@ class Order{
     private $creationDate;
     private $total;
     private $arrivalTime;
-    private $paymentMethod;
+    private $payment;
     private $coupon;
-    private $customer;
-    private $restaurant;
+    private $customerId;
     private $state;
     private $address;
     private $products=[];
@@ -64,14 +63,14 @@ class Order{
         $this->arrivalTime = $arrivalTime;
     }
 
-    public function getPaymentMethod()
+    public function getPayment()
     {
-        return $this->paymentMethod;
+        return $this->payment;
     }
 
-    public function setPaymentMethod($paymentMethod): void
+    public function setPayment($payment): void
     {
-        $this->paymentMethod = $paymentMethod;
+        $this->payment = $payment;
     }
 
     public function getCoupon()
@@ -84,24 +83,14 @@ class Order{
         $this->coupon = $coupon;
     }
 
-    public function getCustomer()
+    public function getCustomerId()
     {
-        return $this->customer;
+        return $this->customerId;
     }
 
-    public function setCustomer($customer): void
+    public function setCustomerId($customerId): void
     {
-        $this->customer = $customer;
-    }
-
-    public function getRestaurant()
-    {
-        return $this->restaurant;
-    }
-
-    public function setRestaurant($restaurant): void
-    {
-        $this->restaurant = $restaurant;
+        $this->customerId = $customerId;
     }
 
     public function getState()

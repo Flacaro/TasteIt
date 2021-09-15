@@ -52,7 +52,7 @@ class ProductController
         $product->setDescription($description);
         $product->setCategoryId($catId);
         $product->setTimesOrdered($timesOrdered);
-        $product->setImage($imagePath);
+        $product->setImagePath($imagePath);
         $FProduct->update($id, $product);
         redirect(url("/admin/categories/".$catId.'/products'));
     }

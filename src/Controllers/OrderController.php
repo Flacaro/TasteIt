@@ -3,8 +3,10 @@
 namespace App\Controllers;
 
 use App\Foundation\FCart;
+use App\Foundation\FCategory;
 use App\Foundation\FCustomer;
 use App\Foundation\FOrder;
+use App\Foundation\FProduct;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Views\VOrder;
@@ -28,4 +30,11 @@ class OrderController {
         //$vorder->checkout();
     }
 
+
+    public function prova(){
+        $customer = new FCategory();
+        $customer->loadCategoryProducts(1);
+        return view('prova', [
+        ]);
+    }
 }

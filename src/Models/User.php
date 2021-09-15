@@ -10,6 +10,16 @@ class User {
     private $password;
     private $addresses=[];
 
+    /**
+     * @param $id
+     * @param $name
+     * @param $email
+     * @param $password
+     * @param array $addresses
+     */
+    public function __construct()
+    {
+    }
 
     public function getId()
     {

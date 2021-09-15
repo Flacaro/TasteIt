@@ -12,7 +12,7 @@ class Review {
  private $stars;
  private $comment;
  private $customer;
- //private $productId;
+
 
     public function getId()
     {

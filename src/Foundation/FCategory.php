@@ -3,6 +3,7 @@
 namespace App\Foundation;
 
 
+use App\Models\Product;
 use PDO;
 
 class FCategory extends FConnection {
@@ -18,4 +19,26 @@ class FCategory extends FConnection {
         $stmt->execute();
         //$stmt->debugDumpParams();
     }*/
+
+    function loadCategoryProducts($categoryId) {
+        $pdo = FConnection::connect();
+        $query= 'select * from products where categoryId = ' . $categoryId;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $prods= $stmt->fetchAll();
+        $products=[];
+        foreach($prods as $p){
+            $freviews= new FReview();
+            $prod=new Product;
+            $prod->setId($p[0]);
+            $prod->setName($p[1]);
+            $prod->setDescription($p[2]);
+            $prod->setPrice($p[3]);
+            $prod->setImagePath($p[5]);
+            $prod->setTimesOrdered($p[6]);
+            $prod->setReviews($freviews->loadReviewsOfProduct($p[0]));
+            array_push($products,$prod);
+        }
+        return $products;
+    }
 }

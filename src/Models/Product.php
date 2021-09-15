@@ -12,7 +12,7 @@ class Product {
     private $name;
     private $description;
     private $price;
-    private $image;
+    private $imagePath;
     private $timesOrdered;
     private $reviews=[];
 
@@ -29,14 +29,14 @@ class Product {
     public function __construct() {
     }
 
-    public function getImage()
+    public function getImagePath()
     {
-        return $this->image;
+        return $this->imagePath;
     }
 
-    public function setImage($image): void
+    public function setImagePath($imagePath): void
     {
-        $this->image = $image;
+        $this->imagePath = $imagePath;
     }
 
     public function getTimesOrdered()
