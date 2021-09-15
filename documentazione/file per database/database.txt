@@ -108,7 +108,7 @@ paymentId bigint,
 orderState varchar(30),
 addressId bigint,
 foreign key(customerId) references customers(id),
-foreign key(paymentId) references customers_paymentmethod(id),
+foreign key(paymentId) references customers_paymentmethods(id),
 foreign key(couponId) references coupons(id),
 foreign key(orderState) references orderStates(state),
 foreign key(addressId) references shippingAddresses(id)
