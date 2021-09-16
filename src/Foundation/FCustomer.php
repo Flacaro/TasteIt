@@ -5,7 +5,9 @@ namespace App\Foundation;
 
 
 use App\Foundation\admin\FCoupon;
+use App\Models\Cart;
 use App\Models\Customer;
+use App\Models\Favourites;
 use App\Models\Order;
 use PDO;
 
@@ -18,6 +20,7 @@ class FCustomer extends FConnection {
     public function getUserFromReview($reviewId){
         //select
     }
+    //exist ma con un check della password in più
     public function authentication($email, $password){
         $pdo = FConnection::connect();
         $query = "SELECT * FROM customers WHERE email='".$email. "' AND password='".$password."'";
@@ -31,7 +34,7 @@ class FCustomer extends FConnection {
             return true;
         }
     }
-
+//load ma con email invece che con id
     public function getByEmail($email){
         $pdo = FConnection::connect();
         $query = "SELECT * FROM customers WHERE email= '".$email."'";
@@ -44,7 +47,23 @@ class FCustomer extends FConnection {
         $customer->setSurname($cus[2]);
         $customer->setEmail($cus[3]);
         $customer->setPassword($cus[4]);
-        $stmt->debugDumpParams();
+        //$stmt->debugDumpParams();
+        return $customer;
+    }
+
+    public function load($id){
+        $pdo = FConnection::connect();
+        $query = "SELECT * FROM customers WHERE id= ".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $cus=$stmt->fetch();
+        $customer= new Customer;
+        $customer->setId($cus[0]);
+        $customer->setName($cus[1]);
+        $customer->setSurname($cus[2]);
+        $customer->setEmail($cus[3]);
+        $customer->setPassword($cus[4]);
+        //$stmt->debugDumpParams();
         return $customer;
     }
 
@@ -60,6 +79,42 @@ class FCustomer extends FConnection {
         else{
             return true;
         }
+    }
+    //questa serve in fase di registrazione, al customer viene assegnato un carrello vuoto, una lista di preferiti vuota, non ha nessun ordine inserire in db, in NESSUN altro punto del
+    //sito dobbiamo poter dare la possibilità al customer inserirsi nel db (quindi non avremo mai bisogno di fare store ad un customer che ha già ordini/prodotti nel carrello etc...)
+    public function store($customer){
+        $pdo = FConnection::connect();
+        $name=$customer->getName();
+        $surname=$customer->getSurname();
+        $email=$customer->getEmail();
+        $password=$customer->getPassword();
+        $cart= new Cart;
+        $fcart=new FCart;
+        $c=$fcart->store($cart);
+        $fav= new Favourites;
+        $ffav=new FFavourites();
+        $f=$ffav->store($fav);
+        $query="insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('.$name.','.$surname.','.$email.','.$password.','.$f.','.$c.')";
+    }
+//l'update del customer si limita a email, password, nome, cognome, per quanto riguarda il carrello, i preferiti, le carte di credito etc usiamo i foundation specifici
+//(altrimenti rischiamo di svuotare il db se ad esempio abbiamo un oggetto cliente di cui in quel momento non ci interessa il carrello, settandoglielo a null)
+    public function update($customer){
+        $pdo = FConnection::connect();
+        $id=$customer->getId();
+        $name=$customer->getName();
+        $surname=$customer->getSurname();
+        $email=$customer->getEmail();
+        $password=$customer->getPassword();
+        $query="UPDATE `customers` SET `name`='.$name.',`surname`='.$surname.',`email`='.$email.',`password`='.$password.' WHERE id=".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
+
+    public function delete($id){
+        $pdo = FConnection::connect();
+        $query="delete from customers where id=".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 
     //serve per visualizzare la lista degli ordini dell'utente (per vedere i prodotti richiamiamo una funzione a parte quando clicchi sull'ordine specifico)

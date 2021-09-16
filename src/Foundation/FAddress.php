@@ -26,4 +26,54 @@ class FAddress extends FConnection{
         $add->setHomeNumber($address[4]);
         return $add;
     }
+
+    public function exist($id){
+        $pdo = FConnection::connect();
+        $query = 'select * from shippingaddresses where id='.$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $address=$stmt->fetch();
+        if ($address!=NULL){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function store($address){
+        $pdo = FConnection::connect();
+        $id=$address->getId();
+        $cap=$address->getCap();
+        $city=$address->getCity();
+        $street=$address->getStreet();
+        $homenumber=$address->getHomeNumber();
+        //QUESTO LO PRENDIAMO DALLA SESSIONE
+        $customerid="dalla sessione";
+        $query="INSERT INTO `shippingaddresses`VALUES ('.$id.','.$cap.','.$city.','.$street.','.$homenumber.','.$customerid.')";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
+
+    public function update($address){
+        $pdo = FConnection::connect();
+        $id=$address->getId();
+        $cap=$address->getCap();
+        $city=$address->getCity();
+        $street=$address->getStreet();
+        $homenumber=$address->getHomeNumber();
+        //QUESTO LO PRENDIAMO DALLA SESSIONE
+        $customerid="dalla sessione";
+        $query="UPDATE `shippingaddresses` SET `id`='.$id.',`cap`='.$cap.',`city`='.$city.',`street`='.$street.',`homeNumber`='.$homenumber.',`customerId`='.$customerid.' WHERE id=".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
+
+    public function delete($id){
+        $pdo = FConnection::connect();
+        $query="delete from shippingaddresses where id=".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
+
 }

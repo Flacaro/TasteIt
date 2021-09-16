@@ -11,25 +11,40 @@ class FFavourites extends FConnection {
 
 
     }
-
-    function create($object): string {
-        $query = 'insert into ' . $this->table . '(';
-        $query = $query.') values ();';
-        $stmt = $this->connection->prepare($query);
+//non andremo mai a inserire nel db una lista preferiti che non sia vuota, quindi la store di un oggetto pieno non ci serve
+    function store($fav): string {
+        $pdo = FConnection::connect();
+        $query = 'insert into favourites () values ()';
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $this->connection->lastInsertId();
+        return $pdo->lastInsertId();
         //$stmt->debugDumpParams();
     }
 
+    function exist($id){
+
+    }
+
+    function delete(){
+
+    }
+
+    function update(){
+
+    }
+
+    //trasformare in load
     function getListOfFavourites($id) {
+        $pdo = FConnection::connect();
         $query= 'select * from products where id in (SELECT productId FROM `products_favourites` WHERE favId='.$id.');';
-        $stmt = $this->connection->prepare($query);
+        $stmt = $pdo->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
         return $stmt->fetchAll();
 
     }
 
+    //usata per update
     function addToFavourites($favId, $productId) {
         $query = 'insert into products_favourites (`favId`, `productId`) values (' . $favId . ', ' . $productId . ');';
         $stmt = $this->connection->prepare($query);
