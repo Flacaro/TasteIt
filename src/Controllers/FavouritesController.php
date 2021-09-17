@@ -27,7 +27,7 @@ class FavouritesController {
 
     public function getListOfFavourites($id) {
         $FFavourites= new FFavourites();
-        $favourites=$FFavourites->getListOfFavourites($id);
+        $favourites=$FFavourites->load($id);
         $vfavourites= new VFavourites();
         $vfavourites->viewFavourites();
 
