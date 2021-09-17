@@ -9,6 +9,7 @@ class Restaurant extends User {
     private $coupons=[];
 
     public function __construct() {
+        parent::__construct();
     }
 
     public function getCategories(): array

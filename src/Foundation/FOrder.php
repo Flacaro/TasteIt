@@ -4,6 +4,9 @@
 namespace App\Foundation;
 
 
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\ProductWithQuantity;
 use PDO;
 
 class FOrder extends FConnection {
@@ -13,64 +16,67 @@ class FOrder extends FConnection {
         parent::__construct('orders', 'Order');
     }
 
-    public function getMonthlyRevenues(){
-        //select sum(total) from orders where extract(Month from creationDate)=date("m") and state=Completed;
-        $query ="select sum(total) from orders where extract(Month from creationDate)=".date("m")." and extract(Year from creationDate)=20".date("y");
-        $stmt = $this->connection->prepare($query);
-        //$stmt->debugDumpParams();
-        $stmt->execute();
-
-        return $stmt->fetch();
-    }
-    public function getMonthlyOrdersQuantity(){
-        //select count(*) from orders where extract(Month from creationDate)=date("m") and state=Completed;
-        $query ="select count(*) from orders where extract(Month from creationDate)=".date("m")." and extract(Year from creationDate)=20".date("y");
-        $stmt = $this->connection->prepare($query);
-        //$stmt->debugDumpParams();
-        $stmt->execute();
-        return $stmt->fetch();
-    }
-//per fare il grafico degli ordini
-    public function getOrdersPerMonth(){
-        //select count(*), extract(Month from creationDate)  from orders group by extract(Month from creationDate) order by extract(Month from creationDate)
-        $query="select count(*) as numorders, extract(Month from creationDate) from orders where extract(Year from creationDate)=20".date("y") ." group by extract(Month from creationDate) order by extract(Month from creationDate)";
-        $stmt = $this->connection->prepare($query);
-        //$stmt->debugDumpParams();
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
     //prendere prodotti, quantità e prezzi di prodotti nell'ordine di id=$id
     public function getOrderProducts($id){
+        $pdo = FConnection::connect();
+        //ma le immagini non servono?
         $query = "select name, quantity, price from orders_products where orderId=".$id;
-        $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\ProductWithQuantity");
-        //$stmt->debugDumpParams();
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll();
+        $products = $stmt->fetchAll();
+        //$stmt->debugDumpParams();
+        $prods = [];
+        foreach($products as $p){
+            //$prod = new Product;
+            $prod = new ProductWithQuantity();
+            $prod->setName($p[0]);
+            $prod->setQuantity($p[1]);
+            $prod->setPrice($p[2]);
+            //print_r($prod);
+            array_push($prods,$prod);
+        }
+        return $prods;
+
     }
 
     public function calculateOrderTotal($orderId){
+        $pdo = FConnection::connect();
         $query= "select sum(price*quantity) as total from orders_products where orderId=".$orderId;
-        $stmt = $this->connection->prepare($query);
+        $stmt = $pdo->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
         return $stmt->fetch()["total"];
     }
 
-    public function getOrders(){
-        $query= "SELECT id, creationDate, total, orderState  FROM `orders`  order by stateId, creationDate DESC";
-        $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Order");
-        //$stmt->debugDumpParams();
+    public function getAll(){
+        $pdo = FConnection::connect();
+        $query= "SELECT id, creationDate, total, orderState FROM orders order by creationDate DESC";
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll();
+        $ords = $stmt->fetchAll();
+        //$stmt->debugDumpParams();
+        $orders = [];
+       //print_r($ords);
+        foreach ($ords as $ord) {
+            $o = new Order();
+            $o->setId($ord[0]);
+            $o->setCreationDate($ord[1]);
+            $o->setTotal($ord[2]);
+            $o->setState($ord[3]);
+            array_push($orders, $o);
+        }
+        //print_r($orders);
+        return $orders;
     }
 
-    public function updateState($id, $order){
-        $query= "update orders set orderState=".$order->getState()." where id=".$id;
-        $stmt = $this->connection->prepare($query);
+
+    function store($order, $payment, $address): string {
+        $pdo = FConnection::connect();
+        $query = "INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`) VALUES (" . $order->getCreationDate(). ", " . $order->getTotal() . ", " . $order->getArrivalTime() . ", " . $order->getCouponId() . ", " . $order->getCustomerId() . ", " . $payment->getId() . $order->getOrderState() . ", " . $address->getId() . ");";
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
+        return $pdo->lastInsertId();
+        //$stmt->debugDumpParams();
     }
 
 }

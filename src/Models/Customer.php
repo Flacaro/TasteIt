@@ -11,15 +11,8 @@ class Customer extends User {
     private $creditCards=[];
     private $orders=[];
 
-    /**
-     * @param $surname
-     * @param $cart
-     * @param $fav
-     * @param array $creditCards
-     * @param array $orders
-     */
-    public function __construct()
-    {
+    public function __construct() {
+
     }
 
 

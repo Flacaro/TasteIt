@@ -6,6 +6,7 @@ namespace App\Foundation;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductWithQuantity;
 use PDO;
 
 class FCart extends FConnection {
@@ -74,7 +75,7 @@ class FCart extends FConnection {
         //attenzione al fetch dobbiamo mette tutto
         //$stmt->debugDumpParams();
         $stmt->execute();
-        $products=$stmt->fetchAll();
+        $products = $stmt->fetchAll();
         $newCart = new Cart;
         $newCart->setId($id);
         foreach($products as $product){
@@ -90,26 +91,42 @@ class FCart extends FConnection {
     }
 
     function getQuantityOfProduct($cartId,$productId) {
+        $pdo = FConnection::connect();
         $query = 'select quantity from products_carts where productId = ' . $productId . ' and ' . ' cartId = '. $cartId . ';';
-        $stmt = $this->connection->prepare($query);
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $stmt->fetch();
     }
 
     function getCoupon($couponId) {
+        $pdo = FConnection::connect();
         $query = 'select coupons.priceCut from coupons where id = ' . $couponId . ';';
-        $stmt = $this->connection->prepare($query);
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $stmt->fetch();
     }
 
-    function getCustomerCart($cartId){
-        $query="select products.id, name, description, price, quantity from products join products_carts as pc on products.id=pc.productId where pc.cartId=".$cartId;
-        $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\ProductWithQuantity");
+ /*   function getCustomerCart($cartId){
+        $pdo = FConnection::connect();
+        $query="select products.id, products.name, products.description, products.price, products_carts.quantity from products join products_carts as pc on products.id = pc.productId where pc.cartId = ".$cartId;
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll();
-    }
+        $products = $stmt->fetchAll();
+        $stmt->debugDumpParams();
+        $prod = [];
+        print_r($products);
+        foreach ($products as $product) {
+            $p = new ProductWithQuantity();
+            $p->setId($product[0]);
+            $p->setName($product[1]);
+            $p->setDescription($product[2]);
+            $p->setPrice($product[3]);
+            $p->setQuantity($product[4]);
+            array_push($prod, $p);
+        }
+        print_r($prod);
+        return $prod;
+    }*/
 }
 
 

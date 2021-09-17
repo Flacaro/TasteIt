@@ -4,8 +4,10 @@ namespace App\Foundation;
 
 use App\Models\Review;
 
-class FReview
-{
+class FReview {
+
+    //la delete la facciamo?
+
     public function loadReviewsOfProduct($id){
         $pdo = FConnection::connect();
         $query = 'select * from reviews as r where r.productId='.$id;
@@ -24,5 +26,14 @@ class FReview
             array_push($reviews, $rew);
         }
         return $reviews;
+    }
+
+    function createReview($review){
+        $pdo = FConnection::connect();
+        //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
+        $query = 'insert into reviews (stars, comment, customerId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getCustomerId(). ','. $review->getproductId().')';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //$stmt->debugDumpParams();
     }
 }
