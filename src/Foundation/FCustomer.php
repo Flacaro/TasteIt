@@ -109,7 +109,7 @@ class FCustomer extends FConnection {
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }
-
+//devo cancellare anche tutte le cose relative al cliente (gli ordini rimarrebbero senza un cliente??)
     public function delete($id){
         $pdo = FConnection::connect();
         $query="delete from customers where id=".$id;

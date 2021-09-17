@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Foundation;
+use App\Models\Favourites;
+use App\Models\Product;
 use PDO;
 
 
@@ -22,35 +24,63 @@ class FFavourites extends FConnection {
     }
 
     function exist($id){
-
-    }
-
-    function delete(){
-
-    }
-
-    function update(){
-
-    }
-
-    //trasformare in load
-    function getListOfFavourites($id) {
         $pdo = FConnection::connect();
-        $query= 'select * from products where id in (SELECT productId FROM `products_favourites` WHERE favId='.$id.');';
+        $query="select * from favourites where id=".$id;
         $stmt = $pdo->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
-        return $stmt->fetchAll();
-
+        $fav=$stmt->fetch();
+        if ($fav!=NULL){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
-    //usata per update
-    function addToFavourites($favId, $productId) {
-        $query = 'insert into products_favourites (`favId`, `productId`) values (' . $favId . ', ' . $productId . ');';
-        $stmt = $this->connection->prepare($query);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+    function delete($id){
+        $pdo = FConnection::connect();
+        $query="delete from favourites where id=".$id;
+        $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll();
+    }
+
+    function load($id) {
+        $fav=new Favourites();
+        $fav->setId($id);
+        $pdo = FConnection::connect();
+        $query= 'select * from products as p, products_favourites as pf where id in (SELECT productId FROM `products_favourites` WHERE favId='.$id.');';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $products= $stmt->fetchAll();
+        $f=[];
+        foreach($products as $p){
+        $prod=new Product;
+        $prod->setId($p[0]);
+        $prod->setName($p[1]);
+        $prod->setDescription($p[2]);
+        $prod->setPrice($p[3]);
+        $prod->setImagePath($p[5]);
+        $prod->setTimesOrdered($p[6]);
+        array_push($f, $prod);
+        }
+        $fav->setProducts($f);
+        return $f;
+    }
+    //invece che l'update abbiamo due funzioni: togli dai preferiti e aggiungi ai preferiti (metterle nei model?)
+
+    function addToFavourites($favId, $productId) {
+        $pdo = FConnection::connect();
+        $query = 'insert into products_favourites (`favId`, `productId`) values (' . $favId . ', ' . $productId . ');';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //return $stmt->fetchAll();
+    }
+
+    function deleteFromFavourites($favId, $productId){
+        $pdo = FConnection::connect();
+        $query = 'delete from products_favourites where favId='.$favId.' and productId='.$productId;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 
 }
