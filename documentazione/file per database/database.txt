@@ -173,8 +173,8 @@ INSERT INTO `coupons`(`priceCut`, `expirationDate`) VALUES (15,'2021-11-05');
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`) VALUES ('2021-07-21',100,'14:00:00',1,1,1,'Pending',1);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`) VALUES ('2021-07-21',100,'15:20:00',2,2,1,'Denied',2);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',100,'14:00:00',1,1,1,'Pending',1,1);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',100,'15:20:00',2,2,1,'Denied',2,2);
 INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`) VALUES ('2021-07-21',100,'20:00:00',3,3,1,'Accepted',3);
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/kind-1.jpg');
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pizza','/src/assets/images/kind-1.jpg');
@@ -193,7 +193,7 @@ INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDa
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,87698971,'2030-01-04',521,'Michela Bianchi');
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (2,2);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `cardId`) VALUES (1,2,'Margherita','mozarella e pomodoro',6,1);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `cardId`) VALUES (2,5,'Sashimi','riso e salmone',4,2);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`) VALUES (1,2,'Margherita','mozarella e pomodoro',6,1);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`) VALUES (2,5,'Sashimi','riso e salmone',4,2);
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
