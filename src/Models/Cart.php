@@ -12,9 +12,9 @@ class Cart {
         return $this->id;
     }
 
-    public function setId($id)
+    public function setId($id): void
     {
-        $this->$id = $id;
+        $this->id = $id;
     }
 
     public function getProducts()

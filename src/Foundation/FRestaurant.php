@@ -35,6 +35,7 @@ class FRestaurant extends FConnection {
         $stmt->execute();
         $res = $stmt->fetch();
         print_r($res);
+        return $res;
     }
 
 

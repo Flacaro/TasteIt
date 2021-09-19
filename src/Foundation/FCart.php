@@ -66,7 +66,7 @@ class FCart extends FConnection {
 
 
 
-    function load($id) {
+    public static function load($id) {
     //si va a prendere i prodotti dalla tabella carts_products
         //SELECT * FROM products_carts AS prodotti WHERE prodotti.productsId in (SELECT ProductId FROM Products_carts WHERE cartId=$id)
         $pdo = FConnection::connect();
@@ -98,7 +98,7 @@ class FCart extends FConnection {
         $stmt->execute();
         return $stmt->fetch();
     }
-
+//creare nuovo coupon
     function getCoupon($couponId) {
         $pdo = FConnection::connect();
         $query = 'select coupons.priceCut from coupons where id = ' . $couponId . ';';

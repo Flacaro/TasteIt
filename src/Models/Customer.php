@@ -12,7 +12,7 @@ class Customer extends User {
     private $orders=[];
 
     public function __construct() {
-
+        parent::__construct();
     }
 
 
@@ -47,22 +47,22 @@ class Customer extends User {
         $this->surname = $surname;
     }
 
-    public function getCart(): array
+    public function getCart()
     {
         return $this->cart;
     }
 
-    public function setCart(array $cart): void
+    public function setCart($cart)
     {
         $this->cart = $cart;
     }
 
-    public function getFav(): array
+    public function getFav()
     {
         return $this->fav;
     }
 
-    public function setFav(array $fav): void
+    public function setFav($fav)
     {
         $this->fav = $fav;
     }

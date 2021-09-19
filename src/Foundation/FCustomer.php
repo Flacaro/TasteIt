@@ -42,27 +42,38 @@ class FCustomer extends FConnection {
         $stmt->execute();
         $cus=$stmt->fetch();
         $customer= new Customer;
+        $cart= new Cart;
+        $fav= new Favourites;
         $customer->setId($cus[0]);
         $customer->setName($cus[1]);
         $customer->setSurname($cus[2]);
         $customer->setEmail($cus[3]);
         $customer->setPassword($cus[4]);
+        $fav->setId($cus[5]);
+        $cart->setId($cus[6]);
+        $customer->setFav($fav);
+        $customer->setCart($cart);
+        //print_r($cus);
         //$stmt->debugDumpParams();
         return $customer;
     }
-
+//cart e fav vuoti, solo id, se vogliamo i prodotti dobbiamo caricarli
     public function load($id){
         $pdo = FConnection::connect();
         $query = "SELECT * FROM customers WHERE id= ".$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $cus=$stmt->fetch();
+        $cart= new Cart;
+        $fav= new Favourites;
         $customer= new Customer;
         $customer->setId($cus[0]);
         $customer->setName($cus[1]);
         $customer->setSurname($cus[2]);
         $customer->setEmail($cus[3]);
         $customer->setPassword($cus[4]);
+        $fav->setId($cus[5]);
+        $cart->setId($cus[6]);
         //$stmt->debugDumpParams();
         return $customer;
     }
@@ -110,12 +121,12 @@ class FCustomer extends FConnection {
         $stmt->execute();
     }
 //devo cancellare anche tutte le cose relative al cliente (gli ordini rimarrebbero senza un cliente??)
-    public function delete($id){
+    /*public function delete($id){
         $pdo = FConnection::connect();
         $query="delete from customers where id=".$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-    }
+    }*/
 
     //serve per visualizzare la lista degli ordini dell'utente (per vedere i prodotti richiamiamo una funzione a parte quando clicchi sull'ordine specifico)
     public function getCustomerOrders($id){

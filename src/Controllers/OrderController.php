@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Foundation\FAddress;
 use App\Foundation\FCart;
 use App\Foundation\FCategory;
 use App\Foundation\FCustomer;
@@ -10,6 +11,7 @@ use App\Foundation\FPaymentMethod;
 use App\Foundation\FProduct;
 use App\Foundation\FRestaurant;
 use App\Foundation\FReview;
+use App\Foundation\FPersistentManager;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
@@ -26,12 +28,21 @@ class OrderController {
 
     }
     public function checkout(){
-        session_start();
-        $cartId=unserialize($_SESSION["customer"]->getCart());
-        $vorder=new VOrder();
+        //session_start();
+        $faddress=new FAddress();
         $fcart=new FCart();
-        //$products=$fcart->getCustomerCart();
-        //$vorder->checkout();
+        $fpay=new FPaymentMethod();
+        $session=Session::getInstance();
+        if ($session->isUserLogged()){
+            $cus=unserialize($_SESSION["customer"]);
+            $cartId=$cus->getCart()->getId();
+            $cart=$fcart->load($cartId);
+            $cId=$cus->getId();
+            $addresses = $faddress->loadFromCustomerId($cId);
+            $cards= $fpay->loadFromCustomerId($cId);
+            $vorder=new VOrder();
+            $vorder->checkout($cart, $addresses, $cards);
+        }
     }
 
 

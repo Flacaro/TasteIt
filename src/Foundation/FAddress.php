@@ -27,6 +27,26 @@ class FAddress extends FConnection{
         return $add;
     }
 
+    public function loadFromCustomerId($id){
+        //print_r($id);
+        $pdo = FConnection::connect();
+        $query = 'select * from shippingaddresses where customerId='.$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $addresses=$stmt->fetchAll();
+        $a=[];
+        foreach ($addresses as $address){
+        $add=new Address();
+        $add->setId($address[0]);
+        $add->setCap($address[1]);
+        $add->setCity($address[2]);
+        $add->setStreet($address[3]);
+        $add->setHomeNumber($address[4]);
+        array_push($a, $add);
+        }
+        return $a;
+    }
+
     public function exist($id){
         $pdo = FConnection::connect();
         $query = 'select * from shippingaddresses where id='.$id;

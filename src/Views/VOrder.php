@@ -5,14 +5,15 @@ namespace App\Views;
 class VOrder {
 //$ orders array di array dove ogni elemento è composto così [ordine, cliente, pagamento]
     public function getOrders($orders) {
-        return view('admin/orders/orders', [
+        return view('admin/order/orders', [
             'orders' => $orders
         ]);
     }
-    public function checkout($id, $cart) {
-        return view('orders/order', [
-            'id' => $id,
-            'cart'=>$cart
+    public function checkout($cart, $addresses, $cards) {
+        return view('order/order', [
+            'cart'=>$cart,
+            'addresses'=>$addresses,
+            'cards'=>$cards
         ]);
     }
 }
