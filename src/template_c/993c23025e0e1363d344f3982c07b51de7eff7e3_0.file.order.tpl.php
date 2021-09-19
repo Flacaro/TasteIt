@@ -1,7 +1,84 @@
-{extends file='src/templates/base/base.tpl'}
-{block name=title}Carrello{/block}
-{block name=categories}{/block}
-{block name=productsOfCart}
+<?php
+/* Smarty version 3.1.39, created on 2021-09-19 18:50:34
+  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_61476a5ae05b08_54517576',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '993c23025e0e1363d344f3982c07b51de7eff7e3' => 
+    array (
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order.tpl',
+      1 => 1632070233,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_61476a5ae05b08_54517576 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_118599785061476a5ae04508_71741096', 'title');
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11808313361476a5ae04e99_14619592', 'categories');
+?>
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100392931461476a5ae05460_89440641', 'productsOfCart');
+?>
+
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
+}
+/* {block 'title'} */
+class Block_118599785061476a5ae04508_71741096 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'title' => 
+  array (
+    0 => 'Block_118599785061476a5ae04508_71741096',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+Carrello<?php
+}
+}
+/* {/block 'title'} */
+/* {block 'categories'} */
+class Block_11808313361476a5ae04e99_14619592 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'categories' => 
+  array (
+    0 => 'Block_11808313361476a5ae04e99_14619592',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'categories'} */
+/* {block 'productsOfCart'} */
+class Block_100392931461476a5ae05460_89440641 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'productsOfCart' => 
+  array (
+    0 => 'Block_100392931461476a5ae05460_89440641',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
     <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -127,5 +204,13 @@
         </div>
     </section>
     <!--Sezione carrello dove sono i prodotti -->
-
-{/block}
+    <div class="d-flex align-items-center">
+        <p>ciao</p>
+        <p>ciao</p>
+        <p>aaaaa</p>
+    </div>
+<?php
+}
+}
+/* {/block 'productsOfCart'} */
+}

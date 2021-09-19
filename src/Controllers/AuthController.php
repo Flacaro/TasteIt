@@ -37,12 +37,13 @@ class AuthController
         $message = "";
         if ($fuser->authentication($email, $password)) {
             $user = $fuser->getByEmail($email);
+            print_r($user);
             $session->saveUserInSession($user);
-            redirect(url("home"));
+            //redirect(url("home"));
         } else if ($frest->authentication($email, $password)) {
             $restaurant = $frest->getByEmail($email);
             $session->saveUserInSession($restaurant);
-            redirect(url("home"));
+            //redirect(url("home"));
         } else {
             $message = "il login non è andato a buon fine";
         }
