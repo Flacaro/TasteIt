@@ -106,12 +106,12 @@ paymentId bigint,
 orderState varchar(30),
 addressId bigint,
 cardId bigint default null,
-foreign key(cardId) references customers_paymentMethods(id),
 foreign key(customerId) references customers(id),
 foreign key(paymentId) references paymentMethods(id),
 foreign key(couponId) references coupons(id),
 foreign key(orderState) references orderStates(state),
-foreign key(addressId) references shippingAddresses(id)
+foreign key(addressId) references shippingAddresses(id),
+foreign key(cardId) references customers_paymentMethods(id)
 );
 
 
@@ -188,12 +188,12 @@ INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,
 INSERT INTO `customers_coupons`(`customerId`, `couponId`, `quantity`) VALUES (1,1,1);
 INSERT INTO `customers_coupons`(`customerId`, `couponId`, `quantity`) VALUES (2,2,1);
 INSERT INTO `customers_coupons`(`customerId`, `couponId`, `quantity`) VALUES (3,3,1);
-INSERT INTO `customers_paymentMethods`(`customerId`, `paymentId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,1,2345671,'2027-09-21',324,'Mario Rossi');
-INSERT INTO `customers_paymentMethods`(`customerId`, `paymentId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,2,23490871,'2025-05-14',784,'Sandro Rosa');
-INSERT INTO `customers_paymentMethods`(`customerId`, `paymentId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,2,87698971,'2030-01-04',521,'Michela Bianchi');
+INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,2345671,'2027-09-21',324,'Mario Rossi');
+INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,23490871,'2025-05-14',784,'Sandro Rosa');
+INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,87698971,'2030-01-04',521,'Michela Bianchi');
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (2,2);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`) VALUES (1,2,'Margherita','mozarella e pomodoro',6);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`) VALUES (2,5,'Sashimi','riso e salmone',4);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `cardId`) VALUES (1,2,'Margherita','mozarella e pomodoro',6,1);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `cardId`) VALUES (2,5,'Sashimi','riso e salmone',4,2);
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
