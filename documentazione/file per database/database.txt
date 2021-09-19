@@ -88,13 +88,11 @@ foreign key(productId) references products(id)
 create table customers_paymentMethods(
 id bigint primary key auto_increment,
 customerId bigint not null,
-paymentId bigint not null,
 cardNumber int,
 expirationDate DateTime,
 cvv int not null,
 cardHolder varchar(40),
-foreign key(customerId) references customers(id),
-foreign key(paymentId) references paymentMethods(id)
+foreign key(customerId) references customers(id)
 );
 
 create table orders(
@@ -107,6 +105,8 @@ customerId bigint,
 paymentId bigint,
 orderState varchar(30),
 addressId bigint,
+cardId bigint default null,
+foreign key(cardId) references customers_paymentMethods(id),
 foreign key(customerId) references customers(id),
 foreign key(paymentId) references paymentMethods(id),
 foreign key(couponId) references coupons(id),
