@@ -48,6 +48,7 @@ SimpleRouter::get("/users/{id}/edit", [CustomerController::class, "edit"]);
 SimpleRouter::post("/users/{id}", [CustomerController::class, "update"]);
 SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
 SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"]);
+SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
 
 
 SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);

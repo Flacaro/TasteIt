@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-19 18:50:34
+/* Smarty version 3.1.39, created on 2021-09-20 12:44:03
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61476a5ae05b08_54517576',
+  'unifunc' => 'content_614865f31410e8_84886341',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '993c23025e0e1363d344f3982c07b51de7eff7e3' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order.tpl',
-      1 => 1632070233,
+      1 => 1632134641,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61476a5ae05b08_54517576 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614865f31410e8_84886341 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_118599785061476a5ae04508_71741096', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1765195255614865f312edf9_95092252', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11808313361476a5ae04e99_14619592', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1106759622614865f312f7a2_33983781', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_100392931461476a5ae05460_89440641', 'productsOfCart');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_711415825614865f312fd31_72722650', 'productsOfCart');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_118599785061476a5ae04508_71741096 extends Smarty_Internal_Block
+class Block_1765195255614865f312edf9_95092252 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_118599785061476a5ae04508_71741096',
+    0 => 'Block_1765195255614865f312edf9_95092252',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_11808313361476a5ae04e99_14619592 extends Smarty_Internal_Block
+class Block_1106759622614865f312f7a2_33983781 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_11808313361476a5ae04e99_14619592',
+    0 => 'Block_1106759622614865f312f7a2_33983781',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'productsOfCart'} */
-class Block_100392931461476a5ae05460_89440641 extends Smarty_Internal_Block
+class Block_711415825614865f312fd31_72722650 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'productsOfCart' => 
   array (
-    0 => 'Block_100392931461476a5ae05460_89440641',
+    0 => 'Block_711415825614865f312fd31_72722650',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -104,93 +104,101 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                 <h3 class="billing-heading mb-4">Cart Total</h3>
                                 <p class="d-flex">
                                     <span>Subtotal</span>
-                                    <span>$20.60</span>
-                                </p>
-                                <p class="d-flex">
-                                    <span>Delivery</span>
-                                    <span>$0.00</span>
+                                    <?php $_smarty_tpl->_assignInScope('subtotal', 0);?>
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cart']->value->getProducts(), 'product');
+$_smarty_tpl->tpl_vars['product']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
+$_smarty_tpl->tpl_vars['product']->do_else = false;
+?>
+                                        <?php $_smarty_tpl->_assignInScope('subtotal', $_smarty_tpl->tpl_vars['subtotal']->value+$_smarty_tpl->tpl_vars['product']->value[0]->getPrice()*$_smarty_tpl->tpl_vars['product']->value[1]);?>
+                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                    <span>$<?php echo $_smarty_tpl->tpl_vars['subtotal']->value;?>
+</span>
                                 </p>
                                 <p class="d-flex">
                                     <span>Discount</span>
-                                    <span>$3.00</span>
+                                    <?php if ($_smarty_tpl->tpl_vars['coupon']->value == '') {?>
+                                    <span>0%</span>
+                                    <?php } else { ?>
+                                        <span><?php echo $_smarty_tpl->tpl_vars['coupon']->value->getPriceCut();?>
+%</span>
+                                    <?php }?>
                                 </p>
                                 <hr>
                                 <p class="d-flex total-price">
                                     <span>Total</span>
-                                    <span>$17.60</span>
+                                    <?php if ($_smarty_tpl->tpl_vars['coupon']->value != '') {?>
+                                    <span>$<?php echo $_smarty_tpl->tpl_vars['subtotal']->value-($_smarty_tpl->tpl_vars['subtotal']->value*$_smarty_tpl->tpl_vars['coupon']->value->getPriceCut()/100);?>
+</span>
+                                    <?php } else { ?>
+                                        <span>$<?php echo $_smarty_tpl->tpl_vars['subtotal']->value;?>
+</span>
+                                    <?php }?>
                                 </p>
+                                <?php if ($_smarty_tpl->tpl_vars['coupon']->value == '') {?>
                                 <label for="streetaddress">Coupon</label>
                                 <div class="d-flex">
-                                    <input type="text" class="form-control w-75" placeholder="House number and street name">
-                                    <button class="btn btn-primary w-25" style="margin-left: 1rem">Applica</button>
+                                    <form action="/cart/checkout/coupon" method="post">
+                                        <div class="row">
+                                            <input type="text" class="form-control w-75" name="option" placeholder="Codice Coupon">
+                                            <button class="btn btn-primary w-25" style="margin-left: 1rem" type="submit">Applica</button>
+                                        </div>
+                                    </form>
                                 </div>
+                                <?php }?>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
-                                <h3 class="billing-heading mb-4">Payment Method</h3>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+                                <h3 class="billing-heading mb-4">Indirizzi</h3>
+                                <form action="" method="post">
+                                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['addresses']->value, 'address');
+$_smarty_tpl->tpl_vars['address']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['address']->value) {
+$_smarty_tpl->tpl_vars['address']->do_else = false;
+?>
+                                        <div class="form-group">
+                                             <div class="col-md-12">
+                                                <div class="radio">
+                                                    <label><input type="radio" name="address" value="<?php echo $_smarty_tpl->tpl_vars['address']->value->getId();?>
+" class="mr-2"><?php echo $_smarty_tpl->tpl_vars['address']->value->getCity();?>
+</label>
+                                                </div>
+                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                </form>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
-                                <h3 class="billing-heading mb-4">Payment Method</h3>
+                                <h3 class="billing-heading mb-4">Metodo di pagamento</h3>
+                                <form action="" method="post">
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cards']->value, 'card');
+$_smarty_tpl->tpl_vars['card']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['card']->value) {
+$_smarty_tpl->tpl_vars['card']->do_else = false;
+?>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+                                                <label><input type="radio" name="payment" value="<?php echo $_smarty_tpl->tpl_vars['card']->value->getId();?>
+" class="mr-2"> <?php echo $_smarty_tpl->tpl_vars['card']->value->getNumber();?>
+</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -204,11 +212,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         </div>
     </section>
     <!--Sezione carrello dove sono i prodotti -->
-    <div class="d-flex align-items-center">
-        <p>ciao</p>
-        <p>ciao</p>
-        <p>aaaaa</p>
-    </div>
+
 <?php
 }
 }

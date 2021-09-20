@@ -52,4 +52,18 @@ class FCoupon extends FConnection {
         $stmt->execute();
     }
 
+    public function isExpired($id){
+        $pdo = FConnection::connect();
+        $query="select * from coupons where expirationDate>NOW()";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $coupons= $stmt->fetchAll();
+        $result=false;
+        foreach($coupons as $coupon){
+            if ($coupon[0]==$id){
+                $result=true;
+            }
+        }
+        return !$result;
+}
 }

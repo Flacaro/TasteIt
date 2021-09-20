@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Foundation\admin\FCoupon;
 use App\Foundation\FAddress;
 use App\Foundation\FCart;
 use App\Foundation\FCategory;
@@ -32,6 +33,7 @@ class OrderController {
         $faddress=new FAddress();
         $fcart=new FCart();
         $fpay=new FPaymentMethod();
+        $fcoupon=new FCoupon();
         $session=Session::getInstance();
         if ($session->isUserLogged()){
             $cus=unserialize($_SESSION["customer"]);
@@ -40,11 +42,22 @@ class OrderController {
             $cId=$cus->getId();
             $addresses = $faddress->loadFromCustomerId($cId);
             $cards= $fpay->loadFromCustomerId($cId);
+            $c="";
+            if ($_POST['option']!=""){
+                $c=$fcoupon->load($_POST['option']);
+            }
             $vorder=new VOrder();
-            $vorder->checkout($cart, $addresses, $cards);
+            $vorder->checkout($cart, $addresses, $cards, $c);
         }
     }
 
+    public function applyCoupon(){
+        $fcoupon=new FCoupon();
+        if ($fcoupon->exist($_POST['option']&!$fcoupon->isExpired($_POST['option']))){
+            //print_r("ciao");
+            self::checkout();
+        }
+    }
 
     public function prova(){
         $customer = new FCategory();

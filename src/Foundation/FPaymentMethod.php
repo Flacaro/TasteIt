@@ -46,7 +46,7 @@ class FPaymentMethod {
 
     function loadFromCustomerId($id){
         $pdo = FConnection::connect();
-        $query = 'select cp.id, cp.cardNumber, cp.expirationDate, cp.cvv, cp.cardHolder, p.method from customers_paymentmethods as cp, paymentmethods as p where cp.customerId='.$id.' and cp.paymentId=p.id';
+        $query = 'select cp.id, cp.cardNumber, cp.expirationDate, cp.cvv, cp.cardHolder from customers_paymentmethods as cp where cp.customerId='.$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $payments=$stmt->fetchAll();
@@ -60,6 +60,7 @@ class FPaymentMethod {
                 $c->setCardHolder($payment[4]);
                 array_push($cards, $c);
         }
+        //$stmt->debugDumpParams();
         return $cards;
 }
 }

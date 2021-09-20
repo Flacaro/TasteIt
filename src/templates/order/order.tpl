@@ -27,93 +27,72 @@
                                 <h3 class="billing-heading mb-4">Cart Total</h3>
                                 <p class="d-flex">
                                     <span>Subtotal</span>
-                                    <span>$20.60</span>
-                                </p>
-                                <p class="d-flex">
-                                    <span>Delivery</span>
-                                    <span>$0.00</span>
+                                    {$subtotal=0}
+                                    {foreach $cart->getProducts() as $product}
+                                        {assign var="subtotal" value=$subtotal+$product[0]->getPrice()*$product[1]}
+                                    {/foreach}
+                                    <span>${$subtotal}</span>
                                 </p>
                                 <p class="d-flex">
                                     <span>Discount</span>
-                                    <span>$3.00</span>
+                                    {if $coupon==""}
+                                    <span>0%</span>
+                                    {else}
+                                        <span>{$coupon->getPriceCut()}%</span>
+                                    {/if}
                                 </p>
                                 <hr>
                                 <p class="d-flex total-price">
                                     <span>Total</span>
-                                    <span>$17.60</span>
+                                    {if $coupon!=""}
+                                    <span>${$subtotal-($subtotal*$coupon->getPriceCut()/100)}</span>
+                                    {else}
+                                        <span>${$subtotal}</span>
+                                    {/if}
                                 </p>
+                                {if $coupon==""}
                                 <label for="streetaddress">Coupon</label>
                                 <div class="d-flex">
-                                    <input type="text" class="form-control w-75" placeholder="House number and street name">
-                                    <button class="btn btn-primary w-25" style="margin-left: 1rem">Applica</button>
+                                    <form action="/cart/checkout/coupon" method="post">
+                                        <div class="row">
+                                            <input type="text" class="form-control w-75" name="option" placeholder="Codice Coupon">
+                                            <button class="btn btn-primary w-25" style="margin-left: 1rem" type="submit">Applica</button>
+                                        </div>
+                                    </form>
                                 </div>
+                                {/if}
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
-                                <h3 class="billing-heading mb-4">Payment Method</h3>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+                                <h3 class="billing-heading mb-4">Indirizzi</h3>
+                                <form action="" method="post">
+                                    {foreach $addresses as $address}
+                                        <div class="form-group">
+                                             <div class="col-md-12">
+                                                <div class="radio">
+                                                    <label><input type="radio" name="address" value="{$address->getId()}" class="mr-2">{$address->getCity()}</label>
+                                                </div>
+                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                    {/foreach}
+                                </form>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
-                                <h3 class="billing-heading mb-4">Payment Method</h3>
+                                <h3 class="billing-heading mb-4">Metodo di pagamento</h3>
+                                <form action="" method="post">
+                                {foreach $cards as $card}
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+                                                <label><input type="radio" name="payment" value="{$card->getId()}" class="mr-2"> {$card->getNumber()}</label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="checkbox">
-                                            <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                {/foreach}
+                                </form>
                             </div>
                         </div>
                     </div>

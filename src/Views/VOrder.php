@@ -9,11 +9,12 @@ class VOrder {
             'orders' => $orders
         ]);
     }
-    public function checkout($cart, $addresses, $cards) {
+    public function checkout($cart, $addresses, $cards, $coupon) {
         return view('order/order', [
             'cart'=>$cart,
             'addresses'=>$addresses,
-            'cards'=>$cards
+            'cards'=>$cards,
+            'coupon'=>$coupon
         ]);
     }
 }

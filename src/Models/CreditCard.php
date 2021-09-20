@@ -13,14 +13,17 @@ class CreditCard implements PaymentMethod
     public function pay(){
 
     }
-    public function getId(){
 
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function setId($id): void
     {
         $this->id = $id;
     }
+
 
     public function getNumber()
     {
