@@ -70,13 +70,30 @@ class FOrder extends FConnection {
     }
 
 
-    function store($order, $payment, $address): string {
+    function store($order): string {
         $pdo = FConnection::connect();
-        $query = "INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`) VALUES (" . $order->getCreationDate(). ", " . $order->getTotal() . ", " . $order->getArrivalTime() . ", " . $order->getCouponId() . ", " . $order->getCustomerId() . ", " . $payment->getId() . $order->getOrderState() . ", " . $address->getId() . ");";
+        if (get_class($order->getPayment())=="App\Models\CreditCard") {
+            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, ' . $order->getCoupon()->getId() . ', ' . $order->getCustomerId() . ', 2, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', ' . $order->getPayment()->getId() . ')';
+        }
+        else {
+            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, ' . $order->getCoupon()->getId() . ', ' . $order->getCustomerId() . ', 1, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', NULL)';
+        }
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $pdo->lastInsertId();
         //$stmt->debugDumpParams();
+        return $pdo->lastInsertId();
+
+    }
+
+    function storeOrdersProducts($orderid, $prodWithQuantity){
+        $pdo = FConnection::connect();
+        foreach ($prodWithQuantity as $product){
+        $query='insert into orders_products (`orderId`, `quantity`, `name`, `description`, `price`) VALUES (\''.$orderid.'\',\''.$product[1].'\',\''.$product[0]->getName().'\',\''.$product[0]->getDescription().'\',\''.$product[0]->getPrice().'\')';
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            //$stmt->debugDumpParams();
+        }
+
     }
 
 }

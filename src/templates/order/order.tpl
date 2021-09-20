@@ -21,10 +21,12 @@
 
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
+                    <form method="post" action="/cart/checkout/confirmation" id="ordine">
                     <div class="row mt-5 pt-3 d-flex">
                         <div class="col-md-4 d-flex">
                             <div class="cart-detail cart-total p-3 p-md-4">
                                 <h3 class="billing-heading mb-4">Cart Total</h3>
+
                                 <p class="d-flex">
                                     <span>Subtotal</span>
                                     {$subtotal=0}
@@ -33,32 +35,31 @@
                                     {/foreach}
                                     <span>${$subtotal}</span>
                                 </p>
-                                <p class="d-flex">
+                                {*<p class="d-flex">
                                     <span>Discount</span>
                                     {if $coupon==""}
                                     <span>0%</span>
                                     {else}
                                         <span>{$coupon->getPriceCut()}%</span>
                                     {/if}
-                                </p>
+                                </p>*}
                                 <hr>
-                                <p class="d-flex total-price">
+                                {*<p class="d-flex total-price">
                                     <span>Total</span>
                                     {if $coupon!=""}
                                     <span>${$subtotal-($subtotal*$coupon->getPriceCut()/100)}</span>
                                     {else}
                                         <span>${$subtotal}</span>
                                     {/if}
-                                </p>
+                                </p>*}
                                 {if $coupon==""}
                                 <label for="streetaddress">Coupon</label>
                                 <div class="d-flex">
-                                    <form action="/cart/checkout/coupon" method="post">
+
                                         <div class="row">
-                                            <input type="text" class="form-control w-75" name="option" placeholder="Codice Coupon">
-                                            <button class="btn btn-primary w-25" style="margin-left: 1rem" type="submit">Applica</button>
+                                            <input id="coupon" type="text" class="form-control w-75" name="option" placeholder="Codice Coupon">
                                         </div>
-                                    </form>
+
                                 </div>
                                 {/if}
                             </div>
@@ -66,42 +67,39 @@
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
                                 <h3 class="billing-heading mb-4">Indirizzi</h3>
-                                <form action="" method="post">
                                     {foreach $addresses as $address}
                                         <div class="form-group">
                                              <div class="col-md-12">
                                                 <div class="radio">
-                                                    <label><input type="radio" name="address" value="{$address->getId()}" class="mr-2">{$address->getCity()}</label>
+                                                    <label><input type="radio" id="ordine" name="address" value="{$address->getId()}" class="mr-2">{$address->getCity()}</label>
                                                 </div>
                                              </div>
                                         </div>
                                     {/foreach}
-                                </form>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
                                 <h3 class="billing-heading mb-4">Metodo di pagamento</h3>
-                                <form action="" method="post">
                                 {foreach $cards as $card}
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                                <label><input type="radio" name="payment" value="{$card->getId()}" class="mr-2"> {$card->getNumber()}</label>
+                                                <label><input type="radio" name="payment" id="ordine" value="{$card->getId()}" class="mr-2"> {$card->getNumber()}</label>
                                         </div>
                                     </div>
                                 </div>
                                 {/foreach}
-                                </form>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center">
-                            <a href="#"class="btn btn-primary py-3 px-4">Place an order</a>
+                            <button class="btn btn-primary w-25" style="margin-left: 1rem" id="ordine" type="submit">Ordina</button>
                         </div>
                     </div>
-                </div>
+                </form>
+            </div>
             </div>
         </div>
     </section>

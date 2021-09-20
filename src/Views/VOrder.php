@@ -17,4 +17,13 @@ class VOrder {
             'coupon'=>$coupon
         ]);
     }
+
+    public function summary($cart, $address, $card, $coupon){
+        return view('order/order-summary', [
+        'cart'=>$cart,
+        'address'=>$address,
+        'card'=>$card,
+        'coupon'=>$coupon
+        ]);
+    }
 }

@@ -59,6 +59,43 @@ class OrderController {
         }
     }
 
+    public function createOrder(){
+        $session=Session::getInstance();
+        $forder=new FOrder();
+        $fcoupon=new FCoupon();
+        $faddress=new FAddress();
+        $fcart=new FCart();
+        $fpay=new FPaymentMethod();
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $cartId = $cus->getCart()->getId();
+            $cart=$fcart->load($cartId);
+            $coupon = $_POST['option'];
+            $c=$fcoupon->load($_POST['option']);
+            $address=$faddress->load($_POST['address']);
+            $card = $fpay->load($_POST['payment']);
+            $order=new Order;
+            $order->setCreationDate(date("Y-m-d"));
+            $subtotal=0;
+            foreach ($cart->getProducts() as $product){
+                $subtotal=$subtotal+$product[0]->getPrice()*$product[1];
+            }
+            if ($coupon!=""){
+                $total=$subtotal-($subtotal*$c->getPriceCut()/100);
+            }
+            $order->setTotal($total);
+            $order->setCoupon($c);
+            $order->setCustomerId($cus->getId());
+            $order->setPayment($card);
+            $order->setState("Pending");
+            $order->setAddress($address);
+            $id=$forder->store($order);
+            $forder->storeOrdersProducts($id, $cart->getProducts());
+            $vorder = new VOrder();
+            $vorder->summary($cart, $address, $card, $c);
+        }
+    }
+
     public function prova(){
         $customer = new FCategory();
         $customer->loadCategoryProducts(1);
