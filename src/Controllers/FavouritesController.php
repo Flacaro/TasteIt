@@ -10,28 +10,27 @@ use App\Views\VFavourites;
 
 class FavouritesController {
 
-    public function create(){
+    public function store(){
         $FFavourites = new FFavourites();
         $fav = new Favourites();
         $fav->setId(null);
-        $FFavourites->create($fav);
+        $FFavourites->store($fav);
         redirect(url('favourites'));
     }
 
-    public function index() {
+    public function getFavouritesProducts() {
+        $session = Session::getInstance();
         $FFavourites = new FFavourites();
-        $favourites = $FFavourites->getAll();
-        $vfavourites= new VFavourites();
-        $vfavourites->viewFavourites();
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $favId = $cus->getFav()->getId();
+            $fav = $FFavourites->load($favId);
+            $products = $FFavourites->getFavouritesProducts($fav);
+            $vFavourites = new VFavourites();
+            $vFavourites->viewFavouritesProducts($products);
+        }
     }
 
-    public function getListOfFavourites($id) {
-        $FFavourites= new FFavourites();
-        $favourites=$FFavourites->load($id);
-        $vfavourites= new VFavourites();
-        $vfavourites->viewFavourites();
-
-    }
     public function edit($id) {
         $FFavourites = new FFavourites();
         $favourites = $FFavourites->getById($id)->getProductId();
@@ -41,9 +40,10 @@ class FavouritesController {
 
     public function addToFavourites($favId, $productId) {
         $FProduct = new FProduct();
-        $productId = $FProduct->getById($productId);
-        $product = $FProduct->addToFavourites($favId, $productId);
+        $FFavourites = new FFavourites();
+        $product = $FProduct->load($productId);
+        $fav = $FFavourites->addToFavourites($favId, $productId);
         $vfavourites= new VFavourites();
-        $vfavourites->viewAddition($favId, $productId, $product);
+        $vfavourites->viewAddition($favId, $product);
     }
 }

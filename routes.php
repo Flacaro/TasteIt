@@ -71,7 +71,7 @@ SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 
 SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
-SimpleRouter::get("/favourites",[FavouritesController::class, "index"])->name('favourites');
+SimpleRouter::get("/favourites",[FavouritesController::class, "getFavouritesProducts"]);
 
 
 SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
@@ -100,7 +100,7 @@ SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, 
 SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 
 SimpleRouter::get("/prova", [OrderController::class, "prova"]);
-SimpleRouter::get("/prov", [OrderController::class, "prov"]);
+/*SimpleRouter::get("/prov", [FavouritesController::class, "getFavouritesProducts"]);*/
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

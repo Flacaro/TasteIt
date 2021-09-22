@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.39, created on 2021-08-17 12:04:13
-  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\favourites.tpl' */
+  from 'C:\Users\selen\OneDrive\Documents\app\src\templates\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'a34b4a046aad75b647c898c6b06f4635413744dd' => 
     array (
-      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\favourites.tpl',
+      0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\products.tpl',
       1 => 1629194652,
       2 => 'file',
     ),

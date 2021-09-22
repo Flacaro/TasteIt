@@ -39,14 +39,14 @@ class FOrder extends FConnection {
 
     }
 
-    public function calculateOrderTotal($orderId){
+ /*   public function calculateOrderTotal($orderId){
         $pdo = FConnection::connect();
         $query= "select sum(price*quantity) as total from orders_products where orderId=".$orderId;
         $stmt = $pdo->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
         return $stmt->fetch()["total"];
-    }
+    }*/
 
     public function getAll(){
         $pdo = FConnection::connect();

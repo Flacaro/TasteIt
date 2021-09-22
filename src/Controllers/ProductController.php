@@ -22,48 +22,6 @@ class ProductController
 
     }
 
-    public function create($categoryId) {
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
-
-        $FProduct = new FProduct();
-        $product = new Product();
-        $product->setName($name);
-        $product->setDescription($description);
-        $product->setPrice($price);
-        $product->setCategoryId($categoryId);
-        $FProduct->create($product);
-        redirect(url('/admin/categories/'.$categoryId.'/products'));
-    }
-
-    public function update($catId, $id) {
-        $FProduct = new FProduct();
-        $oldproduct=$FProduct->getById($id);
-        //superglobal, come parametro ci va passato il NOME dell'input a cui fare riferimento
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
-        $timesOrdered=$oldproduct->getTimesOrdered();
-        $imagePath=$oldproduct->getImagePath();
-        $product = new Product();
-        $product->setName($name);
-        $product->setPrice($price);
-        $product->setDescription($description);
-        $product->setCategoryId($catId);
-        $product->setTimesOrdered($timesOrdered);
-        $product->setImagePath($imagePath);
-        $FProduct->update($id, $product);
-        redirect(url("/admin/categories/".$catId.'/products'));
-    }
-
-    public function edit($id) {
-        $FProduct = new FProduct();
-        $product = $FProduct->getById($id);
-       $vproduct = new VProduct();
-       $vproduct->editProduct($product);
-    }
-
     public function getProduct($id) {
 
         $FProduct = new FProduct();
@@ -75,13 +33,6 @@ class ProductController
         //print_r($stars);
         $vproduct = new VProduct();
         $vproduct->getDetailsOfProduct($product, $star, $ratings);
-    }
-
-
-    public function destroy($catId,$id) {
-        $FProduct = new FProduct();
-        $FProduct->delete($id);
-        redirect(url("/admin/categories/".$catId.'/products'));
     }
 
 

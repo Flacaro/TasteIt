@@ -83,4 +83,24 @@ class FFavourites extends FConnection {
         $stmt->execute();
     }
 
+    public function getFavouritesProducts($favId){
+        $pdo = FConnection::connect();
+        $query= "SELECT pf.productId, p.name, p.imagePath FROM products_favourites as pf join products as p on pf.productId = p.id where pf.favId = " . $favId . ";";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $prods = $stmt->fetchAll();
+        //$stmt->debugDumpParams();
+        $products = [];
+        //print_r($favs);
+        foreach ($prods as $prod) {
+            $p = new Product();
+            $p->setId($prod[0]);
+            $p->setName($prod[1]);
+            $p->setImagePath($prod[2]);
+            array_push($products, $p);
+        }
+        //print_r($products);
+        return $products;
+    }
+
 }

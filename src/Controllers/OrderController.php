@@ -7,6 +7,7 @@ use App\Foundation\FAddress;
 use App\Foundation\FCart;
 use App\Foundation\FCategory;
 use App\Foundation\FCustomer;
+use App\Foundation\FFavourites;
 use App\Foundation\FOrder;
 use App\Foundation\FPaymentMethod;
 use App\Foundation\FProduct;
@@ -104,8 +105,8 @@ class OrderController {
     }
 
     public function prov(){
-        $product = new FProduct();
-        $product->getBestReviews();
+        $product = new FFavourites();
+        $product->getFavouritesProducts(1);
         return view('prov', [
         ]);
     }

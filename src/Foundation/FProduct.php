@@ -16,6 +16,16 @@ class FProduct extends FConnection {
         parent::__construct('products', 'Product');
     }
 
+    function store($product, $categoryId): string {
+        $pdo = FConnection::connect();
+        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (' . $product->getName() . ', ' . $product->getDescription() . ', ' . $product->getPrice() . ', ' . $categoryId . ', ' . $product->getImagePath() . ', ' . '0);';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //$stmt->debugDumpParams();
+        return $pdo->lastInsertId();
+
+    }
+
     function load($id){
         $pdo = FConnection::connect();
         $query = 'select * from products where id='.$id;
