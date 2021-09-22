@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-08 12:13:34
+/* Smarty version 3.1.39, created on 2021-09-22 17:53:39
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61388cce2ad3c2_14963804',
+  'unifunc' => 'content_614b5183479946_41215291',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b4de1f720dccdb65eedba7cde1486a01dcbf643' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\categories.tpl',
-      1 => 1631096003,
+      1 => 1632326018,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61388cce2ad3c2_14963804 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614b5183479946_41215291 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_135068194761388cce2a3fa6_73102134', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1241973061614b518346f898_97802373', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_135068194761388cce2a3fa6_73102134 extends Smarty_Internal_Block
+class Block_1241973061614b518346f898_97802373 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_135068194761388cce2a3fa6_73102134',
+    0 => 'Block_1241973061614b518346f898_97802373',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -72,7 +72,7 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
                           <td>
                             <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
 /products">
-                              <?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
+                              <?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
 
                             <a>
                           </a>

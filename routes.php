@@ -78,12 +78,12 @@ SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"])
 SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
 SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
 SimpleRouter::post("/admin/categories/add", [AdminCategoryController::class, "create"]);
-SimpleRouter::get("/admin/categories/{id}/products", [AdminCategoryController::class, "productsInCategory"]);
-SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminCategoryController::class, "showCreateProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/create", [AdminCategoryController::class, "create"]);
-SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminCategoryController::class, "showEditProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminCategoryController::class, "update"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [AdminCategoryController::class, "destroy"]);
+SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
+SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "showCreateProduct"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "store"]);
+SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "showEditProduct"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "update"]);
+SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [AdminProductController::class, "destroy"]);
 SimpleRouter::get("/admin/products", [AdminProductController::class, "productsBestSellers"]);
 
 SimpleRouter::get("/admin/orders", [AdminOrderController::class, "visualizeOrdersPending"]);

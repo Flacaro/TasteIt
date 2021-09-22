@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <h4 class="card-title" style="margin-left:20px">{$category->getCategoryName()}</h4>
+                        <h4 class="card-title" style="margin-left:20px">{$category->getName()}</h4>
                         <div style="margin-left:1250px">
                             <a href="/admin/categories/{$category->getId()}/products/create" class="btn btn-round btn-primary">Aggiungi Prodotto</a>
                         </div>

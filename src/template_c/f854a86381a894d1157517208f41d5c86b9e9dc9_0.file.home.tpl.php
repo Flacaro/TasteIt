@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-04 12:52:54
+/* Smarty version 3.1.39, created on 2021-09-22 17:34:19
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_613350066e3227_20008802',
+  'unifunc' => 'content_614b4cfbac0433_59076445',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1630752740,
+      1 => 1632324820,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_613350066e3227_20008802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614b4cfbac0433_59076445 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_867737506613350066d0167_36810138', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_891133380614b4cfba3d828_40273903', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_825511902613350066d1648_82497800', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1647610024614b4cfba40e59_31184463', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_867737506613350066d0167_36810138 extends Smarty_Internal_Block
+class Block_891133380614b4cfba3d828_40273903 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_867737506613350066d0167_36810138',
+    0 => 'Block_891133380614b4cfba3d828_40273903',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_825511902613350066d1648_82497800 extends Smarty_Internal_Block
+class Block_1647610024614b4cfba40e59_31184463 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_825511902613350066d1648_82497800',
+    0 => 'Block_1647610024614b4cfba40e59_31184463',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -149,7 +149,7 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
                         <a href="/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
 /products">
                         <div class="sort w-100 text-center ftco-animated">
-                            <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['category']->value->getImagePath();?>
+                            <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['category']->value->getImage();?>
 );" ></div>
                             <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
 </h3>
@@ -173,14 +173,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
             <div class="row">
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestrateds']->value, 'bestrated');
-$_smarty_tpl->tpl_vars['bestrated']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestrated']->value) {
-$_smarty_tpl->tpl_vars['bestrated']->do_else = false;
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestRateds']->value, 'bestRated');
+$_smarty_tpl->tpl_vars['bestRated']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestRated']->value) {
+$_smarty_tpl->tpl_vars['bestRated']->do_else = false;
 ?>
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getImagePath();?>
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getImagePath();?>
 );">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
@@ -190,15 +190,14 @@ $_smarty_tpl->tpl_vars['bestrated']->do_else = false;
                                 </p>
                             </div>
                         </div>
-                        <a href="/products/<?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getId();?>
+                        <a href="/products/<?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getId();?>
 ">
                         <div class="text text-center">
-                            <span class="sale">Sale</span>
-                            <span class="category"><?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getCategory()->getCategoryName();?>
+                            <span class="category"><?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getCategory()->getCategoryName();?>
 </span>
-                            <h2><?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getName();?>
+                            <h2><?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getName();?>
 </h2>
-                            <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['bestrated']->value->getPrice();?>
+                            <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getPrice();?>
 </span></p>
                         </div>
                         </a>
@@ -224,26 +223,18 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
                         <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestreviews']->value, 'bestreview');
-$_smarty_tpl->tpl_vars['bestreview']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestreview']->value) {
-$_smarty_tpl->tpl_vars['bestreview']->do_else = false;
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestReviews']->value, 'bestReview');
+$_smarty_tpl->tpl_vars['bestReview']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestReview']->value) {
+$_smarty_tpl->tpl_vars['bestReview']->do_else = false;
 ?>
                         <div class="item">
                             <div class="testimony-wrap py-4">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                                 <div class="text">
-                                    <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getComment();?>
+                                    <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['bestReview']->value->getReviews();?>
 </p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getImagePath();?>
-)"></div>
-                                        <div class="pl-3">
-                                            <p class="name"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getName();?>
-</p>
-                                            <span class="position"><?php echo $_smarty_tpl->tpl_vars['bestreview']->value->getProduct()->getCategory()->getCategoryName();?>
-</span>
-                                        </div>
+                                                                                                                      </div>
                                     </div>
                                 </div>
                             </div>
@@ -267,25 +258,25 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
             <div class="row d-flex">
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestsellers']->value, 'bestseller');
-$_smarty_tpl->tpl_vars['bestseller']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestseller']->value) {
-$_smarty_tpl->tpl_vars['bestseller']->do_else = false;
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestSellers']->value, 'bestSeller');
+$_smarty_tpl->tpl_vars['bestSeller']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestSeller']->value) {
+$_smarty_tpl->tpl_vars['bestSeller']->do_else = false;
 ?>
                     <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="/products/<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getId();?>
+                            <a href="/products/<?php echo $_smarty_tpl->tpl_vars['bestSeller']->value->getId();?>
 " class="block-20 img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getImagePath();?>
 );">
                             </a>
                             <div class="text p-4 bg-light">
 
-                                <h3 class="heading mb-3"><a href="/products/<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getId();?>
-"><?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getName();?>
+                                <h3 class="heading mb-3"><a href="/products/<?php echo $_smarty_tpl->tpl_vars['bestSeller']->value->getId();?>
+"><?php echo $_smarty_tpl->tpl_vars['bestSeller']->value->getName();?>
 </a></h3>
-                                <p><?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getDescription();?>
+                                <p><?php echo $_smarty_tpl->tpl_vars['bestSeller']->value->getDescription();?>
 </p>
-                                <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['bestseller']->value->getPrice();?>
+                                <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['bestSeller']->value->getPrice();?>
 </span></p>
 
                             </div>

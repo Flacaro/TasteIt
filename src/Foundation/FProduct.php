@@ -18,10 +18,10 @@ class FProduct extends FConnection {
 
     function store($product, $categoryId): string {
         $pdo = FConnection::connect();
-        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (' . $product->getName() . ', ' . $product->getDescription() . ', ' . $product->getPrice() . ', ' . $categoryId . ', ' . $product->getImagePath() . ', ' . '0);';
+        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (\'' . $product->getName() . '\', \'' . $product->getDescription() . '\', ' . $product->getPrice() . ', ' . $categoryId . ', \'' . $product->getImagePath() . '\', ' . '0);';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        //$stmt->debugDumpParams();
+        $stmt->debugDumpParams();
         return $pdo->lastInsertId();
 
     }
@@ -155,8 +155,18 @@ class FProduct extends FConnection {
         $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered DESC LIMIT 1;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetch();
-
+        $p=$stmt->fetch();
+        if($p!=NULL){
+        $prod=new Product;
+        $prod->setId($p[0]);
+        $prod->setName($p[1]);
+        $prod->setDescription($p[2]);
+        $prod->setPrice($p[3]);
+        $prod->setImagePath($p[5]);
+        $prod->setTimesOrdered($p[6]);
+        return $prod;
+        }
+        else{return NULL;}
     }
 
     function getWorstSellerOfCategory($id){
@@ -165,7 +175,18 @@ class FProduct extends FConnection {
         $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered LIMIT 1;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetch();
+        $p=$stmt->fetch();
+        if($p!=NULL){
+        $prod=new Product;
+        $prod->setId($p[0]);
+        $prod->setName($p[1]);
+        $prod->setDescription($p[2]);
+        $prod->setPrice($p[3]);
+        $prod->setImagePath($p[5]);
+        $prod->setTimesOrdered($p[6]);
+        return $prod;
+        }
+        else{return NULL;}
     }
 
     public function getAll() {
@@ -189,5 +210,21 @@ class FProduct extends FConnection {
          //print_r($orders);
          return $products;
       }
+
+    function update($id, $product) {
+        $pdo = FConnection::connect();
+        $query = 'UPDATE products SET name = \'' . $product->getName() . '\', description = \'' . $product->getDescription() . '\', price = ' . $product->getPrice() . ' where id='.$id.';';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //$stmt->debugDumpParams();
+    }
+
+    function delete($id) {
+        $pdo = FConnection::connect();
+        $query = "DELETE FROM products where id = " . $id . ";";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //$stmt->debugDumpParams();
+    }
 
 }

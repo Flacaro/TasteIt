@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-08 12:13:35
+/* Smarty version 3.1.39, created on 2021-09-22 17:54:17
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\products-admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61388ccfc73311_09512744',
+  'unifunc' => 'content_614b51a95cacc4_28171990',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd88a6ecbc1b0b7dc91a3615c8b754b6910f99fd4' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\products-admin.tpl',
-      1 => 1631096003,
+      1 => 1632326055,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61388ccfc73311_09512744 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614b51a95cacc4_28171990 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192605909761388ccfc654f8_33546962', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1208567637614b51a95bcf76_81543612', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_192605909761388ccfc654f8_33546962 extends Smarty_Internal_Block
+class Block_1208567637614b51a95bcf76_81543612 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_192605909761388ccfc654f8_33546962',
+    0 => 'Block_1208567637614b51a95bcf76_81543612',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -47,7 +47,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <h4 class="card-title" style="margin-left:20px"><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
+                        <h4 class="card-title" style="margin-left:20px"><?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
 </h4>
                         <div style="margin-left:1250px">
                             <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
