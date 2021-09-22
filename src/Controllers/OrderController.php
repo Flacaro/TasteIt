@@ -62,20 +62,20 @@ class OrderController {
 
     public function createOrder(){
         $session=Session::getInstance();
-        $forder=new FOrder();
-        $fcoupon=new FCoupon();
-        $faddress=new FAddress();
-        $fcart=new FCart();
-        $fpay=new FPaymentMethod();
+        $forder = new FOrder();
+        $fcoupon = new FCoupon();
+        $faddress = new FAddress();
+        $fcart = new FCart();
+        $fpay = new FPaymentMethod();
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
-            $cart=$fcart->load($cartId);
+            $cart = $fcart->load($cartId);
             $coupon = $_POST['option'];
-            $c=$fcoupon->load($_POST['option']);
-            $address=$faddress->load($_POST['address']);
+            $c = $fcoupon->load($_POST['option']);
+            $address = $faddress->load($_POST['address']);
             $card = $fpay->load($_POST['payment']);
-            $order=new Order;
+            $order = new Order;
             $order->setCreationDate(date("Y-m-d"));
             $subtotal=0;
             foreach ($cart->getProducts() as $product){
@@ -105,8 +105,8 @@ class OrderController {
     }
 
     public function prov(){
-        $product = new FFavourites();
-        $product->getFavouritesProducts(1);
+        $product = new FProduct();
+        $product->getAll();
         return view('prov', [
         ]);
     }

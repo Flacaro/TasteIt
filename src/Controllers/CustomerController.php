@@ -25,7 +25,7 @@ class CustomerController {
     }
 
     //questa dovrebbe stare con login?
-   /* public function create($customer) {
+   /* public function store($customer) {
         $fcustomers = new FCustomer();
         $FCart = new FCart();
         $FFavourites= new FFavourites();
@@ -44,7 +44,7 @@ class CustomerController {
         $vuser->createUser($customer->get);
     }*/
 
-    public function update($customer) {
+    public function update($id) {
         $FCustomer = new FCustomer();
         $customer = new Customer();
         $name = $_POST['name'];
@@ -71,8 +71,8 @@ class CustomerController {
         $session=Session::getInstance();
         if ($session->isUserLogged()) {
             $customer = unserialize($_SESSION["customer"]);
-            $vuser = new VUser();
-            $vuser->getProfile($customer);
+            $vUser = new VUser();
+            $vUser->getProfile($customer);
         }
     }
 

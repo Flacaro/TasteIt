@@ -70,10 +70,10 @@ class FFavourites extends FConnection {
 
     function addToFavourites($favId, $productId) {
         $pdo = FConnection::connect();
-        $query = 'insert into products_favourites (`favId`, `productId`) values (' . $favId . ', ' . $productId . ');';
+        $query = 'insert into products_favourites(`favId`, `productId`) values (' . $favId . ', ' . $productId . ');';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        //return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 
     function deleteFromFavourites($favId, $productId){

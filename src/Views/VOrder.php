@@ -2,6 +2,8 @@
 
 namespace App\Views;
 
+use App\Foundation\FProduct;
+
 class VOrder {
 //$ orders array di array dove ogni elemento è composto così [ordine, cliente, pagamento]
     public function getOrders($orders) {
@@ -26,4 +28,5 @@ class VOrder {
         'coupon'=>$coupon
         ]);
     }
+
 }

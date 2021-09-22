@@ -4,42 +4,79 @@ namespace App\Controllers;
 
 
 use App\Foundation\FCart;
-use App\Foundation\FCategory;
+use App\Foundation\FFavourites;
 use App\Foundation\FProduct;
-use App\Models\Category;
-use App\Models\Product;
 use App\Models\Review;
+use App\Views\VFavourites;
 use App\Views\VProduct;
 
 class ProductController
 {
 
-    public function index() {
+    public function getAll() {
+        $session=Session::getInstance();
         $FProduct = new FProduct();
+        $FCart = new FCart();
+        $FFav = new FFavourites();
         $products = $FProduct->getAll();
-        $vproduct = new VProduct();
-        $vproduct->getProducts($products);
-
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $cartId = $cus->getCart()->getId();
+            $favId = $cus->getFav()->getId();
+            $FCart->load($cartId);
+            $FFav->load($favId);
+            $vProduct = new VProduct();
+            $vProduct->getProducts($products, $cartId, $favId);
+        }
     }
 
-    public function getProduct($id) {
 
+    public function getProduct($id) {
         $FProduct = new FProduct();
         $ratings = $FProduct->getRatings($id);
-        $product = $FProduct->getById($id);
+        $product = $FProduct->load($id);
         $stars = $FProduct->getAvgRating($id);
         //????
         $star =$stars[0][0];
         //print_r($stars);
-        $vproduct = new VProduct();
-        $vproduct->getDetailsOfProduct($product, $star, $ratings);
+        $vProduct = new VProduct();
+        $vProduct->getDetailsOfProduct($product, $star, $ratings);
     }
 
 
     public function addProductToCart($productId) {
         // il carrello si prende dalla sessione dall'utente loggato
-//        print_r('productId: ' . $productId . ' quantity: ' . $_POST['quantity']);
-        redirect(url('/products', ['productId' => $productId]));
+        $session=Session::getInstance();
+        $fCart = new FCart();
+        $fProduct = new FProduct();
+        $fFav = new FFavourites();
+        $products = $fProduct->getAll();
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $cartId = $cus->getCart()->getId();
+            $favId = $cus->getFav()->getId();
+            $fCart->load($cartId);
+            $fFav->load($favId);
+            $quantity =  $_POST['quantity'];
+            $fProduct->addToCart($productId, $cartId, $quantity);
+            $vProduct = new VProduct();
+            $vProduct->getProducts($products, $cartId, $favId);
+        }
+    }
+
+    public function addToFavourites($productId) {
+        $session=Session::getInstance();
+        $FProduct = new FProduct();
+        $FFavourites = new FFavourites();
+        $FProduct->load($productId);
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $favId = $cus->getFav()->getId();
+            $FFavourites->load($favId);
+            $FFavourites->addToFavourites($favId, $productId);
+            $vFavourites = new VFavourites();
+            $vFavourites->viewAddition($favId, $productId);
+        }
     }
 
 

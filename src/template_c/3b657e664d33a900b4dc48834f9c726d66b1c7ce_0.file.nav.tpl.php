@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-23 22:34:50
+/* Smarty version 3.1.39, created on 2021-09-22 20:21:27
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6124066a2e97e2_33086472',
+  'unifunc' => 'content_614b7427318453_76699558',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1629750770,
+      1 => 1632334886,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6124066a2e97e2_33086472 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614b7427318453_76699558 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -55,8 +55,9 @@ function content_6124066a2e97e2_33086472 (Smarty_Internal_Template $_smarty_tpl)
                         <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
                     </div>
                 </div>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/1/products">
-                    View All
+                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+/products">
+                    Vai al carrello
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>

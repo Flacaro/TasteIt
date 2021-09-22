@@ -5,7 +5,7 @@ namespace App\Views;
 class VFavourites
 {
     public function viewFavouritesProducts($products){
-        return view('favourite/products', [
+        return view('favourite/favourite', [
             'products' => $products
         ]);
     }
@@ -17,11 +17,10 @@ class VFavourites
         ]);
     }*/
 
-    public function viewAddition($favId, $productId, $product){
+    public function viewAddition($favId, $productId){
         return view('product/all_products', [
-            'cartId' => $favId,
-            'productId' => $productId,
-            'product' => $product
+            'favId' => $favId,
+            'product' => $productId
         ]);
     }
 

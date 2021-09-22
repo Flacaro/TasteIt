@@ -1,35 +1,36 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Profilo{/block}
 {block name=body}
-    <div class="hero-wrap" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url();" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
-                        <h1 class="mb-4">Profilo</span>.</h1>
+                        <h1 class="mb-4">Profilo</span></h1>
+                        <section class="ftco-section ftco-no-pb">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-4">
+                                        <form action="/profile" method="GET">
+                                            <div class="sort w-100 text-center ftco-animated">
+                                                <div class="img" style="background-image: url('https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png');" ></div>
+                                                <h3>{$name}</h3>
+                                                <h3>{$surname}</h3>
+                                                <h3>{$email}</h3>
+                                            </div>
+                                        </form>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
-    <section class="ftco-section ftco-no-pb">
-        <div class="container">
-            <div class="row">
-                    <div class="col-lg-2 col-md-4">
-                        <form action="/profile" method="GET">
-                            <div class="sort w-100 text-center ftco-animated">
-                                    <div class="img" style="background-image: url('https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png');" ></div>
-                                    <h3>{$name}</h3>
-                                    <h3>{$surname}</h3>
-                                    <h3>{$email}</h3>
-                            </div>
-                            </form>
-                        </a>
-                    </div>
-            </div>
-        </div>
-    </section>
 
     <section class="ftco-section">
         <div class="container">

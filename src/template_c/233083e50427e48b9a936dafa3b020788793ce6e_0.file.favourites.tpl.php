@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.39, created on 2021-08-21 12:17:03
-  from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\products.tpl' */
+  from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\favourite.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '233083e50427e48b9a936dafa3b020788793ce6e' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\products.tpl',
+      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\favourite.tpl',
       1 => 1629540835,
       2 => 'file',
     ),

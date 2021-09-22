@@ -37,13 +37,4 @@ class FavouritesController {
         $vfavourites= new VFavourites();
         $vfavourites->viewEdit($id, $favourites);
     }
-
-    public function addToFavourites($favId, $productId) {
-        $FProduct = new FProduct();
-        $FFavourites = new FFavourites();
-        $product = $FProduct->load($productId);
-        $fav = $FFavourites->addToFavourites($favId, $productId);
-        $vfavourites= new VFavourites();
-        $vfavourites->viewAddition($favId, $product);
-    }
 }

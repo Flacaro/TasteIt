@@ -33,13 +33,13 @@ SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage
 
 
 SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
-SimpleRouter::get("/products", [ProductController::class, "index"])->name('products');
+SimpleRouter::get("/products", [ProductController::class, "getAll"])->name('products');
 //SimpleRouter::get("/products/create", [ProductController::class, "create"]);
 //SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
 SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"]);
 SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
-SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
-SimpleRouter::post('/products/{productId}/', [ProductController::class, 'addProductToCart']);
+SimpleRouter::post("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
+SimpleRouter::post("/products/{productId}/addToCart/{cartId}", [ProductController::class, "addProductToCart"]);
 
 
 SimpleRouter::get("/users", [CustomerController::class, "getAll"]);
@@ -54,9 +54,9 @@ SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "crea
 
 SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
 SimpleRouter::get("/carts/create", [CartController::class, "create"]);
-SimpleRouter::get("/carts/{id}/products", [CartController::class, "getProductsOfCart"])->name('productsOfCarts');
+SimpleRouter::get("/carts/{cartId}/products", [CartController::class, "getProductsOfCart"])->name('productsOfCarts');
 SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
-SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[CartController::class, "addToCart"])->name('addToCart');
+/*SimpleRouter::get("/carts/{cartId}/products/{productId}/addToCart",[CartController::class, "addToCart"])->name('addToCart');*/
 
 
 SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::class, "getCategoryProducts"]);

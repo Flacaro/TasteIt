@@ -78,8 +78,17 @@ class Session
 
     public function loadCart() {
         $this->newSession();
-        $cart = unserialize($_SESSION["cart"]);
+        return  unserialize($_SESSION["cart"]);
         //unset($_SESSION["cart"]);
-        return $cart;
+    }
+
+    public function saveFav($fav) {
+        $this->newSession();
+        $_SESSION["fav"] = serialize($fav);
+    }
+
+    public function loadFav() {
+        $this->newSession();
+        return  unserialize($_SESSION["fav"]);
     }
 }

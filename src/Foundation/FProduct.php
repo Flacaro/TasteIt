@@ -23,7 +23,6 @@ class FProduct extends FConnection {
         $stmt->execute();
         //$stmt->debugDumpParams();
         return $pdo->lastInsertId();
-
     }
 
     function load($id){
@@ -135,7 +134,7 @@ class FProduct extends FConnection {
             $p->setReviews($rev);
             array_push($prod, $p);
         }
-         print_r($prod);
+         //print_r($prod);
         return $prod;
     }
 
@@ -188,6 +187,14 @@ class FProduct extends FConnection {
          }
          //print_r($orders);
          return $products;
+      }
+
+      public function addToCart($productId, $cartId, $quantity) {
+          $pdo = FConnection::connect();
+          $query = 'insert into products_carts(`productId`, `cartId`, `quantity`) VALUES (' . $productId . ', ' . $cartId . ', '. $quantity . ');';
+          $stmt = $pdo->prepare($query);
+          $stmt->execute();
+          return $stmt->fetch();
       }
 
 }

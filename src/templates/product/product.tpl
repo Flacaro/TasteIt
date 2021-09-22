@@ -44,14 +44,13 @@
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
 
-                        <form id="addProductToCardForm" action="/products/{$product->getId()}" method="POST">
+                        <form id="addProductToCardForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
                             <div class="d-flex mb-4">
                                 <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
                                 <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
                                 <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
                             </div>
-
-                            {*<p><a href="#" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a>*}
+                            {*<p><a href="" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a>*}
                             <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Add to cart</button>
                         </form>
 

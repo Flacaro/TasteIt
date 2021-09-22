@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="row">
-                        {*{foreach $products as $product}
+                        {foreach $products as $product}
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                        {/foreach}*}
+                        {/foreach}
                     </div>
                 </div>
             </div>

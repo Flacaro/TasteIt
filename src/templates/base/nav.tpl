@@ -32,8 +32,8 @@
                         <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
                     </div>
                 </div>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/1/products">
-                    View All
+                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/{$cartId}/products">
+                    Vai al carrello
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
