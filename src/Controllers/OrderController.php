@@ -104,8 +104,8 @@ class OrderController {
     }
 
     public function prov(){
-        $product = new \App\Foundation\admin\FOrder();
-        $product->getAll();
+        $product = new FProduct();
+        $product->getBestReviews();
         return view('prov', [
         ]);
     }

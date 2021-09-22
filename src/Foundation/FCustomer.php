@@ -106,7 +106,10 @@ class FCustomer extends FConnection {
         $ffav=new FFavourites();
         $f=$ffav->store($fav);
         $query="insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('.$name.','.$surname.','.$email.','.$password.','.$f.','.$c.')";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
+
 //l'update del customer si limita a email, password, nome, cognome, per quanto riguarda il carrello, i preferiti, le carte di credito etc usiamo i foundation specifici
 //(altrimenti rischiamo di svuotare il db se ad esempio abbiamo un oggetto cliente di cui in quel momento non ci interessa il carrello, settandoglielo a null)
     public function update($customer){
@@ -167,5 +170,30 @@ class FCustomer extends FConnection {
         $customer->setName($cus[0]);
         $customer->setSurname($cus[1]);
         return $customer;
+    }
+
+    public function getAll(){
+        $pdo = FConnection::connect();
+        $query= "SELECT * FROM customers";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $custs = $stmt->fetchAll();
+        //$stmt->debugDumpParams();
+        $customers = [];
+        print_r($custs);
+        foreach ($custs as $cust) {
+            $c = new Customer();
+            $cart = new FCart();
+            $fav = new FFavourites();
+            $c->setId($cust[0]);
+            $c->setName($cust[1]);
+            $c->setSurname($cust[2]);
+            $c->setEmail($cust[3]);
+            $c->setFav($fav->load($cust[5]));
+            $c->setCart($cart->load($cust[6]));
+            array_push($customers, $c);
+        }
+        print_r($customers);
+        return $customers;
     }
 }

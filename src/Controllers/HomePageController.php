@@ -13,27 +13,24 @@ class HomePageController
 
  }
  public function visualizeHome(){
-     session_start();
-     print_r(unserialize($_SESSION["customer"]));
      $FCategory = new FCategory();
      $FProduct = new FProduct();
      $categories = $FCategory->getAll();
-     $bestsellers = $FProduct->getBestSellers();
-     $bestreviews = $FProduct->getBestReviews();
-     //$var=[
-         //"pizza"=>[
-
-        // ]
-     //];
+     $bestSellers = $FProduct->getBestSellers();
+     $bestReviews = $FProduct->getBestReviews();
      $products = $FProduct->getAll();
-     $var=$FProduct->getBestRated();
-     $bestRated=array();
-     foreach($var as $best){
-         array_push($bestRated, $FProduct->getById($best[1]));
+     $b = $FProduct->getBestRated();
+     //print_r($bestReviews);
+;     $bestRated=array();
+     foreach($b as $best){
+         array_push($bestRated, $FProduct->load($best[1]));
      }
-     $vhome= new VHomePage();
-     $vhome->viewHomePage($categories, $bestsellers, $bestRated, $bestreviews);
+     //print_r($bestSellers);
+     $vHome= new VHomePage();
+     $vHome->viewHomePage($categories, $bestSellers, $bestRated, $bestReviews);
  }
+
+
     public function About(){
         return view('aboutUs', [
 

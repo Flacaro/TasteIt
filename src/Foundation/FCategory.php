@@ -3,6 +3,7 @@
 namespace App\Foundation;
 
 
+use App\Models\Category;
 use App\Models\Product;
 use PDO;
 
@@ -40,5 +41,25 @@ class FCategory extends FConnection {
             array_push($products,$prod);
         }
         return $products;
+    }
+
+    public function getAll(){
+        $pdo = FConnection::connect();
+        $query= "SELECT * FROM categories";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $cats = $stmt->fetchAll();
+        //$stmt->debugDumpParams();
+        $categories = [];
+        //print_r($cats);
+        foreach ($cats as $cat) {
+            $c = new Category();
+            $c->setId($cat[0]);
+            $c->setCategoryName($cat[2]);
+            $c->setImage($cat[3]);
+            array_push($categories, $c);
+        }
+        //print_r($categories);
+        return $categories;
     }
 }

@@ -84,7 +84,7 @@
                     <div class="col-lg-2 col-md-4">
                         <a href="/categories/{$category->getId()}/products">
                         <div class="sort w-100 text-center ftco-animated">
-                            <div class="img" style="background-image: url({$category->getImagePath()});" ></div>
+                            <div class="img" style="background-image: url({$category->getImage()});" ></div>
                             <h3>{$category->getCategoryName()}</h3>
                         </div>
                         </a>
@@ -103,10 +103,10 @@
                 </div>
             </div>
             <div class="row">
-                {foreach $bestrateds as $bestrated}
+                {foreach $bestRateds as $bestRated}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestrated->getImagePath()});">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestRated->getImagePath()});">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
                                     <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -115,12 +115,11 @@
                                 </p>
                             </div>
                         </div>
-                        <a href="/products/{$bestrated->getId()}">
+                        <a href="/products/{$bestRated->getId()}">
                         <div class="text text-center">
-                            <span class="sale">Sale</span>
-                            <span class="category">{$bestrated->getCategory()->getCategoryName()}</span>
-                            <h2>{$bestrated->getName()}</h2>
-                            <p class="mb-0"> <span class="price">${$bestrated->getPrice()}</span></p>
+                            <span class="category">{$bestRated->getCategory()->getCategoryName()}</span>
+                            <h2>{$bestRated->getName()}</h2>
+                            <p class="mb-0"> <span class="price">${$bestRated->getPrice()}</span></p>
                         </div>
                         </a>
                     </div>
@@ -142,17 +141,16 @@
             <div class="row ftco-animated">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel ftco-owl">
-                        {foreach $bestreviews as $bestreview}
+                        {foreach $bestReviews as $bestReview}
                         <div class="item">
                             <div class="testimony-wrap py-4">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                                 <div class="text">
-                                    <p class="mb-4">{$bestreview->getComment()}</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url({$bestreview->getProduct()->getImagePath()})"></div>
-                                        <div class="pl-3">
-                                            <p class="name">{$bestreview->getProduct()->getName()}</p>
-                                            <span class="position">{$bestreview->getProduct()->getCategory()->getCategoryName()}</span>
+                                    <p class="mb-4">{$bestReview->getReviews()}</p>
+                                   {* <div class="d-flex align-items-center">
+                                        <div class="user-img" style="background-image: url({$bestReview[1][4]})"></div>
+                                        <div class="pl-3">*}
+                                           {* <p class="name">{$bestReview->getName()}</p>*}
                                         </div>
                                     </div>
                                 </div>
@@ -174,16 +172,16 @@
                 </div>
             </div>
             <div class="row d-flex">
-                {foreach $bestsellers as $bestseller}
+                {foreach $bestSellers as $bestSeller}
                     <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="/products/{$bestseller->getId()}" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
+                            <a href="/products/{$bestSeller->getId()}" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
                             </a>
                             <div class="text p-4 bg-light">
 
-                                <h3 class="heading mb-3"><a href="/products/{$bestseller->getId()}">{$bestseller->getName()}</a></h3>
-                                <p>{$bestseller->getDescription()}</p>
-                                <p class="mb-0"> <span class="price">${$bestseller->getPrice()}</span></p>
+                                <h3 class="heading mb-3"><a href="/products/{$bestSeller->getId()}">{$bestSeller->getName()}</a></h3>
+                                <p>{$bestSeller->getDescription()}</p>
+                                <p class="mb-0"> <span class="price">${$bestSeller->getPrice()}</span></p>
 
                             </div>
                         </div>

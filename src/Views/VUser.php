@@ -10,20 +10,21 @@ class VUser {
         ]);
     }
 
-    /*public function createUser() {
+    public function createUser($name, $surname) {
         return view("home",[
+            'name' => $name,
+            'surname' => $surname
 
         ]);
-    }*/
+    }
 
-    public function editUser($user) {
-        return view('user/user-update', [
-            'id' => $user->getId(),
-            'name' => $user->getName(),
-            'surname' => $user->getSurname(),
-            'email' => $user->getEmail(),
-            'password' => $user->getPassword(),
-            'cartId' => $user->getCartId()
+    public function getProfile($customer) {
+        return view('user/profile', [
+            'id' => $customer->getId(),
+            'name' => $customer->getName(),
+            'surname' => $customer->getSurname(),
+            'email' => $customer->getEmail(),
+            'password' => $customer->getPassword(),
         ]);
     }
 

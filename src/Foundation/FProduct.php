@@ -103,31 +103,39 @@ class FProduct extends FConnection {
     function getBestReviews(){
         $pdo = FConnection::connect();
         //select * from reviews where productId=$productId;
-        $query="SELECT * FROM reviews ORDER BY stars DESC LIMIT 6;";
+        $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.imagePath FROM reviews as r join products as p on r.productId = p.id ORDER BY stars DESC LIMIT 6;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $reviews = $stmt->fetchAll();
         $rev = [];
+        $prod = [];
         //print_r($reviews);
         foreach($reviews as $review) {
             $r = new Review();
+            $p = new Product();
             $customer = new FCustomer();
             $r->setId($review[0]);
             $r->setStars($review[1]);
             $r->setComment($review[2]);
             $r->setCustomer($customer->loadNameSurname($review[3]));
             array_push($rev, $r);
+            $p->setId($review[4]);
+            $p->setName($review[5]);
+            $p->setImagePath($review[6]);
+            $p->setReviews($rev);
+            array_push($prod, $p);
         }
-        print_r($rev);
-        return $rev;
+         print_r($prod);
+        return $prod;
     }
 
 
-    function getStars($productId) {
+    function getImageOfBest() {
         $pdo = FConnection::connect();
-        $query = 'select stars from reviews where productId = ' . $productId . ';';
+        $query = 'select p.imagePath, r.stars from products as p join reviews as r on r.productId = p.id ORDER BY stars DESC LIMIT 6;';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
+        $stmt->debugDumpParams();
         return $stmt->fetchAll();
     }
 
@@ -149,5 +157,27 @@ class FProduct extends FConnection {
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    public function getAll() {
+        $pdo = FConnection::connect();
+        $query = "SELECT * FROM products";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $prods = $stmt->fetchAll();
+        //$stmt->debugDumpParams();
+        $products = [];
+        //print_r($prods);
+         foreach ($prods as $prod) {
+             $p = new Product();
+             $p->setId($prod[0]);
+             $p->setName($prod[1]);
+             $p->setDescription($prod[2]);
+             $p->setPrice($prod[3]);
+             $p->setImagePath($prod[5]);
+             array_push($products, $p);
+         }
+         //print_r($orders);
+         return $products;
+      }
 
 }

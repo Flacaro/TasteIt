@@ -50,14 +50,5 @@ class Category{
         $this->categoryProducts=$products;
     }
 
-    public function getRestaurantId()
-    {
-        return $this->restaurantId;
-    }
-
-    public function setRestaurantId($restaurantId): void
-    {
-        $this->restaurantId = $restaurantId;
-    }
 
 }

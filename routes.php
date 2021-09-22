@@ -42,9 +42,9 @@ SimpleRouter::put("/products/{productId}/addToFavourites/{favId}",[ProductContro
 SimpleRouter::post('/products/{productId}/', [ProductController::class, 'addProductToCart']);
 
 
-SimpleRouter::get("/users", [CustomerController::class, "index"]);
+SimpleRouter::get("/users", [CustomerController::class, "getAll"]);
 SimpleRouter::get("/users/create", [CustomerController::class, "create"]);
-SimpleRouter::get("/users/{id}/edit", [CustomerController::class, "edit"]);
+SimpleRouter::get("/profile", [CustomerController::class, "getProfile"]);
 SimpleRouter::post("/users/{id}", [CustomerController::class, "update"]);
 SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
 SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"]);

@@ -17,52 +17,47 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 class CustomerController {
 
-    public function index() {
-        $fusers = new FCustomer();
-        $users = $fusers->getAll();
+    public function getAll() {
+        $fcustomers = new FCustomer();
+        $customers = $fcustomers->getAll();
         $vusers = new VUser();
-        $vusers->getUsers($users);
+        $vusers->getUsers($customers);
     }
 
-    public function create($customer) {
-        $fusers = new FCustomer();
+    //questa dovrebbe stare con login?
+   /* public function create($customer) {
+        $fcustomers = new FCustomer();
         $FCart = new FCart();
         $FFavourites= new FFavourites();
-
-        /*$name = $_POST['name'];
-        $surname = $_POST['surname'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];*/
-
         $cart = new Cart();
         $cart->setId(NULL);
         $cartId = $FCart->store($cart);
 
         $fav = new Favourites();
         $fav->setId(NULL);
-        $favId = $FFavourites->create($fav);
+        $favId = $FFavourites->store($fav);
 
         $customer->setCartId($cartId);
         $customer->setFavId($favId);
-        $fusers->create($customer);
-        //$vuser = new VUser();
-        //$vuser->createUser();
-    }
+        $fcustomers->load($customer);
+        $vuser = new VUser();
+        $vuser->createUser($customer->get);
+    }*/
 
-    public function update($id) {
-        $FUser = new FCustomer();
-        $user = new Customer();
+    public function update($customer) {
+        $FCustomer = new FCustomer();
+        $customer = new Customer();
         $name = $_POST['name'];
         $surname = $_POST['surname'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $cartId = $_POST['cartId'];
-        $user->setName($name);
-        $user->setSurname($surname);
-        $user->setEmail($email);
-        $user->setPassword($password);
-        $user->setCartId($cartId);
-        $FUser->update($id,$user);
+        $customer->setName($name);
+        $customer->setSurname($surname);
+        $customer->setEmail($email);
+        $customer->setPassword($password);
+        $FCustomer->update($customer);
+        /*$vuser = new VUser();
+        $vuser->getProfile($customer);*/
     }
 
     public function edit($id) {
@@ -70,6 +65,15 @@ class CustomerController {
         $user = $FUsers->getById($id);
         $vuser = new VUser();
         $vuser->editUser($user);
+    }
+
+    public function getProfile() {
+        $session=Session::getInstance();
+        if ($session->isUserLogged()) {
+            $customer = unserialize($_SESSION["customer"]);
+            $vuser = new VUser();
+            $vuser->getProfile($customer);
+        }
     }
 
         public function getId($id){
