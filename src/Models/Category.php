@@ -7,7 +7,7 @@ use App\Foundation\FImage;
 
 class Category{
     private $id;
-    private $categoryName;
+    private $name;
     private $categoryProducts = [];
     private $image;
 
@@ -34,12 +34,12 @@ class Category{
     }
 
 
-    public function getCategoryName(){
-        return $this->categoryName;
+    public function getName(){
+        return $this->name;
     }
 
-    public function setCategoryName($name){
-        $this->categoryName=$name;
+    public function setName($name){
+        $this->name=$name;
     }
 
     public function getCategoryProducts(){

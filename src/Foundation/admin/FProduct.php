@@ -19,21 +19,6 @@ class FProduct
 
     }
 
-    function update($product) {
-        $pdo = FConnection::connect();
-        $query = "UPDATE products SET name = " . $product->setName() . ", description = " . $product->setDescription() . ", price = " . $product->setPrice() . ";";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        //$stmt->debugDumpParams();
-    }
-
-    function delete($id) {
-        $pdo = FConnection::connect();
-        $query = "DELETE FROM products where id = " . $id . ";";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        //$stmt->debugDumpParams();
-    }
 
     function getAll() {
         $pdo = FConnection::connect();

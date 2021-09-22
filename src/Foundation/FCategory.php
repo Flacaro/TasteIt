@@ -20,6 +20,25 @@ class FCategory extends FConnection {
         $stmt->execute();
         //$stmt->debugDumpParams();
     }*/
+    function load($id){
+        $pdo = FConnection::connect();
+        $query= 'select * from categories where id = ' . $id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $cat= $stmt->fetch();
+        $category=new Category;
+        $category->setId($cat[0]);
+        $category->setName($cat[2]);
+        $category->setImage($cat[3]);
+        return $category;
+    }
+
+    function store($category){
+        $pdo = FConnection::connect();
+        $query='insert into categories (`restaurantId`, `categoryName`) VALUES (1,\''.$category->getName().'\')';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
 
     function loadCategoryProducts($categoryId) {
         $pdo = FConnection::connect();
@@ -55,7 +74,7 @@ class FCategory extends FConnection {
         foreach ($cats as $cat) {
             $c = new Category();
             $c->setId($cat[0]);
-            $c->setCategoryName($cat[2]);
+            $c->setName($cat[2]);
             $c->setImage($cat[3]);
             array_push($categories, $c);
         }

@@ -25,7 +25,7 @@
                         <tr>
                           <td>
                             <a href="/admin/categories/{$category->getId()}/products">
-                              {$category->getCategoryName()}
+                              {$category->getName()}
                             <a>
                           </a>
                         </tr>

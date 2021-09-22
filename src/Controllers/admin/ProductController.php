@@ -5,6 +5,7 @@ namespace App\Controllers\admin;
 use App\Foundation\FCategory;
 use App\Foundation\FProduct;
 use App\Models\Product;
+use App\Views\admin\VCategory;
 use App\Views\admin\VProduct;
 
 class ProductController {
@@ -23,7 +24,7 @@ class ProductController {
             else{
                 $best=$best->getName();
                 $worst=$worst->getName();}
-            $data[$category->getCategoryName()]=[$best,$worst];
+            $data[$category->getName()]=[$best,$worst];
         }
         //print_r($data);
         $vadmin= new VProduct();
@@ -31,7 +32,7 @@ class ProductController {
     }
 
     //questo va nel product controller dell'admin
-    public function store() {
+    public function store($id) {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
@@ -41,13 +42,13 @@ class ProductController {
         $product->setDescription($description);
         $product->setPrice($price);
         //come prendiamo il categoryId?
-        $FProduct->store($product, 1);
-        redirect(url('/admin/categories/1/products'));
+        $FProduct->store($product, $id);
+        redirect(url('/admin/categories/'.$id.'/products'));
     }
 
     public function update($catId, $id) {
         $FProduct = new FProduct();
-        $oldproduct=$FProduct->getById($id);
+        $oldproduct=$FProduct->load($id);
         //superglobal, come parametro ci va passato il NOME dell'input a cui fare riferimento
         $name = $_POST['name'];
         $description = $_POST['description'];
@@ -58,7 +59,6 @@ class ProductController {
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
-        $product->setCategoryId($catId);
         $product->setTimesOrdered($timesOrdered);
         $product->setImagePath($imagePath);
         $FProduct->update($id, $product);
@@ -76,6 +76,26 @@ class ProductController {
         $FProduct = new FProduct();
         $FProduct->delete($id);
         redirect(url("/admin/categories/".$catId.'/products'));
+    }
+
+    public function showEditProduct($cid,$pid) {
+        $vadmin= new VCategory();
+        $fproduct=new Fproduct();
+        $product=$fproduct->load($pid);
+        $vadmin->showEditProduct($cid,$pid,$product);
+    }
+
+    public function showCreateProduct($categoryId) {
+        $vadmin= new VCategory();
+        $vadmin->showCreateProduct($categoryId);
+    }
+
+    public function productsInCategory($id){
+        $fcategory = new FCategory();
+        $category = $fcategory->load($id);
+        $products = $fcategory->loadCategoryProducts($id);
+        $vadmin = new VCategory();
+        $vadmin->productsInCategory($products, $category);
     }
 
 }
