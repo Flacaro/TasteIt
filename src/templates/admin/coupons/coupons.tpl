@@ -28,7 +28,7 @@
                                             {$coupon->getId()}
                                         </td>
                                         <td>
-                                            {$coupon->priceCut}
+                                            {$coupon->getpriceCut()}
                                         </td>
                                     </tr>
                                 {/foreach}

@@ -9,6 +9,12 @@ class Coupon {
     private $priceCut;
     private $expirationDate;
 
+    //crea un coupon a cui andranno settati gli altri valori con un codice unico con prefisso C di coupon
+    public function __construct()
+    {
+        $this->id=uniqid("C");
+    }
+
     public function getId()
     {
         return $this->id;
@@ -39,10 +45,6 @@ class Coupon {
         $this->priceCut = $priceCut;
     }
 
-    public function getRestaurantId()
-    {
-        return $this->restaurantId;
-    }
 
 
 }

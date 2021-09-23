@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-08 18:24:18
+/* Smarty version 3.1.39, created on 2021-09-23 17:31:22
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\orders\order-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6138e3b2b636d7_83675850',
+  'unifunc' => 'content_614c9dcac2e581_65829055',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0db8eb6cd2863c337006c75993edfd92f35fde75' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\orders\\order-details.tpl',
-      1 => 1631118256,
+      1 => 1632411069,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6138e3b2b636d7_83675850 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614c9dcac2e581_65829055 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20306453766138e3b2b58479_79543879', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1084781093614c9dcac1d4d0_49663609', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_20306453766138e3b2b58479_79543879 extends Smarty_Internal_Block
+class Block_1084781093614c9dcac1d4d0_49663609 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_20306453766138e3b2b58479_79543879',
+    0 => 'Block_1084781093614c9dcac1d4d0_49663609',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,9 +52,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="button-container">
                         <div class="row">
                             <div class="col-lg-3 col-md-6 col-6 ml-auto">
-                                <h5><small>Indirizzo</small><br>Via <?php echo $_smarty_tpl->tpl_vars['address']->value->getStreet();?>
- <?php echo $_smarty_tpl->tpl_vars['address']->value->getHomeNumber();?>
-, <?php echo $_smarty_tpl->tpl_vars['address']->value->getCity();?>
+                                <h5><small>Indirizzo</small><br>Via <?php echo $_smarty_tpl->tpl_vars['order']->value->getAddress()->getStreet();?>
+ <?php echo $_smarty_tpl->tpl_vars['order']->value->getAddress()->getHomeNumber();?>
+, <?php echo $_smarty_tpl->tpl_vars['order']->value->getAddress()->getCity();?>
 </h5>
                             </div>
                             <div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
@@ -63,7 +63,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 </h5>
                             </div>
                             <div class="col-lg-3 mr-auto">
-                                <h5><small>Pagato con</small><br>$24,6</h5>
+                                <h5><small>Pagato con</small><br><?php if (get_class($_smarty_tpl->tpl_vars['order']->value->getPayment()) == "App\Models\Cash") {?>Contanti<?php } else { ?>Carta di Credito<?php }?></h5>
                             </div>
                         </div>
                     </div>
@@ -120,14 +120,23 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </tbody>
                         </table>
                     </div>
-                    <form method="POST" action="">
-                        <div class="update ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary">Accetta Ordine</button>
+                    <?php if ($_smarty_tpl->tpl_vars['order']->value->getState() == "Pending") {?>
+                    <div class="d-flex" >
+                        <form method="POST" action="">
+                            <div class="update ml-auto mr-auto">
+                                <button type="submit" class="btn btn-primary">Accetta Ordine</button>
+                            </div>
+                        </form>
+                            <div class="update ml-auto mr-auto">
+                                <button type="submit" class="btn btn-primary">Rifiuta Ordine</button>
+                            </div>
+                    </div>
+                    <?php } else { ?>
+                        <div style="text-align: center">
+                        <h3><?php echo $_smarty_tpl->tpl_vars['order']->value->getState();?>
+</h3>
                         </div>
-                    </form>
-                        <div class="update ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary">Rifiuta Ordine</button>
-                        </div>
+                    <?php }?>
                 </div>
             </div>
         </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-08 12:13:39
+/* Smarty version 3.1.39, created on 2021-09-23 10:42:07
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\customers\customer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61388cd39e1390_54320583',
+  'unifunc' => 'content_614c3ddf0cedd3_32795254',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd1be1e7f35782c335128069db077429c782fd266' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\customers\\customer.tpl',
-      1 => 1631096003,
+      1 => 1632386525,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61388cd39e1390_54320583 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614c3ddf0cedd3_32795254 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_96803762861388cd39d85a4_83923655', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_554989160614c3ddf0c4915_00830622', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_96803762861388cd39d85a4_83923655 extends Smarty_Internal_Block
+class Block_554989160614c3ddf0c4915_00830622 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_96803762861388cd39d85a4_83923655',
+    0 => 'Block_554989160614c3ddf0c4915_00830622',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -77,7 +77,7 @@ $_smarty_tpl->tpl_vars['customer']->do_else = false;
 
                                     <tr>
                                         <td>
-                                            <?php echo $_smarty_tpl->tpl_vars['customer']->value->id;?>
+                                            <?php echo $_smarty_tpl->tpl_vars['customer']->value->getId();?>
 
                                         </td>
                                         <td>

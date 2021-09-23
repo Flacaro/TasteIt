@@ -69,7 +69,7 @@ foreign key(categoryId) references categories(id)
 );
 
 create table coupons(
-id bigint primary key auto_increment,
+id varchar(20) primary key,
 priceCut int not null,
 expirationDate Date not null
 );
@@ -100,7 +100,7 @@ id bigint primary key auto_increment,
 creationDate date not null,
 total float not null,
 arrivalTime time default null,
-couponId bigint,
+couponId varchar(20),
 customerId bigint,
 paymentId bigint,
 orderState varchar(30),
@@ -142,15 +142,6 @@ foreign key(favId) references favourites(id),
 foreign key(productId) references products(id)
 );
 
-create table customers_coupons(
-id bigint primary key auto_increment,
-customerId bigint,
-couponId bigint,
-quantity int default 1,
-foreign key(customerId) references customers(id),
-foreign key(couponId) references coupons(id)
-);
-
 
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();
@@ -167,9 +158,8 @@ INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customer
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1768,'Milano','Santa Maria',7,2);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (8796,'Mantova','Santa Cecilia',10,3);
 INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
-INSERT INTO `coupons`(`priceCut`, `expirationDate`) VALUES (10,'2021-08-10');
-INSERT INTO `coupons`(`priceCut`, `expirationDate`) VALUES (20,'2021-09-13');
-INSERT INTO `coupons`(`priceCut`, `expirationDate`) VALUES (15,'2021-11-05');
+insert into coupons (`id`, `priceCut`, `expirationDate`) values ('C614c7de6d8a19', '30', '2021-10-07')
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8345',20,'2021-09-13');
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
@@ -188,9 +178,6 @@ INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('3'
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (2,2,1);
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Carne','/src/assets/images/image_5.jpg');
-INSERT INTO `customers_coupons`(`customerId`, `couponId`, `quantity`) VALUES (1,1,1);
-INSERT INTO `customers_coupons`(`customerId`, `couponId`, `quantity`) VALUES (2,2,1);
-INSERT INTO `customers_coupons`(`customerId`, `couponId`, `quantity`) VALUES (3,3,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (2,2);
 INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`) VALUES (1,2,'Margherita','mozarella e pomodoro',6);

@@ -6,7 +6,7 @@ use App\Models\Cash;
 use App\Models\CreditCard;
 
 class FPaymentMethod {
-
+//load della carta di credito
         public function load($id){
         $pdo = FConnection::connect();
         $query = 'select cp.id, cp.cardNumber, cp.expirationDate, cp.cvv, cp.cardHolder from customers_paymentmethods as cp where cp.id='.$id;
