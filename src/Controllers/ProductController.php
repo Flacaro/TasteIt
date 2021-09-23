@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Foundation\FCart;
 use App\Foundation\FFavourites;
 use App\Foundation\FProduct;
+use App\Foundation\FReview;
 use App\Models\Review;
 use App\Views\VFavourites;
 use App\Views\VProduct;
@@ -93,17 +94,31 @@ class ProductController
     }
 
 
-    public function createReview($productId){
-        $FProduct= new FProduct;
-        $stars = $_POST['stars'];
-        $comment = $_POST['comment'];
-        $review= new Review;
-        $review->setStars($stars);
-        $review->setComment($comment);
-        $review->setProductId($productId);
-        $review->setCustomer(1); //id dell'utente loggato ma con calma
-        $FProduct->createReview($review);
-        //redirect(url("getProduct", ['productId' => $productId]));
+    public function createReview($productId)
+    {
+        $session = Session::getInstance();
+        $FFavourites = new FFavourites();
+        $FCart = new FCart();
+        $rev = [];
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $favId = $cus->getFav()->getId();
+            $FFavourites->load($favId);
+            $cartId = $cus->getCart()->getId();
+            $FCart->load($cartId);
+            $FReview = new FReview();
+            $stars = $_POST['stars'];
+            $comment = $_POST['comment'];
+            $review = new Review;
+            $review->setStars($stars);
+            $review->setComment($comment);
+            //$review->setProductId($productId);
+            $review->setCustomer($cus);
+            array_push($rev, $review);
+            $FReview->createReview($review, $productId);
+            self::getProduct($productId);
+           /* redirect(url("getProduct", ['productId' => $productId]));*/
+        }
     }
 
 }

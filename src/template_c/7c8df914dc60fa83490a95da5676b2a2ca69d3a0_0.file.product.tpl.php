@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-23 13:01:09
+/* Smarty version 3.1.39, created on 2021-09-23 18:22:39
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614c5e759e2194_48989043',
+  'unifunc' => 'content_614ca9cfcb1d50_43543667',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1632394866,
+      1 => 1632414158,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614c5e759e2194_48989043 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614ca9cfcb1d50_43543667 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_23447537614c5e759d2ae1_26456791', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_491734374614ca9cfca2a39_30974222', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_356554789614c5e759d3410_74336003', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_703272498614ca9cfca3359_12274504', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_23447537614c5e759d2ae1_26456791 extends Smarty_Internal_Block
+class Block_491734374614ca9cfca2a39_30974222 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_23447537614c5e759d2ae1_26456791',
+    0 => 'Block_491734374614ca9cfca2a39_30974222',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_356554789614c5e759d3410_74336003 extends Smarty_Internal_Block
+class Block_703272498614ca9cfca3359_12274504 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_356554789614c5e759d3410_74336003',
+    0 => 'Block_703272498614ca9cfca3359_12274504',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -243,36 +243,38 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </div>
+                            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/addReview" method="POST" id="add">
                             <div>
                                 <div class="contact-wrap w-100 p-md-5">
                                     <h3 class="mb-5">Lascia una recensione</h3>
 
-                                    <form  method="POST" id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="label" for="subject">Stelle</label>
-                                                    <input type="text" class="form-control" name="stars" id="subject" placeholder="Subject">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="label" for="#">Commento</label>
-                                                    <textarea name="comment" class="form-control" id="message" cols="100" rows="2" placeholder="Descrivi il prodotto"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="submit" value="Invia" class="btn btn-primary">
-                                                    <div class="submitting"></div>
-                                                </div>
-                                            </div>
+                                                        <label class="label" for="subject">Stelle</label>
+                                                        <input type="text" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                    <label class="label" for="#">Commento</label>
+                                                                    <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
+                                                            </div>
+                                                        </div>
                                         </div>
-                                    </form>
+
                                 </div>
+
                             </div>
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
         </div>

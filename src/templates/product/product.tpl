@@ -151,33 +151,33 @@
                                 </div>
                                 {/foreach}
                             </div>
+
                             <div>
                                 <div class="contact-wrap w-100 p-md-5">
                                     <h3 class="mb-5">Lascia una recensione</h3>
-
-                                    <form  method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <form action="/products/{$product->getId()}/addReview" method="POST" id="add">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="label" for="subject">Stelle</label>
-                                                    <input type="text" class="form-control" name="stars" id="subject" placeholder="Subject">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="label" for="#">Commento</label>
-                                                    <textarea name="comment" class="form-control" id="message" cols="100" rows="2" placeholder="Descrivi il prodotto"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="submit" value="Invia" class="btn btn-primary">
-                                                    <div class="submitting"></div>
-                                                </div>
-                                            </div>
+                                                        <label class="label" for="subject">Stelle</label>
+                                                        <input type="text" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                    <label class="label" for="#">Commento</label>
+                                                                    <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
+                                                            </div>
+                                                        </div>
                                         </div>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>

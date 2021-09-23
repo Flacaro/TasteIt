@@ -40,6 +40,7 @@ SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"])
 SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
 SimpleRouter::post("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
 SimpleRouter::post("/products/{productId}/addToCart/{cartId}", [ProductController::class, "addProductToCart"]);
+SimpleRouter::post("/products/{productId}/addReview", [ProductController::class, "createReview"]);
 
 
 SimpleRouter::get("/users", [CustomerController::class, "getAll"]);

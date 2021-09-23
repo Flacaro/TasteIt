@@ -13,10 +13,10 @@ use App\Views\VStatistic;
 class StatisticController{
 
     public function visualizeStatistics(){
-        $forder=new FOrder();
-        $monthly=$forder->getMonthlyRevenues();
-        $ordersquantity=$forder->getMonthlyOrdersQuantity();
-        $data=$forder->getOrdersPerMonth();
+        $fOrder=new FOrder();
+        $monthly=$fOrder->getMonthlyRevenues();
+        $ordersquantity=$fOrder->getMonthlyOrdersQuantity();
+        $data=$fOrder->getOrdersPerMonth();
         $data1=[];
         $data2=[];
         //print_r($data);

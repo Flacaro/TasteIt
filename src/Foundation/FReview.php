@@ -28,10 +28,10 @@ class FReview {
         return $reviews;
     }
 
-    function createReview($review){
+    function createReview($review, $productId){
         $pdo = FConnection::connect();
         //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
-        $query = 'insert into reviews (stars, comment, customerId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getCustomerId(). ','. $review->getproductId().')';
+        $query = 'insert into reviews(stars, comment, customerId, productId) values ('.$review->getStars().', \''. $review->getComment().'\', '. $review->getCustomer()->getId(). ','. $productId.')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         //$stmt->debugDumpParams();
