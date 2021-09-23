@@ -13,12 +13,11 @@ use App\Views\VStatistic;
 class StatisticController{
 
     public function visualizeStatistics(){
-        $fOrder=new FOrder();
+        $fOrder=new \App\Foundation\admin\FOrder();
         $monthly=$fOrder->getMonthlyRevenues();
-        $ordersquantity=$fOrder->getMonthlyOrdersQuantity();
+        $ordersQuantity=$fOrder->getMonthlyOrdersQuantity();
         $data=$fOrder->getOrdersPerMonth();
         $data1=[];
-        $data2=[];
         //print_r($data);
         for($i=1; $i<=12; $i++){
             $data1[$i]=0;
@@ -27,9 +26,9 @@ class StatisticController{
             $data1[$element[1]]=$element[0];
         }
         //print_r($data1);
-        $vadmin= new VStatistic();
+        $vAdmin= new VStatistic();
         //perchè array??
-        $vadmin->visualizeStatistics($monthly[0],$ordersquantity[0], json_encode(array_values($data1)));
+        $vAdmin->visualizeStatistics($monthly[0],$ordersQuantity[0], json_encode(array_values($data1)));
     }
 
 }

@@ -55,7 +55,7 @@ class FOrder {
         $stmt = $pdo->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
-        $stmt->fetchAll();
+        return $stmt->fetchAll();
     }
 
     public function getMonthlyOrdersQuantity(){

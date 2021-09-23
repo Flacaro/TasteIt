@@ -64,10 +64,10 @@ SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::clas
 SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 
 
-/*SimpleRouter::get("/orders", [OrderController::class, "visualizeOrdersPending"]);
+SimpleRouter::get("/orders", [OrderController::class, "visualizeOrdersPending"]);
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
 SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
-SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);*/
+SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 
 
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
