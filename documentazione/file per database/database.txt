@@ -158,11 +158,12 @@ INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customer
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1768,'Milano','Santa Maria',7,2);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (8796,'Mantova','Santa Cecilia',10,3);
 INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
-insert into coupons (`id`, `priceCut`, `expirationDate`) values ('C614c7de6d8a19', '30', '2021-10-07')
+insert into coupons (`id`, `priceCut`, `expirationDate`) values ('C614c7de6d8a19', '30', '2021-10-07');
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8345',20,'2021-09-13');
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
+INSERT INTO `orderstates`(`state`) VALUES ('Completed');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,2345671,'2027-09-21',324,'Mario Rossi');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,23490871,'2025-05-14',784,'Sandro Rosa');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,87698971,'2030-01-04',521,'Michela Bianchi');
