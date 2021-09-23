@@ -15,12 +15,11 @@ class VOrder {
             'orders' => $orders
         ]);
     }
-    public function getOrderDetails($order, $customer,$products,$address) {
+    public function getOrderDetails($order, $products, $customer) {
         return view('admin/orders/order-details', [
             "order"=>$order,
-            "customer"=>$customer,
             "products"=>$products,
-            "address"=>$address
+            "customer"=>$customer
         ]);
     }
 }

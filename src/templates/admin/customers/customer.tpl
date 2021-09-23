@@ -31,7 +31,7 @@
 
                                     <tr>
                                         <td>
-                                            {$customer->id}
+                                            {$customer->getId()}
                                         </td>
                                         <td>
                                             {$customer->getName()}

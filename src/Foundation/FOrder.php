@@ -4,6 +4,10 @@
 namespace App\Foundation;
 
 
+use App\Foundation\admin\FCoupon;
+use App\Models\Address;
+use App\Models\Cash;
+use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductWithQuantity;
@@ -69,6 +73,38 @@ class FOrder extends FConnection {
         return $orders;
     }
 
+    public function load($id){
+        $fcoupon=new FCoupon;
+        $fpay=new FPaymentMethod;
+        $faddress=new FAddress;
+        $pdo = FConnection::connect();
+        $query = 'select * from orders where id='.$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $o=$stmt->fetch();
+        $order=new Order;
+        $order->setId($o[0]);
+        $order->setCreationDate($o[1]);
+        $order->setTotal($o[2]);
+        $order->setArrivalTime($o[3]);
+        if ($o[4]!=""){
+            $order->setCoupon($fcoupon->load($o[4]));
+        }
+        else{
+            $order->setCoupon(NULL);
+        }
+        $order->setCustomerId($o[5]);
+        if ($o[6]==2){
+        $order->setPayment($fpay->load($o[9]));
+        }
+        else{
+            $order->setPayment(new Cash);
+        }
+        $order->setState($o[7]);
+        $order->setAddress($faddress->load($o[8]));
+        //print_r($o);
+        return $order;
+    }
 
     function store($order): string {
         $pdo = FConnection::connect();

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-08 12:13:41
+/* Smarty version 3.1.39, created on 2021-09-23 16:45:06
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\coupons\coupons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61388cd524cd37_39925572',
+  'unifunc' => 'content_614c92f2108773_49747336',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d4296d691c67e027445d3a0bb4cba69bfe3cf07' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\coupons\\coupons.tpl',
-      1 => 1631096003,
+      1 => 1632408304,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61388cd524cd37_39925572 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614c92f2108773_49747336 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174127125361388cd5244033_69410130', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44762184614c92f20fece3_79971404', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_174127125361388cd5244033_69410130 extends Smarty_Internal_Block
+class Block_44762184614c92f20fece3_79971404 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_174127125361388cd5244033_69410130',
+    0 => 'Block_44762184614c92f20fece3_79971404',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -75,7 +75,7 @@ $_smarty_tpl->tpl_vars['coupon']->do_else = false;
 
                                         </td>
                                         <td>
-                                            <?php echo $_smarty_tpl->tpl_vars['coupon']->value->priceCut;?>
+                                            <?php echo $_smarty_tpl->tpl_vars['coupon']->value->getpriceCut();?>
 
                                         </td>
                                     </tr>

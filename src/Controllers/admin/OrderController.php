@@ -14,7 +14,7 @@ class OrderController {
 
     public function visualizeOrdersPending() {
         $FOrder = new FOrder();
-        $orders=$FOrder->getOrders();
+        $orders=$FOrder->getAll();
         $vorder = new VOrder();
         $vorder->getOrders($orders);
     }
@@ -23,12 +23,11 @@ class OrderController {
         $forder=new FOrder();
         $fcustomer=new FCustomer();
         $faddress=new FAddress();
-        $order=$forder->getById($id);
+        $order=$forder->load($id);
+        $customer=$fcustomer->load($order->getCustomerId());
         $products=$forder->getOrderProducts($id);
-        $customer=$fcustomer->getById($order->getCustomer()->getId());
-        $address=$faddress->getById($order->getAddress()->getId());
         $vorder = new VOrder();
-        $vorder->getOrderDetails($order, $customer, $products, $address);
+        $vorder->getOrderDetails($order, $products, $customer);
     }
 
     public function acceptOrder($id){
