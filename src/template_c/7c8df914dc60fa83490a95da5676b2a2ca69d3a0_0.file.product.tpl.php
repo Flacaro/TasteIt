@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-22 18:24:10
+/* Smarty version 3.1.39, created on 2021-09-23 13:01:09
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614b58aae18688_31032899',
+  'unifunc' => 'content_614c5e759e2194_48989043',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1632327850,
+      1 => 1632394866,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614b58aae18688_31032899 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614c5e759e2194_48989043 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_833570087614b58aae05eb0_48101972', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_23447537614c5e759d2ae1_26456791', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1123072597614b58aae06804_48693330', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_356554789614c5e759d3410_74336003', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_833570087614b58aae05eb0_48101972 extends Smarty_Internal_Block
+class Block_23447537614c5e759d2ae1_26456791 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_833570087614b58aae05eb0_48101972',
+    0 => 'Block_23447537614c5e759d2ae1_26456791',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1123072597614b58aae06804_48693330 extends Smarty_Internal_Block
+class Block_356554789614c5e759d3410_74336003 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1123072597614b58aae06804_48693330',
+    0 => 'Block_356554789614c5e759d3410_74336003',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -208,8 +208,8 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
                                     <div class="user-img" style="background-image: url(../../src/assets/images/Fla.jpg)"></div>
                                     <div class="desc">
                                         <h4>
-                                            <span class="text-left"><?php echo $_smarty_tpl->tpl_vars['review']->value->getUser()->getName();?>
- <?php echo $_smarty_tpl->tpl_vars['review']->value->getUser()->getSurname();?>
+                                            <span class="text-left"><?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getName();?>
+ <?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getSurname();?>
 </span>
                                             <span class="text-right">25 Aprile 2020</span>
                                         </h4>

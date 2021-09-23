@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 
+use App\Foundation\FCart;
 use App\Foundation\FFavourites;
 use App\Foundation\FProduct;
 use App\Models\Favourites;
@@ -21,20 +22,31 @@ class FavouritesController {
     public function getFavouritesProducts() {
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
+        $FCart = new FCart();
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $favId = $cus->getFav()->getId();
-            $fav = $FFavourites->load($favId);
-            $products = $FFavourites->getFavouritesProducts($fav);
+            $FFavourites->load($favId);
+            $cartId = $cus->getCart()->getId();
+            $FCart->load($cartId);
+            $products = $FFavourites->getFavouritesProducts($favId);
             $vFavourites = new VFavourites();
-            $vFavourites->viewFavouritesProducts($products);
+            $vFavourites->viewFavouritesProducts($favId, $products, $cartId);
         }
     }
 
-    public function edit($id) {
+    public function deleteProductFromFav($productId) {
+        $session = Session::getInstance();
         $FFavourites = new FFavourites();
-        $favourites = $FFavourites->getById($id)->getProductId();
-        $vfavourites= new VFavourites();
-        $vfavourites->viewEdit($id, $favourites);
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $favId = $cus->getFav()->getId();
+            $FFavourites->load($favId);
+            $FFavourites->deleteFromFavourites($favId, $productId);
+            $products = $FFavourites->getFavouritesProducts($favId);
+            $vFavourites = new VFavourites();
+            $vFavourites->viewFavouritesProducts($favId, $products, $productId);
+        }
     }
+
 }

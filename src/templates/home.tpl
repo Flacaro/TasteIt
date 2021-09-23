@@ -8,7 +8,7 @@
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="/products" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+                        <p><a href="/products" class="btn btn-primary py-2 px-4">Prodotti</a> <a href="/favourites/{$favId}" class="btn btn-primary py-2 px-4">Preferiti</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Leggi di più</a></p>
                      </div>
                 </div>
             </div>
@@ -84,8 +84,8 @@
                     <div class="col-lg-2 col-md-4">
                         <a href="/categories/{$category->getId()}/products">
                         <div class="sort w-100 text-center ftco-animated">
-                            <div class="img" style="background-image: url({$category->getImage()});" ></div>
-                            <h3>{$category->getCategoryName()}</h3>
+                            <div class="img" style="background-image: url({$category->getImage()})" ></div>
+                            <h3>{$category->getName()}</h3>
                         </div>
                         </a>
                     </div>
@@ -109,9 +109,16 @@
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestRated->getImagePath()});">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                    <a href="/" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                <form action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
+                                    <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
+                                    <button id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                </form>
+                                <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
+                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
+                                </form>
+                                <form action="/products/{$product->getId()}">
+                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                </form>
                                 </p>
                             </div>
                         </div>

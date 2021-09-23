@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.39, created on 2021-08-17 21:42:14
-  from 'C:\Users\mohamed\Documents\GitHub\TasteIt\src\templates\product\favourite.tpl' */
+  from 'C:\Users\mohamed\Documents\GitHub\TasteIt\src\templates\product\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '3878a2673693f74a0ddd6d2eb87e731580302ab1' => 
     array (
-      0 => 'C:\\Users\\mohamed\\Documents\\GitHub\\TasteIt\\src\\templates\\product\\favourite.tpl',
+      0 => 'C:\\Users\\mohamed\\Documents\\GitHub\\TasteIt\\src\\templates\\product\\favourites.tpl',
       1 => 1629211469,
       2 => 'file',
     ),

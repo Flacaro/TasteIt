@@ -13,7 +13,7 @@ class VProduct {
         ]);
     }
 
-    public function editProduct($product) {
+/*    public function editProduct($product) {
         return view('product/product-update', [
             'id' => $product->getId(),
             'name' => $product->getName(),
@@ -21,7 +21,7 @@ class VProduct {
             'price' => $product->getPrice(),
             'categoryId' => $product->getCategoryId()
         ]);
-    }
+    }*/
 
     public function getDetailsOfProduct($product, $stars, $ratings) {
         return view('product/product', [

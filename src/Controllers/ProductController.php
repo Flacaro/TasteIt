@@ -57,8 +57,15 @@ class ProductController
             $favId = $cus->getFav()->getId();
             $fCart->load($cartId);
             $fFav->load($favId);
-            $quantity =  $_POST['quantity'];
-            $fProduct->addToCart($productId, $cartId, $quantity);
+            /*$quantity = $_POST['productQuantity'];*/
+            $quantity = $_POST['quantity'];
+            if($quantity == 1) {
+                $fProduct->addToCart($productId, $cartId, 1);
+            }
+            else {
+                $fProduct->addToCart($productId, $cartId, $quantity);
+
+            }
             $vProduct = new VProduct();
             $vProduct->getProducts($products, $cartId, $favId);
         }
@@ -68,15 +75,21 @@ class ProductController
         $session=Session::getInstance();
         $FProduct = new FProduct();
         $FFavourites = new FFavourites();
+        $FCart = new FCart();
         $FProduct->load($productId);
+
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
+            $products = $FProduct->getAll();
             $favId = $cus->getFav()->getId();
             $FFavourites->load($favId);
+            $cartId = $cus->getCart()->getId();
+            $FCart->load($cartId);
             $FFavourites->addToFavourites($favId, $productId);
-            $vFavourites = new VFavourites();
-            $vFavourites->viewAddition($favId, $productId);
+            $vProduct = new VProduct();
+            $vProduct->getProducts($products, $cartId, $favId);
         }
+
     }
 
 

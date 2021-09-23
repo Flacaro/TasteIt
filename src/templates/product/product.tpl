@@ -127,7 +127,7 @@
                                     <div class="user-img" style="background-image: url(../../src/assets/images/Fla.jpg)"></div>
                                     <div class="desc">
                                         <h4>
-                                            <span class="text-left">{$review->getUser()->getName()} {$review->getUser()->getSurname()}</span>
+                                            <span class="text-left">{$review->getCustomer()->getName()} {$review->getCustomer()->getSurname()}</span>
                                             <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">

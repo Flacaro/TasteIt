@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-22 18:11:18
-  from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\favourite.tpl' */
+/* Smarty version 3.1.39, created on 2021-09-23 11:18:50
+  from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614b55a6ae7424_42325674',
+  'unifunc' => 'content_614c467a9210c5_35578221',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f959cf2fb1d9833fe2f6e3df1011f8278f7f63d2' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\favourite.tpl',
-      1 => 1632327039,
+      0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\favourites.tpl',
+      1 => 1632388729,
       2 => 'file',
     ),
   ),
@@ -20,41 +20,41 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614b55a6ae7424_42325674 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614c467a9210c5_35578221 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1701796286614b55a6adf0a5_95763415', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_212897693614c467a9195b8_20203347', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2125744398614b55a6adf9e4_93536371', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1786921479614c467a919ec1_91472802', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1701796286614b55a6adf0a5_95763415 extends Smarty_Internal_Block
+class Block_212897693614c467a9195b8_20203347 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1701796286614b55a6adf0a5_95763415',
+    0 => 'Block_212897693614c467a9195b8_20203347',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-Preferiti<?php
+All products<?php
 }
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_2125744398614b55a6adf9e4_93536371 extends Smarty_Internal_Block
+class Block_1786921479614c467a919ec1_91472802 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_2125744398614b55a6adf9e4_93536371',
+    0 => 'Block_1786921479614c467a919ec1_91472802',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,9 +68,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-9 ftco-animated mb-5 text-center">
                     <p class="breadcrumbs mb-0"><span class="mr-2">
                             <a href="index.html">Home <i class="fa fa-chevron-right"></i></a>
-                        </span> <span>Preferiti <i class="fa fa-chevron-right"></i></span>
+                        </span> <span>Prodotti<i class="fa fa-chevron-right"></i></span>
                     </p>
-                    <h2 class="mb-0 bread">Lista dei preferiti</h2>
+                    <h2 class="mb-0 bread">Preferiti</h2>
                 </div>
             </div>
         </div>
@@ -82,10 +82,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-12">
                     <div class="row mb-4">
                         <div class="col-md-12 d-flex justify-content-between align-items-center">
-                            <h4 class="product-select">Select Types of Products</h4>
+                            <h4 class="product-select">Lista dei preferiti</h4>
                         </div>
                     </div>
-
                     <div class="row">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
@@ -95,13 +94,13 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
-);">
+                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');">
                                         <div class="desc">
                                             <p class="meta-prod d-flex">
-                                                <a href="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
-/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addToCart" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
+                                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
+                                                <a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
                                                 <a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 " class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
                                             </p>
@@ -117,12 +116,11 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
-
-
 <?php
 }
 }

@@ -62,7 +62,7 @@ class CustomerController {
 
     public function edit($id) {
         $FUsers = new FCustomer();
-        $user = $FUsers->getById($id);
+        $user = $FUsers->load($id);
         $vuser = new VUser();
         $vuser->editUser($user);
     }
@@ -78,45 +78,13 @@ class CustomerController {
 
         public function getId($id){
         $FUsers = new FCustomer();
-        $user = $FUsers->getById($id);
-        $vuser = new VUser();
-        $vuser->getCartId($user);
+        $user = $FUsers->load($id);
+        $vUser = new VUser();
+        $vUser->getCartId($user);
      }
 
 
-    public function addToCart($cartId, $productId) {
-        $FCart = new FCart();
-        $FProduct = new FProduct();
-        $cart = new Cart();
-        $cart = $FCart->getById($cartId);
 
-        $FProduct->create($cart);
-    }
-
-    public function deleteFromCart($cartId, $productId) {
-        $FProduct = new FProduct();
-        $FProduct->getById($cartId);
-        $FProduct->delete($productId);
-    }
-
-    public function addToFavourites($favouritesId, $productId) {
-
-    }
-    public function makeOrder($orderId) {
-
-    }
-    public function payWithCard(){
-
-    }
-    public function payWithCash(){
-
-    }
-    public function getAllReviews($productId){
-
-    }
-    public function writeReview($productId){
-
-    }
     public function insertPersonalData($method,$cardNumber,$expDate,$holder,$cvv){
     }
 

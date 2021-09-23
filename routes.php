@@ -69,9 +69,8 @@ SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"])
 SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);*/
 
 
-SimpleRouter::get("/favourites/{id}",[FavouritesController::class, "getListOfFavourites"]);
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
-SimpleRouter::get("/favourites",[FavouritesController::class, "getFavouritesProducts"]);
+SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavouritesProducts"]);
 
 
 SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
