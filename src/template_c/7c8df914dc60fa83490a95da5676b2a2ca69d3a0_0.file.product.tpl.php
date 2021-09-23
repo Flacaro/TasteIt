@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-23 18:22:39
+/* Smarty version 3.1.39, created on 2021-09-23 18:46:20
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614ca9cfcb1d50_43543667',
+  'unifunc' => 'content_614caf5c7994e5_40828503',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1632414158,
+      1 => 1632414173,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614ca9cfcb1d50_43543667 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614caf5c7994e5_40828503 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_491734374614ca9cfca2a39_30974222', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1248057646614caf5c7814c1_56409653', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_703272498614ca9cfca3359_12274504', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2139524503614caf5c782076_23122510', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_491734374614ca9cfca2a39_30974222 extends Smarty_Internal_Block
+class Block_1248057646614caf5c7814c1_56409653 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_491734374614ca9cfca2a39_30974222',
+    0 => 'Block_1248057646614caf5c7814c1_56409653',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_703272498614ca9cfca3359_12274504 extends Smarty_Internal_Block
+class Block_2139524503614caf5c782076_23122510 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_703272498614ca9cfca3359_12274504',
+    0 => 'Block_2139524503614caf5c782076_23122510',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -243,12 +243,12 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </div>
-                            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addReview" method="POST" id="add">
+
                             <div>
                                 <div class="contact-wrap w-100 p-md-5">
                                     <h3 class="mb-5">Lascia una recensione</h3>
-
+                                    <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/addReview" method="POST" id="add">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
@@ -268,13 +268,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                             </div>
                                                         </div>
                                         </div>
-
+                                    </form>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                </form>
                 </div>
             </div>
         </div>

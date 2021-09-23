@@ -17,15 +17,11 @@ class ProductController
     public function getAll() {
         $session=Session::getInstance();
         $FProduct = new FProduct();
-        $FCart = new FCart();
-        $FFav = new FFavourites();
         $products = $FProduct->getAll();
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
-            $FCart->load($cartId);
-            $FFav->load($favId);
             $vProduct = new VProduct();
             $vProduct->getProducts($products, $cartId, $favId);
         }
@@ -48,16 +44,12 @@ class ProductController
     public function addProductToCart($productId) {
         // il carrello si prende dalla sessione dall'utente loggato
         $session=Session::getInstance();
-        $fCart = new FCart();
         $fProduct = new FProduct();
-        $fFav = new FFavourites();
         $products = $fProduct->getAll();
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
-            $fCart->load($cartId);
-            $fFav->load($favId);
             /*$quantity = $_POST['productQuantity'];*/
             $quantity = $_POST['quantity'];
             if($quantity == 1) {
@@ -83,9 +75,7 @@ class ProductController
             $cus = unserialize($_SESSION["customer"]);
             $products = $FProduct->getAll();
             $favId = $cus->getFav()->getId();
-            $FFavourites->load($favId);
             $cartId = $cus->getCart()->getId();
-            $FCart->load($cartId);
             $FFavourites->addToFavourites($favId, $productId);
             $vProduct = new VProduct();
             $vProduct->getProducts($products, $cartId, $favId);
@@ -102,17 +92,12 @@ class ProductController
         $rev = [];
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
-            $favId = $cus->getFav()->getId();
-            $FFavourites->load($favId);
-            $cartId = $cus->getCart()->getId();
-            $FCart->load($cartId);
             $FReview = new FReview();
             $stars = $_POST['stars'];
             $comment = $_POST['comment'];
             $review = new Review;
             $review->setStars($stars);
             $review->setComment($comment);
-            //$review->setProductId($productId);
             $review->setCustomer($cus);
             array_push($rev, $review);
             $FReview->createReview($review, $productId);

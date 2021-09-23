@@ -12,9 +12,10 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 class RestaurantController {
 
-    public function acceptOrder($orderId) {
+    //questa gia sta in orderController dell'admin(?)
+/*    public function acceptOrder($orderId) {
         $FOrder = new FOrder();
-        $oldOrder=$FOrder->getById($orderId);
+        $oldOrder=$FOrder->load($orderId);
         //superglobal, come parametro ci va passato il nome dell'input a cui fare riferimento
         $state = $_POST['state'];
         $arrivalTime = $_POST['arrivalTime'];
@@ -29,16 +30,18 @@ class RestaurantController {
         $order->setCustomerId($oldOrder->getUserId());
         $FOrder->update($orderId, $order);
 
-    }
+    }*/
 
-    public function edit($id) {
+    //a che serve?
+ /*   public function edit($id) {
         $FOrder = new FOrder();
         $order = $FOrder->getById($id);
         $vorder = new VOrder();
         $vorder->getOrders($order);
-    }
+    }*/
 
-    public function addOrder(){
+    //?
+ /*   public function addOrder(){
         $FOrder = new FOrder();
         $order = new Order();
         $order->setId(NULL);
@@ -50,7 +53,7 @@ class RestaurantController {
         $order->setRestaurantId(1);
         $order->setCustomerId(3);
         $FOrder->create($order);
-    }
+    }*/
 
     public function visualizeContactPage(){
         $FRestaurant = new FRestaurant();
@@ -59,21 +62,7 @@ class RestaurantController {
         $vrestaurant->getContactPage($restaurant);
     }
 
-    public function addCategory($categoryId, $categories) {
 
-    }
-    public function addCoupon($couponId){
-
-    }
-    public function addProduct($name, $description, $price, $category) {
-
-    }
-    public function createCoupon($discount, $start, $end, $users) {
-
-    }
-    public function sendCoupon($userId){
-
-    }
     public function getAdminPanel(){
 
     }

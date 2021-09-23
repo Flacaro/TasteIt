@@ -27,8 +27,8 @@ class HomePageController {
      $bestSellers = $FProduct->getBestSellers();
      $bestReviews = $FProduct->getBestReviews();
      $products = $FProduct->getAll();
-     $b = $FProduct->getBestRated();//print_r($bestReviews);
-     ;
+     $b = $FProduct->getBestRated();
+     //print_r($bestReviews);
      $bestRated = array();
      foreach ($b as $best) {
          array_push($bestRated, $FProduct->load($best[1]));
@@ -36,7 +36,6 @@ class HomePageController {
      if ($session->isUserLogged()) {
          $cus = unserialize($_SESSION["customer"]);
          $favId = $cus->getFav()->getId();
-         $FFavourites->load($favId);
          $cartId = $cus->getCart()->getId();
          $cart = $FCart->load($cartId);
          $products = $cart->getProducts();
