@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-24 19:37:09
+/* Smarty version 3.1.39, created on 2021-09-24 22:05:03
   from 'C:\xampp\htdocs\TasteIt\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614e0cc5d988a6_97835967',
+  'unifunc' => 'content_614e2f6fa41168_90387926',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b9669fcc47ea045bd5d11a9f88449e7a267b40e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\home.tpl',
-      1 => 1632505028,
+      1 => 1632513899,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614e0cc5d988a6_97835967 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614e2f6fa41168_90387926 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_984921929614e0cc5d86942_52464812', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1604042239614e2f6fa2a183_28227537', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1344046141614e0cc5d87412_50043942', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2015713300614e2f6fa2b672_18217244', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_984921929614e0cc5d86942_52464812 extends Smarty_Internal_Block
+class Block_1604042239614e2f6fa2a183_28227537 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_984921929614e0cc5d86942_52464812',
+    0 => 'Block_1604042239614e2f6fa2a183_28227537',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1344046141614e0cc5d87412_50043942 extends Smarty_Internal_Block
+class Block_2015713300614e2f6fa2b672_18217244 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1344046141614e0cc5d87412_50043942',
+    0 => 'Block_2015713300614e2f6fa2b672_18217244',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -225,43 +225,50 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url(../../src/assets/images/bg_4.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
-                    <span class="subheading">placeholder</span>
-                    <h2 class="mb-3">Cosa Dicono di Noi</h2>
+    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">*}
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
+                        <span class="subheading">placeholder</span>
+                        <h2 class="mb-3">Cosa Dicono di Noi</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row ftco-animated">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
-                        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestReviews']->value, 'bestReview');
-$_smarty_tpl->tpl_vars['bestReview']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bestReview']->value) {
-$_smarty_tpl->tpl_vars['bestReview']->do_else = false;
+
+                <div class="row">
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestReviews']->value, 'review');
+$_smarty_tpl->tpl_vars['review']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['review']->value) {
+$_smarty_tpl->tpl_vars['review']->do_else = false;
 ?>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['bestReview']->value->getReviews();?>
+                            <div class="col-4">
+                                <div class="item">
+                                    <div class="testimony-wrap py-4">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                        <div class="text">
+                                            <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['review']->value->getComment();?>
 </p>
-                                                                                                                      </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-img"style="background-image: url('https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png');"></div>
+                                                <div class="pl-3">
+                                                    <p class="name"><?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getName();?>
+</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php
+                    <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                    </div>
+
                 </div>
             </div>
-        </div>
     </section>
+
+
 
     <section class="ftco-section">
         <div class="container">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-24 18:53:21
+/* Smarty version 3.1.39, created on 2021-09-24 22:38:17
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614e0281dc7878_74218526',
+  'unifunc' => 'content_614e37397016b8_44220066',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1632502401,
+      1 => 1632515894,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614e0281dc7878_74218526 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614e37397016b8_44220066 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -45,35 +45,38 @@ function content_614e0281dc7878_74218526 (Smarty_Internal_Template $_smarty_tpl)
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
 
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small></small></div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productsC']->value, 'p');
-$_smarty_tpl->tpl_vars['p']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
-$_smarty_tpl->tpl_vars['p']->do_else = false;
+                <div class="d-flex justify-content-center align-items-center"><small><?php echo sizeof($_smarty_tpl->tpl_vars['productsC']->value);?>
+</small></div>
+            </button>
+
+            <div id="cart-dropdown" class="dropdown-menu dropdown-menu-right">
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productsC']->value, 'productWithQuantity');
+$_smarty_tpl->tpl_vars['productWithQuantity']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['productWithQuantity']->value) {
+$_smarty_tpl->tpl_vars['productWithQuantity']->do_else = false;
 ?>
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                        <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['p']->value[4];?>
-)"></div>
+
+                    <div class="dropdown-item d-flex align-items-start" href="#">
+                        <div class="img"></div>
                         <div class="text pl-3">
-                            <h4><?php echo $_smarty_tpl->tpl_vars['p']->value[1];?>
+                            <h4><?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getName();?>
 </h4>
-                            <p class="mb-0"><a href="#" class="price"></a><span class="quantity ml-3"><?php echo $_smarty_tpl->tpl_vars['p']->value[3];?>
+                            <p class="mb-0"><a href="#" class="price">$<?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getPrice();?>
+</a><span class="quantity ml-3">Quantity: <?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[1];?>
 </span></p>
                         </div>
-                </div>
+                    </div>
+
                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="#">
-                    <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+
+                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 /products">
-                        <button class="btn btn-primary btn-number" type="submit">Vai al carrello</span></button>
-                    </form>
+                    View All
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
@@ -121,8 +124,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     const dropdownLink = document.querySelector('#dropdown04');
     const dropdown = document.querySelector('#dropdown-menu');
 
+    const cartBtn = document.querySelector('#cart-btn');
+    const cartDropdown = document.querySelector('#cart-dropdown');
+    let isCartOpen = false;
+
+    // categories hover
     dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
     dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
+
+    // quando il bottone viene cliccato bisogna aggiungere la classe show a cartDropdown.
+    cartBtn.addEventListener('click', () => {
+        isCartOpen ? cartDropdown.classList.remove('show') : cartDropdown.classList.add('show');
+        isCartOpen = !isCartOpen;
+    });
 
 <?php echo '</script'; ?>
 ><?php }

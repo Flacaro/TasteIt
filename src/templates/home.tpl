@@ -141,39 +141,41 @@
         </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url(../../src/assets/images/bg_4.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
-                    <span class="subheading">placeholder</span>
-                    <h2 class="mb-3">Cosa Dicono di Noi</h2>
+    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">*}
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
+                        <span class="subheading">placeholder</span>
+                        <h2 class="mb-3">Cosa Dicono di Noi</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row ftco-animated">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
-                        {foreach $bestReviews as $bestReview}
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">{$bestReview->getReviews()}</p>
-                                   {* <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url({$bestReview[1][4]})"></div>
-                                        <div class="pl-3">*}
-                                           {* <p class="name">{$bestReview->getName()}</p>*}
+
+                <div class="row">
+                    {foreach $bestReviews as $review}
+                            <div class="col-4">
+                                <div class="item">
+                                    <div class="testimony-wrap py-4">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                        <div class="text">
+                                            <p class="mb-4">{$review->getComment()}</p>
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-img"style="background-image: url('https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png');"></div>
+                                                <div class="pl-3">
+                                                    <p class="name">{$review->getCustomer()->getName()}</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        {/foreach}
-                    </div>
+                    {/foreach}
+
                 </div>
             </div>
-        </div>
     </section>
+
+
 
     <section class="ftco-section">
         <div class="container">

@@ -24,10 +24,18 @@ class HomePageController {
      $FCategory = new FCategory();
      $categories = $FCategory->getAll();
      $bestSellers = $FProduct->getBestSellers();
+     // sono prodotti, non reviews
      $bestReviews = $FProduct->getBestReviews();
      $products = $FProduct->getAll();
      $b = $FProduct->getBestRated();
-     //print_r($b);
+     $topThreeReviews = [];
+
+     foreach($bestReviews as $product) {
+         if(sizeof($product->getReviews())) {
+             array_push($topThreeReviews, $product->getReviews()[0]);
+         }
+     }
+
      $bestRateds = [];
      foreach ($b as $best) {
          array_push($bestRateds, $FProduct->load($best[1]));
@@ -38,22 +46,23 @@ class HomePageController {
          $cartId = $cus->getCart()->getId();
          $cart = $FCart->load($cartId);
          $productsC = $cart->getProducts();
-         //print_r($productsC);
          $products = $FProduct->getAll();
          $vHome = new VHomePage();
-         $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $bestReviews, $products, $productsC);
+         $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC);
      }
      $vHome = new VHomePage();
-     $vHome->viewHomePageIfLogged($favId = NULL, $cartId = NULL, $categories, $bestSellers, $bestRateds, $bestReviews, $products, $productsC = NULL);
+     $vHome->viewHomePageIfLogged($favId = NULL, $cartId = NULL, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC = NULL);
 
  }
 
     public function addToCartFromHome($productId) {
         $session=Session::getInstance();
         $fProduct = new FProduct();
+        $fCart = new FCart();
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
+            $cart = $fCart->load($cartId);
             $quantity = $_POST['quantity'];
             if($quantity == 1) {
                 $fProduct->addToCart($productId, $cartId, 1);
@@ -62,8 +71,9 @@ class HomePageController {
                 $fProduct->addToCart($productId, $cartId, $quantity);
 
             }
+           /* $vcart = new VCart();
+            $vcart->getProducts($products, $id);*/
 
-            self::visualizeHome();
         }
     }
 
@@ -76,8 +86,12 @@ class HomePageController {
             $cus = unserialize($_SESSION["customer"]);
             $favId = $cus->getFav()->getId();
             $FFavourites->addToFavourites($favId, $productId);
+            $products = $FFavourites->getFavouritesProducts($favId);
+            $vFavourites = new VFavourites();
+            $vFavourites->viewFavouritesProducts($favId, $products, $productId);
         }
-        self::visualizeHome();
+       /* self::visualizeHome();*/
+
     }
 
     public function About(){

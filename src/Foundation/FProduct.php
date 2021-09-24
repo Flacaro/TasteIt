@@ -112,7 +112,7 @@ class FProduct extends FConnection {
     function getBestReviews(){
         $pdo = FConnection::connect();
         //select * from reviews where productId=$productId;
-        $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.imagePath FROM reviews as r join products as p on r.productId = p.id ORDER BY stars DESC LIMIT 6;";
+        $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.imagePath FROM reviews as r join products as p on r.productId = p.id ORDER BY stars DESC LIMIT 3;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $reviews = $stmt->fetchAll();
@@ -133,8 +133,8 @@ class FProduct extends FConnection {
             $p->setImagePath($review[6]);
             $p->setReviews($rev);
             array_push($prod, $p);
+            $rev = [];
         }
-         //print_r($prod);
         return $prod;
     }
 

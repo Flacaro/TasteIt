@@ -22,24 +22,28 @@
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
 
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small></small></div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-                {foreach $productsC as $p}
-                <div class="dropdown-item d-flex align-items-start" href="#">
-                        <div class="img" style="background-image: url({$p[4]})"></div>
+                <div class="d-flex justify-content-center align-items-center"><small>{sizeof($productsC)}</small></div>
+            </button>
+
+            <div id="cart-dropdown" class="dropdown-menu dropdown-menu-right">
+{*                {$productsC[0]->getName()}*}
+                {* SINGOLO PRODOTTO NEL CARRELLO *}
+                {foreach $productsC as $productWithQuantity}
+
+                    <div class="dropdown-item d-flex align-items-start" href="#">
+                        <div class="img"></div>
                         <div class="text pl-3">
-                            <h4>{$p[1]}</h4>
-                            <p class="mb-0"><a href="#" class="price"></a><span class="quantity ml-3">{$p[3]}</span></p>
+                            <h4>{$productWithQuantity[0]->getName()}</h4>
+                            <p class="mb-0"><a href="#" class="price">${$productWithQuantity[0]->getPrice()}</a><span class="quantity ml-3">Quantity: {$productWithQuantity[1]}</span></p>
                         </div>
-                </div>
+                    </div>
+
                 {/foreach}
-                <a class="dropdown-item text-center btn-link d-block w-100" href="#">
-                    <form action="/carts/{$cartId}/products">
-                        <button class="btn btn-primary btn-number" type="submit">Vai al carrello</span></button>
-                    </form>
+
+                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/{$cartId}/products">
+                    View All
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
@@ -76,7 +80,18 @@
     const dropdownLink = document.querySelector('#dropdown04');
     const dropdown = document.querySelector('#dropdown-menu');
 
+    const cartBtn = document.querySelector('#cart-btn');
+    const cartDropdown = document.querySelector('#cart-dropdown');
+    let isCartOpen = false;
+
+    // categories hover
     dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
     dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
+
+    // quando il bottone viene cliccato bisogna aggiungere la classe show a cartDropdown.
+    cartBtn.addEventListener('click', () => {
+        isCartOpen ? cartDropdown.classList.remove('show') : cartDropdown.classList.add('show');
+        isCartOpen = !isCartOpen;
+    });
 
 </script>
