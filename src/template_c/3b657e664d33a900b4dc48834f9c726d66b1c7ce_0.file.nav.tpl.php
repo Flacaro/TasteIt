@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-24 18:21:18
+/* Smarty version 3.1.39, created on 2021-09-24 18:53:21
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614dfafe0842c0_83637710',
+  'unifunc' => 'content_614e0281dc7878_74218526',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1632500476,
+      1 => 1632502401,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614dfafe0842c0_83637710 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614e0281dc7878_74218526 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -44,19 +44,21 @@ function content_614dfafe0842c0_83637710 (Smarty_Internal_Template $_smarty_tpl)
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
-            <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown">
+
+            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
                 <div class="d-flex justify-content-center align-items-center"><small></small></div>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" data-toggle="dropdown04">
+            <div class="dropdown-menu dropdown-menu-right">
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productsC']->value, 'p');
 $_smarty_tpl->tpl_vars['p']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 $_smarty_tpl->tpl_vars['p']->do_else = false;
 ?>
-                <div class="dropdown-item d-flex align-items-start" href="#" id="dropdown-menu">
+                <div class="dropdown-item d-flex align-items-start" href="#">
+                        <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['p']->value[4];?>
+)"></div>
                         <div class="text pl-3">
                             <h4><?php echo $_smarty_tpl->tpl_vars['p']->value[1];?>
 </h4>
@@ -68,16 +70,13 @@ $_smarty_tpl->tpl_vars['p']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <a class="dropdown-item text-center btn-link d-block w-100" href="#">
-
                     <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 /products">
                         <button class="btn btn-primary btn-number" type="submit">Vai al carrello</span></button>
                     </form>
-
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
-            <?php }?>
         </div>
         <!-- fine menu dropdown del carrello -->
 
@@ -110,6 +109,7 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </li>
+
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -120,17 +120,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 >
     const dropdownLink = document.querySelector('#dropdown04');
     const dropdown = document.querySelector('#dropdown-menu');
-
-    dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
-    dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
-
-<?php echo '</script'; ?>
->
-
-<?php echo '<script'; ?>
->
-    const dropdownLink = document.querySelector('#dropdown');
-    const dropdown = document.querySelector('#dropd');
 
     dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
     dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));

@@ -73,7 +73,7 @@
                         <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
                         non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
                         <p class="year">
-                            <strong class="number" data-number="23">0</strong>
+                            <strong class="number" data-number="23">23</strong>
                             <span>Years of Experience In Business</span>
                         </p>
                     </div>
@@ -112,24 +112,24 @@
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestRated->getImagePath()});">
-                            <div class="desc">
+                            <div class="desc" style="display: flex">
                                 <p class="meta-prod d-flex">
-                                <form action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
+                                <form action="home/products/{$bestRated->getId()}/addToCart/{$cartId}" method="POST">
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
-                                    <button id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                    <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                 </form>
-                                <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
+                                <form action="home/products/{$bestRated->getId()}/addToFav/{$favId}" method="POST">
                                     <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                 </form>
-                                <form action="/products/{$product->getId()}">
-                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                <form action="/products/{$bestRated->getId()}">
+                                    <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
                                 </form>
                                 </p>
                             </div>
                         </div>
                         <a href="/products/{$bestRated->getId()}">
                         <div class="text text-center">
-                            <span class="category">{$bestRated->getCategory()->getCategoryName()}</span>
+                            {*<span class="category">{$bestRated->getCategory()->getCategoryName()}</span>*}
                             <h2>{$bestRated->getName()}</h2>
                             <p class="mb-0"> <span class="price">${$bestRated->getPrice()}</span></p>
                         </div>

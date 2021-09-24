@@ -21,15 +21,15 @@
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
-            {if $cartId}
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown">
+
+            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
                 <div class="d-flex justify-content-center align-items-center"><small></small></div>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" data-toggle="dropdown04">
+            <div class="dropdown-menu dropdown-menu-right">
                 {foreach $productsC as $p}
-                <div class="dropdown-item d-flex align-items-start" href="#" id="dropdown-menu">
-{*                        <div class="img" style="background-image: url({$product->getImagePath()});"></div>*}
+                <div class="dropdown-item d-flex align-items-start" href="#">
+                        <div class="img" style="background-image: url({$p[4]})"></div>
                         <div class="text pl-3">
                             <h4>{$p[1]}</h4>
                             <p class="mb-0"><a href="#" class="price"></a><span class="quantity ml-3">{$p[3]}</span></p>
@@ -37,15 +37,12 @@
                 </div>
                 {/foreach}
                 <a class="dropdown-item text-center btn-link d-block w-100" href="#">
-
                     <form action="/carts/{$cartId}/products">
                         <button class="btn btn-primary btn-number" type="submit">Vai al carrello</span></button>
                     </form>
-
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
-            {/if}
         </div>
         <!-- fine menu dropdown del carrello -->
 
@@ -68,6 +65,7 @@
                         {/foreach}
                     </div>
                 </li>
+
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -77,15 +75,6 @@
 <script>
     const dropdownLink = document.querySelector('#dropdown04');
     const dropdown = document.querySelector('#dropdown-menu');
-
-    dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
-    dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
-
-</script>
-
-<script>
-    const dropdownLink = document.querySelector('#dropdown');
-    const dropdown = document.querySelector('#dropd');
 
     dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
     dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));

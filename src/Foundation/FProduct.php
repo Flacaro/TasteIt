@@ -80,7 +80,7 @@ class FProduct extends FConnection {
 
     function getBestRated(){
         $pdo = FConnection::connect();
-        $query="select avg(stars) as average, productId from reviews group by productId order by average desc limit 8";
+        $query="select avg(stars) as average, p.id, p.name, p.price, p.imagePath from reviews as r join products as p on p.id = r.productId group by productId order by average desc limit 8";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();

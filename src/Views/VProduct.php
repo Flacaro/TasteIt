@@ -5,11 +5,12 @@ namespace App\Views;
 class VProduct {
 
     //ci andrebbe passato come parametro anche il cartId dell'utente loggato
-    public function getProducts($products, $cartId, $favId) {
+    public function getProducts($products, $cartId, $favId, $categories) {
         return view('product/all_products', [
             'products' => $products,
             'cartId' => $cartId,
-            'favId' => $favId
+            'favId' => $favId,
+            'categories' =>$categories
         ]);
     }
 
