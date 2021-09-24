@@ -73,6 +73,15 @@ class FOrder extends FConnection {
         return $orders;
     }
 
+    //le uniche cose a cui è permesso fare update sono lo stato e il tempo di arrivo
+    public function update($order){
+        $pdo = FConnection::connect();
+        $query='UPDATE `orders` SET `arrivalTime`=\''.$order->getArrivalTime().'\', `orderState`=\''.$order->getState().'\' where id='.$order->getId();
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $stmt->debugDumpParams();
+    }
+
     public function load($id){
         $fcoupon=new FCoupon;
         $fpay=new FPaymentMethod;

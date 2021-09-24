@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-22 17:34:19
+/* Smarty version 3.1.39, created on 2021-09-24 16:50:25
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614b4cfbac0433_59076445',
+  'unifunc' => 'content_614de5b1f2a851_99299749',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1632324820,
+      1 => 1632410285,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614b4cfbac0433_59076445 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614de5b1f2a851_99299749 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_891133380614b4cfba3d828_40273903', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_264092883614de5b1e27d43_58867336', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1647610024614b4cfba40e59_31184463', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_490654292614de5b1e2a940_78285033', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_891133380614b4cfba3d828_40273903 extends Smarty_Internal_Block
+class Block_264092883614de5b1e27d43_58867336 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_891133380614b4cfba3d828_40273903',
+    0 => 'Block_264092883614de5b1e27d43_58867336',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1647610024614b4cfba40e59_31184463 extends Smarty_Internal_Block
+class Block_490654292614de5b1e2a940_78285033 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1647610024614b4cfba40e59_31184463',
+    0 => 'Block_490654292614de5b1e2a940_78285033',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,7 +67,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="/products" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+                        <p><a href="/products" class="btn btn-primary py-2 px-4">Prodotti</a> <a href="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+" class="btn btn-primary py-2 px-4">Preferiti</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Leggi di più</a></p>
                      </div>
                 </div>
             </div>
@@ -150,8 +151,8 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 /products">
                         <div class="sort w-100 text-center ftco-animated">
                             <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['category']->value->getImage();?>
-);" ></div>
-                            <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
+)" ></div>
+                            <h3><?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
 </h3>
                         </div>
                         </a>
@@ -184,9 +185,21 @@ $_smarty_tpl->tpl_vars['bestRated']->do_else = false;
 );">
                             <div class="desc">
                                 <p class="meta-prod d-flex">
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                    <a href="/" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+" method="POST">
+                                    <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
+                                    <button id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                </form>
+                                <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/addToFavourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+" method="POST">
+                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
+                                </form>
+                                <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+">
+                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                </form>
                                 </p>
                             </div>
                         </div>

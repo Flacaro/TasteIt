@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-21 10:36:09
+/* Smarty version 3.1.39, created on 2021-09-24 16:50:26
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6120baf9ee5342_46665492',
+  'unifunc' => 'content_614de5b226cd42_89155028',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1629534951,
+      1 => 1632410285,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6120baf9ee5342_46665492 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614de5b226cd42_89155028 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -43,20 +43,36 @@ function content_6120baf9ee5342_46665492 (Smarty_Internal_Template $_smarty_tpl)
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
+
             <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
                 <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
+$_smarty_tpl->tpl_vars['product']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
+$_smarty_tpl->tpl_vars['product']->do_else = false;
+?>
                 <div class="dropdown-item d-flex align-items-start" href="#">
-                    <div class="img" style="background-image: url(../../assets/images/prod-1.jpg);"></div>
-                    <div class="text pl-3">
-                        <h4>Bacardi 151</h4>
-                        <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>
-                    </div>
+
+                        <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
+);"></div>
+                        <div class="text pl-3">
+                            <h4><?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
+</h4>
+                            <p class="mb-0"><a href="#" class="price"><?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
+</a><span class="quantity ml-3"><?php echo $_smarty_tpl->tpl_vars['product']->value->getQUantity();?>
+</span></p>
+                        </div>
                 </div>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/1/products">
-                    View All
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+/products">
+                    Vai al carrello
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>

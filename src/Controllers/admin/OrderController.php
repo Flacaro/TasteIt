@@ -32,10 +32,14 @@ class OrderController {
 
     public function acceptOrder($id){
         $forder=new FOrder();
-        $oldorder=$forder->getById($id);
-        $order= new Order;
+        $order=$forder->load($id);
         $order->setState("Accepted");
-        $forder->updateState($id, $order);
+        $order->setArrivalTime(date('H:i:s', strtotime($_POST["arrival"])));
+        $forder->update($order);
         //redirect(url("/admin/orders"));
+    }
+
+    public function refuseOrder($id){
+
     }
 }
