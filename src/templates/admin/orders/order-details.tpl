@@ -64,19 +64,28 @@
                         </table>
                     </div>
                     {if $order->getState()=="Pending"}
-                    <div class="d-flex" >
-                        <form method="POST" action="">
+                    <div class="row justify-content-center align-items-end">
+                    <form method="POST" action="/admin/orders/{$order->getId()}/accept">
                             <div class="update ml-auto mr-auto">
+                                <label>Tempo previsto di consegna: <input type="time" name="arrival"></label>
+                                <br>
                                 <button type="submit" class="btn btn-primary">Accetta Ordine</button>
                             </div>
-                        </form>
+                    </form>
+                        <form method="POST" action="refuseOrder">
                             <div class="update ml-auto mr-auto">
                                 <button type="submit" class="btn btn-primary">Rifiuta Ordine</button>
                             </div>
+                        </form>
                     </div>
                     {else}
                         <div style="text-align: center">
                         <h3>{$order->getState()}</h3>
+                        </div>
+                    {/if}
+                    {if $order->getState()=="Accepted"}
+                        <div class="d-flex justify-content-center">
+                            <h4>Tempo di arrivo previsto: {$order->getArrivalTime()}</h4>
                         </div>
                     {/if}
                 </div>
