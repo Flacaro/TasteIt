@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-21 11:04:53
+/* Smarty version 3.1.39, created on 2021-09-24 11:56:11
   from 'C:\xampp\htdocs\TasteIt\src\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6120c1b528dc72_47475525',
+  'unifunc' => 'content_614da0bb74a231_05592509',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4744e6eb5cca24bf07ba56b8a7d079c6cc057cbd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\aboutUs.tpl',
-      1 => 1629535957,
+      1 => 1632477288,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6120c1b528dc72_47475525 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614da0bb74a231_05592509 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2579148946120c1b528c272_42381241', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1944038191614da0bb748e02_48167617', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21041418686120c1b528cf07_73157095', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1005306124614da0bb749a49_55805243', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_2579148946120c1b528c272_42381241 extends Smarty_Internal_Block
+class Block_1944038191614da0bb748e02_48167617 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_2579148946120c1b528c272_42381241',
+    0 => 'Block_1944038191614da0bb748e02_48167617',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,21 +49,19 @@ aboutUs<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_21041418686120c1b528cf07_73157095 extends Smarty_Internal_Block
+class Block_1005306124614da0bb749a49_55805243 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_21041418686120c1b528cf07_73157095',
+    0 => 'Block_1005306124614da0bb749a49_55805243',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-        
-    <!-- fine barra con home, about... -->
+    
 
-    <!-- immagine con about us -->
 
     <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -126,15 +124,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
                         <span class="subheading">Since 1998</span>
-                        <h2 class="mb-4">Prova il vino del ristorante tipico  Abruzzese più vecchio de L'Aquila</h2>
+                        <h2 class="mb-4">Prova il nostro ristorante TasteIt  </h2>
 
-                        <p>descrizione placeholder</p>
-                        <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
-                            non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
+
+                        <p>Arrivare nel cuore di Montepulciano, città dalle sensazioni magiche, già di per sé rappresenta un viaggio attraverso i sensi. La vista, l’olfatto, l’udito. Dopo qualche serpentina in un’erta caratterizzata da un panorama mozzafiato che non nasconde certo il Tempio di San Biagio, capolavoro del Sangallo, ecco che passando da una porta, fiancheggiando la Fortezza di Montepulciano, baluardo della cittadina del Poliziano, si incontra TasteIt.
+
+                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti della tradizione senese.</p>
                         <!-- questo nel dubbio ce lo lascio ma non so se lo vogliamo lascia-->
                         <p class="year">
-                            <strong class="number" data-number="23">0</strong>
-                            <span>Years of Experience In Business</span>
+                            <strong class="number" data-number="25">0</strong>
+                            <span>Anni di esperienza</span>
                         </p>
                     </div>
                 </div>
@@ -142,132 +141,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         </div>
     </section>
 
+
+
+
+
     <section class="ftco-section ftco-no-pb">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-4 ">
-                    <div class="sort w-100 text-center">
-                        <div  class="img" style="background-image: url(../../src/assets/images/kind-6.jpg);"></div>
-                        <h3>Whiskey</h3>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 ">
-                    <div class="sort w-100 text-center">
-                        <div  class="img" style="background-image: url(../../src/assets/images/kind-3.jpg);"></div>
-                        <h3>Rum</h3>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 ">
-                    <div class="sort w-100 text-center">
-                        <div  class="img" style="background-image: url(../../src/assets/images/kind-5.jpg);"></div>
-                        <h3>Vodka</h3>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 ">
-                    <div class="sort w-100 text-center">
-                        <div  class="img" style="background-image: url(../../src/assets/images/kind-4.jpg);"></div>
-                        <h3>Tequila</h3>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="ftco-section testimony-section img" style="background-image: url(../../src/assets/images/bg_4.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 text-center heading-section heading-section-white">
-                    <span class="subheading">placeholder</span>
-                    <h2 class="mb-3">Cosa Dicono di Noi</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_2.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_3.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_1.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(../../src/assets/images/person_2.jpg)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Roger Scott</p>
-                                            <span class="position">Marketing Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 

@@ -32,14 +32,6 @@ class RestaurantController {
 
     }*/
 
-    //a che serve?
- /*   public function edit($id) {
-        $FOrder = new FOrder();
-        $order = $FOrder->getById($id);
-        $vorder = new VOrder();
-        $vorder->getOrders($order);
-    }*/
-
     //?
  /*   public function addOrder(){
         $FOrder = new FOrder();
@@ -57,9 +49,9 @@ class RestaurantController {
 
     public function visualizeContactPage(){
         $FRestaurant = new FRestaurant();
-        $restaurant = $FRestaurant->getById(1);
-        $vrestaurant = new VRestaurant();
-        $vrestaurant->getContactPage($restaurant);
+        $restaurant = $FRestaurant->getByEmail("tasteit@gmail.com");
+        $vRestaurant = new VRestaurant();
+        $vRestaurant->getContactPage($restaurant);
     }
 
 

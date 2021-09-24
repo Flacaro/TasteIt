@@ -87,8 +87,6 @@ class ProductController
     public function createReview($productId)
     {
         $session = Session::getInstance();
-        $FFavourites = new FFavourites();
-        $FCart = new FCart();
         $rev = [];
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);

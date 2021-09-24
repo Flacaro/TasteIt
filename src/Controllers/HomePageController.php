@@ -38,21 +38,21 @@ class HomePageController {
          $favId = $cus->getFav()->getId();
          $cartId = $cus->getCart()->getId();
          $cart = $FCart->load($cartId);
-         $products = $cart->getProducts();
-         $VCart = new VCart();
-         $VCart->getProducts($products,$cartId);
-         $VFavourites = new VFavourites();
-         $VFavourites->viewFavouritesProducts($favId, $products, $cartId);
+         $productsC = $cart->getProducts();
+         print_r($productsC);
+         $products = $FProduct->getAll();
+         $vHome = new VHomePage();
+         $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRated, $bestReviews, $products, $productsC);
      }
      $vHome = new VHomePage();
-     $vHome->viewHomePage($categories, $bestSellers, $bestRated, $bestReviews, $products);
+     $vHome->viewHomePageIfLogged($favId = NULL, $cartId = NULL, $categories, $bestSellers, $bestRated, $bestReviews, $products, $productsC = NULL);
+
  }
 
 
     public function About(){
-        return view('aboutUs', [
-
-        ]);
+        $VHome = new VHomePage();
+        $VHome->About();
     }
 }
 

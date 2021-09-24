@@ -30,6 +30,7 @@ class FavouritesController {
             $cartId = $cus->getCart()->getId();
             $FCart->load($cartId);
             $products = $FFavourites->getFavouritesProducts($favId);
+            //print_r($products);
             $vFavourites = new VFavourites();
             $vFavourites->viewFavouritesProducts($favId, $products, $cartId);
         }
