@@ -32,6 +32,7 @@ class ProductController
 
 
     public function getProduct($id) {
+        $session=Session::getInstance();
         $FProduct = new FProduct();
         $ratings = $FProduct->getRatings($id);
         $product = $FProduct->load($id);
@@ -39,8 +40,14 @@ class ProductController
         //????
         $star =$stars[0][0];
         //print_r($stars);
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $cartId = $cus->getCart()->getId();
+            $vProduct = new VProduct();
+            $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
+        }
         $vProduct = new VProduct();
-        $vProduct->getDetailsOfProduct($product, $star, $ratings);
+        $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId = NULL);
     }
 
 
@@ -61,8 +68,8 @@ class ProductController
             }
             else {
                 $fProduct->addToCart($productId, $cartId, $quantity);
-
             }
+
             $vProduct = new VProduct();
             $vProduct->getProducts($products, $cartId, $favId, $categories);
         }

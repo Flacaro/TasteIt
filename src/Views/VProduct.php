@@ -24,14 +24,14 @@ class VProduct {
         ]);
     }*/
 
-    public function getDetailsOfProduct($product, $stars, $ratings) {
+    public function getDetailsOfProduct($product, $stars, $ratings, $cartId) {
         return view('product/product', [
             'productId' => $product->getId(),
             //starts
             'avg'=> $stars,
             'reviews' => $ratings,
             'product' => $product,
-            'cartId' => 1,
+            'cartId' => $cartId,
             'quantity' => 1
         ]);
     }

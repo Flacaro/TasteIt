@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-23 18:46:20
+/* Smarty version 3.1.39, created on 2021-09-25 11:27:06
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614caf5c7994e5_40828503',
+  'unifunc' => 'content_614eeb6a522957_60749694',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1632414173,
+      1 => 1632562025,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614caf5c7994e5_40828503 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614eeb6a522957_60749694 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1248057646614caf5c7814c1_56409653', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1504997584614eeb6a50f6d6_48914877', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2139524503614caf5c782076_23122510', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1895206744614eeb6a5104c0_20814704', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1248057646614caf5c7814c1_56409653 extends Smarty_Internal_Block
+class Block_1504997584614eeb6a50f6d6_48914877 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1248057646614caf5c7814c1_56409653',
+    0 => 'Block_1504997584614eeb6a50f6d6_48914877',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_2139524503614caf5c782076_23122510 extends Smarty_Internal_Block
+class Block_1895206744614eeb6a5104c0_20814704 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_2139524503614caf5c782076_23122510',
+    0 => 'Block_1895206744614eeb6a5104c0_20814704',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -112,19 +112,21 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
 </span></p>
                 <p><?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
 </p>
+
+                <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
-
-                        <form id="addProductToCardForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+                            <form id="addProductToCardForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 " method="POST">
-                            <div class="d-flex mb-4">
-                                <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
-                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
-                                <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
-                            </div>
-                                                        <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Add to cart</button>
-                        </form>
+                                <div class="d-flex mb-4">
+                                    <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
+                                    <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
+                                    <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
+                                </div>
+                                                                <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
+                            </form>
+
 
                         <?php echo '<script'; ?>
 >
@@ -150,13 +152,12 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                             }
                         <?php echo '</script'; ?>
 >
-
-                    </div>
+                      </div>
                     <div class="w-100"></div>
                     <div class="col-md-12">
                     </div>
                 </div>
-
+                <?php }?>
             </div>
         </div>
 
@@ -245,31 +246,33 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </div>
 
                             <div>
+
                                 <div class="contact-wrap w-100 p-md-5">
-                                    <h3 class="mb-5">Lascia una recensione</h3>
-                                    <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+
+                                        <h3 class="mb-5">Lascia una recensione</h3>
+                                            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /addReview" method="POST" id="add">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                        <label class="label" for="subject">Stelle</label>
-                                                        <input type="text" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                    <label class="label" for="#">Commento</label>
-                                                                    <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
-                                                            </div>
-                                                        </div>
-                                        </div>
-                                    </form>
-                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                                <label class="label" for="subject">Stelle</label>
+                                                                <input type="text" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                            <label class="label" for="#">Commento</label>
+                                                                            <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
+                                                                    </div>
+                                                                </div>
+                                                </div>
+                                            </form>
+                                 </div>
 
                             </div>
                         </div>

@@ -8,8 +8,8 @@
                 </p>
             </div>
             <div class="col-md-6 d-flex justify-content-md-end">
-                <div class="reg">
-                    <p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>
+                <div class="reg" style="display: flex">
+                     <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a></p><p class="mb-0"> <p style="margin-left: 1rem"><a href="#" class="mr-2">Logout</a></p>
                 </div>
             </div>
         </div>
@@ -19,9 +19,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
+        {if $cartId}
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
-
             <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
                 <div class="d-flex justify-content-center align-items-center"><small>{sizeof($productsC)}</small></div>
@@ -43,11 +43,12 @@
                 {/foreach}
 
                 <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/{$cartId}/products">
-                    View All
+                    Vai al carrello
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
         </div>
+        {/if}
         <!-- fine menu dropdown del carrello -->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">

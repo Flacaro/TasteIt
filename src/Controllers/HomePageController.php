@@ -23,19 +23,18 @@ class HomePageController {
      $FProduct = new FProduct();
      $FCategory = new FCategory();
      $categories = $FCategory->getAll();
+     //sono prodotti
      $bestSellers = $FProduct->getBestSellers();
      // sono prodotti, non reviews
      $bestReviews = $FProduct->getBestReviews();
      $products = $FProduct->getAll();
      $b = $FProduct->getBestRated();
      $topThreeReviews = [];
-
      foreach($bestReviews as $product) {
          if(sizeof($product->getReviews())) {
              array_push($topThreeReviews, $product->getReviews()[0]);
          }
      }
-
      $bestRateds = [];
      foreach ($b as $best) {
          array_push($bestRateds, $FProduct->load($best[1]));

@@ -114,13 +114,17 @@
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestRated->getImagePath()});">
                             <div class="desc" style="display: flex">
                                 <p class="meta-prod d-flex">
+                                {if $cartId}
                                 <form action="home/products/{$bestRated->getId()}/addToCart/{$cartId}" method="POST">
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
                                     <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                 </form>
+                                {/if}
+                                {if $favId}
                                 <form action="home/products/{$bestRated->getId()}/addToFav/{$favId}" method="POST">
                                     <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                 </form>
+                                {/if}
                                 <form action="/products/{$bestRated->getId()}">
                                     <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
                                 </form>
@@ -146,8 +150,7 @@
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
-                        <span class="subheading">placeholder</span>
-                        <h2 class="mb-3">Cosa Dicono di Noi</h2>
+                        <h2 class="mb-3">Cosa Dicono dei nostri piatti</h2>
                     </div>
                 </div>
 
@@ -186,16 +189,16 @@
                 </div>
             </div>
             <div class="row d-flex">
-                {foreach $bestSellers as $bestSeller}
-                    <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
+                {foreach $bestSellers as $product}
+                   <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="/products/{$bestSeller->getId()}" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
+                            <a href="/products/{$product->getId()}" class="block-20 img" style="background-image: url({$product->getImagePath()});">
                             </a>
                             <div class="text p-4 bg-light">
 
-                                <h3 class="heading mb-3"><a href="/products/{$bestSeller->getId()}">{$bestSeller->getName()}</a></h3>
-                                <p>{$bestSeller->getDescription()}</p>
-                                <p class="mb-0"> <span class="price">${$bestSeller->getPrice()}</span></p>
+                                <h3 class="heading mb-3"><a href="/products/{$product->getId()}">{$product->getName()}</a></h3>
+                                <p>{$product->getDescription()}</p>
+                                <p class="mb-0"> <span class="price">${$product->getPrice()}</span></p>
 
                             </div>
                         </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-24 22:38:17
+/* Smarty version 3.1.39, created on 2021-09-25 11:53:38
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614e37397016b8_44220066',
+  'unifunc' => 'content_614ef1a2a3f204_39732029',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1632515894,
+      1 => 1632563617,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614e37397016b8_44220066 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614ef1a2a3f204_39732029 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -31,8 +31,8 @@ function content_614e37397016b8_44220066 (Smarty_Internal_Template $_smarty_tpl)
                 </p>
             </div>
             <div class="col-md-6 d-flex justify-content-md-end">
-                <div class="reg">
-                    <p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="#">Log In</a></p>
+                <div class="reg" style="display: flex">
+                     <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a></p><p class="mb-0"> <p style="margin-left: 1rem"><a href="#" class="mr-2">Logout</a></p>
                 </div>
             </div>
         </div>
@@ -42,9 +42,9 @@ function content_614e37397016b8_44220066 (Smarty_Internal_Template $_smarty_tpl)
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
+        <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
-
             <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="flaticon-shopping-bag"></span>
                 <div class="d-flex justify-content-center align-items-center"><small><?php echo sizeof($_smarty_tpl->tpl_vars['productsC']->value);?>
@@ -76,11 +76,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                 <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 /products">
-                    View All
+                    Vai al carrello
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
         </div>
+        <?php }?>
         <!-- fine menu dropdown del carrello -->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
