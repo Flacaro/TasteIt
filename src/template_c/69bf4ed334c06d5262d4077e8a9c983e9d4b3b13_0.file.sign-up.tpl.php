@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-04 17:02:56
+/* Smarty version 3.1.39, created on 2021-09-25 13:56:33
   from 'C:\xampp\htdocs\TasteIt\src\templates\auth\sign-up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61338aa0e66d14_21531366',
+  'unifunc' => 'content_614f0e71bbc501_39420634',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '69bf4ed334c06d5262d4077e8a9c983e9d4b3b13' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\auth\\sign-up.tpl',
-      1 => 1630767773,
+      1 => 1632565451,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61338aa0e66d14_21531366 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614f0e71bbc501_39420634 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175315414061338aa0e60523_12114465', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_46412336614f0e71bb6f63_50638960', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -54,38 +54,47 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175315414061338aa0
 <body class="row justify-content-center pb-5">
 <div class="col-md-7" style="text-align: center" >
     <div class="contact-wrap w-100 p-md-5 p-4">
-        <h3 class="mb-4">Registrati</h3>
+        <h3 style="padding-bottom: 1rem">Registrati</h3>
         <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/signup">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="name">Nome</label>
                         <input required type="text" class="form-control" style="text-align: center"  id="name" name="name" placeholder="Nome" minlength="2" maxlength="40">
                     </div>
                 </div>
-                <div class="col-md-12">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="email">Cognome</label>
                         <input required type="text" class="form-control" style="text-align: center" id="surname" name="surname" placeholder="Surname" minlength="2" maxlength="40">
                     </div>
                 </div>
-                <div class="col-md-12">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="surname">Email</label>
                         <input required type="email" class="form-control" style="text-align: center"  id="email" name="email" placeholder="Email" minlength="2" maxlength="40">
                     </div>
                 </div>
-                <div class="col-md-12">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="#">Password</label>
                         <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="10" maxlength="40">
                     </div>
                 </div>
-                    <?php if ($_smarty_tpl->tpl_vars['message']->value != '') {?>
-                        <p><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+            </div>
+            <div class="row justify-content-center">
+                <?php if ($_smarty_tpl->tpl_vars['message']->value != '') {?>
+                    <p><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
 </p>
-                    <?php }?>
-                <div class="col-md-12">
+                <?php }?>
+            </div>
+                <div class="col-md-12 mt-4">
                     <div class="form-group">
                         <input hidden type="text" value="signup" name="option">
                         <input type="submit" value="Registrati" class="btn btn-primary">
@@ -136,12 +145,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175315414061338aa0
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_175315414061338aa0e60523_12114465 extends Smarty_Internal_Block
+class Block_46412336614f0e71bb6f63_50638960 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_175315414061338aa0e60523_12114465',
+    0 => 'Block_46412336614f0e71bb6f63_50638960',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

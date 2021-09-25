@@ -42,19 +42,22 @@
                 <p class="price"><span> £ {$product->getPrice()}</span></p>
                 <p>{$product->getDescription()}</p>
 
-                {if $cartId}
+{*                {if $cartId}*}
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
+                        {if $cartId}
                             <form id="addProductToCardForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
                                 <div class="d-flex mb-4">
                                     <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
                                     <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
                                 </div>
+
                                 {*<p><a href="" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a>*}
                                 <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
-                            </form>
 
+                            </form>
+                        {/if}
 
                         <script>
                             const input = document.querySelector('#productQuantity');
@@ -83,7 +86,7 @@
                     <div class="col-md-12">
                     </div>
                 </div>
-                {/if}
+{*                {/if}*}
             </div>
         </div>
 

@@ -46,8 +46,8 @@ class ProductController
             $vProduct = new VProduct();
             $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
         }
-        $vProduct = new VProduct();
-        $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId = NULL);
+        /*$vProduct = new VProduct();
+        $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId = NULL);*/
     }
 
 
@@ -58,6 +58,7 @@ class ProductController
         $products = $fProduct->getAll();
         $FCategory = new FCategory();
         $categories = $FCategory->getAll();
+
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
@@ -66,10 +67,7 @@ class ProductController
             if($quantity == 1) {
                 $fProduct->addToCart($productId, $cartId, 1);
             }
-            else {
-                $fProduct->addToCart($productId, $cartId, $quantity);
-            }
-
+            $fProduct->addToCart($productId, $cartId, $quantity);
             $vProduct = new VProduct();
             $vProduct->getProducts($products, $cartId, $favId, $categories);
         }

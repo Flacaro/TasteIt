@@ -17,42 +17,49 @@ class HomePageController {
 
  }*/
 
- public function visualizeHome(){
-     $session = Session::getInstance();
-     $FCart = new FCart();
-     $FProduct = new FProduct();
-     $FCategory = new FCategory();
-     $categories = $FCategory->getAll();
-     //sono prodotti
-     $bestSellers = $FProduct->getBestSellers();
-     // sono prodotti, non reviews
-     $bestReviews = $FProduct->getBestReviews();
-     $products = $FProduct->getAll();
-     $b = $FProduct->getBestRated();
-     $topThreeReviews = [];
-     foreach($bestReviews as $product) {
-         if(sizeof($product->getReviews())) {
-             array_push($topThreeReviews, $product->getReviews()[0]);
-         }
-     }
-     $bestRateds = [];
-     foreach ($b as $best) {
-         array_push($bestRateds, $FProduct->load($best[1]));
-     }
-     if ($session->isUserLogged()) {
-         $cus = unserialize($_SESSION["customer"]);
-         $favId = $cus->getFav()->getId();
-         $cartId = $cus->getCart()->getId();
-         $cart = $FCart->load($cartId);
-         $productsC = $cart->getProducts();
+     public function visualizeHome(){
+         $session = Session::getInstance();
+         $FCart = new FCart();
+         $FProduct = new FProduct();
+         $FCategory = new FCategory();
+         $categories = $FCategory->getAll();
+         //sono prodotti
+         $bestSellers = $FProduct->getBestSellers();
+         // sono prodotti, non reviews
+         $bestReviews = $FProduct->getBestReviews();
          $products = $FProduct->getAll();
-         $vHome = new VHomePage();
-         $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC);
-     }
-     $vHome = new VHomePage();
-     $vHome->viewHomePageIfLogged($favId = NULL, $cartId = NULL, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC = NULL);
+         $b = $FProduct->getBestRated();
+         $topThreeReviews = [];
+         foreach($bestReviews as $product) {
+             if(sizeof($product->getReviews())) {
+                 array_push($topThreeReviews, $product->getReviews()[0]);
+             }
+         }
+         $bestRateds = [];
+         foreach ($b as $best) {
+             array_push($bestRateds, $FProduct->load($best[1]));
+         }
 
- }
+         $cartId = NULL;
+         $favId = NULL;
+         $productsC = [];
+
+         if ($session->isUserLogged()) {
+             $cus = unserialize($_SESSION["customer"]);
+             $favId = $cus->getFav()->getId();
+             $cartId = $cus->getCart()->getId();
+             $cart = $FCart->load($cartId);
+             $productsC = $cart->getProducts();
+//             echo '<pre>'; print_r($productsC); echo '</pre>';
+             $products = $FProduct->getAll();
+             $vHome = new VHomePage();
+             $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC);
+         } else {
+             $vHome = new VHomePage();
+             $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC);
+         }
+
+     }
 
     public function addToCartFromHome($productId) {
         $session=Session::getInstance();

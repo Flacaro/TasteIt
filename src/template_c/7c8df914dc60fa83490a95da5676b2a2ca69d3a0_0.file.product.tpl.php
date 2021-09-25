@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-25 11:27:06
+/* Smarty version 3.1.39, created on 2021-09-25 13:56:21
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614eeb6a522957_60749694',
+  'unifunc' => 'content_614f0e65197f69_15862552',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1632562025,
+      1 => 1632570980,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614eeb6a522957_60749694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_614f0e65197f69_15862552 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1504997584614eeb6a50f6d6_48914877', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_426413875614f0e651883d3_88043055', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1895206744614eeb6a5104c0_20814704', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192155277614f0e65188cf8_88022724', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1504997584614eeb6a50f6d6_48914877 extends Smarty_Internal_Block
+class Block_426413875614f0e651883d3_88043055 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1504997584614eeb6a50f6d6_48914877',
+    0 => 'Block_426413875614f0e651883d3_88043055',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1895206744614eeb6a5104c0_20814704 extends Smarty_Internal_Block
+class Block_192155277614f0e65188cf8_88022724 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1895206744614eeb6a5104c0_20814704',
+    0 => 'Block_192155277614f0e65188cf8_88022724',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -113,9 +113,9 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                 <p><?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
 </p>
 
-                <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
+                        <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                             <form id="addProductToCardForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 " method="POST">
@@ -124,9 +124,11 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
                                     <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
                                 </div>
-                                                                <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
-                            </form>
 
+                                                                <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
+
+                            </form>
+                        <?php }?>
 
                         <?php echo '<script'; ?>
 >
@@ -157,7 +159,6 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                     <div class="col-md-12">
                     </div>
                 </div>
-                <?php }?>
             </div>
         </div>
 
