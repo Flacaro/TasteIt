@@ -62,26 +62,34 @@ class HomePageController {
      }
 
     public function addToCartFromHome($productId) {
-        $session=Session::getInstance();
+        $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $cart = $fCart->load($cartId);
-            $quantity = $_POST['quantity'];
-            if($quantity == 1) {
+            $cartProducts = $cart->getProducts();
+
+            if(!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
             }
-            else {
-                $fProduct->addToCart($productId, $cartId, $quantity);
 
+            $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
+                return $cartProduct[0]->getId() === $productId;
+            });
+
+            if(!sizeof($cartProd)) {
+                $fProduct->addToCart($productId, $cartId, 1);
+            } else {
+                $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
             }
-           /* $vcart = new VCart();
-            $vcart->getProducts($products, $id);*/
 
         }
+
+        redirect('/home');
     }
+
 
     public function addToFavouritesFromHome($productId) {
         $session = Session::getInstance();

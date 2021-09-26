@@ -28,8 +28,8 @@ SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
 
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
-SimpleRouter::post("home/products/{productId}/addToCart/{cartId}", [HomePageController::class, "addToCartFromHome"]);
-SimpleRouter::post("home/products/{productId}/addToFav/{favId}", [HomePageController::class, "addToFavouritesFromHome"]);
+SimpleRouter::post("/home/products/{productId}/addToCart/{cartId}", [HomePageController::class, "addToCartFromHome"]);
+SimpleRouter::post("/home/products/{productId}/addToFav/{favId}", [HomePageController::class, "addToFavouritesFromHome"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 
