@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-24 16:50:25
+/* Smarty version 3.1.39, created on 2021-09-26 15:14:08
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614de5b1f2a851_99299749',
+  'unifunc' => 'content_6150722058ab28_10724914',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1632410285,
+      1 => 1632503518,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614de5b1f2a851_99299749 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6150722058ab28_10724914 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_264092883614de5b1e27d43_58867336', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_25698703661507220570a63_49645703', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_490654292614de5b1e2a940_78285033', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8710916961507220571f58_47069361', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_264092883614de5b1e27d43_58867336 extends Smarty_Internal_Block
+class Block_25698703661507220570a63_49645703 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_264092883614de5b1e27d43_58867336',
+    0 => 'Block_25698703661507220570a63_49645703',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_490654292614de5b1e2a940_78285033 extends Smarty_Internal_Block
+class Block_8710916961507220571f58_47069361 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_490654292614de5b1e2a940_78285033',
+    0 => 'Block_8710916961507220571f58_47069361',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,16 +67,17 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
                     <div class="text w-100 text-center">
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
-                        <p><a href="/products" class="btn btn-primary py-2 px-4">Prodotti</a> <a href="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
-" class="btn btn-primary py-2 px-4">Preferiti</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Leggi di più</a></p>
+                        <p><a href="/products" class="btn btn-primary py-2 px-4">Prodotti</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Leggi di più</a></p>
                      </div>
                 </div>
             </div>
         </div>
     </div>
+
     <section class="ftco-intro">
         <div class="container">
             <div class="row no-gutters">
+
                 <div class="col-md-4 d-flex">
                     <div class="intro d-lg-flex w-100 ftco-animated">
                         <div class="icon">
@@ -88,6 +89,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4 d-flex">
                     <div class="intro color-2 d-lg-flex w-100 ftco-animated">
                         <div class="icon">
@@ -99,6 +101,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4 d-flex">
                     <div class="intro color-1 d-lg-flex w-100 ftco-animated">
                         <div class="icon">
@@ -110,6 +113,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-24 17:52:41
+/* Smarty version 3.1.39, created on 2021-09-26 15:20:48
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\orders\order-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614df449d712e6_27321187',
+  'unifunc' => 'content_615073b077fcf3_48236238',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0db8eb6cd2863c337006c75993edfd92f35fde75' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\orders\\order-details.tpl',
-      1 => 1632498760,
+      1 => 1632662447,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614df449d712e6_27321187 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615073b077fcf3_48236238 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_451451934614df449d5ecf2_97321309', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_136209004615073b076e335_36446592', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_451451934614df449d5ecf2_97321309 extends Smarty_Internal_Block
+class Block_136209004615073b076e335_36446592 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_451451934614df449d5ecf2_97321309',
+    0 => 'Block_136209004615073b076e335_36446592',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -130,7 +130,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <button type="submit" class="btn btn-primary">Accetta Ordine</button>
                             </div>
                     </form>
-                        <form method="POST" action="refuseOrder">
+                        <form method="POST" action="/admin/orders/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
+/refuse">
                             <div class="update ml-auto mr-auto">
                                 <button type="submit" class="btn btn-primary">Rifiuta Ordine</button>
                             </div>
@@ -144,7 +145,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <?php }?>
                     <?php if ($_smarty_tpl->tpl_vars['order']->value->getState() == "Accepted") {?>
                         <div class="d-flex justify-content-center">
-                            <h4>Tempo di arrivo previsto: <?php echo $_smarty_tpl->tpl_vars['order']->value->getArrivalTime();?>
+                            <h4>Orario di arrivo previsto: <?php echo $_smarty_tpl->tpl_vars['order']->value->getArrivalTime();?>
 </h4>
                         </div>
                     <?php }?>

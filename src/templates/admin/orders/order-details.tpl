@@ -72,7 +72,7 @@
                                 <button type="submit" class="btn btn-primary">Accetta Ordine</button>
                             </div>
                     </form>
-                        <form method="POST" action="refuseOrder">
+                        <form method="POST" action="/admin/orders/{$order->getId()}/refuse">
                             <div class="update ml-auto mr-auto">
                                 <button type="submit" class="btn btn-primary">Rifiuta Ordine</button>
                             </div>
@@ -85,7 +85,7 @@
                     {/if}
                     {if $order->getState()=="Accepted"}
                         <div class="d-flex justify-content-center">
-                            <h4>Tempo di arrivo previsto: {$order->getArrivalTime()}</h4>
+                            <h4>Orario di arrivo previsto: {$order->getArrivalTime()}</h4>
                         </div>
                     {/if}
                 </div>
