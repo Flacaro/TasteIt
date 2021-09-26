@@ -37,6 +37,7 @@ class ProductController
         $ratings = $FProduct->getRatings($id);
         $product = $FProduct->load($id);
         $stars = $FProduct->getAvgRating($id);
+        $cartId = NULL;
         //????
         $star =$stars[0][0];
         //print_r($stars);
@@ -46,8 +47,11 @@ class ProductController
             $vProduct = new VProduct();
             $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
         }
-        /*$vProduct = new VProduct();
-        $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId = NULL);*/
+        else {
+            $vProduct = new VProduct();
+            $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
+        }
+
     }
 
 
