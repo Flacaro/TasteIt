@@ -36,10 +36,14 @@ class OrderController {
         $order->setState("Accepted");
         $order->setArrivalTime(date('H:i:s', strtotime($_POST["arrival"])));
         $forder->update($order);
-        //redirect(url("/admin/orders"));
+        redirect(url("/admin/orders"));
     }
 
     public function refuseOrder($id){
-
+        $forder=new FOrder();
+        $order=$forder->load($id);
+        $order->setState("Denied");
+        $forder->update($order);
+        redirect(url("/admin/orders"));
     }
 }

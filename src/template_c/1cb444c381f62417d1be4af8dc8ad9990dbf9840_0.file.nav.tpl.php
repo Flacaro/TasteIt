@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-24 16:50:26
+/* Smarty version 3.1.39, created on 2021-09-26 15:14:08
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614de5b226cd42_89155028',
+  'unifunc' => 'content_61507220774e83_14229971',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1632410285,
+      1 => 1632503518,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614de5b226cd42_89155028 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61507220774e83_14229971 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -38,44 +38,46 @@ function content_614de5b226cd42_89155028 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </div>
 </div>
+
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
         <div class="order-lg-last btn-group">
             <!-- menu dropdown del carrello -->
-
-            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
+            <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown">
                 <span class="flaticon-shopping-bag"></span>
-                <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
+                <div class="d-flex justify-content-center align-items-center"><small></small></div>
             </a>
-            <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-menu dropdown-menu-right" data-toggle="dropdown04">
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
-$_smarty_tpl->tpl_vars['product']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
-$_smarty_tpl->tpl_vars['product']->do_else = false;
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productsC']->value, 'p');
+$_smarty_tpl->tpl_vars['p']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
+$_smarty_tpl->tpl_vars['p']->do_else = false;
 ?>
-                <div class="dropdown-item d-flex align-items-start" href="#">
-
-                        <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
-);"></div>
+                <div class="dropdown-item d-flex align-items-start" href="#" id="dropdown-menu">
                         <div class="text pl-3">
-                            <h4><?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
+                            <h4><?php echo $_smarty_tpl->tpl_vars['p']->value[1];?>
 </h4>
-                            <p class="mb-0"><a href="#" class="price"><?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
-</a><span class="quantity ml-3"><?php echo $_smarty_tpl->tpl_vars['product']->value->getQUantity();?>
+                            <p class="mb-0"><a href="#" class="price"></a><span class="quantity ml-3"><?php echo $_smarty_tpl->tpl_vars['p']->value[3];?>
 </span></p>
                         </div>
                 </div>
                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                <a class="dropdown-item text-center btn-link d-block w-100" href="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+                <a class="dropdown-item text-center btn-link d-block w-100" href="#">
+
+                    <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 /products">
-                    Vai al carrello
+                        <button class="btn btn-primary btn-number" type="submit">Vai al carrello</span></button>
+                    </form>
+
                     <span class="ion-ios-arrow-round-forward"></span>
                 </a>
             </div>
+            <?php }?>
         </div>
         <!-- fine menu dropdown del carrello -->
 
@@ -87,9 +89,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
+                <?php if ($_smarty_tpl->tpl_vars['favId']->value) {?>
+                <li class="nav-item"><a href="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+" class="nav-link">Preferiti</a></li>
+                <?php }?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categories</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04" id="dropdown-menu">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
 $_smarty_tpl->tpl_vars['category']->do_else = true;
@@ -97,7 +103,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['category']->valu
 $_smarty_tpl->tpl_vars['category']->do_else = false;
 ?>
                             <a class="dropdown-item" href="/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
-/products"> <?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
+/products"> <?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
  </a>
                         <?php
 }
@@ -108,5 +114,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </ul>
         </div>
     </div>
-</nav><?php }
+</nav>
+
+<?php echo '<script'; ?>
+>
+    const dropdownLink = document.querySelector('#dropdown04');
+    const dropdown = document.querySelector('#dropdown-menu');
+
+    dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
+    dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
+
+<?php echo '</script'; ?>
+>
+
+<?php echo '<script'; ?>
+>
+    const dropdownLink = document.querySelector('#dropdown');
+    const dropdown = document.querySelector('#dropd');
+
+    dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
+    dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
+
+<?php echo '</script'; ?>
+><?php }
 }
