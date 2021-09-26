@@ -42,7 +42,6 @@ class CustomerController
         $fcoupon = new FCoupon();
         $fcustomers = new FCustomer();
         $previousMonth = date('m') - 1;
-        //print_r($fcustomers->topTenCustomersByTotal($previousMonth));
         return $vcustomer->showBest($fcoupon->getAll(), $fcustomers->topTenCustomersByTotal($previousMonth));
     }
 

@@ -11,7 +11,7 @@
                         {/if}
                       <label for="priceCut">Scegli uno sconto per creare un coupon</label>
                         <form action="/admin/coupons" method="post">
-                            <input type="text" id="priceCut" name="price_cut">
+                            <input type="number" id="priceCut" name="price_cut">
 
                             <button class="btn btn-primary" type="submit">Crea</button>
                         </form>

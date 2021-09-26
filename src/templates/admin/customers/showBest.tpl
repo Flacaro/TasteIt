@@ -33,6 +33,8 @@
 
                     <h6>I coupon verranno inviati a:</h6>
 
+                    {if $customers==NULL} <h5>non ci sono utenti a cui mandare coupon questo mese</h5>
+                    {else}
                     <table class="table">
                         <thead class=" text-primary">
                         <th>
@@ -69,6 +71,7 @@
                             {/foreach}
                         </tbody>
                     </table>
+                    {/if}
                 </form>
             </div>
         </div>
