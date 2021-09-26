@@ -41,18 +41,23 @@
                 </div>
                 <p class="price"><span> £ {$product->getPrice()}</span></p>
                 <p>{$product->getDescription()}</p>
+
+{*                {if $cartId}*}
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
+                        {if $cartId}
+                            <form id="addProductToCardForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
+                                <div class="d-flex mb-4">
+                                    <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
+                                    <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
+                                    <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
+                                </div>
 
-                        <form id="addProductToCardForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
-                            <div class="d-flex mb-4">
-                                <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
-                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
-                                <button id="plus" class="ml-2" type="button"><i class="fa fa-plus"></i></button>
-                            </div>
-                            {*<p><a href="" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a>*}
-                            <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Add to cart</button>
-                        </form>
+                                {*<p><a href="" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a>*}
+                                <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
+
+                            </form>
+                        {/if}
 
                         <script>
                             const input = document.querySelector('#productQuantity');
@@ -76,13 +81,12 @@
                                 });
                             }
                         </script>
-
-                    </div>
+                      </div>
                     <div class="w-100"></div>
                     <div class="col-md-12">
                     </div>
                 </div>
-
+{*                {/if}*}
             </div>
         </div>
 
@@ -153,30 +157,32 @@
                             </div>
 
                             <div>
+
                                 <div class="contact-wrap w-100 p-md-5">
-                                    <h3 class="mb-5">Lascia una recensione</h3>
-                                    <form action="/products/{$product->getId()}/addReview" method="POST" id="add">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                        <label class="label" for="subject">Stelle</label>
-                                                        <input type="text" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                    <label class="label" for="#">Commento</label>
-                                                                    <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
-                                                            </div>
-                                                        </div>
-                                        </div>
-                                    </form>
-                                </div>
+
+                                        <h3 class="mb-5">Lascia una recensione</h3>
+                                            <form action="/products/{$product->getId()}/addReview" method="POST" id="add">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                                <label class="label" for="subject">Stelle</label>
+                                                                <input type="text" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                            <label class="label" for="#">Commento</label>
+                                                                            <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
+                                                                    </div>
+                                                                </div>
+                                                </div>
+                                            </form>
+                                 </div>
 
                             </div>
                         </div>

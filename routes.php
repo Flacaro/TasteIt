@@ -28,8 +28,11 @@ SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
 
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
+SimpleRouter::post("home/products/{productId}/addToCart/{cartId}", [HomePageController::class, "addToCartFromHome"]);
+SimpleRouter::post("home/products/{productId}/addToFav/{favId}", [HomePageController::class, "addToFavouritesFromHome"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
+
 
 
 SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
@@ -72,6 +75,8 @@ SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavouritesProducts"]);
+SimpleRouter::post("/favourites/{favId}/addToCart/{cartId}",[FavouritesController::class, "addToCartFromFav"]);
+
 
 
 SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);

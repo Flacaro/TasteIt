@@ -31,11 +31,11 @@
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');">
-                                        <div class="desc">
+                                        <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
-                                            <form action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
+                                            <form action="/favourites/{$favId}/addToCart/{$cartId}" method="POST">
                                                 <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
-                                                <button id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                                <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                             </form>
                                             <form action="/products/{$product->getId()}">
                                                 <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>

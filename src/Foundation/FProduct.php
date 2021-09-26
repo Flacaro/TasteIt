@@ -80,7 +80,7 @@ class FProduct extends FConnection {
 
     function getBestRated(){
         $pdo = FConnection::connect();
-        $query="select avg(stars) as average, productId from reviews group by productId order by average desc limit 8";
+        $query="select avg(stars) as average, p.id, p.name, p.price, p.imagePath from reviews as r join products as p on p.id = r.productId group by productId order by average desc limit 8";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -112,7 +112,7 @@ class FProduct extends FConnection {
     function getBestReviews(){
         $pdo = FConnection::connect();
         //select * from reviews where productId=$productId;
-        $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.imagePath FROM reviews as r join products as p on r.productId = p.id ORDER BY stars DESC LIMIT 6;";
+        $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.imagePath FROM reviews as r join products as p on r.productId = p.id group by p.id ORDER BY stars DESC LIMIT 3;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $reviews = $stmt->fetchAll();
@@ -133,8 +133,8 @@ class FProduct extends FConnection {
             $p->setImagePath($review[6]);
             $p->setReviews($rev);
             array_push($prod, $p);
+            $rev = [];
         }
-         //print_r($prod);
         return $prod;
     }
 

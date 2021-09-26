@@ -73,7 +73,7 @@
                         <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
                         non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
                         <p class="year">
-                            <strong class="number" data-number="23">0</strong>
+                            <strong class="number" data-number="23">23</strong>
                             <span>Years of Experience In Business</span>
                         </p>
                     </div>
@@ -112,24 +112,28 @@
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestRated->getImagePath()});">
-                            <div class="desc">
+                            <div class="desc" style="display: flex">
                                 <p class="meta-prod d-flex">
-                                <form action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
+                                {if $cartId}
+                                <form action="home/products/{$bestRated->getId()}/addToCart/{$cartId}" method="POST">
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
-                                    <button id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                    <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                 </form>
-                                <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
+                                {/if}
+                                {if $favId}
+                                <form action="home/products/{$bestRated->getId()}/addToFav/{$favId}" method="POST">
                                     <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                 </form>
-                                <form action="/products/{$product->getId()}">
-                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                {/if}
+                                <form action="/products/{$bestRated->getId()}">
+                                    <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
                                 </form>
                                 </p>
                             </div>
                         </div>
                         <a href="/products/{$bestRated->getId()}">
                         <div class="text text-center">
-                            <span class="category">{$bestRated->getCategory()->getCategoryName()}</span>
+                            {*<span class="category">{$bestRated->getCategory()->getCategoryName()}</span>*}
                             <h2>{$bestRated->getName()}</h2>
                             <p class="mb-0"> <span class="price">${$bestRated->getPrice()}</span></p>
                         </div>
@@ -141,39 +145,40 @@
         </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url(../../src/assets/images/bg_4.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
-                    <span class="subheading">placeholder</span>
-                    <h2 class="mb-3">Cosa Dicono di Noi</h2>
+    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">*}
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
+                        <h2 class="mb-3">Cosa Dicono dei nostri piatti</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row ftco-animated">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel ftco-owl">
-                        {foreach $bestReviews as $bestReview}
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-4">{$bestReview->getReviews()}</p>
-                                   {* <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url({$bestReview[1][4]})"></div>
-                                        <div class="pl-3">*}
-                                           {* <p class="name">{$bestReview->getName()}</p>*}
+
+                <div class="row">
+                    {foreach $bestReviews as $review}
+                            <div class="col-4">
+                                <div class="item">
+                                    <div class="testimony-wrap py-4">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                        <div class="text">
+                                            <p class="mb-4">{$review->getComment()}</p>
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-img"style="background-image: url('https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png');"></div>
+                                                <div class="pl-3">
+                                                    <p class="name">{$review->getCustomer()->getName()}</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        {/foreach}
-                    </div>
+                    {/foreach}
+
                 </div>
             </div>
-        </div>
     </section>
+
+
 
     <section class="ftco-section">
         <div class="container">
@@ -184,16 +189,16 @@
                 </div>
             </div>
             <div class="row d-flex">
-                {foreach $bestSellers as $bestSeller}
-                    <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
+                {foreach $bestSellers as $product}
+                   <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
                         <div class="blog-entry d-flex">
-                            <a href="/products/{$bestSeller->getId()}" class="block-20 img" style="background-image: url({$bestseller->getImagePath()});">
+                            <a href="/products/{$product->getId()}" class="block-20 img" style="background-image: url({$product->getImagePath()});">
                             </a>
                             <div class="text p-4 bg-light">
 
-                                <h3 class="heading mb-3"><a href="/products/{$bestSeller->getId()}">{$bestSeller->getName()}</a></h3>
-                                <p>{$bestSeller->getDescription()}</p>
-                                <p class="mb-0"> <span class="price">${$bestSeller->getPrice()}</span></p>
+                                <h3 class="heading mb-3"><a href="/products/{$product->getId()}">{$product->getName()}</a></h3>
+                                <p>{$product->getDescription()}</p>
+                                <p class="mb-0"> <span class="price">${$product->getPrice()}</span></p>
 
                             </div>
                         </div>
