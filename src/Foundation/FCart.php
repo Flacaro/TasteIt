@@ -60,12 +60,14 @@ class FCart extends FConnection {
         $pdo = FConnection::connect();
         $query = 'SELECT `quantity` FROM `products_carts` where productId =' . $productId . ' and cartId =' . $cartId . ';';
         $stmt = $pdo->prepare($query);
-        return $stmt->execute();
+        $stmt->execute();
+        //$stmt->debugDumpParams();
+        return $stmt->fetch();
     }
 
     function updateQuantity(int $cartId, int $productId, int $quantity) {
         $pdo = FConnection::connect();
-        $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ' ;';
+        $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $pdo->prepare($query);
         //$stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();

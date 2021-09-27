@@ -55,9 +55,10 @@ class ProductController
     }
 
 
-    public function addProductToCart($productId) {
+    public function addProductToCart($productId)
+    {
         // il carrello si prende dalla sessione dall'utente loggato
-        $session=Session::getInstance();
+        $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
         $products = $fProduct->getAll();
@@ -68,42 +69,76 @@ class ProductController
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
-            $i = 0;
             $cart = $fCart->load($cartId);
             $cartProducts = $cart->getProducts();
             $q = (int)$_POST['quantity'];
 
-                if(!sizeof($cartProducts)) {
-                    $fProduct->addToCart($productId, $cartId, $q);
-                    print_r("add se l'array è vuoto");
-                    print_r($q);
-                }
 
-                $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
-                    return $cartProduct[0]->getId() === $productId;
-                });
-                //print_r($cartProd);
+            if (!sizeof($cartProducts)) {
+                $fProduct->addToCart($productId, $cartId, $q);
+                //print_r("add se l'array è vuoto");
+            }
 
-                if(!sizeof($cartProd) and sizeof($cartProducts)) {
-                    $fProduct->addToCart($productId, $cartId, $q);
-                    print_r("add se l'array cartProd è vuoto");
+            if (!sizeof($cartProducts)) {
+                $fProduct->addToCart($productId, $cartId, $q);
+                //print_r("add se l'array è vuoto");
+            }
 
-                }
-                else {
-                    $quantity = $fCart->getQuantity($cartId, $productId);
-                    $newQuantity = $q + $quantity;
-                    $fCart->updateQuantity($cart->getId(), $productId, $newQuantity);
-                    print_r("update");
-                }
+            $cartProd = array_filter($cartProducts, function ($cartProduct) use ($productId) {
+                return $cartProduct[0]->getId() === $productId;
+            });
+            //print_r($cartProd);
 
+            if (!sizeof($cartProd) and sizeof($cartProducts)) {
+                $fProduct->addToCart($productId, $cartId, $q);
+                // print_r("add se l'array cartProd è vuoto");
 
-            /*    $VProduct = new VProduct();
-                $VProduct->getProducts($products,$cartId,$favId,$categories);*/
+            } elseif (sizeof($cartProd) and sizeof($cartProducts)) {
+                $oldQuantity = $fCart->getQuantity($cartId, $productId);
+                //print_r($oldQuantity);
+                $newQuantity = $q + $oldQuantity[0];
+                $fCart->updateQuantity($cart->getId(), $productId, $newQuantity);
+                // print_r("update");
             }
 
 
+            $VProduct = new VProduct();
+            $VProduct->getProducts($products, $cartId, $favId, $categories);
+        }
+    }
+
+    public function addProductFromAll($productId) {
+        $session = Session::getInstance();
+        $fProduct = new FProduct();
+        $fCart = new FCart();
+        if ($session->isUserLogged()) {
+            $cus = unserialize($_SESSION["customer"]);
+            $cartId = $cus->getCart()->getId();
+            $cart = $fCart->load($cartId);
+            $cartProducts = $cart->getProducts();
+
+            if(!sizeof($cartProducts)) {
+                $fProduct->addToCart($productId, $cartId, 1);
+                //print_r("add se cartProducts è vuoto");
+            }
+
+            $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
+                return $cartProduct[0]->getId() === $productId;
+            });
+
+            if(!sizeof($cartProd) and sizeof($cartProducts)) {
+                $fProduct->addToCart($productId, $cartId, 1);
+                //print_r("add se cartProd è vuoto");
+            }
+            else {
+                $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
+                //print_r("increment");
+            }
 
         }
+
+        redirect('/products');
+    }
 
 
     public function addToFavourites($productId) {

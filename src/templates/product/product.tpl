@@ -45,7 +45,7 @@
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
 {*                        {if $cartId}*}
-                            <form id="addProductToCardForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
+                            <form id="addProductToCartForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
                                 <div class="d-flex mb-4">
                                     <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
@@ -64,7 +64,7 @@
                             const minusBtn = document.querySelector('#minus');
                             const plusBtn = document.querySelector('#plus');
 
-                            const form = document.querySelector('#addProductToCardForm');
+                            const form = document.querySelector('#addProductToCartForm');
 
 
                             if(minusBtn && plusBtn) {

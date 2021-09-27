@@ -88,10 +88,9 @@ class HomePageController {
                 $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
                 //print_r("increment");
             }
-
         }
 
-        //redirect('/home');
+        redirect('/home');
     }
 
 

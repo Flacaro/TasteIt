@@ -37,7 +37,7 @@ SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage
 
 SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
 SimpleRouter::get("/products", [ProductController::class, "getAll"])->name('products');
-//SimpleRouter::get("/products/create", [ProductController::class, "create"]);
+SimpleRouter::post("/products/{productId}/add/{cartId}", [ProductController::class, "addProductFromAll"]);
 //SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
 SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"]);
 SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
