@@ -106,7 +106,7 @@ SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, 
 SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 
 SimpleRouter::get("/prova", [OrderController::class, "prova"]);
-/*SimpleRouter::get("/prov", [FavouritesController::class, "getFavouritesProducts"]);*/
+SimpleRouter::get("/prov", [FavouritesController::class, "getFavouritesProducts"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

@@ -39,13 +39,12 @@
                         </a>
                         {/if}
                 </div>
-                <p class="price"><span> £ {$product->getPrice()}</span></p>
+                <p class="price"><span> EUR {$product->getPrice()}</span></p>
                 <p>{$product->getDescription()}</p>
 
-{*                {if $cartId}*}
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
-                        {if $cartId}
+{*                        {if $cartId}*}
                             <form id="addProductToCardForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
                                 <div class="d-flex mb-4">
                                     <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
@@ -57,7 +56,6 @@
                                 <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
 
                             </form>
-                        {/if}
 
                         <script>
                             const input = document.querySelector('#productQuantity');
@@ -86,7 +84,7 @@
                     <div class="col-md-12">
                     </div>
                 </div>
-{*                {/if}*}
+{*               {/if}*}
             </div>
         </div>
 

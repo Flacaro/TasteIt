@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-25 13:56:21
+/* Smarty version 3.1.39, created on 2021-09-27 19:16:43
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614f0e65197f69_15862552',
+  'unifunc' => 'content_6151fc7bbe7806_98298583',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1632570980,
+      1 => 1632763002,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614f0e65197f69_15862552 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6151fc7bbe7806_98298583 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 <!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_426413875614f0e651883d3_88043055', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6742277336151fc7bbd3d20_83453078', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192155277614f0e65188cf8_88022724', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18265432886151fc7bbd4929_60857053', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_426413875614f0e651883d3_88043055 extends Smarty_Internal_Block
+class Block_6742277336151fc7bbd3d20_83453078 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_426413875614f0e651883d3_88043055',
+    0 => 'Block_6742277336151fc7bbd3d20_83453078',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +52,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_192155277614f0e65188cf8_88022724 extends Smarty_Internal_Block
+class Block_18265432886151fc7bbd4929_60857053 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_192155277614f0e65188cf8_88022724',
+    0 => 'Block_18265432886151fc7bbd4929_60857053',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -108,14 +108,13 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                         </a>
                         <?php }?>
                 </div>
-                <p class="price"><span> £ <?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
+                <p class="price"><span> EUR <?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
 </span></p>
                 <p><?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
 </p>
 
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
-                        <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                             <form id="addProductToCardForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 " method="POST">
@@ -128,7 +127,6 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                                                                 <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
 
                             </form>
-                        <?php }?>
 
                         <?php echo '<script'; ?>
 >

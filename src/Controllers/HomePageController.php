@@ -73,21 +73,25 @@ class HomePageController {
 
             if(!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
+                //print_r("add se cartProducts è vuoto");
             }
 
             $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
                 return $cartProduct[0]->getId() === $productId;
             });
 
-            if(!sizeof($cartProd)) {
+            if(!sizeof($cartProd) and sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
-            } else {
+                //print_r("add se cartProd è vuoto");
+            }
+            else {
                 $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
+                //print_r("increment");
             }
 
         }
 
-        redirect('/home');
+        //redirect('/home');
     }
 
 

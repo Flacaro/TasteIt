@@ -68,30 +68,40 @@ class ProductController
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
-            $quantity = $_POST['quantity'];
+            $i = 0;
             $cart = $fCart->load($cartId);
             $cartProducts = $cart->getProducts();
-            /* echo '<pre>'; print_r($product[0]->getId()); echo '</pre>';*/
-            foreach ($cartProducts as $cartProduct) {
-//                printObject($cartProduct[0]);
-               /* if($productId == $cartProduct[0]->getId()) {
-                    $fCart->incrementQuantity($cart, $productId, $quantity);
-                    /*print_r("ci sta");
-                    print_r($quantity);
+            $q = (int)$_POST['quantity'];
+
+                if(!sizeof($cartProducts)) {
+                    $fProduct->addToCart($productId, $cartId, $q);
+                    print_r("add se l'array è vuoto");
+                    print_r($q);
+                }
+
+                $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
+                    return $cartProduct[0]->getId() === $productId;
+                });
+                //print_r($cartProd);
+
+                if(!sizeof($cartProd) and sizeof($cartProducts)) {
+                    $fProduct->addToCart($productId, $cartId, $q);
+                    print_r("add se l'array cartProd è vuoto");
+
                 }
                 else {
-                    $fProduct->addToCart($productId, $cartId, $quantity);
-                    //print_r("nun ci sta");
+                    $quantity = $fCart->getQuantity($cartId, $productId);
+                    $newQuantity = $q + $quantity;
+                    $fCart->updateQuantity($cart->getId(), $productId, $newQuantity);
+                    print_r("update");
+                }
 
-                }*/
+
+            /*    $VProduct = new VProduct();
+                $VProduct->getProducts($products,$cartId,$favId,$categories);*/
             }
-          /*  $vProduct = new VProduct();
-            $vProduct->getProducts($products, $cartId, $favId, $categories);*/
-        }
-        /*    if($quantity == 1) {
-                $fProduct->addToCart($productId, $cartId, 1);
-            }
-            $fProduct->addToCart($productId, $cartId, $quantity);*/
+
+
 
         }
 
