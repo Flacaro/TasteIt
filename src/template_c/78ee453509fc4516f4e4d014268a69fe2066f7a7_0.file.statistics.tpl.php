@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-06 20:04:09
+/* Smarty version 3.1.39, created on 2021-09-28 19:47:52
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\statistics.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61365819a66283_18797842',
+  'unifunc' => 'content_61535548b08759_09275738',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '78ee453509fc4516f4e4d014268a69fe2066f7a7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\statistics.tpl',
-      1 => 1630951044,
+      1 => 1632565451,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61365819a66283_18797842 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61535548b08759_09275738 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_554839224613658199ff514_23601374', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204180267061535548ab01b0_76420980', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_554839224613658199ff514_23601374 extends Smarty_Internal_Block
+class Block_204180267061535548ab01b0_76420980 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_554839224613658199ff514_23601374',
+    0 => 'Block_204180267061535548ab01b0_76420980',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -95,58 +95,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             <i class="fa fa-calendar-o"></i>
                             <?php echo date("F");?>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5 col-md-4">
-                                <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-vector text-danger"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-8">
-                                <div class="numbers">
-                                    <p class="card-category">Errors</p>
-                                    <p class="card-title">23<p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-clock-o"></i>
-                            In the last hour
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5 col-md-4">
-                                <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-favourite-28 text-primary"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-8">
-                                <div class="numbers">
-                                    <p class="card-category">Followers</p>
-                                    <p class="card-title">+45K<p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-refresh"></i>
-                            Update now
                         </div>
                     </div>
                 </div>
