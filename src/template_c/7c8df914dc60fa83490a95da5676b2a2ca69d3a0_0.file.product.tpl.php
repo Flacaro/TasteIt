@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-27 19:16:43
+/* Smarty version 3.1.39, created on 2021-09-28 19:44:06
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6151fc7bbe7806_98298583',
+  'unifunc' => 'content_615354667b8071_28352874',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1632763002,
+      1 => 1632851044,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6151fc7bbe7806_98298583 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615354667b8071_28352874 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
-<!-- Inizio barra rossa in alto dove ce sign up e login  -->
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6742277336151fc7bbd3d20_83453078', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1136701379615354667a6631_91559395', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18265432886151fc7bbd4929_60857053', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1321613232615354667a70f4_66185440', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_6742277336151fc7bbd3d20_83453078 extends Smarty_Internal_Block
+class Block_1136701379615354667a6631_91559395 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_6742277336151fc7bbd3d20_83453078',
+    0 => 'Block_1136701379615354667a6631_91559395',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,19 +51,19 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_18265432886151fc7bbd4929_60857053 extends Smarty_Internal_Block
+class Block_1321613232615354667a70f4_66185440 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_18265432886151fc7bbd4929_60857053',
+    0 => 'Block_1321613232615354667a70f4_66185440',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
-<!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
+
 <section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -75,13 +74,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             </div>
         </div>
     </div>
-    <!-- fine  schermata del Home e del product con la foto del liquore e delle rose -->
+
 </section>
-<!-- inizio della schermata del  liquore , prezzo e la sua descrizione -->
+
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(/src/assets/images/prod-9.jpg);">
+            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
+);">
             </div>
             <div class="col-lg-6 product-details pl-md-5 ">
                 <h3><?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
@@ -94,16 +94,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                         <a href="#">
                             <span>
-                                                    <?php
+                                <?php
 $_smarty_tpl->tpl_vars['var'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['var']->step = 1;$_smarty_tpl->tpl_vars['var']->total = (int) ceil(($_smarty_tpl->tpl_vars['var']->step > 0 ? round($_smarty_tpl->tpl_vars['avg']->value)+1 - (1) : 1-(round($_smarty_tpl->tpl_vars['avg']->value))+1)/abs($_smarty_tpl->tpl_vars['var']->step));
 if ($_smarty_tpl->tpl_vars['var']->total > 0) {
 for ($_smarty_tpl->tpl_vars['var']->value = 1, $_smarty_tpl->tpl_vars['var']->iteration = 1;$_smarty_tpl->tpl_vars['var']->iteration <= $_smarty_tpl->tpl_vars['var']->total;$_smarty_tpl->tpl_vars['var']->value += $_smarty_tpl->tpl_vars['var']->step, $_smarty_tpl->tpl_vars['var']->iteration++) {
 $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration === 1;$_smarty_tpl->tpl_vars['var']->last = $_smarty_tpl->tpl_vars['var']->iteration === $_smarty_tpl->tpl_vars['var']->total;?>
-                                                    <i class="fa fa-star"></i>
-                                                   <?php }
+                                    <i class="fa fa-star"></i>
+                                <?php }
 }
 ?>
-							   					</span>
+                            </span>
                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                         </a>
                         <?php }?>
@@ -115,7 +115,8 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
 
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
-                            <form id="addProductToCardForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+                        <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
+                            <form id="addProductToCartForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 " method="POST">
                                 <div class="d-flex mb-4">
@@ -127,7 +128,7 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                                                                 <button class="btn btn-primary" style="padding-bottom: 2rem;" type="submit">Aggiungi al carrello</button>
 
                             </form>
-
+                        <?php }?>
                         <?php echo '<script'; ?>
 >
                             const input = document.querySelector('#productQuantity');
@@ -136,7 +137,7 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                             const minusBtn = document.querySelector('#minus');
                             const plusBtn = document.querySelector('#plus');
 
-                            const form = document.querySelector('#addProductToCardForm');
+                            const form = document.querySelector('#addProductToCartForm');
 
 
                             if(minusBtn && plusBtn) {
@@ -157,6 +158,7 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                     <div class="col-md-12">
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -246,8 +248,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                             <div>
 
+                                <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                                 <div class="contact-wrap w-100 p-md-5">
-
                                         <h3 class="mb-5">Lascia una recensione</h3>
                                             <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /addReview" method="POST" id="add">
@@ -272,6 +274,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                 </div>
                                             </form>
                                  </div>
+                                <?php }?>
 
                             </div>
                         </div>

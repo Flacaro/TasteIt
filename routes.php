@@ -76,7 +76,7 @@ SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavouritesProducts"]);
 SimpleRouter::post("/favourites/{favId}/addToCart/{cartId}",[FavouritesController::class, "addToCartFromFav"]);
-
+SimpleRouter::delete("/favourites/{favId}/products/{productId}/delete",[FavouritesController::class, "deleteProductFromFav"]);
 
 
 SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);

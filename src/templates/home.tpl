@@ -114,6 +114,7 @@
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestRated->getImagePath()});">
                             <div class="desc" style="display: flex">
                                 <p class="meta-prod d-flex">
+
                                 {if $cartId}
                                 <form action="home/products/{$bestRated->getId()}/addToCart/{$cartId}" method="POST">
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
@@ -135,7 +136,7 @@
                         <div class="text text-center">
                             {*<span class="category">{$bestRated->getCategory()->getCategoryName()}</span>*}
                             <h2>{$bestRated->getName()}</h2>
-                            <p class="mb-0"> <span class="price">${$bestRated->getPrice()}</span></p>
+                            <p class="mb-0"> <span class="price">EUR {$bestRated->getPrice()}</span></p>
                         </div>
                         </a>
                     </div>
@@ -145,7 +146,7 @@
         </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">*}
+    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row justify-content-center mb-5">
@@ -190,22 +191,34 @@
             </div>
             <div class="row d-flex">
                 {foreach $bestSellers as $product}
-                   <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
-                        <div class="blog-entry d-flex">
-                            <a href="/products/{$product->getId()}" class="block-20 img" style="background-image: url({$product->getImagePath()});">
-                            </a>
-                            <div class="text p-4 bg-light">
-
-                                <h3 class="heading mb-3"><a href="/products/{$product->getId()}">{$product->getName()}</a></h3>
-                                <p>{$product->getDescription()}</p>
-                                <p class="mb-0"> <span class="price">${$product->getPrice()}</span></p>
-
+                    <div class="col-md-3 d-flex">
+                        <div class="product ftco-animated">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
+                                <div class="desc" style="display: flex" >
+                                    {if $cartId}
+                                        <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">
+                                            <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
+                                            <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                        </form>
+                                    {/if}
+                                    {if $favId}
+                                        <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
+                                            <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
+                                        </form>
+                                    {/if}
+                                    <form action="/products/{$product->getId()}">
+                                        <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="text text-center">
+                                <h2> {$product->getName()}</h2>
+                                <h2> {$product->getprice()}</h2>
                             </div>
                         </div>
                     </div>
                 {/foreach}
             </div>
-        </div>
     </section>
 
 {/block}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-25 16:00:35
+/* Smarty version 3.1.39, created on 2021-09-28 19:45:27
   from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614f2b833e4e64_56480423',
+  'unifunc' => 'content_615354b7cdc1d3_60693513',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '233083e50427e48b9a936dafa3b020788793ce6e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\favourites.tpl',
-      1 => 1632565451,
+      1 => 1632851124,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614f2b833e4e64_56480423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615354b7cdc1d3_60693513 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1173002862614f2b833dbba5_04748370', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8424458615354b7cd10c8_01334866', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1372712857614f2b833dc4a7_02609663', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2018913042615354b7cd1f68_33962263', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1173002862614f2b833dbba5_04748370 extends Smarty_Internal_Block
+class Block_8424458615354b7cd10c8_01334866 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1173002862614f2b833dbba5_04748370',
+    0 => 'Block_8424458615354b7cd10c8_01334866',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ All products<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1372712857614f2b833dc4a7_02609663 extends Smarty_Internal_Block
+class Block_2018913042615354b7cd1f68_33962263 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1372712857614f2b833dc4a7_02609663',
+    0 => 'Block_2018913042615354b7cd1f68_33962263',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -94,7 +94,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');">
+                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
+);">
                                         <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
                                             <form action="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
@@ -106,6 +107,17 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                             <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 ">
                                                 <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                            </form>
+                                            <form action="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/delete" method="POST">
+                                                <div class="button delete">
+
+                                                    <input hidden type="text" value="DELETE" name="_method">
+                                                    <input hidden type="text" value="delete" name="option">
+
+                                                    <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><i class="fa fa-trash"></i></span></button>
+                                                </div>
                                             </form>
                                             </p>
                                         </div>

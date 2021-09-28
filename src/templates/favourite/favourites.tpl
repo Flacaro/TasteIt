@@ -30,7 +30,7 @@
                         {foreach $products as $product}
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');">
+                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
                                         <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
                                             <form action="/favourites/{$favId}/addToCart/{$cartId}" method="POST">
@@ -39,6 +39,15 @@
                                             </form>
                                             <form action="/products/{$product->getId()}">
                                                 <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                            </form>
+                                            <form action="/favourites/{$favId}/products/{$product->getId()}/delete" method="POST">
+                                                <div class="button delete">
+
+                                                    <input hidden type="text" value="DELETE" name="_method">
+                                                    <input hidden type="text" value="delete" name="option">
+
+                                                    <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><i class="fa fa-trash"></i></span></button>
+                                                </div>
                                             </form>
                                             </p>
                                         </div>

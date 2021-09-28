@@ -55,8 +55,5 @@ class RestaurantController {
     }
 
 
-    public function getAdminPanel(){
-
-    }
 
 }

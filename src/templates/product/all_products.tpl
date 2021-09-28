@@ -30,7 +30,7 @@
             {foreach $products as $product}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
                             <div class="desc" style="display: flex" >
                                 {if $cartId}
                                 <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">
@@ -50,6 +50,7 @@
                         </div>
                         <div class="text text-center">
                             <h2> {$product->getName()}</h2>
+                            <h2> {$product->getprice()}</h2>
                         </div>
                     </div>
                 </div>

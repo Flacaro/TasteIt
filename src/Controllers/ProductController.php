@@ -16,11 +16,13 @@ class ProductController
 {
 
     public function getAll() {
-        $session=Session::getInstance();
+        $session = Session::getInstance();
         $FProduct = new FProduct();
         $products = $FProduct->getAll();
         $FCategory = new FCategory();
         $categories = $FCategory->getAll();
+        $favId = NULL;
+        $cartId = NULL;
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
@@ -28,26 +30,31 @@ class ProductController
             $vProduct = new VProduct();
             $vProduct->getProducts($products, $cartId, $favId, $categories);
         }
+        else{
+            $vProduct = new VProduct();
+            $vProduct->getProducts($products, $cartId, $favId, $categories);
+        }
+
     }
 
 
-    public function getProduct($id) {
-        $session=Session::getInstance();
+    public function getProduct($id)
+    {
+        $session = Session::getInstance();
         $FProduct = new FProduct();
         $ratings = $FProduct->getRatings($id);
         $product = $FProduct->load($id);
         $stars = $FProduct->getAvgRating($id);
         $cartId = NULL;
         //????
-        $star =$stars[0][0];
+        $star = $stars[0][0];
         //print_r($stars);
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $vProduct = new VProduct();
             $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
-        }
-        else {
+        } else {
             $vProduct = new VProduct();
             $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
         }
@@ -101,13 +108,14 @@ class ProductController
                 // print_r("update");
             }
 
-
             $VProduct = new VProduct();
             $VProduct->getProducts($products, $cartId, $favId, $categories);
         }
     }
 
-    public function addProductFromAll($productId) {
+
+    public function addProductFromAll($productId)
+    {
         $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
@@ -117,20 +125,19 @@ class ProductController
             $cart = $fCart->load($cartId);
             $cartProducts = $cart->getProducts();
 
-            if(!sizeof($cartProducts)) {
+            if (!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
                 //print_r("add se cartProducts è vuoto");
             }
 
-            $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
+            $cartProd = array_filter($cartProducts, function ($cartProduct) use ($productId) {
                 return $cartProduct[0]->getId() === $productId;
             });
 
-            if(!sizeof($cartProd) and sizeof($cartProducts)) {
+            if (!sizeof($cartProd) and sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
                 //print_r("add se cartProd è vuoto");
-            }
-            else {
+            } else {
                 $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
                 //print_r("increment");
             }
@@ -141,22 +148,30 @@ class ProductController
     }
 
 
-    public function addToFavourites($productId) {
-        $session=Session::getInstance();
-        $FProduct = new FProduct();
+    public function addToFavourites($productId)
+    {
+        $session = Session::getInstance();
         $FFavourites = new FFavourites();
-        $FProduct->load($productId);
-        $FCategory = new FCategory();
-        $categories = $FCategory->getAll();
+
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
-            $products = $FProduct->getAll();
             $favId = $cus->getFav()->getId();
-            $cartId = $cus->getCart()->getId();
-            $FFavourites->addToFavourites($favId, $productId);
-            $vProduct = new VProduct();
-            $vProduct->getProducts($products, $cartId, $favId, $categories);
+            $favProducts = $FFavourites->getFavouritesProducts($favId);
+
+            if (!sizeof($favProducts)) {
+                $FFavourites->addToFavourites($favId, $productId);
+            }
+
+            $favProd = array_filter($favProducts, function ($favProduct) use ($productId) {
+                return $favProduct->getId() === $productId;
+            });
+
+            if (!sizeof($favProd) and sizeof($favProducts)) {
+                $FFavourites->addToFavourites($favId, $productId);
+            }
         }
+
+        redirect('/products');
 
     }
 
