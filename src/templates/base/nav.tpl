@@ -71,6 +71,7 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/profile" class="nav-link">Profilo</a></li>
             </ul>
         </div>
     </div>
