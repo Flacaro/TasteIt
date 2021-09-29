@@ -4,17 +4,16 @@ namespace App\Views;
 
 class VHomePage
 {
-    public function viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $bestReviews, $products, $productsC) {
-        return view('home', [
+    public function viewHomePageIfLogged($favId, $cartId,  $bestSellers, $bestRateds, $bestReviews, $products) {
+        $data=[
             'favId' => $favId,
             'cartId' => $cartId,
-            'categories'=> $categories,
             'bestSellers'=> $bestSellers,
             'bestRateds'=> $bestRateds,
             'bestReviews'=> $bestReviews,
             'products' => $products,
-            'productsC' => $productsC
-        ]);
+        ];
+        return setData("home", $data);
     }
 
 

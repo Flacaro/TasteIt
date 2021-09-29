@@ -50,7 +50,8 @@ class FCustomer extends FConnection {
         $customer->setEmail($cus[3]);
         $customer->setPassword($cus[4]);
         $fav->setId($cus[5]);
-        $cart->setId($cus[6]);
+        $fcart=new FCart();
+        $cart=$fcart->load($cus[6]);
         $customer->setFav($fav);
         $customer->setCart($cart);
         //print_r($cus);

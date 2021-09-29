@@ -25,7 +25,7 @@ class VProduct {
     }*/
 
     public function getDetailsOfProduct($product, $stars, $ratings, $cartId) {
-        return view('product/product', [
+        $data=[
             'productId' => $product->getId(),
             //starts
             'avg'=> $stars,
@@ -33,6 +33,7 @@ class VProduct {
             'product' => $product,
             'cartId' => $cartId,
             'quantity' => 1
-        ]);
+        ];
+        return setData('product/product', $data);
     }
 }

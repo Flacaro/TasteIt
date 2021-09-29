@@ -1,5 +1,26 @@
 <?php
 
+use App\Controllers\Session;
+
+function setData($view, $data){
+        $session=Session::getInstance();
+        $fcat=new \App\Foundation\FCategory();
+        if ($session->isUserLogged()){
+            $user=unserialize($_SESSION["customer"]);
+            $categories=$fcat->getAll();
+            $cart=$user->getCart();
+            $cartProducts=$cart->getProducts();
+            $data["categories"]=$categories;
+            $data["cartProducts"]= $cartProducts;
+            return view($view, $data);
+        }
+        else{
+            $categories=$fcat->getAll();
+            array_push($data["categories"], $categories);
+            return view($view, $data);
+        }
+    }
+
     function minLength($args): bool
     {
         return strlen($args[0]) >= $args[1];

@@ -19,10 +19,7 @@ class HomePageController {
 
      public function visualizeHome(){
          $session = Session::getInstance();
-         $FCart = new FCart();
          $FProduct = new FProduct();
-         $FCategory = new FCategory();
-         $categories = $FCategory->getAll();
          //sono prodotti
          $bestSellers = $FProduct->getBestSellers();
          // sono prodotti, non reviews
@@ -42,21 +39,18 @@ class HomePageController {
 
          $cartId = NULL;
          $favId = NULL;
-         $productsC = [];
 
          if ($session->isUserLogged()) {
              $cus = unserialize($_SESSION["customer"]);
              $favId = $cus->getFav()->getId();
              $cartId = $cus->getCart()->getId();
-             $cart = $FCart->load($cartId);
-             $productsC = $cart->getProducts();
 //             echo '<pre>'; print_r($productsC); echo '</pre>';
              $products = $FProduct->getAll();
              $vHome = new VHomePage();
-             $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC);
+             $vHome->viewHomePageIfLogged($favId, $cartId, $bestSellers, $bestRateds, $topThreeReviews, $products);
          } else {
              $vHome = new VHomePage();
-             $vHome->viewHomePageIfLogged($favId, $cartId, $categories, $bestSellers, $bestRateds, $topThreeReviews, $products, $productsC);
+             $vHome->viewHomePageIfLogged($favId, $cartId, $bestSellers, $bestRateds, $topThreeReviews, $products);
          }
 
      }
@@ -70,7 +64,6 @@ class HomePageController {
             $cartId = $cus->getCart()->getId();
             $cart = $fCart->load($cartId);
             $cartProducts = $cart->getProducts();
-
             if(!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
                 //print_r("add se cartProducts è vuoto");
@@ -88,9 +81,11 @@ class HomePageController {
                 $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
                 //print_r("increment");
             }
+            $session->saveCart($fCart->load($cart->getId()));
+            print_r($_SESSION["cart"]);
         }
 
-        redirect('/home');
+        //redirect('/home');
     }
 
 

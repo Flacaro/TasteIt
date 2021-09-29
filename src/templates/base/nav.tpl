@@ -24,12 +24,12 @@
                 <!-- menu dropdown del carrello -->
                 <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="flaticon-shopping-bag"></span>
-                    <div class="d-flex justify-content-center align-items-center"><small>{sizeof($productsC)}</small></div>
+                    <div class="d-flex justify-content-center align-items-center"><small>{sizeof($cartProducts)}</small></div>
                 </button>
 
                 <div id="cart-dropdown" class="dropdown-menu dropdown-menu-right">
 
-                    {foreach $productsC as $productWithQuantity}
+                    {foreach $cartProducts as $productWithQuantity}
 
                         <div class="dropdown-item d-flex align-items-start" href="#">
                             <div class="img"></div>
