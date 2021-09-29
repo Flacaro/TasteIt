@@ -26,14 +26,43 @@ class FCart extends FConnection {
         //$stmt->debugDumpParams();
     }
 
+    function update($newCart){
+
+        $pdo = FConnection::connect();
+        $query="select * from products_carts where cartId=".$newCart->getId();
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //oldcart array di array con gli attributi dei prodotti nel vecchio carrello
+        $oldCart=$stmt->fetchAll();
+        //print_r($oldCart);
+        foreach ($newCart->getProducts() as $newp){
+            $wasAlreadyPresent=false;
+            //newcart oggetto carrello
+            //newp array con in [0] l'oggetto prodotto e in [1] la quantità di quel prodotto nel carrello
+            foreach($oldCart as $p){
+                if ($p[1]==$newp[0]->getId()){
+                    $wasAlreadyPresent=true;
+                }
+            }
+            if ($wasAlreadyPresent==true){
+                $this->updateQuantity($newCart->getId(), $newp[0]->getId(), $newp[1]);
+            }
+            else {
+                $this->addToCart($newCart, $newp[0]);
+            }
+
+        }
+    }
+
     function addToCart($cart, $product): string {
         $pdo = FConnection::connect();
         $products=$cart->getProducts();
         $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values('.$product->getId().', '.$cart->getId().', 1)';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $pdo->lastInsertId();
         //$stmt->debugDumpParams();
+        return $pdo->lastInsertId();
+
     }
 
     function incrementQuantity(int $cartId, int $productId, int $quantity) {

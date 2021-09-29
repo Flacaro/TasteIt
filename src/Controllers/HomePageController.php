@@ -55,6 +55,7 @@ class HomePageController {
 
      }
 
+     //funzione più compatta
     public function addToCartFromHome($productId) {
         $session = Session::getInstance();
         $fProduct = new FProduct();
@@ -63,8 +64,10 @@ class HomePageController {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $cart = $fCart->load($cartId);
-            $cartProducts = $cart->getProducts();
-            if(!sizeof($cartProducts)) {
+            $product=$fProduct->load($productId);
+            $cart->addToCart($product, 1);
+            $fCart->update($cart);
+            /*if(!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
                 //print_r("add se cartProducts è vuoto");
             }
@@ -80,12 +83,12 @@ class HomePageController {
             else {
                 $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
                 //print_r("increment");
-            }
+            }*/
             $session->saveCart($fCart->load($cart->getId()));
-            print_r($_SESSION["cart"]);
+            //print_r($_SESSION["cart"]);
         }
 
-        //redirect('/home');
+        redirect('/home');
     }
 
 

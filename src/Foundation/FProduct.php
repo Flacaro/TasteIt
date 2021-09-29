@@ -210,7 +210,7 @@ class FProduct extends FConnection {
          return $products;
       }
 
-
+//funzione ripetuta
       public function addToCart($productId, $cartId, $quantity) {
           $pdo = FConnection::connect();
           $query = 'insert into products_carts(`productId`, `cartId`, `quantity`) VALUES (' . $productId . ', ' . $cartId . ', '. $quantity . ');';
