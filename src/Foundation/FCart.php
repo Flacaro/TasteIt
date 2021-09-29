@@ -46,7 +46,6 @@ class FCart extends FConnection {
         //return $stmt->fetchAll();
     }
 
-
     function decrementQuantity($cart, $product, $quantity) {
         $pdo = FConnection::connect();
         $quantityMinus = $quantity['quantity'] - 1;
@@ -55,6 +54,24 @@ class FCart extends FConnection {
         //$stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
         //return $stmt->fetchAll();
+    }
+
+    function getQuantity(int $cartId, int $productId) {
+        $pdo = FConnection::connect();
+        $query = 'SELECT `quantity` FROM `products_carts` where productId =' . $productId . ' and cartId =' . $cartId . ';';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //$stmt->debugDumpParams();
+        return $stmt->fetch();
+    }
+
+    function updateQuantity(int $cartId, int $productId, int $quantity) {
+        $pdo = FConnection::connect();
+        $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
+        $stmt = $pdo->prepare($query);
+        //$stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
+        $stmt->execute();
+        //$stmt->debugDumpParams();
     }
 
     function deleteFromCart($cart, $product) {
@@ -91,13 +108,7 @@ class FCart extends FConnection {
 
     }
 
-    function getQuantityOfProduct($cartId,$productId) {
-        $pdo = FConnection::connect();
-        $query = 'select quantity from products_carts where productId = ' . $productId . ' and ' . ' cartId = '. $cartId . ';';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        return $stmt->fetch();
-    }
+
 //creare nuovo coupon
     function getCoupon($couponId) {
         $pdo = FConnection::connect();

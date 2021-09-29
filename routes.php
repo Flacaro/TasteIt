@@ -37,7 +37,7 @@ SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage
 
 SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
 SimpleRouter::get("/products", [ProductController::class, "getAll"])->name('products');
-//SimpleRouter::get("/products/create", [ProductController::class, "create"]);
+SimpleRouter::post("/products/{productId}/add/{cartId}", [ProductController::class, "addProductFromAll"]);
 //SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
 SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"]);
 SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
@@ -76,7 +76,7 @@ SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavouritesProducts"]);
 SimpleRouter::post("/favourites/{favId}/addToCart/{cartId}",[FavouritesController::class, "addToCartFromFav"]);
-
+SimpleRouter::delete("/favourites/{favId}/products/{productId}/delete",[FavouritesController::class, "deleteProductFromFav"]);
 
 
 SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
@@ -106,7 +106,7 @@ SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, 
 SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 
 SimpleRouter::get("/prova", [OrderController::class, "prova"]);
-/*SimpleRouter::get("/prov", [FavouritesController::class, "getFavouritesProducts"]);*/
+SimpleRouter::get("/prov", [FavouritesController::class, "getFavouritesProducts"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

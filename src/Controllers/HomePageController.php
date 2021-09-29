@@ -73,18 +73,21 @@ class HomePageController {
 
             if(!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
+                //print_r("add se cartProducts è vuoto");
             }
 
             $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
                 return $cartProduct[0]->getId() === $productId;
             });
 
-            if(!sizeof($cartProd)) {
+            if(!sizeof($cartProd) and sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
-            } else {
-                $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
+                //print_r("add se cartProd è vuoto");
             }
-
+            else {
+                $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
+                //print_r("increment");
+            }
         }
 
         redirect('/home');
@@ -93,20 +96,30 @@ class HomePageController {
 
     public function addToFavouritesFromHome($productId) {
         $session = Session::getInstance();
-        $FProduct = new FProduct();
         $FFavourites = new FFavourites();
-        $FProduct->load($productId);
+
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $favId = $cus->getFav()->getId();
-            $FFavourites->addToFavourites($favId, $productId);
-            $products = $FFavourites->getFavouritesProducts($favId);
-            $vFavourites = new VFavourites();
-            $vFavourites->viewFavouritesProducts($favId, $products, $productId);
-        }
-       /* self::visualizeHome();*/
+            $favProducts = $FFavourites->getFavouritesProducts($favId);
+            //printObject($favProducts);
 
-    }
+            if(!sizeof($favProducts)) {
+                $FFavourites->addToFavourites($favId, $productId);
+            }
+
+            $favProd = array_filter($favProducts, function($favProduct) use ($productId) {
+                return $favProduct->getId() === $productId;
+            });
+
+            if(!sizeof($favProd) and sizeof($favProducts)) {
+                $FFavourites->addToFavourites($favId, $productId);
+            }
+        }
+
+        redirect('/home');
+     }
+
 
     public function About(){
         $VHome = new VHomePage();

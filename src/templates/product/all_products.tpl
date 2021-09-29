@@ -30,15 +30,19 @@
             {foreach $products as $product}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
                             <div class="desc" style="display: flex" >
-                                <form action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
-                                    <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
-                                    <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                {if $cartId}
+                                <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">
+                                    <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
+                                    <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                 </form>
+                                {/if}
+                                {if $favId}
                                 <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
                                     <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                 </form>
+                                {/if}
                                 <form action="/products/{$product->getId()}">
                                     <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
                                 </form>
@@ -46,6 +50,7 @@
                         </div>
                         <div class="text text-center">
                             <h2> {$product->getName()}</h2>
+                            <h2> {$product->getprice()}</h2>
                         </div>
                     </div>
                 </div>

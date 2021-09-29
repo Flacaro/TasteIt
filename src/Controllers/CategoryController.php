@@ -10,10 +10,10 @@ use App\Views\VCategory;
 class CategoryController
 {
     function getCategoryProducts($categoryId) {
-        $FProduct = new FProduct();
-        $products = $FProduct->getProductsByCategoryId($categoryId);
-        $vcategory= new VCategory();
-        $vcategory->viewProducts($products);
+        $FCategory = new FCategory();
+        $products = $FCategory->loadCategoryProducts($categoryId);
+        $vCategory= new VCategory();
+        $vCategory->viewProducts($products);
  }
 
     function index(){

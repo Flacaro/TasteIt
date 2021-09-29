@@ -41,39 +41,47 @@ class FavouritesController {
     public function deleteProductFromFav($productId) {
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
+
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $favId = $cus->getFav()->getId();
-            $FFavourites->load($favId);
-            $FFavourites->deleteFromFavourites($favId, $productId);
-            $products = $FFavourites->getFavouritesProducts($favId);
-            $vFavourites = new VFavourites();
-            $vFavourites->viewFavouritesProducts($favId, $products, $productId);
+            if ($_POST['option'] == 'delete') {
+                $FFavourites->deleteFromFavourites($favId, $productId);
+            }
+            redirect(url('/favourites', ['favId' => $favId]));
         }
     }
 
     public function addToCartFromFav($productId) {
-        $session=Session::getInstance();
+        $session = Session::getInstance();
         $fProduct = new FProduct();
-        $FFavourites = new FFavourites();
-        //se ce le metto si rompe
-        /*$FCategory = new FCategory();
-        $categories = $FCategory->getAll();*/
+        $fCart = new FCart();
         if ($session->isUserLogged()) {
             $cus = unserialize($_SESSION["customer"]);
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
-            $products = $FFavourites->getFavouritesProducts($favId);
-            $quantity = $_POST['quantity'];
-            if($quantity == 1) {
+            $cart = $fCart->load($cartId);
+            $cartProducts = $cart->getProducts();
+
+            if(!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, 1);
+                //print_r("add se cartProducts è vuoto");
+            }
+
+            $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
+                return $cartProduct[0]->getId() === $productId;
+            });
+
+            if(!sizeof($cartProd) and sizeof($cartProducts)) {
+                $fProduct->addToCart($productId, $cartId, 1);
+                //print_r("add se cartProd è vuoto");
             }
             else {
-                $fProduct->addToCart($productId, $cartId, $quantity);
-
+                $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
+                //print_r("increment");
             }
-            $vFavourites = new VFavourites();
-            $vFavourites->viewFavouritesProducts($favId, $products, $cartId);
+
+        redirect(url('/favourites', ['favId' => $favId]));
         }
     }
 

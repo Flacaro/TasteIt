@@ -1,9 +1,8 @@
-<!-- Inizio barra rossa in alto dove ce sign up e login  -->
 {extends file='src/templates/base/base.tpl'}
 {block name=title}product{/block}
 {block name=body}
 
-<!--  inizio schermata del Home e del product con la foto del liquore e delle rose -->
+
 <section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -14,13 +13,13 @@
             </div>
         </div>
     </div>
-    <!-- fine  schermata del Home e del product con la foto del liquore e delle rose -->
+
 </section>
-<!-- inizio della schermata del  liquore , prezzo e la sua descrizione -->
+
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(/src/assets/images/prod-9.jpg);">
+            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url({$product->getImagePath()});">
             </div>
             <div class="col-lg-6 product-details pl-md-5 ">
                 <h3>{$product->getName()}</h3>
@@ -31,22 +30,21 @@
 
                         <a href="#">
                             <span>
-                                                    {for $var=1 to round($avg)}
-                                                    <i class="fa fa-star"></i>
-                                                   {/for}
-							   					</span>
+                                {for $var=1 to round($avg)}
+                                    <i class="fa fa-star"></i>
+                                {/for}
+                            </span>
                             <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
                         </a>
                         {/if}
                 </div>
-                <p class="price"><span> £ {$product->getPrice()}</span></p>
+                <p class="price"><span> EUR {$product->getPrice()}</span></p>
                 <p>{$product->getDescription()}</p>
 
-{*                {if $cartId}*}
                 <div class="row mt-4">
                     <div class="input-group col-md-6 d-flex mb-3">
                         {if $cartId}
-                            <form id="addProductToCardForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
+                            <form id="addProductToCartForm" action="/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
                                 <div class="d-flex mb-4">
                                     <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1">
@@ -58,7 +56,6 @@
 
                             </form>
                         {/if}
-
                         <script>
                             const input = document.querySelector('#productQuantity');
                             input.value = 1;
@@ -66,7 +63,7 @@
                             const minusBtn = document.querySelector('#minus');
                             const plusBtn = document.querySelector('#plus');
 
-                            const form = document.querySelector('#addProductToCardForm');
+                            const form = document.querySelector('#addProductToCartForm');
 
 
                             if(minusBtn && plusBtn) {
@@ -86,7 +83,7 @@
                     <div class="col-md-12">
                     </div>
                 </div>
-{*                {/if}*}
+
             </div>
         </div>
 
@@ -158,8 +155,8 @@
 
                             <div>
 
+                                {if $cartId}
                                 <div class="contact-wrap w-100 p-md-5">
-
                                         <h3 class="mb-5">Lascia una recensione</h3>
                                             <form action="/products/{$product->getId()}/addReview" method="POST" id="add">
                                                 <div class="row">
@@ -183,6 +180,7 @@
                                                 </div>
                                             </form>
                                  </div>
+                                {/if}
 
                             </div>
                         </div>

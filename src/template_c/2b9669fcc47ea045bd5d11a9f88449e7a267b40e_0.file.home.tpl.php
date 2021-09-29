@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-26 11:10:47
+/* Smarty version 3.1.39, created on 2021-09-28 19:42:56
   from 'C:\xampp\htdocs\TasteIt\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61503917242976_15084687',
+  'unifunc' => 'content_61535420e506e1_90303924',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b9669fcc47ea045bd5d11a9f88449e7a267b40e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\home.tpl',
-      1 => 1632647443,
+      1 => 1632850975,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61503917242976_15084687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61535420e506e1_90303924 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_94162130761503917231132_84009919', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_163275641261535420e3e4a3_52278759', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_78304340461503917231a99_27124692', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_166469782361535420e3eea0_98060483', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_94162130761503917231132_84009919 extends Smarty_Internal_Block
+class Block_163275641261535420e3e4a3_52278759 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_94162130761503917231132_84009919',
+    0 => 'Block_163275641261535420e3e4a3_52278759',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_78304340461503917231a99_27124692 extends Smarty_Internal_Block
+class Block_166469782361535420e3eea0_98060483 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_78304340461503917231a99_27124692',
+    0 => 'Block_166469782361535420e3eea0_98060483',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -189,6 +189,7 @@ $_smarty_tpl->tpl_vars['bestRated']->do_else = false;
 );">
                             <div class="desc" style="display: flex">
                                 <p class="meta-prod d-flex">
+
                                 <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                                 <form action="home/products/<?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getId();?>
 /addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
@@ -216,7 +217,7 @@ $_smarty_tpl->tpl_vars['bestRated']->do_else = false;
                         <div class="text text-center">
                                                         <h2><?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getName();?>
 </h2>
-                            <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getPrice();?>
+                            <p class="mb-0"> <span class="price">EUR <?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getPrice();?>
 </span></p>
                         </div>
                         </a>
@@ -229,7 +230,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">*}
+    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row justify-content-center mb-5">
@@ -288,22 +289,37 @@ $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
-                   <div class="col-lg-6 d-flex align-items-stretch ftco-animated">
-                        <div class="blog-entry d-flex">
-                            <a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-" class="block-20 img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
+                    <div class="col-md-3 d-flex">
+                        <div class="product ftco-animated">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
 );">
-                            </a>
-                            <div class="text p-4 bg-light">
-
-                                <h3 class="heading mb-3"><a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-"><?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
-</a></h3>
-                                <p><?php echo $_smarty_tpl->tpl_vars['product']->value->getDescription();?>
-</p>
-                                <p class="mb-0"> <span class="price">$<?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice();?>
-</span></p>
-
+                                <div class="desc" style="display: flex" >
+                                    <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
+                                        <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/add/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+" method="POST">
+                                            <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
+                                            <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                        </form>
+                                    <?php }?>
+                                    <?php if ($_smarty_tpl->tpl_vars['favId']->value) {?>
+                                        <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/addToFavourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+" method="POST">
+                                            <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
+                                        </form>
+                                    <?php }?>
+                                    <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+">
+                                        <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="text text-center">
+                                <h2> <?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
+</h2>
+                                <h2> <?php echo $_smarty_tpl->tpl_vars['product']->value->getprice();?>
+</h2>
                             </div>
                         </div>
                     </div>
@@ -311,7 +327,6 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
-        </div>
     </section>
 
 <?php
