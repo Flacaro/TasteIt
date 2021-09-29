@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-21 16:52:53
+/* Smarty version 3.1.39, created on 2021-09-28 17:52:27
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61211345774645_95650974',
+  'unifunc' => 'content_61533a3bdf6814_59653249',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a71a6c5cae1cb356d6e982dec5131e9e8cc61f65' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\aboutUs.tpl',
-      1 => 1629540807,
+      1 => 1632503518,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61211345774645_95650974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61533a3bdf6814_59653249 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_182867740161211345772ee0_38978489', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_137583704461533a3bdf5682_81216559', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7884655461211345773d79_87605246', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_23330955261533a3bdf60a3_97492558', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_182867740161211345772ee0_38978489 extends Smarty_Internal_Block
+class Block_137583704461533a3bdf5682_81216559 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_182867740161211345772ee0_38978489',
+    0 => 'Block_137583704461533a3bdf5682_81216559',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ aboutUs<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_7884655461211345773d79_87605246 extends Smarty_Internal_Block
+class Block_23330955261533a3bdf60a3_97492558 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_7884655461211345773d79_87605246',
+    0 => 'Block_23330955261533a3bdf60a3_97492558',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -129,7 +129,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                         <p>Arrivare nel cuore di Montepulciano, città dalle sensazioni magiche, già di per sé rappresenta un viaggio attraverso i sensi. La vista, l’olfatto, l’udito. Dopo qualche serpentina in un’erta caratterizzata da un panorama mozzafiato che non nasconde certo il Tempio di San Biagio, capolavoro del Sangallo, ecco che passando da una porta, fiancheggiando la Fortezza di Montepulciano, baluardo della cittadina del Poliziano, si incontra TasteIt.
 
-                            Flaviana, Selene e Mohamed , dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti della tradizione senese.</p>
+                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti della tradizione senese.</p>
                         <!-- questo nel dubbio ce lo lascio ma non so se lo vogliamo lascia-->
                         <p class="year">
                             <strong class="number" data-number="25">0</strong>

@@ -17,7 +17,7 @@ class CartController {
  public function getProductsOfCart($id) {
      $FCart = new FCart();
      //$cart dovrà andare a chiamare la funzione dentro $FCart
-     $products = $FCart->getProductsOfCart($id);
+     $products = $FCart->load($id);
      $vcart = new VCart();
      $vcart->getProducts($products, $id);
  }

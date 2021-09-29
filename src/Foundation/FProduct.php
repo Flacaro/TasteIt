@@ -216,7 +216,7 @@ class FProduct extends FConnection {
           $query = 'insert into products_carts(`productId`, `cartId`, `quantity`) VALUES (' . $productId . ', ' . $cartId . ', '. $quantity . ');';
           $stmt = $pdo->prepare($query);
           $stmt->execute();
-          return $stmt->fetch();
+//          return $stmt->fetch();
       }
 
     function update($id, $product) {

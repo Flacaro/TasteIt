@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-26 21:45:06
+/* Smarty version 3.1.39, created on 2021-09-28 17:52:58
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6127ef42da6c22_19474382',
+  'unifunc' => 'content_61533a5a5ed026_72990065',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '46fa3f5f187f44c2edfb218b21bd3b9465e85c10' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\cart\\cart.tpl',
-      1 => 1629534951,
+      1 => 1632410285,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6127ef42da6c22_19474382 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61533a5a5ed026_72990065 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18884893556127ef42d05a39_26698510', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_69537608261533a5a5cd3b6_65607106', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13069673976127ef42d081c3_69431047', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14750535561533a5a5cdde5_12354867', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6543130256127ef42d087f9_51727230', 'productsOfCart');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_52905696161533a5a5ce464_36994521', 'productsOfCart');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_18884893556127ef42d05a39_26698510 extends Smarty_Internal_Block
+class Block_69537608261533a5a5cd3b6_65607106 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_18884893556127ef42d05a39_26698510',
+    0 => 'Block_69537608261533a5a5cd3b6_65607106',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_13069673976127ef42d081c3_69431047 extends Smarty_Internal_Block
+class Block_14750535561533a5a5cdde5_12354867 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_13069673976127ef42d081c3_69431047',
+    0 => 'Block_14750535561533a5a5cdde5_12354867',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'productsOfCart'} */
-class Block_6543130256127ef42d087f9_51727230 extends Smarty_Internal_Block
+class Block_52905696161533a5a5ce464_36994521 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'productsOfCart' => 
   array (
-    0 => 'Block_6543130256127ef42d087f9_51727230',
+    0 => 'Block_52905696161533a5a5ce464_36994521',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -85,8 +85,8 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\selen\\OneDrive\\
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate mb-5 text-center">
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Cart <i class="fa fa-chevron-right"></i></span></p>
-                <h2 class="mb-0 bread">My Cart</h2>
+                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Carrello<i class="fa fa-chevron-right"></i></span></p>
+                <h2 class="mb-0 bread">Il mio carrello</h2>
             </div>
         </div>
     </div>

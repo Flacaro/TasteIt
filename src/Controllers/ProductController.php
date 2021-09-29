@@ -59,6 +59,7 @@ class ProductController
         // il carrello si prende dalla sessione dall'utente loggato
         $session=Session::getInstance();
         $fProduct = new FProduct();
+        $fCart = new FCart();
         $products = $fProduct->getAll();
         $FCategory = new FCategory();
         $categories = $FCategory->getAll();
@@ -68,14 +69,32 @@ class ProductController
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
             $quantity = $_POST['quantity'];
-            if($quantity == 1) {
+            $cart = $fCart->load($cartId);
+            $cartProducts = $cart->getProducts();
+            /* echo '<pre>'; print_r($product[0]->getId()); echo '</pre>';*/
+            foreach ($cartProducts as $cartProduct) {
+//                printObject($cartProduct[0]);
+               /* if($productId == $cartProduct[0]->getId()) {
+                    $fCart->incrementQuantity($cart, $productId, $quantity);
+                    /*print_r("ci sta");
+                    print_r($quantity);
+                }
+                else {
+                    $fProduct->addToCart($productId, $cartId, $quantity);
+                    //print_r("nun ci sta");
+
+                }*/
+            }
+          /*  $vProduct = new VProduct();
+            $vProduct->getProducts($products, $cartId, $favId, $categories);*/
+        }
+        /*    if($quantity == 1) {
                 $fProduct->addToCart($productId, $cartId, 1);
             }
-            $fProduct->addToCart($productId, $cartId, $quantity);
-            $vProduct = new VProduct();
-            $vProduct->getProducts($products, $cartId, $favId, $categories);
+            $fProduct->addToCart($productId, $cartId, $quantity);*/
+
         }
-    }
+
 
     public function addToFavourites($productId) {
         $session=Session::getInstance();

@@ -58,7 +58,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
-                {if $favId !== NULL }
+                {if isset($favId) and $favId !== "" }
                     <li class="nav-item"><a href="/favourites/{$favId}" class="nav-link">Preferiti</a></li>
                 {/if}
 

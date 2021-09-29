@@ -36,10 +36,10 @@ class FCart extends FConnection {
         //$stmt->debugDumpParams();
     }
 
-    function incrementQuantity($cart, $product, $quantity) {
+    function incrementQuantity(int $cartId, int $productId, int $quantity) {
         $pdo = FConnection::connect();
-        $quantityPlus = $quantity['quantity'] + 1;
-        $query = 'UPDATE products_carts SET quantity = '. $quantityPlus . ' WHERE productId = ' . $product->getId() . ' and cartId = ' . $cart->getId() . ';';
+        $quantity = $quantity + 1;
+        $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $pdo->prepare($query);
         //$stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
