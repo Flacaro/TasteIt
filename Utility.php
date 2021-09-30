@@ -9,6 +9,7 @@ function setData($view, $data){
             $user=unserialize($_SESSION["customer"]);
             $categories=$fcat->getAll();
             $cart=$user->getCart();
+            printObject($cart);
             $cartProducts=$cart->getProducts();
             $data["categories"]=$categories;
             $data["cartProducts"]= $cartProducts;
