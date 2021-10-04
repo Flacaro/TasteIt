@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-23 16:45:06
+/* Smarty version 3.1.39, created on 2021-10-04 16:30:27
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\coupons\coupons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614c92f2108773_49747336',
+  'unifunc' => 'content_615b100312f913_43221342',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d4296d691c67e027445d3a0bb4cba69bfe3cf07' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\coupons\\coupons.tpl',
-      1 => 1632408304,
+      1 => 1633357825,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614c92f2108773_49747336 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615b100312f913_43221342 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44762184614c92f20fece3_79971404', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_419075877615b1003126e82_54701238', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_44762184614c92f20fece3_79971404 extends Smarty_Internal_Block
+class Block_419075877615b1003126e82_54701238 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_44762184614c92f20fece3_79971404',
+    0 => 'Block_419075877615b1003126e82_54701238',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -45,14 +45,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="row">
             <div class="col-md-8">
                 <div class="card card-user">
-                    <div class="card-header">
-                        <a class="btn btn-round btn-primary" href="/admin/coupons/create">
-                            Crea un coupon
-                        </a>
-                    </div>
-                    <div class="card-body">
+                                        <div class="card-body">
 
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="overflow:hidden">
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th>

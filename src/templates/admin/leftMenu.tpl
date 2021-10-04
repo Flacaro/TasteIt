@@ -40,7 +40,7 @@
                 </div> -->
             </a>
         </div>
-        <div class="sidebar-wrapper">
+        <div class="sidebar-wrapper" style="overflow:hidden">
             <ul class="nav">
                 <li class="active ">
                     <a href="/admin">

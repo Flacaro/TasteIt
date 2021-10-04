@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-04 17:49:11
+/* Smarty version 3.1.39, created on 2021-10-04 16:37:55
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\auth\sign-up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61339577e849f7_93828313',
+  'unifunc' => 'content_615b11c3b4ad24_34350785',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '247c0830268c74f68d7e2fdd4e4661c00168b3d0' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\auth\\sign-up.tpl',
-      1 => 1630770550,
+      1 => 1633358260,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61339577e849f7_93828313 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615b11c3b4ad24_34350785 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17512134761339577e7f291_48210781', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_943101472615b11c3b44527_48712636', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -84,7 +84,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17512134761339577e
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="#">Password</label>
-                        <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="10" maxlength="40">
+                        <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="5" maxlength="40">
                     </div>
                 </div>
             </div>
@@ -145,12 +145,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17512134761339577e
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_17512134761339577e7f291_48210781 extends Smarty_Internal_Block
+class Block_943101472615b11c3b44527_48712636 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_17512134761339577e7f291_48210781',
+    0 => 'Block_943101472615b11c3b44527_48712636',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

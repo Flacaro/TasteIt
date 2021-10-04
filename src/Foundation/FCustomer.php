@@ -106,9 +106,10 @@ class FCustomer extends FConnection {
         $fav= new Favourites;
         $ffav=new FFavourites();
         $f=$ffav->store($fav);
-        $query="insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES ('.$name.','.$surname.','.$email.','.$password.','.$f.','.$c.')";
+        $query='insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`) VALUES (\''. $name .'\',\''.$surname.'\',\''.$email.'\',\''.$password.'\','.$f.','.$c.')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
+        //$stmt->debugDumpParams();
     }
 
 //l'update del customer si limita a email, password, nome, cognome, per quanto riguarda il carrello, i preferiti, le carte di credito etc usiamo i foundation specifici
