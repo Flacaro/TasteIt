@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-28 20:07:30
+/* Smarty version 3.1.39, created on 2021-09-30 12:54:05
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615359e2ee0170_01358831',
+  'unifunc' => 'content_6155974de0db35_84024984',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1632852448,
+      1 => 1632907629,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615359e2ee0170_01358831 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6155974de0db35_84024984 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -47,14 +47,14 @@ function content_615359e2ee0170_01358831 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- menu dropdown del carrello -->
                 <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="flaticon-shopping-bag"></span>
-                    <div class="d-flex justify-content-center align-items-center"><small><?php echo sizeof($_smarty_tpl->tpl_vars['productsC']->value);?>
+                    <div class="d-flex justify-content-center align-items-center"><small><?php echo sizeof($_smarty_tpl->tpl_vars['cartProducts']->value);?>
 </small></div>
                 </button>
 
                 <div id="cart-dropdown" class="dropdown-menu dropdown-menu-right">
 
                     <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productsC']->value, 'productWithQuantity');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cartProducts']->value, 'productWithQuantity');
 $_smarty_tpl->tpl_vars['productWithQuantity']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['productWithQuantity']->value) {
 $_smarty_tpl->tpl_vars['productWithQuantity']->do_else = false;
@@ -93,7 +93,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
-                <?php if ($_smarty_tpl->tpl_vars['favId']->value !== NULL) {?>
+                <?php if ((isset($_smarty_tpl->tpl_vars['favId']->value)) && $_smarty_tpl->tpl_vars['favId']->value !== '') {?>
                     <li class="nav-item"><a href="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
 " class="nav-link">Preferiti</a></li>
                 <?php }?>

@@ -5,14 +5,14 @@ namespace App\Views;
 class VProduct {
 
     //ci andrebbe passato come parametro anche il cartId dell'utente loggato
-    public function getProducts($products, $cartId, $favId, $categories) {
-        $data= [
+    
+    public function getProducts($products, $cartId, $favId) {
+        $data = [
             'products' => $products,
             'cartId' => $cartId,
             'favId' => $favId,
-            'categories' =>$categories
         ];
-        return setData('product/all_products', $data);
+        return setData("product/all_products", $data);
     }
 
 /*    public function editProduct($product) {
@@ -28,13 +28,11 @@ class VProduct {
     public function getDetailsOfProduct($product, $stars, $ratings, $cartId) {
         $data=[
             'productId' => $product->getId(),
-            //starts
             'avg'=> $stars,
             'reviews' => $ratings,
             'product' => $product,
-            'cartId' => $cartId,
-            'quantity' => 1
+            'cartId' => $cartId
         ];
-        return setData('product/product', $data);
+        return setData("product/product", $data);
     }
 }
