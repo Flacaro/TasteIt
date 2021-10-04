@@ -27,7 +27,7 @@
                                         <span class="fa fa-map-marker"></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>Address:</span>{$restaurant->getAddress()}</p>
+                                        <p><span>Address:</span>Via {current($restaurant->getAddresses())}</p>
                                     </div>
                                 </div>
                             </div>

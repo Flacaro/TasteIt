@@ -11,16 +11,15 @@ class CategoryController
 {
     function getCategoryProducts($categoryId) {
         $FCategory = new FCategory();
+        $category=$FCategory->load($categoryId);
         $products = $FCategory->loadCategoryProducts($categoryId);
         $vCategory= new VCategory();
-        $vCategory->viewProducts($products);
+        $vCategory->viewProducts($products, $category);
  }
 
     function index(){
-        $FCategory = new FCategory();
-        $categories = $FCategory->getAll();
         $vcategory= new VCategory();
-        $vcategory->viewCategories($categories);
+        $vcategory->viewCategories();
 
     }
     function getCategoryImage($categoryId){

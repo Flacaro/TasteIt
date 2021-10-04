@@ -19,8 +19,6 @@ class VHomePage
 
 
     public function About(){
-        return view('aboutUs', [
-
-        ]);
+        return setData('aboutUs', []);
     }
 }

@@ -6,12 +6,13 @@ class VProduct {
 
     //ci andrebbe passato come parametro anche il cartId dell'utente loggato
     public function getProducts($products, $cartId, $favId, $categories) {
-        return view('product/all_products', [
+        $data= [
             'products' => $products,
             'cartId' => $cartId,
             'favId' => $favId,
             'categories' =>$categories
-        ]);
+        ];
+        return setData('product/all_products', $data);
     }
 
 /*    public function editProduct($product) {

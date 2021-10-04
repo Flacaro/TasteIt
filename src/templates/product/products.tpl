@@ -1,8 +1,7 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Prodotti{/block}
-{block name=categories}{/block}
-{block name=products}
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://wallpapersdsc.net/wp-content/uploads/2016/09/Chinese-Seafood-full-HD.jpg');" data-stellar-background-ratio="0.5">
+{block name=body}
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{$category->getImage()}');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -30,9 +29,10 @@
 
                     <div class="row">
                         {foreach $products as $product}
+
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://via.placeholder.com/150');">
+                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('{$product->getImagePath()}');">
                                         <div class="desc">
                                             <p class="meta-prod d-flex">
                                                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>

@@ -33,7 +33,15 @@ class FRestaurant extends FConnection {
         $query = "SELECT * FROM restaurant WHERE email='".$email."'";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        return $stmt->fetch();
+        $r= $stmt->fetch();
+        $rest=new Restaurant;
+        $rest->setId($r[0]);
+        $rest->setName($r[1]);
+        $rest->setEmail($r[2]);
+        $faddress=new FAddress;
+        $rest->setAddresses([$faddress->load($r[4])]);
+        $rest->setPhone($r[5]);
+        return $rest;
         //print_r($res);
     }
 
