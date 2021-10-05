@@ -37,7 +37,7 @@ class OrderController {
         $fcoupon=new FCoupon();
         $session=Session::getInstance();
         if ($session->isUserLogged()){
-            $cus=unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId=$cus->getCart()->getId();
             $cart=$fcart->load($cartId);
             $cId=$cus->getId();
@@ -68,7 +68,7 @@ class OrderController {
         $fcart = new FCart();
         $fpay = new FPaymentMethod();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $cart = $fcart->load($cartId);
             $coupon = $_POST['option'];

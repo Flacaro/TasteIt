@@ -35,9 +35,20 @@
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url('{$product->getImagePath()}');">
                                         <div class="desc">
                                             <p class="meta-prod d-flex">
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                                {if $cartId}
+                                                    <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">
+                                                        <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
+                                                        <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                                    </form>
+                                                {/if}
+                                                {if $favId}
+                                                    <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
+                                                        <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
+                                                    </form>
+                                                {/if}
+                                            <form action="/products/{$product->getId()}">
+                                                <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                            </form>
                                             </p>
                                         </div>
                                     </div>

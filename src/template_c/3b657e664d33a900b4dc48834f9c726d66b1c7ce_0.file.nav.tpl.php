@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-30 12:54:05
+/* Smarty version 3.1.39, created on 2021-10-05 10:59:42
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6155974de0db35_84024984',
+  'unifunc' => 'content_615c13fe768e13_07642880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1632907629,
+      1 => 1633423467,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6155974de0db35_84024984 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615c13fe768e13_07642880 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -31,8 +31,8 @@ function content_6155974de0db35_84024984 (Smarty_Internal_Template $_smarty_tpl)
                 </p>
             </div>
             <div class="col-md-6 d-flex justify-content-md-end">
-                <div class="reg">
-                    <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a></p><p class="mb-0"></p>
+                <div class="reg"><?php if ($_smarty_tpl->tpl_vars['user']->value == NULL) {?>
+                    <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a> </p><p class="mb-0"></p><?php } else { ?><p class="mb-0"><a href="/logout">Log Out</a></p><p class="mb-0"></p><?php }?>
                 </div>
             </div>
         </div>

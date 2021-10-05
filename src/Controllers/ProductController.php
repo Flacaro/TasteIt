@@ -24,7 +24,7 @@ class ProductController
         $favId = NULL;
         $cartId = NULL;
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
             $vProduct = new VProduct();
@@ -50,7 +50,7 @@ class ProductController
         $star = $stars[0][0];
         //print_r($stars);
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $vProduct = new VProduct();
             $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
@@ -73,7 +73,7 @@ class ProductController
         $categories = $FCategory->getAll();
 
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
             $cart = $fCart->load($cartId);
@@ -120,7 +120,7 @@ class ProductController
         $fProduct = new FProduct();
         $fCart = new FCart();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $cart = $fCart->load($cartId);
             $product=$fProduct->load($productId);
@@ -140,7 +140,7 @@ class ProductController
         $FFavourites = new FFavourites();
 
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             $favProducts = $FFavourites->getFavouritesProducts($favId);
 
@@ -167,7 +167,7 @@ class ProductController
         $session = Session::getInstance();
         $rev = [];
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $FReview = new FReview();
             $stars = $_POST['stars'];
             $comment = $_POST['comment'];

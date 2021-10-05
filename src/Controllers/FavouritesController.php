@@ -26,7 +26,7 @@ class FavouritesController {
         $FFavourites = new FFavourites();
         $FCart = new FCart();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             $FFavourites->load($favId);
             $products = $FFavourites->getFavouritesProducts($favId);
@@ -41,7 +41,7 @@ class FavouritesController {
         $FFavourites = new FFavourites();
 
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             if ($_POST['option'] == 'delete') {
                 $FFavourites->deleteFromFavourites($favId, $productId);
@@ -55,9 +55,22 @@ class FavouritesController {
         $fProduct = new FProduct();
         $fCart = new FCart();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
+            $cart = $fCart->load($cartId);
+            $product=$fProduct->load($productId);
+            $cart->addToCart($product, 1);
+            $cus->setCart($cart);
+            $fCart->update($cart);
+            $session->saveUserInSession($cus);
+       /* $session = Session::getInstance();
+        $fProduct = new FProduct();
+        $fCart = new FCart();
+        if ($session->isUserLogged()) {
+            $cus = $session->loadUser();
+            $cartId = $cus->getCart()->getId();
+
             $cart = $fCart->load($cartId);
             $cartProducts = $cart->getProducts();
 
@@ -77,7 +90,7 @@ class FavouritesController {
             else {
                 $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
                 //print_r("increment");
-            }
+            }*/
 
         redirect(url('/favourites', ['favId' => $favId]));
         }

@@ -41,7 +41,7 @@ class HomePageController {
          $favId = NULL;
 
          if ($session->isUserLogged()) {
-             $cus = unserialize($_SESSION["customer"]);
+             $cus = $session->loadUser();
              $favId = $cus->getFav()->getId();
              $cartId = $cus->getCart()->getId();
 //             echo '<pre>'; print_r($productsC); echo '</pre>';
@@ -61,7 +61,7 @@ class HomePageController {
         $fProduct = new FProduct();
         $fCart = new FCart();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $cart = $fCart->load($cartId);
             $product=$fProduct->load($productId);
@@ -99,7 +99,7 @@ class HomePageController {
         $FFavourites = new FFavourites();
 
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             $favProducts = $FFavourites->getFavouritesProducts($favId);
             //printObject($favProducts);

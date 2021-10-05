@@ -24,27 +24,7 @@ class CustomerController {
         $vusers->getUsers($customers);
     }
 
-    //questa dovrebbe stare con login?
-   /* public function store($customer) {
-        $fcustomers = new FCustomer();
-        $FCart = new FCart();
-        $FFavourites= new FFavourites();
-        $cart = new Cart();
-        $cart->setId(NULL);
-        $cartId = $FCart->store($cart);
-
-        $fav = new Favourites();
-        $fav->setId(NULL);
-        $favId = $FFavourites->store($fav);
-
-        $customer->setCartId($cartId);
-        $customer->setFavId($favId);
-        $fcustomers->load($customer);
-        $vuser = new VUser();
-        $vuser->createUser($customer->get);
-    }*/
-
-    public function update($id) {
+/*    public function update($id) {
         $FCustomer = new FCustomer();
         $customer = new Customer();
         $name = $_POST['name'];
@@ -57,20 +37,20 @@ class CustomerController {
         $customer->setPassword($password);
         $FCustomer->update($customer);
         /*$vuser = new VUser();
-        $vuser->getProfile($customer);*/
-    }
+        $vuser->getProfile($customer);
+    }*/
 
-    public function edit($id) {
+/*    public function edit($id) {
         $FUsers = new FCustomer();
         $user = $FUsers->load($id);
         $vuser = new VUser();
         $vuser->editUser($user);
-    }
+    }*/
 
     public function getProfile() {
         $session=Session::getInstance();
         if ($session->isUserLogged()) {
-            $customer = unserialize($_SESSION["customer"]);
+            $customer = $session->loadUser();
             $vUser = new VUser();
             $vUser->getProfile($customer);
         }
@@ -82,11 +62,6 @@ class CustomerController {
         $vUser = new VUser();
         $vUser->getCartId($user);
      }
-
-
-
-    public function insertPersonalData($method,$cardNumber,$expDate,$holder,$cvv){
-    }
 
 
 
