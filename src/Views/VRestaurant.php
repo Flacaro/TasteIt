@@ -18,7 +18,7 @@ class VRestaurant {
     }
 
     public function getContactPage($restaurant) {
-        return view('contact-us', [
+        return setData('contact-us', [
             'restaurant'=> $restaurant
         ]);
     }

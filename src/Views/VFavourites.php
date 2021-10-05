@@ -4,12 +4,12 @@ namespace App\Views;
 
 class VFavourites
 {
-    public function viewFavouritesProducts($favId, $products, $cartId){
-        return view('favourite/favourites', [
+    public function viewFavouritesProducts($favId, $products){
+        $data=[
             'favId' => $favId,
             'products' => $products,
-            'cartId' => $cartId
-        ]);
+        ];
+        return setData('favourite/favourites',$data);
     }
 
 /*   public function viewProductsOfFav($favId, $productId){

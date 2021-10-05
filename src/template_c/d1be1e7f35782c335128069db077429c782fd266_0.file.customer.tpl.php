@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-23 10:42:07
+/* Smarty version 3.1.39, created on 2021-10-04 16:28:21
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\customers\customer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614c3ddf0cedd3_32795254',
+  'unifunc' => 'content_615b0f852c55f3_95841286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd1be1e7f35782c335128069db077429c782fd266' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\customers\\customer.tpl',
-      1 => 1632386525,
+      1 => 1633357698,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614c3ddf0cedd3_32795254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615b0f852c55f3_95841286 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_554989160614c3ddf0c4915_00830622', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_886630228615b0f852bb867_11963062', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_554989160614c3ddf0c4915_00830622 extends Smarty_Internal_Block
+class Block_886630228615b0f852bb867_11963062 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_554989160614c3ddf0c4915_00830622',
+    0 => 'Block_886630228615b0f852bb867_11963062',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,7 +51,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                     <div class="card-body">
 
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="overflow:hidden">
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th>

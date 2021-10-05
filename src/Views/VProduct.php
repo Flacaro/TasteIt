@@ -5,6 +5,7 @@ namespace App\Views;
 class VProduct {
 
     //ci andrebbe passato come parametro anche il cartId dell'utente loggato
+    
     public function getProducts($products, $cartId, $favId) {
         $data = [
             'products' => $products,

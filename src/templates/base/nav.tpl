@@ -8,8 +8,8 @@
                 </p>
             </div>
             <div class="col-md-6 d-flex justify-content-md-end">
-                <div class="reg">
-                    <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a></p><p class="mb-0"></p>
+                <div class="reg">{if $user==NULL}
+                    <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a> </p><p class="mb-0"></p>{else}<p class="mb-0"><a href="/logout">Log Out</a></p><p class="mb-0"></p>{/if}
                 </div>
             </div>
         </div>

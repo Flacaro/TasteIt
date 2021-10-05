@@ -18,6 +18,7 @@ use App\Controllers\admin\CustomerController as AdminCustomerController;
 use App\Controllers\admin\CategoryController as AdminCategoryController;
 use App\Controllers\admin\ProductController as AdminProductController;
 use App\Controllers\admin\OrderController as AdminOrderController;
+require_once "Utility.php";
 
 SimpleRouter::redirect("/", "/home");
 
@@ -26,6 +27,7 @@ SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"]);
 SimpleRouter::post("/login", [AuthController::class, "login"]);
 SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
 SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
+SimpleRouter::get("/logout", [AuthController::class, "logout"]);
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 SimpleRouter::post("/home/products/{productId}/addToCart/{cartId}", [HomePageController::class, "addToCartFromHome"]);
@@ -46,10 +48,12 @@ SimpleRouter::post("/products/{productId}/addToCart/{cartId}", [ProductControlle
 SimpleRouter::post("/products/{productId}/addReview", [ProductController::class, "createReview"]);
 
 
-SimpleRouter::get("/users", [CustomerController::class, "getAll"]);
-SimpleRouter::get("/users/create", [CustomerController::class, "create"]);
+//SimpleRouter::get("/users", [CustomerController::class, "getAll"]);
+//SimpleRouter::get("/users/create", [CustomerController::class, "create"]);
 SimpleRouter::get("/profile", [CustomerController::class, "getProfile"]);
+//?
 SimpleRouter::post("/users/{id}", [CustomerController::class, "update"]);
+
 SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
 SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"]);
 SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
@@ -66,7 +70,6 @@ SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController:
 SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::class, "getCategoryProducts"]);
 SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 
-
 SimpleRouter::get("/orders", [OrderController::class, "visualizeOrdersPending"]);
 SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
 SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
@@ -78,32 +81,31 @@ SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavour
 SimpleRouter::post("/favourites/{favId}/addToCart/{cartId}",[FavouritesController::class, "addToCartFromFav"]);
 SimpleRouter::delete("/favourites/{favId}/products/{productId}/delete",[FavouritesController::class, "deleteProductFromFav"]);
 
+    SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
+    SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
+    SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
+    SimpleRouter::post("/admin/categories/add", [AdminCategoryController::class, "create"]);
+    SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
+    SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "showCreateProduct"]);
+    SimpleRouter::post("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "store"]);
+    SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "showEditProduct"]);
+    SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "update"]);
+    SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [AdminProductController::class, "destroy"]);
+    SimpleRouter::get("/admin/products", [AdminProductController::class, "productsBestSellers"]);
 
-SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
-SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
-SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
-SimpleRouter::post("/admin/categories/add", [AdminCategoryController::class, "create"]);
-SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
-SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "showCreateProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "store"]);
-SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "showEditProduct"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "update"]);
-SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [AdminProductController::class, "destroy"]);
-SimpleRouter::get("/admin/products", [AdminProductController::class, "productsBestSellers"]);
+    SimpleRouter::get("/admin/orders", [AdminOrderController::class, "visualizeOrdersPending"]);
+    SimpleRouter::get("/admin/orders/{id}", [AdminOrderController::class, "visualizeOrderDetails"]);
+    SimpleRouter::post("/admin/orders/{id}/accept", [AdminOrderController::class, "acceptOrder"]);
+    SimpleRouter::post("/admin/orders/{id}/refuse", [AdminOrderController::class, "refuseOrder"]);
 
-SimpleRouter::get("/admin/orders", [AdminOrderController::class, "visualizeOrdersPending"]);
-SimpleRouter::get("/admin/orders/{id}", [AdminOrderController::class, "visualizeOrderDetails"]);
-SimpleRouter::post("/admin/orders/{id}/accept", [AdminOrderController::class, "acceptOrder"]);
-SimpleRouter::post("/admin/orders/{id}/refuse", [AdminOrderController::class, "refuseOrder"]);
-
-SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
-SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');
-SimpleRouter::post("/admin/coupons", [CouponController::class, "store"])->name('storeCoupon');
+    SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
+    SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');
+    SimpleRouter::post("/admin/coupons", [CouponController::class, "store"])->name('storeCoupon');
 
 
-SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])->name('showAllCustomers');
-SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, "showBest"]);
-SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
+    SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])->name('showAllCustomers');
+    SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, "showBest"]);
+    SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 
 SimpleRouter::get("/prova", [OrderController::class, "prova"]);
 SimpleRouter::get("/prov", [FavouritesController::class, "getFavouritesProducts"]);

@@ -29,12 +29,10 @@ class FavouritesController {
             $cus = unserialize($_SESSION["customer"]);
             $favId = $cus->getFav()->getId();
             $FFavourites->load($favId);
-            $cartId = $cus->getCart()->getId();
-            $FCart->load($cartId);
             $products = $FFavourites->getFavouritesProducts($favId);
             //print_r($products);
             $vFavourites = new VFavourites();
-            $vFavourites->viewFavouritesProducts($favId, $products, $cartId);
+            $vFavourites->viewFavouritesProducts($favId, $products);
         }
     }
 

@@ -4,14 +4,14 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card card-user">
-                    <div class="card-header">
+                    {*<div class="card-header">
                         <a class="btn btn-round btn-primary" href="/admin/coupons/create">
                             Crea un coupon
                         </a>
-                    </div>
+                    </div>*}
                     <div class="card-body">
 
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="overflow:hidden">
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th>

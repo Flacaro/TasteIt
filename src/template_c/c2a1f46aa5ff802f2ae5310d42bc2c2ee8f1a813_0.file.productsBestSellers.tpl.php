@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-08 12:13:38
+/* Smarty version 3.1.39, created on 2021-10-04 16:28:40
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\products\productsBestSellers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61388cd20d5f46_19808965',
+  'unifunc' => 'content_615b0f98cf2835_79953549',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c2a1f46aa5ff802f2ae5310d42bc2c2ee8f1a813' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\products\\productsBestSellers.tpl',
-      1 => 1631096004,
+      1 => 1633357719,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61388cd20d5f46_19808965 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615b0f98cf2835_79953549 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_74052954661388cd20cbff6_40932783', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1256499267615b0f98ce60f6_00264492', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_74052954661388cd20cbff6_40932783 extends Smarty_Internal_Block
+class Block_1256499267615b0f98ce60f6_00264492 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_74052954661388cd20cbff6_40932783',
+    0 => 'Block_1256499267615b0f98ce60f6_00264492',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <h4 class="card-title"> Statistiche prodotti</h4>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
+                <div class="table-responsive" style="overflow:hidden">
                     <table class="table">
                         <thead class=" text-primary">
                         <th>

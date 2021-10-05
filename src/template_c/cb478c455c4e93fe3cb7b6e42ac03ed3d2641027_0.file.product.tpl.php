@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-29 10:05:36
+/* Smarty version 3.1.39, created on 2021-10-01 16:41:33
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61541e50e9da90_94696055',
+  'unifunc' => 'content_61571e1d5d34b5_62011079',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb478c455c4e93fe3cb7b6e42ac03ed3d2641027' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
-      1 => 1632902349,
+      1 => 1633099292,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61541e50e9da90_94696055 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61571e1d5d34b5_62011079 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18219667361541e50e8bec6_66137724', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_195010687261571e1d44be99_60812496', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_173935059861541e50e8ca44_58218551', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_29781609761571e1d44f0c9_38979282', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_18219667361541e50e8bec6_66137724 extends Smarty_Internal_Block
+class Block_195010687261571e1d44be99_60812496 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_18219667361541e50e8bec6_66137724',
+    0 => 'Block_195010687261571e1d44be99_60812496',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_173935059861541e50e8ca44_58218551 extends Smarty_Internal_Block
+class Block_29781609761571e1d44f0c9_38979282 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_173935059861541e50e8ca44_58218551',
+    0 => 'Block_29781609761571e1d44f0c9_38979282',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -167,11 +167,7 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                 <div class="col-md-12 nav-link-wrap">
                     <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Description</a>
-
-                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Manufacturer</a>
-
                         <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Reviews</a>
-
                     </div>
 
                 </div>
@@ -188,12 +184,7 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                     </div>
 
                     <!-- inizio della Manifacture   -->
-                    <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
-                        <div class="p-4">
-                            <h3 class="mb-4">Prodotto da TasteIt</h3>
-                            <p>Skrewball è stato creato da un team di marito e moglie Americani . Ha creato un cocktail di whisky al burro di arachidi. L'ha trasformato in un marchio, Skrewball.</p>
-                        </div>
-                    </div>
+
                     <!-- inizio della Reviews -->
                     <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                         <div class="row p-4">

@@ -56,7 +56,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="label" for="#">Password</label>
-                        <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="10" maxlength="40">
+                        <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="5" maxlength="40">
                     </div>
                 </div>
             </div>

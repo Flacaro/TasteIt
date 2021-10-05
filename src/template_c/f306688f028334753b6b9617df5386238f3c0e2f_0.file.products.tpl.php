@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-29 10:05:24
+/* Smarty version 3.1.39, created on 2021-10-01 19:12:16
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61541e44621870_05411924',
+  'unifunc' => 'content_615741707988e6_18704205',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f306688f028334753b6b9617df5386238f3c0e2f' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\products.tpl',
-      1 => 1630009008,
+      1 => 1633108335,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61541e44621870_05411924 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615741707988e6_18704205 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_44435204061541e446184a8_77811588', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20598639936157417078e9a9_19970741', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_97947223161541e44619159_99340732', 'categories');
-?>
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_205848429461541e44619891_79624638', 'products');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7440187626157417078f6e1_30566741', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_44435204061541e446184a8_77811588 extends Smarty_Internal_Block
+class Block_20598639936157417078e9a9_19970741 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_44435204061541e446184a8_77811588',
+    0 => 'Block_20598639936157417078e9a9_19970741',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,32 +48,20 @@ Prodotti<?php
 }
 }
 /* {/block 'title'} */
-/* {block 'categories'} */
-class Block_97947223161541e44619159_99340732 extends Smarty_Internal_Block
+/* {block 'body'} */
+class Block_7440187626157417078f6e1_30566741 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
-  'categories' => 
+  'body' => 
   array (
-    0 => 'Block_97947223161541e44619159_99340732',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block 'categories'} */
-/* {block 'products'} */
-class Block_205848429461541e44619891_79624638 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'products' => 
-  array (
-    0 => 'Block_205848429461541e44619891_79624638',
+    0 => 'Block_7440187626157417078f6e1_30566741',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://wallpapersdsc.net/wp-content/uploads/2016/09/Chinese-Seafood-full-HD.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['category']->value->getImage();?>
+');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -110,9 +94,11 @@ $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
+
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://via.placeholder.com/150');">
+                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
+');">
                                         <div class="desc">
                                             <p class="meta-prod d-flex">
                                                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
@@ -144,5 +130,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php
 }
 }
-/* {/block 'products'} */
+/* {/block 'body'} */
 }

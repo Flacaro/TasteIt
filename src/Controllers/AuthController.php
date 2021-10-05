@@ -28,7 +28,6 @@ class AuthController
 
     public function login()
     {
-        //print_r("ciao");
         $session = Session::getInstance();
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -39,16 +38,17 @@ class AuthController
             $user = $fuser->getByEmail($email);
             print_r($user);
             $session->saveUserInSession($user);
-            //redirect(url("home"));
+            redirect(url("home"));
         } else if ($frest->authentication($email, $password)) {
             $restaurant = $frest->getByEmail($email);
             $session->saveUserInSession($restaurant);
-            //redirect(url("home"));
+            redirect(url("admin"));
         } else {
             $message = "il login non è andato a buon fine";
+            $vauth = new VAuth();
+            $vauth->visualizeLogin($message);
         }
-        $vauth = new VAuth();
-        $vauth->visualizeLogin($message);
+
     }
 
     public function signUp()
@@ -56,53 +56,56 @@ class AuthController
         //print_r($_POST);
         $vauth = new VAuth();
         $isValid = validate($_POST, [
-            "name" => ["maxLength:3", "minLength:3"], "surname" => ["minLength:2"], "email" => ["minLength:1"], "password" => ["minLength:10"]
+            "name" => ["maxLength:20", "minLength:3"], "surname" => ["minLength:2"], "email" => ["minLength:1"], "password" => ["minLength:5"]
         ]);
         if (!$isValid) {
             $message = "Il form non è valido";
             return $vauth->visualizeSignUp($message);
         }
         else {
-            $message = "Il form è valido";
-            return $vauth->visualizeSignUp($message);
-        }
-        //print_r(Validator::minlength(5, "ciao"));
-        /*$name = $_POST["name"];
-        $surname = $_POST["surname"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $fuser = new FCustomer();
-        $FCart = new FCart();
-        $FFavourites = new FFavourites();
-        //print_r($fuser->exists($email));
-        $message = "";
-        if (!$fuser->exists($email)) {
-            //print_r("ciao");
-            $customer = new Customer();
-            $customer->setName($name);
-            $customer->setSurname($surname);
-            $customer->setEmail($email);
-            $customer->setPassword($password);
-            $cart = new Cart();
-            $cart->setId(NULL);
-            $cartId = $FCart->create($cart);
+            $name = $_POST["name"];
+            print_r($name);
+            $surname = $_POST["surname"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $fuser = new FCustomer();
+            $FCart = new FCart();
+            $FFavourites = new FFavourites();
+            //print_r($fuser->exists($email));
+            $message = "";
+            if (!$fuser->exist($email)) {
+                $customer = new Customer();
+                $customer->setName($name);
+                $customer->setSurname($surname);
+                $customer->setEmail($email);
+                $customer->setPassword($password);
+                $cart = new Cart();
+                $cart->setId(NULL);
+                $FCart->store($cart);
 
-            $fav = new Favourites();
-            $fav->setId(NULL);
-            $favId = $FFavourites->create($fav);
+                $fav = new Favourites();
+                $fav->setId(NULL);
+                $FFavourites->store($fav);
 
-            $customer->setCartId($cartId);
-            $customer->setFavId($favId);
-            $fuser->create($customer);
-            redirect(url('/login'));
-        } else {
-            $message = "Esiste già un utente con questa e-mail";
+                $customer->setCart($cart);
+                $customer->setFav($fav);
+                $fuser->store($customer);
+                redirect(url('/login'));
+            } else {
+                $message = "Esiste già un utente con questa e-mail";
+            }
+            $vauth->visualizeSignUp($message);
+
         }
-        $vauth->visualizeSignUp($message);*/
+
+
     }
 
     public function logout()
     {
-
+        $session = Session::getInstance();
+        $session->logout();
+        $vauth = new VAuth();
+        $vauth->visualizeLogin("");
     }
 }

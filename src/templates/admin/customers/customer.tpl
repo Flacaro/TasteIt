@@ -10,7 +10,7 @@
                     </div>
                     <div class="card-body">
 
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="overflow:hidden">
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th>

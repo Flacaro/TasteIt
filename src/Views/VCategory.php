@@ -4,15 +4,17 @@ namespace App\Views;
 
 class VCategory
 {
-    public function viewProducts($products){
-        return view('product/products', [
-            'products' =>  $products
-        ]);
+    public function viewProducts($products, $category){
+        $data=[
+            'products' =>  $products,
+            'category' => $category
+        ];
+        return setData('product/products',$data);
     }
-    public function viewCategories($categories){
-        return view('category/category', [
-            'categories' => $categories
-        ]);
+
+    public function viewCategories(){
+        $data=[];
+        return setData('category/category',$data);
     }
 
 }

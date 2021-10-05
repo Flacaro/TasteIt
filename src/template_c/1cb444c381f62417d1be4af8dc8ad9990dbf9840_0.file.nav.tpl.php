@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-29 10:52:16
+/* Smarty version 3.1.39, created on 2021-10-04 17:16:31
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61542940429ad1_39933392',
+  'unifunc' => 'content_615b1acfa1aad9_99403850',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1632905535,
+      1 => 1633360590,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61542940429ad1_39933392 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615b1acfa1aad9_99403850 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -31,8 +31,8 @@ function content_61542940429ad1_39933392 (Smarty_Internal_Template $_smarty_tpl)
                 </p>
             </div>
             <div class="col-md-6 d-flex justify-content-md-end">
-                <div class="reg">
-                    <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a></p><p class="mb-0"></p>
+                <div class="reg"><?php if ($_smarty_tpl->tpl_vars['user']->value == NULL) {?>
+                    <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a> </p><p class="mb-0"></p><?php } else { ?><p class="mb-0"><a href="/logout">Log Out</a></p><p class="mb-0"></p><?php }?>
                 </div>
             </div>
         </div>
