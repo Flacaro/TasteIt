@@ -21,11 +21,11 @@ use App\Controllers\admin\OrderController as AdminOrderController;
 
 SimpleRouter::redirect("/", "/home");
 
+
 SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"]);
 SimpleRouter::post("/login", [AuthController::class, "login"]);
 SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
 SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
-
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 SimpleRouter::post("/home/products/{productId}/addToCart/{cartId}", [HomePageController::class, "addToCartFromHome"]);
