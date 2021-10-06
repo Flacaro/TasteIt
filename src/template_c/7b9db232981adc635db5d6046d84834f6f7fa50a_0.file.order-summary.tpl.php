@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-20 16:16:46
+/* Smarty version 3.1.39, created on 2021-10-06 19:08:09
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order-summary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614897ceb30bf8_42463885',
+  'unifunc' => 'content_615dd7f97f5037_08805415',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b9db232981adc635db5d6046d84834f6f7fa50a' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order-summary.tpl',
-      1 => 1632147404,
+      1 => 1633540084,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614897ceb30bf8_42463885 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615dd7f97f5037_08805415 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_48008638614897ceb1f364_82870625', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1979913264615dd7f97e6197_67612077', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_571728671614897ceb1ff41_75344543', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2083716482615dd7f97e6a34_97315969', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1031619052614897ceb20532_32073253', 'productsOfCart');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9238625615dd7f97e6fa6_47447333', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_48008638614897ceb1f364_82870625 extends Smarty_Internal_Block
+class Block_1979913264615dd7f97e6197_67612077 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_48008638614897ceb1f364_82870625',
+    0 => 'Block_1979913264615dd7f97e6197_67612077',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,25 +55,25 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_571728671614897ceb1ff41_75344543 extends Smarty_Internal_Block
+class Block_2083716482615dd7f97e6a34_97315969 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_571728671614897ceb1ff41_75344543',
+    0 => 'Block_2083716482615dd7f97e6a34_97315969',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block 'categories'} */
-/* {block 'productsOfCart'} */
-class Block_1031619052614897ceb20532_32073253 extends Smarty_Internal_Block
+/* {block 'body'} */
+class Block_9238625615dd7f97e6fa6_47447333 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
-  'productsOfCart' => 
+  'body' => 
   array (
-    0 => 'Block_1031619052614897ceb20532_32073253',
+    0 => 'Block_9238625615dd7f97e6fa6_47447333',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -98,8 +98,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
-
+                    <h3 style="text-align: center">Il tuo ordine è arrivato in cucina. Aspetta che il ristorante confermi il tuo ordine.</h3>
                         <div class="row mt-5 pt-3 d-flex">
+
                             <div class="col-md-4 d-flex">
                                 <div class="cart-detail cart-total p-3 p-md-4">
                                     <h3 class="billing-heading mb-4">Cart Total</h3>
@@ -185,5 +186,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php
 }
 }
-/* {/block 'productsOfCart'} */
+/* {/block 'body'} */
 }

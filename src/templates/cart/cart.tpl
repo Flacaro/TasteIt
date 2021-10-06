@@ -1,7 +1,7 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Carrello{/block}
 {block name=categories}{/block}
-{block name=productsOfCart}
+{block name=body}
 <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -13,14 +13,12 @@
         </div>
     </div>
 </section>
-<!--fine blocco prima immagine -->
 
-<!--Sezione carrello dove sono i prodotti -->
 <section class="ftco-section">
     <div class="container">
         <div class="row">
             <div class="table-wrap">
-                <table class="table">
+                <table class="table" style="overflow: hidden">
 
                     <!--zona rossa dove stanno product, price... -->
                     <thead class="thead-primary">
@@ -38,7 +36,7 @@
 
                     <!--parte bianca dove sono le immagini dei prodotti -->
                     <tbody>
-                    {foreach $products as $product}
+                    {foreach $cart->getProducts() as $product}
                     <!--primo prodotto-->
                     <tr class="alert" role="alert">
                         <td>
@@ -52,21 +50,21 @@
                         </td>
                         <td>
                             <div class="email">
-                                <span>{$product->getName()}</span>
-                                <span>{$product->getDescription()}</span>
+                                <span>{$product[0]->getName()}</span>
+                                <span>{$product[0]->getDescription()}</span>
                             </div>
                         </td>
-                        <td>{$product->getPrice()}</td>
+                        <td>{$product[0]->getPrice()}</td>
                         <td class="quantity">
                             <div class="input-group" style="width: 9em">
-                                <form action="/carts/{$cartId}/products/{$product->getId()}/update" method="POST" style="float: left">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/update" method="POST" style="float: left">
                                     <div class="button minus">
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="minus" name="option">
 
                                         <button class="btn btn-primary btn-number" type="submit"
-                                                {if $product->getQuantity() == 1}
+                                                {if $product[1] == 1}
                                                     disabled
                                                 {/if}
                                         >
@@ -75,9 +73,9 @@
                                     </div>
                                 </form>
 
-                                <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product->getQuantity()}" style="width: 2em">
+                                <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product[1]}" style="width: 2em">
 
-                                <form action="/carts/{$cartId}/products/{$product->getId()}/update" method="POST" style="float: right">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/update" method="POST" style="float: right">
                                     <div class="button plus">
 
                                         <input hidden type="text" value="PUT" name="_method">
@@ -89,12 +87,12 @@
 
                             </div>
                         </td>
-                          <td>{math equation="{$product->getPrice()} * {$product->getQuantity()}"}</td>
+                          <td>{math equation="{$product[0]->getPrice()} * {$product[1]}"}</td>
                         <td>
                             {*<button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true"><i class="fa fa-close"></i></span>
                             </button>*}
-                            <form action="/carts/{$cartId}/products/{$product->getId()}/delete" method="POST">
+                            <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/delete" method="POST">
                                 <div class="button delete">
 
                                     <input hidden type="text" value="DELETE" name="_method">
@@ -122,27 +120,16 @@
                             Total
                         </span>
                         <span>
-                             {foreach $products as $product}
-                                 {assign var="partialTotal" value=$partialTotal+$product->getPrice()*$product->getQuantity()}
-                             {/foreach}
-                            $ {$partialTotal}
+                            $ {$total}
                         </span>
                     </p>
                     <p class="d-flex">
                         <span>Delivery</span>
                         <span>$0.00</span>
                     </p>
-                    <p class="d-flex total-price">
-                        <span>Total</span>
-                        <span>
-                            {foreach $products as $product}
-                                {assign var="total" value=$total+$product->getPrice()*$product->getQuantity()}
-                            {/foreach}
-                            $ {$total}
-                        </span>
-                    </p>
+
                 </div>
-                <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+                <p class="text-center"><a href="/cart/checkout" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
             </div>
         </div>
         <!--fine checkout -->

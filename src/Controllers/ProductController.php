@@ -37,7 +37,6 @@ class ProductController
 
     }
 
-
     public function getProduct($id)
     {
         $session = Session::getInstance();

@@ -1,7 +1,7 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Carrello{/block}
 {block name=categories}{/block}
-{block name=productsOfCart}
+{block name=body}
     <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -21,8 +21,9 @@
 
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
-
+                    <h3 style="text-align: center">Il tuo ordine è arrivato in cucina. Aspetta che il ristorante confermi il tuo ordine.</h3>
                         <div class="row mt-5 pt-3 d-flex">
+
                             <div class="col-md-4 d-flex">
                                 <div class="cart-detail cart-total p-3 p-md-4">
                                     <h3 class="billing-heading mb-4">Cart Total</h3>

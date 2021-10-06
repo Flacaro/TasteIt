@@ -43,4 +43,8 @@ class Restaurant extends User {
         $this->phone = $phone;
     }
 
+    public function getAddress()
+    {
+        return $this->getAddresses()[0];
+    }
 }

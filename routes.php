@@ -55,7 +55,7 @@ SimpleRouter::get("/profile", [CustomerController::class, "getProfile"]);
 SimpleRouter::post("/users/{id}", [CustomerController::class, "update"]);
 
 SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
-SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"]);
+SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"])->name('checkout');
 SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
 SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "createOrder"]);
 

@@ -12,21 +12,23 @@ class VOrder {
         ]);
     }
     public function checkout($cart, $addresses, $cards, $coupon) {
-        return view('order/order', [
+        $data=[
             'cart'=>$cart,
             'addresses'=>$addresses,
             'cards'=>$cards,
             'coupon'=>$coupon
-        ]);
+        ];
+        return setData('order/order', $data);
     }
 
     public function summary($cart, $address, $card, $coupon){
-        return view('order/order-summary', [
-        'cart'=>$cart,
-        'address'=>$address,
-        'card'=>$card,
-        'coupon'=>$coupon
-        ]);
+        $data=[
+            'cart'=>$cart,
+            'address'=>$address,
+            'card'=>$card,
+            'coupon'=>$coupon
+        ];
+        return setData('order/order-summary', $data);
     }
 
 }

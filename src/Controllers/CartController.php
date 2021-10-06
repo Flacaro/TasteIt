@@ -17,9 +17,13 @@ class CartController {
  public function getProductsOfCart($id) {
      $FCart = new FCart();
      //$cart dovrà andare a chiamare la funzione dentro $FCart
-     $products = $FCart->load($id);
+     $cart = $FCart->load($id);
+     $total=0;
+     foreach ($cart->getProducts() as $p){
+         $total=$total+$p[0]->getPrice()*$p[1];
+     }
      $vcart = new VCart();
-     $vcart->getProducts($products, $id);
+     $vcart->getProducts($cart, $total);
  }
 
  public function create() {
