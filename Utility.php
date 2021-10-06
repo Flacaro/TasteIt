@@ -11,12 +11,14 @@ function setData($view, $data){
             $user=$session->loadUser();
             $categories=$fcat->getAll();
             $cart=$user->getCart();
+            $favId = $user->getFav()->getId();
             //printObject($cart);
             $cartProducts=$cart->getProducts();
             $data["categories"]=$categories;
             $data["cartId"]=$cart->getId();
             $data["cartProducts"]= $cartProducts;
             $data["user"]= $user;
+            $data["favId"] = $favId;
             return view($view, $data);
         }
         else{

@@ -56,7 +56,6 @@ class FCart extends FConnection {
 
     function addToCart($cart, $product): string {
         $pdo = FConnection::connect();
-        $products=$cart->getProducts();
         $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values('.$product->getId().', '.$cart->getId().', 1)';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
@@ -147,27 +146,14 @@ class FCart extends FConnection {
         return $stmt->fetch();
     }
 
- /*   function getCustomerCart($cartId){
+    function getProductsOfCart($cartId) {
         $pdo = FConnection::connect();
-        $query="select products.id, products.name, products.description, products.price, products_carts.quantity from products join products_carts as pc on products.id = pc.productId where pc.cartId = ".$cartId;
+        $query = 'SELECT p.id, p.name, p.description, p.price, p.imagePath, pc.quantity FROM `products_carts` as pc join products as p on pc.productId = p.id WHERE pc.cartId = ' . $cartId . ' ;';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $products = $stmt->fetchAll();
-        $stmt->debugDumpParams();
-        $prod = [];
-        print_r($products);
-        foreach ($products as $product) {
-            $p = new ProductWithQuantity();
-            $p->setId($product[0]);
-            $p->setName($product[1]);
-            $p->setDescription($product[2]);
-            $p->setPrice($product[3]);
-            $p->setQuantity($product[4]);
-            array_push($prod, $p);
-        }
-        print_r($prod);
-        return $prod;
-    }*/
+        //$stmt->debugDumpParams();
+        return $stmt->fetchAll();
+    }
 }
 
 

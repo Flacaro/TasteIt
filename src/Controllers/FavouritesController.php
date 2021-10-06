@@ -49,18 +49,19 @@ class FavouritesController {
         }
     }
 
-    //mi prende sempre come product id 1
-    public function addToCartFromFav($productId) {
+
+    public function addToCartFromFav($cartId) {
         $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
+
+        $productId = $_POST['productId'];
+
         if ($session->isUserLogged()) {
             $cus = $session->loadUser();
-            $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
             $cart = $fCart->load($cartId);
             $product = $fProduct->load($productId);
-            print_r($cartId);
             $cart->addToCart($product, 1);
             $cus->setCart($cart);
             $fCart->update($cart);

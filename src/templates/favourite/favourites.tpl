@@ -33,9 +33,9 @@
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
                                         <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
-                                            <form action="/favourites/{$favId}/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
-                                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
-                                                <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                            <form action="/carts/{$cartId}/products" method="POST">
+                                                <input type="text" name="productId" class="quantity form-control input-number" value="{$product->getId()}" hidden>
+                                                <button style="margin-right: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                             </form>
                                             <form action="/products/{$product->getId()}">
                                                 <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>

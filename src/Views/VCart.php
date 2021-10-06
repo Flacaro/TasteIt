@@ -5,11 +5,11 @@ namespace App\Views;
 class VCart
 {
     public function getProducts($products, $cartId){
-        return view ("cart/cart", [
-            //nome che useremo nel template
+            $data=[
             "products" => $products,
             "cartId" => $cartId
-        ]);
+            ];
+        return setData("cart/cart", $data);
     }
 
     public function viewCoupon($priceCut, $couponId){

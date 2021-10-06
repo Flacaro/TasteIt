@@ -59,7 +59,6 @@ SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"]);
 SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
 SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "createOrder"]);
 
-
 SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
 SimpleRouter::get("/carts/create", [CartController::class, "create"]);
 SimpleRouter::get("/carts/{cartId}/products", [CartController::class, "getProductsOfCart"])->name('productsOfCarts');
@@ -78,7 +77,8 @@ SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavouritesProducts"])->name('favourites');
-SimpleRouter::post("/favourites/{favId}/products/{productId}/addToCart/{cartId}",[FavouritesController::class, "addToCartFromFav"]);
+//SimpleRouter::post("/favourites/{favId}/products/{productId}/addToCart/{cartId}",[FavouritesController::class, "addToCartFromFav"]);
+SimpleRouter::post("/carts/{cartId}/products",[FavouritesController::class, "addToCartFromFav"]);
 SimpleRouter::delete("/favourites/{favId}/products/{productId}/delete",[FavouritesController::class, "deleteProductFromFav"]);
 
 SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
