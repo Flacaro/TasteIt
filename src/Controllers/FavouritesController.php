@@ -18,15 +18,14 @@ class FavouritesController {
         $fav = new Favourites();
         $fav->setId(null);
         $FFavourites->store($fav);
-        redirect(url('favourites'));
+        redirect(url('/favourites'));
     }
 
     public function getFavouritesProducts() {
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
-        $FCart = new FCart();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             $FFavourites->load($favId);
             $products = $FFavourites->getFavouritesProducts($favId);
@@ -41,7 +40,7 @@ class FavouritesController {
         $FFavourites = new FFavourites();
 
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             if ($_POST['option'] == 'delete') {
                 $FFavourites->deleteFromFavourites($favId, $productId);
@@ -50,12 +49,29 @@ class FavouritesController {
         }
     }
 
+    //mi prende sempre come product id 1
     public function addToCartFromFav($productId) {
         $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
+            $cartId = $cus->getCart()->getId();
+            $favId = $cus->getFav()->getId();
+            $cart = $fCart->load($cartId);
+            $product = $fProduct->load($productId);
+            print_r($cartId);
+            $cart->addToCart($product, 1);
+            $cus->setCart($cart);
+            $fCart->update($cart);
+            $session->saveUserInSession($cus);
+
+
+       /* $session = Session::getInstance();
+        $fProduct = new FProduct();
+        $fCart = new FCart();
+        if ($session->isUserLogged()) {
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
             $cart = $fCart->load($cartId);
@@ -77,9 +93,9 @@ class FavouritesController {
             else {
                 $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
                 //print_r("increment");
-            }
+            }*/
 
-        redirect(url('/favourites', ['favId' => $favId]));
+            redirect(url('/favourites', ['favId' => $favId]));
         }
     }
 

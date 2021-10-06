@@ -37,7 +37,7 @@ class OrderController {
         $fcoupon=new FCoupon();
         $session=Session::getInstance();
         if ($session->isUserLogged()){
-            $cus=$session->loadUser();
+            $cus = $session->loadUser();
             $cartId=$cus->getCart()->getId();
             $cart=$fcart->load($cartId);
             $cId=$cus->getId();

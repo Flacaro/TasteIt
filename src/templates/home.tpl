@@ -116,13 +116,13 @@
                                 <p class="meta-prod d-flex">
 
                                 {if $cartId}
-                                <form action="home/products/{$bestRated->getId()}/addToCart/{$cartId}" method="POST">
+                                <form action="/home/products/{$bestRated->getId()}/addToCart/{$cartId}" method="POST">
                                     <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
                                     <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                 </form>
                                 {/if}
                                 {if $favId}
-                                <form action="home/products/{$bestRated->getId()}/addToFav/{$favId}" method="POST">
+                                <form action="/home/products/{$bestRated->getId()}/addToFav/{$favId}" method="POST">
                                     <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                 </form>
                                 {/if}

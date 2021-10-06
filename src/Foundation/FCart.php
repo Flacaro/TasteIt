@@ -87,7 +87,7 @@ class FCart extends FConnection {
 
     function getQuantity(int $cartId, int $productId) {
         $pdo = FConnection::connect();
-        $query = 'SELECT `quantity` FROM `products_carts` where productId =' . $productId . ' and cartId =' . $cartId . ';';
+        $query = 'SELECT `quantity` FROM `products_carts` where productId = ' . $productId . ' and cartId =' . $cartId . ';';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         //$stmt->debugDumpParams();
@@ -105,7 +105,7 @@ class FCart extends FConnection {
 
     function deleteFromCart($cart, $product) {
         $pdo = FConnection::connect();
-        $query = 'delete from products_carts where productId = ' . $product->getId() . ' and cartId = ' . $cart->getId() . ';';
+        $query = 'delete from products_carts where productId = ' . $product->getId() . ' and cartId = ' . $cart->getId() . ' ;';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }

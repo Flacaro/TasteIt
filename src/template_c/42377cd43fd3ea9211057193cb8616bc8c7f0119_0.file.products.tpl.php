@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-28 19:15:00
+/* Smarty version 3.1.39, created on 2021-10-05 11:20:38
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61534d940df843_40254046',
+  'unifunc' => 'content_615c18e6924b55_77675518',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42377cd43fd3ea9211057193cb8616bc8c7f0119' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\products.tpl',
-      1 => 1632565451,
+      1 => 1633425637,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61534d940df843_40254046 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615c18e6924b55_77675518 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15598864261534d940d3431_05522961', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_402880797615c18e6918c91_49218078', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_69146162861534d940d4149_88707743', 'categories');
-?>
-
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_131464315661534d940d48a2_23511435', 'products');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1750630262615c18e6919910_73776985', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_15598864261534d940d3431_05522961 extends Smarty_Internal_Block
+class Block_402880797615c18e6918c91_49218078 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_15598864261534d940d3431_05522961',
+    0 => 'Block_402880797615c18e6918c91_49218078',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,32 +48,20 @@ Prodotti<?php
 }
 }
 /* {/block 'title'} */
-/* {block 'categories'} */
-class Block_69146162861534d940d4149_88707743 extends Smarty_Internal_Block
+/* {block 'body'} */
+class Block_1750630262615c18e6919910_73776985 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
-  'categories' => 
+  'body' => 
   array (
-    0 => 'Block_69146162861534d940d4149_88707743',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-}
-}
-/* {/block 'categories'} */
-/* {block 'products'} */
-class Block_131464315661534d940d48a2_23511435 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'products' => 
-  array (
-    0 => 'Block_131464315661534d940d48a2_23511435',
+    0 => 'Block_1750630262615c18e6919910_73776985',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://wallpapersdsc.net/wp-content/uploads/2016/09/Chinese-Seafood-full-HD.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['category']->value->getImage();?>
+');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -110,14 +94,32 @@ $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
+
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('https://via.placeholder.com/150');">
+                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
+');">
                                         <div class="desc">
                                             <p class="meta-prod d-flex">
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                                <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
+                                                    <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/add/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+" method="POST">
+                                                        <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
+                                                        <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                                    </form>
+                                                <?php }?>
+                                                <?php if ($_smarty_tpl->tpl_vars['favId']->value) {?>
+                                                    <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/addToFavourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+" method="POST">
+                                                        <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
+                                                    </form>
+                                                <?php }?>
+                                            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+">
+                                                <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                            </form>
                                             </p>
                                         </div>
                                     </div>
@@ -144,5 +146,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php
 }
 }
-/* {/block 'products'} */
+/* {/block 'body'} */
 }

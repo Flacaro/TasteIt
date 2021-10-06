@@ -19,20 +19,24 @@ class ProductController
         $session = Session::getInstance();
         $FProduct = new FProduct();
         $products = $FProduct->getAll();
-        $FCategory = new FCategory();
-        $categories = $FCategory->getAll();
+        $fCart = new FCart();
         $favId = NULL;
         $cartId = NULL;
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
+            $cart = $fCart->load($cartId);
+            $cus->setCart($cart);
+            $fCart->update($cart);
+            $session->saveUserInSession($cus);
+
             $vProduct = new VProduct();
-            $vProduct->getProducts($products, $cartId, $favId, $categories);
+            $vProduct->getProducts($products, $cartId, $favId);
         }
         else{
             $vProduct = new VProduct();
-            $vProduct->getProducts($products, $cartId, $favId, $categories);
+            $vProduct->getProducts($products, $cartId, $favId);
         }
 
     }
@@ -49,7 +53,7 @@ class ProductController
         $star = $stars[0][0];
         //print_r($stars);
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $vProduct = new VProduct();
             $vProduct->getDetailsOfProduct($product, $star, $ratings, $cartId);
@@ -68,26 +72,27 @@ class ProductController
         $fProduct = new FProduct();
         $fCart = new FCart();
         $products = $fProduct->getAll();
-        $FCategory = new FCategory();
-        $categories = $FCategory->getAll();
 
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
-            $favId = $cus->getFav()->getId();
             $cart = $fCart->load($cartId);
-            $cartProducts = $cart->getProducts();
+            $favId = $cus->getFav()->getId();
+            $product=$fProduct->load($productId);
             $q = (int)$_POST['quantity'];
+            $cart->addToCart($product, $q);
+            $cus->setCart($cart);
+            $fCart->update($cart);
+            $session->saveUserInSession($cus);
+            //$cartProducts = $cart->getProducts();
+            $VProduct = new VProduct();
+            $VProduct->getProducts($products, $cartId, $favId);
 
-
-            if (!sizeof($cartProducts)) {
-                $fProduct->addToCart($productId, $cartId, $q);
-                //print_r("add se l'array è vuoto");
             }
 
-            if (!sizeof($cartProducts)) {
+ /*           if (!sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, $q);
-                //print_r("add se l'array è vuoto");
+                print_r("add se l'array è vuoto");
             }
 
             $cartProd = array_filter($cartProducts, function ($cartProduct) use ($productId) {
@@ -97,19 +102,21 @@ class ProductController
 
             if (!sizeof($cartProd) and sizeof($cartProducts)) {
                 $fProduct->addToCart($productId, $cartId, $q);
-                // print_r("add se l'array cartProd è vuoto");
+                print_r("add se l'array cartProd è vuoto");
 
             } elseif (sizeof($cartProd) and sizeof($cartProducts)) {
                 $oldQuantity = $fCart->getQuantity($cartId, $productId);
-                //print_r($oldQuantity);
+                print_r($oldQuantity);
                 $newQuantity = $q + $oldQuantity[0];
-                $fCart->updateQuantity($cart->getId(), $productId, $newQuantity);
-                // print_r("update");
+                $fCart->updateQuantity($cartId, $productId, $newQuantity);
+                print_r("update");
             }
 
-            $VProduct = new VProduct();
-            $VProduct->getProducts($products, $cartId, $favId, $categories);
-        }
+            $cus->setCart($cart);
+            $fCart->update($cart);
+            $session->saveUserInSession($cus);
+
+        }*/
     }
 
 
@@ -119,7 +126,7 @@ class ProductController
         $fProduct = new FProduct();
         $fCart = new FCart();
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $cart = $fCart->load($cartId);
             $product=$fProduct->load($productId);
@@ -139,7 +146,7 @@ class ProductController
         $FFavourites = new FFavourites();
 
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             $favProducts = $FFavourites->getFavouritesProducts($favId);
 
@@ -166,7 +173,7 @@ class ProductController
         $session = Session::getInstance();
         $rev = [];
         if ($session->isUserLogged()) {
-            $cus = unserialize($_SESSION["customer"]);
+            $cus = $session->loadUser();
             $FReview = new FReview();
             $stars = $_POST['stars'];
             $comment = $_POST['comment'];
