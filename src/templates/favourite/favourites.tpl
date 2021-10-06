@@ -28,12 +28,12 @@
                     </div>
                     <div class="row">
                         {foreach $products as $product}
-                            <div class="col-md-3 d-flex">
+                          <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
                                         <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
-                                            <form action="/favourites/{$favId}/addToCart/{$cartId}" method="POST">
+                                            <form action="/favourites/{$favId}/products/{$product->getId()}/addToCart/{$cartId}" method="POST">
                                                 <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
                                                 <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                             </form>

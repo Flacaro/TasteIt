@@ -66,7 +66,7 @@ function setData($view, $data){
         echo '<pre>'; print_r($data); echo '</pre>';
     }
 
-class Middleware implements IMiddleware{
+/*class Middleware implements IMiddleware{
     public function handle(Request $request): void
     {
 
@@ -80,6 +80,6 @@ class Middleware implements IMiddleware{
         }
 
     }
-}
+}*/
 
 

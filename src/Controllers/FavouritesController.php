@@ -18,13 +18,12 @@ class FavouritesController {
         $fav = new Favourites();
         $fav->setId(null);
         $FFavourites->store($fav);
-        redirect(url('favourites'));
+        redirect(url('/favourites'));
     }
 
     public function getFavouritesProducts() {
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
-        $FCart = new FCart();
         if ($session->isUserLogged()) {
             $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
@@ -50,6 +49,7 @@ class FavouritesController {
         }
     }
 
+    //mi prende sempre come product id 1
     public function addToCartFromFav($productId) {
         $session = Session::getInstance();
         $fProduct = new FProduct();
@@ -59,18 +59,21 @@ class FavouritesController {
             $cartId = $cus->getCart()->getId();
             $favId = $cus->getFav()->getId();
             $cart = $fCart->load($cartId);
-            $product=$fProduct->load($productId);
+            $product = $fProduct->load($productId);
+            print_r($cartId);
             $cart->addToCart($product, 1);
             $cus->setCart($cart);
             $fCart->update($cart);
             $session->saveUserInSession($cus);
+
+
        /* $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
         if ($session->isUserLogged()) {
             $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
-
+            $favId = $cus->getFav()->getId();
             $cart = $fCart->load($cartId);
             $cartProducts = $cart->getProducts();
 
@@ -92,7 +95,7 @@ class FavouritesController {
                 //print_r("increment");
             }*/
 
-        redirect(url('/favourites', ['favId' => $favId]));
+            redirect(url('/favourites', ['favId' => $favId]));
         }
     }
 

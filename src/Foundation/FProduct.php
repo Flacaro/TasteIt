@@ -25,9 +25,9 @@ class FProduct extends FConnection {
         return $pdo->lastInsertId();
     }
 
-    function load($id){
+    function load($productId){
         $pdo = FConnection::connect();
-        $query = 'select * from products where id='.$id;
+        $query = 'select * from products where id='.$productId;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $p=$stmt->fetch();

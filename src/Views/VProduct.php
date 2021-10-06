@@ -10,7 +10,7 @@ class VProduct {
         $data = [
             'products' => $products,
             'cartId' => $cartId,
-            'favId' => $favId,
+            'favId' => $favId
         ];
         return setData("product/all_products", $data);
     }
