@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 11:31:20
+/* Smarty version 3.1.39, created on 2021-10-07 14:34:27
   from 'C:\xampp\htdocs\TasteIt\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615ebe6803c036_82718853',
+  'unifunc' => 'content_615ee953486ef3_12741220',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38faf17c87aaf17822dd420bd5d4d173a0e486de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\cart\\cart.tpl',
-      1 => 1633599076,
+      1 => 1633610066,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615ebe6803c036_82718853 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615ee953486ef3_12741220 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1324685712615ebe680248e1_46985123', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1537018188615ee953465479_01901041', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_158310159615ebe68025217_29516874', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1325475950615ee953466099_98864420', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1324685712615ebe680248e1_46985123 extends Smarty_Internal_Block
+class Block_1537018188615ee953465479_01901041 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1324685712615ebe680248e1_46985123',
+    0 => 'Block_1537018188615ee953465479_01901041',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_158310159615ebe68025217_29516874 extends Smarty_Internal_Block
+class Block_1325475950615ee953466099_98864420 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_158310159615ebe68025217_29516874',
+    0 => 'Block_1325475950615ee953466099_98864420',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -114,28 +114,28 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                         </td>
                        <td>
                             <div class="email">
-                                <span><?php echo $_smarty_tpl->tpl_vars['product']->value[1];?>
+                                <span><?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getName();?>
 </span>
-                                <span><?php echo $_smarty_tpl->tpl_vars['product']->value[2];?>
+                                <span><?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getDescription();?>
 </span>
                             </div>
                         </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['product']->value[3];?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getPrice();?>
 </td>
                         <td class="quantity">
                             <div class="input-group" style="width: 9em">
                                 <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cart']->value->getId();?>
-/products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+/products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
 /update" method="POST" style="float: left">
                                     <div class="button minus">
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="minus" name="option">
-                                        <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
 " hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"
-                                                <?php if ($_smarty_tpl->tpl_vars['product']->value[5] == 1) {?>
+                                                <?php if ($_smarty_tpl->tpl_vars['product']->value[0]->getQuantity() == 1) {?>
                                                     disabled
                                                 <?php }?>
                                         >
@@ -144,17 +144,17 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                     </div>
                                 </form>
 
-                                <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[5];?>
+                                <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[1];?>
 " style="width: 2em">
 
                                 <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cart']->value->getId();?>
-/products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+/products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
 /update" method="POST" style="float: right">
                                     <div class="button plus">
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="plus" name="option">
-                                        <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
 " hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"> + </button>
@@ -163,18 +163,18 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 
                             </div>
                         </td>
-                          <td><?php echo smarty_function_math(array('equation'=>((string)$_smarty_tpl->tpl_vars['product']->value[3])." * ".((string)$_smarty_tpl->tpl_vars['product']->value[1])),$_smarty_tpl);?>
+                          <td><?php echo smarty_function_math(array('equation'=>((string)$_smarty_tpl->tpl_vars['product']->value[0]->getPrice())." * ".((string)$_smarty_tpl->tpl_vars['product']->value[1])),$_smarty_tpl);?>
 </td>
                         <td>
                                                       <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cart']->value->getId();?>
-/products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+/products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
 /delete" method="POST">
 
                                 <div class="button delete">
 
                                     <input hidden type="text" value="DELETE" name="_method">
                                     <input hidden type="text" value="delete" name="option">
-                                    <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+                                    <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
 " hidden>
 
                                     <button class="btn btn-primary btn-number" type="submit"> X </button>
@@ -194,7 +194,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
                 <div class="cart-total mb-3">
                     <h3>Totale del carrello</h3>
-                    <p class="d-flex">
+                   <p class="d-flex">
                         <span>
                             Totale parziale
                         </span>
@@ -205,7 +205,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
-                                 <?php $_smarty_tpl->_assignInScope('partialTotal', $_smarty_tpl->tpl_vars['partialTotal']->value+$_smarty_tpl->tpl_vars['product']->value[3]*$_smarty_tpl->tpl_vars['product']->value[5]);?>
+                                 <?php $_smarty_tpl->_assignInScope('partialTotal', $_smarty_tpl->tpl_vars['partialTotal']->value+$_smarty_tpl->tpl_vars['product']->value[0]->getPrice()*$_smarty_tpl->tpl_vars['product']->value[1]);?>
                              <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>

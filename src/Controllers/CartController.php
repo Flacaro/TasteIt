@@ -21,14 +21,15 @@ class CartController {
      if ($session->isUserLogged()) {
          $cus = $session->loadUser();
          $cartId = $cus->getCart()->getId();
-          $cart = $FCart->load($cartId);
-         //$products = $cart->getProducts();
-         $products = $FCart->getProductsOfCart($cartId);
+         $cart = $FCart->load($cartId);
+         $products = $cart->getProducts();
+         //$products = $FCart->getProductsOfCart($cartId);
          $total = 0;
          foreach ($products as $p){
-         $total = $total+$p[3]*$p[5];
+         $total = $total+$p[0]->getPrice()*$p[1];
+
      }
-        //print_r($total);
+         //printObject($total);
         /* foreach ($products as $p) {
              printObject($p);
          }*/

@@ -47,22 +47,22 @@
                         </td>
                        <td>
                             <div class="email">
-                                <span>{$product[1]}</span>
-                                <span>{$product[2]}</span>
+                                <span>{$product[0]->getName()}</span>
+                                <span>{$product[0]->getDescription()}</span>
                             </div>
                         </td>
-                          <td>{$product[3]}</td>
+                          <td>{$product[0]->getPrice()}</td>
                         <td class="quantity">
                             <div class="input-group" style="width: 9em">
-                                <form action="/carts/{$cart->getId()}/products/{$product[0]}/update" method="POST" style="float: left">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/update" method="POST" style="float: left">
                                     <div class="button minus">
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="minus" name="option">
-                                        <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]}" hidden>
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]->getId()}" hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"
-                                                {if $product[5] == 1}
+                                                {if $product[0]->getQuantity() == 1}
                                                     disabled
                                                 {/if}
                                         >
@@ -71,14 +71,14 @@
                                     </div>
                                 </form>
 
-                                <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product[5]}" style="width: 2em">
+                                <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product[1]}" style="width: 2em">
 
-                                <form action="/carts/{$cart->getId()}/products/{$product[0]}/update" method="POST" style="float: right">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/update" method="POST" style="float: right">
                                     <div class="button plus">
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="plus" name="option">
-                                        <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]}" hidden>
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]->getId()}" hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"> + </button>
                                     </div>
@@ -86,18 +86,18 @@
 
                             </div>
                         </td>
-                          <td>{math equation="{$product[3]} * {$product[1]}"}</td>
+                          <td>{math equation="{$product[0]->getPrice()} * {$product[1]}"}</td>
                         <td>
                           {* <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true"><i class="fa fa-close"></i></span>
                             </button>*}
-                            <form action="/carts/{$cart->getId()}/products/{$product[0]}/delete" method="POST">
+                            <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/delete" method="POST">
 
                                 <div class="button delete">
 
                                     <input hidden type="text" value="DELETE" name="_method">
                                     <input hidden type="text" value="delete" name="option">
-                                    <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]}" hidden>
+                                    <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]->getId()}" hidden>
 
                                     <button class="btn btn-primary btn-number" type="submit"> X </button>
                                 </div>
@@ -114,13 +114,13 @@
             <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
                 <div class="cart-total mb-3">
                     <h3>Totale del carrello</h3>
-                    <p class="d-flex">
+                   <p class="d-flex">
                         <span>
                             Totale parziale
                         </span>
                         <span>
                              {foreach $products as $product}
-                                 {assign var="partialTotal" value=$partialTotal+$product[3]*$product[5]}
+                                 {assign var="partialTotal" value = $partialTotal + $product[0]->getPrice() * $product[1]}
                              {/foreach}
                             $ {$partialTotal}
                         </span>
