@@ -149,7 +149,7 @@
                                 {if $cartId}
                                 <div class="contact-wrap w-100 p-md-5">
                                         <h3 class="mb-5">Lascia una recensione</h3>
-                                            <form action="/products/{$product->getId()}/addReview" method="POST" id="add">
+                                            <form action="/products/{$product->getId()}/reviews" method="POST" id="add">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
@@ -165,7 +165,7 @@
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
-                                                                        <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
+                                                                            <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
                                                                     </div>
                                                                 </div>
                                                 </div>

@@ -188,7 +188,7 @@ class ProductController
             $review->setCustomer($cus);
             array_push($rev, $review);
             $FReview->createReview($review, $productId);
-            $this->getProduct($productId);
+            self::getProduct($productId);
            /* redirect(url("getProduct", ['productId' => $productId]));*/
         }
     }

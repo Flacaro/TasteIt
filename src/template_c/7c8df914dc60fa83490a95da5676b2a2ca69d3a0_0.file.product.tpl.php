@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 12:10:36
+/* Smarty version 3.1.39, created on 2021-10-07 12:18:41
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615ec79c604f62_64056205',
+  'unifunc' => 'content_615ec9811d9d54_58517466',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1633601361,
+      1 => 1633601919,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615ec79c604f62_64056205 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615ec9811d9d54_58517466 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2005171747615ec79c5b34b9_73746038', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1076939055615ec9811c9724_64628326', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1910548287615ec79c5b3e03_14870549', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_510449420615ec9811ca087_96632314', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_2005171747615ec79c5b34b9_73746038 extends Smarty_Internal_Block
+class Block_1076939055615ec9811c9724_64628326 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_2005171747615ec79c5b34b9_73746038',
+    0 => 'Block_1076939055615ec9811c9724_64628326',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1910548287615ec79c5b3e03_14870549 extends Smarty_Internal_Block
+class Block_510449420615ec9811ca087_96632314 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1910548287615ec79c5b3e03_14870549',
+    0 => 'Block_510449420615ec9811ca087_96632314',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -243,7 +243,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="contact-wrap w-100 p-md-5">
                                         <h3 class="mb-5">Lascia una recensione</h3>
                                             <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addReview" method="POST" id="add">
+/reviews" method="POST" id="add">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
@@ -259,7 +259,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
-                                                                        <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
+                                                                            <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
                                                                     </div>
                                                                 </div>
                                                 </div>
