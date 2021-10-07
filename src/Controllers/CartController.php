@@ -45,18 +45,19 @@ class CartController {
      $FCart->store($cart);
  }
 
- public function updateQuantity($productId){
+ public function updateQuantity(){
      $session = Session::getInstance();
      if ($session->isUserLogged()) {
          $fCart = new Fcart();
          $cus = $session->loadUser();
          $cartId = $cus->getCart()->getId();
-         $plus = (int)$_POST['option'];
+         $productId = $_POST['productId'];
          $quantity = $fCart->getQuantity($cartId, $productId);
-         if ($plus == 'plus') {
-             $fCart->incrementQuantity($cartId, $productId, $quantity);
+         //print_r($productId);
+        if ($_POST['option'] == 'plus') {
+             $fCart->incrementQuantity($cartId, $productId, $quantity[0]);
          } else {
-             $fCart->decrementQuantity($cartId, $productId, $quantity);
+             $fCart->decrementQuantity($cartId, $productId, $quantity[0]);
          }
          redirect(url('productsOfCarts', ['cartId' => $cartId]));
      }
@@ -87,7 +88,7 @@ class CartController {
             }
     }
 
-    public function destroy($productId) {
+    public function destroy() {
         $session = Session::getInstance();
         if ($session->isUserLogged()) {
             $FCart = new FCart();
@@ -95,6 +96,7 @@ class CartController {
             $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $cart = $FCart->load($cartId);
+            $productId = $_POST['productId'];
             $product = $FProduct->load($productId);
             if ($_POST['option'] == 'delete') {
                 $FCart->deleteFromCart($cart, $product);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-06 21:21:07
+/* Smarty version 3.1.39, created on 2021-10-07 11:49:47
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615df7231a0528_69345317',
+  'unifunc' => 'content_615ec2bb7246b8_39689148',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1633547946,
+      1 => 1633599971,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615df7231a0528_69345317 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615ec2bb7246b8_39689148 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -116,7 +116,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                 <li class="nav-item"><a href="/profile" class="nav-link">Profilo</a></li>
+                <?php }?>
             </ul>
         </div>
     </div>

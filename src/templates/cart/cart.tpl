@@ -59,6 +59,7 @@
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="minus" name="option">
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]}" hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"
                                                 {if $product[5] == 1}
@@ -77,6 +78,7 @@
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="plus" name="option">
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]}" hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"> + </button>
                                     </div>
@@ -95,6 +97,7 @@
 
                                     <input hidden type="text" value="DELETE" name="_method">
                                     <input hidden type="text" value="delete" name="option">
+                                    <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]}" hidden>
 
                                     <button class="btn btn-primary btn-number" type="submit"> X </button>
                                 </div>

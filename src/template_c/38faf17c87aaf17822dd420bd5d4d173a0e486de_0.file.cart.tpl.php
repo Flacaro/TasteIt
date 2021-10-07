@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 09:12:43
+/* Smarty version 3.1.39, created on 2021-10-07 11:31:20
   from 'C:\xampp\htdocs\TasteIt\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615e9debde1815_53440614',
+  'unifunc' => 'content_615ebe6803c036_82718853',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38faf17c87aaf17822dd420bd5d4d173a0e486de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\cart\\cart.tpl',
-      1 => 1633590748,
+      1 => 1633599076,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615e9debde1815_53440614 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615ebe6803c036_82718853 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_896460161615e9debdc9707_23071496', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1324685712615ebe680248e1_46985123', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1547519639615e9debdca464_08638781', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_158310159615ebe68025217_29516874', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_896460161615e9debdc9707_23071496 extends Smarty_Internal_Block
+class Block_1324685712615ebe680248e1_46985123 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_896460161615e9debdc9707_23071496',
+    0 => 'Block_1324685712615ebe680248e1_46985123',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1547519639615e9debdca464_08638781 extends Smarty_Internal_Block
+class Block_158310159615ebe68025217_29516874 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1547519639615e9debdca464_08638781',
+    0 => 'Block_158310159615ebe68025217_29516874',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -131,6 +131,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="minus" name="option">
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+" hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"
                                                 <?php if ($_smarty_tpl->tpl_vars['product']->value[5] == 1) {?>
@@ -152,6 +154,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 
                                         <input hidden type="text" value="PUT" name="_method">
                                         <input hidden type="text" value="plus" name="option">
+                                        <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+" hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"> + </button>
                                     </div>
@@ -170,6 +174,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 
                                     <input hidden type="text" value="DELETE" name="_method">
                                     <input hidden type="text" value="delete" name="option">
+                                    <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value[0];?>
+" hidden>
 
                                     <button class="btn btn-primary btn-number" type="submit"> X </button>
                                 </div>

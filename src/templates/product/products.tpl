@@ -33,7 +33,7 @@
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url('{$product->getImagePath()}');">
-                                        <div class="desc">
+                                        <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
                                                 {if $cartId}
                                                     <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">

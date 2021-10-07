@@ -12,9 +12,9 @@ class VCategory
         return setData('product/products',$data);
     }
 
-    public function viewCategories(){
+  /*  public function viewCategories(){
         $data=[];
         return setData('category/category',$data);
-    }
+    }*/
 
 }

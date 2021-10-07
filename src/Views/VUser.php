@@ -18,13 +18,14 @@ class VUser {
         ]);
     }
 
-    public function getProfile($customer) {
+    public function getProfile($customer, $orders) {
         return view('user/profile', [
             'id' => $customer->getId(),
             'name' => $customer->getName(),
             'surname' => $customer->getSurname(),
             'email' => $customer->getEmail(),
             'password' => $customer->getPassword(),
+            'orders' => $orders
         ]);
     }
 

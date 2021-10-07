@@ -51,8 +51,12 @@ class CustomerController {
         $session=Session::getInstance();
         if ($session->isUserLogged()) {
             $customer = $session->loadUser();
+            //sono prodotti
+            $orders = $customer->getOrders();
+            //servono i prodotti che sono nell'ordine
+            //printObject($orders);
             $vUser = new VUser();
-            $vUser->getProfile($customer);
+            $vUser->getProfile($customer, $orders);
         }
     }
 

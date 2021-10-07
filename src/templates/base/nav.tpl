@@ -71,7 +71,9 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                {if $cartId}
                 <li class="nav-item"><a href="/profile" class="nav-link">Profilo</a></li>
+                {/if}
             </ul>
         </div>
     </div>
