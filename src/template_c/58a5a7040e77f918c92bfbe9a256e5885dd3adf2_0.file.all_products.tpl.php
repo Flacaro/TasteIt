@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-30 13:19:57
+/* Smarty version 3.1.39, created on 2021-10-07 12:10:24
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\all_products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61559d5d1f4cc1_36206564',
+  'unifunc' => 'content_615ec790581c55_31576214',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58a5a7040e77f918c92bfbe9a256e5885dd3adf2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\all_products.tpl',
-      1 => 1633000794,
+      1 => 1633601361,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61559d5d1f4cc1_36206564 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615ec790581c55_31576214 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_196570374961559d5d1e97f6_35258590', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1297142982615ec790576469_00306185', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_152679681761559d5d1ea192_40863997', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_321786002615ec790576d97_54677536', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_196570374961559d5d1e97f6_35258590 extends Smarty_Internal_Block
+class Block_1297142982615ec790576469_00306185 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_196570374961559d5d1e97f6_35258590',
+    0 => 'Block_1297142982615ec790576469_00306185',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ All products<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_152679681761559d5d1ea192_40863997 extends Smarty_Internal_Block
+class Block_321786002615ec790576d97_54677536 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_152679681761559d5d1ea192_40863997',
+    0 => 'Block_321786002615ec790576d97_54677536',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -99,15 +99,15 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                             <div class="desc" style="display: flex" >
                                 <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                                 <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/add/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 " method="POST">
-                                    <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
+                                    <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
                                     <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                 </form>
                                 <?php }?>
                                 <?php if ($_smarty_tpl->tpl_vars['favId']->value) {?>
                                 <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addToFavourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
 " method="POST">
                                     <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                 </form>

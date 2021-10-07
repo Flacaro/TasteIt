@@ -80,7 +80,12 @@ class ProductController
             $favId = $cus->getFav()->getId();
             $product=$fProduct->load($productId);
             $q = (int)$_POST['quantity'];
-            $cart->addToCart($product, $q);
+            if($q === 1) {
+                $cart->addToCart($product, 1);
+            }
+            else {
+                $cart->addToCart($product, $q);
+            }
             $cus->setCart($cart);
             $fCart->update($cart);
             $session->saveUserInSession($cus);
@@ -120,7 +125,7 @@ class ProductController
     }
 
 
-    public function addProductFromAll($productId)
+ /*   public function addProductFromAll($productId)
     {
         $session = Session::getInstance();
         $fProduct = new FProduct();
@@ -137,7 +142,7 @@ class ProductController
         }
 
         redirect('/products');
-    }
+    }*/
 
 
     public function addToFavourites($productId)
@@ -183,7 +188,7 @@ class ProductController
             $review->setCustomer($cus);
             array_push($rev, $review);
             $FReview->createReview($review, $productId);
-            self::getProduct($productId);
+            $this->getProduct($productId);
            /* redirect(url("getProduct", ['productId' => $productId]));*/
         }
     }

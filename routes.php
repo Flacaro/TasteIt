@@ -30,8 +30,8 @@ SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
 SimpleRouter::get("/logout", [AuthController::class, "logout"]);
 
 SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
-SimpleRouter::post("/home/products/{productId}/addToCart/{cartId}", [HomePageController::class, "addToCartFromHome"]);
-SimpleRouter::post("/home/products/{productId}/addToFav/{favId}", [HomePageController::class, "addToFavouritesFromHome"]);
+SimpleRouter::post("/home/products/{productId}/carts/{cartId}", [HomePageController::class, "addToCartFromHome"]);
+SimpleRouter::post("/home/products/{productId}/favourites/{favId}", [HomePageController::class, "addToFavouritesFromHome"]);
 SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
 SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 
@@ -39,13 +39,13 @@ SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage
 
 SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
 SimpleRouter::get("/products", [ProductController::class, "getAll"])->name('products');
-SimpleRouter::post("/products/{productId}/add/{cartId}", [ProductController::class, "addProductFromAll"]);
+/*SimpleRouter::post("/products/{productId}/carts/{cartId}", [ProductController::class, "addProductFromAll"]);*/
 //SimpleRouter::get("/products/{id}/edit", [ProductController::class, "edit"]);
 SimpleRouter::post("/products/{id}", [ProductController::class, "createReview"]);
 SimpleRouter::post("/products/{id}/update", [ProductController::class, "update"]);
-SimpleRouter::post("/products/{productId}/addToFavourites/{favId}",[ProductController::class, "addToFavourites"]);
-SimpleRouter::post("/products/{productId}/addToCart/{cartId}", [ProductController::class, "addProductToCart"]);
-SimpleRouter::post("/products/{productId}/addReview", [ProductController::class, "createReview"]);
+SimpleRouter::post("/products/{productId}/favourites/{favId}",[ProductController::class, "addToFavourites"]);
+SimpleRouter::post("/products/{productId}/carts/{cartId}", [ProductController::class, "addProductToCart"]);
+SimpleRouter::post("/products/{productId}/reviews", [ProductController::class, "createReview"]);
 
 
 //SimpleRouter::get("/users", [CustomerController::class, "getAll"]);
