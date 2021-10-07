@@ -17,17 +17,25 @@ class CartController {
  public function getProductsOfCart() {
      $session = Session::getInstance();
      $FCart = new FCart();
+
      if ($session->isUserLogged()) {
          $cus = $session->loadUser();
          $cartId = $cus->getCart()->getId();
+          $cart = $FCart->load($cartId);
          //$products = $cart->getProducts();
          $products = $FCart->getProductsOfCart($cartId);
+         $total = 0;
+         foreach ($products as $p){
+         $total = $total+$p[3]*$p[5];
+     }
+        //print_r($total);
         /* foreach ($products as $p) {
-             printObject($p[1]);
+             printObject($p);
          }*/
          $vCart = new VCart();
-         $vCart->getProducts($products, $cartId);
+         $vCart->getProducts($cart, $total, $products);
      }
+
  }
 
  public function create() {

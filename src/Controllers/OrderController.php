@@ -44,7 +44,7 @@ class OrderController {
             $addresses = $faddress->loadFromCustomerId($cId);
             $cards= $fpay->loadFromCustomerId($cId);
             $c="";
-            if ($_POST['option']!=""){
+            if (isset($_POST['option']) and $_POST['option']!=""){
                 $c=$fcoupon->load($_POST['option']);
             }
             $vorder=new VOrder();

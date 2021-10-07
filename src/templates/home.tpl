@@ -136,7 +136,7 @@
                         <div class="text text-center">
                             {*<span class="category">{$bestRated->getCategory()->getCategoryName()}</span>*}
                             <h2>{$bestRated->getName()}</h2>
-                            <p class="mb-0"> <span class="price">EUR {$bestRated->getPrice()}</span></p>
+                            <p class="mb-0"> <span class="price">€{$bestRated->getPrice()}</span></p>
                         </div>
                         </a>
                     </div>
@@ -213,7 +213,7 @@
                             </div>
                             <div class="text text-center">
                                 <h2> {$product->getName()}</h2>
-                                <h2> {$product->getprice()}</h2>
+                                <h2> €{$product->getprice()}</h2>
                             </div>
                         </div>
                     </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-06 10:19:52
+/* Smarty version 3.1.39, created on 2021-10-07 09:00:42
   from 'C:\xampp\htdocs\TasteIt\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615d5c282074b5_99282273',
+  'unifunc' => 'content_615e9b1a18b556_65696640',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b9669fcc47ea045bd5d11a9f88449e7a267b40e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\home.tpl',
-      1 => 1633508391,
+      1 => 1633549332,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615d5c282074b5_99282273 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615e9b1a18b556_65696640 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_899504796615d5c2819b461_34063618', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1797280813615e9b1a16a6e4_16229550', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_675392514615d5c2819c343_74402711', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_871995340615e9b1a16b764_48779520', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_899504796615d5c2819b461_34063618 extends Smarty_Internal_Block
+class Block_1797280813615e9b1a16a6e4_16229550 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_899504796615d5c2819b461_34063618',
+    0 => 'Block_1797280813615e9b1a16a6e4_16229550',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_675392514615d5c2819c343_74402711 extends Smarty_Internal_Block
+class Block_871995340615e9b1a16b764_48779520 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_675392514615d5c2819c343_74402711',
+    0 => 'Block_871995340615e9b1a16b764_48779520',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -217,7 +217,7 @@ $_smarty_tpl->tpl_vars['bestRated']->do_else = false;
                         <div class="text text-center">
                                                         <h2><?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getName();?>
 </h2>
-                            <p class="mb-0"> <span class="price">EUR <?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getPrice();?>
+                            <p class="mb-0"> <span class="price">€<?php echo $_smarty_tpl->tpl_vars['bestRated']->value->getPrice();?>
 </span></p>
                         </div>
                         </a>
@@ -318,7 +318,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                             <div class="text text-center">
                                 <h2> <?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
 </h2>
-                                <h2> <?php echo $_smarty_tpl->tpl_vars['product']->value->getprice();?>
+                                <h2> €<?php echo $_smarty_tpl->tpl_vars['product']->value->getprice();?>
 </h2>
                             </div>
                         </div>

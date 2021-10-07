@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-01 20:00:58
+/* Smarty version 3.1.39, created on 2021-10-06 17:52:21
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\contact-us.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61574cdae07069_98813516',
+  'unifunc' => 'content_615dc635095249_91951137',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4de1e5cc67923f795d257de309152651ce31dad7' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\contact-us.tpl',
-      1 => 1633111256,
+      1 => 1633535539,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61574cdae07069_98813516 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615dc635095249_91951137 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_28708447661574cdae02f04_58126985', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1155841794615dc63508fdb9_92250040', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_151634858061574cdae03927_71525454', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1148232627615dc6350908b7_43534553', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "src/templates/base/base.tpl");
 }
 /* {block 'title'} */
-class Block_28708447661574cdae02f04_58126985 extends Smarty_Internal_Block
+class Block_1155841794615dc63508fdb9_92250040 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_28708447661574cdae02f04_58126985',
+    0 => 'Block_1155841794615dc63508fdb9_92250040',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Contattaci<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_151634858061574cdae03927_71525454 extends Smarty_Internal_Block
+class Block_1148232627615dc6350908b7_43534553 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_151634858061574cdae03927_71525454',
+    0 => 'Block_1148232627615dc6350908b7_43534553',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -86,7 +86,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                         <span class="fa fa-map-marker"></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>Address:</span>Via <?php echo current($_smarty_tpl->tpl_vars['restaurant']->value->getAddresses());?>
+                                        <p><span>Address:</span>Via <?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getAddress()->getStreet();?>
+ <?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getAddress()->getHomeNumber();?>
+, <?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getAddress()->getCity();?>
 </p>
                                     </div>
                                 </div>

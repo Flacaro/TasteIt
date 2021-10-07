@@ -115,7 +115,7 @@ class FCart extends FConnection {
     //si va a prendere i prodotti dalla tabella carts_products
         //SELECT * FROM products_carts AS prodotti WHERE prodotti.productsId in (SELECT ProductId FROM Products_carts WHERE cartId=$id)
         $pdo = FConnection::connect();
-        $query= 'select products.id, products.name, products.description, products.price, products.categoryId, products_carts.quantity from products  join products_carts ON products.id = products_carts.productId WHERE products_carts.cartId='.$id.';';
+        $query= 'select products.id, products.name, products.description, products.price, products_carts.quantity from products  join products_carts ON products.id = products_carts.productId WHERE products_carts.cartId='.$id.';';
         $stmt = $pdo->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
@@ -129,7 +129,7 @@ class FCart extends FConnection {
             $p->setName($product[1]);
             $p->setDescription($product[2]);
             $p->setPrice($product[3]);
-            array_push($c, [$p, $product[5]]);
+            array_push($c, [$p, $product[4]]);
         }
         $newCart->setProducts($c);
         return $newCart;

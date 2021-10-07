@@ -54,7 +54,7 @@
                           <td>{$product[3]}</td>
                         <td class="quantity">
                             <div class="input-group" style="width: 9em">
-                                <form action="/carts/{$cartId}/products/{$product[0]}/update" method="POST" style="float: left">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]}/update" method="POST" style="float: left">
                                     <div class="button minus">
 
                                         <input hidden type="text" value="PUT" name="_method">
@@ -72,7 +72,7 @@
 
                                 <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product[5]}" style="width: 2em">
 
-                                <form action="/carts/{$cartId}/products/{$product[0]}/update" method="POST" style="float: right">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]}/update" method="POST" style="float: right">
                                     <div class="button plus">
 
                                         <input hidden type="text" value="PUT" name="_method">
@@ -84,12 +84,12 @@
 
                             </div>
                         </td>
-                          <td>{math equation="{$product[3]} * {$product[5]}"}</td>
+                          <td>{math equation="{$product[3]} * {$product[1]}"}</td>
                         <td>
                           {* <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true"><i class="fa fa-close"></i></span>
                             </button>*}
-                            <form action="/carts/{$cartId}/products/{$product[0]}/delete" method="POST">
+                            <form action="/carts/{$cart->getId()}/products/{$product[0]}/delete" method="POST">
 
                                 <div class="button delete">
 
@@ -110,10 +110,10 @@
         <div class="row justify-content-end">
             <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
                 <div class="cart-total mb-3">
-                    <h3>Cart Totals</h3>
+                    <h3>Totale del carrello</h3>
                     <p class="d-flex">
                         <span>
-                            Total
+                            Totale parziale
                         </span>
                         <span>
                              {foreach $products as $product}
@@ -127,12 +127,13 @@
                         <span>$0.00</span>
                     </p>
                     <p class="d-flex total-price">
-                        <span>Total</span>
+                        <span>Totale</span>
                         <span>
-                            {foreach $products as $product}
+                            {*{foreach $products as $product}
                                 {assign var="total" value=$total+$product[3]*$product[5]}
                             {/foreach}
-                            $ {$total}
+                            $ {$total}*}
+                             $ {$total}
                         </span>
                     </p>
                 </div>
