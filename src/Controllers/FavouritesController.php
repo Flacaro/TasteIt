@@ -35,9 +35,10 @@ class FavouritesController {
         }
     }
 
-    public function deleteProductFromFav($productId) {
+    public function deleteProductFromFav() {
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
+        $productId = $_POST['productId'];
 
         if ($session->isUserLogged()) {
             $cus = $session->loadUser();
@@ -54,7 +55,6 @@ class FavouritesController {
         $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
-
         $productId = $_POST['productId'];
 
         if ($session->isUserLogged()) {

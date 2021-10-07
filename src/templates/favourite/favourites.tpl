@@ -45,6 +45,7 @@
 
                                                     <input hidden type="text" value="DELETE" name="_method">
                                                     <input hidden type="text" value="delete" name="option">
+                                                    <input type="text" name="productId" class="quantity form-control input-number" value="{$product->getId()}" hidden>
 
                                                     <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><i class="fa fa-trash"></i></span></button>
                                                 </div>
