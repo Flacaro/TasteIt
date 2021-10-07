@@ -19,14 +19,15 @@ class VUser {
     }
 
     public function getProfile($customer, $orders) {
-        return view('user/profile', [
+        $data = [
             'id' => $customer->getId(),
             'name' => $customer->getName(),
             'surname' => $customer->getSurname(),
             'email' => $customer->getEmail(),
             'password' => $customer->getPassword(),
             'orders' => $orders
-        ]);
+        ];
+        return setData('user/profile', $data);
     }
 
     public function getCartId($user) {
