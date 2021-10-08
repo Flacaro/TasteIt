@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-04 17:16:31
+/* Smarty version 3.1.39, created on 2021-10-08 10:45:53
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615b1acfa1aad9_99403850',
+  'unifunc' => 'content_616005414e5700_18206985',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1633360590,
+      1 => 1633682752,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615b1acfa1aad9_99403850 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616005414e5700_18206985 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -42,7 +42,7 @@ function content_615b1acfa1aad9_99403850 (Smarty_Internal_Template $_smarty_tpl)
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
-        <?php if ($_smarty_tpl->tpl_vars['cartId']->value !== NULL) {?>
+        <?php if ((isset($_smarty_tpl->tpl_vars['cartId']->value))) {?>
             <div class="order-lg-last btn-group">
                 <!-- menu dropdown del carrello -->
                 <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -93,7 +93,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
-                <?php if ((isset($_smarty_tpl->tpl_vars['favId']->value)) && $_smarty_tpl->tpl_vars['favId']->value !== '') {?>
+                <?php if ((isset($_smarty_tpl->tpl_vars['favId']->value))) {?>
                     <li class="nav-item"><a href="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
 " class="nav-link">Preferiti</a></li>
                 <?php }?>
@@ -116,7 +116,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                <?php if ((isset($_smarty_tpl->tpl_vars['cartId']->value))) {?>
                 <li class="nav-item"><a href="/profile" class="nav-link">Profilo</a></li>
+                <?php }?>
             </ul>
         </div>
     </div>

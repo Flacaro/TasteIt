@@ -21,6 +21,9 @@
 
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
+                    {if $valid==false}
+                        <h3>Il coupon non è valido. Inseriscine uno valido o procedi all'acquisto.</h3>
+                    {/if}
                     <form method="post" action="/cart/checkout/confirmation" id="ordine">
                     <div class="row mt-5 pt-3 d-flex">
                         <div class="col-md-4 d-flex">
@@ -52,16 +55,13 @@
                                         <span>${$subtotal}</span>
                                     {/if}
                                 </p>*}
-                                {if $coupon==""}
                                 <label for="streetaddress">Coupon</label>
                                 <div class="d-flex">
 
                                         <div class="row">
                                             <input id="coupon" type="text" class="form-control w-75" name="option" placeholder="Codice Coupon">
                                         </div>
-
                                 </div>
-                                {/if}
                             </div>
                         </div>
                         <div class="col-md-4">

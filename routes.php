@@ -69,17 +69,17 @@ SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController:
 SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::class, "getCategoryProducts"]);
 SimpleRouter::get("/categories", [CategoryController::class, "index"]);
 
-SimpleRouter::get("/orders", [OrderController::class, "visualizeOrdersPending"]);
-SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
-SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
-SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
-
 
 SimpleRouter::get("/favourites/create",[FavouritesController::class, "create"]);
 SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavouritesProducts"])->name('favourites');
 //SimpleRouter::post("/favourites/{favId}/products/{productId}/addToCart/{cartId}",[FavouritesController::class, "addToCartFromFav"]);
 SimpleRouter::post("/carts/{cartId}/products",[FavouritesController::class, "addToCartFromFav"]);
 SimpleRouter::delete("/favourites/{favId}/products/{productId}/delete",[FavouritesController::class, "deleteProductFromFav"]);
+
+SimpleRouter::get("/orders", [AdminOrderController::class, "visualizeOrdersPending"]);
+SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
+SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
+SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
 
 SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
 SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);

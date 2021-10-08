@@ -18,15 +18,17 @@ class FCoupon extends FConnection {
         $stmt->execute();
         $coupon=$stmt->fetch();
         $c=new Coupon;
-        $c->setId($coupon[0]);
-        $c->setPriceCut($coupon[1]);
-        $c->setExpirationDate($coupon[2]);
+        if ($coupon!=null){
+            $c->setId($coupon[0]);
+            $c->setPriceCut($coupon[1]);
+            $c->setExpirationDate($coupon[2]);
+        }
         return $c;
     }
 
     public function exist($id){
         $pdo = FConnection::connect();
-        $query="select * from coupons where id=".$id;
+        $query="select * from coupons where id='".$id."'";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $coupon=$stmt->fetch();

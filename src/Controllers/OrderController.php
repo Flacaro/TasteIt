@@ -29,7 +29,7 @@ class OrderController {
     public function orderAgain($orderId) {
 
     }
-    public function checkout(){
+    public function checkout($valid=NULL){
         //session_start();
         $faddress=new FAddress();
         $fcart=new FCart();
@@ -48,16 +48,20 @@ class OrderController {
                 $c=$fcoupon->load($_POST['option']);
             }
             $vorder=new VOrder();
-            $vorder->checkout($cart, $addresses, $cards, $c);
+            $vorder->checkout($cart, $addresses, $cards, $c, $valid);
         }
     }
 
     public function applyCoupon(){
         $fcoupon=new FCoupon();
         if ($fcoupon->exist($_POST['option']&!$fcoupon->isExpired($_POST['option']))){
-            //print_r("ciao");
             self::checkout();
         }
+        else {
+            $valid=false;
+            self::checkout($valid);
+        }
+
     }
 
     public function createOrder(){
@@ -72,7 +76,18 @@ class OrderController {
             $cartId = $cus->getCart()->getId();
             $cart = $fcart->load($cartId);
             $coupon = $_POST['option'];
-            $c = $fcoupon->load($_POST['option']);
+            if ($_POST['option']!=""){
+
+
+                if ($fcoupon->exist($coupon)){
+                    $c = $fcoupon->load($_POST['option']);
+                }
+                else{
+                   //ti deve rimandare alla stessa pagina ma con un messaggio che indica che il coupon non esiste
+                    self::checkout(false);
+
+                }
+            }
             $address = $faddress->load($_POST['address']);
             $card = $fpay->load($_POST['payment']);
             $order = new Order;
@@ -84,8 +99,11 @@ class OrderController {
             if ($coupon!=""){
                 $total=$subtotal-($subtotal*$c->getPriceCut()/100);
             }
+            else{$total=$subtotal;}
             $order->setTotal($total);
-            $order->setCoupon($c);
+            if($_POST['option']!=""){
+                $order->setCoupon($c);
+            }
             $order->setCustomerId($cus->getId());
             $order->setPayment($card);
             $order->setState("Pending");

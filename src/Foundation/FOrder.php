@@ -117,11 +117,15 @@ class FOrder extends FConnection {
 
     function store($order): string {
         $pdo = FConnection::connect();
+        if ($order->getCoupon()!=NULL){
+            $couponId=$order->getCoupon()->getId();
+        }
+        else {$couponId=NULL;}
         if (get_class($order->getPayment())=="App\Models\CreditCard") {
-            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, ' . $order->getCoupon()->getId() . ', ' . $order->getCustomerId() . ', 2, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', ' . $order->getPayment()->getId() . ')';
+            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, ' . $couponId . ', ' . $order->getCustomerId() . ', 2, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', ' . $order->getPayment()->getId() . ')';
         }
         else {
-            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, ' . $order->getCoupon()->getId() . ', ' . $order->getCustomerId() . ', 1, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', NULL)';
+            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, ' . $couponId . ', ' . $order->getCustomerId() . ', 1, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', NULL)';
         }
         $stmt = $pdo->prepare($query);
         $stmt->execute();

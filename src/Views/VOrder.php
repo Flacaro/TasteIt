@@ -11,12 +11,13 @@ class VOrder {
             'orders' => $orders
         ]);
     }
-    public function checkout($cart, $addresses, $cards, $coupon) {
+    public function checkout($cart, $addresses, $cards, $coupon, $valid) {
         $data=[
             'cart'=>$cart,
             'addresses'=>$addresses,
             'cards'=>$cards,
-            'coupon'=>$coupon
+            'coupon'=>$coupon,
+            'valid'=>$valid
         ];
         return setData('order/order', $data);
     }

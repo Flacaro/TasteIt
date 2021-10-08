@@ -19,7 +19,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
-        {if $cartId !== NULL}
+        {if isset($cartId)}
             <div class="order-lg-last btn-group">
                 <!-- menu dropdown del carrello -->
                 <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,7 +58,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
                 <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
-                {if $favId}
+                {if isset($favId)}
                     <li class="nav-item"><a href="/favourites/{$favId}" class="nav-link">Preferiti</a></li>
                 {/if}
 
@@ -71,7 +71,7 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-                {if $cartId}
+                {if isset($cartId)}
                 <li class="nav-item"><a href="/profile" class="nav-link">Profilo</a></li>
                 {/if}
             </ul>

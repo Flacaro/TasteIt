@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-06 18:03:19
+/* Smarty version 3.1.39, created on 2021-10-08 10:42:25
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\products.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615dc8c7194885_83410291',
+  'unifunc' => 'content_61600471e68917_22624560',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f306688f028334753b6b9617df5386238f3c0e2f' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\products.tpl',
-      1 => 1633536190,
+      1 => 1633682530,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615dc8c7194885_83410291 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61600471e68917_22624560 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1013173589615dc8c718ad97_88557883', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_153967667261600471e593d2_74264046', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_215863173615dc8c718b873_81133412', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_133307807261600471e59f25_13784930', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1013173589615dc8c718ad97_88557883 extends Smarty_Internal_Block
+class Block_153967667261600471e593d2_74264046 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1013173589615dc8c718ad97_88557883',
+    0 => 'Block_153967667261600471e593d2_74264046',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Prodotti<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_215863173615dc8c718b873_81133412 extends Smarty_Internal_Block
+class Block_133307807261600471e59f25_13784930 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_215863173615dc8c718b873_81133412',
+    0 => 'Block_133307807261600471e59f25_13784930',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -99,12 +99,27 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                 <div class="product ftco-animated">
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
 ');">
-                                        <div class="desc">
+                                        <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-shopping-bag"></span></a>
-                                                <a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
-                                                <a href="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
+                                                <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
+                                                    <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+" method="POST">
+                                                        <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
+                                                        <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                                    </form>
+                                                <?php }?>
+                                                <?php if ($_smarty_tpl->tpl_vars['favId']->value) {?>
+                                                    <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+" method="POST">
+                                                        <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
+                                                    </form>
+                                                <?php }?>
+                                            <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+">
+                                                <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                            </form>
                                             </p>
                                         </div>
                                     </div>

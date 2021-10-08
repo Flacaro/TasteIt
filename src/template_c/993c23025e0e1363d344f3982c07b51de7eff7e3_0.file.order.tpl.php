@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-06 19:04:18
+/* Smarty version 3.1.39, created on 2021-10-08 11:44:18
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615dd712637855_06598878',
+  'unifunc' => 'content_616012f2e7c877_42822687',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '993c23025e0e1363d344f3982c07b51de7eff7e3' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order.tpl',
-      1 => 1633539857,
+      1 => 1633686256,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615dd712637855_06598878 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616012f2e7c877_42822687 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_702075591615dd712625892_24241179', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_594414459616012f2e69760_27144620', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1463598212615dd712626552_85790264', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_382405113616012f2e6a0e2_57123274', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1128726109615dd712626bf9_45204412', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1919192494616012f2e6a663_32516141', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_702075591615dd712625892_24241179 extends Smarty_Internal_Block
+class Block_594414459616012f2e69760_27144620 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_702075591615dd712625892_24241179',
+    0 => 'Block_594414459616012f2e69760_27144620',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_1463598212615dd712626552_85790264 extends Smarty_Internal_Block
+class Block_382405113616012f2e6a0e2_57123274 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_1463598212615dd712626552_85790264',
+    0 => 'Block_382405113616012f2e6a0e2_57123274',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_1128726109615dd712626bf9_45204412 extends Smarty_Internal_Block
+class Block_1919192494616012f2e6a663_32516141 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1128726109615dd712626bf9_45204412',
+    0 => 'Block_1919192494616012f2e6a663_32516141',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -98,6 +98,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
+                    <?php if ($_smarty_tpl->tpl_vars['valid']->value == false) {?>
+                        <h3>Il coupon non è valido. Inseriscine uno valido o procedi all'acquisto.</h3>
+                    <?php }?>
                     <form method="post" action="/cart/checkout/confirmation" id="ordine">
                     <div class="row mt-5 pt-3 d-flex">
                         <div class="col-md-4 d-flex">
@@ -121,16 +124,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </span>
                                 </p>
                                                                 <hr>
-                                                                <?php if ($_smarty_tpl->tpl_vars['coupon']->value == '') {?>
-                                <label for="streetaddress">Coupon</label>
+                                                                <label for="streetaddress">Coupon</label>
                                 <div class="d-flex">
 
                                         <div class="row">
                                             <input id="coupon" type="text" class="form-control w-75" name="option" placeholder="Codice Coupon">
                                         </div>
-
                                 </div>
-                                <?php }?>
                             </div>
                         </div>
                         <div class="col-md-4">
