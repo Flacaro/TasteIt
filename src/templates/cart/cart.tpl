@@ -43,7 +43,7 @@
                             </label>
                         </td>
                          <td>
-                            <div class="img" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');"></div>
+                            <div class="img" style="background-image: url({$product[0]->getImagePath()});"></div>
                         </td>
                        <td>
                             <div class="email">

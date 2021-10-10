@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-25 12:44:01
+/* Smarty version 3.1.39, created on 2021-10-10 10:50:15
   from 'C:\xampp\htdocs\TasteIt\src\templates\auth\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614efd71e4d4b5_36838294',
+  'unifunc' => 'content_6162a947b7a035_07555696',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '65cdf71560a6501e0f2c3a1451ab5c7b354d459d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\auth\\login.tpl',
-      1 => 1632565451,
+      1 => 1633855199,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614efd71e4d4b5_36838294 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6162a947b7a035_07555696 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_396569630614efd71e47ea0_00803033', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3435675566162a947b73979_86810604', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -122,17 +122,17 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_396569630614efd71e
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_396569630614efd71e47ea0_00803033 extends Smarty_Internal_Block
+class Block_3435675566162a947b73979_86810604 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_396569630614efd71e47ea0_00803033',
+    0 => 'Block_3435675566162a947b73979_86810604',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-aaaaaa<?php
+login<?php
 }
 }
 /* {/block 'title'} */

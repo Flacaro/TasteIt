@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 14:34:27
+/* Smarty version 3.1.39, created on 2021-10-07 14:38:03
   from 'C:\xampp\htdocs\TasteIt\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615ee953486ef3_12741220',
+  'unifunc' => 'content_615eea2b0d6be8_45667755',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38faf17c87aaf17822dd420bd5d4d173a0e486de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\cart\\cart.tpl',
-      1 => 1633610066,
+      1 => 1633610250,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615ee953486ef3_12741220 (Smarty_Internal_Template $_smarty_tpl) {
+function content_615eea2b0d6be8_45667755 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1537018188615ee953465479_01901041', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1817451262615eea2b0b93b3_52223529', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1325475950615ee953466099_98864420', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1515989405615eea2b0ba835_10882196', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1537018188615ee953465479_01901041 extends Smarty_Internal_Block
+class Block_1817451262615eea2b0b93b3_52223529 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1537018188615ee953465479_01901041',
+    0 => 'Block_1817451262615eea2b0b93b3_52223529',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1325475950615ee953466099_98864420 extends Smarty_Internal_Block
+class Block_1515989405615eea2b0ba835_10882196 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1325475950615ee953466099_98864420',
+    0 => 'Block_1515989405615eea2b0ba835_10882196',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -110,7 +110,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                             </label>
                         </td>
                          <td>
-                            <div class="img" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');"></div>
+                            <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getImagePath();?>
+);"></div>
                         </td>
                        <td>
                             <div class="email">

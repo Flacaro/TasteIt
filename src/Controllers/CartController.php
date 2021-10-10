@@ -50,15 +50,18 @@ class CartController {
      $session = Session::getInstance();
      if ($session->isUserLogged()) {
          $fCart = new Fcart();
+         $FProduct = new FProduct();
          $cus = $session->loadUser();
          $cartId = $cus->getCart()->getId();
+         $cart = $fCart->load($cartId);
          $productId = $_POST['productId'];
+         $product = $FProduct->load($productId);
          $quantity = $fCart->getQuantity($cartId, $productId);
          //print_r($productId);
         if ($_POST['option'] == 'plus') {
              $fCart->incrementQuantity($cartId, $productId, $quantity[0]);
          } else {
-             $fCart->decrementQuantity($cartId, $productId, $quantity[0]);
+             $fCart->decrementQuantity($cart, $product, $quantity[0]);
          }
          redirect(url('productsOfCarts', ['cartId' => $cartId]));
      }
