@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-29 10:45:08
+/* Smarty version 3.1.39, created on 2021-10-10 12:09:11
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\user\profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615427949e51a3_61247980',
+  'unifunc' => 'content_6162bbc7a2b729_06085896',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c799c26c3c846f940f889415338d09029c971b29' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\user\\profile.tpl',
-      1 => 1632902349,
+      1 => 1633860550,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615427949e51a3_61247980 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6162bbc7a2b729_06085896 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1317750666615427949e1089_65349933', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13371868656162bbc7a1eac0_70392935', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1863420514615427949e1ca6_88151322', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5270812156162bbc7a1f472_75732592', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1317750666615427949e1089_65349933 extends Smarty_Internal_Block
+class Block_13371868656162bbc7a1eac0_70392935 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1317750666615427949e1089_65349933',
+    0 => 'Block_13371868656162bbc7a1eac0_70392935',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1863420514615427949e1ca6_88151322 extends Smarty_Internal_Block
+class Block_5270812156162bbc7a1f472_75732592 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1863420514615427949e1ca6_88151322',
+    0 => 'Block_5270812156162bbc7a1f472_75732592',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -97,10 +97,51 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center pb-5">
-                <div class="col-md-7 heading-section text-center ftco-animated">
+                <div class="col-md-10 heading-section text-center ftco-animated">
                     <span class="subheading">I tuoi ordini</span>
                     <h2>Ordini</h2>
-                </div>
+                        <div class="row">
+                            <div class="table-wrap" style="overflow:hidden">
+                                <table class="table">
+
+                                    <thead class="thead-primary">
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Totale</th>
+                                        <th>Pagato con</th>
+                                        <th>Dettagli</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['orders']->value, 'order');
+$_smarty_tpl->tpl_vars['order']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['order']->value) {
+$_smarty_tpl->tpl_vars['order']->do_else = false;
+?>
+                                        <tr class="alert" role="alert">
+                                            <td><?php echo $_smarty_tpl->tpl_vars['order']->value->getCreationDate();?>
+</td>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['order']->value->getTotal();?>
+</td>
+                                            <td><?php if (get_class($_smarty_tpl->tpl_vars['order']->value->getPayment()) == "App\Models\Cash") {?>Contanti<?php } else { ?>Carta di Credito<?php }?></td>
+                                            <td>
+                                                <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
+/details" method="POST">
+                                                    <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
+" hidden>
+                                                    <button style="margin-right: 1rem" class="btn btn-primary btn-number" type="submit">Vai ai Dettagli</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                                        </div>
             </div>
 
         </div>

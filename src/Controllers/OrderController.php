@@ -18,6 +18,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
 use App\Views\VOrder;
+use App\Views\VUser;
 use Pecee\SimpleRouter\SimpleRouter;
 
 class OrderController {
@@ -29,7 +30,20 @@ class OrderController {
     public function orderAgain($orderId) {
 
     }
-    public function checkout($valid=NULL){
+
+    public function getOrderProducts(){
+        $session=Session::getInstance();
+        $forder=new FOrder();
+        if ($session->isUserLogged()){
+            $cus = $session->loadUser();
+            $orderId=$_POST['orderId'];
+            $o=$forder->getOrderProducts($orderId);
+            $vuser=new VUser();
+            $vuser->getOrderDetails($o);
+        }
+    }
+
+    public function checkout($valid=true){
         //session_start();
         $faddress=new FAddress();
         $fcart=new FCart();
@@ -76,8 +90,8 @@ class OrderController {
             $cartId = $cus->getCart()->getId();
             $cart = $fcart->load($cartId);
             $coupon = $_POST['option'];
+            $c=NULL;
             if ($_POST['option']!=""){
-
 
                 if ($fcoupon->exist($coupon)){
                     $c = $fcoupon->load($_POST['option']);
@@ -85,7 +99,6 @@ class OrderController {
                 else{
                    //ti deve rimandare alla stessa pagina ma con un messaggio che indica che il coupon non esiste
                     self::checkout(false);
-
                 }
             }
             $address = $faddress->load($_POST['address']);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-01 16:41:33
+/* Smarty version 3.1.39, created on 2021-10-10 10:46:54
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61571e1d5d34b5_62011079',
+  'unifunc' => 'content_6162a87eb4ebe1_32265678',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb478c455c4e93fe3cb7b6e42ac03ed3d2641027' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
-      1 => 1633099292,
+      1 => 1633682530,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61571e1d5d34b5_62011079 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6162a87eb4ebe1_32265678 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_195010687261571e1d44be99_60812496', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1975167566162a87eb3ce41_35212958', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_29781609761571e1d44f0c9_38979282', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18342722956162a87eb3d794_47747137', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_195010687261571e1d44be99_60812496 extends Smarty_Internal_Block
+class Block_1975167566162a87eb3ce41_35212958 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_195010687261571e1d44be99_60812496',
+    0 => 'Block_1975167566162a87eb3ce41_35212958',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ product<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_29781609761571e1d44f0c9_38979282 extends Smarty_Internal_Block
+class Block_18342722956162a87eb3d794_47747137 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_29781609761571e1d44f0c9_38979282',
+    0 => 'Block_18342722956162a87eb3d794_47747137',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -117,7 +117,7 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                     <div class="input-group col-md-6 d-flex mb-3">
                         <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
                             <form id="addProductToCartForm" action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 " method="POST">
                                 <div class="d-flex mb-4">
                                     <button id="minus" class="mr-2" type="button"><i class="fa fa-minus"></i></button>
@@ -243,7 +243,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 <div class="contact-wrap w-100 p-md-5">
                                         <h3 class="mb-5">Lascia una recensione</h3>
                                             <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addReview" method="POST" id="add">
+/reviews" method="POST" id="add">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
@@ -259,7 +259,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
-                                                                        <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
+                                                                            <button id="add" class="btn btn-primary btn-number" type="submit">Aggiungi</span></button>
                                                                     </div>
                                                                 </div>
                                                 </div>

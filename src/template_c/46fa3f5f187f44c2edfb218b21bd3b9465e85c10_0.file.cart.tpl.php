@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-08 10:49:18
+/* Smarty version 3.1.39, created on 2021-10-10 11:03:00
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6160060e143b51_00109563',
+  'unifunc' => 'content_6162ac4476eda1_00341454',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '46fa3f5f187f44c2edfb218b21bd3b9465e85c10' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\cart\\cart.tpl',
-      1 => 1633682530,
+      1 => 1633856579,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6160060e143b51_00109563 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6162ac4476eda1_00341454 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10938340676160060e126fd9_64457879', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17871672256162ac44753c60_14457891', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17510142486160060e127c00_18958492', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2698557306162ac447546a3_42487549', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_10938340676160060e126fd9_64457879 extends Smarty_Internal_Block
+class Block_17871672256162ac44753c60_14457891 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_10938340676160060e126fd9_64457879',
+    0 => 'Block_17871672256162ac44753c60_14457891',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_17510142486160060e127c00_18958492 extends Smarty_Internal_Block
+class Block_2698557306162ac447546a3_42487549 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_17510142486160060e127c00_18958492',
+    0 => 'Block_2698557306162ac447546a3_42487549',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -110,7 +110,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                             </label>
                         </td>
                          <td>
-                            <div class="img" style="background-image: url('https://assets.wallpapersin4k.org/uploads/2017/04/3D-Food-Wallpaper-18.jpg');"></div>
+                            <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getImagePath();?>
+);"></div>
                         </td>
                        <td>
                             <div class="email">
@@ -135,7 +136,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 " hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"
-                                                <?php if ($_smarty_tpl->tpl_vars['product']->value[0]->getQuantity() == 1) {?>
+                                                <?php if ($_smarty_tpl->tpl_vars['product']->value[1] == 1) {?>
                                                     disabled
                                                 <?php }?>
                                         >
@@ -199,6 +200,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             Totale parziale
                         </span>
                         <span>
+                            <?php $_smarty_tpl->_assignInScope('partialTotal', 0);?>
                              <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;

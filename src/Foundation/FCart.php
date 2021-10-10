@@ -79,7 +79,6 @@ class FCart extends FConnection {
         $quantityMinus = $quantity['quantity'] - 1;
         $query = "update products_carts set quantity = " . $quantityMinus . ' WHERE productId = ' . $product->getId() . ' and cartId = ' . $cart->getId() . ';';
         $stmt = $pdo->prepare($query);
-        //$stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
         //return $stmt->fetchAll();
     }

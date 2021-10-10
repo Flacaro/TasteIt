@@ -20,15 +20,38 @@ class FOrder extends FConnection {
         parent::__construct('orders', 'Order');
     }
 
+    public function loadUsersOrders($userId){
+        $pdo = FConnection::connect();
+        $query="SELECT id, creationDate, total, paymentId FROM orders where customerId=" . $userId . " order by creationDate DESC;";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $order= $stmt->fetchAll();
+        $orders=[];
+        foreach ($order as $ord){
+        $o = new Order();
+        $fpay= new FPaymentMethod();
+        $o->setId($ord[0]);
+        $o->setCreationDate($ord[1]);
+        $o->setTotal($ord[2]);
+        if ($ord[3]==1){
+            $o->setPayment(new Cash);
+        }
+        else{
+            $o->setPayment($fpay->load($ord[3]));
+        }
+        array_push($orders, $o);
+        }
+        return $orders;
+    }
+
     //prendere prodotti, quantità e prezzi di prodotti nell'ordine di id=$id
     public function getOrderProducts($id){
         $pdo = FConnection::connect();
         //ma le immagini non servono?
-        $query = "select name, quantity, price from orders_products where orderId=".$id;
+        $query = "select name, quantity, price, imagePath from orders_products where orderId=".$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $products = $stmt->fetchAll();
-        //$stmt->debugDumpParams();
         $prods = [];
         foreach($products as $p){
             //$prod = new Product;
@@ -36,6 +59,7 @@ class FOrder extends FConnection {
             $prod->setName($p[0]);
             $prod->setQuantity($p[1]);
             $prod->setPrice($p[2]);
+            $prod->setImagePath($p[3]);
             //print_r($prod);
             array_push($prods,$prod);
         }
@@ -120,7 +144,7 @@ class FOrder extends FConnection {
         if ($order->getCoupon()!=NULL){
             $couponId=$order->getCoupon()->getId();
         }
-        else {$couponId=NULL;}
+        else {$couponId="NULL";}
         if (get_class($order->getPayment())=="App\Models\CreditCard") {
             $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, ' . $couponId . ', ' . $order->getCustomerId() . ', 2, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', ' . $order->getPayment()->getId() . ')';
         }
@@ -129,7 +153,7 @@ class FOrder extends FConnection {
         }
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        //$stmt->debugDumpParams();
+        $stmt->debugDumpParams();
         return $pdo->lastInsertId();
 
     }

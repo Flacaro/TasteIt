@@ -56,13 +56,14 @@ class CartController {
          $cart = $fCart->load($cartId);
          $productId = $_POST['productId'];
          $product = $FProduct->load($productId);
-         $quantity = $fCart->getQuantity($cartId, $productId);
-         //print_r($productId);
         if ($_POST['option'] == 'plus') {
-             $fCart->incrementQuantity($cartId, $productId, $quantity[0]);
+        $cart->addToCart($product, 1);
          } else {
-             $fCart->decrementQuantity($cart, $product, $quantity[0]);
+          $cart->addToCart($product, -1);
          }
+         $cus->setCart($cart);
+         $fCart->update($cart);
+         $session->saveUserInSession($cus);
          redirect(url('productsOfCarts', ['cartId' => $cartId]));
      }
  }
@@ -103,9 +104,13 @@ class CartController {
             $productId = $_POST['productId'];
             $product = $FProduct->load($productId);
             if ($_POST['option'] == 'delete') {
+                $cart->deleteFromCart($product);
                 $FCart->deleteFromCart($cart, $product);
-                redirect(url('productsOfCarts', ['cartId' => $cartId]));
+
             }
+            $cus->setCart($cart);
+            $session->saveUserInSession($cus);
+            redirect(url('productsOfCarts', ['cartId' => $cartId]));
         }
     }
 

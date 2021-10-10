@@ -35,11 +35,40 @@
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center pb-5">
-                <div class="col-md-7 heading-section text-center ftco-animated">
+                <div class="col-md-10 heading-section text-center ftco-animated">
                     <span class="subheading">I tuoi ordini</span>
                     <h2>Ordini</h2>
-                    <div>
-                        {foreach $orders as $product}
+                        <div class="row">
+                            <div class="table-wrap" style="overflow:hidden">
+                                <table class="table">
+
+                                    <thead class="thead-primary">
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Totale</th>
+                                        <th>Pagato con</th>
+                                        <th>Dettagli</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {foreach $orders as $order}
+                                        <tr class="alert" role="alert">
+                                            <td>{$order->getCreationDate()}</td>
+                                            <td>{$order->getTotal()}</td>
+                                            <td>{if get_class($order->getPayment())=="App\Models\Cash"}Contanti{else}Carta di Credito{/if}</td>
+                                            <td>
+                                                <form action="/profile/{$order->getId()}/details" method="POST">
+                                                    <input type="text" name="orderId" class="quantity form-control input-number" value="{$order->getId()}" hidden>
+                                                    <button style="margin-right: 1rem" class="btn btn-primary btn-number" type="submit">Vai ai Dettagli</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        {/foreach}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {*{foreach $orders as $product}
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
@@ -66,8 +95,7 @@
                                 </form>
                             </div>
 
-                            {/foreach}
-                    </div>
+                            {/foreach}*}
                 </div>
             </div>
 

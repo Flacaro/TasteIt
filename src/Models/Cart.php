@@ -51,6 +51,13 @@ class Cart {
         }
         return $already;
     }
+    public function deleteFromCart($product){
+        for($i=0; $i < count($this->products);$i++){
+            if ($product->getId()==$this->products[$i][0]->getId()){
+                unset($this->products[$i]);
+            }
+        }
+    }
 
 
 }

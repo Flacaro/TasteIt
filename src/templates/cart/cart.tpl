@@ -62,7 +62,7 @@
                                         <input type="text" name="productId" class="quantity form-control input-number" value="{$product[0]->getId()}" hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"
-                                                {if $product[0]->getQuantity() == 1}
+                                                {if $product[1] == 1}
                                                     disabled
                                                 {/if}
                                         >
@@ -119,6 +119,7 @@
                             Totale parziale
                         </span>
                         <span>
+                            {$partialTotal=0}
                              {foreach $products as $product}
                                  {assign var="partialTotal" value = $partialTotal + $product[0]->getPrice() * $product[1]}
                              {/foreach}

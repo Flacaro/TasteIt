@@ -4,6 +4,13 @@ namespace App\Views;
 
 class VUser {
 
+    public function getOrderDetails($products){
+        $data=[
+            "products"=>$products
+        ];
+        setData("user/orders-details", $data);
+    }
+
     public function getUsers($users) {
         return view('user/user', [
             'users' => $users

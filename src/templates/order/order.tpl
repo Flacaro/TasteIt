@@ -71,7 +71,7 @@
                                         <div class="form-group">
                                              <div class="col-md-12">
                                                 <div class="radio">
-                                                    <label><input type="radio" id="ordine" name="address" value="{$address->getId()}" class="mr-2">{$address->getCity()}</label>
+                                                    <label><input type="radio" id="ordine" name="address" value="{$address->getId()}" class="mr-2" required="required">{$address->getCity()}</label>
                                                 </div>
                                              </div>
                                         </div>
@@ -85,7 +85,7 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="radio">
-                                                <label><input type="radio" name="payment" id="ordine" value="{$card->getId()}" class="mr-2"> {$card->getNumber()}</label>
+                                                <label><input type="radio" name="payment" id="ordine" value="{$card->getId()}" class="mr-2" required="required"> {$card->getNumber()}</label>
                                         </div>
                                     </div>
                                 </div>

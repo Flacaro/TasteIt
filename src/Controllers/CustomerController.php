@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Foundation\FCart;
 use App\Foundation\FCategory;
 use App\Foundation\FFavourites;
+use App\Foundation\FOrder;
 use App\Foundation\FProduct;
 use App\Foundation\FCustomer;
 use App\Models\Cart;
@@ -49,10 +50,11 @@ class CustomerController {
 
     public function getProfile() {
         $session=Session::getInstance();
+        $forder= new FOrder();
         if ($session->isUserLogged()) {
             $customer = $session->loadUser();
             //sono prodotti
-            $orders = $customer->getOrders();
+            $orders = $forder->loadUsersOrders($customer->getId());
             //servono i prodotti che sono nell'ordine
             //printObject($orders);
             $vUser = new VUser();
