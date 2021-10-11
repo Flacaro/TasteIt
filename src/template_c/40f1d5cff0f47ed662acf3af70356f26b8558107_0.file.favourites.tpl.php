@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-29 10:45:15
+/* Smarty version 3.1.39, created on 2021-10-11 15:32:07
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\favourite\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6154279bf208e4_52253840',
+  'unifunc' => 'content_61643cd780cc05_74391451',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40f1d5cff0f47ed662acf3af70356f26b8558107' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\favourite\\favourites.tpl',
-      1 => 1632902349,
+      1 => 1633682530,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6154279bf208e4_52253840 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61643cd780cc05_74391451 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18189576796154279bf16b91_23483982', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_66556362361643cd7801754_54536282', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16348436826154279bf175e1_46754738', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_26588348861643cd7802197_43802495', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_18189576796154279bf16b91_23483982 extends Smarty_Internal_Block
+class Block_66556362361643cd7801754_54536282 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_18189576796154279bf16b91_23483982',
+    0 => 'Block_66556362361643cd7801754_54536282',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ All products<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_16348436826154279bf175e1_46754738 extends Smarty_Internal_Block
+class Block_26588348861643cd7802197_43802495 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_16348436826154279bf175e1_46754738',
+    0 => 'Block_26588348861643cd7802197_43802495',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -92,17 +92,17 @@ $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
-                            <div class="col-md-3 d-flex">
+                          <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
                                     <div class="img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value->getImagePath();?>
 );">
                                         <div class="desc" style="display: flex">
                                             <p class="meta-prod d-flex">
-                                            <form action="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
-/addToCart/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
-" method="POST">
-                                                <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
-                                                <button style="margin-right: 1rem" id="productQuantity" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
+                                            <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+/products" method="POST">
+                                                <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+" hidden>
+                                                <button style="margin-right: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                             </form>
                                             <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 ">
@@ -115,6 +115,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 
                                                     <input hidden type="text" value="DELETE" name="_method">
                                                     <input hidden type="text" value="delete" name="option">
+                                                    <input type="text" name="productId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+" hidden>
 
                                                     <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><i class="fa fa-trash"></i></span></button>
                                                 </div>

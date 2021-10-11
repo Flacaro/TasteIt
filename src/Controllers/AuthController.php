@@ -36,7 +36,6 @@ class AuthController
         $message = "";
         if ($fuser->authentication($email, $password)) {
             $user = $fuser->getByEmail($email);
-            print_r($user);
             $session->saveUserInSession($user);
             redirect(url("home"));
         } else if ($frest->authentication($email, $password)) {

@@ -77,7 +77,6 @@ class ProductController
             $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
             $cart = $fCart->load($cartId);
-            $favId = $cus->getFav()->getId();
             $product=$fProduct->load($productId);
             $q = (int)$_POST['quantity'];
             if($q === 1) {
@@ -91,7 +90,7 @@ class ProductController
             $session->saveUserInSession($cus);
             //$cartProducts = $cart->getProducts();
             $VProduct = new VProduct();
-            $VProduct->getProducts($products, $cartId, $favId);
+            $VProduct->getProducts($products);
 
             }
 

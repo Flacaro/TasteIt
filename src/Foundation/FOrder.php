@@ -48,20 +48,21 @@ class FOrder extends FConnection {
     public function getOrderProducts($id){
         $pdo = FConnection::connect();
         //ma le immagini non servono?
-        $query = "select name, quantity, price, imagePath from orders_products where orderId=".$id;
+        $query = "select name, quantity, price, imagePath, description, productId from orders_products where orderId=".$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $products = $stmt->fetchAll();
         $prods = [];
         foreach($products as $p){
             //$prod = new Product;
-            $prod = new ProductWithQuantity();
+            $prod = new Product();
             $prod->setName($p[0]);
-            $prod->setQuantity($p[1]);
             $prod->setPrice($p[2]);
             $prod->setImagePath($p[3]);
-            //print_r($prod);
-            array_push($prods,$prod);
+            $prod->setDescription($p[4]);
+            $prod->setId($p[5]);
+            $stmt->debugDumpParams();
+            array_push($prods,[$prod, $p[1]]);
         }
         return $prods;
 
@@ -161,7 +162,7 @@ class FOrder extends FConnection {
     function storeOrdersProducts($orderid, $prodWithQuantity){
         $pdo = FConnection::connect();
         foreach ($prodWithQuantity as $product){
-        $query='insert into orders_products (`orderId`, `quantity`, `name`, `description`, `price`) VALUES (\''.$orderid.'\',\''.$product[1].'\',\''.$product[0]->getName().'\',\''.$product[0]->getDescription().'\',\''.$product[0]->getPrice().'\')';
+        $query='insert into orders_products (`orderId`, `quantity`, `name`, `description`, `price`, `productId`) VALUES (\''.$orderid.'\',\''.$product[1].'\',\''.$product[0]->getName().'\',\''.$product[0]->getDescription().'\',\''.$product[0]->getPrice().'\',' .$product[0]->getId().')';
             $stmt = $pdo->prepare($query);
             $stmt->execute();
             //$stmt->debugDumpParams();

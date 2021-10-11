@@ -52,6 +52,7 @@ SimpleRouter::post("/products/{productId}/reviews", [ProductController::class, "
 //SimpleRouter::get("/users/create", [CustomerController::class, "create"]);
 SimpleRouter::get("/profile", [CustomerController::class, "getProfile"]);
 SimpleRouter::post("/profile/{id}/details", [OrderController::class, "getOrderProducts"]);
+SimpleRouter::post("/profile/{id}/add", [OrderController::class, "addToCart"]);
 //?
 SimpleRouter::post("/users/{id}", [CustomerController::class, "update"]);
 

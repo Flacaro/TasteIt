@@ -27,9 +27,6 @@ class OrderController {
     public function visualizeOrderDetails($orderId) {
 
     }
-    public function orderAgain($orderId) {
-
-    }
 
     public function getOrderProducts(){
         $session=Session::getInstance();
@@ -39,7 +36,7 @@ class OrderController {
             $orderId=$_POST['orderId'];
             $o=$forder->getOrderProducts($orderId);
             $vuser=new VUser();
-            $vuser->getOrderDetails($o);
+            $vuser->getOrderDetails($o, $orderId);
         }
     }
 
@@ -123,22 +120,35 @@ class OrderController {
             $order->setAddress($address);
             $id=$forder->store($order);
             $forder->storeOrdersProducts($id, $cart->getProducts());
+            $fcart->emptyCart($cartId);
+            $cart->setProducts([]);
+            $cus->setCart($cart);
+            $session->saveUserInSession($cus);
             $vorder = new VOrder();
             $vorder->summary($cart, $address, $card, $c);
         }
     }
 
-    public function prova(){
-        $customer = new FCategory();
-        $customer->loadCategoryProducts(1);
-        return view('prova', [
-        ]);
-    }
+    public function addToCart(){
+            $session = Session::getInstance();
+            if ($session->isUserLogged()) {
+                $FCart = new FCart();
+                $cart = new Cart();
+                $forder=new FOrder();
+                $cus = $session->loadUser();
+                $cartId = $cus->getCart()->getId();
+                $products = $cart->getProducts();
+                $orderId=$_POST["orderId"];
+                $prod=$forder->getOrderProducts($orderId);
+                $cart=$cus->getCart();
+                foreach($prod as $ordProd){
+                    $cart->addToCart($ordProd[0], $ordProd[1]);
+                }
+               $FCart->update($cart);
+                $cus->setCart($cart);
+                $session->saveUserInSession($cus);
+                redirect(url('productsOfCarts', ['cartId' => $cartId]));
 
-    public function prov(){
-        $product = new FProduct();
-        $product->getAll();
-        return view('prov', [
-        ]);
+                }
     }
 }

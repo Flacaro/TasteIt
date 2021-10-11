@@ -6,11 +6,9 @@ class VProduct {
 
     //ci andrebbe passato come parametro anche il cartId dell'utente loggato
     
-    public function getProducts($products, $cartId, $favId) {
+    public function getProducts($products) {
         $data = [
-            'products' => $products,
-            'cartId' => $cartId,
-            'favId' => $favId
+            'products' => $products
         ];
         return setData("product/all_products", $data);
     }

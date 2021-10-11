@@ -1,70 +1,112 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Profilo{/block}
 {block name=body}
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://s1.1zoom.me/b6359/903/Meat_products_Salt_536334_1920x1080.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
-                <div class="col-md-9 ftco-animated mb-5 text-center">
-                    <p class="breadcrumbs mb-0"><span class="mr-2">
-                            <a href="index.html">Home <i class="fa fa-chevron-right"></i></a>
-                        </span> <span>Prodotti<i class="fa fa-chevron-right"></i></span>
-                    </p>
-                    <h2 class="mb-0 bread">Tutti i prodotti</h2>
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Carrello<i class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">Ordine</h2>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="ftco-section">
+
         <div class="container">
+            <form action="/profile/{$orderId}/add" method="post">
+                <input type="text" name="orderId" class="quantity form-control input-number" value="{$orderId}" hidden>
+                <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
+            </form>
             <div class="row">
-                <div class="col-md-12">
 
-                    <form action="/cart/checkout" method="get">
-                        <input type="text">
-                    <div class="row mb-4">
-                        <div class="col-md-12 d-flex justify-content-between align-items-center">
-                            <button style="margin-right: 1rem" class="btn btn-primary btn-number" type="submit">Ordina di Nuovo</button>
-                        </div>
-                    </div>
-                        
-                    </form>
-                    
-                    <div class="row">
+                <div class="table-wrap" style="overflow:hidden">
+                    <table class="table">
+
+                        <thead class="thead-primary">
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Prodotto</th>
+                            <th>Prezzo</th>
+                            <th>Quantità</th>
+                            <th>Totale</th>
+                            <th>Azioni</th>
+                            <th>&nbsp;</th>
+                        </tr>
+
+                        </thead>
+
+                        <tbody>
                         {foreach $products as $product}
-                            <div class="col-md-3 d-flex">
-                                <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
-                                        <div class="desc" style="display: flex" >
-                                            {if $cartId}
-                                                <form action="/products/{$product->getId()}/carts/{$cartId}" method="POST">
-                                                    <input type="text" id="productQuantity" name="quantity" class="quantity form-control input-number" value="1" hidden>
-                                                    <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
-                                                </form>
-                                            {/if}
-                                            {if $favId}
-                                                <form action="/products/{$product->getId()}/favourites/{$favId}" method="POST">
-                                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
-                                                </form>
-                                            {/if}
-                                            <form action="/products/{$product->getId()}">
-                                                <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
-                                            </form>
-                                        </div>
+                            <tr class="alert" role="alert">
+                                <td>
+                                    <div class="img" style="background-image: url({$product[0]->getImagePath()});"></div>
+                                </td>
+                                <td>
+                                    <div class="email">
+                                        <span>{$product[0]->getName()}</span>
+                                        <span>{$product[0]->getDescription()}</span>
                                     </div>
-                                    <div class="text text-center">
-                                        <h2> {$product->getName()}</h2>
-                                        <h2> {$product->getprice()}</h2>
+                                </td>
+                                <td>{$product[0]->getPrice()}</td>
+                                <td class="quantity">
+                                    <div class="input-group" style="width: 9em">
+                                        {$product[1]}
+
                                     </div>
-                                </div>
-                            </div>
+                                </td>
+                                <td>{math equation="{$product[0]->getPrice()} * {$product[1]}"}</td>
+
+                                <td>
+                                    <div class="desc" style="display: flex">
+                                        <form action="/products/{$product[0]->getId()}">
+                                            <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
                         {/foreach}
-                    </div>
 
-
-                    
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            {*<div class="row justify-content-end">
+                <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+                    <div class="cart-total mb-3">
+                        <h3>Totale del carrello</h3>
+                        <p class="d-flex">
+                        <span>
+                            Totale parziale
+                        </span>
+                            <span>
+                            {$partialTotal=0}
+                                {foreach $products as $product}
+                                    {assign var="partialTotal" value = $partialTotal + $product[0]->getPrice() * $product[1]}
+                                {/foreach}
+                            $ {$partialTotal}
+                        </span>
+                        </p>
+                        <p class="d-flex">
+                            <span>Delivery</span>
+                            <span>$0.00</span>
+                        </p>
+                        <p class="d-flex total-price">
+                            <span>Totale</span>
+                            <span>
+                            *}{**}{*{foreach $products as $product}
+                                {assign var="total" value=$total+$product[3]*$product[5]}
+                            {/foreach}
+                            $ {$total}*}{**}{*
+                             $ {$total}
+                        </span>
+                        </p>
+                    </div>
+                    <p class="text-center"><a href="/cart/checkout" class="btn btn-primary py-3 px-4">checkout</a></p>
+                </div>
+            </div>*}
         </div>
     </section>
 {/block}

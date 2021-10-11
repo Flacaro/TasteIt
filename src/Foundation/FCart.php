@@ -51,6 +51,7 @@ class FCart extends FConnection {
                 $this->addToCart($newCart, $newp[0]);
             }
 
+
         }
     }
 
@@ -152,6 +153,13 @@ class FCart extends FConnection {
         $stmt->execute();
         //$stmt->debugDumpParams();
         return $stmt->fetchAll();
+    }
+
+    function emptyCart($id){
+        $pdo = FConnection::connect();
+        $query="delete from products_carts where cartId=".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 }
 

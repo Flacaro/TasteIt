@@ -23,16 +23,14 @@ class FCustomer extends FConnection {
     //exist ma con un check della password in più
     public function authentication($email, $password){
         $pdo = FConnection::connect();
-        $query = "SELECT * FROM customers WHERE email='".$email. "' AND password='".$password."'";
+        $query = "SELECT password FROM customers WHERE email='".$email. "'";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $row = $stmt->fetch();
-        if($row==NULL) {
-            return false;
-        }
-        else{
-            return true;
-        }
+        if(!password_verify($password, $row[0])){
+            print_r("verify non funzia");
+        };
+        return password_verify($password, $row[0]);
     }
 //load ma con email invece che con id
     public function getByEmail($email){
@@ -99,7 +97,7 @@ class FCustomer extends FConnection {
         $name=$customer->getName();
         $surname=$customer->getSurname();
         $email=$customer->getEmail();
-        $password=$customer->getPassword();
+        $password=password_hash($customer->getPassword(), PASSWORD_DEFAULT);
         $cart= new Cart;
         $fcart=new FCart;
         $c=$fcart->store($cart);
