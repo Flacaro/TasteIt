@@ -27,7 +27,7 @@
 <div class="col-md-7" style="text-align: center" >
     <div class="contact-wrap w-100 p-md-5 p-4">
         <h3 style="padding-bottom: 1rem">Registrati</h3>
-        <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/signup">
+        <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/signup" enctype="multipart/form-data">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -57,6 +57,17 @@
                     <div class="form-group">
                         <label class="label" for="#">Password</label>
                         <input required type="password" class="form-control" style="text-align: center" id="password" name="password" placeholder="Password" minlength="5" maxlength="40">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <label class="label" for="#">Immagine</label>
+                    <div class="form-group">
+
+                        <input type="file"
+                               name="uploadfile"
+                               value="" />
                     </div>
                 </div>
             </div>

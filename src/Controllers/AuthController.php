@@ -85,10 +85,13 @@ class AuthController
                 $fav = new Favourites();
                 $fav->setId(NULL);
                 $FFavourites->store($fav);
-
                 $customer->setCart($cart);
                 $customer->setFav($fav);
+                if (isset($_FILES["uploadfile"])) {
+                    $customer->setImagePath(uploadImage());
+                }
                 $fuser->store($customer);
+
                 redirect(url('/login'));
             } else {
                 $message = "Esiste già un utente con questa e-mail";

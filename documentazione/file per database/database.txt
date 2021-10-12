@@ -21,9 +21,10 @@ id bigint primary key auto_increment not null,
 name varchar(20) not null,
 surname varchar(20) not null,
 email varchar(40) not null unique,
-password varchar(20) not null,
+password varchar(1000) not null,
 favId bigint not null,
 cartId bigint default null,
+imagePath varchar(1024) DEFAULT NULL,
 FOREIGN KEY (favId) references favourites(id),
 FOREIGN KEY (cartId) references carts(id)
 );
@@ -43,7 +44,7 @@ create table restaurant(
 id int primary key auto_increment,
 name varchar(20) not null,
 email varchar(40) not null,
-password varchar(20) not null,
+password varchar(1000) not null,
 addressId bigint not null,
 phone varchar(11) not null,
 foreign key(addressId) references shippingAddresses(id)
@@ -132,6 +133,7 @@ name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
 imagePath varchar(1024),
+productId bigint not null,
 foreign key(orderId) references orders(id)
 );
 
@@ -181,7 +183,7 @@ INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (2,2,1);
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Carne','/src/assets/images/image_5.jpg');
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (2,2);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`) VALUES (1,2,'Margherita','mozarella e pomodoro',6,'/src/assets/images/image_5.jpg');
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`) VALUES (2,5,'Sashimi','riso e salmone',4,'/src/assets/images/image_5.jpg');
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (1,2,'Margherita','mozarella e pomodoro',6,'/src/assets/images/image_5.jpg', 2);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (2,5,'Sashimi','riso e salmone',4,'/src/assets/images/image_5.jpg', 1);
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;

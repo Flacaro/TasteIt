@@ -68,20 +68,18 @@ function setData($view, $data){
         echo '<pre>'; print_r($data); echo '</pre>';
     }
 
-/*class Middleware implements IMiddleware{
-    public function handle(Request $request): void
-    {
 
-        // Authenticate user, will be available using request()->user
-        $session = Session::getInstance();
-        $request->user = $session->isRestaurantLogged();
-
-        // If authentication failed, redirect request to user-login page.
-        if($request->user === null) {
-            $request->setRewriteUrl(url('user.login'));
+    function uploadImage(): string {
+        $msg = "";
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "src/assets/images/" . $filename;
+        if (move_uploaded_file($tempname, $folder)) {
+            $msg = "Image uploaded successfully";
+        } else {
+            $msg = "Failed to upload image";
         }
-
+        return $folder;
     }
-}*/
 
 

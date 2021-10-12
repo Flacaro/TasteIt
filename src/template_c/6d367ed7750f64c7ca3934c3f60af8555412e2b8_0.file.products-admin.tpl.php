@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-08 11:55:03
+/* Smarty version 3.1.39, created on 2021-10-12 11:20:25
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\categories\products-admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6138887765ed37_98759160',
+  'unifunc' => 'content_616553593fa435_23887735',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d367ed7750f64c7ca3934c3f60af8555412e2b8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\categories\\products-admin.tpl',
-      1 => 1631011166,
+      1 => 1633423467,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6138887765ed37_98759160 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616553593fa435_23887735 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21424867606138887764efb3_01790258', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3697576796165535938e3c9_62360324', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_21424867606138887764efb3_01790258 extends Smarty_Internal_Block
+class Block_3697576796165535938e3c9_62360324 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_21424867606138887764efb3_01790258',
+    0 => 'Block_3697576796165535938e3c9_62360324',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -46,13 +46,17 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"><?php echo $_smarty_tpl->tpl_vars['category']->value->getCategoryName();?>
+                    <div class="row">
+                        <h4 class="card-title" style="margin-left:20px"><?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
 </h4>
-                    <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+                        <div style="margin-left:1250px">
+                            <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
 /products/create" class="btn btn-round btn-primary">Aggiungi Prodotto</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="overflow:hidden">
                         <table class="table">
                             <thead class=" text-primary">
                             <th>
@@ -97,17 +101,18 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                         <?php if ($_smarty_tpl->tpl_vars['product']->value->getTimesOrdered() == NULL) {?>0<?php }?>
                                     </td>
                                     <td>
+                                    <div class="row">
                                         <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /edit">
-                                            edit
+                                            <input class="btn btn-primary" style="margin-right:5px" type="submit" value="edit">
                                             </a>
-                                                |
                                         <form method="post" action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
 /delete">
-                                                <input type="submit" value="delete">
+                                            <input class="btn btn-primary" style="margin-right:5px" type="submit" value="delete">
                                         </form>
+                                    </div>
                                     </td>
                                 </tr>
                             <?php

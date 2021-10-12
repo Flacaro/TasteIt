@@ -36,27 +36,16 @@ class ProductController {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        $msg="";
         if (isset($_FILES["uploadfile"])) {
-            $filename = $_FILES["uploadfile"]["name"];
-            $tempname = $_FILES["uploadfile"]["tmp_name"];
-            $folder = "src/assets/images/".$filename;
-            if (move_uploaded_file($tempname, $folder))  {
-                $msg = "Image uploaded successfully";
-                print_r($msg);
-            }else{
-                $msg = "Failed to upload image";
-                print_r($msg);
-            }
             $FProduct = new FProduct();
             $product = new Product();
             $product->setName($name);
             $product->setDescription($description);
             $product->setPrice($price);
-            $product->setImagePath($folder);
+            $product->setImagePath(uploadImage());
             //come prendiamo il categoryId?
             $FProduct->store($product, $id);
-            //redirect(url('/admin/categories/'.$id.'/products'));
+            redirect(url('/admin/categories/'.$id.'/products'));
             }
         else {
             print_r("errore");

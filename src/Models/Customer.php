@@ -10,11 +10,11 @@ class Customer extends User {
     private $fav;
     private $creditCards=[];
     private $orders=[];
+    private $imagePath;
 
     public function __construct() {
         parent::__construct();
     }
-
 
     public function getCreditCards(): array
     {
@@ -66,6 +66,17 @@ class Customer extends User {
     {
         $this->fav = $fav;
     }
+
+    public function getImagePath()
+    {
+        return $this->imagePath;
+    }
+
+    public function setImagePath($imagePath): void
+    {
+        $this->imagePath = $imagePath;
+    }
+
 
 
 }
