@@ -7,7 +7,7 @@
                     <h5 class="card-title">Aggiungi Prodotto</h5>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="/admin/categories/{$categoryId}/products/create">
+                    <form method="POST" action="/admin/categories/{$categoryId}/products/create" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-7 pr-1">
                                 <div class="form-group">
@@ -35,6 +35,9 @@
                                 <button type="submit" class="btn btn-primary btn-round">Crea Prodotto</button>
                             </div>
                         </div>
+                        <input type="file"
+                               name="uploadfile"
+                               value="" />
                     </form>
                 </div>
             </div>

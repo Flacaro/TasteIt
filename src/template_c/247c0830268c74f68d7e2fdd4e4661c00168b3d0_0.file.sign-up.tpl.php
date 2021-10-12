@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-04 16:37:55
+/* Smarty version 3.1.39, created on 2021-10-12 10:10:32
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\auth\sign-up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615b11c3b4ad24_34350785',
+  'unifunc' => 'content_616542f80f8958_32915009',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '247c0830268c74f68d7e2fdd4e4661c00168b3d0' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\auth\\sign-up.tpl',
-      1 => 1633358260,
+      1 => 1634026229,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615b11c3b4ad24_34350785 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616542f80f8958_32915009 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_943101472615b11c3b44527_48712636', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1348202610616542f800d112_88733711', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -105,7 +105,20 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_943101472615b11c3b
         </form>
     </div>
 </div>
+<form method="POST"
+      action=""
+      enctype="multipart/form-data">
+    <input type="file"
+           name="uploadfile"
+           value="" />
 
+    <div>
+        <button type="submit"
+                name="upload">
+            UPLOAD
+        </button>
+    </div>
+</form>
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 <?php echo '<script'; ?>
@@ -145,12 +158,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_943101472615b11c3b
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_943101472615b11c3b44527_48712636 extends Smarty_Internal_Block
+class Block_1348202610616542f800d112_88733711 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_943101472615b11c3b44527_48712636',
+    0 => 'Block_1348202610616542f800d112_88733711',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

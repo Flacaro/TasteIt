@@ -109,8 +109,7 @@ SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])
 SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, "showBest"]);
 SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 
-SimpleRouter::get("/prova", [OrderController::class, "prova"]);
-SimpleRouter::get("/prov", [FavouritesController::class, "getFavouritesProducts"]);
+SimpleRouter::post("/prova", [ProductController::class, "prova"]);
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
 

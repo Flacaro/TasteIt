@@ -191,5 +191,8 @@ class ProductController
            /* redirect(url("getProduct", ['productId' => $productId]));*/
         }
     }
+    function prova() {
+        print_r($_FILES);
+    }
 
 }
