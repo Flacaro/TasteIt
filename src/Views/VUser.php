@@ -33,6 +33,7 @@ class VUser {
             'surname' => $customer->getSurname(),
             'email' => $customer->getEmail(),
             'password' => $customer->getPassword(),
+            'image' => $customer->getImagePath(),
             'orders' => $orders
         ];
         return setData('user/profile', $data);

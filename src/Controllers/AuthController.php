@@ -90,13 +90,16 @@ class AuthController
                 if (isset($_FILES["uploadfile"])) {
                     $customer->setImagePath(uploadImage());
                 }
+                else {
+                    $customer->setImagePath("/src/assets/images/user.jpg");
+                }
                 $fuser->store($customer);
 
                 redirect(url('/login'));
             } else {
                 $message = "Esiste già un utente con questa e-mail";
             }
-            $vauth->visualizeSignUp($message);
+             $vauth->visualizeSignUp($message);
 
         }
 

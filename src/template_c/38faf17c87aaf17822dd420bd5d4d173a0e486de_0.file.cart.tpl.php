@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 14:38:03
+/* Smarty version 3.1.39, created on 2021-10-12 14:44:52
   from 'C:\xampp\htdocs\TasteIt\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615eea2b0d6be8_45667755',
+  'unifunc' => 'content_6165834484bf70_48871505',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38faf17c87aaf17822dd420bd5d4d173a0e486de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\cart\\cart.tpl',
-      1 => 1633610250,
+      1 => 1634029550,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615eea2b0d6be8_45667755 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6165834484bf70_48871505 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1817451262615eea2b0b93b3_52223529', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39279037461658344832d70_69944263', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1515989405615eea2b0ba835_10882196', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_55178272861658344833692_66693885', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1817451262615eea2b0b93b3_52223529 extends Smarty_Internal_Block
+class Block_39279037461658344832d70_69944263 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1817451262615eea2b0b93b3_52223529',
+    0 => 'Block_39279037461658344832d70_69944263',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1515989405615eea2b0ba835_10882196 extends Smarty_Internal_Block
+class Block_55178272861658344833692_66693885 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1515989405615eea2b0ba835_10882196',
+    0 => 'Block_55178272861658344833692_66693885',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -136,7 +136,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 " hidden>
 
                                         <button class="btn btn-primary btn-number" type="submit"
-                                                <?php if ($_smarty_tpl->tpl_vars['product']->value[0]->getQuantity() == 1) {?>
+                                                <?php if ($_smarty_tpl->tpl_vars['product']->value[1] == 1) {?>
                                                     disabled
                                                 <?php }?>
                                         >
@@ -200,6 +200,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             Totale parziale
                         </span>
                         <span>
+                            <?php $_smarty_tpl->_assignInScope('partialTotal', 0);?>
                              <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;

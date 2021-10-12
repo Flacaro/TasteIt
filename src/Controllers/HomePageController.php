@@ -32,6 +32,7 @@ class HomePageController {
                  array_push($topThreeReviews, $product->getReviews()[0]);
              }
          }
+         //printObject($bestReviews[0]->getReviews());
          $bestRateds = [];
          foreach ($b as $best) {
              array_push($bestRateds, $FProduct->load($best[1]));

@@ -14,7 +14,7 @@
                                     <div class="col-lg-2 col-md-4">
                                         <form action="/profile" method="GET">
                                             <div class="sort w-100 text-center ftco-animated">
-                                                <div class="img" style="background-image: url('https://t3.ftcdn.net/jpg/00/22/07/12/500_F_22071281_x49LLrpcJ6ZsCfQBc3XHsZ14U3mNoO5b.jpg');" ></div>
+                                                <div class="img" style="background-image: url('{$image}');" ></div>
                                                 <h3 style="color: white">{$name}</h3>
                                                 <h3 style="color: white">{$surname}</h3>
                                                 <h3 style="color: white">{$email}</h3>

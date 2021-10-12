@@ -164,7 +164,7 @@
                                         <div class="text">
                                             <p class="mb-4">{$review->getComment()}</p>
                                             <div class="d-flex align-items-center">
-                                                <div class="user-img"style="background-image: url('https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png');"></div>
+                                                <div class="img" style="background-image: url('{$image}');" ></div>
                                                 <div class="pl-3">
                                                     <p class="name">{$review->getCustomer()->getName()}</p>
                                                 </div>
