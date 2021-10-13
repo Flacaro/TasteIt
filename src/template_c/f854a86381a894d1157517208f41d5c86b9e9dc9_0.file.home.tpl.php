@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-08 10:42:13
+/* Smarty version 3.1.39, created on 2021-10-13 19:11:32
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61600465650fc4_95579884',
+  'unifunc' => 'content_616713440e2ed3_25607976',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1633682530,
+      1 => 1634144580,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61600465650fc4_95579884 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616713440e2ed3_25607976 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8931856196160046563ef54_68692091', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1190031605616713440c58d4_66572688', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3867328616160046563fc05_65685987', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1797431144616713440c6338_42405514', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_8931856196160046563ef54_68692091 extends Smarty_Internal_Block
+class Block_1190031605616713440c58d4_66572688 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_8931856196160046563ef54_68692091',
+    0 => 'Block_1190031605616713440c58d4_66572688',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_3867328616160046563fc05_65685987 extends Smarty_Internal_Block
+class Block_1797431144616713440c6338_42405514 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_3867328616160046563fc05_65685987',
+    0 => 'Block_1797431144616713440c6338_42405514',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -254,7 +254,8 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
                                             <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['review']->value->getComment();?>
 </p>
                                             <div class="d-flex align-items-center">
-                                                <div class="user-img"style="background-image: url('https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png');"></div>
+                                                <div class="img" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['image']->value;?>
+');" ></div>
                                                 <div class="pl-3">
                                                     <p class="name"><?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getName();?>
 </p>

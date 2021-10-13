@@ -23,6 +23,7 @@ class CategoryController {
         $fcategory = new FCategory();
         $category= new Category();
         $category->setName($name);
+        $category->setImage(uploadImage());
         $fcategory->store($category);
         redirect(url('/admin/categories'));
     }

@@ -7,7 +7,7 @@
                 <h5 class="card-title">Modifica Prodotto</h5>
             </div>
             <div class="card-body">
-                <form method="POST" action="/admin/categories/{$categoryId}/products/{$productId}/edit">
+                <form method="POST" action="/admin/categories/{$categoryId}/products/{$productId}/edit" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-7 pr-1">
                             <div class="form-group">
@@ -31,6 +31,9 @@
                         </div>
                     </div>
                     <div class="row">
+                        <input type="file"
+                               name="uploadfile"
+                               value="" />
                         <div class="update ml-auto mr-auto">
                             <button type="submit" class="btn btn-primary btn-round">Aggiorna Prodotto</button>
                         </div>

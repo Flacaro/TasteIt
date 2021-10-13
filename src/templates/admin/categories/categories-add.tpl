@@ -7,7 +7,7 @@
                     <h5 class="card-title">Aggiungi Categoria</h5>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="">
+                    <form method="POST" action="" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-12 pr-1">
                                 <div class="form-group">
@@ -16,7 +16,9 @@
                                 </div>
                             </div>
                         </div>
-
+                        <input type="file"
+                               name="uploadfile"
+                               value="" />
                         <div class="row">
                             <div class="update ml-auto mr-auto">
                                 <button type="submit" class="btn btn-primary btn-round">Crea Categoria</button>
