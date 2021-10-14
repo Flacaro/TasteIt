@@ -61,13 +61,18 @@ class ProductController {
         $description = $_POST['description'];
         $price = $_POST['price'];
         $timesOrdered=$oldproduct->getTimesOrdered();
-        $imagePath=$oldproduct->getImagePath();
         $product = new Product();
         $product->setName($name);
         $product->setPrice($price);
         $product->setDescription($description);
         $product->setTimesOrdered($timesOrdered);
-        $product->setImagePath($imagePath);
+        if (!$_FILES["uploadfile"]["name"]=="") {
+            $product->setImagePath(uploadImage());
+        }
+        else{
+            $imagePath=$oldproduct->getImagePath();
+            $product->setImagePath($imagePath);
+        }
         $FProduct->update($id, $product);
         redirect(url("/admin/categories/".$catId.'/products'));
     }

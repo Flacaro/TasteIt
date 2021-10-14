@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-22 18:06:17
+/* Smarty version 3.1.39, created on 2021-10-14 19:20:06
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\product-edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614b54792750c5_32431813',
+  'unifunc' => 'content_616866c6e63074_86969720',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd2301cb73be568433011bbf5453a2bd1a25a6a8f' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\product-edit.tpl',
-      1 => 1631096003,
+      1 => 1634232003,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614b54792750c5_32431813 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616866c6e63074_86969720 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_427109788614b5479270ce0_43421541', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1355322623616866c6e5f045_56320760', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_427109788614b5479270ce0_43421541 extends Smarty_Internal_Block
+class Block_1355322623616866c6e5f045_56320760 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_427109788614b5479270ce0_43421541',
+    0 => 'Block_1355322623616866c6e5f045_56320760',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -50,7 +50,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <div class="card-body">
                 <form method="POST" action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['categoryId']->value;?>
 /products/<?php echo $_smarty_tpl->tpl_vars['productId']->value;?>
-/edit">
+/edit" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-7 pr-1">
                             <div class="form-group">
@@ -76,7 +76,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             </div>
                         </div>
                     </div>
+                    <input type="file"
+                                 name="uploadfile"
+                                 value="" />
                     <div class="row">
+
                         <div class="update ml-auto mr-auto">
                             <button type="submit" class="btn btn-primary btn-round">Aggiorna Prodotto</button>
                         </div>

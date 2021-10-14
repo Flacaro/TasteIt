@@ -18,7 +18,7 @@ class FProduct extends FConnection {
 
     function store($product, $categoryId): string {
         $pdo = FConnection::connect();
-        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (\'' . $product->getName() . '\', \'' . $product->getDescription() . '\', ' . $product->getPrice() . ', ' . $categoryId . ', \'' . $product->getImagePath() . '\', ' . '0);';
+        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (\'' . $product->getName() . '\', \'' . $product->getDescription() . '\', ' . $product->getPrice() . ', ' . $categoryId . ', \'/' . $product->getImagePath() . '\', ' . '0);';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $stmt->debugDumpParams();
@@ -221,7 +221,7 @@ class FProduct extends FConnection {
 
     function update($id, $product) {
         $pdo = FConnection::connect();
-        $query = 'UPDATE products SET name = \'' . $product->getName() . '\', description = \'' . $product->getDescription() . '\', price = ' . $product->getPrice() . ' where id='.$id.';';
+        $query = 'UPDATE products SET name = \'' . $product->getName() . '\', description = \'' . $product->getDescription() . '\', price = ' . $product->getPrice() . ', imagePath = \''. $product->getImagePath() .'\' where id='.$id.';';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         //$stmt->debugDumpParams();

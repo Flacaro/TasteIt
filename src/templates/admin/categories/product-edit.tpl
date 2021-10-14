@@ -30,10 +30,11 @@
                             </div>
                         </div>
                     </div>
+                    <input type="file"
+                                 name="uploadfile"
+                                 value="" />
                     <div class="row">
-                        <input type="file"
-                               name="uploadfile"
-                               value="" />
+
                         <div class="update ml-auto mr-auto">
                             <button type="submit" class="btn btn-primary btn-round">Aggiorna Prodotto</button>
                         </div>

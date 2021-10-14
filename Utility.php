@@ -73,13 +73,13 @@ function setData($view, $data){
         $msg = "";
         $filename = $_FILES["uploadfile"]["name"];
         $tempname = $_FILES["uploadfile"]["tmp_name"];
-        $folder = "/src/assets/images/" . $filename;
+        $folder = "src/assets/images/" . $filename;
         if (move_uploaded_file($tempname, $folder)) {
             $msg = "Image uploaded successfully";
         } else {
             $msg = "Failed to upload image";
         }
-        return $folder;
+        return '/'.$folder;
     }
 
 
