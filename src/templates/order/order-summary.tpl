@@ -73,7 +73,11 @@
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <div class="radio">
+                                                    {if get_class($card)=="App\Models\CreditCard"}
                                                     <label>{$card->getNumber()}</label>
+                                                        {else}
+                                                        <label>Contanti</label>
+                                                    {/if}
                                                 </div>
                                             </div>
                                         </div>

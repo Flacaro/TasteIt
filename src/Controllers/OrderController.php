@@ -15,6 +15,7 @@ use App\Foundation\FRestaurant;
 use App\Foundation\FReview;
 use App\Foundation\FPersistentManager;
 use App\Models\Cart;
+use App\Models\Cash;
 use App\Models\Order;
 use App\Models\Product;
 use App\Views\VOrder;
@@ -23,10 +24,6 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 class OrderController {
 
-    //verrebbe richiamata quando si va all'admin panel (mancano anche quella per vedere i clienti più fedeli etc)
-    public function visualizeOrderDetails($orderId) {
-
-    }
 
     public function getOrderProducts(){
         $session=Session::getInstance();
@@ -41,7 +38,6 @@ class OrderController {
     }
 
     public function checkout($valid=true){
-        //session_start();
         $faddress=new FAddress();
         $fcart=new FCart();
         $fpay=new FPaymentMethod();
@@ -98,34 +94,47 @@ class OrderController {
                     self::checkout(false);
                 }
             }
-            $address = $faddress->load($_POST['address']);
-            $card = $fpay->load($_POST['payment']);
-            $order = new Order;
-            $order->setCreationDate(date("Y-m-d"));
-            $subtotal=0;
-            foreach ($cart->getProducts() as $product){
-                $subtotal=$subtotal+$product[0]->getPrice()*$product[1];
+            if ($_POST['address']!=""){
+                if ($_POST['payment']!=""){
+                    $address = $faddress->load($_POST['address']);
+                    if ($_POST['payment']=="cash"){
+                        $pay=new Cash;
+                    }
+                    else{
+                        $pay = $fpay->load($_POST['payment']);
+                    }
+                    $order = new Order;
+                    $order->setCreationDate(date("Y-m-d"));
+                    $subtotal=0;
+                    foreach ($cart->getProducts() as $product){
+                        $subtotal=$subtotal+$product[0]->getPrice()*$product[1];
+                    }
+                    if ($coupon!=""){
+                        $total=$subtotal-($subtotal*$c->getPriceCut()/100);
+                    }
+                    else{$total=$subtotal;}
+                    $order->setTotal($total);
+                    if($_POST['option']!=""){
+                        $order->setCoupon($c);
+                    }
+                    $order->setCustomerId($cus->getId());
+                    $order->setPayment($pay);
+                    $order->setState("Pending");
+                    $order->setAddress($address);
+                    $id=$forder->store($order);
+                    $forder->storeOrdersProducts($id, $cart->getProducts());
+                    $fcart->emptyCart($cartId);
+                    $cart->setProducts([]);
+                    $cus->setCart($cart);
+                    $session->saveUserInSession($cus);
+                    $vorder = new VOrder();
+                    $vorder->summary($cart, $address, $pay, $c);
+                }
             }
-            if ($coupon!=""){
-                $total=$subtotal-($subtotal*$c->getPriceCut()/100);
+            else{
+                self::checkout(false);
             }
-            else{$total=$subtotal;}
-            $order->setTotal($total);
-            if($_POST['option']!=""){
-                $order->setCoupon($c);
-            }
-            $order->setCustomerId($cus->getId());
-            $order->setPayment($card);
-            $order->setState("Pending");
-            $order->setAddress($address);
-            $id=$forder->store($order);
-            $forder->storeOrdersProducts($id, $cart->getProducts());
-            $fcart->emptyCart($cartId);
-            $cart->setProducts([]);
-            $cus->setCart($cart);
-            $session->saveUserInSession($cus);
-            $vorder = new VOrder();
-            $vorder->summary($cart, $address, $card, $c);
+
         }
     }
 

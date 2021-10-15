@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-06 19:08:09
+/* Smarty version 3.1.39, created on 2021-10-15 11:03:44
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order-summary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615dd7f97f5037_08805415',
+  'unifunc' => 'content_616943f00d6722_45099463',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b9db232981adc635db5d6046d84834f6f7fa50a' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order-summary.tpl',
-      1 => 1633540084,
+      1 => 1634288622,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615dd7f97f5037_08805415 (Smarty_Internal_Template $_smarty_tpl) {
+function content_616943f00d6722_45099463 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1979913264615dd7f97e6197_67612077', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_788049253616943f00c4846_12872693', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2083716482615dd7f97e6a34_97315969', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_999623936616943f00c5361_56853299', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9238625615dd7f97e6fa6_47447333', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1543444302616943f00c59c5_31541941', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1979913264615dd7f97e6197_67612077 extends Smarty_Internal_Block
+class Block_788049253616943f00c4846_12872693 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1979913264615dd7f97e6197_67612077',
+    0 => 'Block_788049253616943f00c4846_12872693',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_2083716482615dd7f97e6a34_97315969 extends Smarty_Internal_Block
+class Block_999623936616943f00c5361_56853299 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_2083716482615dd7f97e6a34_97315969',
+    0 => 'Block_999623936616943f00c5361_56853299',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_9238625615dd7f97e6fa6_47447333 extends Smarty_Internal_Block
+class Block_1543444302616943f00c59c5_31541941 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_9238625615dd7f97e6fa6_47447333',
+    0 => 'Block_1543444302616943f00c59c5_31541941',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -162,8 +162,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <div class="radio">
+                                                    <?php if (get_class($_smarty_tpl->tpl_vars['card']->value) == "App\Models\CreditCard") {?>
                                                     <label><?php echo $_smarty_tpl->tpl_vars['card']->value->getNumber();?>
 </label>
+                                                        <?php } else { ?>
+                                                        <label>Contanti</label>
+                                                    <?php }?>
                                                 </div>
                                             </div>
                                         </div>

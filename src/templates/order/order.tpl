@@ -22,7 +22,7 @@
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
                     {if $valid==false}
-                        <h3>Il coupon non è valido. Inseriscine uno valido o procedi all'acquisto.</h3>
+                        <h3>Alcuni campi non sono validi. Inserisci un indirizzo, un metodo di pagamento e, se hai un coupon, assicurati che sia valido.</h3>
                     {/if}
                     <form method="post" action="/cart/checkout/confirmation" id="ordine">
                     <div class="row mt-5 pt-3 d-flex">
@@ -81,6 +81,13 @@
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
                                 <h3 class="billing-heading mb-4">Metodo di pagamento</h3>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="radio">
+                                            <label><input type="radio" name="payment" id="ordine" value="cash" class="mr-2" required="required"> Contanti</label>
+                                        </div>
+                                    </div>
+                                </div>
                                 {foreach $cards as $card}
                                 <div class="form-group">
                                     <div class="col-md-12">

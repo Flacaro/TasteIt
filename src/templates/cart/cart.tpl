@@ -141,7 +141,7 @@
                         </span>
                     </p>
                 </div>
-                <p class="text-center"><a href="/cart/checkout" class="btn btn-primary py-3 px-4">checkout</a></p>
+                <p class="text-center"><a href="/cart/checkout" class="btn btn-primary py-3 px-4 {if $products==array()}disabled{/if}">checkout</a></p>
             </div>
         </div>
     </div>

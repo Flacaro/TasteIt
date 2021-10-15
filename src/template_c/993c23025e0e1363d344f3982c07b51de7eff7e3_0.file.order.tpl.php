@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-10 17:10:53
+/* Smarty version 3.1.39, created on 2021-10-15 10:56:37
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6163027d873e45_68007396',
+  'unifunc' => 'content_61694245719af0_86806697',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '993c23025e0e1363d344f3982c07b51de7eff7e3' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order.tpl',
-      1 => 1633878650,
+      1 => 1634288125,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6163027d873e45_68007396 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61694245719af0_86806697 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9614298556163027d858a99_57908274', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_125726163261694245707240_59577551', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21332261336163027d860a90_46034540', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_185650271861694245707b97_33209834', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1950544876163027d8610d7_17264740', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_82435178461694245708144_77011458', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_9614298556163027d858a99_57908274 extends Smarty_Internal_Block
+class Block_125726163261694245707240_59577551 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_9614298556163027d858a99_57908274',
+    0 => 'Block_125726163261694245707240_59577551',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_21332261336163027d860a90_46034540 extends Smarty_Internal_Block
+class Block_185650271861694245707b97_33209834 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_21332261336163027d860a90_46034540',
+    0 => 'Block_185650271861694245707b97_33209834',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_1950544876163027d8610d7_17264740 extends Smarty_Internal_Block
+class Block_82435178461694245708144_77011458 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1950544876163027d8610d7_17264740',
+    0 => 'Block_82435178461694245708144_77011458',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -99,7 +99,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
                     <?php if ($_smarty_tpl->tpl_vars['valid']->value == false) {?>
-                        <h3>Il coupon non è valido. Inseriscine uno valido o procedi all'acquisto.</h3>
+                        <h3>Alcuni campi non sono validi. Inserisci un indirizzo, un metodo di pagamento e, se hai un coupon, assicurati che sia valido.</h3>
                     <?php }?>
                     <form method="post" action="/cart/checkout/confirmation" id="ordine">
                     <div class="row mt-5 pt-3 d-flex">
@@ -159,6 +159,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
                                 <h3 class="billing-heading mb-4">Metodo di pagamento</h3>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="radio">
+                                            <label><input type="radio" name="payment" id="ordine" value="cash" class="mr-2" required="required"> Contanti</label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cards']->value, 'card');
 $_smarty_tpl->tpl_vars['card']->do_else = true;
