@@ -44,7 +44,7 @@ class FCoupon extends FConnection {
         $query="insert into coupons (`id`, `priceCut`, `expirationDate`) values ('".$coupon->getId()."', '".$coupon->getPriceCut()."', '".$coupon->getExpirationDate()."')";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        //$stmt->debugDumpParams();
+        $stmt->debugDumpParams();
     }
     //non diamo la possibilità di fare update al coupon, quindi niente update
 

@@ -22,13 +22,13 @@
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
                     {if $valid==false}
-                        <h3>Alcuni campi non sono validi. Inserisci un indirizzo, un metodo di pagamento e, se hai un coupon, assicurati che sia valido.</h3>
+                        <h3>Alcuni campi non sono validi. Inserisci un indirizzo, un metodo di pagamento valido e, se hai un coupon, assicurati che sia valido.</h3>
                     {/if}
                     <form method="post" action="/cart/checkout/confirmation" id="ordine">
                     <div class="row mt-5 pt-3 d-flex">
                         <div class="col-md-4 d-flex">
                             <div class="cart-detail cart-total p-3 p-md-4">
-                                <h3 class="billing-heading mb-4">Cart Total</h3>
+                                <h3 class="billing-heading mb-4">Totale</h3>
 
                                 <p class="d-flex">
                                     <span>Subtotal</span>
@@ -71,7 +71,7 @@
                                         <div class="form-group">
                                              <div class="col-md-12">
                                                 <div class="radio">
-                                                    <label><input type="radio" id="ordine" name="address" value="{$address->getId()}" class="mr-2" required="required">{$address->getCity()}</label>
+                                                    <label><input type="radio" id="ordine" name="address" value="{$address->getId()}" class="mr-2" required="required">Via {$address->getStreet()} {$address->getHomeNumber()}, {$address->getCity()}</label>
                                                 </div>
                                              </div>
                                         </div>
@@ -97,6 +97,7 @@
                                     </div>
                                 </div>
                                 {/foreach}
+                                <a href="/cards/add" class="btn btn-primary w-50">Aggiungi una Carta</a>
                             </div>
                         </div>
                     </div>

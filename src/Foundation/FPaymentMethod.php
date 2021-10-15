@@ -22,6 +22,14 @@ class FPaymentMethod {
         return $c;
     }
 
+    function store($card, $customerId){
+        $pdo = FConnection::connect();
+        $query='INSERT INTO `customers_paymentmethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES ('.$customerId. ', ' . $card->getNumber() . ', \'' . $card->getexpirationDate() . '\', '. $card->getCvv() . ', \''. $card->getCardHolder() .'\')';
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $stmt->debugDumpParams();
+    }
+
     function delete($id) {
             $pdo = FConnection::connect();
             $query = 'delete from paymentMethods where id = ' . $id . ';';

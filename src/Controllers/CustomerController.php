@@ -6,9 +6,11 @@ use App\Foundation\FCart;
 use App\Foundation\FCategory;
 use App\Foundation\FFavourites;
 use App\Foundation\FOrder;
+use App\Foundation\FPaymentMethod;
 use App\Foundation\FProduct;
 use App\Foundation\FCustomer;
 use App\Models\Cart;
+use App\Models\CreditCard;
 use App\Models\Favourites;
 use App\Models\PaymentMethod;
 use App\Models\Product;
@@ -62,13 +64,31 @@ class CustomerController {
         }
     }
 
-        public function getId($id){
+    public function getId($id){
         $FUsers = new FCustomer();
         $user = $FUsers->load($id);
         $vUser = new VUser();
         $vUser->getCartId($user);
      }
 
+    public function showAddCard(){
+        $vUser = new VUser();
+        $vUser->getAddCard("");
+    }
 
+    public function addCard(){
+        $session=Session::getInstance();
+        $fpay=new FPaymentMethod;
+        if ($session->isUserLogged()) {
+            $customer = $session->loadUser();
+            $c=new CreditCard;
+            $c->setNumber($_POST["number"]);
+            $c->setCardHolder($_POST["holder"]);
+            $c->setExpirationDate($_POST["date"]);
+            $c->setCvv($_POST["cvv"]);
+            $fpay->store($c, $customer->getId());
+        }
+        redirect("/cart/checkout");
+    }
 
 }

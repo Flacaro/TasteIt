@@ -45,4 +45,9 @@ class VUser {
             'cartId' => $user->getCartId(),
         ]);
     }
+
+    public function getAddCard($data1){
+        $data=[];
+        return setData("user/cards-add", $data);
+    }
 }

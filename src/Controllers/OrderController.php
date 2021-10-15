@@ -102,6 +102,9 @@ class OrderController {
                     }
                     else{
                         $pay = $fpay->load($_POST['payment']);
+                        if ($pay->getExpirationDate()<date("Y-m-d")){
+                            self::checkout(false);
+                        }
                     }
                     $order = new Order;
                     $order->setCreationDate(date("Y-m-d"));
@@ -128,7 +131,7 @@ class OrderController {
                     $cus->setCart($cart);
                     $session->saveUserInSession($cus);
                     $vorder = new VOrder();
-                    $vorder->summary($cart, $address, $pay, $c);
+                    //$vorder->summary($cart, $address, $pay, $c);
                 }
             }
             else{
