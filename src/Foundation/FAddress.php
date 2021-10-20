@@ -12,15 +12,12 @@ class FAddress extends FConnection{
     }
 
     public function load($id){
-        //print_r($id);
         $pdo = FConnection::connect();
         $query = 'select * from shippingaddresses where id = '. $id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $address = $stmt->fetchAll();
+        $address = $stmt->fetch();
         $add = new Address();
-        //address è vuoto
-        print_r($query);
         $add->setId($address[0]);
         $add->setCap($address[1]);
         $add->setCity($address[2]);
