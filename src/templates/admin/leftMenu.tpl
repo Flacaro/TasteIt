@@ -42,7 +42,7 @@
         </div>
         <div class="sidebar-wrapper" style="overflow:hidden">
             <ul class="nav">
-                <li class="active ">
+                <li class="">
                     <a href="/admin">
                         <i class="nc-icon nc-chart-bar-32"></i>
                         <p>Statistiche</p>

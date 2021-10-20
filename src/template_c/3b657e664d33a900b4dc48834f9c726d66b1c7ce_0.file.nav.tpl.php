@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-10 10:50:13
+/* Smarty version 3.1.39, created on 2021-10-20 15:19:21
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6162a945b38ee1_35905526',
+  'unifunc' => 'content_617017596993d9_56515732',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1633855199,
+      1 => 1634735959,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6162a945b38ee1_35905526 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617017596993d9_56515732 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -92,7 +92,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item active"><a href="/aboutUs" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/aboutUs" class="nav-link">About</a></li>
                 <?php if ((isset($_smarty_tpl->tpl_vars['favId']->value))) {?>
                     <li class="nav-item"><a href="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
 " class="nav-link">Preferiti</a></li>

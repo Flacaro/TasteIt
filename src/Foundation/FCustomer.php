@@ -164,7 +164,7 @@ class FCustomer extends FConnection {
 
     public function loadNameSurname($id){
         $pdo = FConnection::connect();
-        $query = 'select name, surname from customers where id='.$id;
+        $query = 'select name, surname from customers where id = '.$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $cus = $stmt->fetch();
