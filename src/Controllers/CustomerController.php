@@ -2,6 +2,7 @@
 
 
 namespace App\Controllers;
+use App\Foundation\FAddress;
 use App\Foundation\FCart;
 use App\Foundation\FCategory;
 use App\Foundation\FFavourites;
@@ -9,6 +10,7 @@ use App\Foundation\FOrder;
 use App\Foundation\FPaymentMethod;
 use App\Foundation\FProduct;
 use App\Foundation\FCustomer;
+use App\Models\Address;
 use App\Models\Cart;
 use App\Models\CreditCard;
 use App\Models\Favourites;
@@ -73,7 +75,12 @@ class CustomerController {
 
     public function showAddCard(){
         $vUser = new VUser();
-        $vUser->getAddCard("");
+        $vUser->getAddCard();
+    }
+
+    public function showAddAddress(){
+        $vUser = new VUser();
+        $vUser->getAddAddress();
     }
 
     public function addCard(){
@@ -89,6 +96,21 @@ class CustomerController {
             $fpay->store($c, $customer->getId());
         }
         redirect("/cart/checkout");
+    }
+
+    public function addAddress(){
+        $session=Session::getInstance();
+        $faddress=new FAddress;
+        if ($session->isUserLogged()) {
+            $customer = $session->loadUser();
+            $a=new Address;
+            $a->setCap($_POST["cap"]);
+            $a->setCity($_POST["city"]);
+            $a->setStreet($_POST["street"]);
+            $a->setHomeNumber($_POST["number"]);
+            $faddress->store($a, $customer->getId());
+        }
+        //redirect("/cart/checkout");
     }
 
 }

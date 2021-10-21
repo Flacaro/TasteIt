@@ -14,11 +14,12 @@
     </section>
 
     <section class="ftco-section">
-
         <div class="container">
             <form action="/profile/{$orderId}/add" method="post">
                 <input type="text" name="orderId" class="quantity form-control input-number" value="{$orderId}" hidden>
-                <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
+                <div style="display: flex; justify-content: center;">
+                    <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
+                </div>
             </form>
             <div class="row">
 

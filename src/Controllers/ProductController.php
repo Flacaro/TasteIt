@@ -187,8 +187,7 @@ class ProductController
             $review->setCustomer($cus);
             array_push($rev, $review);
             $FReview->createReview($review, $productId);
-            self::getProduct($productId);
-           /* redirect(url("getProduct", ['productId' => $productId]));*/
+            redirect(url("getProduct", ["productId"=> $productId]));
         }
     }
     function prova() {

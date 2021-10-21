@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-11 16:39:25
+/* Smarty version 3.1.39, created on 2021-10-21 14:19:20
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\user\orders-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61644c9dce6958_80476373',
+  'unifunc' => 'content_61715ac8ba2ad1_71893720',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1595d0423ca436a052e6a200c4ef3bf7525cdb09' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\user\\orders-details.tpl',
-      1 => 1633963163,
+      1 => 1634818749,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61644c9dce6958_80476373 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61715ac8ba2ad1_71893720 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_116577867961644c9dccf745_15629354', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_135584092961715ac8b90626_82284969', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40253509661644c9dcd16c0_00025098', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_97216427561715ac8b91209_79832086', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_116577867961644c9dccf745_15629354 extends Smarty_Internal_Block
+class Block_135584092961715ac8b90626_82284969 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_116577867961644c9dccf745_15629354',
+    0 => 'Block_135584092961715ac8b90626_82284969',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_40253509661644c9dcd16c0_00025098 extends Smarty_Internal_Block
+class Block_97216427561715ac8b91209_79832086 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_40253509661644c9dcd16c0_00025098',
+    0 => 'Block_97216427561715ac8b91209_79832086',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -74,13 +74,14 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\selen\\OneDrive\\
     </section>
 
     <section class="ftco-section">
-
         <div class="container">
             <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['orderId']->value;?>
 /add" method="post">
                 <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['orderId']->value;?>
 " hidden>
-                <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
+                <div class="" style="display: flex; justify-content: center;">
+                    <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
+                </div>
             </form>
             <div class="row">
 

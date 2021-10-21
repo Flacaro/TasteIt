@@ -164,7 +164,7 @@
                                         <div class="text">
                                             <p class="mb-4">{$review->getComment()}</p>
                                             <div class="d-flex align-items-center">
-                                                <div class="img" style="background-image: url('{$image}');" ></div>
+                                                <div class="user-img" style="background-image: url({$review->getCustomer()->getImagePath()});" ></div>
                                                 <div class="pl-3">
                                                     <p class="name">{$review->getCustomer()->getName()}</p>
                                                 </div>
@@ -196,13 +196,13 @@
                             <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
                                 <div class="desc" style="display: flex" >
                                     {if $cartId}
-                                        <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">
+                                        <form action="/home/products/{$product->getId()}/carts/{$cartId}" method="POST">
                                             <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
                                             <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                         </form>
                                     {/if}
                                     {if $favId}
-                                        <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
+                                        <form action="/home/products/{$product->getId()}/favourites/{$favId}" method="POST">
                                             <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                         </form>
                                     {/if}

@@ -26,7 +26,7 @@
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
                         {if $avg != 0}
-                        <a href="#" class="mr-2">{$avg}</a>
+                        <a href="#" class="mr-2">{round($avg, 1)}</a>
 
                         <a href="#">
                             <span>
@@ -116,11 +116,10 @@
                                 <h3 class="mb-4">{count($reviews)} Recensione/i</h3>
                                 {foreach $reviews as $review}
                                 <div class="review">
-                                    <div class="user-img" style="background-image: url(../../src/assets/images/Fla.jpg)"></div>
+                                    <div class="user-img" style="background-image: url({$review->getCustomer()->getImagePath()})"></div>
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">{$review->getCustomer()->getName()} {$review->getCustomer()->getSurname()}</span>
-                                            <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>

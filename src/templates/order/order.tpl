@@ -76,6 +76,7 @@
                                              </div>
                                         </div>
                                     {/foreach}
+                                <a href="/address/add" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
                             </div>
                         </div>
                         <div class="col-md-4">

@@ -87,19 +87,20 @@ class AuthController
                 $FFavourites->store($fav);
                 $customer->setCart($cart);
                 $customer->setFav($fav);
-                if (isset($_FILES["uploadfile"])) {
+                if (!$_FILES["uploadfile"]["name"]=="") {
                     $customer->setImagePath(uploadImage());
+                    print_r("prova a prende l'immagine comunque");
                 }
                 else {
                     $customer->setImagePath("/src/assets/images/user.jpg");
                 }
                 $fuser->store($customer);
 
-                redirect(url('/login'));
+                //redirect(url('/login'));
             } else {
                 $message = "Esiste già un utente con questa e-mail";
             }
-             $vauth->visualizeSignUp($message);
+             //$vauth->visualizeSignUp($message);
 
         }
 

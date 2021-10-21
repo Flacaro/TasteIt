@@ -24,7 +24,7 @@
                         <div class="col-md-4 px-1">
                             <div class="form-group">
                                 <label>Data di Scadenza</label>
-                                <input type="date" class="form-control" name="expiration">
+                                <input type="date" class="form-control" name="expiration" min="{date("Y-m-d")}">
                             </div>
                         </div>
                     </div>

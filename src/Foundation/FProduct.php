@@ -94,6 +94,7 @@ class FProduct extends FConnection {
         $stmt->execute();
         $reviews = $stmt->fetchAll();
         $rev = [];
+        //$stmt->debugDumpParams();
         //print_r($reviews);
         foreach($reviews as $review) {
             $r = new Review();
@@ -101,10 +102,9 @@ class FProduct extends FConnection {
             $r->setId($review[0]);
             $r->setStars($review[1]);
             $r->setComment($review[2]);
-            $r->setCustomer($customer->loadNameSurname($review[3]));
+            $r->setCustomer($customer->load($review[3]));
             array_push($rev, $r);
         }
-        //print_r($rev);
         return $rev;
     }
 
@@ -126,7 +126,7 @@ class FProduct extends FConnection {
             $r->setId($review[0]);
             $r->setStars($review[1]);
             $r->setComment($review[2]);
-            $r->setCustomer($customer->loadNameSurname($review[3]));
+            $r->setCustomer($customer->load($review[3]));
             array_push($rev, $r);
             $p->setId($review[4]);
             $p->setName($review[5]);

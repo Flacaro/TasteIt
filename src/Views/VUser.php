@@ -46,8 +46,13 @@ class VUser {
         ]);
     }
 
-    public function getAddCard($data1){
+    public function getAddCard(){
         $data=[];
         return setData("user/cards-add", $data);
+    }
+
+    public function getAddAddress(){
+        $data=[];
+        return setData("user/addresses-add", $data);
     }
 }

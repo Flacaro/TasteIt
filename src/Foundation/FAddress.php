@@ -60,18 +60,16 @@ class FAddress extends FConnection{
         }
     }
 
-    public function store($address){
+    public function store($address, $customerid){
         $pdo = FConnection::connect();
-        $id=$address->getId();
         $cap=$address->getCap();
         $city=$address->getCity();
         $street=$address->getStreet();
         $homenumber=$address->getHomeNumber();
-        //QUESTO LO PRENDIAMO DALLA SESSIONE
-        $customerid="dalla sessione";
-        $query="INSERT INTO `shippingaddresses`VALUES ('.$id.','.$cap.','.$city.','.$street.','.$homenumber.','.$customerid.')";
+        $query="INSERT INTO `shippingaddresses` (`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (".$cap.",\"".$city."\" , \"" . $street ."\",".$homenumber.",".$customerid.")";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
+        $stmt->debugDumpParams();
     }
 
     public function update($address){

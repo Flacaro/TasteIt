@@ -38,6 +38,7 @@
                 <div class="col-md-10 heading-section text-center ftco-animated">
                     <span class="subheading">I tuoi ordini</span>
                     <h2>Ordini</h2>
+                    {if $orders!=[]}
                         <div class="row">
                             <div class="table-wrap" style="overflow:hidden">
                                 <table class="table">
@@ -68,6 +69,9 @@
                                 </table>
                             </div>
                         </div>
+                        {else}
+                        <h3>Non hai effettuato ordini.</h3>
+                    {/if}
                         {*{foreach $orders as $product}
                             <div class="col-md-3 d-flex">
                                 <div class="product ftco-animated">
