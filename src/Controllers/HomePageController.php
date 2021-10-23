@@ -57,40 +57,18 @@ class HomePageController {
 
      }
 
-     //funzione più compatta
     public function addToCartFromHome($productId) {
         $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
-        if ($session->isUserLogged()) {
-            $cus = $session->loadUser();
-            $cartId = $cus->getCart()->getId();
-            $cart = $fCart->load($cartId);
-            $product=$fProduct->load($productId);
-            $cart->addToCart($product, 1);
-            $cus->setCart($cart);
-            $fCart->update($cart);
-            $session->saveUserInSession($cus);
-            /*if(!sizeof($cartProducts)) {
-                $fProduct->addToCart($productId, $cartId, 1);
-                //print_r("add se cartProducts è vuoto");
-            }
-
-            $cartProd = array_filter($cartProducts, function($cartProduct) use ($productId) {
-                return $cartProduct[0]->getId() === $productId;
-            });
-
-            if(!sizeof($cartProd) and sizeof($cartProducts)) {
-                $fProduct->addToCart($productId, $cartId, 1);
-                //print_r("add se cartProd è vuoto");
-            }
-            else {
-                $fCart->incrementQuantity($cart->getId(), $productId, array_pop($cartProd)[1]);
-                //print_r("increment");
-            }*/
-
-            //print_r($_SESSION["cart"]);
-        }
+        $cus = $session->loadUser();
+        $cartId = $cus->getCart()->getId();
+        $cart = $fCart->load($cartId);
+        $product=$fProduct->load($productId);
+        $cart->addToCart($product, 1);
+        $cus->setCart($cart);
+        $fCart->update($cart);
+        $session->saveUserInSession($cus);
 
         redirect('/home');
     }
@@ -99,12 +77,9 @@ class HomePageController {
     public function addToFavouritesFromHome($productId) {
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
-
-        if ($session->isUserLogged()) {
-            $cus = $session->loadUser();
-            $favId = $cus->getFav()->getId();
-            $favProducts = $FFavourites->getFavouritesProducts($favId);
-            //printObject($favProducts);
+        $cus = $session->loadUser();
+        $favId = $cus->getFav()->getId();
+        $favProducts = $FFavourites->getFavouritesProducts($favId);
 
             if(!sizeof($favProducts)) {
                 $FFavourites->addToFavourites($favId, $productId);
@@ -117,8 +92,6 @@ class HomePageController {
             if(!sizeof($favProd) and sizeof($favProducts)) {
                 $FFavourites->addToFavourites($favId, $productId);
             }
-        }
-
         redirect('/home');
      }
 

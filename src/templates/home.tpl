@@ -66,15 +66,14 @@
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
-                        <span class="subheading">Since 1998</span>
-                        <h2 class="mb-4">Prova la cucina del ristorante giapponese più vecchio de L'Aquila</h2>
+                        <span class="subheading">Since 1970</span>
+                        <h2 class="mb-4">Prova la cucina del ristorante più vecchio de L'Aquila</h2>
 
-                        <p>descrizione placeholder</p>
-                        <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
-                        non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
+                        <p>Il nostro locale accogliente, ricco di storia e di tradizione, il profumo del basilico appena colto, la bontà dei nostri ingredienti saranno per voi un'esperienza da ricordare. Venite a trovarci, vi stupiremo!</p>
+                        <p>Da oggi puoi provare la nostra cucina direttamente a casa tua. Comincia subito ad ordinare per ricevere ogni mese esclusivi coupon.</p>
                         <p class="year">
-                            <strong class="number" data-number="23">23</strong>
-                            <span>Years of Experience In Business</span>
+                            <strong class="number" data-number="51"></strong>
+                            <span>Anni di Esperienza</span>
                         </p>
                     </div>
                 </div>

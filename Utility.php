@@ -7,14 +7,16 @@ use Pecee\Http\Request;
 function setData($view, $data){
         $session=Session::getInstance();
         $fcat=new \App\Foundation\FCategory();
+        $frestaurant=new \App\Foundation\FRestaurant();
+        $categories=$fcat->getAll();
+        $data["categories"]=$categories;
+        $data["restaurant"]=$frestaurant->getByEmail("tasteit@gmail.com");
         if ($session->isUserLogged()){
             $user=$session->loadUser();
-            $categories=$fcat->getAll();
             $cart=$user->getCart();
             $favId = $user->getFav()->getId();
             //printObject($cart);
             $cartProducts=$cart->getProducts();
-            $data["categories"]=$categories;
             $data["cartId"]=$cart->getId();
             $data["cartProducts"]= $cartProducts;
             $data["user"]= $user;
@@ -22,8 +24,6 @@ function setData($view, $data){
             return view($view, $data);
         }
         else{
-            $categories=$fcat->getAll();
-            $data["categories"]=$categories;
             $data["user"]=NULL;
             return view($view, $data);
         }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-17 20:45:02
+/* Smarty version 3.1.39, created on 2021-10-23 17:47:04
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611c03ae77f824_82211836',
+  'unifunc' => 'content_61742e78ed1576_76746985',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6738d912b6d19a1462b485aa303d6d1114d83839' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\footer.tpl',
-      1 => 1629225893,
+      1 => 1635004023,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_611c03ae77f824_82211836 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61742e78ed1576_76746985 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="ftco-footer">
     <div class="container">
         <div class="row mb-5">
@@ -28,8 +28,9 @@ function content_611c03ae77f824_82211836 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2 logo"><a href="#">Taste<span>It</span></a></h2>
                     <p>Orari di consegna:</p>
+                    <p>Dal Martedi alla Domenica</p>
                     <p>Dalle 18:20 alle 22:00</p>
-                    <p>• DOMENICA CHIUSO •</p>
+                    <p>• LUNEDI CHIUSO •</p>
                 </div>
             </div>
             <div class="col-sm-12 col-md">
@@ -38,10 +39,9 @@ function content_611c03ae77f824_82211836 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">Information</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+                        <li><a href="/aboutUs""><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+                        <li><a href="/products"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
+                        <li><a href="/contact"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,9 +50,14 @@ function content_611c03ae77f824_82211836 (Smarty_Internal_Template $_smarty_tpl)
                     <h2 class="ftco-heading-2">Contact Us</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+                            <li><span class="icon fa fa-map marker"></span><span class="text">Via <?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getAddress()->getStreet();?>
+ <?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getAddress()->getHomeNumber();?>
+, <?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getAddress()->getCity();?>
+</span></li>
+                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text"><?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getPhone();?>
+</span></a></li>
+                            <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text"><?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getEmail();?>
+</span></a></li>
                         </ul>
                     </div>
                 </div>

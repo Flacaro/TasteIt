@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-21 13:12:59
+/* Smarty version 3.1.39, created on 2021-10-23 18:13:50
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61714b3b4af387_43410017',
+  'unifunc' => 'content_617434be101871_80449828',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1634814778,
+      1 => 1635005624,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61714b3b4af387_43410017 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617434be101871_80449828 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_52849249161714b3b49b200_84309316', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1775744625617434be0ebe59_52368279', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_153625666561714b3b49bb17_56329354', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1430809139617434be0ec7b8_61978341', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_52849249161714b3b49b200_84309316 extends Smarty_Internal_Block
+class Block_1775744625617434be0ebe59_52368279 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_52849249161714b3b49b200_84309316',
+    0 => 'Block_1775744625617434be0ebe59_52368279',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_153625666561714b3b49bb17_56329354 extends Smarty_Internal_Block
+class Block_1430809139617434be0ec7b8_61978341 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_153625666561714b3b49bb17_56329354',
+    0 => 'Block_1430809139617434be0ec7b8_61978341',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -125,15 +125,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
-                        <span class="subheading">Since 1998</span>
-                        <h2 class="mb-4">Prova la cucina del ristorante giapponese più vecchio de L'Aquila</h2>
+                        <span class="subheading">Since 1970</span>
+                        <h2 class="mb-4">Prova la cucina del ristorante più vecchio de L'Aquila</h2>
 
-                        <p>descrizione placeholder</p>
-                        <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
-                        non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
+                        <p>Il nostro locale accogliente, ricco di storia e di tradizione, il profumo del basilico appena colto, la bontà dei nostri ingredienti saranno per voi un'esperienza da ricordare. Venite a trovarci, vi stupiremo!</p>
+                        <p>Da oggi puoi provare la nostra cucina direttamente a casa tua. Comincia subito ad ordinare per ricevere ogni mese esclusivi coupon.</p>
                         <p class="year">
-                            <strong class="number" data-number="23">23</strong>
-                            <span>Years of Experience In Business</span>
+                            <strong class="number" data-number="51"></strong>
+                            <span>Anni di Esperienza</span>
                         </p>
                     </div>
                 </div>

@@ -65,83 +65,29 @@ class ProductController
     }
 
 
-    public function addProductToCart($productId)
-    {
-        // il carrello si prende dalla sessione dall'utente loggato
+    public function addProductToCart($productId){
         $session = Session::getInstance();
         $fProduct = new FProduct();
         $fCart = new FCart();
         $products = $fProduct->getAll();
-
-        if ($session->isUserLogged()) {
-            $cus = $session->loadUser();
-            $cartId = $cus->getCart()->getId();
-            $cart = $fCart->load($cartId);
-            $product=$fProduct->load($productId);
-            $q = (int)$_POST['quantity'];
-            if($q === 1) {
-                $cart->addToCart($product, 1);
-            }
-            else {
-                $cart->addToCart($product, $q);
-            }
-            $cus->setCart($cart);
-            $fCart->update($cart);
-            $session->saveUserInSession($cus);
-            //$cartProducts = $cart->getProducts();
-            $VProduct = new VProduct();
-            $VProduct->getProducts($products);
-
-            }
-
- /*           if (!sizeof($cartProducts)) {
-                $fProduct->addToCart($productId, $cartId, $q);
-                print_r("add se l'array è vuoto");
-            }
-
-            $cartProd = array_filter($cartProducts, function ($cartProduct) use ($productId) {
-                return $cartProduct[0]->getId() === $productId;
-            });
-            //print_r($cartProd);
-
-            if (!sizeof($cartProd) and sizeof($cartProducts)) {
-                $fProduct->addToCart($productId, $cartId, $q);
-                print_r("add se l'array cartProd è vuoto");
-
-            } elseif (sizeof($cartProd) and sizeof($cartProducts)) {
-                $oldQuantity = $fCart->getQuantity($cartId, $productId);
-                print_r($oldQuantity);
-                $newQuantity = $q + $oldQuantity[0];
-                $fCart->updateQuantity($cartId, $productId, $newQuantity);
-                print_r("update");
-            }
-
-            $cus->setCart($cart);
-            $fCart->update($cart);
-            $session->saveUserInSession($cus);
-
-        }*/
+        $cus = $session->loadUser();
+        $cartId = $cus->getCart()->getId();
+        $cart = $fCart->load($cartId);
+        $product=$fProduct->load($productId);
+        $q = (int)$_POST['quantity'];
+        if($q === 1) {
+            $cart->addToCart($product, 1);
+        }
+        else {
+            $cart->addToCart($product, $q);
+        }
+        $cus->setCart($cart);
+        $fCart->update($cart);
+        $session->saveUserInSession($cus);
+        $VProduct = new VProduct();
+        $VProduct->getProducts($products);
     }
 
-
- /*   public function addProductFromAll($productId)
-    {
-        $session = Session::getInstance();
-        $fProduct = new FProduct();
-        $fCart = new FCart();
-        if ($session->isUserLogged()) {
-            $cus = $session->loadUser();
-            $cartId = $cus->getCart()->getId();
-            $cart = $fCart->load($cartId);
-            $product=$fProduct->load($productId);
-            $cart->addToCart($product, 1);
-            $cus->setCart($cart);
-            $fCart->update($cart);
-            $session->saveUserInSession($cus);
-        }
-
-        redirect('/products');
-    }*/
 
 
     public function addToFavourites($productId)
@@ -149,7 +95,6 @@ class ProductController
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
 
-        if ($session->isUserLogged()) {
             $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
             $favProducts = $FFavourites->getFavouritesProducts($favId);
@@ -165,8 +110,6 @@ class ProductController
             if (!sizeof($favProd) and sizeof($favProducts)) {
                 $FFavourites->addToFavourites($favId, $productId);
             }
-        }
-
         redirect('/products');
 
     }
@@ -176,7 +119,6 @@ class ProductController
     {
         $session = Session::getInstance();
         $rev = [];
-        if ($session->isUserLogged()) {
             $cus = $session->loadUser();
             $FReview = new FReview();
             $stars = $_POST['stars'];
@@ -188,10 +130,6 @@ class ProductController
             array_push($rev, $review);
             $FReview->createReview($review, $productId);
             redirect(url("getProduct", ["productId"=> $productId]));
-        }
-    }
-    function prova() {
-        print_r($_FILES);
     }
 
 }

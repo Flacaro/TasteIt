@@ -60,8 +60,6 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
     SimpleRouter::get("/cards/add", [CustomerController::class, "showAddCard"]);
     SimpleRouter::post("/cards/add", [CustomerController::class, "addCard"]);
     SimpleRouter::get("/address/add", [CustomerController::class, "showAddAddress"]);
-
-
     SimpleRouter::post("/address/add", [CustomerController::class, "addAddress"]);
 
     SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);

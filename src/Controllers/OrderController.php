@@ -26,15 +26,11 @@ class OrderController {
 
 
     public function getOrderProducts(){
-        $session=Session::getInstance();
         $forder=new FOrder();
-        if ($session->isUserLogged()){
-            $cus = $session->loadUser();
             $orderId=$_POST['orderId'];
             $o=$forder->getOrderProducts($orderId);
             $vuser=new VUser();
             $vuser->getOrderDetails($o, $orderId);
-        }
     }
 
     public function checkout($valid=true){
@@ -143,7 +139,6 @@ class OrderController {
 
     public function addToCart(){
             $session = Session::getInstance();
-            if ($session->isUserLogged()) {
                 $FCart = new FCart();
                 $cart = new Cart();
                 $forder=new FOrder();
@@ -162,5 +157,4 @@ class OrderController {
                 redirect(url('productsOfCarts', ['cartId' => $cartId]));
 
                 }
-    }
 }

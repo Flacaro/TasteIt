@@ -55,12 +55,8 @@ class CustomerController {
     public function getProfile() {
         $session=Session::getInstance();
         $forder= new FOrder();
-
             $customer = $session->loadUser();
-            //sono prodotti
             $orders = $forder->loadUsersOrders($customer->getId());
-            //servono i prodotti che sono nell'ordine
-            //printObject($orders);
             $vUser = new VUser();
             $vUser->getProfile($customer, $orders);
 
@@ -86,7 +82,6 @@ class CustomerController {
     public function addCard(){
         $session=Session::getInstance();
         $fpay=new FPaymentMethod;
-        if ($session->isUserLogged()) {
             $customer = $session->loadUser();
             $c=new CreditCard;
             $c->setNumber($_POST["number"]);
@@ -94,14 +89,12 @@ class CustomerController {
             $c->setExpirationDate($_POST["date"]);
             $c->setCvv($_POST["cvv"]);
             $fpay->store($c, $customer->getId());
-        }
         redirect("/cart/checkout");
     }
 
     public function addAddress(){
         $session=Session::getInstance();
         $faddress=new FAddress;
-        if ($session->isUserLogged()) {
             $customer = $session->loadUser();
             $a=new Address;
             $a->setCap($_POST["cap"]);
@@ -109,8 +102,7 @@ class CustomerController {
             $a->setStreet($_POST["street"]);
             $a->setHomeNumber($_POST["number"]);
             $faddress->store($a, $customer->getId());
-        }
-        //redirect("/cart/checkout");
+        redirect("/cart/checkout");
     }
 
 }
