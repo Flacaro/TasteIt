@@ -47,7 +47,7 @@
                       {$order->getState()}
                     </td>
                     <td>
-                      <a href="/admin/orders/{$order->getId()}" class="btn btn-round btn-primary">Dettagli Ordine</a>
+                      <a href="/admin/orders/{$order->getId()}" class="btn btn-primary">Dettagli Ordine</a>
                     </td>
                   </tr>
                 {/foreach}

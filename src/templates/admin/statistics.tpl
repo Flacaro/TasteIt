@@ -22,7 +22,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-calendar-o"></i>
+                            <i class="fa fa-calendar-o" style="color:#9C9C9C"></i>
                             {date("F")}
                         </div>
                     </div>
@@ -48,8 +48,58 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-calendar-o"></i>
+                            <i class="fa fa-calendar-o" style="color:#9C9C9C"></i>
                             {date("F")}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-bag-16" style="color: cornflowerblue"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-category">Prodotto più venduto</p>
+                                    <p class="card-title">{$best->getName()}<p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            € {$best->getPrice()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-bag-16" style="color: #FFE22B"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-category">Prodotto meno venduto</p>
+                                    <p class="card-title">{$worst->getName()}<p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            € {$worst->getPrice()}
                         </div>
                     </div>
                 </div>
@@ -68,9 +118,9 @@
                     var dataFirst = {
                         data: {$data},
                         fill: false,
-                        borderColor: '#fbc658',
+                        borderColor: '#B7472A',
                         backgroundColor: 'transparent',
-                        pointBorderColor: '#fbc658',
+                        pointBorderColor: '#B7472A',
                         pointRadius: 4,
                         pointHoverRadius: 4,
                         pointBorderWidth: 8,

@@ -14,11 +14,13 @@ class StatisticController{
 
     public function visualizeStatistics(){
         $fOrder=new \App\Foundation\admin\FOrder();
+        $fProducts=new \App\Foundation\admin\FProduct();
         $monthly=$fOrder->getMonthlyRevenues();
         $ordersQuantity=$fOrder->getMonthlyOrdersQuantity();
+        $bestSeller=$fProducts->getBestSeller();
+        $worstSeller=$fProducts->getWorstSeller();
         $data=$fOrder->getOrdersPerMonth();
         $data1=[];
-        //print_r($data);
         for($i=1; $i<=12; $i++){
             $data1[$i]=0;
         }
@@ -27,8 +29,7 @@ class StatisticController{
         }
         //print_r($data1);
         $vAdmin= new VStatistic();
-        //perchè array??
-        $vAdmin->visualizeStatistics($monthly[0],$ordersQuantity[0], json_encode(array_values($data1)));
+        $vAdmin->visualizeStatistics($monthly[0],$ordersQuantity[0], json_encode(array_values($data1)), $bestSeller, $worstSeller);
     }
 
 }

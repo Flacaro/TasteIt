@@ -36,7 +36,7 @@
                     <div class="row">
 
                         <div class="update ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary btn-round">Aggiorna Prodotto</button>
+                            <button type="submit" class="btn btn-primary">Aggiorna Prodotto</button>
                         </div>
                     </div>
                 </form>

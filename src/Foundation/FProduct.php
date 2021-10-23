@@ -232,7 +232,7 @@ class FProduct extends FConnection {
         $query = "DELETE FROM products where id = " . $id . ";";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        //$stmt->debugDumpParams();
+        $stmt->debugDumpParams();
     }
 
 

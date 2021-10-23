@@ -19,6 +19,39 @@ class FProduct
 
     }
 
+    function getBestSeller(){
+        $pdo = FConnection::connect();
+        $query="SELECT * FROM products ORDER BY timesOrdered DESC LIMIT 1;";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $prod = $stmt->fetch();
+        //print_r($prods);
+            $p = new Product();
+            $p->setId($prod[0]);
+            $p->setName($prod[1]);
+            $p->setDescription($prod[2]);
+            $p->setPrice($prod[3]);
+            $p->setImagePath($prod[5]);
+            $p->setTimesOrdered($prod[6]);
+        return $p;
+    }
+
+    function getWorstSeller(){
+        $pdo = FConnection::connect();
+        $query="SELECT * FROM products ORDER BY timesOrdered LIMIT 1;";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $prod = $stmt->fetch();
+        $p = new Product();
+        $p->setId($prod[0]);
+        $p->setName($prod[1]);
+        $p->setDescription($prod[2]);
+        $p->setPrice($prod[3]);
+        $p->setImagePath($prod[5]);
+        $p->setTimesOrdered($prod[6]);
+        return $p;
+    }
+
 
     function getAll() {
         $pdo = FConnection::connect();

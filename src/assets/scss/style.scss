@@ -213,7 +213,7 @@ h1, h2, h3, h4, h5,
 				padding: 20px;
 				border-bottom: 1px solid rgba(0,0,0,.05);
 				white-space: normal;
-				&:last-child(){
+				&:last-child{
 					border: none;
 				}
 				.img{
@@ -1189,12 +1189,12 @@ h1, h2, h3, h4, h5,
 			.email{
 				span{
 					display: block;
-					&:first-child(){
+					&:first-child{
 						font-weight: 500;
 						font-size: 20px;
 						color: $black;
 					}
-					&:last-child(){
+					&:last-child{
 						color: rgba(0,0,0,.3);
 					}
 				}

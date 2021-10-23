@@ -7,8 +7,8 @@
                   <div class="card-header">
                     <div class="row" style="margin-left:15px">
                       <h4 class="card-title"> Categorie di prodotti</h4>
-                      <div style="margin-left:1200px">
-                        <a href="/admin/categories/add" class="btn btn-round btn-primary">Aggiungi Categoria</a>
+                      <div style="display:flex; justify-content: flex-end">
+                        <a href="/admin/categories/add" class="btn btn-primary">Aggiungi Categoria</a>
                       </div>
                     </div>
                   </div>

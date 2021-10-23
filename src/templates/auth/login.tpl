@@ -51,6 +51,15 @@
                     </div>
                 </div>
         </form>
+        <form action="/signup" method="get">
+            <div class="col-md-12 mt-4">
+                <div class="form-group">
+                    <input hidden type="text" value="signup" name="option">
+                    <input type="submit" value="Registrati" class="btn btn-primary">
+                    <div class="submitting"></div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 

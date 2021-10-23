@@ -68,13 +68,13 @@ $pale-bg:                    #FFFCF5 !default;
 $medium-pale-bg:             #F1EAE0 !default;
 $default-body-bg:            #f4f3ef !default;
 
-$primary-color:              #51cbce !default;
+$primary-color:              #B7472A !default;
 $primary-states-color:       darken($primary-color, 10%) !default;
 
 $success-color:              #6bd098 !default;
 $success-states-color:       darken($success-color, 10%) !default;
 
-$info-color:                 #51bcda !default;
+$info-color:                 #B7472A !default;
 $info-states-color:          darken($info-color, 10%) !default;
 
 $warning-color:              #fbc658 !default;
@@ -161,7 +161,7 @@ $border-radius-extreme:         12px !default;
 $card-black-color:          #252422 !default;
 $card-muted-color:          #ccc5b9 !default;
 
-$card-background-blue:      #b8d8d8 !default;
+$card-background-blue:      #B7472A !default;
 $card-font-blue:            #506568 !default;
 $card-subtitle-blue:        #7a9e9f !default;
 
@@ -323,8 +323,8 @@ $height-icon-message-sm: 		 20px;
 $width-icon-message-sm:			 20px;
 
 $white-navbar:                  rgba(#FFFFFF, .96);
-$primary-navbar:                rgba(#34ACDC, .98);
-$info-navbar:                   rgba(#5BCAFF, .98);
+$primary-navbar:                rgba(#B7472A, .98);
+$info-navbar:                   rgba(#B7472A, .98);
 $success-navbar:                rgba(#4CD964, .98);
 $warning-navbar:                rgba(#FF9500, .98);
 $danger-navbar:                 rgba(#FF4C40, .98);

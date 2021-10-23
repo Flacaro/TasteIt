@@ -31,6 +31,8 @@ class ProductController {
         $vadmin->productsBestSellers($data);
     }
 
+
+
     //questo va nel product controller dell'admin
     public function store($id) {
         $name = $_POST['name'];

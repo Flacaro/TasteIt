@@ -55,7 +55,7 @@ class CustomerController {
     public function getProfile() {
         $session=Session::getInstance();
         $forder= new FOrder();
-        if ($session->isUserLogged()) {
+
             $customer = $session->loadUser();
             //sono prodotti
             $orders = $forder->loadUsersOrders($customer->getId());
@@ -63,7 +63,7 @@ class CustomerController {
             //printObject($orders);
             $vUser = new VUser();
             $vUser->getProfile($customer, $orders);
-        }
+
     }
 
     public function getId($id){

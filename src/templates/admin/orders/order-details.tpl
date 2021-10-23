@@ -41,13 +41,13 @@
                             {foreach $products as $product}
                             <tr>
                                 <td>
-                                    {$product->getName()}
+                                    {$product[0]->getName()}
                                 </td>
                                 <td>
-                                    {$product->getQuantity()}
+                                    {$product[1]}
                                 </td>
                                 <td>
-                                    ${$product->getPrice()*$product->getQuantity()}
+                                    ${$product[0]->getPrice()*$product[1]}
                                 </td>
                             </tr>
                             {/foreach}

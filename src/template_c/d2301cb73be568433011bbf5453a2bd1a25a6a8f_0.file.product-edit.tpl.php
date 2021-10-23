@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 19:20:06
+/* Smarty version 3.1.39, created on 2021-10-23 10:43:14
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\product-edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616866c6e63074_86969720',
+  'unifunc' => 'content_6173cb2295e7f2_20233697',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd2301cb73be568433011bbf5453a2bd1a25a6a8f' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\product-edit.tpl',
-      1 => 1634232003,
+      1 => 1634978592,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616866c6e63074_86969720 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6173cb2295e7f2_20233697 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1355322623616866c6e5f045_56320760', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19891902736173cb2295a4d4_68009596', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_1355322623616866c6e5f045_56320760 extends Smarty_Internal_Block
+class Block_19891902736173cb2295a4d4_68009596 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_1355322623616866c6e5f045_56320760',
+    0 => 'Block_19891902736173cb2295a4d4_68009596',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -82,7 +82,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="row">
 
                         <div class="update ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary btn-round">Aggiorna Prodotto</button>
+                            <button type="submit" class="btn btn-primary">Aggiorna Prodotto</button>
                         </div>
                     </div>
                 </form>

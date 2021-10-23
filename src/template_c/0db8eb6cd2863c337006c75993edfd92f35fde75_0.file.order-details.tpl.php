@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-26 15:20:48
+/* Smarty version 3.1.39, created on 2021-10-23 11:29:18
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\orders\order-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615073b077fcf3_48236238',
+  'unifunc' => 'content_6173d5ee700791_97312506',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0db8eb6cd2863c337006c75993edfd92f35fde75' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\orders\\order-details.tpl',
-      1 => 1632662447,
+      1 => 1634981357,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615073b077fcf3_48236238 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6173d5ee700791_97312506 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_136209004615073b076e335_36446592', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15366608296173d5ee6e9366_72255487', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_136209004615073b076e335_36446592 extends Smarty_Internal_Block
+class Block_15366608296173d5ee6e9366_72255487 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_136209004615073b076e335_36446592',
+    0 => 'Block_15366608296173d5ee6e9366_72255487',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -92,15 +92,15 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
                             <tr>
                                 <td>
-                                    <?php echo $_smarty_tpl->tpl_vars['product']->value->getName();?>
+                                    <?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getName();?>
 
                                 </td>
                                 <td>
-                                    <?php echo $_smarty_tpl->tpl_vars['product']->value->getQuantity();?>
+                                    <?php echo $_smarty_tpl->tpl_vars['product']->value[1];?>
 
                                 </td>
                                 <td>
-                                    $<?php echo $_smarty_tpl->tpl_vars['product']->value->getPrice()*$_smarty_tpl->tpl_vars['product']->value->getQuantity();?>
+                                    $<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getPrice()*$_smarty_tpl->tpl_vars['product']->value[1];?>
 
                                 </td>
                             </tr>
