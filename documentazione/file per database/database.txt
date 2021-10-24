@@ -145,6 +145,15 @@ foreign key(favId) references favourites(id),
 foreign key(productId) references products(id)
 );
 
+CREATE TRIGGER deleteProducts before delete
+ON products
+FOR EACH ROW
+delete from products_carts where productId=old.id
+
+CREATE TRIGGER deleteProducts2 before delete
+ON products
+FOR EACH ROW
+delete from products_favourites where productId=old.id
 
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();

@@ -39,20 +39,18 @@ class OrderController {
         $fpay=new FPaymentMethod();
         $fcoupon=new FCoupon();
         $session=Session::getInstance();
-        if ($session->isUserLogged()){
-            $cus = $session->loadUser();
-            $cartId=$cus->getCart()->getId();
-            $cart=$fcart->load($cartId);
-            $cId=$cus->getId();
-            $addresses = $faddress->loadFromCustomerId($cId);
-            $cards= $fpay->loadFromCustomerId($cId);
-            $c="";
-            if (isset($_POST['option']) and $_POST['option']!=""){
-                $c=$fcoupon->load($_POST['option']);
-            }
-            $vorder=new VOrder();
-            $vorder->checkout($cart, $addresses, $cards, $c, $valid);
+        $cus = $session->loadUser();
+        $cartId=$cus->getCart()->getId();
+        $cart=$fcart->load($cartId);
+        $cId=$cus->getId();
+        $addresses = $faddress->loadFromCustomerId($cId);
+        $cards= $fpay->loadFromCustomerId($cId);
+        $c="";
+        if (isset($_POST['option']) and $_POST['option']!=""){
+            $c=$fcoupon->load($_POST['option']);
         }
+        $vorder=new VOrder();
+        $vorder->checkout($cart, $addresses, $cards, $c, $valid);
     }
 
     public function applyCoupon(){
@@ -74,67 +72,65 @@ class OrderController {
         $faddress = new FAddress();
         $fcart = new FCart();
         $fpay = new FPaymentMethod();
-        if ($session->isUserLogged()) {
-            $cus = $session->loadUser();
-            $cartId = $cus->getCart()->getId();
-            $cart = $fcart->load($cartId);
-            $coupon = $_POST['option'];
-            $c=NULL;
-            if ($_POST['option']!=""){
+        $cus = $session->loadUser();
+        $cartId = $cus->getCart()->getId();
+        $cart = $fcart->load($cartId);
+        $coupon = $_POST['option'];
+        $c=NULL;
+        if ($_POST['option']!=""){
 
-                if ($fcoupon->exist($coupon)){
-                    $c = $fcoupon->load($_POST['option']);
-                }
-                else{
-                   //ti deve rimandare alla stessa pagina ma con un messaggio che indica che il coupon non esiste
-                    self::checkout(false);
-                }
-            }
-            if ($_POST['address']!=""){
-                if ($_POST['payment']!=""){
-                    $address = $faddress->load($_POST['address']);
-                    if ($_POST['payment']=="cash"){
-                        $pay=new Cash;
-                    }
-                    else{
-                        $pay = $fpay->load($_POST['payment']);
-                        if ($pay->getExpirationDate()<date("Y-m-d")){
-                            self::checkout(false);
-                        }
-                    }
-                    $order = new Order;
-                    $order->setCreationDate(date("Y-m-d"));
-                    $subtotal=0;
-                    foreach ($cart->getProducts() as $product){
-                        $subtotal=$subtotal+$product[0]->getPrice()*$product[1];
-                    }
-                    if ($coupon!=""){
-                        $total=$subtotal-($subtotal*$c->getPriceCut()/100);
-                    }
-                    else{$total=$subtotal;}
-                    $order->setTotal($total);
-                    if($_POST['option']!=""){
-                        $order->setCoupon($c);
-                    }
-                    $order->setCustomerId($cus->getId());
-                    $order->setPayment($pay);
-                    $order->setState("Pending");
-                    $order->setAddress($address);
-                    $id=$forder->store($order);
-                    $forder->storeOrdersProducts($id, $cart->getProducts());
-                    $fcart->emptyCart($cartId);
-                    $cart->setProducts([]);
-                    $cus->setCart($cart);
-                    $session->saveUserInSession($cus);
-                    $vorder = new VOrder();
-                    //$vorder->summary($cart, $address, $pay, $c);
-                }
+            if ($fcoupon->exist($coupon)){
+                $c = $fcoupon->load($_POST['option']);
             }
             else{
+                //ti deve rimandare alla stessa pagina ma con un messaggio che indica che il coupon non esiste
                 self::checkout(false);
             }
-
         }
+        if ($_POST['address']!=""){
+            if ($_POST['payment']!=""){
+                $address = $faddress->load($_POST['address']);
+                if ($_POST['payment']=="cash"){
+                    $pay=new Cash;
+                }
+                else{
+                    $pay = $fpay->load($_POST['payment']);
+                    if ($pay->getExpirationDate()<date("Y-m-d")){
+                        self::checkout(false);
+                    }
+                }
+                $order = new Order;
+                $order->setCreationDate(date("Y-m-d"));
+                $subtotal=0;
+                foreach ($cart->getProducts() as $product){
+                    $subtotal=$subtotal+$product[0]->getPrice()*$product[1];
+                }
+                if ($coupon!=""){
+                    $total=$subtotal-($subtotal*$c->getPriceCut()/100);
+                } else {
+                    $total = $subtotal;
+                }
+                $order->setTotal($total);
+                if ($_POST['option'] != "") {
+                    $order->setCoupon($c);
+                }
+                $order->setCustomerId($cus->getId());
+                $order->setPayment($pay);
+                $order->setState("Pending");
+                $order->setAddress($address);
+                $id = $forder->store($order);
+                $forder->storeOrdersProducts($id, $cart->getProducts());
+                $fcart->emptyCart($cartId);
+                $cart->setProducts([]);
+                $cus->setCart($cart);
+                $session->saveUserInSession($cus);
+                $vorder = new VOrder();
+                //$vorder->summary($cart, $address, $pay, $c);
+            }
+        } else {
+            self::checkout(false);
+        }
+
     }
 
     public function addToCart(){

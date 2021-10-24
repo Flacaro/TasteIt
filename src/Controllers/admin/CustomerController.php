@@ -11,38 +11,35 @@ class CustomerController
 {
 
     function index() {
-        $vcustomer = new VCustomer();
-        $fcustomer = new FCustomer();
+        $vCustomer = new VCustomer();
+        $fCustomer = new FCustomer();
 
-        return $vcustomer->showAll($fcustomer->getAll());
+        return $vCustomer->showAll($fCustomer->getAll());
     }
 
-    //la tabella customers_coupons serve davvero? (Bisogna fare in modo che i coupon vengano effettivamente inviati)
+
     public function sendCoupon() {
-        $fcustomer = new FCustomer();
-        $fcoupon=new FCoupon;
+        $fCoupon = new FCoupon;
         //aggiornare la quantità nella tabella customers_coupons
         $customersId = $_POST['customers'];
         $pricecut = $_POST['pricecut'];
         $expiration = $_POST['expiration'];
-        foreach($customersId as $c){
-            $coupon=new Coupon();
+        foreach ($customersId as $c) {
+            $coupon = new Coupon();
             $coupon->setPriceCut($pricecut);
             $coupon->setExpirationDate($expiration);
-            $fcoupon->store($coupon);
-            //print_r($c);
+            $fCoupon->store($coupon);
         }
-        //$fcustomer->sendCouponToTopTen($couponId, $customersId);
         redirect(url('showAllCustomers'));
-
     }
 
+
     public function showBest() {
-        $vcustomer = new VCustomer();
-        $fcoupon = new FCoupon();
-        $fcustomers = new FCustomer();
+        $vCustomer = new VCustomer();
+        $fCoupon = new FCoupon();
+        $fCustomers = new FCustomer();
         $previousMonth = date('m') - 1;
-        return $vcustomer->showBest($fcoupon->getAll(), $fcustomers->topTenCustomersByTotal($previousMonth));
+        return $vCustomer->showBest($fCoupon->getAll(), $fCustomers->topTenCustomersByTotal($previousMonth));
     }
 
 }
