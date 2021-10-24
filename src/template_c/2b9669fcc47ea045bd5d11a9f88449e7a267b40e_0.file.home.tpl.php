@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-20 15:18:24
+/* Smarty version 3.1.39, created on 2021-10-24 12:57:08
   from 'C:\xampp\htdocs\TasteIt\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61701720927fd5_93332623',
+  'unifunc' => 'content_61753c048abff6_04442618',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b9669fcc47ea045bd5d11a9f88449e7a267b40e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\home.tpl',
-      1 => 1634735899,
+      1 => 1635071877,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61701720927fd5_93332623 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61753c048abff6_04442618 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10744340796170172090d8b5_52292277', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_104079257061753c0480a096_54878814', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_305470226170172090e697_92825398', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_176771258761753c04810ec3_68984303', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_10744340796170172090d8b5_52292277 extends Smarty_Internal_Block
+class Block_104079257061753c0480a096_54878814 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_10744340796170172090d8b5_52292277',
+    0 => 'Block_104079257061753c0480a096_54878814',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_305470226170172090e697_92825398 extends Smarty_Internal_Block
+class Block_176771258761753c04810ec3_68984303 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_305470226170172090e697_92825398',
+    0 => 'Block_176771258761753c04810ec3_68984303',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -125,15 +125,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
-                        <span class="subheading">Since 1998</span>
-                        <h2 class="mb-4">Prova la cucina del ristorante giapponese più vecchio de L'Aquila</h2>
+                        <span class="subheading">Since 1970</span>
+                        <h2 class="mb-4">Prova la cucina del ristorante più vecchio de L'Aquila</h2>
 
-                        <p>descrizione placeholder</p>
-                        <p>secondo paragrafo blah blah continuo a scrivere solo perchè così si allunga l'immagine e viene più carino sennò è tagliata brutta lalalalalala scrivo almeno un paio di righe dai
-                        non so più che scrivere aaaaaaaagsgsjsiakalksjksjakal</p>
+                        <p>Il nostro locale accogliente, ricco di storia e di tradizione, il profumo del basilico appena colto, la bontà dei nostri ingredienti saranno per voi un'esperienza da ricordare. Venite a trovarci, vi stupiremo!</p>
+                        <p>Da oggi puoi provare la nostra cucina direttamente a casa tua. Comincia subito ad ordinare per ricevere ogni mese esclusivi coupon.</p>
                         <p class="year">
-                            <strong class="number" data-number="23">23</strong>
-                            <span>Years of Experience In Business</span>
+                            <strong class="number" data-number="51"></strong>
+                            <span>Anni di Esperienza</span>
                         </p>
                     </div>
                 </div>
@@ -254,8 +253,8 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
                                             <p class="mb-4"><?php echo $_smarty_tpl->tpl_vars['review']->value->getComment();?>
 </p>
                                             <div class="d-flex align-items-center">
-                                                <div class="img" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['image']->value;?>
-');" ></div>
+                                                <div class="user-img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getImagePath();?>
+);" ></div>
                                                 <div class="pl-3">
                                                     <p class="name"><?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getName();?>
 </p>
@@ -296,16 +295,16 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 );">
                                 <div class="desc" style="display: flex" >
                                     <?php if ($_smarty_tpl->tpl_vars['cartId']->value) {?>
-                                        <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/add/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
+                                        <form action="/home/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/carts/<?php echo $_smarty_tpl->tpl_vars['cartId']->value;?>
 " method="POST">
                                             <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
                                             <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
                                         </form>
                                     <?php }?>
                                     <?php if ($_smarty_tpl->tpl_vars['favId']->value) {?>
-                                        <form action="/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/addToFavourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
+                                        <form action="/home/products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
+/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
 " method="POST">
                                             <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
                                         </form>

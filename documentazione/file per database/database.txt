@@ -145,16 +145,6 @@ foreign key(favId) references favourites(id),
 foreign key(productId) references products(id)
 );
 
-CREATE TRIGGER deleteProducts before delete
-ON products
-FOR EACH ROW
-delete from products_carts where productId=old.id
-
-CREATE TRIGGER deleteProducts2 before delete
-ON products
-FOR EACH ROW
-delete from products_favourites where productId=old.id
-
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();
@@ -179,9 +169,9 @@ INSERT INTO `orderstates`(`state`) VALUES ('Completed');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,2345671,'2027-09-21',324,'Mario Rossi');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,23490871,'2025-05-14',784,'Sandro Rosa');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,87698971,'2030-01-04',521,'Michela Bianchi');
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',100,'14:00:00','C614c7de6d8a19',1,1,'Pending',1,1);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',100,'15:20:00','C614c7de6d8a19',1,1,'Denied',2,2);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',100,'20:00:00','C614c7de6d8345',2,1,'Accepted',3,2);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',64,'14:00:00','C614c7de6d8a19',1,1,'Pending',1,1);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',6,'15:20:00','C614c7de6d8a19',1,1,'Denied',2,2);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',6,'20:00:00','C614c7de6d8345',2,1,'Accepted',3,2);
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/kind-1.jpg');
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pizza','/src/assets/images/margherita.jpg');
 INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Sashimi','buono',8,1,'/src/assets/images/image_1.jpg', 20);
@@ -190,10 +180,20 @@ INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5'
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('3','non male',2,2);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (2,2,1);
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Carne','/src/assets/images/image_5.jpg');
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pizza','/src/assets/images/margherita.jpg');
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (2,2);
 INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (1,2,'Margherita','mozarella e pomodoro',6,'/src/assets/images/margherita.jpg', 2);
 INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (2,5,'Sashimi','riso e salmone',4,'/src/assets/images/image_1.jpg', 1);
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TRIGGER deleteProducts before delete
+ON products
+FOR EACH ROW
+delete from products_carts where productId=old.id;
+
+CREATE TRIGGER deleteProducts2 before delete
+ON products
+FOR EACH ROW
+delete from products_favourites where productId=old.id;

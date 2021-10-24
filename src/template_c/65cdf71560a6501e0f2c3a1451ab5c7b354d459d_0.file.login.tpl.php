@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-10 10:50:15
+/* Smarty version 3.1.39, created on 2021-10-24 12:57:10
   from 'C:\xampp\htdocs\TasteIt\src\templates\auth\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6162a947b7a035_07555696',
+  'unifunc' => 'content_61753c06924425_10645247',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '65cdf71560a6501e0f2c3a1451ab5c7b354d459d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\auth\\login.tpl',
-      1 => 1633855199,
+      1 => 1635071877,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6162a947b7a035_07555696 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61753c06924425_10645247 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3435675566162a947b73979_86810604', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204368531561753c0691df57_15737804', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -80,6 +80,15 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3435675566162a947b
                     </div>
                 </div>
         </form>
+        <form action="/signup" method="get">
+            <div class="col-md-12 mt-4">
+                <div class="form-group">
+                    <input hidden type="text" value="signup" name="option">
+                    <input type="submit" value="Registrati" class="btn btn-primary">
+                    <div class="submitting"></div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -122,12 +131,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3435675566162a947b
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_3435675566162a947b73979_86810604 extends Smarty_Internal_Block
+class Block_204368531561753c0691df57_15737804 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_3435675566162a947b73979_86810604',
+    0 => 'Block_204368531561753c0691df57_15737804',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
