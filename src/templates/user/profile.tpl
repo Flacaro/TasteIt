@@ -33,14 +33,14 @@
     </div>
 
     <section class="ftco-section">
-        <div class="container">
+        <div class="container" style="overflow: auto">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animated">
                     <span class="subheading">I tuoi ordini</span>
                     <h2>Ordini</h2>
                     {if $orders!=[]}
                         <div class="row">
-                            <div class="table-wrap" style="overflow:hidden">
+                            <div class="table-wrap order-table">
                                 <table class="table">
 
                                     <thead class="thead-primary">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-23 18:38:27
+/* Smarty version 3.1.39, created on 2021-10-24 19:10:50
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\customers\customer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614cad835d0565_32198956',
+  'unifunc' => 'content_6175939a627197_60843166',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e8c1b5108a62ca287847c329943f402f1058e015' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\customers\\customer.tpl',
-      1 => 1632414660,
+      1 => 1633423467,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614cad835d0565_32198956 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6175939a627197_60843166 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_470088893614cad835c7f05_04137046', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6223694546175939a61f974_87789012', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_470088893614cad835c7f05_04137046 extends Smarty_Internal_Block
+class Block_6223694546175939a61f974_87789012 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_470088893614cad835c7f05_04137046',
+    0 => 'Block_6223694546175939a61f974_87789012',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,7 +51,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                     <div class="card-body">
 
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="overflow:hidden">
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th>

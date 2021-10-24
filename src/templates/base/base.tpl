@@ -20,6 +20,19 @@
 
     <link rel="stylesheet" href="/src/assets/css/flaticon.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
+    <style>
+        .order-table {
+            overflow-x: auto;
+        }
+
+
+        /* Quando lo schermo e' >= 1200px */
+        @media (min-width: 1200px) {
+            .order-table {
+                overflow: hidden;
+            }
+        }
+    </style>
 </head>
 <body>
 

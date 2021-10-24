@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-23 18:38:34
+/* Smarty version 3.1.39, created on 2021-10-24 19:10:44
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\orders\orders.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_614cad8a96bb20_88848636',
+  'unifunc' => 'content_617593947793e7_48403457',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6c43d7d71efc52c4b9ee9bc2b13656fd98e7ffb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\orders\\orders.tpl',
-      1 => 1631177140,
+      1 => 1635071877,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_614cad8a96bb20_88848636 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617593947793e7_48403457 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_829458669614cad8a963e38_68611817', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_61095110617593947717d1_88751433', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_829458669614cad8a963e38_68611817 extends Smarty_Internal_Block
+class Block_61095110617593947717d1_88751433 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_829458669614cad8a963e38_68611817',
+    0 => 'Block_61095110617593947717d1_88751433',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -98,7 +98,7 @@ $_smarty_tpl->tpl_vars['order']->do_else = false;
                     </td>
                     <td>
                       <a href="/admin/orders/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
-" class="btn btn-round btn-primary">Dettagli Ordine</a>
+" class="btn btn-primary">Dettagli Ordine</a>
                     </td>
                   </tr>
                 <?php

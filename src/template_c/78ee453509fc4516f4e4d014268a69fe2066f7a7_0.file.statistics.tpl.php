@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-28 19:47:52
+/* Smarty version 3.1.39, created on 2021-10-24 19:10:31
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\statistics.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61535548b08759_09275738',
+  'unifunc' => 'content_61759387ee1073_07898575',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '78ee453509fc4516f4e4d014268a69fe2066f7a7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\statistics.tpl',
-      1 => 1632565451,
+      1 => 1635071877,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61535548b08759_09275738 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61759387ee1073_07898575 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204180267061535548ab01b0_76420980', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87639171361759387ed9a34_05798726', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_204180267061535548ab01b0_76420980 extends Smarty_Internal_Block
+class Block_87639171361759387ed9a34_05798726 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_204180267061535548ab01b0_76420980',
+    0 => 'Block_87639171361759387ed9a34_05798726',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,7 +64,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-calendar-o"></i>
+                            <i class="fa fa-calendar-o" style="color:#9C9C9C"></i>
                             <?php echo date("F");?>
 
                         </div>
@@ -92,8 +92,62 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-calendar-o"></i>
+                            <i class="fa fa-calendar-o" style="color:#9C9C9C"></i>
                             <?php echo date("F");?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-bag-16" style="color: cornflowerblue"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-category">Prodotto più venduto</p>
+                                    <p class="card-title"><?php echo $_smarty_tpl->tpl_vars['best']->value->getName();?>
+<p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            € <?php echo $_smarty_tpl->tpl_vars['best']->value->getPrice();?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-bag-16" style="color: #FFE22B"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-category">Prodotto meno venduto</p>
+                                    <p class="card-title"><?php echo $_smarty_tpl->tpl_vars['worst']->value->getName();?>
+<p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            € <?php echo $_smarty_tpl->tpl_vars['worst']->value->getPrice();?>
 
                         </div>
                     </div>
@@ -115,9 +169,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         data: <?php echo $_smarty_tpl->tpl_vars['data']->value;?>
 ,
                         fill: false,
-                        borderColor: '#fbc658',
+                        borderColor: '#B7472A',
                         backgroundColor: 'transparent',
-                        pointBorderColor: '#fbc658',
+                        pointBorderColor: '#B7472A',
                         pointRadius: 4,
                         pointHoverRadius: 4,
                         pointBorderWidth: 8,
