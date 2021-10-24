@@ -133,11 +133,12 @@
                     <p class="d-flex total-price">
                         <span>Totale</span>
                         <span>
+
                             {*{foreach $products as $product}
                                 {assign var="total" value=$total+$product[3]*$product[5]}
                             {/foreach}
                             $ {$total}*}
-                             $ {$total}
+                             $ {$partialTotal}
                         </span>
                     </p>
                 </div>

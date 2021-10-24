@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-24 19:06:48
+/* Smarty version 3.1.39, created on 2021-10-24 19:39:00
   from 'C:\xampp\htdocs\TasteIt\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617592a839ada0_95119589',
+  'unifunc' => 'content_61759a344e7d90_55755952',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38faf17c87aaf17822dd420bd5d4d173a0e486de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\cart\\cart.tpl',
-      1 => 1634808829,
+      1 => 1635097137,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617592a839ada0_95119589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61759a344e7d90_55755952 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_889759732617592a8326154_72723374', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_137917851161759a344cfe19_87098342', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_150305001617592a8326a72_76420655', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_93635137461759a344d0735_72266012', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_889759732617592a8326154_72723374 extends Smarty_Internal_Block
+class Block_137917851161759a344cfe19_87098342 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_889759732617592a8326154_72723374',
+    0 => 'Block_137917851161759a344cfe19_87098342',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_150305001617592a8326a72_76420655 extends Smarty_Internal_Block
+class Block_93635137461759a344d0735_72266012 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_150305001617592a8326a72_76420655',
+    0 => 'Block_93635137461759a344d0735_72266012',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -222,7 +222,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <p class="d-flex total-price">
                         <span>Totale</span>
                         <span>
-                                                         $ <?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+
+                                                         $ <?php echo $_smarty_tpl->tpl_vars['partialTotal']->value;?>
 
                         </span>
                     </p>
