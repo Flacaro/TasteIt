@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-27 21:08:12
+/* Smarty version 3.1.39, created on 2021-10-24 19:06:07
   from 'C:\xampp\htdocs\TasteIt\src\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6152169c1cec45_04727573',
+  'unifunc' => 'content_6175927f83d562_47652230',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4744e6eb5cca24bf07ba56b8a7d079c6cc057cbd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\aboutUs.tpl',
-      1 => 1632565451,
+      1 => 1635094489,
       2 => 'file',
     ),
   ),
@@ -20,41 +20,41 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6152169c1cec45_04727573 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6175927f83d562_47652230 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6549439266152169c1cdc49_65276875', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8297175596175927f83c517_18970636', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8391429746152169c1ce563_88098743', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7458765466175927f83ce74_72768123', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_6549439266152169c1cdc49_65276875 extends Smarty_Internal_Block
+class Block_8297175596175927f83c517_18970636 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_6549439266152169c1cdc49_65276875',
+    0 => 'Block_8297175596175927f83c517_18970636',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-aboutUs<?php
+Su di noi<?php
 }
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_8391429746152169c1ce563_88098743 extends Smarty_Internal_Block
+class Block_7458765466175927f83ce74_72768123 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_8391429746152169c1ce563_88098743',
+    0 => 'Block_7458765466175927f83ce74_72768123',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -63,13 +63,13 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     
 
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div >
-                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>About us <i class="fa fa-chevron-right"></i></span></p>
-                    <h2 class="mb-0 bread">About Us</h2>
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Su di noi<i class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">Su di noi</h2>
                 </div>
             </div>
         </div>
@@ -119,20 +119,19 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(../../src/assets/images/image_4.jpg);">
+                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url('../../src/assets/images/image_4.jpg');">
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
-                        <span class="subheading">Since 1998</span>
+                        <span class="subheading">Dal 1998</span>
                         <h2 class="mb-4">Prova il nostro ristorante TasteIt  </h2>
 
 
                         <p>Arrivare nel cuore di Montepulciano, città dalle sensazioni magiche, già di per sé rappresenta un viaggio attraverso i sensi. La vista, l’olfatto, l’udito. Dopo qualche serpentina in un’erta caratterizzata da un panorama mozzafiato che non nasconde certo il Tempio di San Biagio, capolavoro del Sangallo, ecco che passando da una porta, fiancheggiando la Fortezza di Montepulciano, baluardo della cittadina del Poliziano, si incontra TasteIt.
 
                             Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti della tradizione senese.</p>
-                        <!-- questo nel dubbio ce lo lascio ma non so se lo vogliamo lascia-->
                         <p class="year">
-                            <strong class="number" data-number="25">0</strong>
+                            <strong class="number" data-number="23">0</strong>
                             <span>Anni di esperienza</span>
                         </p>
                     </div>

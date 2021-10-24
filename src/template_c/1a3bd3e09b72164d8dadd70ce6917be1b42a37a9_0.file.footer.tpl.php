@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-24 12:57:08
+/* Smarty version 3.1.39, created on 2021-10-24 18:52:19
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61753c04b203e7_94239082',
+  'unifunc' => 'content_61758f4302f2d3_01791471',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1a3bd3e09b72164d8dadd70ce6917be1b42a37a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\footer.tpl',
-      1 => 1635071877,
+      1 => 1635094335,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61753c04b203e7_94239082 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61758f4302f2d3_01791471 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="ftco-footer">
     <div class="container">
         <div class="row mb-5">
@@ -37,17 +37,17 @@ function content_61753c04b203e7_94239082 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="col-sm-12 col-md">
                 <div class="ftco-footer-widget mb-4 ml-md-4">
-                    <h2 class="ftco-heading-2">Information</h2>
+                    <h2 class="ftco-heading-2">Informazioni</h2>
                     <ul class="list-unstyled">
-                        <li><a href="/aboutUs""><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-                        <li><a href="/products"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-                        <li><a href="/contact"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+                        <li><a href="/aboutUs""><span class="fa fa-chevron-right mr-2"></span>Su di noi</a></li>
+                        <li><a href="/products"><span class="fa fa-chevron-right mr-2"></span>I nostri prodotti</a></li>
+                        <li><a href="/contact"><span class="fa fa-chevron-right mr-2"></span>Contattaci</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-12 col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Contact Us</h2>
+                    <h2 class="ftco-heading-2">Contattaci</h2>
                     <div class="block-23 mb-3">
                         <ul>
                             <li><span class="icon fa fa-map marker"></span><span class="text">Via <?php echo $_smarty_tpl->tpl_vars['restaurant']->value->getAddress()->getStreet();?>

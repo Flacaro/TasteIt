@@ -1,5 +1,5 @@
 {extends file='src/templates/base/base.tpl'}
-{block name=title}product{/block}
+{block name=title}Prodotto{/block}
 {block name=body}
 
 

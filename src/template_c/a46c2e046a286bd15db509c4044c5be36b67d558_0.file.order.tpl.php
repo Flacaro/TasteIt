@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 11:49:52
+/* Smarty version 3.1.39, created on 2021-10-24 19:06:56
   from 'C:\xampp\htdocs\TasteIt\src\templates\order\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615ec2c0a78e56_64476885',
+  'unifunc' => 'content_617592b0a7e500_76316098',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a46c2e046a286bd15db509c4044c5be36b67d558' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\order\\order.tpl',
-      1 => 1633549332,
+      1 => 1635071877,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615ec2c0a78e56_64476885 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617592b0a7e500_76316098 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2091859804615ec2c0a68f98_72830385', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_779621430617592b0a6e409_07054621', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1707001459615ec2c0a698d0_51517781', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_792807268617592b0a6ed38_25989200', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_881822760615ec2c0a69f34_63787108', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_418091922617592b0a6f366_02203194', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_2091859804615ec2c0a68f98_72830385 extends Smarty_Internal_Block
+class Block_779621430617592b0a6e409_07054621 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_2091859804615ec2c0a68f98_72830385',
+    0 => 'Block_779621430617592b0a6e409_07054621',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_1707001459615ec2c0a698d0_51517781 extends Smarty_Internal_Block
+class Block_792807268617592b0a6ed38_25989200 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_1707001459615ec2c0a698d0_51517781',
+    0 => 'Block_792807268617592b0a6ed38_25989200',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_881822760615ec2c0a69f34_63787108 extends Smarty_Internal_Block
+class Block_418091922617592b0a6f366_02203194 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_881822760615ec2c0a69f34_63787108',
+    0 => 'Block_418091922617592b0a6f366_02203194',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -98,11 +98,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
                     <!--Inizio parte sotto il form con cart total e payment method -->
+                    <?php if ($_smarty_tpl->tpl_vars['valid']->value == false) {?>
+                        <h3>Alcuni campi non sono validi. Inserisci un indirizzo, un metodo di pagamento valido e, se hai un coupon, assicurati che sia valido.</h3>
+                    <?php }?>
                     <form method="post" action="/cart/checkout/confirmation" id="ordine">
                     <div class="row mt-5 pt-3 d-flex">
                         <div class="col-md-4 d-flex">
                             <div class="cart-detail cart-total p-3 p-md-4">
-                                <h3 class="billing-heading mb-4">Cart Total</h3>
+                                <h3 class="billing-heading mb-4">Totale</h3>
 
                                 <p class="d-flex">
                                     <span>Subtotal</span>
@@ -121,16 +124,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </span>
                                 </p>
                                                                 <hr>
-                                                                <?php if ($_smarty_tpl->tpl_vars['coupon']->value == '') {?>
-                                <label for="streetaddress">Coupon</label>
+                                                                <label for="streetaddress">Coupon</label>
                                 <div class="d-flex">
 
                                         <div class="row">
                                             <input id="coupon" type="text" class="form-control w-75" name="option" placeholder="Codice Coupon">
                                         </div>
-
                                 </div>
-                                <?php }?>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -146,7 +146,9 @@ $_smarty_tpl->tpl_vars['address']->do_else = false;
                                              <div class="col-md-12">
                                                 <div class="radio">
                                                     <label><input type="radio" id="ordine" name="address" value="<?php echo $_smarty_tpl->tpl_vars['address']->value->getId();?>
-" class="mr-2"><?php echo $_smarty_tpl->tpl_vars['address']->value->getCity();?>
+" class="mr-2" required="required">Via <?php echo $_smarty_tpl->tpl_vars['address']->value->getStreet();?>
+ <?php echo $_smarty_tpl->tpl_vars['address']->value->getHomeNumber();?>
+, <?php echo $_smarty_tpl->tpl_vars['address']->value->getCity();?>
 </label>
                                                 </div>
                                              </div>
@@ -154,11 +156,19 @@ $_smarty_tpl->tpl_vars['address']->do_else = false;
                                     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                <a href="/address/add" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="cart-detail p-3 p-md-4">
                                 <h3 class="billing-heading mb-4">Metodo di pagamento</h3>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="radio">
+                                            <label><input type="radio" name="payment" id="ordine" value="cash" class="mr-2" required="required"> Contanti</label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cards']->value, 'card');
 $_smarty_tpl->tpl_vars['card']->do_else = true;
@@ -169,7 +179,7 @@ $_smarty_tpl->tpl_vars['card']->do_else = false;
                                     <div class="col-md-12">
                                         <div class="radio">
                                                 <label><input type="radio" name="payment" id="ordine" value="<?php echo $_smarty_tpl->tpl_vars['card']->value->getId();?>
-" class="mr-2"> <?php echo $_smarty_tpl->tpl_vars['card']->value->getNumber();?>
+" class="mr-2" required="required"> <?php echo $_smarty_tpl->tpl_vars['card']->value->getNumber();?>
 </label>
                                         </div>
                                     </div>
@@ -177,6 +187,7 @@ $_smarty_tpl->tpl_vars['card']->do_else = false;
                                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                <a href="/cards/add" class="btn btn-primary w-50">Aggiungi una Carta</a>
                             </div>
                         </div>
                     </div>

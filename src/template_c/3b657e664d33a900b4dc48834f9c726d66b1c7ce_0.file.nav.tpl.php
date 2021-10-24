@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-20 15:19:21
+/* Smarty version 3.1.39, created on 2021-10-24 19:06:01
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617017596993d9_56515732',
+  'unifunc' => 'content_61759279628122_82474110',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1634735959,
+      1 => 1635095157,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617017596993d9_56515732 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61759279628122_82474110 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -32,7 +32,7 @@ function content_617017596993d9_56515732 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="col-md-6 d-flex justify-content-md-end">
                 <div class="reg"><?php if ($_smarty_tpl->tpl_vars['user']->value == NULL) {?>
-                    <p class="mb-0"><a href="/signup" class="mr-2">Sign Up</a> <a href="/login">Log In</a> </p><p class="mb-0"></p><?php } else { ?><p class="mb-0"><a href="/logout">Log Out</a></p><p class="mb-0"></p><?php }?>
+                    <p class="mb-0"><a href="/signup" class="mr-2">Registrati</a> <a href="/login">Log In</a> </p><p class="mb-0"></p><?php } else { ?><p class="mb-0"><a href="/logout">Log Out</a></p><p class="mb-0"></p><?php }?>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@ $_smarty_tpl->tpl_vars['productWithQuantity']->do_else = false;
                                 <h4><?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getName();?>
 </h4>
                                 <p class="mb-0"><a href="#" class="price">$<?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getPrice();?>
-</a><span class="quantity ml-3">Quantity: <?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[1];?>
+</a><span class="quantity ml-3">Quantità: <?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[1];?>
 </span></p>
                             </div>
                         </div>
@@ -83,7 +83,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div>
         <?php }?>
-        <!-- fine menu dropdown del carrello -->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
@@ -92,14 +91,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/aboutUs" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/aboutUs" class="nav-link">Su di noi</a></li>
                 <?php if ((isset($_smarty_tpl->tpl_vars['favId']->value))) {?>
                     <li class="nav-item"><a href="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
 " class="nav-link">Preferiti</a></li>
                 <?php }?>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categories</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categorie</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04" id="dropdown-menu">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categories']->value, 'category');
@@ -115,7 +114,7 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </li>
-                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link">Contattaci</a></li>
                 <?php if ((isset($_smarty_tpl->tpl_vars['cartId']->value))) {?>
                 <li class="nav-item"><a href="/profile" class="nav-link">Profilo</a></li>
                 <?php }?>
@@ -126,22 +125,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php echo '<script'; ?>
 >
-    // const dropdownLink = document.querySelector('#dropdown04');
-    // const dropdown = document.querySelector('#dropdown-menu');
-    //
-    // const cartBtn = document.querySelector('#cart-btn');
-    // const cartDropdown = document.querySelector('#cart-dropdown');
-    // let isCartOpen = false;
-
-    // categories hover
-    // dropdownLink.addEventListener('mouseenter', () => dropdown.classList.add('show'));
-    // dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
-    //
-    // // quando il bottone viene cliccato bisogna aggiungere la classe show a cartDropdown.
-    // cartBtn.addEventListener('click', () => {
-    //     isCartOpen ? cartDropdown.classList.remove('show') : cartDropdown.classList.add('show');
-    //     isCartOpen = !isCartOpen;
-    // });
 <?php echo '</script'; ?>
 >
 <?php }
