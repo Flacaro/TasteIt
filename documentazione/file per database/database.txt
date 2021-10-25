@@ -89,7 +89,7 @@ foreign key(productId) references products(id)
 create table customers_paymentMethods(
 id bigint primary key auto_increment,
 customerId bigint not null,
-cardNumber int,
+cardNumber int(16),
 expirationDate Date,
 cvv int not null,
 cardHolder varchar(40),
@@ -148,6 +148,12 @@ foreign key(productId) references products(id)
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();
 INSERT INTO `carts`() VALUES ();
+INSERT INTO `carts`() VALUES ();
+INSERT INTO `carts`() VALUES ();
+INSERT INTO `carts`() VALUES ();
+INSERT INTO `favourites`() VALUES ();
+INSERT INTO `favourites`() VALUES ();
+INSERT INTO `favourites`() VALUES ();
 INSERT INTO `favourites`() VALUES ();
 INSERT INTO `favourites`() VALUES ();
 INSERT INTO `favourites`() VALUES ();
@@ -156,22 +162,30 @@ INSERT INTO `paymentMethods`(`method`) VALUES ('credit card');
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Mario','Rossi','mrossi@gmail.com','$2y$10$TXeIAq0qe1Y64.IZ1Mcxqued1I0pliDMZShtsMk3kwoW46Oscui8u',1,1, '/src/assets/images/person_1.jpg');
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Sandro','Rosa','sandro@gmail.com','$2y$10$14/Tfqh4PA3NOKUVRtppf.DbkI1MQqr1seHiNLYZZ1CRLJ8ZT/VqW',2,2, '/src/assets/images/person_2.jpg');
 INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Michela','Bianchi','mic@gmail.com','$2y$10$NnS.6A9FCprxEYcHXUxZIOAUAK/cQYm894UMj6FpFWu8A6Jm/6N1e',3,3, '/src/assets/images/Michela.jpg');
+insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Alice','Barbieri','alice.barbieri@gmail.com','$2y$10$V/ftzhOF/kRv9sTGMxFxg.iG.tD5lnrQlAwtEGkALBU31lYXcGioi',4,4, '/src/assets/images/poses-para-selfie-12.jpg');
+insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Andrea','Martini','andreamartini89@gmail.com','$2y$10$eCrddjc9.1LBoNxhqLW6k.4vg0cztSYTr0PQR5QF5f222ESG4ADdi',5,5, '/src/assets/images/selfie-google-e1554862824540.jpg');
+insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Franco','Battaglia','fbattaglia@gmail.com','$2y$10$kzvQE2eB4GCawOWqQ.GaFeHIVSewUh9k3BGAm5svVnDXsOOLWkmpG',6,6, '/src/assets/images/MCKENZIE.jpg');
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1234,'Montepulciano','Santa Barbara',2,null);
-INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1768,'Milano','Santa Maria',7,2);
-INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (8796,'Mantova','Santa Cecilia',10,3);
+INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (20121,'Milano','Santa Maria',7,2);
+INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Santa Cecilia',10,3);
+INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Castello',52,4);
+INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,'Coppito','del Corso',8,4);
 INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
 insert into coupons (`id`, `priceCut`, `expirationDate`) values ('C614c7de6d8a19', 30, '2021-10-07');
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8345', 20,'2021-09-13');
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8790', 20,'2021-11-13');
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8r61', 15,'2022-02-09');
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
 INSERT INTO `orderstates`(`state`) VALUES ('Completed');
-INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,2345671,'2027-09-21',324,'Mario Rossi');
-INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,23490871,'2025-05-14',784,'Sandro Rosa');
-INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,87698971,'2030-01-04',521,'Michela Bianchi');
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',64,'14:00:00','C614c7de6d8a19',1,1,'Pending',1,1);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',6,'15:20:00','C614c7de6d8a19',1,1,'Denied',2,2);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',6,'20:00:00','C614c7de6d8345',2,1,'Accepted',3,2);
+INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,234567127651473,'2027-09-21',324,'Mario Rossi');
+INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,2349087129065718,'2025-05-14',784,'Sandro Rosa');
+INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,8769897134789021,'2030-01-04',521,'Michela Bianchi');
+INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (5,5322789034561234,'2028-03-14',521,'Andrea Martini');
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-10-21',12,NULL,'C614c7de6d8a19',1,1,'Pending',1,null);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-08-21',25,NULL,'C614c7de6d8a19',1,1,'Denied',2,null);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',19.2,'20:00:00','C614c7de6d8345',2,1,'Completed',3,2);
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pasta','/src/assets/images/pasta.jpg');
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/pesce.jpg');
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pizza','/src/assets/images/margherita.jpg');
@@ -208,12 +222,15 @@ INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5'
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('4','Molto saporita, qualità della pasta ottima',2,9);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('4','Molto buona, piccante al punt giusto',3,8);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Molto buona, guanciale di ottima qualità',3,7);
+INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5',"Molto buona l'accoppiata tartufo e salsiccia",5,17);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (2,2,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (2,2);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (1,2,'Margherita','mozarella e pomodoro',6,'/src/assets/images/margherita.jpg', 2);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (2,5,'Sashimi','riso e salmone',4,'/src/assets/images/image_1.jpg', 1);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (1,2,'Margherita','Mozzarella fresca e pomodoro',6,'/src/assets/images/margherita.jpg', 3);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (2,2,'Boscaiola','Funghi, salsiccia e mozzarella fresca',8,'/src/assets/images/boscaiola.jpg', 15);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (2,1,'Amatriciana','Pasta fresca con pomodoro, pecorino romano stagionatura media e guanciale',9,'/src/assets/images/amatriciana.jpg', 10);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (3,2,'Pesce spada','Pesce spada cotto al forno con rosmarino accompagnato con patate dolci',12,'/src/assets/images/pesceSpada.jpg',2);
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
 
