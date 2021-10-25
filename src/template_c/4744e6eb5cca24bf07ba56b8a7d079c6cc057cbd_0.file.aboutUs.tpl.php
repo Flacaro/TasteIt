@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-24 19:06:07
+/* Smarty version 3.1.39, created on 2021-10-25 11:26:06
   from 'C:\xampp\htdocs\TasteIt\src\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6175927f83d562_47652230',
+  'unifunc' => 'content_6176782e513e04_58706555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4744e6eb5cca24bf07ba56b8a7d079c6cc057cbd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\aboutUs.tpl',
-      1 => 1635094489,
+      1 => 1635153965,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6175927f83d562_47652230 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176782e513e04_58706555 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8297175596175927f83c517_18970636', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17214817196176782e512719_23563998', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7458765466175927f83ce74_72768123', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15879597686176782e5132e7_12985395', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_8297175596175927f83c517_18970636 extends Smarty_Internal_Block
+class Block_17214817196176782e512719_23563998 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_8297175596175927f83c517_18970636',
+    0 => 'Block_17214817196176782e512719_23563998',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Su di noi<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_7458765466175927f83ce74_72768123 extends Smarty_Internal_Block
+class Block_15879597686176782e5132e7_12985395 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_7458765466175927f83ce74_72768123',
+    0 => 'Block_15879597686176782e5132e7_12985395',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -123,15 +123,15 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
-                        <span class="subheading">Dal 1998</span>
+                        <span class="subheading">Dal 1970</span>
                         <h2 class="mb-4">Prova il nostro ristorante TasteIt  </h2>
 
 
                         <p>Arrivare nel cuore di Montepulciano, città dalle sensazioni magiche, già di per sé rappresenta un viaggio attraverso i sensi. La vista, l’olfatto, l’udito. Dopo qualche serpentina in un’erta caratterizzata da un panorama mozzafiato che non nasconde certo il Tempio di San Biagio, capolavoro del Sangallo, ecco che passando da una porta, fiancheggiando la Fortezza di Montepulciano, baluardo della cittadina del Poliziano, si incontra TasteIt.
 
-                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti della tradizione senese.</p>
+                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti offerti.</p>
                         <p class="year">
-                            <strong class="number" data-number="23">0</strong>
+                            <strong class="number" data-number="51">0</strong>
                             <span>Anni di esperienza</span>
                         </p>
                     </div>

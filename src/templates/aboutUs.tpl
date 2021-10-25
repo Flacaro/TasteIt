@@ -65,15 +65,15 @@
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
-                        <span class="subheading">Dal 1998</span>
+                        <span class="subheading">Dal 1970</span>
                         <h2 class="mb-4">Prova il nostro ristorante TasteIt  </h2>
 
 
                         <p>Arrivare nel cuore di Montepulciano, città dalle sensazioni magiche, già di per sé rappresenta un viaggio attraverso i sensi. La vista, l’olfatto, l’udito. Dopo qualche serpentina in un’erta caratterizzata da un panorama mozzafiato che non nasconde certo il Tempio di San Biagio, capolavoro del Sangallo, ecco che passando da una porta, fiancheggiando la Fortezza di Montepulciano, baluardo della cittadina del Poliziano, si incontra TasteIt.
 
-                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti della tradizione senese.</p>
+                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti offerti.</p>
                         <p class="year">
-                            <strong class="number" data-number="23">0</strong>
+                            <strong class="number" data-number="51">0</strong>
                             <span>Anni di esperienza</span>
                         </p>
                     </div>
