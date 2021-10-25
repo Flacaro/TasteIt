@@ -40,7 +40,7 @@
                     <h2>Ordini</h2>
                     {if $orders!=[]}
                         <div class="row">
-                            <div class="table-wrap order-table" style="overflow-x:auto;">
+                            <div class="table-wrap order-table">
                                 <table class="table">
 
                                     <thead class="thead-primary">

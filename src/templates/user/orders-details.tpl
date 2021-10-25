@@ -25,7 +25,7 @@
             {/if}
             <div class="row">
 
-                <div class="table-wrap" style="overflow-x:auto;"">
+                <div class="table-wrap order-table" >
                     <table class="table">
 
                         <thead class="thead-primary">
