@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 12:18:41
+/* Smarty version 3.1.39, created on 2021-10-25 11:27:12
   from 'C:\xampp\htdocs\TasteIt\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615ec9811d9d54_58517466',
+  'unifunc' => 'content_617678705fabd8_91677476',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c8df914dc60fa83490a95da5676b2a2ca69d3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\product\\product.tpl',
-      1 => 1633601919,
+      1 => 1635152457,
       2 => 'file',
     ),
   ),
@@ -20,43 +20,43 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615ec9811d9d54_58517466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617678705fabd8_91677476 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1076939055615ec9811c9724_64628326', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21454753361767870448d79_53085775', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_510449420615ec9811ca087_96632314', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4002379361767870449688_38419399', 'body');
 ?>
 
 <!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1076939055615ec9811c9724_64628326 extends Smarty_Internal_Block
+class Block_21454753361767870448d79_53085775 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1076939055615ec9811c9724_64628326',
+    0 => 'Block_21454753361767870448d79_53085775',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-product<?php
+Prodotto<?php
 }
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_510449420615ec9811ca087_96632314 extends Smarty_Internal_Block
+class Block_4002379361767870449688_38419399 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_510449420615ec9811ca087_96632314',
+    0 => 'Block_4002379361767870449688_38419399',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,7 +64,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -89,7 +89,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="rating d-flex">
                     <p class="text-left mr-4">
                         <?php if ($_smarty_tpl->tpl_vars['avg']->value != 0) {?>
-                        <a href="#" class="mr-2"><?php echo $_smarty_tpl->tpl_vars['avg']->value;?>
+                        <a href="#" class="mr-2"><?php echo round($_smarty_tpl->tpl_vars['avg']->value,1);?>
 </a>
 
                         <a href="#">
@@ -198,13 +198,13 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['review']->value)
 $_smarty_tpl->tpl_vars['review']->do_else = false;
 ?>
                                 <div class="review">
-                                    <div class="user-img" style="background-image: url(../../src/assets/images/Fla.jpg)"></div>
+                                    <div class="user-img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getImagePath();?>
+)"></div>
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left"><?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getName();?>
  <?php echo $_smarty_tpl->tpl_vars['review']->value->getCustomer()->getSurname();?>
 </span>
-                                            <span class="text-right">25 Aprile 2020</span>
                                         </h4>
                                         <p class="star">
 								   				<span>

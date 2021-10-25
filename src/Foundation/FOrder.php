@@ -104,7 +104,7 @@ class FOrder extends FConnection {
         $query='UPDATE `orders` SET `arrivalTime`=\''.$order->getArrivalTime().'\', `orderState`=\''.$order->getState().'\' where id='.$order->getId();
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
+        //$stmt->debugDumpParams();
     }
 
     public function load($id){
@@ -154,7 +154,7 @@ class FOrder extends FConnection {
         }
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
+        //$stmt->debugDumpParams();
         return $pdo->lastInsertId();
 
     }

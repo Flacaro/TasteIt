@@ -125,7 +125,7 @@ class OrderController {
                 $cus->setCart($cart);
                 $session->saveUserInSession($cus);
                 $vorder = new VOrder();
-                //$vorder->summary($cart, $address, $pay, $c);
+                $vorder->summary($cart, $address, $pay, $c);
             }
         } else {
             self::checkout(false);
