@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-21 14:19:20
+/* Smarty version 3.1.39, created on 2021-10-25 15:35:24
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\user\orders-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61715ac8ba2ad1_71893720',
+  'unifunc' => 'content_6176b29c0be0d0_13035437',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1595d0423ca436a052e6a200c4ef3bf7525cdb09' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\user\\orders-details.tpl',
-      1 => 1634818749,
+      1 => 1635168921,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61715ac8ba2ad1_71893720 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176b29c0be0d0_13035437 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_135584092961715ac8b90626_82284969', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9446075536176b29c0a72a2_40108037', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_97216427561715ac8b91209_79832086', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17942846756176b29c0a7c52_00009992', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_135584092961715ac8b90626_82284969 extends Smarty_Internal_Block
+class Block_9446075536176b29c0a72a2_40108037 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_135584092961715ac8b90626_82284969',
+    0 => 'Block_9446075536176b29c0a72a2_40108037',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_97216427561715ac8b91209_79832086 extends Smarty_Internal_Block
+class Block_17942846756176b29c0a7c52_00009992 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_97216427561715ac8b91209_79832086',
+    0 => 'Block_17942846756176b29c0a7c52_00009992',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -75,14 +75,16 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\selen\\OneDrive\\
 
     <section class="ftco-section">
         <div class="container">
-            <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['orderId']->value;?>
+            <?php if ($_smarty_tpl->tpl_vars['order']->value->getState() != "Accepted") {?>
+            <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 /add" method="post">
-                <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['orderId']->value;?>
+                <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 " hidden>
-                <div class="" style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center;">
                     <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
                 </div>
             </form>
+            <?php }?>
             <div class="row">
 
                 <div class="table-wrap" style="overflow:hidden">
@@ -150,7 +152,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </table>
                 </div>
             </div>
-                    </div>
+            <?php if ($_smarty_tpl->tpl_vars['order']->value->getState() == "Accepted") {?>
+                <div style="display:flex; justify-content: center">
+                    <h3>Il tuo ordine è stato accettato </h3>
+                </div>
+                <div style="display:flex; justify-content: center">
+                    <h4> Orario di arrivo previsto: <?php echo $_smarty_tpl->tpl_vars['order']->value->getArrivalTime();?>
+</h4>
+                </div>
+                <div style="display:flex; justify-content: center">
+                    <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
+/confirm" method="post">
+                        <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
+" hidden>
+                        <button class="btn btn-primary btn-number mb-2"  type="submit">Conferma di aver ricevuto l'ordine</button>
+                    </form>
+                </div>
+            <?php }?>
+        </div>
     </section>
 <?php
 }

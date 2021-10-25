@@ -48,6 +48,7 @@
                                         <th>Data</th>
                                         <th>Totale</th>
                                         <th>Pagato con</th>
+                                        <th>Stato</th>
                                         <th>Dettagli</th>
                                     </tr>
                                     </thead>
@@ -57,8 +58,9 @@
                                             <td>{$order->getCreationDate()}</td>
                                             <td>{$order->getTotal()}</td>
                                             <td>{if get_class($order->getPayment())=="App\Models\Cash"}Contanti{else}Carta di Credito{/if}</td>
+                                            <td>{$order->getState()}</td>
                                             <td>
-                                                <form action="/profile/{$order->getId()}/details" method="POST">
+                                                <form action="/profile/{$order->getId()}/details" method="post">
                                                     <input type="text" name="orderId" class="quantity form-control input-number" value="{$order->getId()}" hidden>
                                                     <button style="margin-right: 1rem" class="btn btn-primary btn-number" type="submit">Vai ai Dettagli</button>
                                                 </form>
@@ -72,34 +74,7 @@
                         {else}
                         <h3>Non hai effettuato ordini.</h3>
                     {/if}
-                        {*{foreach $orders as $product}
-                            <div class="col-md-3 d-flex">
-                                <div class="product ftco-animated">
-                                    <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
-                                        <div class="desc" style="display: flex" >
-                                                <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">
-                                                    <input type="text" id="productQuantity" name="quantity1" class="quantity form-control input-number" value="1" hidden>
-                                                    <button style="margin-right: 1rem" id="productQuantity"class="btn btn-primary btn-number" type="submit"><span class="flaticon-shopping-bag"></span></button>
-                                                </form>
-                                                <form action="/products/{$product->getId()}/addToFavourites/{$favId}" method="POST">
-                                                    <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-heart"></span></button>
-                                                </form>
-                                            <form action="/products/{$product->getId()}">
-                                                <button style="margin-left: 1rem" class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="text text-center">
-                                        <h2> {$product->getName()}</h2>
-                                        <h2> {$product->getprice()}</h2>
-                                    </div>
-                                </div>
-                                <form action="/products/{$product->getId()}/add/{$cartId}" method="POST">
-                                    <button id="order"class="btn btn-primary btn-number" type="submit">Ordina di nuovo</button>
-                                </form>
-                            </div>
 
-                            {/foreach}*}
                 </div>
             </div>
 

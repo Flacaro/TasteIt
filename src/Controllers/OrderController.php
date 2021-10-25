@@ -25,12 +25,13 @@ use Pecee\SimpleRouter\SimpleRouter;
 class OrderController {
 
 
-    public function getOrderProducts(){
+    public function getOrderDetails(){
         $forder=new FOrder();
             $orderId=$_POST['orderId'];
+            $ord=$forder->load($orderId);
             $o=$forder->getOrderProducts($orderId);
             $vuser=new VUser();
-            $vuser->getOrderDetails($o, $orderId);
+            $vuser->getOrderDetails($o, $ord);
     }
 
     public function checkout($valid=true){
@@ -120,12 +121,12 @@ class OrderController {
                 $order->setAddress($address);
                 $id = $forder->store($order);
                 $forder->storeOrdersProducts($id, $cart->getProducts());
+                $vorder = new VOrder();
+                $vorder->summary($cart, $address, $pay, $c);
                 $fcart->emptyCart($cartId);
                 $cart->setProducts([]);
                 $cus->setCart($cart);
                 $session->saveUserInSession($cus);
-                $vorder = new VOrder();
-                $vorder->summary($cart, $address, $pay, $c);
             }
         } else {
             self::checkout(false);
@@ -133,24 +134,33 @@ class OrderController {
 
     }
 
+    public function confirm(){
+        $session = Session::getInstance();
+        $forder=new FOrder();
+        $orderId=$_POST["orderId"];
+        $forder->confirmOrder($orderId);
+        redirect("/profile");
+    }
+
     public function addToCart(){
             $session = Session::getInstance();
-                $FCart = new FCart();
-                $cart = new Cart();
-                $forder=new FOrder();
-                $cus = $session->loadUser();
-                $cartId = $cus->getCart()->getId();
-                $products = $cart->getProducts();
-                $orderId=$_POST["orderId"];
-                $prod=$forder->getOrderProducts($orderId);
-                $cart=$cus->getCart();
-                foreach($prod as $ordProd){
-                    $cart->addToCart($ordProd[0], $ordProd[1]);
-                }
-               $FCart->update($cart);
-                $cus->setCart($cart);
-                $session->saveUserInSession($cus);
-                redirect(url('productsOfCarts', ['cartId' => $cartId]));
+            $FCart = new FCart();
+            $cart = new Cart();
+            $forder=new FOrder();
+            $cus = $session->loadUser();
+            $cartId = $cus->getCart()->getId();
+            $products = $cart->getProducts();
+            $orderId=$_POST["orderId"];
+            $prod=$forder->getOrderProducts($orderId);
+            $cart=$cus->getCart();
+            foreach($prod as $ordProd){
+                $cart->addToCart($ordProd[0], $ordProd[1]);
+            }
+            $FCart->update($cart);
+            $cus->setCart($cart);
+            $session->saveUserInSession($cus);
+            redirect(url('productsOfCarts', ['cartId' => $cartId]));
 
-                }
+            }
+
 }

@@ -24,9 +24,9 @@ class CartController {
         $total = 0;
         foreach ($products as $p) {
             $total = $total + $p[0]->getPrice() * $p[1];
-            $vCart = new VCart();
-            $vCart->getProducts($cart, $total, $products);
         }
+        $vCart = new VCart();
+        $vCart->getProducts($cart, $total, $products);
     }
 
 

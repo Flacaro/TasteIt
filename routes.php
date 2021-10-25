@@ -38,11 +38,6 @@ SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduc
 SimpleRouter::get("/products", [ProductController::class, "getAll"])->name('products');
 
 SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::class, "getCategoryProducts"]);
-SimpleRouter::get("/categories", [CategoryController::class, "index"]);
-
-
-
-
 
 
 SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], function () {
@@ -55,17 +50,22 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
     SimpleRouter::post("/products/{productId}/reviews", [ProductController::class, "createReview"]);
 
     SimpleRouter::get("/profile", [CustomerController::class, "getProfile"]);
-    SimpleRouter::post("/profile/{id}/details", [OrderController::class, "getOrderProducts"]);
+    SimpleRouter::post("/profile/{id}/details", [OrderController::class, "getOrderDetails"]);
     SimpleRouter::post("/profile/{id}/add", [OrderController::class, "addToCart"]);
+    SimpleRouter::post("/profile/{id}/confirm", [OrderController::class, "confirm"]);
     SimpleRouter::get("/cards/add", [CustomerController::class, "showAddCard"]);
     SimpleRouter::post("/cards/add", [CustomerController::class, "addCard"]);
     SimpleRouter::get("/address/add", [CustomerController::class, "showAddAddress"]);
     SimpleRouter::post("/address/add", [CustomerController::class, "addAddress"]);
 
-    SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
+    //SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
     SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"])->name('checkout');
     SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
     SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "createOrder"]);
+
+
+
+
 
     SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
     SimpleRouter::get("/carts/{cartId}/products", [CartController::class, "getProductsOfCart"])->name('productsOfCarts');

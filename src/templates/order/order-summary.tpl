@@ -61,7 +61,7 @@
                                         <div class="form-group">
                                             <div class="col-md-12">
                                                 <div class="radio">
-                                                    <label>{$address->getCity()}</label>
+                                                    <label>Via {$address->getStreet()} {$address->getHomeNumber()}, {$address->getCity()}</label>
                                                 </div>
                                             </div>
                                         </div>

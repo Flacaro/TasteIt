@@ -185,7 +185,7 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 heading-section text-center ftco-animated">
                     <span class="subheading">i nostri</span>
-                    <h2>Best Seller del Mese</h2>
+                    <h2>Best Seller</h2>
                 </div>
             </div>
             <div class="row d-flex">

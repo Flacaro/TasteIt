@@ -4,10 +4,10 @@ namespace App\Views;
 
 class VUser {
 
-    public function getOrderDetails($products, $orderId){
+    public function getOrderDetails($products, $order){
         $data=[
             "products"=>$products,
-            "orderId"=>$orderId
+            "order"=>$order
             ];
         setData("user/orders-details", $data);
     }

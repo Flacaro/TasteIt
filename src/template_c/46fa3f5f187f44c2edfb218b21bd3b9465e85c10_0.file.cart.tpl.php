@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-15 11:07:40
+/* Smarty version 3.1.39, created on 2021-10-25 13:05:37
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616944dcbe57b8_43752420',
+  'unifunc' => 'content_61768f8166bb85_60256647',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '46fa3f5f187f44c2edfb218b21bd3b9465e85c10' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\cart\\cart.tpl',
-      1 => 1634288856,
+      1 => 1635159936,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_616944dcbe57b8_43752420 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61768f8166bb85_60256647 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1825489416616944dcbcdd23_32883277', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_154589660861768f816511c3_60037162', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2101546281616944dcbce659_07827100', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_23507486061768f81651c67_35324498', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1825489416616944dcbcdd23_32883277 extends Smarty_Internal_Block
+class Block_154589660861768f816511c3_60037162 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1825489416616944dcbcdd23_32883277',
+    0 => 'Block_154589660861768f816511c3_60037162',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_2101546281616944dcbce659_07827100 extends Smarty_Internal_Block
+class Block_23507486061768f81651c67_35324498 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_2101546281616944dcbce659_07827100',
+    0 => 'Block_23507486061768f81651c67_35324498',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -78,7 +78,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\selen\\OneDrive\\
 
     <div class="container">
         <div class="row">
-
+            <?php if ($_smarty_tpl->tpl_vars['products']->value != array()) {?>
             <div class="table-wrap" style="overflow:hidden">
                 <table class="table">
 
@@ -222,13 +222,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <p class="d-flex total-price">
                         <span>Totale</span>
                         <span>
-                                                         $ <?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+
+                                                         $ <?php echo $_smarty_tpl->tpl_vars['partialTotal']->value;?>
 
                         </span>
                     </p>
                 </div>
                 <p class="text-center"><a href="/cart/checkout" class="btn btn-primary py-3 px-4 <?php if ($_smarty_tpl->tpl_vars['products']->value == array()) {?>disabled<?php }?>">checkout</a></p>
             </div>
+            <?php } else { ?>
+            <h3>Non ci sono prodotti nel carrello.</h3>
+            <?php }?>
         </div>
     </div>
 </section>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 12:22:41
+/* Smarty version 3.1.39, created on 2021-10-25 15:38:24
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\user\profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61768571c6be86_04265179',
+  'unifunc' => 'content_6176b3509f56b6_96431848',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c799c26c3c846f940f889415338d09029c971b29' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\user\\profile.tpl',
-      1 => 1635156097,
+      1 => 1635169103,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61768571c6be86_04265179 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176b3509f56b6_96431848 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_207279377861768571c5c5c2_96404411', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18279243326176b3509e7e89_20467224', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_93301005061768571c5ceb8_43286358', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14799611436176b3509e8776_90808600', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_207279377861768571c5c5c2_96404411 extends Smarty_Internal_Block
+class Block_18279243326176b3509e7e89_20467224 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_207279377861768571c5c5c2_96404411',
+    0 => 'Block_18279243326176b3509e7e89_20467224',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_93301005061768571c5ceb8_43286358 extends Smarty_Internal_Block
+class Block_14799611436176b3509e8776_90808600 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_93301005061768571c5ceb8_43286358',
+    0 => 'Block_14799611436176b3509e8776_90808600',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -111,6 +111,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                         <th>Data</th>
                                         <th>Totale</th>
                                         <th>Pagato con</th>
+                                        <th>Stato</th>
                                         <th>Dettagli</th>
                                     </tr>
                                     </thead>
@@ -127,9 +128,11 @@ $_smarty_tpl->tpl_vars['order']->do_else = false;
                                             <td><?php echo $_smarty_tpl->tpl_vars['order']->value->getTotal();?>
 </td>
                                             <td><?php if (get_class($_smarty_tpl->tpl_vars['order']->value->getPayment()) == "App\Models\Cash") {?>Contanti<?php } else { ?>Carta di Credito<?php }?></td>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['order']->value->getState();?>
+</td>
                                             <td>
                                                 <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
-/details" method="POST">
+/details" method="post">
                                                     <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 " hidden>
                                                     <button style="margin-right: 1rem" class="btn btn-primary btn-number" type="submit">Vai ai Dettagli</button>
@@ -146,7 +149,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <?php } else { ?>
                         <h3>Non hai effettuato ordini.</h3>
                     <?php }?>
-                                        </div>
+
+                </div>
             </div>
 
         </div>
