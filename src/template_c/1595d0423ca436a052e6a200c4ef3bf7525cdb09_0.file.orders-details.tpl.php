@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 15:35:24
+/* Smarty version 3.1.39, created on 2021-10-25 16:13:44
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\user\orders-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176b29c0be0d0_13035437',
+  'unifunc' => 'content_6176bb98365624_73442198',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1595d0423ca436a052e6a200c4ef3bf7525cdb09' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\user\\orders-details.tpl',
-      1 => 1635168921,
+      1 => 1635171222,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176b29c0be0d0_13035437 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176bb98365624_73442198 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9446075536176b29c0a72a2_40108037', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2847916466176bb9834d5c9_13914389', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17942846756176b29c0a7c52_00009992', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4498326386176bb9834df55_26212354', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_9446075536176b29c0a72a2_40108037 extends Smarty_Internal_Block
+class Block_2847916466176bb9834d5c9_13914389 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_9446075536176b29c0a72a2_40108037',
+    0 => 'Block_2847916466176bb9834d5c9_13914389',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_17942846756176b29c0a7c52_00009992 extends Smarty_Internal_Block
+class Block_4498326386176bb9834df55_26212354 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_17942846756176b29c0a7c52_00009992',
+    0 => 'Block_4498326386176bb9834df55_26212354',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -87,7 +87,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\selen\\OneDrive\\
             <?php }?>
             <div class="row">
 
-                <div class="table-wrap" style="overflow:hidden">
+                <div class="table-wrap" style="overflow-x:auto;"">
                     <table class="table">
 
                         <thead class="thead-primary">
