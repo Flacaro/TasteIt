@@ -51,7 +51,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
 
     SimpleRouter::get("/profile", [CustomerController::class, "getProfile"]);
 
-    SimpleRouter::post("/profile/{id}/details", [OrderController::class, "getOrderProducts"]);
+    SimpleRouter::post("/profile/{id}/details", [OrderController::class, "getOrderDetails"]);
     SimpleRouter::post("/profile/{id}", [OrderController::class, "addToCart"]);
     SimpleRouter::post("/profile/{id}/confirm", [OrderController::class, "confirm"]);
     SimpleRouter::get("/cards", [CustomerController::class, "showAddCard"]);
@@ -63,7 +63,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
     SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"])->name('checkout');
     SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
     SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "createOrder"]);
-    
+
     SimpleRouter::delete("/carts/{cartId}/products/{productId}", [CartController::class, "destroy"]);
     SimpleRouter::get("/carts/{cartId}/products", [CartController::class, "getProductsOfCart"])->name('productsOfCarts');
     SimpleRouter::put("/carts/{cartId}/products/{productId}",[CartController::class, "updateQuantity"]);
@@ -82,7 +82,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
 
     SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
     SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
-    SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "showAddCategory"]);
+    SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
     SimpleRouter::post("/admin/categories", [AdminCategoryController::class, "create"]);
     SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
     SimpleRouter::get("/admin/categories/{categoryId}/products", [AdminProductController::class, "showCreateProduct"]);

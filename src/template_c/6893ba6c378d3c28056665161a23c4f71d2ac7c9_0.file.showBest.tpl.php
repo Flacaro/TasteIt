@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-28 19:48:10
+/* Smarty version 3.1.39, created on 2021-10-25 20:42:29
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\customers\showBest.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6153555a5c2369_68602595',
+  'unifunc' => 'content_6176fa95d7df99_78954428',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6893ba6c378d3c28056665161a23c4f71d2ac7c9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\customers\\showBest.tpl',
-      1 => 1632565451,
+      1 => 1635071877,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6153555a5c2369_68602595 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176fa95d7df99_78954428 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16165397716153555a5b6fa8_27965668', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5945011276176fa95d70d52_23395127', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_16165397716153555a5b6fa8_27965668 extends Smarty_Internal_Block
+class Block_5945011276176fa95d70d52_23395127 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_16165397716153555a5b6fa8_27965668',
+    0 => 'Block_5945011276176fa95d70d52_23395127',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -58,7 +58,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         <div class="col-md-4 px-1">
                             <div class="form-group">
                                 <label>Data di Scadenza</label>
-                                <input type="date" class="form-control" name="expiration">
+                                <input type="date" class="form-control" name="expiration" min="<?php echo date("Y-m-d");?>
+">
                             </div>
                         </div>
                     </div>
@@ -67,6 +68,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                     <h6>I coupon verranno inviati a:</h6>
 
+                    <?php if ($_smarty_tpl->tpl_vars['customers']->value == NULL) {?> <h5>non ci sono utenti a cui mandare coupon questo mese</h5>
+                    <?php } else { ?>
                     <table class="table">
                         <thead class=" text-primary">
                         <th>
@@ -115,6 +118,7 @@ $_smarty_tpl->tpl_vars['customer']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </tbody>
                     </table>
+                    <?php }?>
                 </form>
             </div>
         </div>

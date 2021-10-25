@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-28 19:48:01
+/* Smarty version 3.1.39, created on 2021-10-25 20:41:51
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\products\productsBestSellers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61535551a24a98_68182668',
+  'unifunc' => 'content_6176fa6f4f0a98_67479871',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '659e870b4819fc00d0fec912e50fe32b1ad37e3d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\products\\productsBestSellers.tpl',
-      1 => 1632565451,
+      1 => 1633423467,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61535551a24a98_68182668 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176fa6f4f0a98_67479871 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_198816315661535551a186b6_84608222', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21211522066176fa6f4e9d72_50666187', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_198816315661535551a186b6_84608222 extends Smarty_Internal_Block
+class Block_21211522066176fa6f4e9d72_50666187 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_198816315661535551a186b6_84608222',
+    0 => 'Block_21211522066176fa6f4e9d72_50666187',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <h4 class="card-title"> Statistiche prodotti</h4>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
+                <div class="table-responsive" style="overflow:hidden">
                     <table class="table">
                         <thead class=" text-primary">
                         <th>

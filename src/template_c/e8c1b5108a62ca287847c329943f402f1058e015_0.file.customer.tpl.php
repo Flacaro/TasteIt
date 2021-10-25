@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-24 19:10:50
+/* Smarty version 3.1.39, created on 2021-10-25 20:42:19
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\customers\customer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6175939a627197_60843166',
+  'unifunc' => 'content_6176fa8b5a3529_68903028',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e8c1b5108a62ca287847c329943f402f1058e015' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\customers\\customer.tpl',
-      1 => 1633423467,
+      1 => 1635186258,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6175939a627197_60843166 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176fa8b5a3529_68903028 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6223694546175939a61f974_87789012', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7709891226176fa8b59bcf9_55766400', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_6223694546175939a61f974_87789012 extends Smarty_Internal_Block
+class Block_7709891226176fa8b59bcf9_55766400 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_6223694546175939a61f974_87789012',
+    0 => 'Block_7709891226176fa8b59bcf9_55766400',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -47,7 +47,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title"> Clienti</h4>
-                        <a class="btn btn-primary" href="/admin/customers/showBest">Show best</a>
+                        <a class="btn btn-primary" href="/admin/customers/best">Show best</a>
                     </div>
                     <div class="card-body">
 

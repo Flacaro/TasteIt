@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 20:04:23
+/* Smarty version 3.1.39, created on 2021-10-25 20:40:59
   from 'C:\xampp\htdocs\TasteIt\src\templates\order\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176f1a7dc2ab2_48935454',
+  'unifunc' => 'content_6176fa3b3ac185_98148961',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a46c2e046a286bd15db509c4044c5be36b67d558' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\order\\order.tpl',
-      1 => 1635185062,
+      1 => 1635186607,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176f1a7dc2ab2_48935454 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176fa3b3ac185_98148961 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14424154796176f1a7daed88_14962537', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14819692536176fa3b39c267_11724982', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16125684646176f1a7daf6a1_45142128', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18198826726176fa3b39cba4_59699656', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7898313326176f1a7dafcf0_93807357', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18807506586176fa3b39d1e9_18113109', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_14424154796176f1a7daed88_14962537 extends Smarty_Internal_Block
+class Block_14819692536176fa3b39c267_11724982 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_14424154796176f1a7daed88_14962537',
+    0 => 'Block_14819692536176fa3b39c267_11724982',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_16125684646176f1a7daf6a1_45142128 extends Smarty_Internal_Block
+class Block_18198826726176fa3b39cba4_59699656 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_16125684646176f1a7daf6a1_45142128',
+    0 => 'Block_18198826726176fa3b39cba4_59699656',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_7898313326176f1a7dafcf0_93807357 extends Smarty_Internal_Block
+class Block_18807506586176fa3b39d1e9_18113109 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_7898313326176f1a7dafcf0_93807357',
+    0 => 'Block_18807506586176fa3b39d1e9_18113109',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -90,7 +90,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             </div>
         </div>
     </section>
-    <!--fine blocco prima immagine -->
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-between">
@@ -156,7 +155,7 @@ $_smarty_tpl->tpl_vars['address']->do_else = false;
                                     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                                <a href="/address/add" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
+                                <a href="/address" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
                             </div>
                         </div>
                         <div class="col-md-4">
