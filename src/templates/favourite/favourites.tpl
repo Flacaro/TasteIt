@@ -40,7 +40,7 @@
                                             <form action="/products/{$product->getId()}">
                                                 <button class="btn btn-primary btn-number" type="submit"><span class="flaticon-visibility"></span></button>
                                             </form>
-                                            <form action="/favourites/{$favId}/products/{$product->getId()}/delete" method="POST">
+                                            <form action="/favourites/{$favId}/products/{$product->getId()}" method="POST">
                                                 <div class="button delete">
 
                                                     <input hidden type="text" value="DELETE" name="_method">

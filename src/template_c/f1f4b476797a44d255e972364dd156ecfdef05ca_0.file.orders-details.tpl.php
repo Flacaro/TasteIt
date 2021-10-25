@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 14:44:46
+/* Smarty version 3.1.39, created on 2021-10-25 20:32:03
   from 'C:\xampp\htdocs\TasteIt\src\templates\user\orders-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6165833e1a4822_82645175',
+  'unifunc' => 'content_6176f823a344b9_15992821',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f1f4b476797a44d255e972364dd156ecfdef05ca' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\user\\orders-details.tpl',
-      1 => 1634029550,
+      1 => 1635186721,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6165833e1a4822_82645175 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176f823a344b9_15992821 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5790572916165833e133b61_75112229', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3697802886176f823a24725_68672648', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5615577596165833e1346e2_39565948', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9766565206176f823a25347_98735325', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_5790572916165833e133b61_75112229 extends Smarty_Internal_Block
+class Block_3697802886176f823a24725_68672648 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_5790572916165833e133b61_75112229',
+    0 => 'Block_3697802886176f823a24725_68672648',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_5615577596165833e1346e2_39565948 extends Smarty_Internal_Block
+class Block_9766565206176f823a25347_98735325 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_5615577596165833e1346e2_39565948',
+    0 => 'Block_9766565206176f823a25347_98735325',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -74,13 +74,14 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\TasteIt\\
     </section>
 
     <section class="ftco-section">
-
         <div class="container">
             <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['orderId']->value;?>
-/add" method="post">
+" method="post">
                 <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['orderId']->value;?>
 " hidden>
-                <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
+                <div style="display: flex; justify-content: center;">
+                    <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
+                </div>
             </form>
             <div class="row">
 

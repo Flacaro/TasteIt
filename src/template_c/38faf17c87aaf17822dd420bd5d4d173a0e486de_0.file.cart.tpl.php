@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-24 19:39:00
+/* Smarty version 3.1.39, created on 2021-10-25 20:32:56
   from 'C:\xampp\htdocs\TasteIt\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61759a344e7d90_55755952',
+  'unifunc' => 'content_6176f858c6c501_15632641',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38faf17c87aaf17822dd420bd5d4d173a0e486de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\cart\\cart.tpl',
-      1 => 1635097137,
+      1 => 1635186775,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61759a344e7d90_55755952 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176f858c6c501_15632641 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_137917851161759a344cfe19_87098342', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6803955216176f858c52950_97889363', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_93635137461759a344d0735_72266012', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19342925536176f858c53298_80333700', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_137917851161759a344cfe19_87098342 extends Smarty_Internal_Block
+class Block_6803955216176f858c52950_97889363 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_137917851161759a344cfe19_87098342',
+    0 => 'Block_6803955216176f858c52950_97889363',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_93635137461759a344d0735_72266012 extends Smarty_Internal_Block
+class Block_19342925536176f858c53298_80333700 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_93635137461759a344d0735_72266012',
+    0 => 'Block_19342925536176f858c53298_80333700',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -103,13 +103,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
                     <tr class="alert" role="alert">
-                      <td>
-                            <label class="checkbox-wrap checkbox-primary">
-                                <input type="checkbox" checked>
-                                <span class="checkmark"></span>
-                            </label>
-                        </td>
-                         <td>
+                                              <td>
                             <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getImagePath();?>
 );"></div>
                         </td>
@@ -127,7 +121,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                             <div class="input-group" style="width: 9em">
                                 <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cart']->value->getId();?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
-/update" method="POST" style="float: left">
+" method="POST" style="float: left">
                                     <div class="button minus">
 
                                         <input hidden type="text" value="PUT" name="_method">
@@ -150,7 +144,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 
                                 <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cart']->value->getId();?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
-/update" method="POST" style="float: right">
+" method="POST" style="float: right">
                                     <div class="button plus">
 
                                         <input hidden type="text" value="PUT" name="_method">
@@ -169,7 +163,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                         <td>
                                                       <form action="/carts/<?php echo $_smarty_tpl->tpl_vars['cart']->value->getId();?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getId();?>
-/delete" method="POST">
+" method="POST">
 
                                 <div class="button delete">
 

@@ -56,24 +56,24 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
 
     SimpleRouter::get("/profile", [CustomerController::class, "getProfile"]);
     SimpleRouter::post("/profile/{id}/details", [OrderController::class, "getOrderProducts"]);
-    SimpleRouter::post("/profile/{id}/add", [OrderController::class, "addToCart"]);
-    SimpleRouter::get("/cards/add", [CustomerController::class, "showAddCard"]);
-    SimpleRouter::post("/cards/add", [CustomerController::class, "addCard"]);
-    SimpleRouter::get("/address/add", [CustomerController::class, "showAddAddress"]);
-    SimpleRouter::post("/address/add", [CustomerController::class, "addAddress"]);
+    SimpleRouter::post("/profile/{id}", [OrderController::class, "addToCart"]);
+    SimpleRouter::get("/cards", [CustomerController::class, "showAddCard"]);
+    SimpleRouter::post("/cards", [CustomerController::class, "addCard"]);
+    SimpleRouter::get("/address", [CustomerController::class, "showAddAddress"]);
+    SimpleRouter::post("/address", [CustomerController::class, "addAddress"]);
 
     SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
     SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"])->name('checkout');
     SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
     SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "createOrder"]);
 
-    SimpleRouter::delete("/carts/{cartId}/products/{productId}/delete", [CartController::class, "destroy"]);
+    SimpleRouter::delete("/carts/{cartId}/products/{productId}", [CartController::class, "destroy"]);
     SimpleRouter::get("/carts/{cartId}/products", [CartController::class, "getProductsOfCart"])->name('productsOfCarts');
-    SimpleRouter::put("/carts/{cartId}/products/{productId}/update",[CartController::class, "updateQuantity"]);
+    SimpleRouter::put("/carts/{cartId}/products/{productId}",[CartController::class, "updateQuantity"]);
 
     SimpleRouter::get("/favourites/{favId}",[FavouritesController::class, "getFavouritesProducts"])->name('favourites');
     SimpleRouter::post("/carts/{cartId}/products",[FavouritesController::class, "addToCartFromFav"]);
-    SimpleRouter::delete("/favourites/{favId}/products/{productId}/delete",[FavouritesController::class, "deleteProductFromFav"]);
+    SimpleRouter::delete("/favourites/{favId}/products/{productId}",[FavouritesController::class, "deleteProductFromFav"]);
 });
 
 SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], function () {
@@ -85,14 +85,14 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
 
     SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
     SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
-    SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
-    SimpleRouter::post("/admin/categories/add", [AdminCategoryController::class, "create"]);
+    SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "showAddCategory"]);
+    SimpleRouter::post("/admin/categories", [AdminCategoryController::class, "create"]);
     SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
-    SimpleRouter::get("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "showCreateProduct"]);
-    SimpleRouter::post("/admin/categories/{categoryId}/products/create", [AdminProductController::class, "store"]);
+    SimpleRouter::get("/admin/categories/{categoryId}/products", [AdminProductController::class, "showCreateProduct"]);
+    SimpleRouter::post("/admin/categories/{categoryId}/products", [AdminProductController::class, "store"]);
     SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "showEditProduct"]);
     SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "update"]);
-    SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/delete", [AdminProductController::class, "destroy"]);
+    SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}", [AdminProductController::class, "destroy"]);
     SimpleRouter::get("/admin/products", [AdminProductController::class, "productsBestSellers"]);
 
     SimpleRouter::get("/admin/orders", [AdminOrderController::class, "visualizeOrdersPending"]);
@@ -101,11 +101,11 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::post("/admin/orders/{id}/refuse", [AdminOrderController::class, "refuseOrder"]);
 
     SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
-    SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');
+    //SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');
     SimpleRouter::post("/admin/coupons", [CouponController::class, "store"])->name('storeCoupon');
 
     SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])->name('showAllCustomers');
-    SimpleRouter::get("/admin/customers/showBest", [AdminCustomerController::class, "showBest"]);
+    SimpleRouter::get("/admin/customers/best", [AdminCustomerController::class, "showBest"]);
     SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 });
 

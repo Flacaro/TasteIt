@@ -15,7 +15,7 @@
 
 <section class="ftco-section">
     <div class="container">
-    <form method="POST" id="contactForm" name="payment" class="contactForm" action="/cards/add">
+    <form method="POST" id="contactForm" name="payment" class="contactForm" action="/cards">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="form-group">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-07 12:24:45
+/* Smarty version 3.1.39, created on 2021-10-25 20:09:55
   from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_615ecaedbcb220_93269539',
+  'unifunc' => 'content_6176f2f3184d99_49235335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '233083e50427e48b9a936dafa3b020788793ce6e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\favourites.tpl',
-      1 => 1633602177,
+      1 => 1635185392,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_615ecaedbcb220_93269539 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176f2f3184d99_49235335 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_802828439615ecaedbc0f01_78591645', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_497718506176f2f317bd22_93661849', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_790869420615ecaedbc1b83_14167817', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1859830126176f2f317c6c3_25949580', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_802828439615ecaedbc0f01_78591645 extends Smarty_Internal_Block
+class Block_497718506176f2f317bd22_93661849 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_802828439615ecaedbc0f01_78591645',
+    0 => 'Block_497718506176f2f317bd22_93661849',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ All products<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_790869420615ecaedbc1b83_14167817 extends Smarty_Internal_Block
+class Block_1859830126176f2f317c6c3_25949580 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_790869420615ecaedbc1b83_14167817',
+    0 => 'Block_1859830126176f2f317c6c3_25949580',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -110,7 +110,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                             </form>
                                             <form action="/favourites/<?php echo $_smarty_tpl->tpl_vars['favId']->value;?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/delete" method="POST">
+" method="POST">
                                                 <div class="button delete">
 
                                                     <input hidden type="text" value="DELETE" name="_method">

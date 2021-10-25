@@ -7,7 +7,7 @@
                     <h5 class="card-title">Aggiungi Prodotto</h5>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="/admin/categories/{$categoryId}/products/create" enctype="multipart/form-data">
+                    <form method="POST" action="/admin/categories/{$categoryId}/products" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-7 pr-1">
                                 <div class="form-group">

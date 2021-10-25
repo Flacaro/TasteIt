@@ -36,12 +36,12 @@
                     <tbody>
                    {foreach $products as $product}
                     <tr class="alert" role="alert">
-                      <td>
+                     {* <td>
                             <label class="checkbox-wrap checkbox-primary">
                                 <input type="checkbox" checked>
                                 <span class="checkmark"></span>
                             </label>
-                        </td>
+                        </td>*}
                          <td>
                             <div class="img" style="background-image: url({$product[0]->getImagePath()});"></div>
                         </td>
@@ -54,7 +54,7 @@
                           <td>{$product[0]->getPrice()}</td>
                         <td class="quantity">
                             <div class="input-group" style="width: 9em">
-                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/update" method="POST" style="float: left">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}" method="POST" style="float: left">
                                     <div class="button minus">
 
                                         <input hidden type="text" value="PUT" name="_method">
@@ -73,7 +73,7 @@
 
                                 <input type="text" name="quantity" class="input-number"  data-min="1" data-max="100" value="{$product[1]}" style="width: 2em">
 
-                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/update" method="POST" style="float: right">
+                                <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}" method="POST" style="float: right">
                                     <div class="button plus">
 
                                         <input hidden type="text" value="PUT" name="_method">
@@ -91,7 +91,7 @@
                           {* <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true"><i class="fa fa-close"></i></span>
                             </button>*}
-                            <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}/delete" method="POST">
+                            <form action="/carts/{$cart->getId()}/products/{$product[0]->getId()}" method="POST">
 
                                 <div class="button delete">
 

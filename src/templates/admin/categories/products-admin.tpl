@@ -8,7 +8,7 @@
                     <div class="row">
                         <h4 class="card-title" style="margin-left:20px">{$category->getName()}</h4>
                         <div style="margin-left:1250px">
-                            <a href="/admin/categories/{$category->getId()}/products/create" class="btn btn-primary">Aggiungi Prodotto</a>
+                            <a href="/admin/categories/{$category->getId()}/products" class="btn btn-primary">Aggiungi Prodotto</a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                                         <a href="/admin/categories/{$category->getId()}/products/{$product->getId()}/edit">
                                             <input class="btn btn-primary" style="margin-right:5px" type="submit" value="edit">
                                             </a>
-                                        <form method="post" action="/admin/categories/{$category->getId()}/products/{$product->getId()}/delete">
+                                        <form method="post" action="/admin/categories/{$category->getId()}/products/{$product->getId()}">
                                             <input class="btn btn-primary" style="margin-right:5px" type="submit" value="delete">
                                         </form>
                                     </div>

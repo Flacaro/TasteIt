@@ -13,7 +13,6 @@
             </div>
         </div>
     </section>
-    <!--fine blocco prima immagine -->
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-between">
@@ -76,7 +75,7 @@
                                              </div>
                                         </div>
                                     {/foreach}
-                                <a href="/address/add" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
+                                <a href="/address" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -98,7 +97,7 @@
                                     </div>
                                 </div>
                                 {/foreach}
-                                <a href="/cards/add" class="btn btn-primary w-50">Aggiungi una Carta</a>
+                                <a href="/cards" class="btn btn-primary w-50">Aggiungi una Carta</a>
                             </div>
                         </div>
                     </div>

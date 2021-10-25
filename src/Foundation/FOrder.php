@@ -61,7 +61,7 @@ class FOrder extends FConnection {
             $prod->setImagePath($p[3]);
             $prod->setDescription($p[4]);
             $prod->setId($p[5]);
-            $stmt->debugDumpParams();
+            //$stmt->debugDumpParams();
             array_push($prods,[$prod, $p[1]]);
         }
         return $prods;

@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title"> Clienti</h4>
-                        <a class="btn btn-primary" href="/admin/customers/showBest">Show best</a>
+                        <a class="btn btn-primary" href="/admin/customers/best">Show best</a>
                     </div>
                     <div class="card-body">
 
