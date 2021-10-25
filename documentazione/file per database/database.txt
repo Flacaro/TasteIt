@@ -191,6 +191,10 @@ INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`
 INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Tagliata di manzo','Tagliata di manzo con rucola e aceto balsamico',30,5,'/src/assets/images/tagliata.jpg', 200);
 INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Filetto di maiale','Filetto di maiale cotto con il vino bianco, avvolto da pancetta affumicata, rosmarino, burro, pistacchi e pepe nero',20,5,'/src/assets/images/filetto.jpg', 210);
 INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Spigola','Spigola al cartoccio, capperi, pomodorini, aglio, prezzemolo, pepe nero',14,2,'/src/assets/images/spigola.jpg', 50);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Boscaiola','Funghi, salsiccia e mozzarella fresca',8,3,'/src/assets/images/boscaiola.jpg', 90);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Diavola','Pomodoro, mozzarella fresca e salame piccante',7,3,'/src/assets/images/diavola.jpg', 100);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Tartufo','Mozzarella fresca, salsiccia e tartufo nero',9,3,'/src/assets/images/tartufo.jpg', 100);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Torrevento','Vino dal colore rosso rubino tendente al granato dopo breve invecchiamento, al naso bouquet pieno e fragrante, delicatamente speziato con sentori di frutti di bosco',13,4,'/src/assets/images/torrevento.jpg', 170);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','molto saporito',1,1);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Ottimo aroma',2,6);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('3','non male',2,2);
@@ -200,10 +204,10 @@ INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5'
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('4','Molto buona, cotta al punto giusto',2,11);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Molto buona, carne ottima',3,12);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Molto buona, carne ottima',3,12);
-INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Buonissima, pesce molto fresco',1,14);
+INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Buonissima, pesce molto fresco',2,14);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('4','Molto saporita, qualità della pasta ottima',2,9);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('4','Molto buona, piccante al punt giusto',3,8);
-INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Molto buona, guanciale di ottima qualità',1,7);
+INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Molto buona, guanciale di ottima qualità',3,7);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (2,2,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
