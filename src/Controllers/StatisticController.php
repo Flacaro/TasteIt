@@ -29,7 +29,7 @@ class StatisticController{
         }
         //print_r($data1);
         $vAdmin= new VStatistic();
-        $vAdmin->visualizeStatistics($monthly[0],$ordersQuantity[0], json_encode(array_values($data1)), $bestSeller, $worstSeller);
+        $vAdmin->visualizeStatistics($monthly,$ordersQuantity[0], json_encode(array_values($data1)), $bestSeller, $worstSeller);
     }
 
 }

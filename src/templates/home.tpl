@@ -146,7 +146,7 @@
     </section>
 
     <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">
-            <div class="overlay"></div>
+        <div class="overlay"></div>
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
@@ -154,9 +154,10 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    {foreach $bestReviews as $review}
-                            <div class="col-4">
+                <div class="row ftco-animate">
+                    <div class="col-md-12">
+                         <div class="carousel-testimony owl-carousel ftco-owl">
+                            {foreach $bestReviews as $review}
                                 <div class="item">
                                     <div class="testimony-wrap py-4">
                                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
@@ -171,9 +172,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                    {/foreach}
-
+                            {/foreach}
+                        </div>
+                    </div>
                 </div>
             </div>
     </section>
@@ -185,7 +186,7 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 heading-section text-center ftco-animated">
                     <span class="subheading">i nostri</span>
-                    <h2>Best Seller del Mese</h2>
+                    <h2>Best Seller</h2>
                 </div>
             </div>
             <div class="row d-flex">

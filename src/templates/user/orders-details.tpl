@@ -15,15 +15,19 @@
 
     <section class="ftco-section">
         <div class="container">
-            <form action="/profile/{$orderId}" method="post">
-                <input type="text" name="orderId" class="quantity form-control input-number" value="{$orderId}" hidden>
+
+            {if $order->getState()!="Accepted"}
+            <form action="/profile/{$order->getId()}" method="post">
+                <input type="text" name="orderId" class="quantity form-control input-number" value="{$order->getId()}" hidden>
                 <div style="display: flex; justify-content: center;">
                     <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
                 </div>
             </form>
+            {/if}
+
             <div class="row">
 
-                <div class="table-wrap" style="overflow:hidden">
+                <div class="table-wrap order-table" >
                     <table class="table">
 
                         <thead class="thead-primary">
@@ -74,40 +78,20 @@
                     </table>
                 </div>
             </div>
-            {*<div class="row justify-content-end">
-                <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
-                    <div class="cart-total mb-3">
-                        <h3>Totale del carrello</h3>
-                        <p class="d-flex">
-                        <span>
-                            Totale parziale
-                        </span>
-                            <span>
-                            {$partialTotal=0}
-                                {foreach $products as $product}
-                                    {assign var="partialTotal" value = $partialTotal + $product[0]->getPrice() * $product[1]}
-                                {/foreach}
-                            $ {$partialTotal}
-                        </span>
-                        </p>
-                        <p class="d-flex">
-                            <span>Delivery</span>
-                            <span>$0.00</span>
-                        </p>
-                        <p class="d-flex total-price">
-                            <span>Totale</span>
-                            <span>
-                            *}{**}{*{foreach $products as $product}
-                                {assign var="total" value=$total+$product[3]*$product[5]}
-                            {/foreach}
-                            $ {$total}*}{**}{*
-                             $ {$total}
-                        </span>
-                        </p>
-                    </div>
-                    <p class="text-center"><a href="/cart/checkout" class="btn btn-primary py-3 px-4">checkout</a></p>
+            {if $order->getState()=="Accepted"}
+                <div style="display:flex; justify-content: center">
+                    <h3>Il tuo ordine è stato accettato </h3>
                 </div>
-            </div>*}
+                <div style="display:flex; justify-content: center">
+                    <h4> Orario di arrivo previsto: {$order->getArrivalTime()}</h4>
+                </div>
+                <div style="display:flex; justify-content: center">
+                    <form action="/profile/{$order->getId()}/confirm" method="post">
+                        <input type="text" name="orderId" class="quantity form-control input-number" value="{$order->getId()}" hidden>
+                        <button class="btn btn-primary btn-number mb-2"  type="submit">Conferma di aver ricevuto l'ordine</button>
+                    </form>
+                </div>
+            {/if}
         </div>
     </section>
 {/block}

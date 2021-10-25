@@ -71,12 +71,13 @@ class FOrder {
     public function getMonthlyRevenues(){
         $pdo = FConnection::connect();
         //select sum(total) from orders where extract(Month from creationDate)=date("m") and state=Completed;
-        $query ='select sum(total) from orders where extract(Month from creationDate) = '. date("m").' and extract(Year from creationDate) = 20' . date("y");
+        $query ='select sum(total) from orders where orderState="Completed" or orderState="Accepted" and extract(Month from creationDate) = '. date("m").' and extract(Year from creationDate) = 20' . date("y");
         //print_r($query);
         $stmt = $pdo->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
-        return $stmt->fetch();
+        $sum=$stmt->fetch()[0];
+        return round($sum, 2);
     }
 
     public function getOrdersStates() {

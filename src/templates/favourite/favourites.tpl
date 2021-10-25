@@ -26,6 +26,7 @@
                             <h4 class="product-select">Lista dei preferiti</h4>
                         </div>
                     </div>
+                    {if $products!=[]}
                     <div class="row">
                         {foreach $products as $product}
                           <div class="col-md-3 d-flex">
@@ -60,7 +61,9 @@
                             </div>
                         {/foreach}
                     </div>
-
+                    {else}
+                        <h3>Non hai ancora inserito prodotti tra i preferiti</h3>
+                    {/if}
                 </div>
             </div>
         </div>

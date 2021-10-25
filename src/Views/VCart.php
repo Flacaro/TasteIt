@@ -5,8 +5,7 @@ namespace App\Views;
 class VCart
 {
 
-    public function getProducts($cart, $total, $products)
-    {
+    public function getProducts($cart, $total, $products){
         $data = [
             "cart" => $cart,
             "total" => $total,

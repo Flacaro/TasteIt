@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-23 18:13:50
+/* Smarty version 3.1.39, created on 2021-10-25 16:27:19
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617434be101871_80449828',
+  'unifunc' => 'content_6176bec7275f78_62490939',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f854a86381a894d1157517208f41d5c86b9e9dc9' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\home.tpl',
-      1 => 1635005624,
+      1 => 1635172038,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617434be101871_80449828 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176bec7275f78_62490939 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1775744625617434be0ebe59_52368279', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3122186286176bec7261830_05283166', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1430809139617434be0ec7b8_61978341', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_711794266176bec7262120_21523617', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_1775744625617434be0ebe59_52368279 extends Smarty_Internal_Block
+class Block_3122186286176bec7261830_05283166 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_1775744625617434be0ebe59_52368279',
+    0 => 'Block_3122186286176bec7261830_05283166',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,18 +49,18 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1430809139617434be0ec7b8_61978341 extends Smarty_Internal_Block
+class Block_711794266176bec7262120_21523617 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1430809139617434be0ec7b8_61978341',
+    0 => 'Block_711794266176bec7262120_21523617',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-    <div class="hero-wrap" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('../../src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -230,7 +230,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </section>
 
     <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">
-            <div class="overlay"></div>
+        <div class="overlay"></div>
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animated">
@@ -238,14 +238,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </div>
 
-                <div class="row">
-                    <?php
+                <div class="row ftco-animate">
+                    <div class="col-md-12">
+                         <div class="carousel-testimony owl-carousel ftco-owl">
+                            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bestReviews']->value, 'review');
 $_smarty_tpl->tpl_vars['review']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['review']->value) {
 $_smarty_tpl->tpl_vars['review']->do_else = false;
 ?>
-                            <div class="col-4">
                                 <div class="item">
                                     <div class="testimony-wrap py-4">
                                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
@@ -263,11 +264,11 @@ $_smarty_tpl->tpl_vars['review']->do_else = false;
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                    <?php
+                            <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-
+                        </div>
+                    </div>
                 </div>
             </div>
     </section>
@@ -279,7 +280,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="row justify-content-center mb-5">
                 <div class="col-md-7 heading-section text-center ftco-animated">
                     <span class="subheading">i nostri</span>
-                    <h2>Best Seller del Mese</h2>
+                    <h2>Best Seller</h2>
                 </div>
             </div>
             <div class="row d-flex">

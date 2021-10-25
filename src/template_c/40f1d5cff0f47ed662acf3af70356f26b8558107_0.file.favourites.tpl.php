@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-11 15:32:07
+/* Smarty version 3.1.39, created on 2021-10-25 13:07:44
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\favourite\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61643cd780cc05_74391451',
+  'unifunc' => 'content_61769000de1347_53579563',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40f1d5cff0f47ed662acf3af70356f26b8558107' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\favourite\\favourites.tpl',
-      1 => 1633682530,
+      1 => 1635160063,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61643cd780cc05_74391451 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61769000de1347_53579563 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_66556362361643cd7801754_54536282', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_58968275361769000dd3eb2_85470257', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_26588348861643cd7802197_43802495', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_135431165161769000dd4901_23897778', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_66556362361643cd7801754_54536282 extends Smarty_Internal_Block
+class Block_58968275361769000dd3eb2_85470257 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_66556362361643cd7801754_54536282',
+    0 => 'Block_58968275361769000dd3eb2_85470257',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ All products<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_26588348861643cd7802197_43802495 extends Smarty_Internal_Block
+class Block_135431165161769000dd4901_23897778 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_26588348861643cd7802197_43802495',
+    0 => 'Block_135431165161769000dd4901_23897778',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -85,6 +85,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             <h4 class="product-select">Lista dei preferiti</h4>
                         </div>
                     </div>
+                    <?php if ($_smarty_tpl->tpl_vars['products']->value != array()) {?>
                     <div class="row">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
@@ -134,7 +135,9 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
-
+                    <?php } else { ?>
+                        <h3>Non hai ancora inserito prodotti tra i preferiti</h3>
+                    <?php }?>
                 </div>
             </div>
         </div>

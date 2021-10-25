@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-28 17:52:27
+/* Smarty version 3.1.39, created on 2021-10-25 12:23:01
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\aboutUs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61533a3bdf6814_59653249',
+  'unifunc' => 'content_61768585738bc0_78598735',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a71a6c5cae1cb356d6e982dec5131e9e8cc61f65' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\aboutUs.tpl',
-      1 => 1632503518,
+      1 => 1635156097,
       2 => 'file',
     ),
   ),
@@ -20,41 +20,41 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61533a3bdf6814_59653249 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61768585738bc0_78598735 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_137583704461533a3bdf5682_81216559', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_37079718761768585737ad8_62813428', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_23330955261533a3bdf60a3_97492558', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1585910794617685857384d4_48990029', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_137583704461533a3bdf5682_81216559 extends Smarty_Internal_Block
+class Block_37079718761768585737ad8_62813428 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_137583704461533a3bdf5682_81216559',
+    0 => 'Block_37079718761768585737ad8_62813428',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-aboutUs<?php
+Su di noi<?php
 }
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_23330955261533a3bdf60a3_97492558 extends Smarty_Internal_Block
+class Block_1585910794617685857384d4_48990029 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_23330955261533a3bdf60a3_97492558',
+    0 => 'Block_1585910794617685857384d4_48990029',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -63,13 +63,13 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     
 
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div >
-                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>About us <i class="fa fa-chevron-right"></i></span></p>
-                    <h2 class="mb-0 bread">About Us</h2>
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Su di noi<i class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">Su di noi</h2>
                 </div>
             </div>
         </div>
@@ -119,20 +119,19 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(../../src/assets/images/image_4.jpg);">
+                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url('../../src/assets/images/image_4.jpg');">
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
-                        <span class="subheading">Since 1998</span>
+                        <span class="subheading">Dal 1970</span>
                         <h2 class="mb-4">Prova il nostro ristorante TasteIt  </h2>
 
 
                         <p>Arrivare nel cuore di Montepulciano, città dalle sensazioni magiche, già di per sé rappresenta un viaggio attraverso i sensi. La vista, l’olfatto, l’udito. Dopo qualche serpentina in un’erta caratterizzata da un panorama mozzafiato che non nasconde certo il Tempio di San Biagio, capolavoro del Sangallo, ecco che passando da una porta, fiancheggiando la Fortezza di Montepulciano, baluardo della cittadina del Poliziano, si incontra TasteIt.
 
-                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti della tradizione senese.</p>
-                        <!-- questo nel dubbio ce lo lascio ma non so se lo vogliamo lascia-->
+                            Flaviana, Selene dopo tanti anni nel settore dell’enogastronomia e della ristorazione, hanno deciso di dare vita a questo piccolo e accogliente locale dove chi vi arriva può completare il viaggio dei sensi a Montepulciano unendo ai precedenti tre il tatto e il gusto da ritrovare nei semplici, ma prelibati piatti offerti.</p>
                         <p class="year">
-                            <strong class="number" data-number="25">0</strong>
+                            <strong class="number" data-number="51">0</strong>
                             <span>Anni di esperienza</span>
                         </p>
                     </div>

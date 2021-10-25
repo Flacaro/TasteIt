@@ -16,7 +16,7 @@
 
     <div class="container">
         <div class="row">
-
+            {if $products!=[]}
             <div class="table-wrap" style="overflow:hidden">
                 <table class="table">
 
@@ -144,6 +144,9 @@
                 </div>
                 <p class="text-center"><a href="/cart/checkout" class="btn btn-primary py-3 px-4 {if $products==array()}disabled{/if}">checkout</a></p>
             </div>
+            {else}
+            <h3>Non ci sono prodotti nel carrello.</h3>
+            {/if}
         </div>
     </div>
 </section>

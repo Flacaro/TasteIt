@@ -22,7 +22,7 @@ class FOrder extends FConnection {
 
     public function loadUsersOrders($userId){
         $pdo = FConnection::connect();
-        $query="SELECT id, creationDate, total, paymentId FROM orders where customerId=" . $userId . " order by creationDate DESC;";
+        $query="SELECT id, creationDate, total, paymentId, orderState FROM orders where customerId=" . $userId . " order by creationDate DESC;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $order= $stmt->fetchAll();
@@ -39,6 +39,7 @@ class FOrder extends FConnection {
         else{
             $o->setPayment($fpay->load($ord[3]));
         }
+            $o->setState($ord[4]);
         array_push($orders, $o);
         }
         return $orders;
@@ -62,6 +63,7 @@ class FOrder extends FConnection {
             $prod->setDescription($p[4]);
             $prod->setId($p[5]);
             //$stmt->debugDumpParams();
+
             array_push($prods,[$prod, $p[1]]);
         }
         return $prods;
@@ -177,6 +179,13 @@ class FOrder extends FConnection {
             $stmt = $pdo->prepare($query);
             $stmt->execute();
         }
+    }
+
+    public function confirmOrder($id){
+        $pdo = FConnection::connect();
+        $query="update orders set orderState = 'Completed' where id=".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 
 }
