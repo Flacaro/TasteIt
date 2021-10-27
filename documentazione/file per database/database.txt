@@ -72,7 +72,9 @@ foreign key(categoryId) references categories(id)
 create table coupons(
 id varchar(20) primary key,
 priceCut int not null,
-expirationDate Date not null
+expirationDate Date not null,
+customerId bigint,
+foreign key(customerId) references customers(id)
 );
 
 

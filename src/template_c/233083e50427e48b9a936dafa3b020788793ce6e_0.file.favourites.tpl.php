@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 20:09:55
+/* Smarty version 3.1.39, created on 2021-10-25 21:00:56
   from 'C:\xampp\htdocs\TasteIt\src\templates\favourite\favourites.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176f2f3184d99_49235335',
+  'unifunc' => 'content_6176fee8c24d00_67218186',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '233083e50427e48b9a936dafa3b020788793ce6e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\favourite\\favourites.tpl',
-      1 => 1635185392,
+      1 => 1635186920,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176f2f3184d99_49235335 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176fee8c24d00_67218186 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_497718506176f2f317bd22_93661849', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20561736466176fee8c1a0c9_33396817', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1859830126176f2f317c6c3_25949580', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3456497506176fee8c1a9f7_62921683', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_497718506176f2f317bd22_93661849 extends Smarty_Internal_Block
+class Block_20561736466176fee8c1a0c9_33396817 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_497718506176f2f317bd22_93661849',
+    0 => 'Block_20561736466176fee8c1a0c9_33396817',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ All products<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1859830126176f2f317c6c3_25949580 extends Smarty_Internal_Block
+class Block_3456497506176fee8c1a9f7_62921683 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1859830126176f2f317c6c3_25949580',
+    0 => 'Block_3456497506176fee8c1a9f7_62921683',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -85,6 +85,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             <h4 class="product-select">Lista dei preferiti</h4>
                         </div>
                     </div>
+                    <?php if ($_smarty_tpl->tpl_vars['products']->value != array()) {?>
                     <div class="row">
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
@@ -134,7 +135,9 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
-
+                    <?php } else { ?>
+                        <h3>Non hai ancora inserito prodotti tra i preferiti</h3>
+                    <?php }?>
                 </div>
             </div>
         </div>
