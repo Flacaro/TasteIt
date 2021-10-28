@@ -55,7 +55,7 @@ id bigint primary key auto_increment,
 restaurantId int NOT NULL,
 categoryName varchar(30) NOT NULL,
 imagePath varchar(1024) DEFAULT NULL,
-foreign key(restaurantId) references restaurant(id)
+foreign key(restaurantId) references restaurant(id) on delete cascade
 );
 
 create table products(
@@ -246,3 +246,4 @@ CREATE TRIGGER deleteProducts2 before delete
 ON products
 FOR EACH ROW
 delete from products_favourites where productId=old.id;
+
