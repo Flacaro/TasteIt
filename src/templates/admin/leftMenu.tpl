@@ -91,6 +91,20 @@
         </nav>
     {block name=admin}{/block}
 
+        <style>
+            .order-table {
+                overflow-x: auto;
+            }
+
+
+            /* Quando lo schermo e' >= 1200px */
+            @media (min-width: 1200px) {
+                .order-table {
+                    overflow: hidden;
+                }
+            }
+        </style>
+
 <!--   Core JS Files   -->
 <script src="/src/templates/admin/assets/js/core/jquery.min.js"></script>
 <script src="/src/templates/admin/assets/js/core/popper.min.js"></script>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 16:33:30
+/* Smarty version 3.1.39, created on 2021-10-28 14:54:40
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176c03a02d700_38430915',
+  'unifunc' => 'content_617a9d90780332_31317626',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b4de1f720dccdb65eedba7cde1486a01dcbf643' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\categories.tpl',
-      1 => 1635172408,
+      1 => 1635425679,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176c03a02d700_38430915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617a9d90780332_31317626 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3490558606176c03a0250f9_76792003', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_857456668617a9d90777f85_87775989', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_3490558606176c03a0250f9_76792003 extends Smarty_Internal_Block
+class Block_857456668617a9d90777f85_87775989 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_3490558606176c03a0250f9_76792003',
+    0 => 'Block_857456668617a9d90777f85_87775989',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -44,22 +44,23 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <div class="content">
         <div class="row">
           <div class="col-md-12">
+            <div style="display: flex; justify-content: center">
+              <a href="/admin/categories/add" class="btn btn-primary">Aggiungi Categoria</a>
+            </div>
                 <div class="card">
                   <div class="card-header">
                     <div class="row" style="margin-left:15px">
                       <h4 class="card-title"> Categorie di prodotti</h4>
-                      <div style="display: flex; justify-content: right">
-                        <a href="/admin/categories/add" class="btn btn-primary">Aggiungi Categoria</a>
-                      </div>
                     </div>
                   </div>
                   <div class="card-body">
-                    <div class="table-responsive" style="overflow:hidden">
+                    <div class="table-responsive order-table">
                       <table class="table">
                         <thead class=" text-primary">
                         <th>
                           Nome
                         </th>
+                        <th></th>
                         </thead>
                         <tbody>
                         <?php
@@ -74,8 +75,17 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 /products">
                               <?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
 
-                            <a>
-                          </a>
+                            </a>
+                          </td>
+                          <td>
+                            <form action="">
+                              <div style="display: flex; justify-content: right">
+                              <button class="btn btn-primary">
+                                X
+                              </button>
+                              </div>
+                            </form>
+                          </td>
                         </tr>
                         <?php
 }

@@ -32,7 +32,7 @@
                         </div>
                         <div class="row">
                             <div class="update ml-auto mr-auto">
-                                <button type="submit" class="btn btn-primary btn-round">Crea Prodotto</button>
+                                <button type="submit" class="btn btn-primary">Crea Prodotto</button>
                             </div>
                         </div>
                         <input type="file"

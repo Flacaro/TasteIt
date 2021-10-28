@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-23 15:58:42
+/* Smarty version 3.1.39, created on 2021-10-28 14:37:17
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61741512d67356_05349369',
+  'unifunc' => 'content_617a997db22507_80894861',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c35c90bccb08b6e42b1c347b0b91be7ee9c3ebaf' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1634997521,
+      1 => 1635424636,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61741512d67356_05349369 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617a997db22507_80894861 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -116,9 +116,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             </div>
         </nav>
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_126445138761741512d65c91_56367078', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_895289595617a997db20cb7_01439169', 'admin');
 ?>
 
+
+        <style>
+            .order-table {
+                overflow-x: auto;
+            }
+
+
+            /* Quando lo schermo e' >= 1200px */
+            @media (min-width: 1200px) {
+                .order-table {
+                    overflow: hidden;
+                }
+            }
+        </style>
 
 <!--   Core JS Files   -->
 <?php echo '<script'; ?>
@@ -165,12 +179,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_126445138761741512
 
 <?php }
 /* {block 'admin'} */
-class Block_126445138761741512d65c91_56367078 extends Smarty_Internal_Block
+class Block_895289595617a997db20cb7_01439169 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_126445138761741512d65c91_56367078',
+    0 => 'Block_895289595617a997db20cb7_01439169',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -3,17 +3,19 @@
     <div class="content">
     <div class="row">
         <div class="col-md-12">
+            <div style="display:flex; justify-content: center">
+                <form action="/admin/categories/{$category->getId()}/products/form" method="get">
+                    <button class="btn btn-primary">Aggiungi Prodotto</button>
+                </form>
+            </div>
             <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <h4 class="card-title" style="margin-left:20px">{$category->getName()}</h4>
-                        <div style="margin-left:1250px">
-                            <a href="/admin/categories/{$category->getId()}/products" class="btn btn-primary">Aggiungi Prodotto</a>
-                        </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive" style="overflow:hidden">
+                    <div class="table-responsive order-table">
                         <table class="table">
                             <thead class=" text-primary">
                             <th>

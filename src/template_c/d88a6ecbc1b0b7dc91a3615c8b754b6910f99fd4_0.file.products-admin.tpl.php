@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-23 10:42:37
+/* Smarty version 3.1.39, created on 2021-10-28 14:43:12
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\products-admin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6173cafd39fef4_08469703',
+  'unifunc' => 'content_617a9ae0efbc58_00366524',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd88a6ecbc1b0b7dc91a3615c8b754b6910f99fd4' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\products-admin.tpl',
-      1 => 1634978555,
+      1 => 1635424992,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6173cafd39fef4_08469703 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617a9ae0efbc58_00366524 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12633037186173cafd392601_87754561', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_762469481617a9ae0eee392_24173565', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_12633037186173cafd392601_87754561 extends Smarty_Internal_Block
+class Block_762469481617a9ae0eee392_24173565 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_12633037186173cafd392601_87754561',
+    0 => 'Block_762469481617a9ae0eee392_24173565',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -44,19 +44,21 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <div class="content">
     <div class="row">
         <div class="col-md-12">
+            <div style="display:flex; justify-content: center">
+                <form action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/products/form" method="get">
+                    <button class="btn btn-primary">Aggiungi Prodotto</button>
+                </form>
+            </div>
             <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <h4 class="card-title" style="margin-left:20px"><?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
 </h4>
-                        <div style="margin-left:1250px">
-                            <a href="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
-/products/create" class="btn btn-primary">Aggiungi Prodotto</a>
-                        </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive" style="overflow:hidden">
+                    <div class="table-responsive order-table">
                         <table class="table">
                             <thead class=" text-primary">
                             <th>
@@ -109,7 +111,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                             </a>
                                         <form method="post" action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
 /products/<?php echo $_smarty_tpl->tpl_vars['product']->value->getId();?>
-/delete">
+">
                                             <input class="btn btn-primary" style="margin-right:5px" type="submit" value="delete">
                                         </form>
                                     </div>

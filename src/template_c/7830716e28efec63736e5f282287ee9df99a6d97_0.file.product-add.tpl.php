@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-12 10:50:38
+/* Smarty version 3.1.39, created on 2021-10-28 14:31:20
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\product-add.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61654c5ee78f38_19801255',
+  'unifunc' => 'content_617a9818b58881_90765108',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7830716e28efec63736e5f282287ee9df99a6d97' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\product-add.tpl',
-      1 => 1634028636,
+      1 => 1635424273,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61654c5ee78f38_19801255 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617a9818b58881_90765108 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_187300519961654c5ee75fc2_33066614', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1484243962617a9818b55777_96467416', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_187300519961654c5ee75fc2_33066614 extends Smarty_Internal_Block
+class Block_1484243962617a9818b55777_96467416 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_187300519961654c5ee75fc2_33066614',
+    0 => 'Block_1484243962617a9818b55777_96467416',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </div>
                 <div class="card-body">
                     <form method="POST" action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['categoryId']->value;?>
-/products/create" enctype="multipart/form-data">
+/products" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-7 pr-1">
                                 <div class="form-group">

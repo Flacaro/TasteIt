@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 12:15:59
+/* Smarty version 3.1.39, created on 2021-10-28 14:45:38
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617683df2dabc9_25001028',
+  'unifunc' => 'content_617a9b722f32a5_22165807',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1635156097,
+      1 => 1635424636,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617683df2dabc9_25001028 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617a9b722f32a5_22165807 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -60,7 +60,8 @@ $_smarty_tpl->tpl_vars['productWithQuantity']->do_else = false;
 ?>
 
                         <div class="dropdown-item d-flex align-items-start" href="#">
-                            <div class="img"></div>
+                            <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getImagePath();?>
+)"></div>
                             <div class="text pl-3">
                                 <h4><?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getName();?>
 </h4>
@@ -121,10 +122,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
 </nav>
-
-<?php echo '<script'; ?>
->
-<?php echo '</script'; ?>
->
 <?php }
 }

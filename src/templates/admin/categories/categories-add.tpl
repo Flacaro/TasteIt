@@ -7,21 +7,21 @@
                     <h5 class="card-title">Aggiungi Categoria</h5>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="" enctype="multipart/form-data">
+                    <form method="POST" action="/admin/categories" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-12 pr-1">
                                 <div class="form-group">
                                     <label>Nome</label>
-                                    <input type="text" class="form-control" name="name" placeholder="nome della categoria" maxlength="20">
+                                    <input type="text" class="form-control" name="name" placeholder="nome della categoria" minlength="1" maxlength="20" required>
                                 </div>
                             </div>
                         </div>
-                        <input type="file"
+                        <input required type="file"
                                name="uploadfile"
                                value="" />
                         <div class="row">
                             <div class="update ml-auto mr-auto">
-                                <button type="submit" class="btn btn-primary btn-round">Crea Categoria</button>
+                                <button type="submit" class="btn btn-primary">Crea Categoria</button>
                             </div>
                         </div>
                     </form>

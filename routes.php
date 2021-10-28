@@ -84,8 +84,9 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
     SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
     SimpleRouter::post("/admin/categories", [AdminCategoryController::class, "create"]);
+    SimpleRouter::delete("/admin/categories/{id}/destroy", [AdminCategoryController::class, "destroy"]);
     SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
-    SimpleRouter::get("/admin/categories/{categoryId}/products", [AdminProductController::class, "showCreateProduct"]);
+    SimpleRouter::get("/admin/categories/{categoryId}/products/form", [AdminProductController::class, "showCreateProduct"]);
     SimpleRouter::post("/admin/categories/{categoryId}/products", [AdminProductController::class, "store"]);
     SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "showEditProduct"]);
     SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "update"]);

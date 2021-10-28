@@ -33,4 +33,8 @@ class CategoryController {
         $vadmin->showAddCategory();
     }
 
+    public function destroy(){
+        
+    }
+
 }
