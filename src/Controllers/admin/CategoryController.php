@@ -34,7 +34,7 @@ class CategoryController {
     }
 
     public function destroy(){
-        
+
     }
 
 }
