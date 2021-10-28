@@ -22,7 +22,7 @@ require_once "Utility.php";
 
 SimpleRouter::redirect("/", "/home");
 
-
+SimpleRouter::get("/error404", [AuthController::class, "error404"]);
 SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"])->name('login');
 SimpleRouter::post("/login", [AuthController::class, "login"]);
 SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
@@ -109,7 +109,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::error(function(Request $request, \Exception $exception) {
 
     if($exception instanceof NotFoundHttpException && $exception->getCode() === 404) {
-        echo "404 not found";
+        response()->redirect("/error404");
     }
 
 });
