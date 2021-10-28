@@ -8,10 +8,14 @@
                         <section class="ftco-section">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-2 col-md-4">
+                                    <div class="col-lg-12 col-md-6">
                                         <i class="fa fa-frown-o" aria-hidden="true" style="color: white; font-size: 100px"></i>
+                                        <div>
                                         <span style="font-size: 100px; color: white">404</span>
-                                        <a style="font-size: 20px; color: white">La pagina non esiste.</a>
+                                        </div>
+                                        <div>
+                                        <span style="font-size: 30px; color: white">Ops! La pagina non esiste.</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
