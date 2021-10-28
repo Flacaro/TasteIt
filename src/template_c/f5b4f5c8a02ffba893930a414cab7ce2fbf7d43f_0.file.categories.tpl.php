@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 14:27:29
+/* Smarty version 3.1.39, created on 2021-10-28 18:30:38
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\categories\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617a97319a9e04_18508546',
+  'unifunc' => 'content_617ad02e46ce69_29470794',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f5b4f5c8a02ffba893930a414cab7ce2fbf7d43f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\categories\\categories.tpl',
-      1 => 1635415073,
+      1 => 1635437184,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617a97319a9e04_18508546 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617ad02e46ce69_29470794 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_895770487617a973199f9e5_09770830', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1778633705617ad02e464f80_72240427', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_895770487617a973199f9e5_09770830 extends Smarty_Internal_Block
+class Block_1778633705617ad02e464f80_72240427 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_895770487617a973199f9e5_09770830',
+    0 => 'Block_1778633705617ad02e464f80_72240427',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -44,22 +44,23 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <div class="content">
         <div class="row">
           <div class="col-md-12">
+            <div style="display: flex; justify-content: center">
+              <a href="/admin/categories/add" class="btn btn-primary">Aggiungi Categoria</a>
+            </div>
                 <div class="card">
                   <div class="card-header">
                     <div class="row" style="margin-left:15px">
                       <h4 class="card-title"> Categorie di prodotti</h4>
-                      <div style="display: flex; justify-content: right">
-                        <a href="/admin/categories/add" class="btn btn-primary">Aggiungi Categoria</a>
-                      </div>
                     </div>
                   </div>
                   <div class="card-body">
-                    <div class="table-responsive" style="overflow:hidden">
+                    <div class="table-responsive order-table">
                       <table class="table">
                         <thead class=" text-primary">
                         <th>
                           Nome
                         </th>
+                        <th></th>
                         </thead>
                         <tbody>
                         <?php
@@ -74,8 +75,20 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
 /products">
                               <?php echo $_smarty_tpl->tpl_vars['category']->value->getName();?>
 
-                            <a>
-                          </a>
+                            </a>
+                          </td>
+                          <td>
+                            <form action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/destroy" method="post">
+                              <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+" hidden name="id">
+                                <div style="display: flex; justify-content: right">
+                                  <button class="btn btn-primary">
+                                    Delete
+                                  </button>
+                                </div>
+                            </form>
+                          </td>
                         </tr>
                         <?php
 }

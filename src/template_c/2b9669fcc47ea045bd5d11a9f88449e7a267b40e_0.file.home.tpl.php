@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 20:50:31
+/* Smarty version 3.1.39, created on 2021-10-28 18:28:44
   from 'C:\xampp\htdocs\TasteIt\src\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176fc77890ec2_99234461',
+  'unifunc' => 'content_617acfbc1fea62_27123202',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b9669fcc47ea045bd5d11a9f88449e7a267b40e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\home.tpl',
-      1 => 1635186920,
+      1 => 1635437184,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176fc77890ec2_99234461 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617acfbc1fea62_27123202 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13453681656176fc7787dba8_50924384', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1551377950617acfbc1eb904_58745795', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3552225186176fc7787e4c9_60927370', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1565413008617acfbc1ec221_68796629', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_13453681656176fc7787dba8_50924384 extends Smarty_Internal_Block
+class Block_1551377950617acfbc1eb904_58745795 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_13453681656176fc7787dba8_50924384',
+    0 => 'Block_1551377950617acfbc1eb904_58745795',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Home<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_3552225186176fc7787e4c9_60927370 extends Smarty_Internal_Block
+class Block_1565413008617acfbc1ec221_68796629 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_3552225186176fc7787e4c9_60927370',
+    0 => 'Block_1565413008617acfbc1ec221_68796629',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -109,7 +109,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </div>
                         <div class="text">
                             <h2>Nuovi coupon ogni mese</h2>
-                            <p>I clienti più fedeli riceveranno ogni mese un nuovo coupon al loro indirizzo di posta elettronica.</p>
+                            <p>I clienti più fedeli riceveranno ogni mese un nuovo coupon sul proprio profilo.</p>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
                         <span class="subheading">Since 1970</span>
-                        <h2 class="mb-4">Prova la cucina del ristorante più vecchio de L'Aquila</h2>
+                        <h2 class="mb-4">Prova la cucina del ristorante più vecchio di Montepulciano</h2>
 
                         <p>Il nostro locale accogliente, ricco di storia e di tradizione, il profumo del basilico appena colto, la bontà dei nostri ingredienti saranno per voi un'esperienza da ricordare. Venite a trovarci, vi stupiremo!</p>
                         <p>Da oggi puoi provare la nostra cucina direttamente a casa tua. Comincia subito ad ordinare per ricevere ogni mese esclusivi coupon.</p>

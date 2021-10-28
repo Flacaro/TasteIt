@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 20:56:13
+/* Smarty version 3.1.39, created on 2021-10-28 18:30:17
   from 'C:\xampp\htdocs\TasteIt\src\templates\user\orders-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176fdcde500d8_50248267',
+  'unifunc' => 'content_617ad0191388d9_39743818',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f1f4b476797a44d255e972364dd156ecfdef05ca' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\user\\orders-details.tpl',
-      1 => 1635187231,
+      1 => 1635437184,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176fdcde500d8_50248267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617ad0191388d9_39743818 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11348763866176fdcde3be71_12800608', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_547531410617ad0190f8219_88234774', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21058013286176fdcde3c7b1_50938009', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1362241994617ad0190f8b31_92667424', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_11348763866176fdcde3be71_12800608 extends Smarty_Internal_Block
+class Block_547531410617ad0190f8219_88234774 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_11348763866176fdcde3be71_12800608',
+    0 => 'Block_547531410617ad0190f8219_88234774',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_21058013286176fdcde3c7b1_50938009 extends Smarty_Internal_Block
+class Block_1362241994617ad0190f8b31_92667424 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_21058013286176fdcde3c7b1_50938009',
+    0 => 'Block_1362241994617ad0190f8b31_92667424',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -75,13 +75,14 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\TasteIt\\
 
     <section class="ftco-section">
         <div class="container">
-
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-10 heading-section text-center ftco-animated">
             <?php if ($_smarty_tpl->tpl_vars['order']->value->getState() != "Accepted") {?>
             <form action="/profile/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 " method="post">
                 <input type="text" name="orderId" class="quantity form-control input-number" value="<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 " hidden>
-                <div style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center; margin-bottom: 60px">
                     <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
                 </div>
             </form>
@@ -128,11 +129,8 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                 <td><?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getPrice();?>
 </td>
                                 <td class="quantity">
-                                    <div class="input-group" style="width: 9em">
                                         <?php echo $_smarty_tpl->tpl_vars['product']->value[1];?>
 
-
-                                    </div>
                                 </td>
                                 <td><?php echo smarty_function_math(array('equation'=>((string)$_smarty_tpl->tpl_vars['product']->value[0]->getPrice())." * ".((string)$_smarty_tpl->tpl_vars['product']->value[1])),$_smarty_tpl);?>
 </td>
@@ -171,6 +169,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </form>
                 </div>
             <?php }?>
+                </div>
+             </div>
         </div>
     </section>
 <?php

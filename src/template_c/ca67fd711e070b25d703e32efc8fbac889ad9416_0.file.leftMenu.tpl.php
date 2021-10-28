@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-24 19:10:32
+/* Smarty version 3.1.39, created on 2021-10-28 18:30:31
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617593880267d4_15602714',
+  'unifunc' => 'content_617ad0271f0662_61224460',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca67fd711e070b25d703e32efc8fbac889ad9416' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1635071877,
+      1 => 1635437184,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617593880267d4_15602714 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617ad0271f0662_61224460 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="nav-open">
 
 <head>
     <meta charset="utf-8" />
@@ -33,9 +33,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <link rel="icon" type="image/png" href="/src/templates/admin/assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-
         Admin Panel
-
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -57,6 +55,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 TasteIt
             </a>
         </div>
+
         <div class="sidebar-wrapper" style="overflow:hidden; background-color: #B7472A">
             <ul class="nav">
                 <li class="">
@@ -99,11 +98,13 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     </div>
     <div class="main-panel">
         <!-- Navbar -->
+
+        
         <nav class="navbar navbar-expand-lg navbar-absolute fixed-top" style="background-color: #A23F25">
             <div class="container-fluid" style="background-color: #A23F25">
                 <div class="navbar-wrapper" >
                     <div class="navbar-toggle">
-                        <button type="button" class="navbar-toggler">
+                        <button type="button" class="navbar-toggler" id="nav-toggler-btn">
                             <span class="navbar-toggler-bar bar1"></span>
                             <span class="navbar-toggler-bar bar2"></span>
                             <span class="navbar-toggler-bar bar3"></span>
@@ -116,9 +117,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             </div>
         </nav>
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139636073161759388025c06_92459303', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_286213352617ad0271eefb4_74174604', 'admin');
 ?>
 
+
+        <style>
+            .order-table {
+                overflow-x: auto;
+            }
+
+
+            /* Quando lo schermo e' >= 1200px */
+            @media (min-width: 1200px) {
+                .order-table {
+                    overflow: hidden;
+                }
+            }
+        </style>
 
 <!--   Core JS Files   -->
 <?php echo '<script'; ?>
@@ -134,9 +149,6 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139636073161759388
  src="/src/templates/admin/assets/js/plugins/perfect-scrollbar.jquery.min.js"><?php echo '</script'; ?>
 >
 <!--  Google Maps Plugin    -->
-<?php echo '<script'; ?>
- src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"><?php echo '</script'; ?>
->
 <!-- Chart JS -->
 <?php echo '<script'; ?>
  src="/src/templates/admin/assets/js/plugins/chartjs.min.js"><?php echo '</script'; ?>
@@ -153,24 +165,41 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139636073161759388
  src="/src/templates/admin/assets/demo/demo.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
+ src="/src/templates/admin/assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
 >
     $(document).ready(function() {
         // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
         demo.initChartsPages();
+
     });
 <?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+>
+    const navToggler = document.querySelector('#nav-toggler-btn')
+    const html = document.querySelector('.nav-open')
+    let isOpen = true
+
+    navToggler.addEventListener('click', evt => {
+        isOpen ? html.classList.remove('nav-open') : html.classList.add('nav-open')
+        isOpen = !isOpen
+    })
+<?php echo '</script'; ?>
+>
+
 </body>
 </html>
 
 <?php }
 /* {block 'admin'} */
-class Block_139636073161759388025c06_92459303 extends Smarty_Internal_Block
+class Block_286213352617ad0271eefb4_74174604 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_139636073161759388025c06_92459303',
+    0 => 'Block_286213352617ad0271eefb4_74174604',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

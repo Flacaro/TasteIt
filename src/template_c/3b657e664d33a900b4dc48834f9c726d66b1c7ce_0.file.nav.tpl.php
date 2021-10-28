@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 13:36:58
+/* Smarty version 3.1.39, created on 2021-10-28 18:28:39
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617a8b5a5e1e13_54165655',
+  'unifunc' => 'content_617acfb7700e30_73454307',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1635421013,
+      1 => 1635437184,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617a8b5a5e1e13_54165655 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617acfb7700e30_73454307 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
                 <p class="mb-0 phone pl-md-2">
-                    <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a>
+                    <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> 3208976543</a>
                     <a href="#"><span class="fa fa-paper-plane mr-1"></span> tasteit@gmail.com</a>
                 </p>
             </div>
@@ -60,7 +60,8 @@ $_smarty_tpl->tpl_vars['productWithQuantity']->do_else = false;
 ?>
 
                         <div class="dropdown-item d-flex align-items-start" href="#">
-                            <div class="img"></div>
+                            <div class="img" style="background-image: url(<?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getImagePath();?>
+)"></div>
                             <div class="text pl-3">
                                 <h4><?php echo $_smarty_tpl->tpl_vars['productWithQuantity']->value[0]->getName();?>
 </h4>
@@ -121,10 +122,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
 </nav>
-
-<?php echo '<script'; ?>
->
-<?php echo '</script'; ?>
->
 <?php }
 }

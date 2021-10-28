@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div >
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span><a href="product.html">Produtti <i class="fa fa-chevron-right"></i></a></span> <span> Prodotto <i class="fa fa-chevron-right"></i></span></p>
+                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span><a href="product.html">Prodotti <i class="fa fa-chevron-right"></i></a></span> <span> Prodotto <i class="fa fa-chevron-right"></i></span></p>
                 <h2 class="mb-0 bread">Prodotto </h2>
             </div>
         </div>
@@ -87,7 +87,6 @@
             </div>
         </div>
 
-        <!-- Inizio la barra  del Description , Manifacture , Reviews sotto la foto del liquore  -->
             <div class="row mt-5">
                 <div class="col-md-12 nav-link-wrap">
                     <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -96,9 +95,7 @@
                     </div>
 
                 </div>
-            <!-- fine della barra  -->
             <div class="col-md-12 ">
-                <!-- inizio della descrizione  -->
                 <div  class="tab-content bg-light" id="v-pills-tabContent">
 
                     <div class="tab-pane fade show active"  id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
@@ -107,9 +104,6 @@
                         </div>
                     </div>
 
-                    <!-- inizio della Manifacture   -->
-
-                    <!-- inizio della Reviews -->
                     <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                         <div class="row p-4">
                             <div class="col-md-7">
@@ -181,4 +175,3 @@
     </div>
 </section>
 {/block}
-<!-- Fine della barra di Description , Reviews ecc  -->

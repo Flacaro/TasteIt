@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 20:52:04
+/* Smarty version 3.1.39, created on 2021-10-28 18:30:11
   from 'C:\xampp\htdocs\TasteIt\src\templates\user\profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176fcd4740ae4_11228534',
+  'unifunc' => 'content_617ad013bbfab8_44334865',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca2ad3375eacfdc3ea60014ca5c837f51c13a28e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\user\\profile.tpl',
-      1 => 1635186920,
+      1 => 1635415073,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176fcd4740ae4_11228534 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617ad013bbfab8_44334865 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3990706686176fcd4730974_74910507', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1179663063617ad013bae703_42638214', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7508671256176fcd47316d5_92796543', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1283236201617ad013baf570_98973947', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_3990706686176fcd4730974_74910507 extends Smarty_Internal_Block
+class Block_1179663063617ad013bae703_42638214 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_3990706686176fcd4730974_74910507',
+    0 => 'Block_1179663063617ad013bae703_42638214',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_7508671256176fcd47316d5_92796543 extends Smarty_Internal_Block
+class Block_1283236201617ad013baf570_98973947 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_7508671256176fcd47316d5_92796543',
+    0 => 'Block_1283236201617ad013baf570_98973947',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -99,6 +99,54 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="container" style="overflow: auto">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animated">
+                    <span class="subheading">I tuoi Coupon</span>
+                    <h2>Coupon</h2>
+                    <?php if ($_smarty_tpl->tpl_vars['coupons']->value != array()) {?>
+                        <div class="row">
+                            <div class="table-wrap order-table">
+                                <table class="table">
+
+                                    <thead class="thead-primary">
+                                    <tr>
+                                        <th>Codice</th>
+                                        <th>Data di Scadenza</th>
+                                        <th>Percentuale</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['coupons']->value, 'c');
+$_smarty_tpl->tpl_vars['c']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
+$_smarty_tpl->tpl_vars['c']->do_else = false;
+?>
+                                        <tr class="alert" role="alert">
+                                            <td><?php echo $_smarty_tpl->tpl_vars['c']->value->getId();?>
+</td>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['c']->value->getExpirationDate();?>
+</td>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['c']->value->getPriceCut();?>
+%</td>
+                                        </tr>
+                                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <?php } else { ?>
+                        <h3>Non hai nessun coupon disponibile.</h3>
+                    <?php }?>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" style="overflow: auto">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-10 heading-section text-center ftco-animated">
                     <span class="subheading">I tuoi ordini</span>
                     <h2>Ordini</h2>
                     <?php if ($_smarty_tpl->tpl_vars['orders']->value != array()) {?>
@@ -116,7 +164,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
+                                    <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['orders']->value, 'order');
 $_smarty_tpl->tpl_vars['order']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['order']->value) {
@@ -139,14 +187,14 @@ $_smarty_tpl->tpl_vars['order']->do_else = false;
                                                 </form>
                                             </td>
                                         </tr>
-                                        <?php
+                                    <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <?php } else { ?>
+                    <?php } else { ?>
                         <h3>Non hai effettuato ordini.</h3>
                     <?php }?>
 

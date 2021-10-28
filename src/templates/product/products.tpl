@@ -10,7 +10,7 @@
                             <a href="index.html">Home <i class="fa fa-chevron-right"></i></a>
                         </span> <span>Prodotti <i class="fa fa-chevron-right"></i></span>
                     </p>
-                    <h2 class="mb-0 bread">Products</h2>
+                    <h2 class="mb-0 bread">Prodotti</h2>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-12">
                     <div class="row mb-4">
                         <div class="col-md-12 d-flex justify-content-between align-items-center">
-                            <h4 class="product-select">Select Types of Products</h4>
+                            <h4 class="product-select">Seleziona un prodotto</h4>
                         </div>
                     </div>
 

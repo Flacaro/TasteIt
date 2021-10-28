@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 20:42:25
+/* Smarty version 3.1.39, created on 2021-10-28 18:30:57
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\orders\order-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6176fa918068a3_11419388',
+  'unifunc' => 'content_617ad041b2fa42_91517493',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d7fc5464908fca752b245b63962a8f2a769ac53' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\orders\\order-details.tpl',
-      1 => 1635071877,
+      1 => 1635437184,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6176fa918068a3_11419388 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617ad041b2fa42_91517493 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6674912026176fa917f2d03_28526863', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1987523007617ad041b16400_43708367', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_6674912026176fa917f2d03_28526863 extends Smarty_Internal_Block
+class Block_1987523007617ad041b16400_43708367 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_6674912026176fa917f2d03_28526863',
+    0 => 'Block_1987523007617ad041b16400_43708367',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -125,7 +125,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <form method="POST" action="/admin/orders/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 /accept">
                             <div class="update ml-auto mr-auto">
-                                <label>Tempo previsto di consegna: <input type="time" name="arrival"></label>
+                                <label>Tempo previsto di consegna: <input type="time" name="arrival" required></label>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Accetta Ordine</button>
                             </div>
