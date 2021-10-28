@@ -164,7 +164,7 @@ class FOrder extends FConnection {
     function storeOrdersProducts($orderid, $prodWithQuantity){
         $pdo = FConnection::connect();
         foreach ($prodWithQuantity as $product){
-            $query='insert into orders_products (`orderId`, `quantity`, `name`, `description`, `price`, `productId`) VALUES (\''.$orderid.'\',\''.$product[1].'\',\''.$product[0]->getName().'\',\''.$product[0]->getDescription().'\',\''.$product[0]->getPrice().'\',' .$product[0]->getId().')';
+            $query='insert into orders_products (`orderId`, `quantity`, `name`, `description`, `price`, `productId`, `imagePath`) VALUES (\''.$orderid.'\',\''.$product[1].'\',\''.$product[0]->getName().'\',\''.$product[0]->getDescription().'\',\''.$product[0]->getPrice().'\',' .$product[0]->getId().', \'' .$product[0]->getImagePath(). '\')';
             $stmt = $pdo->prepare($query);
             $stmt->execute();
             $this->changeTimesOrdered($prodWithQuantity);

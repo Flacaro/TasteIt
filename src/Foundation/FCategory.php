@@ -38,7 +38,6 @@ class FCategory extends FConnection {
         $query='insert into categories (`restaurantId`, `categoryName`, imagePath) VALUES (1,\''.$category->getName().'\', \'/'.$category->getImage().'\')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
     }
 
     function loadCategoryProducts($categoryId) {
@@ -81,5 +80,12 @@ class FCategory extends FConnection {
         }
         //print_r($categories);
         return $categories;
+    }
+
+    public function delete($id){
+        $pdo = FConnection::connect();
+        $query= "DELETE FROM categories WHERE id=".$id;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 }

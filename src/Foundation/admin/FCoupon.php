@@ -44,7 +44,6 @@ class FCoupon extends FConnection {
         $query="insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('".$coupon->getId()."', '".$coupon->getPriceCut()."', '".$coupon->getExpirationDate()."' , ".$customerId.")";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
     }
     //non diamo la possibilità di fare update al coupon, quindi niente update
 
@@ -57,17 +56,17 @@ class FCoupon extends FConnection {
 
     public function isExpired($id){
         $pdo = FConnection::connect();
-        $query="select * from coupons where expirationDate>NOW()";
+        $query="select * from coupons where expirationDate > NOW()";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $coupons= $stmt->fetchAll();
-        $result=false;
+        $result=true;
         foreach($coupons as $coupon){
             if ($coupon[0]==$id){
-                $result=true;
+                $result=false;
             }
         }
-        return !$result;
+        return $result;
     }
 
     public function getAll(){

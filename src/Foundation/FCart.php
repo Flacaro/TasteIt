@@ -23,7 +23,6 @@ class FCart extends FConnection {
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $pdo->lastInsertId();
-        //$stmt->debugDumpParams();
     }
 
     function update($newCart){

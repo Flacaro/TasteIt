@@ -67,7 +67,7 @@
                     <div class="row justify-content-center align-items-end">
                     <form method="POST" action="/admin/orders/{$order->getId()}/accept">
                             <div class="update ml-auto mr-auto">
-                                <label>Tempo previsto di consegna: <input type="time" name="arrival"></label>
+                                <label>Tempo previsto di consegna: <input type="time" name="arrival" required></label>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Accetta Ordine</button>
                             </div>

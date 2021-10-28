@@ -29,7 +29,6 @@ class FCustomer extends FConnection {
             $c1=[$c, $customer[4]];
             array_push($customers, $c1);
         }
-        $stmt->debugDumpParams();
         return $customers;
     }
 

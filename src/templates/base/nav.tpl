@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6 d-flex align-items-center">
                 <p class="mb-0 phone pl-md-2">
-                    <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a>
+                    <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> 3208976543</a>
                     <a href="#"><span class="fa fa-paper-plane mr-1"></span> tasteit@gmail.com</a>
                 </p>
             </div>

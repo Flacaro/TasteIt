@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-21 12:25:16
+/* Smarty version 3.1.39, created on 2021-10-28 16:55:30
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6171400c3799f5_81701719',
+  'unifunc' => 'content_617ab9e2ae8e80_28272895',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '993c23025e0e1363d344f3982c07b51de7eff7e3' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order.tpl',
-      1 => 1634811870,
+      1 => 1635432848,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6171400c3799f5_81701719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617ab9e2ae8e80_28272895 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17809074226171400c32c3f2_40662349', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_546157072617ab9e2ad9094_20022265', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20838369416171400c32cf76_59951776', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2003365655617ab9e2ad99e9_42013624', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9966741916171400c32d556_96579308', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_343354255617ab9e2ad9f89_53380045', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_17809074226171400c32c3f2_40662349 extends Smarty_Internal_Block
+class Block_546157072617ab9e2ad9094_20022265 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_17809074226171400c32c3f2_40662349',
+    0 => 'Block_546157072617ab9e2ad9094_20022265',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_20838369416171400c32cf76_59951776 extends Smarty_Internal_Block
+class Block_2003365655617ab9e2ad99e9_42013624 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_20838369416171400c32cf76_59951776',
+    0 => 'Block_2003365655617ab9e2ad99e9_42013624',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_9966741916171400c32d556_96579308 extends Smarty_Internal_Block
+class Block_343354255617ab9e2ad9f89_53380045 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_9966741916171400c32d556_96579308',
+    0 => 'Block_343354255617ab9e2ad9f89_53380045',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -90,7 +90,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             </div>
         </div>
     </section>
-    <!--fine blocco prima immagine -->
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-between">
@@ -156,7 +155,7 @@ $_smarty_tpl->tpl_vars['address']->do_else = false;
                                     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                                <a href="/address/add" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
+                                <a href="/address" class="btn btn-primary w-50">Aggiungi un Indirizzo</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -187,12 +186,12 @@ $_smarty_tpl->tpl_vars['card']->do_else = false;
                                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                                <a href="/cards/add" class="btn btn-primary w-50">Aggiungi una Carta</a>
+                                <a href="/cards" class="btn btn-primary w-50">Aggiungi una Carta</a>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 d-flex justify-content-center">
+                        <div class="col-12 d-flex justify-content-center mt-5">
                             <button class="btn btn-primary w-25" style="margin-left: 1rem" id="ordine" type="submit">Ordina</button>
                         </div>
                     </div>

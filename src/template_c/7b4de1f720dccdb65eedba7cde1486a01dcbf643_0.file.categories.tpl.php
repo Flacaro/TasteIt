@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 14:54:40
+/* Smarty version 3.1.39, created on 2021-10-28 15:21:31
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617a9d90780332_31317626',
+  'unifunc' => 'content_617aa3db5d99e4_37452226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b4de1f720dccdb65eedba7cde1486a01dcbf643' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\categories.tpl',
-      1 => 1635425679,
+      1 => 1635427290,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617a9d90780332_31317626 (Smarty_Internal_Template $_smarty_tpl) {
+function content_617aa3db5d99e4_37452226 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_857456668617a9d90777f85_87775989', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1345741651617aa3db5cdc75_78808281', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_857456668617a9d90777f85_87775989 extends Smarty_Internal_Block
+class Block_1345741651617aa3db5cdc75_78808281 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_857456668617a9d90777f85_87775989',
+    0 => 'Block_1345741651617aa3db5cdc75_78808281',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -78,12 +78,15 @@ $_smarty_tpl->tpl_vars['category']->do_else = false;
                             </a>
                           </td>
                           <td>
-                            <form action="">
-                              <div style="display: flex; justify-content: right">
-                              <button class="btn btn-primary">
-                                X
-                              </button>
-                              </div>
+                            <form action="/admin/categories/<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+/destroy" method="post">
+                              <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['category']->value->getId();?>
+" hidden name="id">
+                                <div style="display: flex; justify-content: right">
+                                  <button class="btn btn-primary">
+                                    Delete
+                                  </button>
+                                </div>
                             </form>
                           </td>
                         </tr>

@@ -50,7 +50,7 @@
                         </div>
                         <div class="text">
                             <h2>Nuovi coupon ogni mese</h2>
-                            <p>I clienti più fedeli riceveranno ogni mese un nuovo coupon al loro indirizzo di posta elettronica.</p>
+                            <p>I clienti più fedeli riceveranno ogni mese un nuovo coupon sul proprio profilo.</p>
                         </div>
                     </div>
                 </div>

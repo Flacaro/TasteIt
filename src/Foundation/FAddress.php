@@ -69,7 +69,6 @@ class FAddress extends FConnection{
         $query="INSERT INTO `shippingaddresses` (`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (".$cap.",\"".$city."\" , \"" . $street ."\",".$homenumber.",".$customerid.")";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
     }
 
     public function update($address){

@@ -34,6 +34,5 @@ class FReview {
         $query = 'insert into reviews(stars, comment, customerId, productId) values ('.$review->getStars().', "'. $review->getComment().'", '. $review->getCustomer()->getId(). ','. $productId.')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
     }
 }

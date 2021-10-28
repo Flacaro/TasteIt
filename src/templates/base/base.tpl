@@ -34,7 +34,7 @@
         }
     </style>
 </head>
-<body>
+<body style="height: 100vh;">
 
 {include file='src/templates/base/nav.tpl'}
 

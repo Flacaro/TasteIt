@@ -41,7 +41,6 @@ class FCustomer extends FConnection {
         $stmt->execute();
         $cus=$stmt->fetch();
         $customer= new Customer;
-        $cart= new Cart;
         $fav= new Favourites;
         $customer->setId($cus[0]);
         $customer->setName($cus[1]);
@@ -111,7 +110,6 @@ class FCustomer extends FConnection {
         $query='insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES (\''. $name .'\',\''.$surname.'\',\''.$email.'\',\''.$password.'\','.$f.','.$c.  ', \'' . $image.'\')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
     }
 
 //l'update del customer si limita a email, password, nome, cognome, per quanto riguarda il carrello, i preferiti, le carte di credito etc usiamo i foundation specifici

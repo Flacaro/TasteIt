@@ -50,7 +50,7 @@
                         </div>
                         <div class="text">
                             <h2>Nuovi coupon ogni mese</h2>
-                            <p>I clienti più fedeli riceveranno ogni mese un nuovo coupon al loro indirizzo di posta elettronica.</p>
+                            <p>I clienti più fedeli riceveranno ogni mese un nuovo coupon sul proprio profilo.</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
                         <span class="subheading">Since 1970</span>
-                        <h2 class="mb-4">Prova la cucina del ristorante più vecchio de L'Aquila</h2>
+                        <h2 class="mb-4">Prova la cucina del ristorante più vecchio di Montepulciano</h2>
 
                         <p>Il nostro locale accogliente, ricco di storia e di tradizione, il profumo del basilico appena colto, la bontà dei nostri ingredienti saranno per voi un'esperienza da ricordare. Venite a trovarci, vi stupiremo!</p>
                         <p>Da oggi puoi provare la nostra cucina direttamente a casa tua. Comincia subito ad ordinare per ricevere ogni mese esclusivi coupon.</p>

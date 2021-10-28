@@ -15,11 +15,12 @@
 
     <section class="ftco-section">
         <div class="container">
-
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-10 heading-section text-center ftco-animated">
             {if $order->getState()!="Accepted"}
             <form action="/profile/{$order->getId()}" method="post">
                 <input type="text" name="orderId" class="quantity form-control input-number" value="{$order->getId()}" hidden>
-                <div style="display: flex; justify-content: center;">
+                <div style="display: flex; justify-content: center; margin-bottom: 60px">
                     <button class="btn btn-primary btn-number mb-2"  type="submit">Metti Prodotti nel Carrello</button>
                 </div>
             </form>
@@ -57,10 +58,7 @@
                                 </td>
                                 <td>{$product[0]->getPrice()}</td>
                                 <td class="quantity">
-                                    <div class="input-group" style="width: 9em">
                                         {$product[1]}
-
-                                    </div>
                                 </td>
                                 <td>{math equation="{$product[0]->getPrice()} * {$product[1]}"}</td>
 
@@ -92,6 +90,8 @@
                     </form>
                 </div>
             {/if}
+                </div>
+             </div>
         </div>
     </section>
 {/block}

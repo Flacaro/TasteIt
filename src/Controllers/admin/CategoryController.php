@@ -34,7 +34,10 @@ class CategoryController {
     }
 
     public function destroy(){
-
+        $id=$_POST["id"];
+        $FCategory = new FCategory();
+        $FCategory->delete($id);
+        redirect(url("/admin/categories/"));
     }
 
 }

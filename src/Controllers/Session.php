@@ -78,7 +78,8 @@ class Session
 
     public function loadCart() {
         $this->newSession();
-        return  unserialize($_SESSION["cart"]);
+        $user = unserialize($_SESSION["customer"]);
+        return $user->getCart();
         //unset($_SESSION["cart"]);
     }
 

@@ -60,8 +60,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
     SimpleRouter::post("/address", [CustomerController::class, "addAddress"]);
 
     //SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
-    SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"])->name('checkout');
-    SimpleRouter::post("/cart/checkout/coupon", [OrderController::class, "applyCoupon"]);
+
     SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "createOrder"]);
 
     SimpleRouter::delete("/carts/{cartId}/products/{productId}", [CartController::class, "destroy"]);
@@ -84,7 +83,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
     SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);
     SimpleRouter::post("/admin/categories", [AdminCategoryController::class, "create"]);
-    SimpleRouter::delete("/admin/categories/{id}/destroy", [AdminCategoryController::class, "destroy"]);
+    SimpleRouter::post("/admin/categories/{id}/destroy", [AdminCategoryController::class, "destroy"]);
     SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
     SimpleRouter::get("/admin/categories/{categoryId}/products/form", [AdminProductController::class, "showCreateProduct"]);
     SimpleRouter::post("/admin/categories/{categoryId}/products", [AdminProductController::class, "store"]);
@@ -107,6 +106,9 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 });
 
+SimpleRouter::group(['middleware' => \App\Controllers\OrderMiddleware::class], function () {
+    SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"])->name('checkout');
+});
     SimpleRouter::error(function(Request $request, \Exception $exception) {
 
     if($exception instanceof NotFoundHttpException && $exception->getCode() === 404) {

@@ -21,7 +21,6 @@ class FProduct extends FConnection {
         $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (\'' . $product->getName() . '\', \'' . $product->getDescription() . '\', ' . $product->getPrice() . ', ' . $categoryId . ', \'/' . $product->getImagePath() . '\', ' . '0);';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
         return $pdo->lastInsertId();
     }
 
@@ -144,7 +143,6 @@ class FProduct extends FConnection {
         $query = 'select p.imagePath, r.stars from products as p join reviews as r on r.productId = p.id ORDER BY stars DESC LIMIT 6;';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
         return $stmt->fetchAll();
     }
 
@@ -232,7 +230,6 @@ class FProduct extends FConnection {
         $query = "DELETE FROM products where id = " . $id . ";";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
     }
 
 

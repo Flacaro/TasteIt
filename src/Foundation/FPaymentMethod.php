@@ -27,7 +27,6 @@ class FPaymentMethod {
         $query='INSERT INTO `customers_paymentmethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES ('.$customerId. ', ' . $card->getNumber() . ', \'' . $card->getexpirationDate() . '\', '. $card->getCvv() . ', \''. $card->getCardHolder() .'\')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $stmt->debugDumpParams();
     }
 
     function delete($id) {

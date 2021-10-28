@@ -30,12 +30,13 @@
                             </a>
                           </td>
                           <td>
-                            <form action="">
-                              <div style="display: flex; justify-content: right">
-                              <button class="btn btn-primary">
-                                X
-                              </button>
-                              </div>
+                            <form action="/admin/categories/{$category->getId()}/destroy" method="post">
+                              <input type="text" value="{$category->getId()}" hidden name="id">
+                                <div style="display: flex; justify-content: right">
+                                  <button class="btn btn-primary">
+                                    Delete
+                                  </button>
+                                </div>
                             </form>
                           </td>
                         </tr>

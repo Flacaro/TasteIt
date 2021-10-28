@@ -54,18 +54,6 @@ class OrderController {
         $vorder->checkout($cart, $addresses, $cards, $c, $valid);
     }
 
-    public function applyCoupon(){
-        $fcoupon=new FCoupon();
-        if ($fcoupon->exist($_POST['option']&!$fcoupon->isExpired($_POST['option']))){
-            self::checkout();
-        }
-        else {
-            $valid=false;
-            self::checkout($valid);
-        }
-
-    }
-
     public function createOrder(){
         $session=Session::getInstance();
         $forder = new FOrder();
@@ -80,7 +68,7 @@ class OrderController {
         $c=NULL;
         if ($_POST['option']!=""){
 
-            if ($fcoupon->exist($coupon)){
+            if ($fcoupon->exist($coupon) and !$fcoupon->isExpired($coupon)){
                 $c = $fcoupon->load($_POST['option']);
             }
             else{
