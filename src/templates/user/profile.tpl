@@ -36,6 +36,44 @@
         <div class="container" style="overflow: auto">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-10 heading-section text-center ftco-animated">
+                    <span class="subheading">I tuoi Coupon</span>
+                    <h2>Coupon</h2>
+                    {if $coupons!=[]}
+                        <div class="row">
+                            <div class="table-wrap order-table">
+                                <table class="table">
+
+                                    <thead class="thead-primary">
+                                    <tr>
+                                        <th>Codice</th>
+                                        <th>Data di Scadenza</th>
+                                        <th>Percentuale</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {foreach $coupons as $c}
+                                        <tr class="alert" role="alert">
+                                            <td>{$c->getId()}</td>
+                                            <td>{$c->getExpirationDate()}</td>
+                                            <td>{$c->getPriceCut()}%</td>
+                                        </tr>
+                                        {/foreach}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {else}
+                        <h3>Non hai nessun coupon disponibile.</h3>
+                    {/if}
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" style="overflow: auto">
+            <div class="row justify-content-center pb-5">
+                <div class="col-md-10 heading-section text-center ftco-animated">
                     <span class="subheading">I tuoi ordini</span>
                     <h2>Ordini</h2>
                     {if $orders!=[]}
@@ -53,7 +91,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        {foreach $orders as $order}
+                                    {foreach $orders as $order}
                                         <tr class="alert" role="alert">
                                             <td>{$order->getCreationDate()}</td>
                                             <td>{$order->getTotal()}</td>
@@ -66,12 +104,12 @@
                                                 </form>
                                             </td>
                                         </tr>
-                                        {/foreach}
+                                    {/foreach}
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        {else}
+                    {else}
                         <h3>Non hai effettuato ordini.</h3>
                     {/if}
 

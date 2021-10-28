@@ -10,10 +10,21 @@ class Customer extends User {
     private $fav;
     private $creditCards=[];
     private $orders=[];
+    private $coupons=[];
     private $imagePath;
 
     public function __construct() {
         parent::__construct();
+    }
+
+    public function getCoupons(): array
+    {
+        return $this->coupons;
+    }
+
+    public function setCoupons(array $coupons): void
+    {
+        $this->coupons = $coupons;
     }
 
     public function getCreditCards(): array

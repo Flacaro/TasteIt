@@ -2,6 +2,7 @@
 
 
 namespace App\Controllers;
+use App\Foundation\admin\FCoupon;
 use App\Foundation\FAddress;
 use App\Foundation\FCart;
 use App\Foundation\FCategory;
@@ -55,10 +56,12 @@ class CustomerController {
     public function getProfile() {
         $session=Session::getInstance();
         $forder= new FOrder();
-            $customer = $session->loadUser();
-            $orders = $forder->loadUsersOrders($customer->getId());
-            $vUser = new VUser();
-            $vUser->getProfile($customer, $orders);
+        $fcustomer = new FCustomer();
+        $customer = $session->loadUser();
+        $orders = $forder->loadUsersOrders($customer->getId());
+        $coupons = $fcustomer->loadUsersCoupons($customer->getId());
+        $vUser = new VUser();
+        $vUser->getProfile($customer, $orders, $coupons);
 
     }
 

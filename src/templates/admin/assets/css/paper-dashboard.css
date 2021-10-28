@@ -987,7 +987,7 @@ fieldset[disabled]
   background-color: #FFFFFF;
   border: 1px solid #DDDDDD;
   border-radius: 4px;
-  color: #ffffff;
+  color: #000000;
   line-height: normal;
   height: auto;
   font-size: 14px;
@@ -997,7 +997,7 @@ fieldset[disabled]
     border: 1px solid #9A9A9A;
     box-shadow: none;
     outline: 0 !important;
-    color: #ffffff; }
+    color: #000000; }
     .form-control:focus + .input-group-append .input-group-text,
     .form-control:focus ~ .input-group-append .input-group-text,
     .form-control:focus + .input-group-prepend .input-group-text,
@@ -1012,7 +1012,7 @@ fieldset[disabled]
     box-shadow: none; }
   .has-success .form-control {
     border: 1px solid #ccc;
-    color: #ffffff; }
+    color: #000000; }
     .has-success .form-control.form-control-success {
       padding-right: 2.5em !important; }
   .has-success .form-control:focus {

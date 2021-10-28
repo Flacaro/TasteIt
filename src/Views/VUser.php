@@ -26,7 +26,7 @@ class VUser {
         ]);
     }
 
-    public function getProfile($customer, $orders) {
+    public function getProfile($customer, $orders, $coupons) {
         $data = [
             'id' => $customer->getId(),
             'name' => $customer->getName(),
@@ -34,7 +34,8 @@ class VUser {
             'email' => $customer->getEmail(),
             'password' => $customer->getPassword(),
             'image' => $customer->getImagePath(),
-            'orders' => $orders
+            'orders' => $orders,
+            'coupons' => $coupons
         ];
         return setData('user/profile', $data);
     }

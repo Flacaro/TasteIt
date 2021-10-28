@@ -6,6 +6,7 @@ namespace App\Foundation;
 
 use App\Foundation\admin\FCoupon;
 use App\Models\Cart;
+use App\Models\Coupon;
 use App\Models\Customer;
 use App\Models\Favourites;
 use App\Models\Order;
@@ -198,5 +199,23 @@ class FCustomer extends FConnection {
         }
         print_r($customers);
         return $customers;
+    }
+
+    public function loadUsersCoupons($userId){
+        $pdo = FConnection::connect();
+        $query="SELECT id, expirationDate, priceCut FROM coupons where customerId=" . $userId;
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $coupon= $stmt->fetchAll();
+        $coupons=[];
+        foreach ($coupon as $c){
+            $cou = new Coupon();
+            $fpay= new FPaymentMethod();
+            $cou->setId($c[0]);
+            $cou->setExpirationDate($c[1]);
+            $cou->setPriceCut($c[2]);
+            array_push($coupons, $cou);
+        }
+        return $coupons;
     }
 }

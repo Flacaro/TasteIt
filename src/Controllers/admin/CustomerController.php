@@ -20,7 +20,6 @@ class CustomerController
 
     public function sendCoupon() {
         $fCoupon = new FCoupon;
-        //aggiornare la quantità nella tabella customers_coupons
         $customersId = $_POST['customers'];
         $pricecut = $_POST['pricecut'];
         $expiration = $_POST['expiration'];
@@ -28,7 +27,7 @@ class CustomerController
             $coupon = new Coupon();
             $coupon->setPriceCut($pricecut);
             $coupon->setExpirationDate($expiration);
-            $fCoupon->store($coupon);
+            $fCoupon->store($coupon, $c);
         }
         redirect(url('showAllCustomers'));
     }

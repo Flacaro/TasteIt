@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-23 11:37:45
+/* Smarty version 3.1.39, created on 2021-10-25 16:33:30
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\categories\categories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6173d7e966ed63_55928726',
+  'unifunc' => 'content_6176c03a02d700_38430915',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b4de1f720dccdb65eedba7cde1486a01dcbf643' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\categories\\categories.tpl',
-      1 => 1634981864,
+      1 => 1635172408,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6173d7e966ed63_55928726 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6176c03a02d700_38430915 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12423903536173d7e9666dd2_08895586', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3490558606176c03a0250f9_76792003', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_12423903536173d7e9666dd2_08895586 extends Smarty_Internal_Block
+class Block_3490558606176c03a0250f9_76792003 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_12423903536173d7e9666dd2_08895586',
+    0 => 'Block_3490558606176c03a0250f9_76792003',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -48,7 +48,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                   <div class="card-header">
                     <div class="row" style="margin-left:15px">
                       <h4 class="card-title"> Categorie di prodotti</h4>
-                      <div style="display:flex; justify-content: flex-end">
+                      <div style="display: flex; justify-content: right">
                         <a href="/admin/categories/add" class="btn btn-primary">Aggiungi Categoria</a>
                       </div>
                     </div>

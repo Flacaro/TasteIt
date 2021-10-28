@@ -39,9 +39,9 @@ class FCoupon extends FConnection {
             return false;
         }
     }
-    public function store($coupon){
+    public function store($coupon, $customerId){
         $pdo = FConnection::connect();
-        $query="insert into coupons (`id`, `priceCut`, `expirationDate`) values ('".$coupon->getId()."', '".$coupon->getPriceCut()."', '".$coupon->getExpirationDate()."')";
+        $query="insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('".$coupon->getId()."', '".$coupon->getPriceCut()."', '".$coupon->getExpirationDate()."' , ".$customerId.")";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $stmt->debugDumpParams();
