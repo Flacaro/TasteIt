@@ -114,4 +114,8 @@ class AuthController
         $vauth = new VAuth();
         $vauth->visualizeLogin("");
     }
+
+    public function error404(){
+        return setData("error-404", []);
+    }
 }
