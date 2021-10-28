@@ -246,3 +246,8 @@ CREATE TRIGGER deleteProducts2 before delete
 ON products
 FOR EACH ROW
 delete from products_favourites where productId=old.id;
+
+CREATE TRIGGER deleteCategory before delete
+ON categories
+FOR EACH ROW
+delete from products where categoryId=old.id;
