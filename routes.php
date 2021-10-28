@@ -106,7 +106,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 });
 
-SimpleRouter::error(function(Request $request, \Exception $exception) {
+    SimpleRouter::error(function(Request $request, \Exception $exception) {
 
     if($exception instanceof NotFoundHttpException && $exception->getCode() === 404) {
         echo "404 not found";
