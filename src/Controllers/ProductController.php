@@ -12,8 +12,7 @@ use App\Models\Review;
 use App\Views\VFavourites;
 use App\Views\VProduct;
 
-class ProductController
-{
+class ProductController {
 
     public function getAll() {
         $session = Session::getInstance();

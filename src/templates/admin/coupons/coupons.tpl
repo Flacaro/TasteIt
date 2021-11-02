@@ -5,12 +5,6 @@
             <div class="col-md-8">
                 {if $coupons!=[]}
                 <div class="card card-user">
-                    {*<div class="card-header">
-                        <a class="btn btn-round btn-primary" href="/admin/coupons/create">
-                            Crea un coupon
-                        </a>
-                    </div>*}
-
                     <div class="card-body">
 
                         <div class="table-responsive" style="overflow:hidden">

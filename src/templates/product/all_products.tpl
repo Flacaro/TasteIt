@@ -5,12 +5,8 @@
     <section class="hero-wrap hero-wrap-2" style="background-image: url('https://s1.1zoom.me/b6359/903/Meat_products_Salt_536334_1920x1080.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text align-items-end justify-content-center">
-                <div class="col-md-9 ftco-animated mb-5 text-center">
-                    <p class="breadcrumbs mb-0"><span class="mr-2">
-                            <a href="index.html">Home <i class="fa fa-chevron-right"></i></a>
-                        </span> <span>Prodotti<i class="fa fa-chevron-right"></i></span>
-                    </p>
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animated mb-3 text-center">
                     <h2 class="mb-0 bread">Tutti i prodotti</h2>
                 </div>
             </div>

@@ -11,7 +11,6 @@ class AdminMiddleware implements IMiddleware
     public function handle(Request $request): void
     {
         $session=Session::getInstance();
-        //if l'utente non è loggato
         if (!$session->isRestaurantLogged()){
             redirect("/login");
         }

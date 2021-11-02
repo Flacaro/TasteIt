@@ -6,7 +6,6 @@ use App\Models\Review;
 
 class FReview {
 
-    //la delete la facciamo?
 
     public function loadReviewsOfProduct($id){
         $pdo = FConnection::connect();
@@ -30,7 +29,6 @@ class FReview {
 
     function createReview($review, $productId){
         $pdo = FConnection::connect();
-        //insert into reviews (stars, comment, userId, productId) values ($review->getStars(), $review->getComment(), $review->getUserId(), $review->getProductId)
         $query = 'insert into reviews(stars, comment, customerId, productId) values ('.$review->getStars().', "'. $review->getComment().'", '. $review->getCustomer()->getId(). ','. $productId.')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();

@@ -11,12 +11,4 @@ class VFavourites
         ];
         return setData('favourite/favourites',$data);
     }
-
-/*   public function viewProductsOfFav($favId, $productId){
-        return view('product/all_products', [
-            'favId' => $favId,
-            'product' => $productId
-        ]);
-    }*/
-
 }

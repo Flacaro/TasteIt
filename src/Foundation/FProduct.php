@@ -46,7 +46,6 @@ class FProduct extends FConnection {
 
     function getBestSellers(){
         $pdo = FConnection::connect();
-        //SELECT * FROM products ORDER BY timesOrdered LIMIT 10;
         $query="SELECT * FROM products ORDER BY timesOrdered DESC LIMIT 8;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
@@ -110,7 +109,6 @@ class FProduct extends FConnection {
 
     function getBestReviews(){
         $pdo = FConnection::connect();
-        //select * from reviews where productId=$productId;
         $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.imagePath FROM reviews as r join products as p on r.productId = p.id group by p.id ORDER BY stars DESC LIMIT 6;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
@@ -138,17 +136,8 @@ class FProduct extends FConnection {
     }
 
 
-    function getImageOfBest() {
-        $pdo = FConnection::connect();
-        $query = 'select p.imagePath, r.stars from products as p join reviews as r on r.productId = p.id ORDER BY stars DESC LIMIT 6;';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll();
-    }
-
     function getBestSellerOfCategory($id){
         $pdo = FConnection::connect();
-        //SELECT name FROM products WHERE categoryId={$id} ORDER BY timesOrdered LIMIT 1;
         $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered DESC LIMIT 1;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
@@ -208,7 +197,6 @@ class FProduct extends FConnection {
          return $products;
       }
 
-//funzione ripetuta
       public function addToCart($productId, $cartId, $quantity) {
           $pdo = FConnection::connect();
           $query = 'insert into products_carts(`productId`, `cartId`, `quantity`) VALUES (' . $productId . ', ' . $cartId . ', '. $quantity . ');';

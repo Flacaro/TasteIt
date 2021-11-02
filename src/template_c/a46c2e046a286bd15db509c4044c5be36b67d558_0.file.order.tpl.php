@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 18:29:45
+/* Smarty version 3.1.39, created on 2021-11-02 18:01:20
   from 'C:\xampp\htdocs\TasteIt\src\templates\order\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617acff99c64a6_90641824',
+  'unifunc' => 'content_61816ee0c7f0e0_68181086',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a46c2e046a286bd15db509c4044c5be36b67d558' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\order\\order.tpl',
-      1 => 1635437184,
+      1 => 1635872457,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617acff99c64a6_90641824 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61816ee0c7f0e0_68181086 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_604993968617acff9983526_86747800', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_190729644761816ee0c6f215_86237735', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1091024026617acff9983f09_53894163', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_99670410861816ee0c6fb44_85614159', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1620703425617acff9984549_04082447', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92101721361816ee0c70171_58018706', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_604993968617acff9983526_86747800 extends Smarty_Internal_Block
+class Block_190729644761816ee0c6f215_86237735 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_604993968617acff9983526_86747800',
+    0 => 'Block_190729644761816ee0c6f215_86237735',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_1091024026617acff9983f09_53894163 extends Smarty_Internal_Block
+class Block_99670410861816ee0c6fb44_85614159 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_1091024026617acff9983f09_53894163',
+    0 => 'Block_99670410861816ee0c6fb44_85614159',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_1620703425617acff9984549_04082447 extends Smarty_Internal_Block
+class Block_92101721361816ee0c70171_58018706 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1620703425617acff9984549_04082447',
+    0 => 'Block_92101721361816ee0c70171_58018706',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -84,7 +84,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
-                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Ordine <i class="fa fa-chevron-right"></i></span></p>
                     <h2 class="mb-0 bread">Ordine</h2>
                 </div>
             </div>
@@ -95,8 +94,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <div class="row justify-content-between">
                 <div class="col-xl-12 ftco-animate">
 
-
-                    <!--Inizio parte sotto il form con cart total e payment method -->
                     <?php if ($_smarty_tpl->tpl_vars['valid']->value == false) {?>
                         <h3>Alcuni campi non sono validi. Inserisci un indirizzo, un metodo di pagamento valido e, se hai un coupon, assicurati che sia valido.</h3>
                     <?php }?>
@@ -122,8 +119,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <span>$<?php echo $_smarty_tpl->tpl_vars['subtotal']->value;?>
 </span>
                                 </p>
-                                                                <hr>
-                                                                <label for="streetaddress">Coupon</label>
+                                <hr>
+                                <label for="streetaddress">Coupon</label>
                                 <div class="d-flex">
 
                                         <div class="row">
@@ -200,8 +197,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
     </section>
-    <!--Sezione carrello dove sono i prodotti -->
-
 <?php
 }
 }

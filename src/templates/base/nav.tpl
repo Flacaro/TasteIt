@@ -17,8 +17,10 @@
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
+
+    <div class="container" style="justify-content: space-between">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
+
         {if isset($cartId)}
             <div class="order-lg-last btn-group">
                 <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

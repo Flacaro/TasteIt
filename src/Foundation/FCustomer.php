@@ -33,7 +33,8 @@ class FCustomer extends FConnection {
         };
         return password_verify($password, $row[0]);
     }
-//load ma con email invece che con id
+
+    //load ma con email invece che con id
     public function getByEmail($email){
         $pdo = FConnection::connect();
         $query = "SELECT * FROM customers WHERE email= '".$email."'";
@@ -57,7 +58,8 @@ class FCustomer extends FConnection {
         //$stmt->debugDumpParams();
         return $customer;
     }
-//cart e fav vuoti, solo id, se vogliamo i prodotti dobbiamo caricarli
+
+    //cart e fav vuoti, solo id, se vogliamo i prodotti dobbiamo caricarli
     public function load($id){
         $pdo = FConnection::connect();
         $query = "SELECT * FROM customers WHERE id= ".$id;
@@ -92,6 +94,7 @@ class FCustomer extends FConnection {
             return true;
         }
     }
+
     //questa serve in fase di registrazione, al customer viene assegnato un carrello vuoto, una lista di preferiti vuota, non ha nessun ordine inserire in db, in NESSUN altro punto del
     //sito dobbiamo poter dare la possibilità al customer inserirsi nel db (quindi non avremo mai bisogno di fare store ad un customer che ha già ordini/prodotti nel carrello etc...)
     public function store($customer){
@@ -112,8 +115,8 @@ class FCustomer extends FConnection {
         $stmt->execute();
     }
 
-//l'update del customer si limita a email, password, nome, cognome, per quanto riguarda il carrello, i preferiti, le carte di credito etc usiamo i foundation specifici
-//(altrimenti rischiamo di svuotare il db se ad esempio abbiamo un oggetto cliente di cui in quel momento non ci interessa il carrello, settandoglielo a null)
+    //l'update del customer si limita a email, password, nome, cognome, per quanto riguarda il carrello, i preferiti, le carte di credito etc usiamo i foundation specifici
+    //(altrimenti rischiamo di svuotare il db se ad esempio abbiamo un oggetto cliente di cui in quel momento non ci interessa il carrello, settandoglielo a null)
     public function update($customer){
         $pdo = FConnection::connect();
         $id=$customer->getId();
@@ -125,13 +128,7 @@ class FCustomer extends FConnection {
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }
-//devo cancellare anche tutte le cose relative al cliente (gli ordini rimarrebbero senza un cliente??)
-    /*public function delete($id){
-        $pdo = FConnection::connect();
-        $query="delete from customers where id=".$id;
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-    }*/
+
 
     //serve per visualizzare la lista degli ordini dell'utente (per vedere i prodotti richiamiamo una funzione a parte quando clicchi sull'ordine specifico)
     public function getCustomerOrders($id){
@@ -157,7 +154,7 @@ class FCustomer extends FConnection {
             $ord->setAddress($faddress->load($order[8]));
             array_push($o, $ord);
         }
-        print_r($o);
+        //print_r($o);
         return $o;
     }
 

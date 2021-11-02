@@ -4,9 +4,8 @@
 <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
-        <div class="row no-gutters slider-text align-items-end justify-content-center">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate mb-5 text-center">
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Carrello<i class="fa fa-chevron-right"></i></span></p>
                 <h2 class="mb-0 bread">Il mio carrello</h2>
             </div>
         </div>
@@ -36,12 +35,6 @@
                     <tbody>
                    {foreach $products as $product}
                     <tr class="alert" role="alert">
-                     {* <td>
-                            <label class="checkbox-wrap checkbox-primary">
-                                <input type="checkbox" checked>
-                                <span class="checkmark"></span>
-                            </label>
-                        </td>*}
                          <td>
                             <div class="img" style="background-image: url({$product[0]->getImagePath()});"></div>
                         </td>

@@ -30,28 +30,6 @@ class CustomerController {
         $vusers->getUsers($customers);
     }
 
-/*    public function update($id) {
-        $FCustomer = new FCustomer();
-        $customer = new Customer();
-        $name = $_POST['name'];
-        $surname = $_POST['surname'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $customer->setName($name);
-        $customer->setSurname($surname);
-        $customer->setEmail($email);
-        $customer->setPassword($password);
-        $FCustomer->update($customer);
-        /*$vuser = new VUser();
-        $vuser->getProfile($customer);
-    }*/
-
-/*    public function edit($id) {
-        $FUsers = new FCustomer();
-        $user = $FUsers->load($id);
-        $vuser = new VUser();
-        $vuser->editUser($user);
-    }*/
 
     public function getProfile() {
         $session=Session::getInstance();

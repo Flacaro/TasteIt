@@ -10,8 +10,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {*    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">*}
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/src/assets/css/animate.css">
@@ -76,6 +74,4 @@
 <script src="/src/assets/js/jquery.magnific-popup.min.js"></script>
 <script src="/src/assets/js/jquery.animateNumber.min.js"></script>
 <script src="/src/assets/js/scrollax.min.js"></script>
-{*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>*}
-{*<script src="/src/assets/js/google-map.js"></script>*}
 <script src="/src/assets/js/main.js"></script>

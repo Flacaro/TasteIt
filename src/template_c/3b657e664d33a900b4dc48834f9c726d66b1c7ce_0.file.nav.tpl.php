@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 18:28:39
+/* Smarty version 3.1.39, created on 2021-11-02 17:51:30
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617acfb7700e30_73454307',
+  'unifunc' => 'content_61816c923e45b9_96514944',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b657e664d33a900b4dc48834f9c726d66b1c7ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\nav.tpl',
-      1 => 1635437184,
+      1 => 1635871889,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617acfb7700e30_73454307 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61816c923e45b9_96514944 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -40,8 +40,10 @@ function content_617acfb7700e30_73454307 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
+
+    <div class="container" style="justify-content: space-between">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
+
         <?php if ((isset($_smarty_tpl->tpl_vars['cartId']->value))) {?>
             <div class="order-lg-last btn-group">
                 <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

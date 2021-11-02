@@ -6,13 +6,6 @@
 
 
                 <form action="/admin/customers" method="post">
-                    {*<select name="couponId" id="coupons">
-
-                        {foreach $coupons as $coupon}
-                            <option value="{$coupon->getId()}">{$coupon->getId()} con sconto di {$coupon->getpriceCut()}</option>
-                        {/foreach}
-
-                    </select>*}
 
                     <div class="row">
                         <div class="col-md-2 pr-1">

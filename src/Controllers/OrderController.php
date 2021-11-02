@@ -148,7 +148,5 @@ class OrderController {
             $cus->setCart($cart);
             $session->saveUserInSession($cus);
             redirect(url('productsOfCarts', ['cartId' => $cartId]));
-
             }
-
 }

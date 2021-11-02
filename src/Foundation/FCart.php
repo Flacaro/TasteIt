@@ -16,7 +16,7 @@ class FCart extends FConnection {
         parent::__construct('carts', 'Cart');
     }
 
-//passiamo un oggetto carrello inizialmente vuoto
+    //passiamo un oggetto carrello inizialmente vuoto
     function store($object): string {
         $pdo = FConnection::connect();
         $query = 'insert into carts () values ()';
@@ -49,10 +49,9 @@ class FCart extends FConnection {
             else {
                 $this->addToCart($newCart, $newp[0]);
             }
-
-
         }
     }
+
 
     function addToCart($cart, $product): string {
         $pdo = FConnection::connect();
@@ -69,19 +68,9 @@ class FCart extends FConnection {
         $quantity = $quantity + 1;
         $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $pdo->prepare($query);
-        //$stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
-        //return $stmt->fetchAll();
     }
 
-    function decrementQuantity($cart, $product, $quantity) {
-        $pdo = FConnection::connect();
-        $quantityMinus = $quantity['quantity'] - 1;
-        $query = "update products_carts set quantity = " . $quantityMinus . ' WHERE productId = ' . $product->getId() . ' and cartId = ' . $cart->getId() . ';';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        //return $stmt->fetchAll();
-    }
 
     function getQuantity(int $cartId, int $productId) {
         $pdo = FConnection::connect();
@@ -96,7 +85,6 @@ class FCart extends FConnection {
         $pdo = FConnection::connect();
         $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
         $stmt = $pdo->prepare($query);
-        //$stmt->setFetchMode(PDO::FETCH_CLASS, "App\Models\Product");
         $stmt->execute();
         //$stmt->debugDumpParams();
     }
@@ -111,8 +99,6 @@ class FCart extends FConnection {
 
 
     public static function load($id) {
-    //si va a prendere i prodotti dalla tabella carts_products
-        //SELECT * FROM products_carts AS prodotti WHERE prodotti.productsId in (SELECT ProductId FROM Products_carts WHERE cartId=$id)
         $pdo = FConnection::connect();
         $query= 'select products.id, products.name, products.description, products.price, products_carts.quantity, products.imagePath from products  join products_carts ON products.id = products_carts.productId WHERE products_carts.cartId='.$id.';';
         $stmt = $pdo->prepare($query);
@@ -137,7 +123,6 @@ class FCart extends FConnection {
     }
 
 
-//creare nuovo coupon
     function getCoupon($couponId) {
         $pdo = FConnection::connect();
         $query = 'select coupons.priceCut from coupons where id = ' . $couponId . ';';
@@ -146,14 +131,6 @@ class FCart extends FConnection {
         return $stmt->fetch();
     }
 
-    function getProductsOfCart($cartId) {
-        $pdo = FConnection::connect();
-        $query = 'SELECT p.id, p.name, p.description, p.price, p.imagePath, pc.quantity FROM `products_carts` as pc join products as p on pc.productId = p.id WHERE pc.cartId = ' . $cartId . ' ;';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        //$stmt->debugDumpParams();
-        return $stmt->fetchAll();
-    }
 
     function emptyCart($id){
         $pdo = FConnection::connect();

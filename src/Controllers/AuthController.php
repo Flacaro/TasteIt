@@ -96,11 +96,9 @@ class AuthController
                 }
                 $fuser->store($customer);
 
-                //redirect(url('/login'));
             } else {
                 $message = "Esiste già un utente con questa e-mail";
             }
-             //$vauth->visualizeSignUp($message);
 
         }
 

@@ -17,14 +17,5 @@ class CategoryController
         $vCategory->viewProducts($products, $category);
  }
 
-    function index(){
-        $vcategory= new VCategory();
-        $vcategory->viewCategories();
 
-    }
-    function getCategoryImage($categoryId){
-        $FCategory = new FCategory();
-        $category = $FCategory->getById($categoryId);
-
-    }
 }

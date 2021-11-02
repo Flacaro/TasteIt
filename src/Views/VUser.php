@@ -18,14 +18,6 @@ class VUser {
         ]);
     }
 
-    public function createUser($name, $surname) {
-        return view("home",[
-            'name' => $name,
-            'surname' => $surname
-
-        ]);
-    }
-
     public function getProfile($customer, $orders, $coupons) {
         $data = [
             'id' => $customer->getId(),

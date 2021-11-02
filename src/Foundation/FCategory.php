@@ -13,13 +13,7 @@ class FCategory extends FConnection {
     {
         parent::__construct('categories', 'Category');
     }
-    /*function load($id){
-        $pdo = FConnection::connect();
-        $query = 'select * from category where id='.$id;
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        //$stmt->debugDumpParams();
-    }*/
+
     function load($id){
         $pdo = FConnection::connect();
         $query= 'select * from categories where id = ' . $id;

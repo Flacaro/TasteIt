@@ -54,22 +54,5 @@ class Review {
         $this->customer = $customer;
     }
 
-    /*public function getProductId()
-    {
-        return $this->productId;
-    }
 
-    public function setProductId($productId): void
-    {
-        $this->productId = $productId;
-    }*/
-
-    public function getProduct(){
-        $FProduct= new FProduct;
-        return $FProduct->getbyId($this->getProductId());
-    }
-    public function getUser(){
-        $FUser = new FCustomer;
-        return $FUser->getbyId($this->getCustomer());
-    }
 }

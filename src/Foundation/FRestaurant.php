@@ -42,7 +42,6 @@ class FRestaurant extends FConnection {
         $rest->setAddresses([$faddress->load($r[4])]);
         $rest->setPhone($r[5]);
         return $rest;
-        //print_r($res);
     }
 
 

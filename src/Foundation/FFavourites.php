@@ -13,7 +13,8 @@ class FFavourites extends FConnection {
 
 
     }
-//non andremo mai a inserire nel db una lista preferiti che non sia vuota, quindi la store di un oggetto pieno non ci serve
+
+    //non andremo mai a inserire nel db una lista preferiti che non sia vuota, quindi la store di un oggetto pieno non ci serve
     function store($fav): string {
         $pdo = FConnection::connect();
         $query = 'insert into favourites () values ()';
@@ -66,7 +67,6 @@ class FFavourites extends FConnection {
         $fav->setProducts($f);
         return $f;
     }
-    //invece che l'update abbiamo due funzioni: togli dai preferiti e aggiungi ai preferiti (metterle nei model?)
 
     function addToFavourites($favId, $productId) {
         $pdo = FConnection::connect();

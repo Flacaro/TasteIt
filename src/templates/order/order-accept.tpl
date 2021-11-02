@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-{* Action rappresenta l'url alla quale viene fatta la richiesta quando si chiama un metodo   *}
+
 <form action="/orders/{$id}" method="POST">
 
     <input type="text" value="{$state}" name="state">

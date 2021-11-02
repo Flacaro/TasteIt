@@ -6,7 +6,11 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-8 ftco-animated d-flex align-items-end">
+
                     <div class="text w-100 text-center">
+                        {if isset($user)}
+                            <a class="navbar-brand" style="color: white"> <span>Benvenuto: {$user->getName()}</span></a>
+                        {/if}
                         <h1 class="mb-4">Taste<span>It</span>.</h1>
                         <p><a href="/products" class="btn btn-primary py-2 px-4">Prodotti</a> <a href="/aboutUs" class="btn btn-white btn-outline-white py-2 px-4">Leggi di più</a></p>
                      </div>
@@ -25,6 +29,7 @@
                             <span class="flaticon-support"></span>
                         </div>
                         <div class="text">
+
                             <h2>Supporto</h2>
                             <p>Per qualsiasi esigenza non esitare a contattarci tramite numero di telefono o indirizzo e-mail.</p>
                         </div>

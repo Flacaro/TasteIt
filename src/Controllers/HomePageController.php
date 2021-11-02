@@ -12,10 +12,6 @@ use App\Views\VHomePage;
 use App\Views\VProduct;
 
 class HomePageController {
-/*    //servirà a caricare tutti i dati nella home: categorie, best sellers ecc
- public function homeData($categories, $bestSellers){
-
- }*/
 
      public function visualizeHome(){
          $session = Session::getInstance();
@@ -46,7 +42,6 @@ class HomePageController {
              $cus = $session->loadUser();
              $favId = $cus->getFav()->getId();
              $cartId = $cus->getCart()->getId();
-//             echo '<pre>'; print_r($productsC); echo '</pre>';
              $products = $FProduct->getAll();
              $vHome = new VHomePage();
              $vHome->viewHomePageIfLogged($favId, $cartId, $bestSellers, $bestRateds, $topThreeReviews, $products);

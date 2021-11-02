@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 18:30:17
+/* Smarty version 3.1.39, created on 2021-11-02 17:56:47
   from 'C:\xampp\htdocs\TasteIt\src\templates\user\orders-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617ad0191388d9_39743818',
+  'unifunc' => 'content_61816dcf5f9dd6_81569941',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f1f4b476797a44d255e972364dd156ecfdef05ca' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\user\\orders-details.tpl',
-      1 => 1635437184,
+      1 => 1635872201,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617ad0191388d9_39743818 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61816dcf5f9dd6_81569941 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_547531410617ad0190f8219_88234774', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_61733396061816dcf5853b7_01061185', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1362241994617ad0190f8b31_92667424', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_171839879661816dcf586022_57560117', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_547531410617ad0190f8219_88234774 extends Smarty_Internal_Block
+class Block_61733396061816dcf5853b7_01061185 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_547531410617ad0190f8219_88234774',
+    0 => 'Block_61733396061816dcf5853b7_01061185',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_1362241994617ad0190f8b31_92667424 extends Smarty_Internal_Block
+class Block_171839879661816dcf586022_57560117 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1362241994617ad0190f8b31_92667424',
+    0 => 'Block_171839879661816dcf586022_57560117',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,9 +64,8 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\TasteIt\\
     <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
-                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Carrello<i class="fa fa-chevron-right"></i></span></p>
                     <h2 class="mb-0 bread">Ordine</h2>
                 </div>
             </div>

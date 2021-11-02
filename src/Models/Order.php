@@ -112,7 +112,6 @@ class Order{
     {
         $this->address = $address;
     }
-   // public $state;
 
 
 

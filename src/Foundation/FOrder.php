@@ -45,7 +45,7 @@ class FOrder extends FConnection {
         return $orders;
     }
 
-    //prendere prodotti, quantità e prezzi di prodotti nell'ordine di id=$id
+
     public function getOrderProducts($id){
         $pdo = FConnection::connect();
         //ma le immagini non servono?
@@ -70,14 +70,6 @@ class FOrder extends FConnection {
 
     }
 
- /*   public function calculateOrderTotal($orderId){
-        $pdo = FConnection::connect();
-        $query= "select sum(price*quantity) as total from orders_products where orderId=".$orderId;
-        $stmt = $pdo->prepare($query);
-        $stmt->debugDumpParams();
-        $stmt->execute();
-        return $stmt->fetch()["total"];
-    }*/
 
     public function getAll(){
         $pdo = FConnection::connect();
@@ -100,7 +92,7 @@ class FOrder extends FConnection {
         return $orders;
     }
 
-    //le uniche cose a cui è permesso fare update sono lo stato e il tempo di arrivo
+
     public function update($order){
         $pdo = FConnection::connect();
         $query='UPDATE `orders` SET `arrivalTime`=\''.$order->getArrivalTime().'\', `orderState`=\''.$order->getState().'\' where id='.$order->getId();
