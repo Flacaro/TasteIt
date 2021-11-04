@@ -253,3 +253,8 @@ CREATE TRIGGER deleteCategory before delete
 ON categories
 FOR EACH ROW
 delete from products where categoryId=old.id;
+
+CREATE TRIGGER deleteReview before delete
+ON products
+FOR EACH ROW
+delete from reviews where productId=old.id;

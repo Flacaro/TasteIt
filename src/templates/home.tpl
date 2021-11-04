@@ -1,7 +1,7 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Home{/block}
 {block name=body}
-    <div class="hero-wrap" style="background-image: url('../../src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-imagePath: url('../../src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -67,7 +67,7 @@
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(../../src/assets/images/Restaurant.jpg);">
+                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-imagePath: url(../../src/assets/images/Restaurant.jpg);">
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">
@@ -93,7 +93,7 @@
                     <div class="col-lg-2 col-md-4">
                         <a href="/categories/{$category->getId()}/products">
                         <div class="sort w-100 text-center ftco-animated">
-                            <div class="img" style="background-image: url({$category->getImage()})" ></div>
+                            <div class="img" style="background-imagePath: url({$category->getImage()})" ></div>
                             <h3>{$category->getName()}</h3>
                         </div>
                         </a>
@@ -115,7 +115,7 @@
                 {foreach $bestRateds as $bestRated}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$bestRated->getImagePath()});">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-imagePath: url({$bestRated->getImagePath()});">
                             <div class="desc" style="display: flex">
                                 <p class="meta-prod d-flex">
 
@@ -150,7 +150,7 @@
         </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url('../../src/assets/images/bg_4.jpg');">
+    <section class="ftco-section testimony-section img" style="background-imagePath: url('../../src/assets/images/bg_4.jpg');">
         <div class="overlay"></div>
             <div class="container">
                 <div class="row justify-content-center mb-5">
@@ -169,7 +169,7 @@
                                         <div class="text">
                                             <p class="mb-4">{$review->getComment()}</p>
                                             <div class="d-flex align-items-center">
-                                                <div class="user-img" style="background-image: url({$review->getCustomer()->getImagePath()});" ></div>
+                                                <div class="user-img" style="background-imagePath: url({$review->getCustomer()->getImagePath()});" ></div>
                                                 <div class="pl-3">
                                                     <p class="name">{$review->getCustomer()->getName()}</p>
                                                 </div>
@@ -198,7 +198,7 @@
                 {foreach $bestSellers as $product}
                     <div class="col-md-3 d-flex">
                         <div class="product ftco-animated">
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-imagePath: url({$product->getImagePath()});">
                                 <div class="desc" style="display: flex" >
                                     {if $cartId}
                                         <form action="/home/products/{$product->getId()}/carts/{$cartId}" method="POST">

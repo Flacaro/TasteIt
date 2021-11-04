@@ -25,7 +25,7 @@ class VUser {
             'surname' => $customer->getSurname(),
             'email' => $customer->getEmail(),
             'password' => $customer->getPassword(),
-            'image' => $customer->getImagePath(),
+            'imagePath' => $customer->getImagePath(),
             'orders' => $orders,
             'coupons' => $coupons
         ];

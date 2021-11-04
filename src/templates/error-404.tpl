@@ -1,7 +1,7 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Profilo{/block}
 {block name=body}
-<section style="background-image: url('../../src/assets/images/error-pages-background.jpg');">
+<section style="background-imagePath: url('../../src/assets/images/error-pages-background.jpg');">
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                     <div class="text w-100 text-center">
