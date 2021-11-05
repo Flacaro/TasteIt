@@ -12,7 +12,7 @@ class VHomePage
             'bestRateds'=> $bestRateds,
             'bestReviews'=> $bestReviews,
             'products' => $products
-            //'image' => $bestReviews[0]
+            //'imagePath' => $bestReviews[0]
         ];
         return setData("home", $data);
     }

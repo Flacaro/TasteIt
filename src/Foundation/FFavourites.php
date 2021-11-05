@@ -85,7 +85,7 @@ class FFavourites extends FConnection {
 
     public function getFavouritesProducts($favId){
         $pdo = FConnection::connect();
-        $query= "SELECT pf.productId, p.name, p.image FROM products_favourites as pf join products as p on pf.productId = p.id where pf.favId = " . $favId . ";";
+        $query= "SELECT pf.productId, p.name, p.imagePath FROM products_favourites as pf join products as p on pf.productId = p.id where pf.favId = " . $favId . ";";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $prods = $stmt->fetchAll();

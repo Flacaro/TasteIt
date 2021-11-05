@@ -109,7 +109,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <!-- immagine con about us -->
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-imagePath: url('../../src/assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -165,7 +165,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url(../../src/assets/images/image_4.jpg);">
+                <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-imagePath: url(../../src/assets/images/image_4.jpg);">
                 </div>
                 <div class="col-md-6 wrap-about pl-md-5">
                     <div class="heading-section">

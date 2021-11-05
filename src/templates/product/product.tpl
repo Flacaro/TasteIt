@@ -3,7 +3,7 @@
 {block name=body}
 
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-imagePath: url('/src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -18,7 +18,7 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-image: url({$product->getImagePath()});">
+            <div class="col-md-6 img img-3 d-flex justify-content-center align-items-center" style="background-imagePath: url({$product->getImagePath()});">
             </div>
             <div class="col-lg-6 product-details pl-md-5 ">
                 <h3>{$product->getName()}</h3>
@@ -109,7 +109,7 @@
                                 <h3 class="mb-4">{count($reviews)} Recensione/i</h3>
                                 {foreach $reviews as $review}
                                 <div class="review">
-                                    <div class="user-img" style="background-image: url({$review->getCustomer()->getImagePath()})"></div>
+                                    <div class="user-img" style="background-imagePath: url({$review->getCustomer()->getImagePath()})"></div>
                                     <div class="desc">
                                         <h4>
                                             <span class="text-left">{$review->getCustomer()->getName()} {$review->getCustomer()->getSurname()}</span>

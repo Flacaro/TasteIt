@@ -23,13 +23,13 @@ class FCategory extends FConnection {
         $category=new Category;
         $category->setId($cat[0]);
         $category->setName($cat[2]);
-        $category->setImage($cat[3]);
+        $category->setImagePath($cat[3]);
         return $category;
     }
 
     function store($category){
         $pdo = FConnection::connect();
-        $query='insert into categories (`restaurantId`, `categoryName`, image) VALUES (1,\''.$category->getName().'\', \'/'.$category->getImage().'\')';
+        $query='insert into categories (`restaurantId`, `categoryName`, imagePath) VALUES (1,\''.$category->getName().'\', \'/'.$category->getImage().'\')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }
@@ -69,7 +69,7 @@ class FCategory extends FConnection {
             $c = new Category();
             $c->setId($cat[0]);
             $c->setName($cat[2]);
-            $c->setImage($cat[3]);
+            $c->setImagePath($cat[3]);
             array_push($categories, $c);
         }
         //print_r($categories);
