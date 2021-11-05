@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-24 18:52:19
+/* Smarty version 3.1.40, created on 2021-11-05 13:58:57
   from 'C:\xampp\htdocs\TasteIt\src\templates\base\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.39',
-  'unifunc' => 'content_61758f4302f2d3_01791471',
+  'version' => '3.1.40',
+  'unifunc' => 'content_61852a914afca7_84618646',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1a3bd3e09b72164d8dadd70ce6917be1b42a37a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\base\\footer.tpl',
-      1 => 1635094335,
+      1 => 1636117033,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61758f4302f2d3_01791471 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61852a914afca7_84618646 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer class="ftco-footer">
     <div class="container">
         <div class="row mb-5">

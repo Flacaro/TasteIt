@@ -22,7 +22,6 @@
                     <thead class="thead-primary">
                     <tr>
                         <th>&nbsp;</th>
-                        <th>&nbsp;</th>
                         <th>Prodotto</th>
                         <th>Prezzo</th>
                         <th>Quantità</th>

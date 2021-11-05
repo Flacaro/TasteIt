@@ -29,7 +29,6 @@ class FCustomer extends FConnection {
         $stmt->execute();
         $row = $stmt->fetch();
         if(!password_verify($password, $row[0])){
-            print_r("verify non funzia");
         };
         return password_verify($password, $row[0]);
     }

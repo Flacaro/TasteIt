@@ -89,7 +89,6 @@ class AuthController
                 $customer->setFav($fav);
                 if (!$_FILES["uploadfile"]["name"]=="") {
                     $customer->setImagePath(uploadImage());
-                    print_r("prova a prende l'immagine comunque");
                 }
                 else {
                     $customer->setImagePath("/src/assets/images/user.jpg");
