@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-02 18:05:25
+/* Smarty version 3.1.40, created on 2021-11-05 15:09:53
   from 'C:\xampp\htdocs\TasteIt\src\templates\cart\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.39',
-  'unifunc' => 'content_61816fd5c430d3_37304315',
+  'version' => '3.1.40',
+  'unifunc' => 'content_61853b310932a1_92384792',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '38faf17c87aaf17822dd420bd5d4d173a0e486de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\cart\\cart.tpl',
-      1 => 1635872722,
+      1 => 1636121390,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61816fd5c430d3_37304315 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61853b310932a1_92384792 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3509458861816fd5c2a1b3_99910605', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_165903212161853b31078967_66264657', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_195401676161816fd5c2ae34_16417742', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_137347643061853b310795f3_81898574', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_3509458861816fd5c2a1b3_99910605 extends Smarty_Internal_Block
+class Block_165903212161853b31078967_66264657 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_3509458861816fd5c2a1b3_99910605',
+    0 => 'Block_165903212161853b31078967_66264657',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_195401676161816fd5c2ae34_16417742 extends Smarty_Internal_Block
+class Block_137347643061853b310795f3_81898574 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_195401676161816fd5c2ae34_16417742',
+    0 => 'Block_137347643061853b310795f3_81898574',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -83,7 +83,6 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\TasteIt\\
 
                     <thead class="thead-primary">
                     <tr>
-                        <th>&nbsp;</th>
                         <th>&nbsp;</th>
                         <th>Prodotto</th>
                         <th>Prezzo</th>
