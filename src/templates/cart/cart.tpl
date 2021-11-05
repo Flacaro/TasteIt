@@ -1,7 +1,7 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Carrello{/block}
 {block name=body}
-<section class="hero-wrap hero-wrap-2" style="background-imagePath: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -36,7 +36,7 @@
                    {foreach $products as $product}
                     <tr class="alert" role="alert">
                          <td>
-                            <div class="img" style="background-imagePath: url({$product[0]->getImagePath()});"></div>
+                            <div class="img" style="background-image: url({$product[0]->getImagePath()});"></div>
                         </td>
                        <td>
                             <div class="email">

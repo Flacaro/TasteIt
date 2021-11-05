@@ -18,7 +18,7 @@ class FProduct extends FConnection {
 
     function store($product, $categoryId): string {
         $pdo = FConnection::connect();
-        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (\'' . $product->getName() . '\', \'' . $product->getDescription() . '\', ' . $product->getPrice() . ', ' . $categoryId . ', \'/' . $product->getImagePath() . '\', ' . '0);';
+        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES (\'' . $product->getName() . '\', \'' . $product->getDescription() . '\', ' . $product->getPrice() . ', ' . $categoryId . ', \'/' . $product->getImagePath() . '\', ' . '0);';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $pdo->lastInsertId();
@@ -78,7 +78,7 @@ class FProduct extends FConnection {
 
     function getBestRated(){
         $pdo = FConnection::connect();
-        $query="select avg(stars) as average, p.id, p.name, p.price, p.imagePath from reviews as r join products as p on p.id = r.productId group by productId order by average desc limit 8";
+        $query="select avg(stars) as average, p.id, p.name, p.price, p.image from reviews as r join products as p on p.id = r.productId group by productId order by average desc limit 8";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -109,7 +109,7 @@ class FProduct extends FConnection {
 
     function getBestReviews(){
         $pdo = FConnection::connect();
-        $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.imagePath FROM reviews as r join products as p on r.productId = p.id group by p.id ORDER BY stars DESC LIMIT 6;";
+        $query="SELECT r.id, r.stars, r.comment, r.customerId, r.productId, p.name, p.image FROM reviews as r join products as p on r.productId = p.id group by p.id ORDER BY stars DESC LIMIT 6;";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $reviews = $stmt->fetchAll();
@@ -207,7 +207,7 @@ class FProduct extends FConnection {
 
     function update($id, $product) {
         $pdo = FConnection::connect();
-        $query = 'UPDATE products SET name = \'' . $product->getName() . '\', description = \'' . $product->getDescription() . '\', price = ' . $product->getPrice() . ', imagePath = \''. $product->getImagePath() .'\' where id='.$id.';';
+        $query = 'UPDATE products SET name = \'' . $product->getName() . '\', description = \'' . $product->getDescription() . '\', price = ' . $product->getPrice() . ', image = \''. $product->getImagePath() .'\' where id='.$id.';';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         //$stmt->debugDumpParams();

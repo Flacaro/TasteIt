@@ -77,7 +77,7 @@ function setData($view, $data){
         if (move_uploaded_file($tempname, $folder)) {
             $msg = "Image uploaded successfully";
         } else {
-            $msg = "Failed to upload imagePath";
+            $msg = "Failed to upload image";
         }
         return '/'.$folder;
     }

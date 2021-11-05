@@ -28,7 +28,7 @@ class HomePageController {
                  array_push($topThreeReviews, $product->getReviews()[0]);
              }
          }
-         //print_r( $topThreeReviews[0]->getCustomer()->getImagePath());
+         //print_r( $topThreeReviews[0]->getCustomer()->getImage());
          //printObject($bestReviews[0]->getReviews());
          $bestRateds = [];
          foreach ($b as $best) {

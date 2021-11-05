@@ -24,7 +24,7 @@ email varchar(40) not null unique,
 password varchar(1000) not null,
 favId bigint not null,
 cartId bigint default null,
-imagePath varchar(1024) DEFAULT NULL,
+image varchar(1024) DEFAULT NULL,
 FOREIGN KEY (favId) references favourites(id),
 FOREIGN KEY (cartId) references carts(id)
 );
@@ -54,7 +54,7 @@ create table categories(
 id bigint primary key auto_increment,
 restaurantId int NOT NULL,
 categoryName varchar(30) NOT NULL,
-imagePath varchar(1024) DEFAULT NULL,
+image varchar(1024) DEFAULT NULL,
 foreign key(restaurantId) references restaurant(id) on delete cascade
 );
 
@@ -64,7 +64,7 @@ name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
 categoryId bigint not null,
-imagePath varchar(1024),
+image varchar(1024),
 timesOrdered bigint DEFAULT 0,
 foreign key(categoryId) references categories(id)
 );
@@ -134,7 +134,7 @@ quantity int default 1,
 name varchar(20) not null,
 description varchar(100) default null,
 price float not null,
-imagePath varchar(1024),
+image varchar(1024),
 productId bigint not null,
 foreign key(orderId) references orders(id)
 );
@@ -161,12 +161,12 @@ INSERT INTO `favourites`() VALUES ();
 INSERT INTO `favourites`() VALUES ();
 INSERT INTO `paymentMethods`(`method`) VALUES ('cash');
 INSERT INTO `paymentMethods`(`method`) VALUES ('credit card');
-INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Mario','Rossi','mrossi@gmail.com','$2y$10$TXeIAq0qe1Y64.IZ1Mcxqued1I0pliDMZShtsMk3kwoW46Oscui8u',1,1, '/src/assets/images/person_1.jpg');
-INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Sandro','Rosa','sandro@gmail.com','$2y$10$14/Tfqh4PA3NOKUVRtppf.DbkI1MQqr1seHiNLYZZ1CRLJ8ZT/VqW',2,2, '/src/assets/images/sandro.jpg');
-INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Michela','Bianchi','mic@gmail.com','$2y$10$NnS.6A9FCprxEYcHXUxZIOAUAK/cQYm894UMj6FpFWu8A6Jm/6N1e',3,3, '/src/assets/images/Michela.jpg');
-insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Alice','Barbieri','alice.barbieri@gmail.com','$2y$10$V/ftzhOF/kRv9sTGMxFxg.iG.tD5lnrQlAwtEGkALBU31lYXcGioi',4,4, '/src/assets/images/poses-para-selfie-12.jpg');
-insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Andrea','Martini','andreamartini89@gmail.com','$2y$10$eCrddjc9.1LBoNxhqLW6k.4vg0cztSYTr0PQR5QF5f222ESG4ADdi',5,5, '/src/assets/images/selfie-google-e1554862824540.jpg');
-insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES ('Franco','Battaglia','fbattaglia@gmail.com','$2y$10$kzvQE2eB4GCawOWqQ.GaFeHIVSewUh9k3BGAm5svVnDXsOOLWkmpG',6,6, '/src/assets/images/MCKENZIE.jpg');
+INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `image`) VALUES ('Mario','Rossi','mrossi@gmail.com','$2y$10$TXeIAq0qe1Y64.IZ1Mcxqued1I0pliDMZShtsMk3kwoW46Oscui8u',1,1, '/src/assets/images/person_1.jpg');
+INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `image`) VALUES ('Sandro','Rosa','sandro@gmail.com','$2y$10$14/Tfqh4PA3NOKUVRtppf.DbkI1MQqr1seHiNLYZZ1CRLJ8ZT/VqW',2,2, '/src/assets/images/sandro.jpg');
+INSERT INTO `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `image`) VALUES ('Michela','Bianchi','mic@gmail.com','$2y$10$NnS.6A9FCprxEYcHXUxZIOAUAK/cQYm894UMj6FpFWu8A6Jm/6N1e',3,3, '/src/assets/images/Michela.jpg');
+insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `image`) VALUES ('Alice','Barbieri','alice.barbieri@gmail.com','$2y$10$V/ftzhOF/kRv9sTGMxFxg.iG.tD5lnrQlAwtEGkALBU31lYXcGioi',4,4, '/src/assets/images/poses-para-selfie-12.jpg');
+insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `image`) VALUES ('Andrea','Martini','andreamartini89@gmail.com','$2y$10$eCrddjc9.1LBoNxhqLW6k.4vg0cztSYTr0PQR5QF5f222ESG4ADdi',5,5, '/src/assets/images/selfie-google-e1554862824540.jpg');
+insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `image`) VALUES ('Franco','Battaglia','fbattaglia@gmail.com','$2y$10$kzvQE2eB4GCawOWqQ.GaFeHIVSewUh9k3BGAm5svVnDXsOOLWkmpG',6,6, '/src/assets/images/MCKENZIE.jpg');
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (1234,'Montepulciano','Santa Barbara',2,null);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (20121,'Milano','Santa Maria',7,2);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Santa Cecilia',10,3);
@@ -188,29 +188,29 @@ INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDa
 INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-10-21',12,NULL,'C614c7de6d8a19',1,1,'Pending',1,null);
 INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-08-21',25,NULL,'C614c7de6d8a19',1,1,'Denied',2,null);
 INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',19.2,'20:00:00','C614c7de6d8345',2,1,'Completed',3,2);
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pasta','/src/assets/images/pasta.jpg');
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/pesce.jpg');
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pizza','/src/assets/images/margherita.jpg');
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Vino','/src/assets/images/vino.jpg');
-INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Carne','/src/assets/images/carne.jpg');
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Spiedini di pesce','Pesce spada, salmone, seppie, gamberi, peperoni, zucchine, alloro, salvia, rosmarino e pepe nero',8,2,'/src/assets/images/spiedini-di-pesce.jpg', 80);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Pesce spada','Pesce spada cotto al forno con rosmarino accompagnato con patate dolci',12,2,'/src/assets/images/pesceSpada.jpg', 70);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Margherita','Mozzarella fresca e pomodoro',6,3,'/src/assets/images/margherita.jpg', 10);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Capricciosa','Mozzarella fresca, pomodoro, olive, prosciutto cotto/crudo, carciofini',8,3,'/src/assets/images/capricciosa.jpg', 40);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Merlot Panul',' Vino ricco, corposo, dal colore rubino cupo e dai profumi di frutti maturi come la ciliegia nera del 2018',24,4,'/src/assets/images/merlot.jpg', 50);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Montelpulciano',' Vino ricco, corposo, rosso nobile di Montepulciano a base di acini di montepulciano del 2004',25,4,'/src/assets/images/montepulciano.jpg', 100);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Carbonara','Pasta fresca con guanciale, uovo e pecorino',9,1,'/src/assets/images/carbonara.jpg', 150);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Arrabbiata','Pasta fresca con pomodoro, prezzemolo, aglio e peperoncino',8,1,'/src/assets/images/arrabbiata.jpg', 140);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Cacio e pepe','Pasta fresca con pecorino romano stagionatura media e pepe nero',9,1,'/src/assets/images/cacioEpepe.jpg', 180);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Amatriciana','Pasta fresca con pomodoro, pecorino romano stagionatura media e guanciale',9,1,'/src/assets/images/amatriciana.jpg', 150);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Fiorentina',' Lombata di vitellone/scottona',30,5,'/src/assets/images/fiorentina.jpg', 180);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Tagliata di manzo','Tagliata di manzo con rucola e aceto balsamico',30,5,'/src/assets/images/tagliata.jpg', 200);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Filetto di maiale','Filetto di maiale cotto con il vino bianco, avvolto da pancetta affumicata, rosmarino, burro, pistacchi e pepe nero',20,5,'/src/assets/images/filetto.jpg', 210);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Spigola','Spigola al cartoccio, capperi, pomodorini, aglio, prezzemolo, pepe nero',14,2,'/src/assets/images/spigola.jpg', 50);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Boscaiola','Funghi, salsiccia e mozzarella fresca',8,3,'/src/assets/images/boscaiola.jpg', 90);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Diavola','Pomodoro, mozzarella fresca e salame piccante',7,3,'/src/assets/images/diavola.jpg', 100);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Tartufo','Mozzarella fresca, salsiccia e tartufo nero',9,3,'/src/assets/images/tartufo.jpg', 100);
-INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES ('Torrevento','Vino dal colore rosso rubino tendente al granato dopo breve invecchiamento, al naso bouquet pieno e fragrante, delicatamente speziato con sentori di frutti di bosco',13,4,'/src/assets/images/torrevento.jpg', 170);
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `image`) VALUES (1,'Pasta','/src/assets/images/pasta.jpg');
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `image`) VALUES (1,'Pesce','/src/assets/images/pesce.jpg');
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `image`) VALUES (1,'Pizza','/src/assets/images/margherita.jpg');
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `image`) VALUES (1,'Vino','/src/assets/images/vino.jpg');
+INSERT INTO `categories`(`restaurantId`, `categoryName`, `image`) VALUES (1,'Carne','/src/assets/images/carne.jpg');
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Spiedini di pesce','Pesce spada, salmone, seppie, gamberi, peperoni, zucchine, alloro, salvia, rosmarino e pepe nero',8,2,'/src/assets/images/spiedini-di-pesce.jpg', 80);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Pesce spada','Pesce spada cotto al forno con rosmarino accompagnato con patate dolci',12,2,'/src/assets/images/pesceSpada.jpg', 70);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Margherita','Mozzarella fresca e pomodoro',6,3,'/src/assets/images/margherita.jpg', 10);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Capricciosa','Mozzarella fresca, pomodoro, olive, prosciutto cotto/crudo, carciofini',8,3,'/src/assets/images/capricciosa.jpg', 40);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Merlot Panul',' Vino ricco, corposo, dal colore rubino cupo e dai profumi di frutti maturi come la ciliegia nera del 2018',24,4,'/src/assets/images/merlot.jpg', 50);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Montelpulciano',' Vino ricco, corposo, rosso nobile di Montepulciano a base di acini di montepulciano del 2004',25,4,'/src/assets/images/montepulciano.jpg', 100);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Carbonara','Pasta fresca con guanciale, uovo e pecorino',9,1,'/src/assets/images/carbonara.jpg', 150);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Arrabbiata','Pasta fresca con pomodoro, prezzemolo, aglio e peperoncino',8,1,'/src/assets/images/arrabbiata.jpg', 140);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Cacio e pepe','Pasta fresca con pecorino romano stagionatura media e pepe nero',9,1,'/src/assets/images/cacioEpepe.jpg', 180);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Amatriciana','Pasta fresca con pomodoro, pecorino romano stagionatura media e guanciale',9,1,'/src/assets/images/amatriciana.jpg', 150);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Fiorentina',' Lombata di vitellone/scottona',30,5,'/src/assets/images/fiorentina.jpg', 180);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Tagliata di manzo','Tagliata di manzo con rucola e aceto balsamico',30,5,'/src/assets/images/tagliata.jpg', 200);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Filetto di maiale','Filetto di maiale cotto con il vino bianco, avvolto da pancetta affumicata, rosmarino, burro, pistacchi e pepe nero',20,5,'/src/assets/images/filetto.jpg', 210);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Spigola','Spigola al cartoccio, capperi, pomodorini, aglio, prezzemolo, pepe nero',14,2,'/src/assets/images/spigola.jpg', 50);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Boscaiola','Funghi, salsiccia e mozzarella fresca',8,3,'/src/assets/images/boscaiola.jpg', 90);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Diavola','Pomodoro, mozzarella fresca e salame piccante',7,3,'/src/assets/images/diavola.jpg', 100);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Tartufo','Mozzarella fresca, salsiccia e tartufo nero',9,3,'/src/assets/images/tartufo.jpg', 100);
+INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES ('Torrevento','Vino dal colore rosso rubino tendente al granato dopo breve invecchiamento, al naso bouquet pieno e fragrante, delicatamente speziato con sentori di frutti di bosco',13,4,'/src/assets/images/torrevento.jpg', 170);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','molto saporito',1,1);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('5','Ottimo aroma',2,6);
 INSERT INTO `reviews`(`stars`, `comment`, `customerId`, `productId`) VALUES ('3','non male',2,2);
@@ -230,10 +230,10 @@ INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (1,1,2);
 INSERT INTO `products_carts`(`productId`, `cartId`, `quantity`) VALUES (2,2,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (1,1);
 INSERT INTO `products_favourites`(`favId`, `productId`) VALUES (2,2);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (1,2,'Margherita','Mozzarella fresca e pomodoro',6,'/src/assets/images/margherita.jpg', 3);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (2,2,'Boscaiola','Funghi, salsiccia e mozzarella fresca',8,'/src/assets/images/boscaiola.jpg', 15);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (2,1,'Amatriciana','Pasta fresca con pomodoro, pecorino romano stagionatura media e guanciale',9,'/src/assets/images/amatriciana.jpg', 10);
-INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `imagePath`, `productId`) VALUES (3,2,'Pesce spada','Pesce spada cotto al forno con rosmarino accompagnato con patate dolci',12,'/src/assets/images/pesceSpada.jpg',2);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `image`, `productId`) VALUES (1,2,'Margherita','Mozzarella fresca e pomodoro',6,'/src/assets/images/margherita.jpg', 3);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `image`, `productId`) VALUES (2,2,'Boscaiola','Funghi, salsiccia e mozzarella fresca',8,'/src/assets/images/boscaiola.jpg', 15);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `image`, `productId`) VALUES (2,1,'Amatriciana','Pasta fresca con pomodoro, pecorino romano stagionatura media e guanciale',9,'/src/assets/images/amatriciana.jpg', 10);
+INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `price`, `image`, `productId`) VALUES (3,2,'Pesce spada','Pesce spada cotto al forno con rosmarino accompagnato con patate dolci',12,'/src/assets/images/pesceSpada.jpg',2);
 
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
 

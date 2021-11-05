@@ -2,7 +2,7 @@
 {block name=title}Prodotti{/block}
 {block name=body}
 
-    <section class="hero-wrap hero-wrap-2" style="background-imagePath: url('https://s1.1zoom.me/b6359/903/Meat_products_Salt_536334_1920x1080.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('https://s1.1zoom.me/b6359/903/Meat_products_Salt_536334_1920x1080.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -26,7 +26,7 @@
             {foreach $products as $product}
                 <div class="col-md-3 d-flex">
                     <div class="product ftco-animated">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-imagePath: url({$product->getImagePath()});">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url({$product->getImagePath()});">
                             <div class="desc" style="display: flex" >
                                 {if $cartId}
                                 <form action="/products/{$product->getId()}/carts/{$cartId}" method="POST">

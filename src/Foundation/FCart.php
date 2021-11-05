@@ -100,7 +100,7 @@ class FCart extends FConnection {
 
     public static function load($id) {
         $pdo = FConnection::connect();
-        $query= 'select products.id, products.name, products.description, products.price, products_carts.quantity, products.imagePath from products  join products_carts ON products.id = products_carts.productId WHERE products_carts.cartId='.$id.';';
+        $query= 'select products.id, products.name, products.description, products.price, products_carts.quantity, products.image from products  join products_carts ON products.id = products_carts.productId WHERE products_carts.cartId='.$id.';';
         $stmt = $pdo->prepare($query);
         //$stmt->debugDumpParams();
         $stmt->execute();
