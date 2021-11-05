@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-21 12:17:50
+/* Smarty version 3.1.39, created on 2021-11-05 12:28:25
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\customers\showBest.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61713e4e837620_42475120',
+  'unifunc' => 'content_6185155904f9a2_41249796',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1beb4d20da8ba52b4a7bc667b478cd11e14e0bec' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\customers\\showBest.tpl',
-      1 => 1634811426,
+      1 => 1635932627,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61713e4e837620_42475120 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6185155904f9a2_41249796 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6455312861713e4e829cc8_67587535', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18129859161851559040ab7_30538579', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_6455312861713e4e829cc8_67587535 extends Smarty_Internal_Block
+class Block_18129859161851559040ab7_30538579 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_6455312861713e4e829cc8_67587535',
+    0 => 'Block_18129859161851559040ab7_30538579',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -47,7 +47,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
                 <form action="/admin/customers" method="post">
-                    
+
                     <div class="row">
                         <div class="col-md-2 pr-1">
                             <div class="form-group">

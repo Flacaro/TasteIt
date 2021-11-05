@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 16:32:18
+/* Smarty version 3.1.39, created on 2021-11-05 12:18:18
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617ab472a71a17_27392975',
+  'unifunc' => 'content_618512fabbe3d9_85631176',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c35c90bccb08b6e42b1c347b0b91be7ee9c3ebaf' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1635431537,
+      1 => 1636104166,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617ab472a71a17_27392975 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618512fabbe3d9_85631176 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -97,9 +97,6 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         </div>
     </div>
     <div class="main-panel">
-        <!-- Navbar -->
-
-        
         <nav class="navbar navbar-expand-lg navbar-absolute fixed-top" style="background-color: #A23F25">
             <div class="container-fluid" style="background-color: #A23F25">
                 <div class="navbar-wrapper" >
@@ -117,7 +114,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             </div>
         </nav>
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_783106670617ab472a6fe86_24608360', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1466878393618512fabbc577_05678144', 'admin');
 ?>
 
 
@@ -194,12 +191,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_783106670617ab472a
 
 <?php }
 /* {block 'admin'} */
-class Block_783106670617ab472a6fe86_24608360 extends Smarty_Internal_Block
+class Block_1466878393618512fabbc577_05678144 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_783106670617ab472a6fe86_24608360',
+    0 => 'Block_1466878393618512fabbc577_05678144',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 17:35:04
+/* Smarty version 3.1.39, created on 2021-11-05 17:18:00
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\orders\order-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617ac328653d87_84867838',
+  'unifunc' => 'content_61855938e1f050_38387395',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0db8eb6cd2863c337006c75993edfd92f35fde75' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\orders\\order-details.tpl',
-      1 => 1635435260,
+      1 => 1636129079,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617ac328653d87_84867838 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61855938e1f050_38387395 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_780363805617ac328642262_94938135', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_155445431761855938e06dc4_36026078', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_780363805617ac328642262_94938135 extends Smarty_Internal_Block
+class Block_155445431761855938e06dc4_36026078 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_780363805617ac328642262_94938135',
+    0 => 'Block_155445431761855938e06dc4_36026078',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -145,7 +145,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <?php }?>
                     <?php if ($_smarty_tpl->tpl_vars['order']->value->getState() == "Accepted") {?>
                         <div class="d-flex justify-content-center">
-                            <h4>Orario di arrivo previsto: <?php echo $_smarty_tpl->tpl_vars['order']->value->getArrivalTime();?>
+                            <h4>Orario di arrivo previstoaooo: <?php echo $_smarty_tpl->tpl_vars['order']->value->getArrivalTime();?>
 </h4>
                         </div>
                     <?php }?>

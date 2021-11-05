@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-21 12:08:33
+/* Smarty version 3.1.39, created on 2021-11-05 12:29:30
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\coupons\coupons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61713c21a27f27_00099808',
+  'unifunc' => 'content_6185159a80cd50_24075283',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d4296d691c67e027445d3a0bb4cba69bfe3cf07' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\coupons\\coupons.tpl',
-      1 => 1634810912,
+      1 => 1635932627,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61713c21a27f27_00099808 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6185159a80cd50_24075283 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_41834254161713c21a1d774_74921722', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11552072216185159a803223_62778874', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_41834254161713c21a1d774_74921722 extends Smarty_Internal_Block
+class Block_11552072216185159a803223_62778874 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_41834254161713c21a1d774_74921722',
+    0 => 'Block_11552072216185159a803223_62778874',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -46,7 +46,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <div class="col-md-8">
                 <?php if ($_smarty_tpl->tpl_vars['coupons']->value != array()) {?>
                 <div class="card card-user">
-                    
                     <div class="card-body">
 
                         <div class="table-responsive" style="overflow:hidden">

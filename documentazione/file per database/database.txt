@@ -23,7 +23,7 @@ surname varchar(20) not null,
 email varchar(40) not null unique,
 password varchar(1000) not null,
 favId bigint not null,
-cartId bigint default null,
+cartId bigint not null,
 imagePath varchar(1024) DEFAULT NULL,
 FOREIGN KEY (favId) references favourites(id),
 FOREIGN KEY (cartId) references carts(id)
@@ -35,7 +35,7 @@ cap int not null,
 city varchar(20) not null,
 street varchar(20) not null,
 homeNumber int not null,
-customerId bigint default null,
+customerId bigint not null,
 FOREIGN KEY (customerId) references customers(id)
 );
 
@@ -74,6 +74,7 @@ id varchar(20) primary key,
 priceCut int not null,
 expirationDate Date not null,
 customerId bigint,
+isUsed tinyint(1) default 0,
 foreign key(customerId) references customers(id)
 );
 
@@ -81,7 +82,7 @@ foreign key(customerId) references customers(id)
 create table reviews(
 id bigint primary key auto_increment,
 stars int default null,
-comment varchar(100) default null,
+comment varchar(100) not null,
 customerId bigint not null,
 productId bigint not null,
 foreign key(customerId) references customers(id),
@@ -173,10 +174,10 @@ INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customer
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Castello',52,4);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,'Coppito','del Corso',8,4);
 INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
-insert into coupons (`id`, `priceCut`, `expirationDate`) values ('C614c7de6d8a19', 30, '2021-10-07');
-INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8345', 20,'2021-09-13');
-INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8790', 20,'2021-11-13');
-INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8r61', 15,'2022-02-09');
+insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('C614c7de6d8a19', 30, '2021-10-07', 1);
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8345', 20,'2021-09-13',1);
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8790', 20,'2021-11-13',2);
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8r61', 15,'2022-02-09',3);
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
