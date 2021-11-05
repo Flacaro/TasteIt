@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 17:08:45
+/* Smarty version 3.1.39, created on 2021-11-05 09:49:21
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\base\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617abcfd63e0d3_61399666',
+  'unifunc' => 'content_6184f011def328_24479764',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cb444c381f62417d1be4af8dc8ad9990dbf9840' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\base\\nav.tpl',
-      1 => 1635433723,
+      1 => 1635932627,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617abcfd63e0d3_61399666 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6184f011def328_24479764 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="wrap">
     <div class="container">
         <div class="row">
@@ -40,8 +40,10 @@ function content_617abcfd63e0d3_61399666 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
+
+    <div class="container" style="justify-content: space-between">
         <a class="navbar-brand" href="/home">Taste<span>It</span></a>
+
         <?php if ((isset($_smarty_tpl->tpl_vars['cartId']->value))) {?>
             <div class="order-lg-last btn-group">
                 <button id="cart-btn" href="#" class="btn-cart btn dropdown-toggle dropdown-toggle-split" style="color: #b7472a" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
