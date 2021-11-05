@@ -146,7 +146,7 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                                 <label class="label" for="subject">Stelle</label>
-                                                                <input type="text" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle">
+                                                                <input type="number" class="form-control" name="stars" id="stars" placeholder="Valuta da 1 a 5 stelle" max="5" min="1">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-12">
