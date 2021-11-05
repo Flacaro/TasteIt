@@ -28,16 +28,12 @@ class HomePageController {
                  array_push($topThreeReviews, $product->getReviews()[0]);
              }
          }
-         //print_r( $topThreeReviews[0]->getCustomer()->getImagePath());
-         //printObject($bestReviews[0]->getReviews());
          $bestRateds = [];
          foreach ($b as $best) {
              array_push($bestRateds, $FProduct->load($best[1]));
          }
-
          $cartId = NULL;
          $favId = NULL;
-
          if ($session->isUserLogged()) {
              $cus = $session->loadUser();
              $favId = $cus->getFav()->getId();

@@ -89,26 +89,18 @@ class ProductController {
 
 
 
-    public function addToFavourites($productId)
-    {
+    public function addToFavourites($productId){
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
-
-            $cus = $session->loadUser();
-            $favId = $cus->getFav()->getId();
-            $favProducts = $FFavourites->load($favId);
-
-            if (!sizeof($favProducts)) {
-                $FFavourites->addToFavourites($favId, $productId);
-            }
-
-            $favProd = array_filter($favProducts, function ($favProduct) use ($productId) {
-                return $favProduct->getId() === $productId;
-            });
-
-            if (!sizeof($favProd) and sizeof($favProducts)) {
-                $FFavourites->addToFavourites($favId, $productId);
-            }
+        $fProduct = new FProduct();
+        $cus = $session->loadUser();
+        $favId = $cus->getFav()->getId();
+        $fav = $FFavourites->load($favId);
+        $product=$fProduct->load($productId);
+        $fav->addToFavourites($product);
+        $cus->setFav($fav);
+        $FFavourites->update($fav);
+        $session->saveUserInSession($cus);
         redirect('/products');
 
     }
