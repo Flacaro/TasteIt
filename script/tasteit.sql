@@ -1,3 +1,5 @@
+create database if not exists tasteit;
+use tasteit;
 create table carts(
 id bigint primary key auto_increment
 );

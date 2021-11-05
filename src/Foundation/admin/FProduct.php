@@ -11,7 +11,7 @@ class FProduct
     function store($product, $category): string
     {
         $pdo = FConnection::connect();
-        $query = "INSERT INTO products(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (" . $product->getName() . ", " . $product->getDescription() . ", " . $product->getPrice() . ", " . $category->getId() . ", " . $product->getImagePath() . ", " . $product->getTimesOrdered() . ");";
+        $query = "INSERT INTO products(`name`, `description`, `price`, `categoryId`, `image`, `timesOrdered`) VALUES (" . $product->getName() . ", " . $product->getDescription() . ", " . $product->getPrice() . ", " . $category->getId() . ", " . $product->getImagePath() . ", " . $product->getTimesOrdered() . ");";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         //$stmt->debugDumpParams();

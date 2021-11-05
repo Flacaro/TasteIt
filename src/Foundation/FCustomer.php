@@ -110,7 +110,7 @@ class FCustomer extends FConnection {
         $fav= new Favourites;
         $ffav=new FFavourites();
         $f=$ffav->store($fav);
-        $query='insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES (\''. $name .'\',\''.$surname.'\',\''.$email.'\',\''.$password.'\','.$f.','.$c.  ', \'' . $image.'\')';
+        $query='insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `image`) VALUES (\''. $name .'\',\''.$surname.'\',\''.$email.'\',\''.$password.'\','.$f.','.$c.  ', \'' . $image.'\')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }

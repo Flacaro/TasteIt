@@ -29,7 +29,7 @@ class FCategory extends FConnection {
 
     function store($category){
         $pdo = FConnection::connect();
-        $query='insert into categories (`restaurantId`, `categoryName`, imagePath) VALUES (1,\''.$category->getName().'\', \'/'.$category->getImage().'\')';
+        $query='insert into categories (`restaurantId`, `categoryName`, image) VALUES (1,\''.$category->getName().'\', \'/'.$category->getImage().'\')';
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }
