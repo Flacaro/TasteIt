@@ -33,7 +33,7 @@
                     {foreach $cartProducts as $productWithQuantity}
 
                         <div class="dropdown-item d-flex align-items-start" href="#">
-                            <div class="img" style="background-imagePath: url({$productWithQuantity[0]->getImagePath()})"></div>
+                            <div class="img" style="background-image: url({$productWithQuantity[0]->getImagePath()})"></div>
                             <div class="text pl-3">
                                 <h4>{$productWithQuantity[0]->getName()}</h4>
                                 <p class="mb-0"><a href="#" class="price">${$productWithQuantity[0]->getPrice()}</a><span class="quantity ml-3">Quantità: {$productWithQuantity[1]}</span></p>

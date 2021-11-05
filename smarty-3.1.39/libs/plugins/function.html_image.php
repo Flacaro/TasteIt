@@ -10,14 +10,14 @@
  * Type:     function
  * Name:     html_image
  * Date:     Feb 24, 2003
- * Purpose:  format HTML tags for the imagePath
+ * Purpose:  format HTML tags for the image
  * Examples: {html_image file="/images/masthead.gif"}
  * Output:   <img src="/images/masthead.gif" width=400 height=23>
  * Params:
  *
- * - file        - (required) - file (and path) of imagePath
- * - height      - (optional) - imagePath height (default actual height)
- * - width       - (optional) - imagePath width (default actual width)
+ * - file        - (required) - file (and path) of image
+ * - height      - (optional) - image height (default actual height)
+ * - width       - (optional) - image width (default actual width)
  * - basedir     - (optional) - base directory for absolute paths, default is environment variable DOCUMENT_ROOT
  * - path_prefix - prefix for path output (optional, default empty)
  *
@@ -130,7 +130,7 @@ function smarty_function_html_image($params, Smarty_Internal_Template $template)
                 trigger_error("html_image: unable to read '{$_image_path}'", E_USER_NOTICE);
                 return;
             } else {
-                trigger_error("html_image: '{$_image_path}' is not a valid imagePath file", E_USER_NOTICE);
+                trigger_error("html_image: '{$_image_path}' is not a valid image file", E_USER_NOTICE);
                 return;
             }
         }

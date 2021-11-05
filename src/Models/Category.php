@@ -9,7 +9,7 @@ class Category{
     private $id;
     private $name;
     private $categoryProducts = [];
-    private $imagePath;
+    private $image;
 
     public function getId()
     {
@@ -17,14 +17,14 @@ class Category{
         return $this->id;
     }
 
-    public function getImagePath()
+    public function getImage()
     {
-        return $this->imagePath;
+        return $this->image;
     }
 
-    public function setImagePath($imagePath): void
+    public function setImage($image): void
     {
-        $this->imagePath = $imagePath;
+        $this->image = $image;
     }
 
 

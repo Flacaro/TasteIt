@@ -73,7 +73,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                     <div class="col-lg-2 col-md-4">
                                         <form action="/profile" method="GET">
                                             <div class="sort w-100 text-center ftco-animated">
-                                                <div class="img" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['imagePath']->value;?>
+                                                <div class="img" style="background-image: url('<?php echo $_smarty_tpl->tpl_vars['image']->value;?>
 ');" ></div>
                                                 <h3 style="color: white"><?php echo $_smarty_tpl->tpl_vars['name']->value;?>
 </h3>

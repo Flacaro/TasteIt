@@ -23,7 +23,7 @@ class FCategory extends FConnection {
         $category=new Category;
         $category->setId($cat[0]);
         $category->setName($cat[2]);
-        $category->setImagePath($cat[3]);
+        $category->setImage($cat[3]);
         return $category;
     }
 
@@ -69,7 +69,7 @@ class FCategory extends FConnection {
             $c = new Category();
             $c->setId($cat[0]);
             $c->setName($cat[2]);
-            $c->setImagePath($cat[3]);
+            $c->setImage($cat[3]);
             array_push($categories, $c);
         }
         //print_r($categories);

@@ -508,7 +508,7 @@ grandchild.tpl:
 
 We redefined all the blocks here, however in the title block we used {$smarty.block.parent},
 which tells Smarty to insert the default content from the parent template in its place.
-The content block was overridden to display the imagePath files, and page-title has also be
+The content block was overridden to display the image files, and page-title has also be
 overridden to display a completely different title.
 
 If we render grandchild.tpl we will get this:
@@ -519,9 +519,9 @@ If we render grandchild.tpl we will get this:
   <body>
     <h1>My home</h1>
     <div id="content">
-      <img src="/example.jpg" alt="imagePath" />
-      <img src="/example2.jpg" alt="imagePath" />
-      <img src="/example3.jpg" alt="imagePath" />
+      <img src="/example.jpg" alt="image" />
+      <img src="/example2.jpg" alt="image" />
+      <img src="/example3.jpg" alt="image" />
     </div>
   </body>
 </html>

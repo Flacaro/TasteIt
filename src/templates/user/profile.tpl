@@ -1,7 +1,7 @@
 {extends file='src/templates/base/base.tpl'}
 {block name=title}Profilo{/block}
 {block name=body}
-    <div class="hero-wrap" style="background-imagePath: url('https://en.free-wallpapers.su/data/media/2319/big/fd0251.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('https://en.free-wallpapers.su/data/media/2319/big/fd0251.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -14,7 +14,7 @@
                                     <div class="col-lg-2 col-md-4">
                                         <form action="/profile" method="GET">
                                             <div class="sort w-100 text-center ftco-animated">
-                                                <div class="img" style="background-imagePath: url('{$imagePath}');" ></div>
+                                                <div class="img" style="background-image: url('{$image}');" ></div>
                                                 <h3 style="color: white">{$name}</h3>
                                                 <h3 style="color: white">{$surname}</h3>
                                                 <h3 style="color: white">{$email}</h3>
