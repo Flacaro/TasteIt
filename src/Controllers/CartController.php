@@ -102,6 +102,13 @@ class CartController {
         redirect(url('productsOfCarts', ['cartId' => $cartId]));
     }
 
+    public function getCoupon($couponId) {
+     $coupon = new FCart();
+     $priceCut = $coupon->getCoupon($couponId);
+     $vcart = new VCart();
+     $vcart->viewCoupon($priceCut, $couponId);
+    }
+
 
 }
 
