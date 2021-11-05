@@ -12,12 +12,6 @@ class VUser {
         setData("user/orders-details", $data);
     }
 
-    public function getUsers($users) {
-        return view('user/user', [
-            'users' => $users
-        ]);
-    }
-
     public function getProfile($customer, $orders, $coupons) {
         $data = [
             'id' => $customer->getId(),

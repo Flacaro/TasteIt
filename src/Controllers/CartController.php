@@ -58,30 +58,6 @@ class CartController {
         redirect(url('productsOfCarts', ['cartId' => $cartId]));
     }
 
-    public function addToCart($productId) {
-        $session = Session::getInstance();
-        if ($session->isUserLogged()) {
-            $FCart = new FCart();
-            $cart = new Cart();
-            $cus = $session->loadUser();
-            $cartId = $cus->getCart()->getId();
-            $products = $cart->getProducts();
-            $i = 0;
-            //$products = $FCart->getProductsOfCart($cartId);
-            $quantity = $FCart->getQuantity($cartId, $productId);
-            foreach ($products as $product) {
-                if($productId === $product->getId()) {
-                    $FCart->incrementQuantity($cartId,$productId,$quantity);
-                    $i = 1;
-                    redirect(url('products'));
-                }
-            }
-                if($i == 0) {
-                    $FCart->addToCart($cartId, $productId);
-                    redirect(url('products'));
-             }
-            }
-    }
 
     public function destroy() {
         $session = Session::getInstance();
@@ -95,20 +71,11 @@ class CartController {
         if ($_POST['option'] == 'delete') {
             $cart->deleteFromCart($product);
             $FCart->deleteFromCart($cart, $product);
-
         }
         $cus->setCart($cart);
         $session->saveUserInSession($cus);
         redirect(url('productsOfCarts', ['cartId' => $cartId]));
     }
-
-    public function getCoupon($couponId) {
-     $coupon = new FCart();
-     $priceCut = $coupon->getCoupon($couponId);
-     $vcart = new VCart();
-     $vcart->viewCoupon($priceCut, $couponId);
-    }
-
 
 }
 

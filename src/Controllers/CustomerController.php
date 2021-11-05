@@ -23,14 +23,6 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 class CustomerController {
 
-    public function getAll() {
-        $fcustomers = new FCustomer();
-        $customers = $fcustomers->getAll();
-        $vusers = new VUser();
-        $vusers->getUsers($customers);
-    }
-
-
     public function getProfile() {
         $session=Session::getInstance();
         $forder= new FOrder();

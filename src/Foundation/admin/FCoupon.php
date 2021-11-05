@@ -22,6 +22,7 @@ class FCoupon extends FConnection {
             $c->setId($coupon[0]);
             $c->setPriceCut($coupon[1]);
             $c->setExpirationDate($coupon[2]);
+            $c->setIsUsed($coupon[3]);
         }
         return $c;
     }
@@ -41,7 +42,7 @@ class FCoupon extends FConnection {
     }
     public function store($coupon, $customerId){
         $pdo = FConnection::connect();
-        $query="insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('".$coupon->getId()."', '".$coupon->getPriceCut()."', '".$coupon->getExpirationDate()."' , ".$customerId.")";
+        $query="insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`, `isUsed`) values ('".$coupon->getId()."', '".$coupon->getPriceCut()."', '".$coupon->getExpirationDate()."' , ".$customerId.", 0)";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }
@@ -69,9 +70,24 @@ class FCoupon extends FConnection {
         return $result;
     }
 
+    public function isUsed($id){
+        $pdo = FConnection::connect();
+        $query="select * from coupons where isUsed = 0";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $coupons= $stmt->fetchAll();
+        $result=true;
+        foreach($coupons as $coupon){
+            if ($coupon[0]==$id){
+                $result=false;
+            }
+        }
+        return $result;
+    }
+
     public function getAll(){
         $pdo = FConnection::connect();
-        $query="select * from coupons where expirationDate>NOW()";
+        $query="select * from coupons where expirationDate>NOW() and isUsed=0";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $coupons= $stmt->fetchAll();
@@ -84,5 +100,12 @@ class FCoupon extends FConnection {
             array_push($cou, $coupon);
         }
         return $cou;
+    }
+
+    public function setAsUsed($id){
+        $pdo = FConnection::connect();
+        $query="update coupons set isUsed=1 where id=\"".$id."\"";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
     }
 }

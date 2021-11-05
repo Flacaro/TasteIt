@@ -96,7 +96,7 @@ class ProductController {
 
             $cus = $session->loadUser();
             $favId = $cus->getFav()->getId();
-            $favProducts = $FFavourites->getFavouritesProducts($favId);
+            $favProducts = $FFavourites->load($favId);
 
             if (!sizeof($favProducts)) {
                 $FFavourites->addToFavourites($favId, $productId);

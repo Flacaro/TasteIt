@@ -49,23 +49,44 @@ class FFavourites extends FConnection {
         $fav=new Favourites();
         $fav->setId($id);
         $pdo = FConnection::connect();
-        $query= 'select * from products as p, products_favourites as pf where id in (SELECT productId FROM `products_favourites` WHERE favId='.$id.');';
+        $query= 'SELECT * FROM products_favourites as pf join products as p on pf.productId = p.id where pf.favId ='.$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $products= $stmt->fetchAll();
         $f=[];
         foreach($products as $p){
-        $prod=new Product;
-        $prod->setId($p[0]);
-        $prod->setName($p[1]);
-        $prod->setDescription($p[2]);
-        $prod->setPrice($p[3]);
-        $prod->setImagePath($p[5]);
-        $prod->setTimesOrdered($p[6]);
+            $prod=new Product;
+            $prod->setId($p[3]);
+            $prod->setName($p[4]);
+            $prod->setDescription($p[5]);
+            $prod->setPrice($p[6]);
+            $prod->setImagePath($p[8]);
+            $prod->setTimesOrdered($p[9]);
         array_push($f, $prod);
         }
         $fav->setProducts($f);
-        return $f;
+        return $fav;
+    }
+
+    function update($newFav){
+
+        $pdo = FConnection::connect();
+        $query="select * from products_favourites where favId=".$newFav->getId();
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        //oldfav array di array con gli attributi dei prodotti nel vecchio favourites
+        $oldFav=$stmt->fetchAll();
+        foreach ($newFav->getProducts() as $newp){
+            $wasAlreadyPresent=false;
+            foreach($oldFav as $p){
+                if ($p[2]==$newp->getId()){
+                    $wasAlreadyPresent=true;
+                }
+            }
+            if ($wasAlreadyPresent==false){
+                $this->addToFavourites($newFav->getId(), $newp->getId());
+            }
+        }
     }
 
     function addToFavourites($favId, $productId) {
@@ -83,24 +104,5 @@ class FFavourites extends FConnection {
         $stmt->execute();
     }
 
-    public function getFavouritesProducts($favId){
-        $pdo = FConnection::connect();
-        $query= "SELECT pf.productId, p.name, p.imagePath FROM products_favourites as pf join products as p on pf.productId = p.id where pf.favId = " . $favId . ";";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        $prods = $stmt->fetchAll();
-        //$stmt->debugDumpParams();
-        $products = [];
-        //print_r($favs);
-        foreach ($prods as $prod) {
-            $p = new Product();
-            $p->setId($prod[0]);
-            $p->setName($prod[1]);
-            $p->setImagePath($prod[2]);
-            array_push($products, $p);
-        }
-        //print_r($products);
-        return $products;
-    }
 
 }

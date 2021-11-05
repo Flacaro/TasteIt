@@ -197,7 +197,7 @@ class FCustomer extends FConnection {
 
     public function loadUsersCoupons($userId){
         $pdo = FConnection::connect();
-        $query="SELECT id, expirationDate, priceCut FROM coupons where customerId=" . $userId;
+        $query="SELECT id, expirationDate, priceCut FROM coupons where isUsed=0 and customerId=" . $userId;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $coupon= $stmt->fetchAll();

@@ -6,7 +6,6 @@ use App\Models\Review;
 
 class FReview {
 
-
     public function loadReviewsOfProduct($id){
         $pdo = FConnection::connect();
         $query = 'select * from reviews as r where r.productId='.$id;

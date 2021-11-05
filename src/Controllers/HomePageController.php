@@ -72,21 +72,15 @@ class HomePageController {
     public function addToFavouritesFromHome($productId) {
         $session = Session::getInstance();
         $FFavourites = new FFavourites();
+        $fProduct = new FProduct();
         $cus = $session->loadUser();
         $favId = $cus->getFav()->getId();
-        $favProducts = $FFavourites->getFavouritesProducts($favId);
-
-            if(!sizeof($favProducts)) {
-                $FFavourites->addToFavourites($favId, $productId);
-            }
-
-            $favProd = array_filter($favProducts, function($favProduct) use ($productId) {
-                return $favProduct->getId() === $productId;
-            });
-
-            if(!sizeof($favProd) and sizeof($favProducts)) {
-                $FFavourites->addToFavourites($favId, $productId);
-            }
+        $fav = $FFavourites->load($favId);
+        $product=$fProduct->load($productId);
+        $fav->addToFavourites($product);
+        $cus->setFav($fav);
+        $FFavourites->update($fav);
+        $session->saveUserInSession($cus);
         redirect('/home');
      }
 

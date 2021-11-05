@@ -26,8 +26,7 @@ class FavouritesController {
         $FFavourites = new FFavourites();
         $cus = $session->loadUser();
         $favId = $cus->getFav()->getId();
-        $FFavourites->load($favId);
-        $products = $FFavourites->getFavouritesProducts($favId);
+        $products =  $FFavourites->load($favId)->getProducts();
         $vFavourites = new VFavourites();
         $vFavourites->viewFavouritesProducts($favId, $products);
     }

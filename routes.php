@@ -59,8 +59,6 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
     SimpleRouter::get("/address", [CustomerController::class, "showAddAddress"]);
     SimpleRouter::post("/address", [CustomerController::class, "addAddress"]);
 
-    //SimpleRouter::get("/users/{id}/cart", [CustomerController::class, "getId"]);
-
     SimpleRouter::post("/cart/checkout/confirmation", [OrderController::class, "createOrder"]);
 
     SimpleRouter::delete("/carts/{cartId}/products/{productId}", [CartController::class, "destroy"]);
@@ -87,6 +85,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::get("/admin/categories/{id}/products", [AdminProductController::class, "productsInCategory"]);
     SimpleRouter::get("/admin/categories/{categoryId}/products/form", [AdminProductController::class, "showCreateProduct"]);
     SimpleRouter::post("/admin/categories/{categoryId}/products", [AdminProductController::class, "store"]);
+    SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/reviews", [AdminProductController::class, "showReviews"]);
     SimpleRouter::get("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "showEditProduct"]);
     SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}/edit", [AdminProductController::class, "update"]);
     SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}", [AdminProductController::class, "destroy"]);
@@ -98,8 +97,6 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::post("/admin/orders/{id}/refuse", [AdminOrderController::class, "refuseOrder"]);
 
     SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
-    //SimpleRouter::get("/admin/coupons/create", [CouponController::class, "create"])->name('createCoupon');
-    SimpleRouter::post("/admin/coupons", [CouponController::class, "store"])->name('storeCoupon');
 
     SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])->name('showAllCustomers');
     SimpleRouter::get("/admin/customers/best", [AdminCustomerController::class, "showBest"]);

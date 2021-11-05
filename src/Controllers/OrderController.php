@@ -68,7 +68,7 @@ class OrderController {
         $c=NULL;
         if ($_POST['option']!=""){
 
-            if ($fcoupon->exist($coupon) and !$fcoupon->isExpired($coupon)){
+            if ($fcoupon->exist($coupon) and !$fcoupon->isExpired($coupon) and !$fcoupon->isUsed($coupon)){
                 $c = $fcoupon->load($_POST['option']);
             }
             else{
@@ -102,6 +102,9 @@ class OrderController {
                 $order->setTotal($total);
                 if ($_POST['option'] != "") {
                     $order->setCoupon($c);
+                }
+                if ($coupon!=""){
+                    $fcoupon->setAsUsed($coupon);
                 }
                 $order->setCustomerId($cus->getId());
                 $order->setPayment($pay);

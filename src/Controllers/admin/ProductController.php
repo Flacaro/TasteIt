@@ -4,6 +4,7 @@ namespace App\Controllers\admin;
 
 use App\Foundation\FCategory;
 use App\Foundation\FProduct;
+use App\Foundation\FReview;
 use App\Models\Product;
 use App\Views\admin\VCategory;
 use App\Views\admin\VProduct;
@@ -20,7 +21,6 @@ class ProductController
             $id = $category->getId();
             $best = $fproduct->getBestSellerOfCategory($id);
             $worst = $fproduct->getWorstSellerOfCategory($id);
-            //print_r($best);
             if ($best == false) {
                 $worst = $best = "non ci sono prodotti in questa categoria";
             } else {
@@ -29,13 +29,11 @@ class ProductController
             }
             $data[$category->getName()] = [$best, $worst];
         }
-        //print_r($data);
         $vadmin = new VProduct();
         $vadmin->productsBestSellers($data);
     }
 
 
-    //questo va nel product controller dell'admin
     public function store($id)
     {
         $name = $_POST['name'];
@@ -48,7 +46,6 @@ class ProductController
             $product->setDescription($description);
             $product->setPrice($price);
             $product->setImagePath(uploadImage());
-            //come prendiamo il categoryId?
             $FProduct->store($product, $id);
             redirect(url('/admin/categories/' . $id . '/products'));
         } else {
@@ -81,14 +78,6 @@ class ProductController
         redirect(url("/admin/categories/" . $catId . '/products'));
     }
 
-/*    public function edit($id)
-    {
-        $FProduct = new FProduct();
-        $product = $FProduct->getById($id);
-        $vproduct = new \App\Views\VProduct();
-        $vproduct->editProduct($product);
-    }*/
-
     public function destroy($catId, $id)
     {
         $FProduct = new FProduct();
@@ -117,6 +106,13 @@ class ProductController
         $products = $fcategory->loadCategoryProducts($id);
         $vadmin = new VCategory();
         $vadmin->productsInCategory($products, $category);
+    }
+
+    public function showReviews($catId, $id){
+        $freviews=new FReview();
+        $reviews=$freviews->loadReviewsOfProduct($id);
+        $vproduct=new VProduct();
+        $vproduct->showReviews($reviews);
     }
 
 }

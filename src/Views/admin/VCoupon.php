@@ -12,10 +12,5 @@ class VCoupon
         ]);
     }
 
-    public function createCoupon($message = '') {
-        return view("admin/coupons/create", [
-            'message' => $message
-        ]);
-    }
 
 }

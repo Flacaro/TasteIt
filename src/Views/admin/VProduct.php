@@ -11,4 +11,10 @@ class VProduct {
         ]);
     }
 
+    public function showReviews($reviews){
+        return setData('admin/products/reviews', [
+            'reviews'=> $reviews
+        ]);
+    }
+
 }
