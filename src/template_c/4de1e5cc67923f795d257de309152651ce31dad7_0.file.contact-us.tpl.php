@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 12:55:43
+/* Smarty version 3.1.39, created on 2021-11-05 10:35:18
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\contact-us.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61768d2f751a89_35392363',
+  'unifunc' => 'content_6184fad62f3852_09614319',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4de1e5cc67923f795d257de309152651ce31dad7' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\contact-us.tpl',
-      1 => 1635156097,
+      1 => 1636104166,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61768d2f751a89_35392363 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6184fad62f3852_09614319 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_76610597461768d2f74b3e5_68207468', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14674315846184fad62ee4f4_17383510', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204863826961768d2f74bf82_70630464', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12554247676184fad62eee13_44968976', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "src/templates/base/base.tpl");
 }
 /* {block 'title'} */
-class Block_76610597461768d2f74b3e5_68207468 extends Smarty_Internal_Block
+class Block_14674315846184fad62ee4f4_17383510 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_76610597461768d2f74b3e5_68207468',
+    0 => 'Block_14674315846184fad62ee4f4_17383510',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Contattaci<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_204863826961768d2f74bf82_70630464 extends Smarty_Internal_Block
+class Block_12554247676184fad62eee13_44968976 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_204863826961768d2f74bf82_70630464',
+    0 => 'Block_12554247676184fad62eee13_44968976',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -63,9 +63,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <section class="hero-wrap hero-wrap-2" style="background-image: url('../../src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
-        <div class="row no-gutters slider-text align-items-end justify-content-center">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate mb-5 text-center">
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Contattaci<i class="fa fa-chevron-right"></i></span></p>
                 <h2 class="mb-0 bread">Contattaci</h2>
             </div>
         </div>

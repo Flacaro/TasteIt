@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-23 15:28:13
+/* Smarty version 3.1.39, created on 2021-11-05 10:35:56
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\auth\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61740dedc84233_28800612',
+  'unifunc' => 'content_6184fafc895cc4_54696591',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a4b9b444a0f14afd90c0ac9f8ef0a9048e44051b' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\auth\\login.tpl',
-      1 => 1634995692,
+      1 => 1635932627,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61740dedc84233_28800612 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6184fafc895cc4_54696591 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_113945571661740dedc7e3e7_05547316', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3679759486184fafc8909e0_74924706', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -39,7 +39,6 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_113945571661740ded
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/src/assets/css/animate.css">
@@ -131,12 +130,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_113945571661740ded
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_113945571661740dedc7e3e7_05547316 extends Smarty_Internal_Block
+class Block_3679759486184fafc8909e0_74924706 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_113945571661740dedc7e3e7_05547316',
+    0 => 'Block_3679759486184fafc8909e0_74924706',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

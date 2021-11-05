@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 12:54:59
+/* Smarty version 3.1.39, created on 2021-11-05 10:35:33
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\product\product.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61768d03874ae4_82330062',
+  'unifunc' => 'content_6184fae55fbef1_41566479',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb478c455c4e93fe3cb7b6e42ac03ed3d2641027' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\product\\product.tpl',
-      1 => 1635156097,
+      1 => 1636104166,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61768d03874ae4_82330062 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6184fae55fbef1_41566479 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_172652873961768d038631a1_56176689', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17763372096184fae55e87f6_24199050', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_140246443461768d03863a72_87253429', 'body');
-?>
-
-<!-- Fine della barra di Description , Reviews ecc  --><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14446176676184fae55e9868_63781470', 'body');
+$_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_172652873961768d038631a1_56176689 extends Smarty_Internal_Block
+class Block_17763372096184fae55e87f6_24199050 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_172652873961768d038631a1_56176689',
+    0 => 'Block_17763372096184fae55e87f6_24199050',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +49,12 @@ Prodotto<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_140246443461768d03863a72_87253429 extends Smarty_Internal_Block
+class Block_14446176676184fae55e9868_63781470 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_140246443461768d03863a72_87253429',
+    0 => 'Block_14446176676184fae55e9868_63781470',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,9 +65,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <section class="hero-wrap hero-wrap-2" style="background-image: url('/src/assets/images/cibo.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
-        <div class="row no-gutters slider-text align-items-end justify-content-center">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div >
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span><a href="product.html">Produtti <i class="fa fa-chevron-right"></i></a></span> <span> Prodotto <i class="fa fa-chevron-right"></i></span></p>
                 <h2 class="mb-0 bread">Prodotto </h2>
             </div>
         </div>
@@ -162,7 +159,6 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
             </div>
         </div>
 
-        <!-- Inizio la barra  del Description , Manifacture , Reviews sotto la foto del liquore  -->
             <div class="row mt-5">
                 <div class="col-md-12 nav-link-wrap">
                     <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -171,9 +167,7 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                     </div>
 
                 </div>
-            <!-- fine della barra  -->
             <div class="col-md-12 ">
-                <!-- inizio della descrizione  -->
                 <div  class="tab-content bg-light" id="v-pills-tabContent">
 
                     <div class="tab-pane fade show active"  id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
@@ -183,9 +177,6 @@ $_smarty_tpl->tpl_vars['var']->first = $_smarty_tpl->tpl_vars['var']->iteration 
                         </div>
                     </div>
 
-                    <!-- inizio della Manifacture   -->
-
-                    <!-- inizio della Reviews -->
                     <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
                         <div class="row p-4">
                             <div class="col-md-7">

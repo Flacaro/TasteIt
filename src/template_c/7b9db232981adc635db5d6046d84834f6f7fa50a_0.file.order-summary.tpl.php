@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-25 13:15:11
+/* Smarty version 3.1.39, created on 2021-11-05 10:37:01
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\order\order-summary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617691bfb54122_50172287',
+  'unifunc' => 'content_6184fb3d723571_46667544',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b9db232981adc635db5d6046d84834f6f7fa50a' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\order\\order-summary.tpl',
-      1 => 1635160508,
+      1 => 1636104166,
       2 => 'file',
     ),
   ),
@@ -20,32 +20,32 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617691bfb54122_50172287 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6184fb3d723571_46667544 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_592087168617691bfb42633_20116179', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17063127726184fb3d711893_60579024', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_794568476617691bfb43136_96718678', 'categories');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7915991396184fb3d712213_32562748', 'categories');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1730453663617691bfb43732_75805372', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9849651856184fb3d7127c3_83338735', 'body');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_592087168617691bfb42633_20116179 extends Smarty_Internal_Block
+class Block_17063127726184fb3d711893_60579024 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_592087168617691bfb42633_20116179',
+    0 => 'Block_17063127726184fb3d711893_60579024',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +55,12 @@ Carrello<?php
 }
 /* {/block 'title'} */
 /* {block 'categories'} */
-class Block_794568476617691bfb43136_96718678 extends Smarty_Internal_Block
+class Block_7915991396184fb3d712213_32562748 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'categories' => 
   array (
-    0 => 'Block_794568476617691bfb43136_96718678',
+    0 => 'Block_7915991396184fb3d712213_32562748',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,12 +68,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'categories'} */
 /* {block 'body'} */
-class Block_1730453663617691bfb43732_75805372 extends Smarty_Internal_Block
+class Block_9849651856184fb3d7127c3_83338735 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1730453663617691bfb43732_75805372',
+    0 => 'Block_9849651856184fb3d7127c3_83338735',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -82,22 +82,18 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
-                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Ordine <i class="fa fa-chevron-right"></i></span></p>
                     <h2 class="mb-0 bread">Ordine</h2>
                 </div>
             </div>
         </div>
     </section>
-    <!--fine blocco prima immagine -->
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-xl-12 ftco-animate">
 
-
-                    <!--Inizio parte sotto il form con cart total e payment method -->
                     <h3 style="text-align: center">Il tuo ordine è arrivato in cucina. Aspetta che il ristorante confermi il tuo ordine.</h3>
                         <div class="row mt-5 pt-3 d-flex">
 
@@ -187,7 +183,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
     </section>
-    <!--Sezione carrello dove sono i prodotti -->
 
 <?php
 }
