@@ -19,20 +19,23 @@ class ProductController {
         $FProduct = new FProduct();
         $products = $FProduct->getAll();
         $fCart = new FCart();
+        $favId = NULL;
+        $cartId = NULL;
         if ($session->isUserLogged()) {
             $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
+            $favId = $cus->getFav()->getId();
             $cart = $fCart->load($cartId);
             $cus->setCart($cart);
             $fCart->update($cart);
             $session->saveUserInSession($cus);
 
             $vProduct = new VProduct();
-            $vProduct->getProducts($products);
+            $vProduct->getProducts($products, $cartId, $favId);
         }
         else{
             $vProduct = new VProduct();
-            $vProduct->getProducts($products);
+            $vProduct->getProducts($products, $cartId, $favId);
         }
 
     }
@@ -45,7 +48,9 @@ class ProductController {
         $product = $FProduct->load($id);
         $stars = $FProduct->getAvgRating($id);
         $cartId = NULL;
+        //????
         $star = $stars[0][0];
+        //print_r($stars);
         if ($session->isUserLogged()) {
             $cus = $session->loadUser();
             $cartId = $cus->getCart()->getId();
