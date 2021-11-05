@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-28 17:53:29
+/* Smarty version 3.1.39, created on 2021-11-05 10:43:18
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\user\orders-details.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_617ac7790189b1_38976721',
+  'unifunc' => 'content_6184fcb6944a24_99641396',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1595d0423ca436a052e6a200c4ef3bf7525cdb09' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\user\\orders-details.tpl',
-      1 => 1635436406,
+      1 => 1636104166,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_617ac7790189b1_38976721 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6184fcb6944a24_99641396 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_646601692617ac779003b63_48972038', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20240034266184fcb692f702_73965454', 'title');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_364176654617ac779004518_98725140', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15861393406184fcb69300f3_43136286', 'body');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/base/base.tpl');
 }
 /* {block 'title'} */
-class Block_646601692617ac779003b63_48972038 extends Smarty_Internal_Block
+class Block_20240034266184fcb692f702_73965454 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_646601692617ac779003b63_48972038',
+    0 => 'Block_20240034266184fcb692f702_73965454',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,12 +49,12 @@ Profilo<?php
 }
 /* {/block 'title'} */
 /* {block 'body'} */
-class Block_364176654617ac779004518_98725140 extends Smarty_Internal_Block
+class Block_15861393406184fcb69300f3_43136286 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_364176654617ac779004518_98725140',
+    0 => 'Block_15861393406184fcb69300f3_43136286',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,9 +64,8 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\selen\\OneDrive\\
     <section class="hero-wrap hero-wrap-2" style="background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-            <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate mb-5 text-center">
-                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Carrello<i class="fa fa-chevron-right"></i></span></p>
                     <h2 class="mb-0 bread">Ordine</h2>
                 </div>
             </div>
@@ -129,9 +128,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                                 <td><?php echo $_smarty_tpl->tpl_vars['product']->value[0]->getPrice();?>
 </td>
                                 <td class="quantity">
-                                    
                                         <?php echo $_smarty_tpl->tpl_vars['product']->value[1];?>
-
 
                                 </td>
                                 <td><?php echo smarty_function_math(array('equation'=>((string)$_smarty_tpl->tpl_vars['product']->value[0]->getPrice())." * ".((string)$_smarty_tpl->tpl_vars['product']->value[1])),$_smarty_tpl);?>
