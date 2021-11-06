@@ -27,7 +27,6 @@ class StatisticController{
         foreach ($data as $element){
             $data1[$element[1]]=$element[0];
         }
-        //print_r($data1);
         $vAdmin= new VStatistic();
         $vAdmin->visualizeStatistics($monthly,$ordersQuantity[0], json_encode(array_values($data1)), $bestSeller, $worstSeller);
     }

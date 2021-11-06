@@ -1,152 +1,151 @@
-create database if not exists tasteit;
-use tasteit;
 create table carts(
-id bigint primary key auto_increment
+    id bigint primary key auto_increment
 );
 
 create table favourites(
-id bigint primary key auto_increment
+    id bigint primary key auto_increment
 );
 
 create table orderStates(
-state varchar(30) primary key default 'Pending'
+    state varchar(30) primary key default 'Pending'
 );
 
 
 create table paymentMethods(
-id bigint primary key auto_increment,
-method varchar(30) not null
+                               id bigint primary key auto_increment,
+                               method varchar(30) not null
 );
 
 create table customers(
-id bigint primary key auto_increment not null,
-name varchar(20) not null,
-surname varchar(20) not null,
-email varchar(40) not null unique,
-password varchar(1000) not null,
-favId bigint not null,
-cartId bigint default null,
-imagePath varchar(1024) DEFAULT NULL,
-FOREIGN KEY (favId) references favourites(id),
-FOREIGN KEY (cartId) references carts(id)
+                          id bigint primary key auto_increment not null,
+                          name varchar(20) not null,
+                          surname varchar(20) not null,
+                          email varchar(40) not null unique,
+                          password varchar(1000) not null,
+                          favId bigint not null,
+                          cartId bigint not null,
+                          imagePath varchar(1024) DEFAULT NULL,
+                          FOREIGN KEY (favId) references favourites(id),
+                          FOREIGN KEY (cartId) references carts(id)
 );
 
 create table shippingAddresses(
-id bigint primary key auto_increment,
-cap int not null,
-city varchar(20) not null,
-street varchar(20) not null,
-homeNumber int not null,
-customerId bigint default null,
-FOREIGN KEY (customerId) references customers(id)
+                                  id bigint primary key auto_increment,
+                                  cap int not null,
+                                  city varchar(20) not null,
+                                  street varchar(20) not null,
+                                  homeNumber int not null,
+                                  customerId bigint not null,
+                                  FOREIGN KEY (customerId) references customers(id)
 );
 
 
 create table restaurant(
-id int primary key auto_increment,
-name varchar(20) not null,
-email varchar(40) not null,
-password varchar(1000) not null,
-addressId bigint not null,
-phone varchar(11) not null,
-foreign key(addressId) references shippingAddresses(id)
+                           id int primary key auto_increment,
+                           name varchar(20) not null,
+                           email varchar(40) not null,
+                           password varchar(1000) not null,
+                           addressId bigint not null,
+                           phone varchar(11) not null,
+                           foreign key(addressId) references shippingAddresses(id)
 );
 
 create table categories(
-id bigint primary key auto_increment,
-restaurantId int NOT NULL,
-categoryName varchar(30) NOT NULL,
-imagePath varchar(1024) DEFAULT NULL,
-foreign key(restaurantId) references restaurant(id) on delete cascade
+                           id bigint primary key auto_increment,
+                           restaurantId int NOT NULL,
+                           categoryName varchar(30) NOT NULL,
+                           imagePath varchar(1024) DEFAULT NULL,
+                           foreign key(restaurantId) references restaurant(id) on delete cascade
 );
 
 create table products(
-id bigint primary key auto_increment not null,
-name varchar(20) not null,
-description varchar(100) default null,
-price float not null,
-categoryId bigint not null,
-imagePath varchar(1024),
-timesOrdered bigint DEFAULT 0,
-foreign key(categoryId) references categories(id)
+                         id bigint primary key auto_increment not null,
+                         name varchar(20) not null,
+                         description varchar(100) default null,
+                         price float not null,
+                         categoryId bigint not null,
+                         imagePath varchar(1024),
+                         timesOrdered bigint DEFAULT 0,
+                         foreign key(categoryId) references categories(id)
 );
 
 create table coupons(
-id varchar(20) primary key,
-priceCut int not null,
-expirationDate Date not null,
-customerId bigint,
-foreign key(customerId) references customers(id)
+                        id varchar(20) primary key,
+                        priceCut int not null,
+                        expirationDate Date not null,
+                        customerId bigint,
+                        isUsed tinyint(1) default 0,
+                        foreign key(customerId) references customers(id)
 );
 
 
 create table reviews(
-id bigint primary key auto_increment,
-stars int default null,
-comment varchar(100) default null,
-customerId bigint not null,
-productId bigint not null,
-foreign key(customerId) references customers(id),
-foreign key(productId) references products(id)
+                        id bigint primary key auto_increment,
+                        stars int default null,
+                        comment varchar(100) not null,
+                        customerId bigint not null,
+                        productId bigint not null,
+                        foreign key(customerId) references customers(id),
+                        foreign key(productId) references products(id)
 );
 
 create table customers_paymentMethods(
-id bigint primary key auto_increment,
-customerId bigint not null,
-cardNumber int(16),
-expirationDate Date,
-cvv int not null,
-cardHolder varchar(40),
-foreign key(customerId) references customers(id)
+                                         id bigint primary key auto_increment,
+                                         customerId bigint not null,
+                                         cardNumber int(16),
+                                         expirationDate Date,
+                                         cvv int not null,
+                                         cardHolder varchar(40),
+                                         foreign key(customerId) references customers(id)
 );
 
 create table orders(
-id bigint primary key auto_increment,
-creationDate date not null,
-total float not null,
-arrivalTime time default null,
-couponId varchar(20),
-customerId bigint,
-paymentId bigint,
-orderState varchar(30),
-addressId bigint,
-cardId bigint default null,
-foreign key(customerId) references customers(id),
-foreign key(paymentId) references paymentMethods(id),
-foreign key(couponId) references coupons(id),
-foreign key(orderState) references orderStates(state),
-foreign key(addressId) references shippingAddresses(id),
-foreign key(cardId) references customers_paymentMethods(id)
+                       id bigint primary key auto_increment,
+                       creationDate date not null,
+                       total float not null,
+                       arrivalTime time default null,
+                       couponId varchar(20),
+                       customerId bigint,
+                       paymentId bigint,
+                       orderState varchar(30),
+                       addressId bigint,
+                       cardId bigint default null,
+                       foreign key(customerId) references customers(id),
+                       foreign key(paymentId) references paymentMethods(id),
+                       foreign key(couponId) references coupons(id),
+                       foreign key(orderState) references orderStates(state),
+                       foreign key(addressId) references shippingAddresses(id),
+                       foreign key(cardId) references customers_paymentMethods(id)
 );
 
 
 create table products_carts(
-id bigint auto_increment primary key,
-productId bigint,
-cartId bigint default null,
-quantity int default 0,
-foreign key(productId) references products(id),
-foreign key(cartId) references carts(id)
+                               id bigint auto_increment primary key,
+                               productId bigint,
+                               cartId bigint default null,
+                               quantity int default 0,
+                               foreign key(productId) references products(id),
+                               foreign key(cartId) references carts(id)
 );
 
 create table orders_products(
-id bigint primary key auto_increment,
-orderId bigint,
-quantity int default 1,
-name varchar(20) not null,
-description varchar(100) default null,
-price float not null,
-imagePath varchar(1024),
-productId bigint not null,
-foreign key(orderId) references orders(id)
+                                id bigint primary key auto_increment,
+                                orderId bigint,
+                                quantity int default 1,
+                                name varchar(20) not null,
+                                description varchar(100) default null,
+                                price float not null,
+                                imagePath varchar(1024),
+                                productId bigint not null,
+                                foreign key(orderId) references orders(id)
 );
 
 create table products_favourites(
-id bigint primary key auto_increment,
-favId bigint,
-productId bigint,
-foreign key(favId) references favourites(id),
-foreign key(productId) references products(id)
+                                    id bigint primary key auto_increment,
+                                    favId bigint,
+                                    productId bigint,
+                                    foreign key(favId) references favourites(id),
+                                    foreign key(productId) references products(id)
 );
 
 INSERT INTO `carts`() VALUES ();
@@ -175,10 +174,10 @@ INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customer
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Castello',52,4);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,'Coppito','del Corso',8,4);
 INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
-insert into coupons (`id`, `priceCut`, `expirationDate`) values ('C614c7de6d8a19', 30, '2021-10-07');
-INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8345', 20,'2021-09-13');
-INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8790', 20,'2021-11-13');
-INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`) VALUES ('C614c7de6d8r61', 15,'2022-02-09');
+insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('C614c7de6d8a19', 30, '2021-10-07', 1);
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8345', 20,'2021-09-13',1);
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8790', 20,'2021-11-13',2);
+INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8r61', 15,'2022-02-09',3);
 INSERT INTO `orderstates`(`state`) VALUES ('Pending');
 INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
 INSERT INTO `orderstates`(`state`) VALUES ('Denied');
@@ -240,16 +239,21 @@ INSERT INTO `orders_products`(`orderId`, `quantity`, `name`, `description`, `pri
 ALTER DATABASE tasteIt CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TRIGGER deleteProducts before delete
-ON products
-FOR EACH ROW
-delete from products_carts where productId=old.id;
+    ON products
+    FOR EACH ROW
+    delete from products_carts where productId=old.id;
 
 CREATE TRIGGER deleteProducts2 before delete
-ON products
-FOR EACH ROW
-delete from products_favourites where productId=old.id;
+    ON products
+    FOR EACH ROW
+    delete from products_favourites where productId=old.id;
+
+CREATE TRIGGER deleteProducts3 before delete
+    ON products
+    FOR EACH ROW
+    delete from reviews where productId=old.id;
 
 CREATE TRIGGER deleteCategory before delete
-ON categories
-FOR EACH ROW
-delete from products where categoryId=old.id;
+    ON categories
+    FOR EACH ROW
+    delete from products where categoryId=old.id;

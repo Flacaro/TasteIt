@@ -13,7 +13,7 @@ use App\Views\admin\VOrder;
 class OrderController
 {
 
-    public function visualizeOrdersPending()
+    public function visualizeOrders()
     {
         $FOrder = new FOrder();
         $orders = $FOrder->getAll();

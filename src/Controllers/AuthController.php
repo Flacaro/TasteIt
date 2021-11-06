@@ -63,7 +63,6 @@ class AuthController
         }
         else {
             $name = $_POST["name"];
-            print_r($name);
             $surname = $_POST["surname"];
             $email = $_POST["email"];
             $password = $_POST["password"];
@@ -94,9 +93,11 @@ class AuthController
                     $customer->setImagePath("/src/assets/images/user.jpg");
                 }
                 $fuser->store($customer);
-
+                redirect("/login");
             } else {
                 $message = "Esiste già un utente con questa e-mail";
+                $vauth = new VAuth();
+                return $vauth->visualizeSignUp($message);
             }
 
         }

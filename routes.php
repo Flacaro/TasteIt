@@ -91,7 +91,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::post("/admin/categories/{categoryId}/products/{productId}", [AdminProductController::class, "destroy"]);
     SimpleRouter::get("/admin/products", [AdminProductController::class, "productsBestSellers"]);
 
-    SimpleRouter::get("/admin/orders", [AdminOrderController::class, "visualizeOrdersPending"]);
+    SimpleRouter::get("/admin/orders", [AdminOrderController::class, "visualizeOrders"]);
     SimpleRouter::get("/admin/orders/{id}", [AdminOrderController::class, "visualizeOrderDetails"]);
     SimpleRouter::post("/admin/orders/{id}/accept", [AdminOrderController::class, "acceptOrder"]);
     SimpleRouter::post("/admin/orders/{id}/refuse", [AdminOrderController::class, "refuseOrder"]);
