@@ -38,7 +38,7 @@ create table shippingAddresses(
                                   city varchar(20) not null,
                                   street varchar(20) not null,
                                   homeNumber int not null,
-                                  customerId bigint not null,
+                                  customerId bigint,
                                   FOREIGN KEY (customerId) references customers(id)
 );
 
