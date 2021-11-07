@@ -5,7 +5,7 @@
   Gli utenti potranno facilmente ordinare i propri piatti preferiti per poterli gustare comodamente dalla propria casa.
 
 
-# Tipologie di utenti
+## Tipologie di utenti
 
 - Utenti non registrati: 
   possono avere accesso alla home per visualizzare i prodotti offerti e leggere informazioni sul ristorante,
@@ -19,19 +19,19 @@
 - Ristoratore:
   Gestisce i prodotti in vendita, i coupon da inviare, gli ordini effettuati;
   
-# Come è strutturata
+## Come è strutturata
 
  Questa applicazione è distrubuita a tre livelli (data managment, application layer e presentation layer) ed ha 
  un'interfaccia responsive.
 
-# Requisiti
+## Requisiti
 
 - Linguaggio PHP(versione 7.1)
 - DBMS: MariaDb(versione 10.4.19)
 - Server Apache (versione 2.4)
 - Web: HTML + CSS + Javascript
 
-# Intallazione
+## Intallazione
 
  Per l'installazione è necessario:
  
