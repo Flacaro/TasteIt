@@ -1,7 +1,7 @@
 ## Taste It
 
   Questo progetto è stato realizzato con lo scopo di aiutare il ristorante Taste It ad avere un propria applicazione web,
-  con l'aiuto della quale poter far conoscere i suoi prodotti a tutti coloro che amano la cucina italiana.
+  attraverso la quale poter far conoscere i suoi prodotti a tutti coloro che amano la cucina italiana.
   Gli utenti potranno facilmente ordinare i propri piatti preferiti per poterli gustare comodamente dalla propria casa.
 
 
@@ -12,17 +12,17 @@
   possono registrarsi od effettuare il login per usufruire delle funzionalità degli utenti registrati;
   
 - Utenti registrati: 
-  Hanno accesso a tutte le funzionalità dell'utente non registrato e in più avere accesso al proprio carrello,
-  alla lista dei preferiti, effettuare e visualizzare i propri ordini. I clienti più fedeli avranno anche a
-  disposizione dei coupon per avere sconti sulla spesa effettuata;
+  Hanno accesso a tutte le funzionalità dell'utente non registrato ed in più avere accesso al proprio carrello,
+  alla lista dei preferiti, effettuare e visualizzare ordini. I clienti più fedeli avranno anche a
+  disposizione dei coupon da utilizzare sulla spesa effettuata;
 
-- Ristoratore:
-  Gestisce i prodotti in vendita, i coupon da inviare, gli ordini effettuati;
+- Ristorante:
+  Gestisce i prodotti in vendita, i coupon da inviare e gli ordini effettuati
   
-## Come è strutturata
+## Struttura
 
- Questa applicazione è distrubuita a tre livelli (data managment, application layer e presentation layer) ed ha 
- un'interfaccia responsive.
+  Questa applicazione è distrubuita su tre livelli (data managment, application layer, presentation layer) ed è progettata
+  in modo da avere un'interfaccia responsive.
 
 ## Requisiti
 
@@ -33,10 +33,10 @@
 
 ## Intallazione
 
- Per l'installazione è necessario:
+  Per l'installazione è necessario:
  
 - decomprimere la cartella TasteIt ed inserirla all'interno della directory htdocs 
-  oppure public_html (in questo caso bisogna, per il reindirizzamento aggiornare il
+  oppure public_html (in questo caso bisogna, per il reindirizzamento, aggiornare il
   file .htaccess con il proprio nome utente in (RewriteRule) ed indicare ad Apache 
   la directory che ospita il progetto tramite l'apposita direttiva in httpd.conf:
   
@@ -62,7 +62,7 @@
 
   ```
 - Per avere tutte le dipendenze, scaricare composer su:
-  [https://getcomposer.org/](Composer)
+  [Composer](https://getcomposer.org/). 
   Una volta aperto il progetto su un IDE, digitare il comando: 
 
   ```bash
@@ -78,5 +78,8 @@
   email: tasteit@gmail.com
   password: secret
   ```
+  
+## Team di sviluppo
+
 
   
