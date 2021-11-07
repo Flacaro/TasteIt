@@ -35,7 +35,7 @@ cap int not null,
 city varchar(20) not null,
 street varchar(20) not null,
 homeNumber int not null,
-customerId bigint not null,
+customerId bigint,
 FOREIGN KEY (customerId) references customers(id)
 );
 
@@ -61,7 +61,7 @@ foreign key(restaurantId) references restaurant(id) on delete cascade
 create table products(
 id bigint primary key auto_increment not null,
 name varchar(20) not null,
-description varchar(100) default null,
+description varchar(500) default null,
 price float not null,
 categoryId bigint not null,
 imagePath varchar(1024),
@@ -92,7 +92,7 @@ foreign key(productId) references products(id)
 create table customers_paymentMethods(
 id bigint primary key auto_increment,
 customerId bigint not null,
-cardNumber int(16),
+cardNumber bigint,
 expirationDate Date,
 cvv int not null,
 cardHolder varchar(40),
@@ -178,10 +178,10 @@ insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8345', 20,'2021-09-13',1);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8790', 20,'2021-11-13',2);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8r61', 15,'2022-02-09',3);
-INSERT INTO `orderstates`(`state`) VALUES ('Pending');
-INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
-INSERT INTO `orderstates`(`state`) VALUES ('Denied');
-INSERT INTO `orderstates`(`state`) VALUES ('Completed');
+INSERT INTO `orderStates`(`state`) VALUES ('Pending');
+INSERT INTO `orderStates`(`state`) VALUES ('Accepted');
+INSERT INTO `orderStates`(`state`) VALUES ('Denied');
+INSERT INTO `orderStates`(`state`) VALUES ('Completed');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,234567127651473,'2027-09-21',324,'Mario Rossi');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,2349087129065718,'2025-05-14',784,'Sandro Rosa');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,8769897134789021,'2030-01-04',521,'Michela Bianchi');

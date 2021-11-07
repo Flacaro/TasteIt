@@ -34,7 +34,18 @@
         }
     </style>
 </head>
-<body style="height: 100vh;">
+
+
+
+<body style="height: 100vh;" onload="myFunction()">
+
+<script>
+    function myFunction() {
+        if (!navigator.cookieEnabled){
+            alert('Attenzione! Il sito potrebbe non funzionare correttamente se i cookie non sono abilitati. Prima di continuare a navigare, assicurati di aver abilitato i cookie.')
+        }
+    }
+</script>
 
 {include file='src/templates/base/nav.tpl'}
 

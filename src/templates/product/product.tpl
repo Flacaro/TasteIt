@@ -152,7 +152,7 @@
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
                                                                             <label class="label" for="#">Commento</label>
-                                                                            <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto">
+                                                                            <input type="text" name="comment" class="form-control" id="comment" placeholder="Descrivi il prodotto" maxlength="100">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-12">
