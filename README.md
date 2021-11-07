@@ -86,8 +86,8 @@
   
 ## Team di sviluppo
 
- -[Selene Verna](https://github.com/SelVer99)
- -[Flaviana Caroselli](https://github.com/Flacaro)
+ [Selene Verna](https://github.com/SelVer99) e 
+ [Flaviana Caroselli](https://github.com/Flacaro)
  
 
   
