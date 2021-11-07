@@ -1,5 +1,7 @@
 ## Taste It
 
+![alt text](https://wallpapercave.com/wp/wp1874159.jpg)
+
   Questo progetto è stato realizzato con lo scopo di aiutare il ristorante Taste It ad avere un propria applicazione web,
   attraverso la quale poter far conoscere i suoi prodotti a tutti coloro che amano la cucina italiana.
   Gli utenti potranno facilmente ordinare i propri piatti preferiti per poterli gustare comodamente dalla propria casa.
@@ -62,8 +64,8 @@
 
   ```
 - Per avere tutte le dipendenze, scaricare composer su:
-  [Composer](https://getcomposer.org/). 
-  Una volta aperto il progetto su un IDE, digitare il comando: 
+  [Composer](https://getcomposer.org/) e
+  una volta aperto il progetto su un IDE, digitare il comando: 
 
   ```bash
   composer update
@@ -81,5 +83,8 @@
   
 ## Team di sviluppo
 
+ [Selene Verna](https://github.com/SelVer99)
+ [Flaviana Caroselli](https://github.com/Flacaro)
+ 
 
   
