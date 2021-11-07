@@ -26,7 +26,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descrizione</label>
-                                <textarea class="form-control textarea" required maxlength="100" name="description">{$product->getDescription()}</textarea>
+                                <textarea class="form-control textarea" required maxlength="500" name="description">{$product->getDescription()}</textarea>
                             </div>
                         </div>
                     </div>

@@ -181,10 +181,10 @@ insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8345', 20,'2021-09-13',1);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8790', 20,'2021-11-13',2);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8r61', 15,'2022-02-09',3);
-INSERT INTO `orderstates`(`state`) VALUES ('Pending');
-INSERT INTO `orderstates`(`state`) VALUES ('Accepted');
-INSERT INTO `orderstates`(`state`) VALUES ('Denied');
-INSERT INTO `orderstates`(`state`) VALUES ('Completed');
+INSERT INTO `orderStates`(`state`) VALUES ('Pending');
+INSERT INTO `orderStates`(`state`) VALUES ('Accepted');
+INSERT INTO `orderStates`(`state`) VALUES ('Denied');
+INSERT INTO `orderStates`(`state`) VALUES ('Completed');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (1,234567127651473,'2027-09-21',324,'Mario Rossi');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,2349087129065718,'2025-05-14',784,'Sandro Rosa');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,8769897134789021,'2030-01-04',521,'Michela Bianchi');

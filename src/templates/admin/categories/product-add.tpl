@@ -26,7 +26,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Descrizione</label>
-                                    <textarea class="form-control textarea" name="description" placeholder="piccola descrizione del prodotto" maxlength="100" minlength="1" required></textarea>
+                                    <textarea class="form-control textarea" name="description" placeholder="piccola descrizione del prodotto" maxlength="500" minlength="1" required></textarea>
                                 </div>
                             </div>
                         </div>

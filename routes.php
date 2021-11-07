@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\Session;
 use App\Controllers\StatisticController;
 use App\Controllers\AuthController;
 use App\Controllers\CartController;
@@ -22,22 +23,24 @@ require_once "Utility.php";
 
 SimpleRouter::redirect("/", "/home");
 
-SimpleRouter::get("/error404", [AuthController::class, "error404"]);
-SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"])->name('login');
-SimpleRouter::post("/login", [AuthController::class, "login"]);
-SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
-SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
-SimpleRouter::get("/logout", [AuthController::class, "logout"]);
 
-SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
+    SimpleRouter::get("/error404", [AuthController::class, "error404"]);
+    SimpleRouter::get("/login", [AuthController::class, "visualizeLogin"])->name('login');
+    SimpleRouter::post("/login", [AuthController::class, "login"]);
+    SimpleRouter::get("/signup", [AuthController::class, "visualizeSignUp"]);
+    SimpleRouter::post("/signup", [AuthController::class, "signUp"]);
+    SimpleRouter::get("/logout", [AuthController::class, "logout"]);
 
-SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
-SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
+    SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 
-SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
-SimpleRouter::get("/products", [ProductController::class, "getAll"])->name('products');
+    SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
+    SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 
-SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::class, "getCategoryProducts"]);
+    SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');
+    SimpleRouter::get("/products", [ProductController::class, "getAll"])->name('products');
+
+    SimpleRouter::get("/categories/{categoryId}/products", [CategoryController::class, "getCategoryProducts"]);
+
 
 
 SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], function () {
@@ -106,10 +109,12 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
 SimpleRouter::group(['middleware' => \App\Controllers\OrderMiddleware::class], function () {
     SimpleRouter::get("/cart/checkout", [OrderController::class, "checkout"])->name('checkout');
 });
+
+
+
     SimpleRouter::error(function(Request $request, \Exception $exception) {
 
     if($exception instanceof NotFoundHttpException && $exception->getCode() === 404) {
         response()->redirect("/error404");
     }
-
 });

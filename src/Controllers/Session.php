@@ -76,7 +76,6 @@ class Session
         $this->newSession();
         $user = unserialize($_SESSION["customer"]);
         return $user->getCart();
-        //unset($_SESSION["cart"]);
     }
 
 }
