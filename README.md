@@ -11,7 +11,7 @@
 
 - Utenti non registrati: 
   possono avere accesso alla home per visualizzare i prodotti offerti e leggere informazioni sul ristorante,
-  possono registrarsi od effettuare il login per usufruire delle funzionalità degli utenti registrati;
+  possono registrarsi per usufruire delle funzionalità degli utenti registrati;
   
 - Utenti registrati: 
   Hanno accesso a tutte le funzionalità dell'utente non registrato ed in più avere accesso al proprio carrello,
