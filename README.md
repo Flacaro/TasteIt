@@ -76,8 +76,8 @@
 
   ```
     
-- Controllare l'abilitazione dei cookie sul proprio browser. Se non dovessero essere attivi, si verrà
-  reindirizzati ad una pagina di errore.
+- Controllare l'abilitazione dei cookie sul proprio browser. Se non dovessero essere attivi uscirà un avviso
+  che invita ad abilitarli.
 
 - Per usufruire dello spazio dedicato al ristoratore, durante la login inserire queste credenziali : 
   ```bash
