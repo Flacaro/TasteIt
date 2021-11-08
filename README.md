@@ -68,9 +68,10 @@
   
 - Per avere tutte le dipendenze, scaricare composer su:
   [Composer](https://getcomposer.org/) e
-  una volta aperto il progetto su un IDE, digitare il comando: 
+  una volta aperto il progetto su un IDE, digitare i comandi: 
 
   ```bash
+  composer install
   composer update
 
   ```
