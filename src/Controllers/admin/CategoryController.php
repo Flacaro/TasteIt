@@ -3,7 +3,6 @@
 namespace App\Controllers\admin;
 
 use App\Foundation\FCategory;
-use App\Foundation\FProduct;
 use App\Models\Category;
 use App\Views\admin\VCategory;
 

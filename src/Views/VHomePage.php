@@ -19,7 +19,7 @@ class VHomePage
 
 
 
-    public function About(){
+    public function about(){
         return setData('aboutUs', []);
     }
 }

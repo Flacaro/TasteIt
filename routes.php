@@ -1,6 +1,5 @@
 <?php
 
-use App\Controllers\Session;
 use App\Controllers\StatisticController;
 use App\Controllers\AuthController;
 use App\Controllers\CartController;
@@ -33,7 +32,7 @@ SimpleRouter::redirect("/", "/home");
 
     SimpleRouter::get("/home", [HomePageController::class, "visualizeHome"])->name('home');
 
-    SimpleRouter::get("/aboutUs", [HomePageController::class, "About"]);
+    SimpleRouter::get("/aboutUs", [HomePageController::class, "about"]);
     SimpleRouter::get("/contact",[RestaurantController::class, "visualizeContactPage"]);
 
     SimpleRouter::get("/products/{productId}", [ProductController::class, "getProduct"])->name('getProduct');

@@ -81,9 +81,9 @@ class HomePageController {
      }
 
 
-    public function About(){
+    public function about(){
         $VHome = new VHomePage();
-        $VHome->About();
+        $VHome->about();
     }
 }
 
