@@ -22,7 +22,14 @@
     <link rel="stylesheet" href="/src/assets/css/flaticon.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
 </head>
-<body class="row justify-content-center pb-5">
+<script>
+    function myFunction() {
+        if (!navigator.cookieEnabled){
+            alert('Attenzione! Il sito potrebbe non funzionare correttamente se i cookie non sono abilitati. Prima di continuare a navigare, assicurati di aver abilitato i cookie.')
+        }
+    }
+</script>
+<body class="row justify-content-center pb-5" onload="myFunction()">
 <div class="col-md-7" style="text-align: center" >
     <div class="contact-wrap w-100 p-md-5 p-4">
         <h3 style="padding-bottom: 1rem">Registrati</h3>

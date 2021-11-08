@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-05 18:04:54
+/* Smarty version 3.1.39, created on 2021-11-07 20:05:53
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\auth\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61856436562b33_45226666',
+  'unifunc' => 'content_61882391174ed4_62284910',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a4b9b444a0f14afd90c0ac9f8ef0a9048e44051b' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\auth\\login.tpl',
-      1 => 1635932627,
+      1 => 1636311951,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61856436562b33_45226666 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61882391174ed4_62284910 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_159393676185643655c584_09322778', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14689949546188239116f104_38625682', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -50,7 +50,18 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_159393676185643655
     <link rel="stylesheet" href="/src/assets/css/flaticon.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
 </head>
-<body class="row justify-content-center pb-5">
+
+<?php echo '<script'; ?>
+>
+    function myFunction() {
+        if (!navigator.cookieEnabled){
+            alert('Attenzione! Il sito potrebbe non funzionare correttamente se i cookie non sono abilitati. Prima di continuare a navigare, assicurati di aver abilitato i cookie.')
+        }
+    }
+<?php echo '</script'; ?>
+>
+
+<body class="row justify-content-center pb-5" onload="myFunction()">
 <div class="col-md-7" style="text-align: center">
     <div class="contact-wrap w-100 p-md-5 p-4">
         <h3 class="mb-4">Login</h3>
@@ -130,12 +141,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_159393676185643655
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_159393676185643655c584_09322778 extends Smarty_Internal_Block
+class Block_14689949546188239116f104_38625682 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_159393676185643655c584_09322778',
+    0 => 'Block_14689949546188239116f104_38625682',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

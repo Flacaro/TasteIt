@@ -20,7 +20,15 @@
     <link href="/src/templates/admin/assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="">
+<script>
+    function myFunction() {
+        if (!navigator.cookieEnabled){
+            alert('Attenzione! Il sito potrebbe non funzionare correttamente se i cookie non sono abilitati. Prima di continuare a navigare, assicurati di aver abilitato i cookie.')
+        }
+    }
+</script>
+
+<body onload="myFunction()">
 
 <div class="wrapper"  style="background-color: #F4F3EF">
     <div class="sidebar" data-color="white" data-active-color="danger">
