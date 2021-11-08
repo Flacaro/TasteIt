@@ -11,7 +11,7 @@
 
 - Utenti non registrati: 
   possono avere accesso alla home per visualizzare i prodotti offerti e leggere informazioni sul ristorante,
-  possono registrarsi od effettuare il login per usufruire delle funzionalità degli utenti registrati;
+  possono registrarsi per usufruire delle funzionalità degli utenti registrati;
   
 - Utenti registrati: 
   Hanno accesso a tutte le funzionalità dell'utente non registrato ed in più avere accesso al proprio carrello,
@@ -68,15 +68,16 @@
   
 - Per avere tutte le dipendenze, scaricare composer su:
   [Composer](https://getcomposer.org/) e
-  una volta aperto il progetto su un IDE, digitare il comando: 
+  una volta aperto il progetto su un IDE, digitare i comandi: 
 
   ```bash
+  composer install
   composer update
 
   ```
     
-- Controllare l'abilitazione dei cookie sul proprio browser. Se non dovessero essere attivi, si verrà
-  reindirizzati ad una pagina di errore.
+- Controllare l'abilitazione dei cookie sul proprio browser. Se non dovessero essere attivi uscirà un avviso
+  che invita ad abilitarli.
 
 - Per usufruire dello spazio dedicato al ristoratore, durante la login inserire queste credenziali : 
   ```bash
