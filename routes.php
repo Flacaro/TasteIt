@@ -75,11 +75,6 @@ SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], fu
 
 SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], function () {
 
-    SimpleRouter::get("/orders", [AdminOrderController::class, "visualizeOrdersPending"]);
-    SimpleRouter::get("/orders/add", [RestaurantController::class, "addOrder"]);
-    SimpleRouter::post("/orders/{id}", [RestaurantController::class, "acceptOrder"]);
-    SimpleRouter::get("/orders/{id}/accept", [RestaurantController::class, "edit"]);
-
     SimpleRouter::get("/admin", [StatisticController::class, "visualizeStatistics"]);
     SimpleRouter::get("/admin/categories", [AdminCategoryController::class, "categoriesAdmin"]);
     SimpleRouter::get("/admin/categories/add", [AdminCategoryController::class, "showAddCategory"]);

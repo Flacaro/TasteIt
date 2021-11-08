@@ -16,6 +16,9 @@ class Product {
     private $timesOrdered;
     private $reviews=[];
 
+    public function __construct() {
+    }
+
     public function getReviews(): array
     {
         return $this->reviews;
@@ -24,9 +27,6 @@ class Product {
     public function setReviews(array $reviews): void
     {
         $this->reviews = $reviews;
-    }
-
-    public function __construct() {
     }
 
     public function getImagePath()
@@ -63,7 +63,7 @@ class Product {
     {
         return $this->id;
     }
-//penso vada eliminato
+
     public function setId($id): void
     {
         $this->id = $id;
@@ -89,18 +89,6 @@ class Product {
     {
         $this->price = $price;
     }
-
-    public function getQuantity()
-    {
-        return $this->quantity;
-    }
-
-    public function setQuantity($quantity): void
-    {
-        $this->quantity = $quantity;
-    }
-
-
 
 
 }
