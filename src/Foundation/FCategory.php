@@ -16,9 +16,9 @@ class FCategory extends FConnection {
 
     function load($id){
         $pdo = FConnection::connect();
-        $query= 'select * from categories where id = ' . $id;
+        $query= 'select * from categories where id = :id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $cat= $stmt->fetch();
         $category=new Category;
         $category->setId($cat[0]);
@@ -29,16 +29,17 @@ class FCategory extends FConnection {
 
     function store($category){
         $pdo = FConnection::connect();
-        $query='insert into categories (`restaurantId`, `categoryName`, imagePath) VALUES (1,\''.$category->getName().'\', \'/'.$category->getImage().'\')';
+        $query='insert into categories (`restaurantId`, `categoryName`, imagePath) VALUES (1, :name, :image)';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':name'=>$category->getName(),
+            ':image'=>$category->getImage()));
     }
 
     function loadCategoryProducts($categoryId) {
         $pdo = FConnection::connect();
-        $query= 'select * from products where categoryId = ' . $categoryId;
+        $query= 'select * from products where categoryId = :categoryId';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':categoryId'=>$categoryId));
         $prods= $stmt->fetchAll();
         $products=[];
         foreach($prods as $p){
@@ -64,7 +65,6 @@ class FCategory extends FConnection {
         $cats = $stmt->fetchAll();
         //$stmt->debugDumpParams();
         $categories = [];
-        //print_r($cats);
         foreach ($cats as $cat) {
             $c = new Category();
             $c->setId($cat[0]);
@@ -78,8 +78,8 @@ class FCategory extends FConnection {
 
     public function delete($id){
         $pdo = FConnection::connect();
-        $query= "DELETE FROM categories WHERE id=".$id;
+        $query= "DELETE FROM categories WHERE id=:id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
     }
 }

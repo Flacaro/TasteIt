@@ -24,21 +24,27 @@ class FCustomer extends FConnection {
     //exist ma con un check della password in più
     public function authentication($email, $password){
         $pdo = FConnection::connect();
-        $query = "SELECT password FROM customers WHERE email='".$email. "'";
+        $query = "SELECT password FROM customers WHERE email=:email";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':email'=>$email));
         $row = $stmt->fetch();
-        if(!password_verify($password, $row[0])){
-        };
-        return password_verify($password, $row[0]);
+        print_r($row);
+        $stmt->debugDumpParams();
+        if($row==""){
+            return false;
+        }
+        else{
+            return password_verify($password, $row[0]);
+        }
+
     }
 
     //load ma con email invece che con id
     public function getByEmail($email){
         $pdo = FConnection::connect();
-        $query = "SELECT * FROM customers WHERE email= '".$email."'";
+        $query = "SELECT * FROM customers WHERE email= :email";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':email'=>$email));
         $cus=$stmt->fetch();
         $customer= new Customer;
         $fav= new Favourites;
@@ -53,17 +59,16 @@ class FCustomer extends FConnection {
         $customer->setFav($fav);
         $customer->setCart($cart);
         $customer->setImagePath($cus[7]);
-        //print_r($cus);
-        //$stmt->debugDumpParams();
+
         return $customer;
     }
 
     //cart e fav vuoti, solo id, se vogliamo i prodotti dobbiamo caricarli
     public function load($id){
         $pdo = FConnection::connect();
-        $query = "SELECT * FROM customers WHERE id= ".$id;
+        $query = "SELECT * FROM customers WHERE id= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $cus=$stmt->fetch();
         $cart= new Cart;
         $fav= new Favourites;
@@ -76,15 +81,14 @@ class FCustomer extends FConnection {
         $fav->setId($cus[5]);
         $cart->setId($cus[6]);
         $customer->setImagePath($cus[7]);
-        //$stmt->debugDumpParams();
         return $customer;
     }
 
     public function exist($email) {
         $pdo = FConnection::connect();
-        $query = "SELECT email FROM customers WHERE email='".$email . "'" . " UNION (select email from restaurant where email ='" . $email . "')";
+        $query = "SELECT email FROM customers WHERE email=:email UNION (select email from restaurant where email =:email";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':email'=>$email));
         $row = $stmt->fetch();
         if($row==NULL) {
             return false;
@@ -109,9 +113,15 @@ class FCustomer extends FConnection {
         $fav= new Favourites;
         $ffav=new FFavourites();
         $f=$ffav->store($fav);
-        $query='insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES (\''. $name .'\',\''.$surname.'\',\''.$email.'\',\''.$password.'\','.$f.','.$c.  ', \'' . $image.'\')';
+        $query='insert into `customers`(`name`, `surname`, `email`, `password`, `favId`, `cartId`, `imagePath`) VALUES (:name, :surname ,:email , :password, :f, :c, :image)';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':name'=>$name,
+            ':surname'=>$surname,
+            ':email'=>$email,
+            ':password'=>$password,
+            'f'=>$f,
+            'c'=>$c,
+            'image'=>$image));
     }
 
     //l'update del customer si limita a email, password, nome, cognome, per quanto riguarda il carrello, i preferiti, le carte di credito etc usiamo i foundation specifici
@@ -123,18 +133,22 @@ class FCustomer extends FConnection {
         $surname=$customer->getSurname();
         $email=$customer->getEmail();
         $password=$customer->getPassword();
-        $query="UPDATE `customers` SET `name`='.$name.',`surname`='.$surname.',`email`='.$email.',`password`='.$password.' WHERE id=".$id;
+        $query="UPDATE `customers` SET `name`= :name,`surname`= :surname,`email`=:email,`password`=:password WHERE id=:id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':name'=>$name,
+            ':surname'=>$surname,
+            ':email'=>$email,
+            ':password'=>$password,
+            ':id'=>$id));
     }
 
 
     //serve per visualizzare la lista degli ordini dell'utente (per vedere i prodotti richiamiamo una funzione a parte quando clicchi sull'ordine specifico)
     public function getCustomerOrders($id){
         $pdo = FConnection::connect();
-        $query= "select * from orders where customerId=".$id;
+        $query= "select * from orders where customerId=:id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $orders = $stmt->fetchAll();
         $o=[];
         $fcoupon=new FCoupon();
@@ -153,15 +167,14 @@ class FCustomer extends FConnection {
             $ord->setAddress($faddress->load($order[8]));
             array_push($o, $ord);
         }
-        //print_r($o);
         return $o;
     }
 
     public function loadNameSurname($id){
         $pdo = FConnection::connect();
-        $query = 'select name, surname from customers where id = '.$id;
+        $query = 'select name, surname from customers where id = :id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $cus = $stmt->fetch();
         $customer=new Customer;
         $customer->setId($id);
@@ -176,7 +189,6 @@ class FCustomer extends FConnection {
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $custs = $stmt->fetchAll();
-        //$stmt->debugDumpParams();
         $customers = [];
         print_r($custs);
         foreach ($custs as $cust) {
@@ -197,14 +209,13 @@ class FCustomer extends FConnection {
 
     public function loadUsersCoupons($userId){
         $pdo = FConnection::connect();
-        $query="SELECT id, expirationDate, priceCut FROM coupons where isUsed=0 and customerId=" . $userId;
+        $query="SELECT id, expirationDate, priceCut FROM coupons where isUsed=0 and customerId=:userId and expirationDate>NOW()";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array('userId'=> $userId));
         $coupon= $stmt->fetchAll();
         $coupons=[];
         foreach ($coupon as $c){
             $cou = new Coupon();
-            $fpay= new FPaymentMethod();
             $cou->setId($c[0]);
             $cou->setExpirationDate($c[1]);
             $cou->setPriceCut($c[2]);

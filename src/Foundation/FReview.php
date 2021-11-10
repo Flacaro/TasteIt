@@ -8,9 +8,9 @@ class FReview {
 
     public function loadReviewsOfProduct($id){
         $pdo = FConnection::connect();
-        $query = 'select * from reviews as r where r.productId='.$id;
+        $query = 'select * from reviews as r where r.productId=:id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $r=$stmt->fetchAll();
         $reviews=[];
         $fcustomer=new FCustomer();
@@ -28,8 +28,12 @@ class FReview {
 
     function createReview($review, $productId){
         $pdo = FConnection::connect();
-        $query = 'insert into reviews(stars, comment, customerId, productId) values ('.$review->getStars().', "'. $review->getComment().'", '. $review->getCustomer()->getId(). ','. $productId.')';
+        $query = 'insert into reviews(stars, comment, customerId, productId) values (:stars, :comment, :customerId, :pId)';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':stars'=>$review->getStars(),
+            ':comment'=>$review->getComment(),
+            'customerId'=>$review->getCustomer()->getId(),
+            'pId'=>$productId
+            ));
     }
 }

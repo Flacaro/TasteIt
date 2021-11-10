@@ -176,7 +176,7 @@ INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customer
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Santa Cecilia',10,3);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Castello',52,4);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,'Coppito','del Corso',8,4);
-INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','secret',1,3208976543);
+INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','$2y$10$TXeIAq0qe1Y64.IZ1Mcxqued1I0pliDMZShtsMk3kwoW46Oscui8u',1,3208976543);
 insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('C614c7de6d8a19', 30, '2021-10-07', 1);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8345', 20,'2021-09-13',1);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8790', 20,'2021-11-13',2);

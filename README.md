@@ -56,6 +56,7 @@
   $ sudo chmod 777 /opt/lampp/htdocs/TasteIt
 
   ```
+- Porre le credenziali del proprio database in FConnection()
   
 - Per avere il database in locale bisogna scrivere sul terminale:
 

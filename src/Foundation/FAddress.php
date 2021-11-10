@@ -13,9 +13,9 @@ class FAddress extends FConnection{
 
     public function load($id){
         $pdo = FConnection::connect();
-        $query = 'select * from shippingaddresses where id = '. $id;
+        $query = 'select * from shippingaddresses where id = :id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(":id"=>$id));
         $address = $stmt->fetch();
         $add = new Address();
         $add->setId($address[0]);
@@ -29,9 +29,9 @@ class FAddress extends FConnection{
     public function loadFromCustomerId($id){
         //print_r($id);
         $pdo = FConnection::connect();
-        $query = 'select * from shippingaddresses where customerId='.$id;
+        $query = 'select * from shippingaddresses where customerId= :id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(":id"=>$id));
         $addresses=$stmt->fetchAll();
         $a=[];
         foreach ($addresses as $address){
@@ -48,9 +48,9 @@ class FAddress extends FConnection{
 
     public function exist($id){
         $pdo = FConnection::connect();
-        $query = 'select * from shippingaddresses where id='.$id;
+        $query = 'select * from shippingaddresses where id=:id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(":id"=>$id));
         $address=$stmt->fetch();
         if ($address!=NULL){
             return true;
@@ -66,12 +66,16 @@ class FAddress extends FConnection{
         $city=$address->getCity();
         $street=$address->getStreet();
         $homenumber=$address->getHomeNumber();
-        $query="INSERT INTO `shippingaddresses` (`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (".$cap.",\"".$city."\" , \"" . $street ."\",".$homenumber.",".$customerid.")";
+        $query="INSERT INTO `shippingaddresses` (`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (:cap, :city, :street, :homenumber, :customerId)";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':cap'=>$cap,
+            'city'=>$city,
+            'street'=>$street,
+            'homenumber'=>$homenumber,
+            'customerId'=>$customerid));
     }
 
-    public function update($address){
+    /*public function update($address){
         $pdo = FConnection::connect();
         $id=$address->getId();
         $cap=$address->getCap();
@@ -83,13 +87,13 @@ class FAddress extends FConnection{
         $query="UPDATE `shippingaddresses` SET `id`='.$id.',`cap`='.$cap.',`city`='.$city.',`street`='.$street.',`homeNumber`='.$homenumber.',`customerId`='.$customerid.' WHERE id=".$id;
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-    }
+    }*/
 
     public function delete($id){
         $pdo = FConnection::connect();
-        $query="delete from shippingaddresses where id=".$id;
+        $query="delete from shippingaddresses where id=:id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
     }
 
 }
