@@ -28,9 +28,13 @@ class FCustomer extends FConnection {
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $row = $stmt->fetch();
-        if(!password_verify($password, $row[0])){
-        };
-        return password_verify($password, $row[0]);
+        if($row==""){
+            return false;
+        }
+        else{
+            return password_verify($password, $row[0]);
+        }
+
     }
 
     //load ma con email invece che con id
@@ -53,8 +57,7 @@ class FCustomer extends FConnection {
         $customer->setFav($fav);
         $customer->setCart($cart);
         $customer->setImagePath($cus[7]);
-        //print_r($cus);
-        //$stmt->debugDumpParams();
+
         return $customer;
     }
 
@@ -76,7 +79,6 @@ class FCustomer extends FConnection {
         $fav->setId($cus[5]);
         $cart->setId($cus[6]);
         $customer->setImagePath($cus[7]);
-        //$stmt->debugDumpParams();
         return $customer;
     }
 
@@ -153,7 +155,6 @@ class FCustomer extends FConnection {
             $ord->setAddress($faddress->load($order[8]));
             array_push($o, $ord);
         }
-        //print_r($o);
         return $o;
     }
 
@@ -176,7 +177,6 @@ class FCustomer extends FConnection {
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $custs = $stmt->fetchAll();
-        //$stmt->debugDumpParams();
         $customers = [];
         print_r($custs);
         foreach ($custs as $cust) {
@@ -204,7 +204,6 @@ class FCustomer extends FConnection {
         $coupons=[];
         foreach ($coupon as $c){
             $cou = new Coupon();
-            $fpay= new FPaymentMethod();
             $cou->setId($c[0]);
             $cou->setExpirationDate($c[1]);
             $cou->setPriceCut($c[2]);

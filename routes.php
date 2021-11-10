@@ -1,5 +1,9 @@
 <?php
 
+use Pecee\Http\Request;
+use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
+use Pecee\SimpleRouter\SimpleRouter;
+
 use App\Controllers\StatisticController;
 use App\Controllers\AuthController;
 use App\Controllers\CartController;
@@ -10,9 +14,6 @@ use App\Controllers\OrderController;
 use App\Controllers\ProductController;
 use App\Controllers\RestaurantController;
 use App\Controllers\CustomerController;
-use Pecee\Http\Request;
-use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
-use Pecee\SimpleRouter\SimpleRouter;
 use App\Controllers\admin\CouponController;
 use App\Controllers\admin\CustomerController as AdminCustomerController;
 use App\Controllers\admin\CategoryController as AdminCategoryController;
