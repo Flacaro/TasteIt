@@ -33,7 +33,6 @@ class AuthController
         $password = $_POST["password"];
         $fuser = new FCustomer();
         $frest = new FRestaurant();
-        $message = "";
         if ($fuser->authentication($email, $password)) {
             $user = $fuser->getByEmail($email);
             $session->saveUserInSession($user);

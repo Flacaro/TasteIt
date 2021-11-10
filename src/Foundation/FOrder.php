@@ -22,9 +22,9 @@ class FOrder extends FConnection {
 
     public function loadUsersOrders($userId){
         $pdo = FConnection::connect();
-        $query="SELECT id, creationDate, total, paymentId, orderState FROM orders where customerId=" . $userId . " order by creationDate DESC;";
+        $query="SELECT id, creationDate, total, paymentId, orderState FROM orders where customerId=:id order by creationDate DESC;";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$userId));
         $order= $stmt->fetchAll();
         $orders=[];
         foreach ($order as $ord){
@@ -48,10 +48,9 @@ class FOrder extends FConnection {
 
     public function getOrderProducts($id){
         $pdo = FConnection::connect();
-        //ma le immagini non servono?
-        $query = "select name, quantity, price, imagePath, description, productId from orders_products where orderId=".$id;
+        $query = "select name, quantity, price, imagePath, description, productId from orders_products where orderId=:id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $products = $stmt->fetchAll();
         $prods = [];
         foreach($products as $p){
@@ -95,9 +94,11 @@ class FOrder extends FConnection {
 
     public function update($order){
         $pdo = FConnection::connect();
-        $query='UPDATE `orders` SET `arrivalTime`=\''.$order->getArrivalTime().'\', `orderState`=\''.$order->getState().'\' where id='.$order->getId();
+        $query='UPDATE `orders` SET `arrivalTime`=:arrivalTime, `orderState`=:state where id=:id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':arrivalTime'=>$order->getArrivalTime(),
+            ':state'=>$order->getState(),
+            ':id'=>$order->getId()));
         //$stmt->debugDumpParams();
     }
 
@@ -106,9 +107,9 @@ class FOrder extends FConnection {
         $fpay=new FPaymentMethod;
         $faddress=new FAddress;
         $pdo = FConnection::connect();
-        $query = 'select * from orders where id='.$id;
+        $query = 'select * from orders where id=:id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $o=$stmt->fetch();
         $order=new Order;
         $order->setId($o[0]);
@@ -141,13 +142,26 @@ class FOrder extends FConnection {
         }
         else {$couponId="NULL";}
         if (get_class($order->getPayment())=="App\Models\CreditCard") {
-            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, \'' . $couponId . '\', ' . $order->getCustomerId() . ', 2, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', ' . $order->getPayment()->getId() . ')';
+            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), :total, NULL, :couponId, :customerId, 2, :state , :address, :payment)';
+            $stmt = $pdo->prepare($query);
+            $stmt->execute(array(':total'=>$order->getTotal(),
+                ':couponId'=>$couponId,
+                ':customerId'=>$order->getCustomerId(),
+                ':state'=>$order->getState(),
+                ':address'=>$order->getAddress()->getId(),
+                ':payment'=> $order->getPayment()->getId()
+                ));
         }
         else {
-            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), ' . $order->getTotal() . ', NULL, \'' . $couponId . '\', ' . $order->getCustomerId() . ', 1, \'' . $order->getState() . '\', ' . $order->getAddress()->getId() . ', NULL)';
+            $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), :total, NULL, :couponId, :customerId, 1, :state , :address, NULL)';
+            $stmt = $pdo->prepare($query);
+            $stmt->execute(array(':total'=>$order->getTotal(),
+                ':couponId'=>$couponId,
+                ':customerId'=>$order->getCustomerId(),
+                ':state'=>$order->getState(),
+                ':address'=>$order->getAddress()->getId()
+            ));
         }
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
         return $pdo->lastInsertId();
 
     }
@@ -155,9 +169,16 @@ class FOrder extends FConnection {
     function storeOrdersProducts($orderid, $prodWithQuantity){
         $pdo = FConnection::connect();
         foreach ($prodWithQuantity as $product){
-            $query='insert into orders_products (`orderId`, `quantity`, `name`, `description`, `price`, `productId`, `imagePath`) VALUES (\''.$orderid.'\',\''.$product[1].'\',\''.$product[0]->getName().'\',\''.$product[0]->getDescription().'\',\''.$product[0]->getPrice().'\',' .$product[0]->getId().', \'' .$product[0]->getImagePath(). '\')';
+            $query='insert into orders_products (`orderId`, `quantity`, `name`, `description`, `price`, `productId`, `imagePath`) VALUES (:orderId, :quantity, :name, :description, :price, :pId, :imagePath)';
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute(array(':orderId'=>$orderid,
+                ':quantity'=>$product[1],
+                ':name'=>$product[0]->getName(),
+                ':description'=>$product[0]->getDescription(),
+                ':price'=>$product[0]->getPrice(),
+                ':pId'=>$product[0]->getId(),
+                ':imagePath'=>$product[0]->getImagePath()
+                ));
             $this->changeTimesOrdered($prodWithQuantity);
             //$stmt->debugDumpParams();
         }
@@ -166,17 +187,19 @@ class FOrder extends FConnection {
     private function changeTimesOrdered($prods){
         $pdo = FConnection::connect();
         foreach($prods as $p){
-            $query="update products set timesOrdered = timesOrdered+".$p[1] ." where id=".$p[0]->getId();
+            $query="update products set timesOrdered = timesOrdered+:quantity where id= :id";
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute(array(':quantity'=>$p[1],
+                ':id'=>$p[0]->getId()
+            ));
         }
     }
 
     public function confirmOrder($id){
         $pdo = FConnection::connect();
-        $query="update orders set orderState = 'Completed' where id=".$id;
+        $query="update orders set orderState = 'Completed' where id=:id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
     }
 
 }

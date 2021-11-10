@@ -16,23 +16,23 @@ class FRestaurant extends FConnection {
 
     public function authentication($email, $password){
         $pdo = FConnection::connect();
-        $query = "SELECT * FROM restaurant WHERE email='".$email."' AND password='".$password."'";
+        $query = "SELECT password FROM restaurant WHERE email=:email";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':email'=>$email));
         $rows = $stmt->fetch();
-        if($rows==NULL){
+        if($rows==""){
             return false;
         }
         else{
-            return true;
+            return password_verify($password, $rows[0]);
         }
     }
 
     public function getByEmail($email){
         $pdo = FConnection::connect();
-        $query = "SELECT * FROM restaurant WHERE email='".$email."'";
+        $query = "SELECT * FROM restaurant WHERE email=:email";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':email'=>$email));
         $r= $stmt->fetch();
         $rest=new Restaurant;
         $rest->setId($r[0]);
