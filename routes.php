@@ -44,6 +44,7 @@ SimpleRouter::redirect("/", "/home");
 
 SimpleRouter::group(['middleware' => \App\Controllers\AuthMiddleware::class], function () {
 
+
     SimpleRouter::post("/home/products/{productId}/carts/{cartId}", [HomePageController::class, "addToCartFromHome"]);
     SimpleRouter::post("/home/products/{productId}/favourites/{favId}", [HomePageController::class, "addToFavouritesFromHome"]);
 

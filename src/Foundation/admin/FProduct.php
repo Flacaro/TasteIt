@@ -11,9 +11,16 @@ class FProduct
     function store($product, $category): string
     {
         $pdo = FConnection::connect();
-        $query = "INSERT INTO products(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (" . $product->getName() . ", " . $product->getDescription() . ", " . $product->getPrice() . ", " . $category->getId() . ", " . $product->getImagePath() . ", " . $product->getTimesOrdered() . ");";
+        $query = "INSERT INTO products(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (:name, :description, :price, :id, :image, :timesOrdered);";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':name'=>$product->getName(),
+            ':description'=>$product->getDescription(),
+            ':price'=>$product->getPrice(),
+            ':id'=>$category->getId(),
+            ':image'=>$product->getImagePath(),
+            ':timesOrdered'=>$product->getTimesOrdered()
+        ));
         //$stmt->debugDumpParams();
         return $pdo->lastInsertId();
 

@@ -15,7 +15,7 @@ class FFavourites extends FConnection {
     }
 
     //non andremo mai a inserire nel db una lista preferiti che non sia vuota, quindi la store di un oggetto pieno non ci serve
-    function store($fav): string {
+    function store(): string {
         $pdo = FConnection::connect();
         $query = 'insert into favourites () values ()';
         $stmt = $pdo->prepare($query);
@@ -26,9 +26,9 @@ class FFavourites extends FConnection {
 
     function exist($id){
         $pdo = FConnection::connect();
-        $query="select * from favourites where id=".$id;
+        $query="select * from favourites where id= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $fav=$stmt->fetch();
         if ($fav!=NULL){
             return true;
@@ -40,18 +40,18 @@ class FFavourites extends FConnection {
 
     function delete($id){
         $pdo = FConnection::connect();
-        $query="delete from favourites where id=".$id;
+        $query="delete from favourites where id= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=> $id));
     }
 
     function load($id) {
         $fav=new Favourites();
         $fav->setId($id);
         $pdo = FConnection::connect();
-        $query= 'SELECT * FROM products_favourites as pf join products as p on pf.productId = p.id where pf.favId ='.$id;
+        $query= 'SELECT * FROM products_favourites as pf join products as p on pf.productId = p.id where pf.favId = :id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $products= $stmt->fetchAll();
         $f=[];
         foreach($products as $p){
@@ -71,9 +71,9 @@ class FFavourites extends FConnection {
     function update($newFav){
 
         $pdo = FConnection::connect();
-        $query="select * from products_favourites where favId=".$newFav->getId();
+        $query="select * from products_favourites where favId= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$newFav->getId()));
         //oldfav array di array con gli attributi dei prodotti nel vecchio favourites
         $oldFav=$stmt->fetchAll();
         foreach ($newFav->getProducts() as $newp){
@@ -91,17 +91,23 @@ class FFavourites extends FConnection {
 
     function addToFavourites($favId, $productId) {
         $pdo = FConnection::connect();
-        $query = 'insert into products_favourites(`favId`, `productId`) values (' . $favId . ', ' . $productId . ');';
+        $query = 'insert into products_favourites(`favId`, `productId`) values (:favId, :productId);';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':favId'=>$favId,
+            ':productId'=>$productId
+        ));
         return $stmt->fetch();
     }
 
     function deleteFromFavourites($favId, $productId){
         $pdo = FConnection::connect();
-        $query = 'delete from products_favourites where favId='.$favId.' and productId='.$productId;
+        $query = 'delete from products_favourites where favId = :favId and productId= :productId;';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':favId'=> $favId,
+            ':productId'=> $productId
+        ));
     }
 
 

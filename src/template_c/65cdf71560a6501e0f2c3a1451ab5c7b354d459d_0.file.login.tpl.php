@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-05 13:59:05
+/* Smarty version 3.1.40, created on 2021-11-10 15:31:09
   from 'C:\xampp\htdocs\TasteIt\src\templates\auth\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_61852a990d5731_62215907',
+  'unifunc' => 'content_618bd7ad24f6a6_88026647',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '65cdf71560a6501e0f2c3a1451ab5c7b354d459d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\auth\\login.tpl',
-      1 => 1636117033,
+      1 => 1636363085,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61852a990d5731_62215907 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618bd7ad24f6a6_88026647 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -28,7 +28,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <html lang="en">
 <head>
     <title><?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_104719470361852a990d0466_67522033', 'title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1731668686618bd7ad1eaab4_19957429', 'title');
 ?>
 </title>
     <meta charset="UTF-8">
@@ -50,7 +50,18 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_104719470361852a99
     <link rel="stylesheet" href="/src/assets/css/flaticon.css">
     <link rel="stylesheet" href="/src/assets/css/style.css">
 </head>
-<body class="row justify-content-center pb-5">
+
+<?php echo '<script'; ?>
+>
+    function myFunction() {
+        if (!navigator.cookieEnabled){
+            alert('Attenzione! Il sito potrebbe non funzionare correttamente se i cookie non sono abilitati. Prima di continuare a navigare, assicurati di aver abilitato i cookie.')
+        }
+    }
+<?php echo '</script'; ?>
+>
+
+<body class="row justify-content-center pb-5" onload="myFunction()">
 <div class="col-md-7" style="text-align: center">
     <div class="contact-wrap w-100 p-md-5 p-4">
         <h3 class="mb-4">Login</h3>
@@ -130,12 +141,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_104719470361852a99
  src="/src/assets/js/main.js"><?php echo '</script'; ?>
 ><?php }
 /* {block 'title'} */
-class Block_104719470361852a990d0466_67522033 extends Smarty_Internal_Block
+class Block_1731668686618bd7ad1eaab4_19957429 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'title' => 
   array (
-    0 => 'Block_104719470361852a990d0466_67522033',
+    0 => 'Block_1731668686618bd7ad1eaab4_19957429',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

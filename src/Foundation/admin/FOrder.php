@@ -48,9 +48,9 @@ class FOrder {
 
     public function getTotal($customerId) {
         $pdo = FConnection::connect();
-        $query = "select total from orders join customers on customers.id = orders.customerId where customers.id = " . $customerId . ";";
+        $query = "select total from orders join customers on customers.id = orders.customerId where customers.id = :customerId;";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':customerId'=>$customerId));
         return $stmt->fetch();
     }
 

@@ -17,7 +17,7 @@ class FCart extends FConnection {
     }
 
     //passiamo un oggetto carrello inizialmente vuoto
-    function store($object): string {
+    function store(): string {
         $pdo = FConnection::connect();
         $query = 'insert into carts () values ()';
         $stmt = $pdo->prepare($query);
@@ -26,11 +26,10 @@ class FCart extends FConnection {
     }
 
     function update($newCart){
-
         $pdo = FConnection::connect();
-        $query="select * from products_carts where cartId=".$newCart->getId();
+        $query="select * from products_carts where cartId= :newCart";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':newCart'=>$newCart->getId()));
         //oldcart array di array con gli attributi dei prodotti nel vecchio carrello
         $oldCart=$stmt->fetchAll();
         //print_r($oldCart);
@@ -55,55 +54,47 @@ class FCart extends FConnection {
 
     function addToCart($cart, $product): string {
         $pdo = FConnection::connect();
-        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values('.$product->getId().', '.$cart->getId().', 1)';
+        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values(:id, :cartId, 1)';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':id'=>$product->getId(),
+            ':cartId'=>$cart->getId()
+        ));
         //$stmt->debugDumpParams();
         return $pdo->lastInsertId();
 
     }
 
-    function incrementQuantity(int $cartId, int $productId, int $quantity) {
-        $pdo = FConnection::connect();
-        $quantity = $quantity + 1;
-        $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-    }
-
-
-    function getQuantity(int $cartId, int $productId) {
-        $pdo = FConnection::connect();
-        $query = 'SELECT `quantity` FROM `products_carts` where productId = ' . $productId . ' and cartId =' . $cartId . ';';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        //$stmt->debugDumpParams();
-        return $stmt->fetch();
-    }
-
     function updateQuantity(int $cartId, int $productId, int $quantity) {
         $pdo = FConnection::connect();
-        $query = 'UPDATE products_carts SET quantity = '. $quantity . ' WHERE productId = ' . $productId . ' and cartId = ' . $cartId . ';';
+        $query = 'UPDATE products_carts SET quantity = :quantity WHERE productId = :productId and cartId = :cartId;';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':quantity'=>$quantity,
+            ':productId'=>$productId,
+            ':cartId'=>$cartId
+        ));
         //$stmt->debugDumpParams();
     }
 
     function deleteFromCart($cart, $product) {
         $pdo = FConnection::connect();
-        $query = 'delete from products_carts where productId = ' . $product->getId() . ' and cartId = ' . $cart->getId() . ' ;';
+        $query = 'delete from products_carts where productId = :id and cartId = :cartId;';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':id'=>$product->getId(),
+            ':cartId'=>$cart->getId()
+        ));
     }
 
 
 
     public static function load($id) {
         $pdo = FConnection::connect();
-        $query= 'select products.id, products.name, products.description, products.price, products_carts.quantity, products.imagePath from products  join products_carts ON products.id = products_carts.productId WHERE products_carts.cartId='.$id.';';
+        $query= 'select products.id, products.name, products.description, products.price, products_carts.quantity, products.imagePath from products  join products_carts ON products.id = products_carts.productId WHERE products_carts.cartId= :id;';
         $stmt = $pdo->prepare($query);
         //$stmt->debugDumpParams();
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $products = $stmt->fetchAll();
         $newCart = new Cart;
         $newCart->setId($id);
@@ -123,20 +114,11 @@ class FCart extends FConnection {
     }
 
 
-    function getCoupon($couponId) {
-        $pdo = FConnection::connect();
-        $query = 'select coupons.priceCut from coupons where id = ' . $couponId . ';';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        return $stmt->fetch();
-    }
-
-
     function emptyCart($id){
         $pdo = FConnection::connect();
-        $query="delete from products_carts where cartId=".$id;
+        $query="delete from products_carts where cartId= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
     }
 }
 

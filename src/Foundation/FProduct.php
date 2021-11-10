@@ -18,17 +18,23 @@ class FProduct extends FConnection {
 
     function store($product, $categoryId): string {
         $pdo = FConnection::connect();
-        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (\'' . $product->getName() . '\', \'' . $product->getDescription() . '\', ' . $product->getPrice() . ', ' . $categoryId . ', \'/' . $product->getImagePath() . '\', ' . '0);';
+        $query = 'INSERT INTO `products`(`name`, `description`, `price`, `categoryId`, `imagePath`, `timesOrdered`) VALUES (:name, :description, :price, :categoryId, :image, 0);';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':name'=>$product->getName(),
+            ':description'=> $product->getDescription(),
+            ':price'=>  $product->getPrice(),
+            ':categoryId' => $categoryId,
+            ':image'=>$product->getImagePath()
+        ));
         return $pdo->lastInsertId();
     }
 
     function load($productId){
         $pdo = FConnection::connect();
-        $query = 'select * from products where id='.$productId;
+        $query = 'select * from products where id = :$productId';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':productId'=>$productId));
         $p=$stmt->fetch();
         $freviews= new FReview();
         $prod=new Product;
@@ -69,9 +75,9 @@ class FProduct extends FConnection {
 
     function getAvgRating($productId){
         $pdo = FConnection::connect();
-        $query="SELECT avg(stars) as avgstars FROM reviews where ProductId=". $productId .";";
+        $query="SELECT avg(stars) as avgstars FROM reviews where ProductId = :productId;";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':productId'=>$productId));
         return $stmt->fetchAll();
 
     }
@@ -87,9 +93,9 @@ class FProduct extends FConnection {
     function getRatings($productId){
         $pdo = FConnection::connect();
         //select * from reviews where productId=$productId;
-        $query='select * from reviews where productId='.$productId;
+        $query='select * from reviews where productId = :productId';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':productId'=>$productId));
         $reviews = $stmt->fetchAll();
         $rev = [];
         //$stmt->debugDumpParams();
@@ -138,9 +144,9 @@ class FProduct extends FConnection {
 
     function getBestSellerOfCategory($id){
         $pdo = FConnection::connect();
-        $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered DESC LIMIT 1;";
+        $query="SELECT * FROM products WHERE categoryId = :id ORDER BY timesOrdered DESC LIMIT 1;";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $p=$stmt->fetch();
         if($p!=NULL){
         $prod=new Product;
@@ -158,9 +164,9 @@ class FProduct extends FConnection {
     function getWorstSellerOfCategory($id){
         $pdo = FConnection::connect();
         //SELECT name FROM products WHERE categoryId={$id} ORDER BY timesOrdered LIMIT 1;
-        $query="SELECT * FROM products WHERE categoryId=".$id." ORDER BY timesOrdered LIMIT 1;";
+        $query="SELECT * FROM products WHERE categoryId = :id ORDER BY timesOrdered LIMIT 1;";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
         $p=$stmt->fetch();
         if($p!=NULL){
         $prod=new Product;
@@ -199,25 +205,35 @@ class FProduct extends FConnection {
 
       public function addToCart($productId, $cartId, $quantity) {
           $pdo = FConnection::connect();
-          $query = 'insert into products_carts(`productId`, `cartId`, `quantity`) VALUES (' . $productId . ', ' . $cartId . ', '. $quantity . ');';
+          $query = 'insert into products_carts(`productId`, `cartId`, `quantity`) VALUES (:productId, :cartId, :quantity);';
           $stmt = $pdo->prepare($query);
-          $stmt->execute();
+          $stmt->execute(array(
+              ':productId'=>$productId,
+              ':cartId'=>$cartId,
+              ':quantity'=>$quantity
+          ));
 //          return $stmt->fetch();
       }
 
     function update($id, $product) {
         $pdo = FConnection::connect();
-        $query = 'UPDATE products SET name = \'' . $product->getName() . '\', description = \'' . $product->getDescription() . '\', price = ' . $product->getPrice() . ', imagePath = \''. $product->getImagePath() .'\' where id='.$id.';';
+        $query = 'UPDATE products SET name = :name, description = :description, price = :price, imagePath = :image where id = :id;';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':name'=>$product->getName(),
+            ':description'=>$product->getDescription(),
+            ':price'=>$product->getPrice(),
+            ':image'=>$product->getImagePath(),
+            ':id'=>$id
+        ));
         //$stmt->debugDumpParams();
     }
 
     function delete($id) {
         $pdo = FConnection::connect();
-        $query = "DELETE FROM products where id = " . $id . ";";
+        $query = "DELETE FROM products where id = :id;";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
     }
 
 

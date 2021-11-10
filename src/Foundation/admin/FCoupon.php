@@ -13,9 +13,9 @@ class FCoupon extends FConnection {
 
     public function load($id){
         $pdo = FConnection::connect();
-        $query = 'select * from coupons where id=\''.$id.'\'';
+        $query = 'select * from coupons where id= :id';
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array( ':id'=> $id));
         $coupon=$stmt->fetch();
         $c=new Coupon;
         if ($coupon!=null){
@@ -29,9 +29,9 @@ class FCoupon extends FConnection {
 
     public function exist($id){
         $pdo = FConnection::connect();
-        $query="select * from coupons where id='".$id."'";
+        $query="select * from coupons where id= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array( ':id'=> $id));
         $coupon=$stmt->fetch();
         if ($coupon!=NULL){
             return true;
@@ -42,17 +42,21 @@ class FCoupon extends FConnection {
     }
     public function store($coupon, $customerId){
         $pdo = FConnection::connect();
-        $query="insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`, `isUsed`) values ('".$coupon->getId()."', '".$coupon->getPriceCut()."', '".$coupon->getExpirationDate()."' , ".$customerId.", 0)";
+        $query="insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`, `isUsed`) values (:id, :priceCut, :expirationDate, :customerId, 0)";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(
+            ':id'=> $coupon->getId(),
+            ':priceCut'=> $coupon->getPriceCut(),
+            ':expirationDate'=> $coupon->getExpirationDate(),
+            ':customerId'=> $customerId
+            ));
     }
-    //non diamo la possibilità di fare update al coupon, quindi niente update
 
     public function delete($id){
         $pdo = FConnection::connect();
-        $query="delete from coupons where id=".$id;
+        $query="delete from coupons where id= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
     }
 
     public function isExpired($id){
@@ -87,7 +91,7 @@ class FCoupon extends FConnection {
 
     public function getAll(){
         $pdo = FConnection::connect();
-        $query="select * from coupons where expirationDate>NOW() and isUsed=0";
+        $query="select * from coupons where expirationDate>NOW() and isUsed = 0";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $coupons= $stmt->fetchAll();
@@ -104,8 +108,8 @@ class FCoupon extends FConnection {
 
     public function setAsUsed($id){
         $pdo = FConnection::connect();
-        $query="update coupons set isUsed=1 where id=\"".$id."\"";
+        $query="update coupons set isUsed=1 where id= :id";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute(array(':id'=>$id));
     }
 }
