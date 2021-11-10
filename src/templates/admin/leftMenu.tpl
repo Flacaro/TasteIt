@@ -75,6 +75,11 @@
                         <i class="nc-icon nc-cart-simple" style="color:white"></i>
                         <p>Ordini</p>
                     </a>
+                </li>
+                <li>
+                    <a href="/logout" style="color:white" class="ml-5">
+                        <p>Logout</p>
+                    </a>
             </ul>
         </div>
     </div>

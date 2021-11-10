@@ -137,11 +137,9 @@ class FOrder extends FConnection {
 
     function store($order): string {
         $pdo = FConnection::connect();
-        if ($order->getCoupon()!=NULL){
-            $couponId=$order->getCoupon()->getId();
-        }
-        else {$couponId="NULL";}
         if (get_class($order->getPayment())=="App\Models\CreditCard") {
+            if ($order->getCoupon()!=NULL){
+            $couponId=$order->getCoupon()->getId();
             $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), :total, NULL, :couponId, :customerId, 2, :state , :address, :payment)';
             $stmt = $pdo->prepare($query);
             $stmt->execute(array(':total'=>$order->getTotal(),
@@ -151,8 +149,21 @@ class FOrder extends FConnection {
                 ':address'=>$order->getAddress()->getId(),
                 ':payment'=> $order->getPayment()->getId()
                 ));
+            }
+            else {
+                $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), :total, NULL, NULL, :customerId, 2, :state , :address, :payment)';
+                $stmt = $pdo->prepare($query);
+                $stmt->execute(array(':total'=>$order->getTotal(),
+                    ':customerId'=>$order->getCustomerId(),
+                    ':state'=>$order->getState(),
+                    ':address'=>$order->getAddress()->getId(),
+                    ':payment'=> $order->getPayment()->getId()
+                ));
+            }
         }
         else {
+            if ($order->getCoupon()!=NULL){
+            $couponId=$order->getCoupon()->getId();
             $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), :total, NULL, :couponId, :customerId, 1, :state , :address, NULL)';
             $stmt = $pdo->prepare($query);
             $stmt->execute(array(':total'=>$order->getTotal(),
@@ -161,9 +172,17 @@ class FOrder extends FConnection {
                 ':state'=>$order->getState(),
                 ':address'=>$order->getAddress()->getId()
             ));
+            } else{
+                $query = 'INSERT INTO orders(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES (NOW(), :total, NULL, NULL, :customerId, 1, :state , :address, NULL)';
+                $stmt = $pdo->prepare($query);
+                $stmt->execute(array(':total'=>$order->getTotal(),
+                    ':customerId'=>$order->getCustomerId(),
+                    ':state'=>$order->getState(),
+                    ':address'=>$order->getAddress()->getId()
+                ));
+            }
         }
         return $pdo->lastInsertId();
-
     }
 
     function storeOrdersProducts($orderid, $prodWithQuantity){

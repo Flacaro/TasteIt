@@ -46,19 +46,20 @@ class FCart extends FConnection {
                 $this->updateQuantity($newCart->getId(), $newp[0]->getId(), $newp[1]);
             }
             else {
-                $this->addToCart($newCart, $newp[0]);
+                $this->addToCart($newCart, $newp[0], $newp[1]);
             }
         }
     }
 
 
-    function addToCart($cart, $product): string {
+    function addToCart($cart, $product,$quantity): string {
         $pdo = FConnection::connect();
-        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values(:id, :cartId, 1)';
+        $query = 'insert into products_carts (`productId`, `cartId`, `quantity`) values(:id, :cartId, :quantity)';
         $stmt = $pdo->prepare($query);
         $stmt->execute(array(
             ':id'=>$product->getId(),
-            ':cartId'=>$cart->getId()
+            ':cartId'=>$cart->getId(),
+            ':quantity'=>$quantity
         ));
         //$stmt->debugDumpParams();
         return $pdo->lastInsertId();

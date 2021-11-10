@@ -32,7 +32,7 @@ class FProduct extends FConnection {
 
     function load($productId){
         $pdo = FConnection::connect();
-        $query = 'select * from products where id = :$productId';
+        $query = 'select * from products where id = :productId';
         $stmt = $pdo->prepare($query);
         $stmt->execute(array(':productId'=>$productId));
         $p=$stmt->fetch();
@@ -45,7 +45,6 @@ class FProduct extends FConnection {
         $prod->setImagePath($p[5]);
         $prod->setTimesOrdered($p[6]);
         $prod->setReviews($freviews->loadReviewsOfProduct($p[0]));
-        //print_r($prod);
         return $prod;
     }
 
