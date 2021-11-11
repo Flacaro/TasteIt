@@ -4,7 +4,6 @@
         <div class="row">
             <div class="col-md-12">
 
-
                 <form action="/admin/customers" method="post">
 
                     <div class="row">

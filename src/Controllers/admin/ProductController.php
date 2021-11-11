@@ -39,17 +39,25 @@ class ProductController
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
-        if (isset($_FILES["uploadfile"])) {
-            $FProduct = new FProduct();
-            $product = new Product();
-            $product->setName($name);
-            $product->setDescription($description);
-            $product->setPrice($price);
-            $product->setImagePath(uploadImage());
-            $FProduct->store($product, $id);
-            redirect(url('/admin/categories/' . $id . '/products'));
+        if (!$_FILES["uploadfile"]["error"]==4) {
+            if (validate($_POST, [
+                "name"=>["minLength:1", "maxLength:20"],
+                "description"=>["minLength:1", "maxLength:100"],
+                "price"=>["isPositive"]
+            ])){
+                $FProduct = new FProduct();
+                $product = new Product();
+                $product->setName($name);
+                $product->setDescription($description);
+                $product->setPrice($price);
+                $product->setImagePath(uploadImage());
+                $FProduct->store($product, $id);
+                redirect(url('/admin/categories/' . $id . '/products'));
+            }else{
+                redirect(url('/admin/categories/' . $id . '/products/form'));
+            }
         } else {
-            print_r("errore");
+            redirect(url('/admin/categories/' . $id . '/products/form'));
         }
     }
 

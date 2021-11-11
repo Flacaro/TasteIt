@@ -21,10 +21,21 @@ class CategoryController {
         $name = $_POST["name"];
         $fcategory = new FCategory();
         $category= new Category();
-        $category->setName($name);
-        $category->setImage(uploadImage());
-        $fcategory->store($category);
-        redirect(url('/admin/categories'));
+        if (validate($_POST, [
+            "name"=>["minLength:1", "maxLength:20"]
+        ])){
+            if (!$_FILES["uploadfile"]["error"]==4){
+            $category->setName($name);
+            $category->setImage(uploadImage());
+            $fcategory->store($category);
+            redirect(url('/admin/categories'));
+            }
+            else{
+                redirect(url('/admin/categories/add'));
+            }
+        }else{
+            redirect(url('/admin/categories/add'));
+        }
     }
 
     public function showAddCategory(){

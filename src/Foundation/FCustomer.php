@@ -28,8 +28,6 @@ class FCustomer extends FConnection {
         $stmt = $pdo->prepare($query);
         $stmt->execute(array(':email'=>$email));
         $row = $stmt->fetch();
-        print_r($row);
-        $stmt->debugDumpParams();
         if($row==""){
             return false;
         }

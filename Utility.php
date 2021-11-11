@@ -43,8 +43,12 @@ function setData($view, $data){
         return intval($args[0]) > 0;
     }
 
+    function isNotExpired($args): bool {
+        return $args[0] > date("Y-m-d");
+    }
 
-    function validate($target, $fields): bool {
+
+function validate($target, $fields): bool {
         $isValid = true;
         foreach ($fields as $field=>$validators) {
            foreach ($validators as $validator) {

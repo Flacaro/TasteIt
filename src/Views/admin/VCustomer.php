@@ -11,9 +11,8 @@ class VCustomer
         ]);
     }
 
-    function showBest($coupons, $customers) {
+    function showBest($customers) {
         return view("admin/customers/showBest", [
-            'coupons' => $coupons,
             'customers' => $customers
         ]);
     }

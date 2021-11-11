@@ -23,22 +23,28 @@ class CustomerController
         $customersId = $_POST['customers'];
         $pricecut = $_POST['pricecut'];
         $expiration = $_POST['expiration'];
-        foreach ($customersId as $c) {
-            $coupon = new Coupon();
-            $coupon->setPriceCut($pricecut);
-            $coupon->setExpirationDate($expiration);
-            $fCoupon->store($coupon, $c);
+        if (validate($_POST, [
+            "expiration"=>["isNotExpired"]
+        ])){
+            foreach ($customersId as $c) {
+                $coupon = new Coupon();
+                $coupon->setPriceCut($pricecut);
+                $coupon->setExpirationDate($expiration);
+                $fCoupon->store($coupon, $c);
+            }
+            redirect(url('showAllCustomers'));
         }
-        redirect(url('showAllCustomers'));
+       else{
+           redirect(url('showBest'));
+       }
     }
 
 
     public function showBest() {
         $vCustomer = new VCustomer();
-        $fCoupon = new FCoupon();
         $fCustomers = new FCustomer();
         $previousMonth = date('m') - 1;
-        return $vCustomer->showBest($fCoupon->getAll(), $fCustomers->topTenCustomersByTotal($previousMonth));
+        return $vCustomer->showBest( $fCustomers->topTenCustomersByTotal($previousMonth));
     }
 
 }

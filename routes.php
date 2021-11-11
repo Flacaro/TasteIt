@@ -98,7 +98,7 @@ SimpleRouter::group(['middleware' => \App\Controllers\AdminMiddleware::class], f
     SimpleRouter::get("/admin/coupons", [CouponController::class, "index"])->name('showAllCoupons');
 
     SimpleRouter::get("/admin/customers", [AdminCustomerController::class, "index"])->name('showAllCustomers');
-    SimpleRouter::get("/admin/customers/best", [AdminCustomerController::class, "showBest"]);
+    SimpleRouter::get("/admin/customers/best", [AdminCustomerController::class, "showBest"])->name('showBest');
     SimpleRouter::post("/admin/customers", [AdminCustomerController::class, "sendCoupon"]);
 });
 
