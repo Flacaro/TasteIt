@@ -37,6 +37,7 @@ class Session
         return (isset($_COOKIE["PHPSESSID"]) && (isset($_SESSION["customer"])));
     }
 
+
     public function isRestaurantLogged(): bool {
         $this->newSession();
         return (isset($_COOKIE["PHPSESSID"]) && isset($_SESSION["restaurant"]));

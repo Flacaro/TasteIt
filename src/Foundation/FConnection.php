@@ -1,11 +1,8 @@
 <?php
 /*
-
 namespace App\Foundation;
+require_once 'configDB.php';
 
-
-
-use App\Models\Product;
 use PDO;
 use PDOException;
 
@@ -30,38 +27,37 @@ abstract class FConnection {
     }
 
 }*/
+
 namespace App\Foundation;
 
 use PDO;
 use PDOException;
-include('configDB.php');
+require_once "configDB.php";
 
-class FConnection
-{
-    /**
-     * Istanza della classe.
-     * @var FConnection
-     */
+class FConnection {
+
     private static $instance;
-    public function __construct() {
+
+    public function __construct()
+    {
+
     }
 
-    /**
-     * Implementa il metodo getInstance() del Singleton.
-     * @return PDO
-     */
     public static function connect() {
 
         if (!isset(self::$instance)) {
-            try {
-                self::$instance = new PDO('mysql:host=$hostname;dbname=$dbname', $user, $pass);
-
-            } catch (PDOException $e) {
-                echo "Errore in FConnectionDB: " . $e->getMessage();
-                die;
-            }
-        }
-
-        return self::$instance;
+                 try {
+                  /* if (file_exists('configDb.txt')) {
+                        $fileContent = file_get_contents('configDb.txt');
+                        $pieces = explode(";", $fileContent);
+                        self::$instance = new PDO('mysql:host=localhost;dbname=tasteIt',$pieces[1],$pieces[2]);
+                    }*/
+                     self::$instance = new PDO('mysql:host=' . $GLOBALS['$host'] . ';dbname=tasteit', $GLOBALS['$user'], $GLOBALS['$password']);
+                 } catch (PDOException $e) {
+                     echo "Errore in FConnection: " . $e->getMessage();
+                     die;
+                 }
+                return self::$instance;
+             }
     }
 }

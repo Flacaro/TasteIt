@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2021-11-10 16:29:57
+/* Smarty version 3.1.40, created on 2021-11-11 12:49:12
   from 'C:\xampp\htdocs\TasteIt\src\templates\admin\leftMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_618be575aeb084_86430775',
+  'unifunc' => 'content_618d0338040d58_34837536',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca67fd711e070b25d703e32efc8fbac889ad9416' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TasteIt\\src\\templates\\admin\\leftMenu.tpl',
-      1 => 1636363085,
+      1 => 1636564649,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_618be575aeb084_86430775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_618d0338040d58_34837536 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -103,6 +103,11 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                         <i class="nc-icon nc-cart-simple" style="color:white"></i>
                         <p>Ordini</p>
                     </a>
+                </li>
+                <li>
+                    <a href="/logout" style="color:white" class="ml-5">
+                        <p>Logout</p>
+                    </a>
             </ul>
         </div>
     </div>
@@ -124,7 +129,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             </div>
         </nav>
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2025396061618be575ae8da0_19769400', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_956265859618d033803ee70_08405762', 'admin');
 ?>
 
 
@@ -201,12 +206,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2025396061618be575
 
 <?php }
 /* {block 'admin'} */
-class Block_2025396061618be575ae8da0_19769400 extends Smarty_Internal_Block
+class Block_956265859618d033803ee70_08405762 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_2025396061618be575ae8da0_19769400',
+    0 => 'Block_956265859618d033803ee70_08405762',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
