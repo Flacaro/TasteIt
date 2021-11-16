@@ -1,5 +1,5 @@
 <?php
-
+/*
 
 namespace App\Foundation;
 
@@ -29,4 +29,39 @@ abstract class FConnection {
         return self::$instance;
     }
 
+}*/
+namespace App\Foundation;
+
+use PDO;
+use PDOException;
+include('configDB.php');
+
+class FConnection
+{
+    /**
+     * Istanza della classe.
+     * @var FConnection
+     */
+    private static $instance;
+    public function __construct() {
+    }
+
+    /**
+     * Implementa il metodo getInstance() del Singleton.
+     * @return PDO
+     */
+    public static function connect() {
+
+        if (!isset(self::$instance)) {
+            try {
+                self::$instance = new PDO('mysql:host=$hostname;dbname=$dbname', $user, $pass);
+
+            } catch (PDOException $e) {
+                echo "Errore in FConnectionDB: " . $e->getMessage();
+                die;
+            }
+        }
+
+        return self::$instance;
+    }
 }
