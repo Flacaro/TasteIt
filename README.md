@@ -66,7 +66,7 @@
   php .\scriptDb.php name password
 
   ```
-  (dove name: il nome del proprio db e password: la password del proprio db)
+  (dove name: il nome utente del proprio db e password: la password del proprio db)
   
   
 - Per avere tutte le dipendenze, scaricare composer su:
