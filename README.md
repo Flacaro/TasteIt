@@ -56,7 +56,7 @@
   $ sudo chmod 777 /opt/lampp/htdocs/TasteIt
 
   ```
-- Porre le credenziali del proprio database in configDB.php
+- Porre le credenziali del proprio database in configDatabase.php
   
 - Per avere il database in locale, nel path che comprende la cartella script, scrivere sul terminale:
 
