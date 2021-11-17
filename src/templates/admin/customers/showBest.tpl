@@ -10,7 +10,7 @@
                         <div class="col-md-2 pr-1">
                             <div class="form-group">
                                 <label>Percentuale%</label>
-                                <input type="text" class="form-control" name="pricecut" placeholder="Percentuale di sconto del coupon" maxlength="20">
+                                <input type="text" class="form-control" name="pricecut" placeholder="Percentuale di sconto" maxlength="20">
                             </div>
                         </div>
                         <div class="col-md-4 px-1">

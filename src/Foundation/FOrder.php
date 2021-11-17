@@ -17,7 +17,7 @@ class FOrder extends FConnection {
 
     function __construct()
     {
-        parent::__construct('orders', 'Order');
+        parent::__construct();
     }
 
     public function loadUsersOrders($userId){

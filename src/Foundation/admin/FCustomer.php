@@ -10,7 +10,7 @@ class FCustomer extends FConnection {
 
     public function __construct()
     {
-        parent::__construct("customers", "Customer");
+        parent::__construct();
     }
 
     public function topTenCustomersByTotal($previousMonth) {

@@ -11,7 +11,7 @@ class FCategory extends FConnection {
 
     function __construct()
     {
-        parent::__construct('categories', 'Category');
+        parent::__construct();
     }
 
     function load($id){

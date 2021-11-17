@@ -11,7 +11,7 @@ class FRestaurant extends FConnection {
 
     function __construct()
     {
-        parent::__construct('restaurant', 'Restaurant');
+        parent::__construct();
     }
 
     public function authentication($email, $password){

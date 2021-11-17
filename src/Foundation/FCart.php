@@ -13,7 +13,7 @@ class FCart extends FConnection {
 
     function __construct()
     {
-        parent::__construct('carts', 'Cart');
+        parent::__construct();
     }
 
     //passiamo un oggetto carrello inizialmente vuoto

@@ -9,7 +9,7 @@ use PDO;
 class FFavourites extends FConnection {
     function __construct()
     {
-        parent::__construct('favourites', 'Favourites');
+        parent::__construct();
 
 
     }

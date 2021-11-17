@@ -8,7 +8,7 @@ use App\Models\Coupon;
 class FCoupon extends FConnection {
 
     public function __construct() {
-        parent::__construct('coupons', 'Coupon');
+        parent::__construct();
     }
 
     public function load($id){

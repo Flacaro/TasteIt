@@ -13,7 +13,7 @@ class FProduct extends FConnection {
 
     function __construct()
     {
-        parent::__construct('products', 'Product');
+        parent::__construct();
     }
 
     function store($product, $categoryId): string {

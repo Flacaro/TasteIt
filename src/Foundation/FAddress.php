@@ -8,7 +8,7 @@ class FAddress extends FConnection{
 
     function __construct()
     {
-        parent::__construct('shippingaddresses', 'ShippingAddress');
+        parent::__construct();
     }
 
     public function load($id){

@@ -15,7 +15,7 @@ use PDO;
 class FCustomer extends FConnection {
     function __construct()
     {
-        parent::__construct('customers', 'Customer');
+        parent::__construct();
     }
 
     public function getUserFromReview($reviewId){
