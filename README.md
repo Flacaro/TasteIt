@@ -57,6 +57,8 @@
 
   ```
 - Porre le credenziali del proprio database in configDatabase.php
+
+- Aggiungere require_once 'configDatabase.php' in FConnection
   
 - Per avere il database in locale, nel path che comprende la cartella script, scrivere sul terminale:
 
