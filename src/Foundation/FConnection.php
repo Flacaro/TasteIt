@@ -1,5 +1,5 @@
 <?php
-/*
+
 namespace App\Foundation;
 require_once 'configDB.php';
 
@@ -8,8 +8,6 @@ use PDOException;
 
 abstract class FConnection {
     private static $instance;
-    private static $user = 'root';
-    private static $pass = 'password';
 
     public function __construct() {
     }
@@ -17,7 +15,7 @@ abstract class FConnection {
     public static function connect(){
         if(!isset(self::$instance)){
             try{
-                self::$instance = new PDO('mysql:host=localhost;dbname=tasteIt', FConnection::$user, FConnection::$pass);
+                self::$instance = new PDO('mysql:host=localhost;dbname=tasteit', $GLOBALS['$user'], $GLOBALS['$password']);
             }
             catch(PDOException $ex){
 
@@ -26,9 +24,9 @@ abstract class FConnection {
         return self::$instance;
     }
 
-}*/
+}
 
-namespace App\Foundation;
+/*namespace App\Foundation;
 
 use PDO;
 use PDOException;
@@ -43,21 +41,22 @@ class FConnection {
 
     }
 
-    public static function connect() {
+    public static function connect()
+    {
 
         if (!isset(self::$instance)) {
-                 try {
-                  /* if (file_exists('configDb.txt')) {
-                        $fileContent = file_get_contents('configDb.txt');
-                        $pieces = explode(";", $fileContent);
-                        self::$instance = new PDO('mysql:host=localhost;dbname=tasteIt',$pieces[1],$pieces[2]);
-                    }*/
-                     self::$instance = new PDO('mysql:host=' . $GLOBALS['$host'] . ';dbname=tasteit', $GLOBALS['$user'], $GLOBALS['$password']);
-                 } catch (PDOException $e) {
-                     echo "Errore in FConnection: " . $e->getMessage();
-                     die;
-                 }
-                return self::$instance;
-             }
+            try {
+                /* if (file_exists('configDb.txt')) {
+                      $fileContent = file_get_contents('configDb.txt');
+                      $pieces = explode(";", $fileContent);
+                      self::$instance = new PDO('mysql:host=localhost;dbname=tasteIt',$pieces[1],$pieces[2]);
+                  }*/
+               /* self::$instance = new PDO('mysql:host=localhost;dbname=tasteit', $GLOBALS['$user'], $GLOBALS['$password']);
+            } catch (PDOException $e) {
+                echo "Errore in FConnection: " . $e->getMessage();
+                die;
+            }
+            return self::$instance;
+        }
     }
-}
+}*/

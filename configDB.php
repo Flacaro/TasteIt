@@ -1,5 +1,6 @@
 <?php
 
-$GLOBALS['host'] = "127.0.0.1";
+$GLOBALS['host'] = "localhost";
+$GLOBALS['db'] = "tasteit";
 $GLOBALS['$user'] = "root";
 $GLOBALS['$password'] = "password";

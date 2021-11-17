@@ -11,7 +11,7 @@ class VHomePage
             'bestSellers'=> $bestSellers,
             'bestRateds'=> $bestRateds,
             'bestReviews'=> $bestReviews,
-            'products' => $products
+            'products' => $products,
             //'image' => $bestReviews[0]
         ];
         return setData("home", $data);
