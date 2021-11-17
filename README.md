@@ -11,12 +11,12 @@
 
 - Utenti non registrati: 
   possono avere accesso alla home per visualizzare i prodotti offerti e leggere informazioni sul ristorante,
-  possono registrarsi per usufruire delle funzionalità degli utenti registrati;
+  possono registrarsi per usufruire delle funzionalità degli utenti registrati
   
 - Utenti registrati: 
   Hanno accesso a tutte le funzionalità dell'utente non registrato ed in più avere accesso al proprio carrello,
   alla lista dei preferiti, effettuare e visualizzare ordini. I clienti più fedeli avranno anche a
-  disposizione dei coupon da utilizzare sulla spesa effettuata;
+  disposizione dei coupon da utilizzare sulla spesa effettuata
 
 - Ristorante:
   Gestisce i prodotti in vendita, i coupon da inviare e gli ordini effettuati
@@ -56,9 +56,9 @@
   $ sudo chmod 777 /opt/lampp/htdocs/TasteIt
 
   ```
-- Porre le credenziali del proprio database in FConnection()
+- Porre le credenziali del proprio database in configDB.php
   
-- Per avere il database in locale bisogna scrivere sul terminale:
+- Per avere il database in locale, nel path che comprende la cartella script, scrivere sul terminale:
 
   ```bash
   php .\scriptDb.php name password
