@@ -1,4 +1,4 @@
 <?php
 
-$GLOBALS['$user'] = "root";
+$GLOBALS['$user'] = "user";
 $GLOBALS['$password'] = "password";
