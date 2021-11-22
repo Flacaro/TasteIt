@@ -18,6 +18,7 @@ class FCart extends FConnection {
 
     //passiamo un oggetto carrello inizialmente vuoto
     function store(): string {
+
         $pdo = FConnection::connect();
         $query = 'insert into carts () values ()';
         $stmt = $pdo->prepare($query);
