@@ -177,7 +177,7 @@ INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customer
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,"L'Aquila",'Castello',52,4);
 INSERT INTO `shippingAddresses`(`cap`, `city`, `street`, `homeNumber`, `customerId`) VALUES (67100,'Coppito','del Corso',8,4);
 INSERT INTO `restaurant`(`name`, `email`, `password`, `addressId`, `phone`) VALUES ('Taste It','tasteIt@gmail.com','$2y$10$TXeIAq0qe1Y64.IZ1Mcxqued1I0pliDMZShtsMk3kwoW46Oscui8u',1,3208976543);
-insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('C614c7de6d8a19', 30, '2021-10-07', 1);
+insert into coupons (`id`, `priceCut`, `expirationDate`, `customerId`) values ('C614c7de6d8a19', 30, '2021-12-07', 1);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8345', 20,'2021-09-13',1);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8790', 20,'2021-11-13',2);
 INSERT INTO `coupons`(`id`, `priceCut`, `expirationDate`, `customerId`) VALUES ('C614c7de6d8r61', 15,'2022-02-09',3);
@@ -189,9 +189,9 @@ INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDa
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (2,2349087129065718,'2025-05-14',784,'Sandro Rosa');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (3,8769897134789021,'2030-01-04',521,'Michela Bianchi');
 INSERT INTO `customers_paymentMethods`(`customerId`, `cardNumber`, `expirationDate`, `cvv`, `cardHolder`) VALUES (5,5322789034561234,'2028-03-14',521,'Andrea Martini');
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-10-21',12,NULL,'C614c7de6d8a19',1,1,'Pending',1,null);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`,`orderState`, `addressId`, `cardId`) VALUES ('2021-10-21',12,NULL,'C614c7de6d8a19',1,1,'Completed',1,null);
 INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-08-21',25,NULL,'C614c7de6d8a19',1,1,'Denied',2,null);
-INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-07-21',19.2,'20:00:00','C614c7de6d8345',2,1,'Completed',3,2);
+INSERT INTO `orders`(`creationDate`, `total`, `arrivalTime`, `couponId`, `customerId`, `paymentId`, `orderState`, `addressId`, `cardId`) VALUES ('2021-11-21',19.2,'20:00:00','C614c7de6d8345',2,1,'Completed',3,2);
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pasta','/src/assets/images/pasta.jpg');
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pesce','/src/assets/images/pesce.jpg');
 INSERT INTO `categories`(`restaurantId`, `categoryName`, `imagePath`) VALUES (1,'Pizza','/src/assets/images/margherita.jpg');

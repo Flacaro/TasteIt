@@ -39,6 +39,16 @@ function setData($view, $data){
         return strlen($args[0]) <= $args[1];
     }
 
+    function maxValue($args): bool
+    {
+        return (int)$args[0] <= $args[1];
+    }
+
+    function minValue($args): bool
+    {
+        return (int)$args[0] >= $args[1];
+    }
+
     function isPositive($args): bool {
         return intval($args[0]) > 0;
     }
@@ -59,7 +69,6 @@ function validate($target, $fields): bool {
                $args = [$target[$field], $splitted[1]];
                if(call_user_func(strval($functionToCall), $args) == false) {
                    $isValid = false;
-                   print_r($functionToCall);
                }
 
            }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-11 11:34:37
+/* Smarty version 3.1.39, created on 2021-11-22 17:41:16
   from 'C:\Users\selen\OneDrive\Documents\app\src\templates\admin\customers\showBest.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_618cf1bd1c7ce3_32429632',
+  'unifunc' => 'content_619bc82c0c3cb5_84832313',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1beb4d20da8ba52b4a7bc667b478cd11e14e0bec' => 
     array (
       0 => 'C:\\Users\\selen\\OneDrive\\Documents\\app\\src\\templates\\admin\\customers\\showBest.tpl',
-      1 => 1636626875,
+      1 => 1637151474,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_618cf1bd1c7ce3_32429632 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619bc82c0c3cb5_84832313 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_318027737618cf1bd1b7819_12503211', 'admin');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1943964679619bc82c0b44e2_89788675', 'admin');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'src/templates/admin/leftMenu.tpl');
 }
 /* {block 'admin'} */
-class Block_318027737618cf1bd1b7819_12503211 extends Smarty_Internal_Block
+class Block_1943964679619bc82c0b44e2_89788675 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'admin' => 
   array (
-    0 => 'Block_318027737618cf1bd1b7819_12503211',
+    0 => 'Block_1943964679619bc82c0b44e2_89788675',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,7 +51,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         <div class="col-md-2 pr-1">
                             <div class="form-group">
                                 <label>Percentuale%</label>
-                                <input type="text" class="form-control" name="pricecut" placeholder="Percentuale di sconto del coupon" maxlength="20">
+                                <input type="text" class="form-control" name="pricecut" placeholder="Percentuale di sconto" maxlength="20">
                             </div>
                         </div>
                         <div class="col-md-4 px-1">

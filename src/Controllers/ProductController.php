@@ -110,8 +110,9 @@ class ProductController {
     {
         $session = Session::getInstance();
         $rev = [];
-            $cus = $session->loadUser();
-            $FReview = new FReview();
+        $cus = $session->loadUser();
+        $FReview = new FReview();
+        if (validate($_POST, ['stars'=>['isPositive', 'minValue:1', 'maxValue:5']])){
             $stars = $_POST['stars'];
             $comment = $_POST['comment'];
             $review = new Review;
@@ -120,7 +121,10 @@ class ProductController {
             $review->setCustomer($cus);
             array_push($rev, $review);
             $FReview->createReview($review, $productId);
-            redirect(url("getProduct", ["productId"=> $productId]));
+            redirect(url("getProduct", ["productId"=> $productId]));}
+        else{
+            redirect(url("products/".$productId));
+            }
     }
 
 }

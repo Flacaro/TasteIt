@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Foundation;
-require_once 'configDB.php';
+require_once 'configDatabase.php';
 
 use PDO;
 use PDOException;

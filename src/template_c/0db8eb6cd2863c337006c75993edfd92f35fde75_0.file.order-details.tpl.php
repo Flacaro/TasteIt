@@ -125,7 +125,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <form method="POST" action="/admin/orders/<?php echo $_smarty_tpl->tpl_vars['order']->value->getId();?>
 /accept">
                             <div class="update ml-auto mr-auto">
-                                <label>Tempo previsto di consegna: <input type="time" name="arrival" required></label>
+                                <label>Orario previsto di consegna: <input type="time" name="arrival" required></label>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Accetta Ordine</button>
                             </div>
@@ -145,7 +145,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <?php }?>
                     <?php if ($_smarty_tpl->tpl_vars['order']->value->getState() == "Accepted") {?>
                         <div class="d-flex justify-content-center">
-                            <h4>Orario di arrivo previstoaooo: <?php echo $_smarty_tpl->tpl_vars['order']->value->getArrivalTime();?>
+                            <h4>Orario di arrivo previsto: <?php echo $_smarty_tpl->tpl_vars['order']->value->getArrivalTime();?>
 </h4>
                         </div>
                     <?php }?>
