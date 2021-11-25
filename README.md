@@ -58,7 +58,7 @@
   ```
 - Porre le credenziali del proprio database in configDatabase.php
   
-- Per inizializzare e popolare il database in locale, sul terminale, bisogna portarsi sulla directory dove è presente il file         "script.php" ed eseguire il comando:
+- Per inizializzare e popolare il database in locale, sul terminale, bisogna portarsi sulla directory dove sono presenti i file "tasteit.sql" e "scriptDB.php" ed eseguire il comando:
 
   ```bash
   php .\scriptDb.php name password
