@@ -5,7 +5,7 @@
   Questo progetto è stato realizzato con lo scopo di aiutare il ristorante Taste It ad avere un propria applicazione web,
   attraverso la quale poter far conoscere i suoi prodotti a tutti coloro che amano la cucina italiana.
   Gli utenti potranno facilmente ordinare i propri piatti preferiti per poterli gustare comodamente dalla propria casa.
-
+  
 
 ## Tipologie di utenti
 
@@ -23,7 +23,7 @@
   
 ## Struttura
 
-  Questa applicazione è distrubuita su tre livelli (data managment, application layer, presentation layer) ed è progettata
+  Questa applicazione è distribuita su tre livelli (data managment, application layer, presentation layer) ed è progettata
   in modo da avere un'interfaccia responsive.
 
 ## Requisiti
@@ -57,10 +57,8 @@
 
   ```
 - Porre le credenziali del proprio database in configDatabase.php
-
-- Aggiungere require_once 'configDatabase.php' in FConnection
   
-- Per avere il database in locale, nel path che comprende la cartella script, scrivere sul terminale:
+- Per inizializzare e popolare il database in locale, sul terminale, bisogna portarsi sulla directory dove è presente il file         "script.php" ed eseguire il comando:
 
   ```bash
   php .\scriptDb.php name password
@@ -71,7 +69,7 @@
   
 - Per avere tutte le dipendenze, scaricare composer su:
   [Composer](https://getcomposer.org/) e
-  una volta aperto il progetto su un IDE, digitare i comandi: 
+  una volta aperto il progetto su un IDE, digitare i comandi (nel terminale del corrispondente): 
 
   ```bash
   composer install
